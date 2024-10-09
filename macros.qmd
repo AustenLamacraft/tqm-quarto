@@ -1,0 +1,40 @@
+::: {.hidden}
+
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\brN}{\mathbf{R}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bk}{\mathbf{k}}
+\newcommand{\bq}{\mathbf{q}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\brN}{\br_1, \ldots, \br_N}
+\newcommand{\xN}{x_1, \ldots, x_N}
+\newcommand{\zN}{z_1, \ldots, z_N}
+\newcommand{\pop}{\psi^{\vphantom{\dagger}}}
+\newcommand{\pdop}{\psi^\dagger}
+\newcommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\newcommand{\Pdop}{\Psi^\dagger}
+\newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\newcommand{\Phdop}{\Phi^\dagger}
+\newcommand{\phop}{\phi^{\vphantom{\dagger}}}
+\newcommand{\phdop}{\phi^\dagger}
+\newcommand{\aop}{a^{\vphantom{\dagger}}}
+\newcommand{\adop}{a^\dagger}
+\newcommand{\bop}{b^{\vphantom{\dagger}}}
+\newcommand{\bdop}{b^\dagger}
+\newcommand{\cop}{c^{\vphantom{\dagger}}}
+\newcommand{\cdop}{c^\dagger}
+\newcommand{\bra}[1]{\langle{#1}\rvert}
+\newcommand{\ket}[1]{\lvert{#1}\rangle}
+\newcommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
+\newcommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+$$
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}}
+$$
+
+:::
+

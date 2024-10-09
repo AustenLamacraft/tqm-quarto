@@ -1,0 +1,49 @@
+editor:
+  render-on-save: true
+
+project:
+  type: website
+  preview:
+    port: 3000
+    browser: false
+    watch-inputs: true
+
+
+website:
+  title: "Theories of Quantum Matter"
+  page-navigation: true
+  sidebar:
+    # contents: auto
+    collapse-level: -1
+    style: floating
+    contents:
+      - section: "Notes"
+        contents:
+          - index.qmd
+          - notes/intro.qmd
+          - notes/many-body-wavefunctions.qmd
+          - notes/quantum-hall-effect.qmd
+
+      - section: "Slides"
+        contents:
+          - slides/many-body-wavefunctions.qmd
+          
+
+      - section: "Problem Sets"
+        contents:
+          - problem-sets/ps-1.qmd
+
+bibliography: references.bib
+number-sections: true
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+  # pdf:
+  #   documentclass: scrreprt
+
+execute:
+  freeze: auto  # re-render only when source changes
+
+

@@ -1,0 +1,30 @@
+# TQM Lectures 2024 {.unnumbered}
+
+
+These are the materials for Theories of Quantum Matter from Michaelmas 2024.
+
+If you ever want access to the LaTeX for the mathematical expressions, right click and select Show Math As > TeX Commands
+
+
+::: {.callout-tip}
+## Check
+
+These "Check" boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!
+
+:::
+
+::: {.callout-note}
+## Note
+
+"Note" boxes provide extra context that you may find interesting but aren't essential. Except this one. This one's important.
+
+:::
+
+
+## Lectures {.unnumbered}
+
+Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.
+
+## Supervisions
+
+There will be four supervisions, taking place

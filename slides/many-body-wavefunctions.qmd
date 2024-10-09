@@ -1,0 +1,12 @@
+---
+title: Many body wavefunctions
+number-sections: false
+format:
+  revealjs: 
+    slide-number: true
+    hash: true
+    center: true
+    auto-stretch: false
+    html-math-method: mathjax
+    preview-links: true
+---
