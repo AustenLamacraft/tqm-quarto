@@ -130,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/quantum-hall-effect.html">Quantum Hall effect</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/quantum-hall-effect.html">Quantum Hall effect</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,6 +155,12 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TQM Lectures 2024</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -164,12 +170,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/intro.html" class="sidebar-item-text sidebar-link">
@@ -244,7 +244,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/quantum-hall-effect.html">Quantum Hall effect</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/quantum-hall-effect.html">Quantum Hall effect</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Quantum Hall effect</h1>
 </div>
@@ -411,7 +411,7 @@ V_\text{bg}(\mathbf{r}) = \frac{\rho_0}{4} \left|\mathbf{r}\right|^2.
 \]</span> Thus a system of identical charges in a background charge has an overall electrostatic energy <span class="math display">\[
 V(\mathbf{r}_1,\ldots,\mathbf{r}_N) = -\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right| + \frac{q\rho_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
 \]</span> Now we suppose that our plasma is at finite temperature, in which case the Boltzmann factor giving the (unnormalized) probability of finding particles at locations <span class="math inline">\(\mathbf{r}_1, \ldots, \mathbf{r}_N\)</span> is <span class="math display">\[
-\exp[-\beta V(\mathbf{R})] = \left|\Psi_m(\mathbf{R})\right|^2,
+\exp[-\beta V(\mathbf{r}_1, \ldots, \mathbf{r}_N)] = \left|\Psi_m(\mathbf{r}_1, \ldots, \mathbf{r}_N)\right|^2,
 \]</span> where we set <span class="math inline">\(\beta q^2/(2\pi) = 2m\)</span> and <span class="math inline">\(\beta q\rho_0 = 2\)</span>. This observation is Laughlin’s plasma analogy. Do bear in mind that we are not talking about <em>physical</em> electrostatic fields – this is a mathematical identification of two probability distributions.</p>
 <p>Of course, we still have to analyze the statistical mechanical problem, which is hard to do exactly. Since we are interested in the large <span class="math inline">\(N\)</span> limit, we can introduce a continuum charge density <span class="math inline">\(\rho(\mathbf{r})\)</span> and write the electrostatic energy as a functional of <span class="math inline">\(\rho(\mathbf{r})\)</span> as <span class="math display">\[
 \beta V[\rho] = -m\int d^2\mathbf{r}\, d^2\mathbf{r}'\, \rho(\mathbf{r})\log\left|\mathbf{r}-\mathbf{r}'\right|\rho(\mathbf{r}') + \frac{1}{2}\int d^2\mathbf{r}\, \left|\mathbf{r}\right|^2\rho(\mathbf{r}).\
@@ -464,7 +464,7 @@ Check
 <p>The plasma analogy allows us to see that this state describes a <strong>quasiparticle</strong> of fractional charge. The concept of a quasiparticle is one that we’ll meet repeatedly in this course. It describes a particle-like excitation of a many body system. <strong>Phonons</strong> – quantized lattice vibrations – are a kind of quasiparticle that you will have met before. In quantum field theory, particles themselves are described as quantized excitations of a system – fields that pervade spacetime – so at a <em>formal</em> level there is little difference between the particles of particle physics and the quasiparticles of condensed matter physics. The <em>physical</em> difference is that in the latter case we know what the background medium is made of!</p>
 <p>Let’s see how the plasma picture is modified by the introduction of the quasihole. The electrostatic energy is now <span class="math display">\[
 \begin{align}
-V(\mathbf{R})=&amp;-\frac{q^2}{2\pi m}\sum_j \log\left|\mathbf{r}_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right|\\
+V(\mathbf{r}_1, \ldots, \mathbf{r}_N)=&amp;-\frac{q^2}{2\pi m}\sum_j \log\left|\mathbf{r}_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right|\\
 &amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
 \end{align}
 \]</span> This is interpreted as the introduction of a charge <span class="math inline">\(q/m\)</span> at point <span class="math inline">\(\mathbf{R} = (X, Y)\)</span>, where <span class="math inline">\(Z=X+iY\)</span>. The charges of the plasma will screen this charge, leaving a ‘hole’ in the density distribution amounting to charge <span class="math inline">\(-q/m\)</span>, corresponding to <span class="math inline">\(-1/m\)</span> real particles. The quasiholes have fractional charge!</p>
@@ -640,7 +640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

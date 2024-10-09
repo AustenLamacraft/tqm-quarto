@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -80,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Notes</a></li><li class="breadcrumb-item"><a href="./index.html">TQM Lectures 2024</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">TQM Lectures 2024</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -105,21 +134,21 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">TQM Lectures 2024</span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notes/intro.html" class="sidebar-item-text sidebar-link">
@@ -167,8 +196,11 @@ ul.task-list li input[type="checkbox"] {
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">problem-sets/ps-1.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -184,10 +216,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tqm-lectures-2024" id="toc-tqm-lectures-2024" class="nav-link active" data-scroll-target="#tqm-lectures-2024">TQM Lectures 2024</a>
   <ul class="collapse">
   <li><a href="#lectures" id="toc-lectures" class="nav-link" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#supervisions" id="toc-supervisions" class="nav-link" data-scroll-target="#supervisions"><span class="header-section-number">0.1</span> Supervisions</a></li>
+  <li><a href="#supervisions" id="toc-supervisions" class="nav-link" data-scroll-target="#supervisions">Supervisions</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,8 +229,16 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="tqm-lectures-2024" class="level1 unnumbered">
 <h1 class="unnumbered">TQM Lectures 2024</h1>
-<p>These are the materials for Theories of Quantum Matter from Michaelmas 2024.</p>
-<p>If you ever want access to the LaTeX for the mathematical expressions, right click and select Show Math As &gt; TeX Commands</p>
+<p>These are the materials for Theories of Quantum Matter in Michaelmas 2024.</p>
+<section id="lectures" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lectures">Lectures</h2>
+<p>Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.</p>
+</section>
+<section id="supervisions" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="supervisions">Supervisions</h2>
+<p>There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.</p>
+<hr>
+<p>If you ever want access to the <span class="math inline">\(\LaTeX\)</span> for the mathematical expressions, right click and select <code>Show Math As</code> &gt; <code>TeX Commands</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -225,13 +265,20 @@ Note
 <p>“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.</p>
 </div>
 </div>
-<section id="lectures" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="lectures">Lectures</h2>
-<p>Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.</p>
-</section>
-<section id="supervisions" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="supervisions"><span class="header-section-number">0.1</span> Supervisions</h2>
-<p>There will be four supervisions, taking place</p>
+<p>Finally…</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this course <span class="math inline">\(\hbar = 1\)</span>!</p>
+</div>
+</div>
 
 
 </section>

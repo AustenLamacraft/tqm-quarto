@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -106,6 +135,12 @@ ul.task-list li input[type="checkbox"] {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TQM Lectures 2024</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -115,12 +150,6 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/intro.html" class="sidebar-item-text sidebar-link active">
@@ -178,12 +207,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#models-of-matter" id="toc-models-of-matter" class="nav-link active" data-scroll-target="#models-of-matter"><span class="header-section-number">1</span> Models of Matter</a></li>
+  <li><a href="#structure-of-the-course" id="toc-structure-of-the-course" class="nav-link" data-scroll-target="#structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">2.1</span> Prerequisites</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Introduction</h1>
 </div>
@@ -202,9 +241,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Goes here</p>
+<p>The purpose of this course is to introduce <strong>simple models </strong> of phenomena in condensed matter physics, and to equip you with the tools needed to analyse their behaviour. This involves the application of quantum mechanics to <strong>many body systems</strong>. There is a strong overlap with the subject of <strong>quantum field theory</strong>, which deals with the quantum mechanics of continua (i.e.&nbsp;fields).</p>
+<hr>
+<section id="models-of-matter" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="models-of-matter"><span class="header-section-number">1</span> Models of Matter</h2>
+<p>It’s important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a> of magnetism, which caricatures a lattice of magnetic ions and their complex interactions. The Ising model is defined in terms of an energy function</p>
+<p><span class="math display">\[
+H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k,
+\label{spin_ising}
+\]</span></p>
+<p>where the ‘spin’ variables <span class="math inline">\(\sigma_j\)</span> take the values <span class="math inline">\(\pm 1\)</span>. The notation <span class="math inline">\({\langle j\,k\rangle}\)</span> indicates that the sum is over all nearest neighbour pairs on some (e.g.&nbsp;cubic) lattice. A negative coupling <span class="math inline">\(J&lt;0\)</span> tends to promote alignment of the spins.</p>
+<p>The calculation of the partition function of the Ising model, and hence of its thermodynamic behaviour, is simple in 1D, extremely hard in 2D, and – as far as we know – impossible in the most interesting case of three dimensions. As well as being intractable, it is also highly unrealistic. The complexity of the magnetic atom, consisting of tens of electrons, is reduced to a single variable describing the spin only, which is not even treated quantum mechanically. Why on earth should we care?</p>
+<p>The point is that the Ising model is a <a href="https://en.wikipedia.org/wiki/Minimal_Working_Example">minimal working example</a>. It is designed with the minimal set of ingredients necessary to demonstrate the phenomenon of ferromagnetism. The puzzle it seeks to explain is: how do a large number of microscopic ‘magnets’ (the spins), undergoing thermal fluctuations that are constantly seeking to randomize their direction, decide to develop a macroscopic magnetization in a particular direction? Why does the magnetization appear abruptly at the the <a href="https://en.wikipedia.org/wiki/Curie_temperature">Curie temperature</a>, rather than gradually? Obviously the spins cannot be independent. The fact that the Ising model has a magnetic transition shows us that a nearest neighbour coupling is enough.</p>
+<p>That we can cook up such minimal models <em>and analyze them</em>, even if we can’t solve them exactly, gives us confidence that whether we are talking about Iron, Nickel, or Cobalt, the essence of the magnetic transition is the same. By understanding something about the Ising model, we can say we have understood something about magnetism <em>in general</em>.</p>
+<p>This certainly doesn’t mean the end of story, of course. Firstly, one can try to move towards a more realistic description of ferromagnetism. What is the microscopic origin and size of the coupling? Why does Cobalt have a higher Curie temperature than Nickel? How does the magnetism interact with other properties of the metal? These are all valid questions beyond our minimal working example.</p>
+<p>Secondly, one can ask whether, with similar models, one can describe <em>qualitatively different phenomena</em>. If <span class="math inline">\(J&gt;0\)</span> do the spins <em>anti</em>-align at some transition? What if we change the lattice? Make it disordered? Let <span class="math inline">\(\sigma_j\)</span> be a vector instead of a scalar? Make it truly quantum?</p>
+<p>This course pursues this second line of investigation. We will look at the simplest models decribing interacting bosons, fermions, and spins, and try to describe the properties of the states of matter that they form. These states of matter – magnets, metals, superconductors – have real world counterparts, and by studying their toy versions we learn what makes them tick. This strategy of introducing and analyzing new models is one of the ways in which theorists try to learn what states of matter <em>may</em> exist, and under what conditions.</p>
+</section>
+<section id="structure-of-the-course" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</h2>
+<section id="prerequisites" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">2.1</span> Prerequisites</h3>
+<p>You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don’t need to have taken TP2. One of the main methods we use – second quantization – is covered in TP2 but will be introduced again from scratch.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -299,7 +361,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

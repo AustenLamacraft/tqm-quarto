@@ -130,7 +130,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/many-body-wavefunctions.html">Many body wavefunctions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/many-body-wavefunctions.html">Many body wavefunctions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,6 +155,12 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TQM Lectures 2024</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -164,12 +170,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/intro.html" class="sidebar-item-text sidebar-link">
@@ -217,8 +217,11 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
- <span class="menu-text">problem-sets/ps-1.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -248,7 +251,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/many-body-wavefunctions.html">Many body wavefunctions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/many-body-wavefunctions.html">Many body wavefunctions</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Many body wavefunctions</h1>
 </div>
@@ -695,12 +698,10 @@ Check
 <p>Thus the ground state on the ring has the form <span class="math display">\[
 \Psi_0(x_1,\ldots, x_N) = \prod_{i&lt;j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
 \]</span></p>
-<blockquote class="blockquote">
 <p>It’s not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. This is because the interation energy has the expectation value <span class="math display">\[
 \langle{\Psi}\rvert H_\text{int} \lvert \Psi \rangle=cN(N-1)\int dx_1\cdots dx_{N-1}\left|
 \Psi(x_1,x_1,x_2,\ldots,x_N\right|^2
 \]</span> But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.</p>
-</blockquote>
 <p>This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions <em>as long</em> as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density <span class="math inline">\(\rho_1(x)\)</span> and pair distribution <span class="math inline">\(\rho_2(x_1,x_2)\)</span> of the previous section can be found in this way, but the single particle density matrix <span class="math inline">\(g(x,y)\)</span> cannot.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

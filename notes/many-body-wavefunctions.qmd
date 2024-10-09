@@ -437,12 +437,12 @@ $$
 \Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
 $$
 
-> It's not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. This is because the interation energy has the expectation value
-> $$
-> \braket{\Psi}{H_\text{int}}{\Psi}=cN(N-1)\int dx_1\cdots dx_{N-1}\left|
-> \Psi(x_1,x_1,x_2,\ldots,x_N\right|^2
-> $$
-> But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.
+It's not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. This is because the interation energy has the expectation value
+$$
+\braket{\Psi}{H_\text{int}}{\Psi}=cN(N-1)\int dx_1\cdots dx_{N-1}\left|
+\Psi(x_1,x_1,x_2,\ldots,x_N\right|^2
+$$
+But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.
 
 This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions _as long_ as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density $\rho_1(x)$ and pair distribution $\rho_2(x_1,x_2)$ of the previous section can be found in this way, but the single particle density matrix $g(x,y)$ cannot.
 

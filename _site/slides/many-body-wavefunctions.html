@@ -30,6 +30,22 @@
     }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -333,13 +349,458 @@
 </section>
 <section class="slide level2 center">
 
+<!-- # See all reveal options
+https://quarto.org/docs/reference/formats/presentations/revealjs.html
+E to toggle to PDF mode -->
+<div class="hidden">
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<p><span class="math display">
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}}
+</span></p>
+</div>
+</section>
+<section>
+<section id="welcome" class="title-slide slide level1 center">
+<h1>Welcome!</h1>
+
+</section>
+<section id="about-this-course" class="slide level2 center">
+<h2>About this course</h2>
+<ul>
+<li><p>What can we solve in quantum mechanics?</p>
+<ul>
+<li>Particle in a box</li>
+<li>Harmonic oscillator <span class="math display">
+H = -\frac{1}{2m}\left(\frac{d}{dx}\right)^2 +\frac{1}{2}m\omega^2 x^2
+</span></li>
+<li>Hydrogen atom <span class="math display">
+H = -\frac{1}{2m}\nabla^2 - \frac{e^2}{r}
+</span></li>
+</ul></li>
+<li><p>What would we like to solve?</p></li>
+</ul>
+</section>
+<section id="everything" class="slide level2 center">
+<h2>Everything…</h2>
+<ul>
+<li>Given ion positions <span class="math inline">\mathbf{R}_k</span>, charge <span class="math inline">+Z_k e</span></li>
+</ul>
+<p><span class="math display">
+H = -\frac{1}{2m}\sum_{j=1}^M\nabla^2_j + e^2\sum_{j&lt;k}\frac{1}{|\mathbf{r}_j-\mathbf{r}_k|} - e^2\sum_{j&lt;k}\frac{Z_k}{|\mathbf{r}_j-\mathbf{R}_k|}
+</span></p>
+<ul>
+<li><p>Want <strong>many-electron</strong> wavefunction <span class="math inline">\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N)</span></p></li>
+<li><p>Hard for atoms / molecules: <strong>impossible</strong> for matter <span class="math inline">N\sim N_A</span>!</p></li>
+<li><p><strong>Goal</strong>: what <em>is</em> a solid / metal / superconductor / superfluid?</p></li>
+</ul>
+</section>
+<section id="so-what-do-we-do" class="slide level2 center">
+<h2>So what do we do?</h2>
+<ul>
+<li>Use <strong>simple models</strong> that we can analyse in <span class="math inline">N\to\infty</span> limit</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<p><span class="math display">
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
+</span></p>
+<ul>
+<li>New techniques to represent wavefunctions and Hamiltonians (<strong>second quantization</strong> aka <strong>quantum field theory</strong>)</li>
+</ul>
+</section>
+<section id="housekeeping" class="slide level2 center">
+<h2>Housekeeping</h2>
+<ul>
+<li><p>Course website <a href="https://tqm.tripos.org">tqm.tripos.org</a> (updated with slides)</p></li>
+<li><p>Migrating from <a href="https://austen.uk/courses/tqm">austen.uk/courses/tqm</a></p></li>
+<li><p>Lecture capture (all three screens)</p></li>
+<li><p>Lectures are 90 minutes with 5 minute break roughly halfway</p></li>
+<li><p>Supervision details to follow</p></li>
+</ul>
+</section></section>
+<section>
+<section id="hbar-1" class="title-slide slide level1 center">
+<h1><span class="math inline">\hbar = 1</span>!</h1>
+
+</section>
+<section id="many-body-wavefunctions" class="slide level2 center">
+<h2>Many Body Wavefunctions</h2>
+<p>This lecture is about the general character of many body wavefunctions and what they tell us, focusing on the simplest type: <strong>product states</strong></p>
+</section>
+<section class="slide level2 center">
+
+<blockquote>
+<p>Systems of indistinguishable particles are described by <strong>totally symmetric</strong> or <strong>totally antisymmetric</strong> wavefunctions.</p>
+</blockquote>
+<ul>
+<li>The first kind are <strong>bosons</strong>, the second <strong>fermions</strong></li>
+</ul>
+</section>
+<section id="two-particles" class="slide level2 center">
+<h2>Two Particles</h2>
+<ul>
+<li><p>In general described by <span class="math inline">\Psi(\mathbf{x},\mathbf{y})</span></p></li>
+<li><p>A pair of particles in states <span class="math inline">\lvert{\varphi_1}\rangle</span> and <span class="math inline">\lvert{\varphi_2}\rangle</span></p></li>
+</ul>
+<p><span class="math display">
+\Psi(\mathbf{r}_1,\mathbf{r}_2)\stackrel{?}{=} \varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)
+</span></p>
+<ul>
+<li>This would be fine for <em>distinguishable</em> particles</li>
+</ul>
+</section>
+<section id="accounting-for-symmetry" class="slide level2 center">
+<h2>Accounting for symmetry</h2>
+<p><span class="math display">
+\Psi(\mathbf{r}_1,\mathbf{r}_2)=\frac{1}{\sqrt{2}}[\varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)\pm \varphi_2(\mathbf{r}_1)\varphi_1(\mathbf{r}_2)]
+</span></p>
+<ul>
+<li><p>upper sign for bosons and the lower for fermions</p></li>
+<li><p><span class="math inline">1/\sqrt{2}</span> for normalization if <span class="math inline">\varphi_{1,2}(\mathbf{r})</span> are orthonormal</p></li>
+<li><p>When <span class="math inline">\varphi_1=\varphi_2</span> fermion <span class="math inline">\Psi(\mathbf{r}_1,\mathbf{r}_2)</span> <em>vanishes</em>: <strong>exclusion principle</strong></p></li>
+</ul>
+</section>
+<section id="independent-particles" class="slide level2 center">
+<h2>Independent Particles?</h2>
+<ul>
+<li><p>Probability density is <span class="math inline">\rho_{12}(\mathbf{r}_1,\mathbf{r}_2)=|\Psi(\mathbf{r}_1,\mathbf{r}_2)|^2</span></p></li>
+<li><p>For <em>distinguishable</em> particles</p></li>
+</ul>
+<p><span class="math display">
+\rho_{12}(\mathbf{r}_1,\mathbf{r}_2)=|\varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)|^2=\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)
+</span></p>
+<blockquote>
+<p>Work it out for identical bosons and fermions Show that <span class="math inline">\rho_{12}(\mathbf{r},\mathbf{r}) = 0</span> for fermions, and <span class="math inline">\rho_{12}(\mathbf{r},\mathbf{r}) = 2\rho_1(\mathbf{r})\rho_2(\mathbf{r})</span> for bosons.</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>For identical particles</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\rho_{12}(\mathbf{r}_1,\mathbf{r}_2) &amp;= \frac{1}{2}\left[\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)+\rho_1(\mathbf{r}_2)\rho_2(\mathbf{r}_1)\right] \\
+&amp;\pm\frac{1}{2}\left[\varphi^{}_1(\mathbf{r}_1)\varphi^*_2(\mathbf{r}_1)\varphi^{}_2(\mathbf{r}_2)\varphi^*_1(\mathbf{r}_2)+\varphi^{}_1(\mathbf{r}_2)\varphi^*_2(\mathbf{r}_2)\varphi^{}_2(\mathbf{r}_1)\varphi^*_1(\mathbf{r}_1)\right]
+\end{aligned}
+</span></p>
+<ul>
+<li>Identical particles in quantum mechanics are <em>never</em> truly independent</li>
+</ul>
+</section>
+<section id="hongoumandel-effect" class="slide level2 center">
+<h2>Hong–Ou–Mandel effect</h2>
+<ul>
+<li><p>Two photons (bosons) approach a beam splitter from either side</p></li>
+<li><p>Start in orthogonal states, end up in orthogonal states e.g.</p></li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\lvert{\text{Left}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle+ \lvert{\text{Right}}\rangle\right)\\\\
+\lvert{\text{Right}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle- \lvert{\text{Right}}\rangle\right)
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<blockquote>
+<p>If we start in <span class="math display">\frac{1}{\sqrt{2}}[\varphi_\text{L}(\mathbf{r}_1)\varphi_\text{R}(\mathbf{r}_2)\pm \varphi_\text{R}(\mathbf{r}_1)\varphi_\text{L}(\mathbf{r}_2)]</span> What state do we end up in?</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/HOM.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</section>
+<section id="noninteracting-particles" class="slide level2 center">
+<h2>Noninteracting particles</h2>
+<p><span class="math display">
+H = \sum_{i=1}^{N} \overbrace{\left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]}^{\equiv H_\text{sp}\text{, single particle Hamiltonian}}
+</span> - <span class="math inline">H_\text{sp}</span> has eigenstates <span class="math inline">\{\varphi_\alpha(\mathbf{r})\}</span> and eigenenergies <span class="math inline">\{E_\alpha\}</span></p>
+<ul>
+<li>Eigenstatate of <span class="math inline">N</span> <em>distinguishable</em> particles <span class="math display">
+\lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
+</span></li>
+</ul>
+<blockquote>
+<p>What’s the energy?</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+E = \sum_{j=1}^N E_{\alpha_j}
+</span></p>
+<blockquote>
+<p>What are the energy eigenstates?</p>
+</blockquote>
+</section>
+<section id="symmetrize-antisymmetrize" class="slide level2 center">
+<h2>Symmetrize / Antisymmetrize</h2>
+<p><span class="math display">
+\mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \mathrm{sgn}(\pi)P_\pi
+</span></p>
+<ul>
+<li><p><span class="math inline">\pi</span> is one of <span class="math inline">N!</span> permutations of <span class="math inline">N</span> objects</p></li>
+<li><p><span class="math inline">P_\pi</span> is permutation <em>operator</em> for permutation <span class="math inline">\pi</span></p></li>
+<li><p>For two particles there are two permutations: <span class="math inline">\pi=(12)</span> and <span class="math inline">\pi=(21)</span></p></li>
+</ul>
+<p><span class="math display">
+P_{(21)}\Psi(\mathbf{r}_1,\mathbf{r}_2) = \Psi(\mathbf{r}_2,\mathbf{r}_1)
+</span></p>
+</section>
+<section id="signature-of-permutation" class="slide level2 center">
+<h2>Signature of Permutation</h2>
+<ul>
+<li><p><span class="math inline">\mathrm{sgn}(\pi)</span> is the <strong>signature</strong> of the permutation</p></li>
+<li><p><span class="math inline">\pm1</span> for <span class="math inline">\pi</span> involving an even (odd) number of exchanges</p></li>
+</ul>
+</section>
+<section id="symmetric-and-antisymmetric-product-states" class="slide level2 center">
+<h2>Symmetric and antisymmetric product states</h2>
+<p><span class="math display">
+\begin{aligned}
+\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{N!\prod_{\alpha}N_{\alpha}!}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
+\lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
+\end{aligned}
+</span></p>
+<blockquote>
+<p>Show that these are normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\lvert{\varphi_\alpha}\rangle</span> are orthonormal</p>
+</blockquote>
+</section>
+<section id="occupation-numbers" class="slide level2 center">
+<h2>Occupation Numbers</h2>
+<ul>
+<li><p>State is characterized only by <strong>occupation numbers</strong> <span class="math inline">\{N_{\alpha}\}</span>. Use these as a label instead</p></li>
+<li><p><strong>Caution</strong>: To fix the sign of the fermion wavefunction, have to choose an order e.g.&nbsp;<span class="math inline">\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})</span></p></li>
+<li><p>The total energy is</p></li>
+</ul>
+<p><span class="math display">
+E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
+</span></p>
+</section>
+<section id="slater-determinant" class="slide level2 center">
+<h2>Slater Determinant</h2>
+<ul>
+<li>The fermion product state is a determinant!</li>
+</ul>
+<p><span class="math display">
+   \lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\frac{1}{\sqrt{N!}}\begin{vmatrix}
+   \varphi_{\alpha_{1}}(\mathbf{r_{1}}) &amp;   \varphi_{\alpha_{1}}(\mathbf{r_{2}}) &amp; \cdots &amp; \varphi_{\alpha_{1}}(\mathbf{r_{N}}) \\
+   \varphi_{\alpha_{2}}(\mathbf{r_{1}}) &amp;  \cdots &amp; \cdots &amp; \cdots  \\
+   \cdots &amp; \cdots &amp; \cdots &amp; \cdots  \\
+   \varphi_{\alpha_{N}}(\mathbf{r_{1}}) &amp;  \cdots &amp; \cdots &amp; \varphi_{\alpha_{N}}(\mathbf{r_{N}})
+\end{vmatrix}
+</span></p>
+<ul>
+<li>Vanishes when two rows or two columns are identical
+<ul>
+<li>Zero if two particle coordinates coincide (<span class="math inline">\mathbf{r}_{i}=\mathbf{r}_{j}</span>)</li>
+<li>Zero if two particles occupy the same state (<span class="math inline">\alpha_{i}=\alpha_{j}</span>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="noninteracting-particles-on-a-ring" class="slide level2 center">
+<h2>Noninteracting particles on a ring</h2>
+<ul>
+<li>Ring has circumference <span class="math inline">L</span>. Single particle eigenstates</li>
+</ul>
+<p><span class="math display">
+\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(ik_n x\right)
+</span></p>
+<ul>
+<li><span class="math inline">k_n=\frac{2\pi n}{L}</span>, <span class="math inline">n\in\mathbb{Z}</span>. Energies are <span class="math inline">E_{n}=\frac{k_n^2}{2m}</span></li>
+</ul>
+</section>
+<section id="ground-state-of-bosons" class="slide level2 center">
+<h2>Ground State of Bosons</h2>
+<ul>
+<li>Every particle in the state <span class="math inline">\lvert{\varphi_{0}}\rangle</span> with zero energy: <span class="math inline">N_{0}=N</span></li>
+</ul>
+<p><span class="math display">
+    \Psi^{S}(x_{1},x_{2},\ldots x_{N})=\frac{1}{L^{N/2}}
+</span></p>
+<ul>
+<li>That was easy! The fermion case is harder</li>
+</ul>
+</section>
+<section id="ground-state-of-fermions" class="slide level2 center">
+<h2>Ground State of Fermions</h2>
+<ul>
+<li><p>Fill each level with one particle, starting at the bottom (Fermi sea)</p>
+<ul>
+<li><p><span class="math inline">N</span> odd: <span class="math inline">n=-(N-1)/2, -(N-3)/2,\ldots, -1, 0, 1 \ldots (N-1)/2</span></p></li>
+<li><p><span class="math inline">N</span> even: decide whether to put the last particle at <span class="math inline">n=\pm N/2</span></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="complex-notation" class="slide level2 center">
+<h2>Complex notation</h2>
+<p><span class="math display">
+z_{i}=\exp(2 \pi i x_{i}/L)
+</span></p>
+<ul>
+<li>The Slater determinant is</li>
+</ul>
+<p><span class="math display">
+    \Psi_0(x_1,\ldots, x_N)=\begin{vmatrix}
+    z_{1}^{-(N-1)/2} &amp;  z_{2}^{-(N-1)/2} &amp; \cdots &amp; z_{N}^{-(N-1)/2} \\
+    z_{1}^{-(N-3)/2} &amp;  \cdots &amp; \cdots &amp; \cdots  \\
+    \cdots &amp; \cdots &amp; \cdots &amp; \cdots  \\
+    z_{1}^{(N-1)/2} &amp;  \cdots &amp; \cdots &amp; z_{N}^{(N-1)/2}
+\end{vmatrix}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<h3 id="simple-example-n3">Simple example <span class="math inline">N=3</span></h3>
+<p><span class="math display">
+\begin{aligned}
+    \Psi_0(x_1,x_2,x_3)&amp;=\begin{vmatrix}
+        z_{1}^{-1} &amp; z_{2}^{-1} &amp; z_{3}^{-1} \\
+        1 &amp; 1 &amp; 1 \\
+        z_{1} &amp; z_{2} &amp; z_{3}
+    \end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
+    &amp;=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
+    &amp;\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
+\end{aligned}
+</span></p>
+<ul>
+<li>Wavefunction vanishes <span class="math inline">x_{i}=x_{j}</span></li>
+</ul>
+<blockquote>
+<p>Check it is periodic and totally antisymmetric</p>
+</blockquote>
+</section>
+<section id="generalization-for-n-odd" class="slide level2 center">
+<h2>Generalization for <span class="math inline">N</span> odd</h2>
+<p><span class="math display">
+\Psi_0(x_1,\ldots, x_N)\propto\prod_{i&lt;j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
+</span></p>
+<blockquote>
+<p>Show this using the <strong>Vandermonde determinant</strong> <code>$$ \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\ z_{1}^{2} &amp; z_{2}^{2} &amp; \cdots &amp; \cdots  \\ z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1} \end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i}) $$</code></p>
+</blockquote>
+</section>
+<section id="terminology" class="slide level2 center">
+<h2>Terminology</h2>
+<ul>
+<li><p>The wavevector of the last fermion added is called the <strong>Fermi wavevector</strong> <span class="math inline">k_\text{F}</span></p></li>
+<li><p>Here <span class="math inline">k_\text{F}=\frac{(N-1)\pi}{L}</span></p></li>
+<li><p><strong>Fermi energy</strong> <span class="math inline">E_{F}=\frac{k_\text{F}^{2}}{2m}</span> is the corresponding energy</p></li>
+</ul>
+</section>
+<section id="probability-distribution" class="slide level2 center">
+<h2>Probability distribution</h2>
+<ul>
+<li>For boson ground state <span class="math inline">\Psi</span> is constant, so is <span class="math inline">|\Psi|^2</span></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/poisson_phases.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>For fermions</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/1d_fermions.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="marginal-distributions">Marginal distributions</h3>
+<ul>
+<li><p>One particle distribution is related to average density of particles <span class="math display">
+\rho_1(x_1) = N \int dx_2\ldots dx_N \lvert\Psi(x_1,x_2,\ldots,x_N)\rvert^2
+</span></p></li>
+<li><p>Note that density is always a <em>number</em> density (not mass density).</p></li>
+<li><p>Normalization of the wavefunction implies <span class="math display">
+\int dx \rho_1(x) = N
+</span></p></li>
+<li><p>In a translationally invariant system like the fermion gas on a ring we expect the average density to be constant.</p></li>
+</ul>
+</section>
+<section id="density-operator" class="slide level2 center">
+<h2>Density Operator</h2>
+<ul>
+<li>Regard <span class="math inline">\rho_1(x_1)</span> as an expectation of a density operator <span class="math display">
+\rho(x) = \sum_j \delta(x-x_j)
+</span> so that <span class="math inline">\rho_1(x) = \langle{\Psi}\rvert \rho(x) \lvert \Psi \rangle</span></li>
+</ul>
+</section>
+<section id="single-particle-density-matrix" class="slide level2 center">
+<h2>Single particle density matrix</h2>
+<p><span class="math display">
+g(x,y) \equiv N\int dx_2\ldots dx_N \Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N)
+</span></p>
+<ul>
+<li>Note <span class="math inline">g(x,x) = \rho_1(x)</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<blockquote>
+<p>Starting from the Slater determinant, show that <span class="math inline">g(x,y)</span> for the ground state of the Fermi gas is <span class="math display">
+\begin{aligned}
+g(x,y) &amp;= \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} \longrightarrow \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} \\
+&amp;\longrightarrow n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
+\end{aligned}
+</span> where <span class="math inline">n \equiv \frac{k_\text{F}}{\pi}</span> is the average density.</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<h3 id="pair-distribution">Pair Distribution</h3>
+<ul>
+<li>Marginal probability distribution of a <em>pair</em> of particles <span class="math display">
+\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2
+</span></li>
+<li>The prefactor is to account for all pairs of particles</li>
+</ul>
+<blockquote>
+<p>Starting from the Slater determinant, show that <span class="math display">
+\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x_1-x_2)\right]}{k_\text{F}(x_1-x_2)}\right)^2\right]
+</span> This vanishes at <span class="math inline">x_1=x_2</span></p>
+</blockquote>
+</section>
+<section id="impenetrable-bose-gas" class="slide level2 center">
+<h2>Impenetrable Bose Gas</h2>
+<p><span class="math display">
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&lt;k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
+</span></p>
+<ul>
+<li><p>The second term is interaction between pairs of particles</p></li>
+<li><p>For fermions, the interaction has no effect at all (<span class="math inline">\delta</span>-function)!</p></li>
+<li><p>For bosons with <span class="math inline">c\to \infty</span>: <em>eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates</em></p></li>
+</ul>
+<blockquote>
+<p>Why?</p>
+</blockquote>
+</section>
+<section id="ground-state" class="slide level2 center">
+<h2>Ground state</h2>
+<p><span class="math display">
+\Psi_0(x_1,\ldots, x_N) = \prod_{i&lt;j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
+</span></p>
+<ul>
+<li>Can calculate any observable <em>as long as</em> it’s insensitive to taking the modulus (e.g.&nbsp;average density and pair distribution)</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -356,7 +817,6 @@
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -523,27 +983,9 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

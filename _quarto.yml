@@ -17,9 +17,9 @@ website:
     collapse-level: -1
     style: floating
     contents:
+      - index.qmd
       - section: "Notes"
         contents:
-          - index.qmd
           - notes/intro.qmd
           - notes/many-body-wavefunctions.qmd
           - notes/quantum-hall-effect.qmd
@@ -31,7 +31,7 @@ website:
 
       - section: "Problem Sets"
         contents:
-          - problem-sets/ps-1.qmd
+          - problem-sets/problem-set-1.qmd
 
 bibliography: references.bib
 number-sections: true

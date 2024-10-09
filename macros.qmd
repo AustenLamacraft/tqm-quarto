@@ -2,8 +2,8 @@
 
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 
+\newcommand{\cN}{\mathcal{N}}
 \newcommand{\br}{\mathbf{r}}
-\newcommand{\brN}{\mathbf{R}}
 \newcommand{\bp}{\mathbf{p}}
 \newcommand{\bk}{\mathbf{k}}
 \newcommand{\bq}{\mathbf{q}}
@@ -30,6 +30,7 @@
 \newcommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
 \newcommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
 \newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\abs}[1]{\lvert{#1}\rvert}
 
 $$
 \DeclareMathOperator{\tr}{tr}

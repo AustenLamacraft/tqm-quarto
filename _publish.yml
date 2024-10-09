@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 8b0ae61b-3650-4abf-920f-064e3a007b0d
+      url: 'https://tqm.tripos.org'

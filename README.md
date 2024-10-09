@@ -1,11 +1,11 @@
 
 # TODOs
 
-1. Callouts for in-lecture problems
-2. Add list of supervisions
-3. Add details about supervisions
-4. Sun Woo correction in first lecture (normalization factor)
-5. Add $\hbar =1$ warning!!
-6. Add advice to complete exercises
-7. Build problems with LaTeX
-8. Favicon for site
+- [X] Callouts for in-lecture problems
+- [ ] Add list of supervisions
+- [ ] Add details about supervisions
+- [ ] Sun Woo correction in first lecture (normalization factor)
+- [ ] Add $\hbar =1$ warning!!
+- [ ] Add advice to complete exercises
+- [ ] Build problems with LaTeX
+- [ ] Favicon for site
