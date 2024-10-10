@@ -101,7 +101,7 @@ This lecture is about the general character of many body wavefunctions and what 
 
 ---
 
-> Systems of indistinguishable particles are described by __totally symmetric__ or __totally antisymmetric__ wavefunctions.
+> Systems of indistinguishable particles are described by __totally symmetric__ or __totally antisymmetric__ wavefunctions
 
 - The first kind are __bosons__, the second __fermions__
 
@@ -240,10 +240,12 @@ $$
 
 $$
 \begin{aligned}
- \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{N!\prod_{\alpha}N_{\alpha}!}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
+ \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
  \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 \end{aligned}
 $$
+
+-  __Occupation numbers__ $\{N_{\alpha}\}$ give number of particles in state $\alpha$
 
 > Show that these are normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal
 
