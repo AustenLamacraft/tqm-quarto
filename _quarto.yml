@@ -11,6 +11,7 @@ project:
 
 website:
   title: "Theories of Quantum Matter"
+  favicon: favicon-32x32.png
   page-navigation: true
   sidebar:
     # contents: auto
@@ -27,6 +28,7 @@ website:
       - section: "Slides"
         contents:
           - slides/many-body-wavefunctions.qmd
+          - slides/quantum-hall-effect.qmd
           
 
       - section: "Problem Sets"
@@ -43,7 +45,8 @@ format:
     theme: cosmo
     toc: true
   # pdf:
-  #   documentclass: scrreprt
+  #   documentclass: scrbook
+  #   papersize: a4
 
 execute:
   freeze: auto  # re-render only when source changes

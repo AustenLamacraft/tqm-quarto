@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Many body wavefunctions</title>
+  <title>Theories of Quantum Matter – Quantum Hall Effect</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Many body wavefunctions</h1>
+  <h1 class="title">Quantum Hall Effect</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -350,9 +350,6 @@
 </section>
 <section class="slide level2 center">
 
-<!-- # See all reveal options
-https://quarto.org/docs/reference/formats/presentations/revealjs.html
-E to toggle to PDF mode -->
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 <p><span class="math display">
@@ -361,164 +358,51 @@ E to toggle to PDF mode -->
 </span></p>
 </div>
 </section>
-<section>
-<section id="welcome" class="title-slide slide level1 center">
-<h1>Welcome!</h1>
-
-</section>
-<section id="about-this-course" class="slide level2 center">
-<h2>About this course</h2>
+<section id="quantum-hall-effect" class="slide level2 center">
+<h2>Quantum Hall Effect</h2>
 <ul>
-<li><p>What can we solve in quantum mechanics?</p>
-<ul>
-<li>Particle in a box</li>
-<li>Harmonic oscillator <span class="math display">
-H = -\frac{1}{2m}\left(\frac{d}{dx}\right)^2 +\frac{1}{2}m\omega^2 x^2
-</span></li>
-<li>Hydrogen atom <span class="math display">
-H = -\frac{1}{2m}\nabla^2 - \frac{e^2}{r}
-</span></li>
-</ul></li>
-<li><p>What would we like to solve?</p></li>
+<li><p>A quantum state in <em>two dimensions</em></p></li>
+<li><p>2D electron gas in <em>strong perpendicular magnetic fields</em>.</p></li>
+<li><p>Can exist for bosons too!</p></li>
 </ul>
 </section>
-<section id="everything" class="slide level2 center">
-<h2>Everything…</h2>
+<section id="landau-levels" class="slide level2 center">
+<h2>Landau Levels</h2>
 <ul>
-<li>Given ion positions <span class="math inline">\mathbf{R}_k</span>, charge <span class="math inline">+Z_k e</span></li>
+<li>Single particle Hamiltonian with vector potential</li>
 </ul>
 <p><span class="math display">
-H = -\frac{1}{2m}\sum_{j=1}^M\nabla^2_j + e^2\sum_{j&lt;k}\frac{1}{|\mathbf{r}_j-\mathbf{r}_k|} - e^2\sum_{j&lt;k}\frac{Z_k}{|\mathbf{r}_j-\mathbf{R}_k|}
+H = -\frac{1}{2m}\left(\nabla -i q \mathbf{A}\right)^2,
+\label{Landau}
 </span></p>
 <ul>
-<li><p>Want <strong>many-electron</strong> wavefunction <span class="math inline">\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N)</span></p></li>
-<li><p>Hard for atoms / molecules: <strong>impossible</strong> for matter <span class="math inline">N\sim N_A</span>!</p></li>
-<li><p><strong>Goal</strong>: what <em>is</em> a solid / metal / superconductor / superfluid?</p></li>
-</ul>
-</section>
-<section id="so-what-do-we-do" class="slide level2 center">
-<h2>So what do we do?</h2>
-<ul>
-<li>Use <strong>simple models</strong> that we can analyse in <span class="math inline">N\to\infty</span> limit</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<p><span class="math display">
-H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
-</span></p>
-<ul>
-<li>New techniques to represent wavefunctions and Hamiltonians (<strong>second quantization</strong> aka <strong>quantum field theory</strong>)</li>
-</ul>
-</section>
-<section id="housekeeping" class="slide level2 center">
-<h2>Housekeeping</h2>
-<ul>
-<li><p>Course website <a href="https://tqm.tripos.org">tqm.tripos.org</a> (updated with slides)</p></li>
-<li><p>Migrating from <a href="https://austen.uk/courses/tqm">austen.uk/courses/tqm</a></p></li>
-<li><p>Lecture capture (all three screens)</p></li>
-<li><p>Lectures are 90 minutes with 5 minute break roughly halfway</p></li>
-<li><p>Supervision details to follow</p></li>
-</ul>
-</section></section>
-<section>
-<section id="hbar-1" class="title-slide slide level1 center">
-<h1><span class="math inline">\hbar = 1</span>!</h1>
-
-</section>
-<section id="many-body-wavefunctions" class="slide level2 center">
-<h2>Many Body Wavefunctions</h2>
-<p>This lecture is about the general character of many body wavefunctions and what they tell us, focusing on the simplest type: <strong>product states</strong></p>
-</section>
-<section class="slide level2 center">
-
-<div class="callout callout-warning no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>Systems of indistinguishable particles are described by <strong>totally symmetric</strong> or <strong>totally antisymmetric</strong> wavefunctions</p>
-</div>
-</div>
-</div>
-<ul>
-<li>The first kind are <strong>bosons</strong>, the second <strong>fermions</strong></li>
-</ul>
-</section>
-<section id="two-particles" class="slide level2 center">
-<h2>Two Particles</h2>
-<ul>
-<li><p>In general described by <span class="math inline">\Psi(\mathbf{x},\mathbf{y})</span></p></li>
-<li><p>A pair of particles in states <span class="math inline">\lvert{\varphi_1}\rangle</span> and <span class="math inline">\lvert{\varphi_2}\rangle</span></p></li>
+<li>For perpendicular field</li>
 </ul>
 <p><span class="math display">
-\Psi(\mathbf{r}_1,\mathbf{r}_2)\stackrel{?}{=} \varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)
+\partial_x A_y - \partial_y A_x = B.
 </span></p>
 <ul>
-<li>This would be fine for <em>distinguishable</em> particles</li>
-</ul>
-</section>
-<section id="accounting-for-symmetry" class="slide level2 center">
-<h2>Accounting for symmetry</h2>
-<p><span class="math display">
-\Psi(\mathbf{r}_1,\mathbf{r}_2)=\frac{1}{\sqrt{2}}[\varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)\pm \varphi_2(\mathbf{r}_1)\varphi_1(\mathbf{r}_2)]
-</span></p>
-<ul>
-<li><p>upper sign for bosons and the lower for fermions</p></li>
-<li><p><span class="math inline">1/\sqrt{2}</span> for normalization if <span class="math inline">\varphi_{1,2}(\mathbf{r})</span> are orthonormal</p></li>
-<li><p>When <span class="math inline">\varphi_1=\varphi_2</span> fermion <span class="math inline">\Psi(\mathbf{r}_1,\mathbf{r}_2)</span> <em>vanishes</em>: <strong>exclusion principle</strong></p></li>
-</ul>
-</section>
-<section id="independent-particles" class="slide level2 center">
-<h2>Independent Particles?</h2>
-<ul>
-<li><p>Probability density is <span class="math inline">\rho_{12}(\mathbf{r}_1,\mathbf{r}_2)=|\Psi(\mathbf{r}_1,\mathbf{r}_2)|^2</span></p></li>
-<li><p>For <em>distinguishable</em> particles</p></li>
+<li>We choose <strong>symmetric gauge</strong></li>
 </ul>
 <p><span class="math display">
-\rho_{12}(\mathbf{r}_1,\mathbf{r}_2)=|\varphi_1(\mathbf{r}_1)\varphi_2(\mathbf{r}_2)|^2=\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)
+A_x = -\frac{1}{2} B y,\quad A_y = \frac{1}{2} B x.
 </span></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Work it out for identical bosons and fermions. Show that <span class="math inline">\rho_{12}(\mathbf{r},\mathbf{r}) = 0</span> for fermions, and <span class="math inline">\rho_{12}(\mathbf{r},\mathbf{r}) = 2\rho_1(\mathbf{r})\rho_2(\mathbf{r})</span> for bosons.</p>
-</div>
-</div>
-</div>
 </section>
-<section class="slide level2 center">
-
-<ul>
-<li>For identical particles</li>
-</ul>
+<section id="h-in-complex-coordinates" class="slide level2 center">
+<h2><span class="math inline">H</span> in complex coordinates</h2>
 <p><span class="math display">
 \begin{aligned}
-\rho_{12}(\mathbf{r}_1,\mathbf{r}_2) &amp;= \frac{1}{2}\left[\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)+\rho_1(\mathbf{r}_2)\rho_2(\mathbf{r}_1)\right] \\
-&amp;\pm\frac{1}{2}\left[\varphi^{}_1(\mathbf{r}_1)\varphi^*_2(\mathbf{r}_1)\varphi^{}_2(\mathbf{r}_2)\varphi^*_1(\mathbf{r}_2)+\varphi^{}_1(\mathbf{r}_2)\varphi^*_2(\mathbf{r}_2)\varphi^{}_2(\mathbf{r}_1)\varphi^*_1(\mathbf{r}_1)\right]
+z &amp;= x + i y, \quad \bar z  = x - iy\\
+\partial_z &amp;= \frac{1}{2}\left(\partial_x - i\partial_y\right), \quad \partial_{\bar z} = \frac{1}{2}\left(\partial_x + i\partial_y\right)\\
+H &amp;= -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_{\bar z} +\frac{qB z}{4}\right) + \frac{\omega_c}{2}
 \end{aligned}
 </span></p>
 <ul>
-<li>Identical particles in quantum mechanics are <em>never</em> truly independent</li>
+<li><p><span class="math inline">\omega_c = \frac{qB}{m}</span> is the <strong>cyclotron frequency</strong></p></li>
+<li><p>States that satisfy <span class="math display">
+\left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
+</span> have energy <span class="math inline">\omega_c/2</span> and belong to the <strong>lowest Landau level</strong> (LLL)</p></li>
 </ul>
-</section>
-<section id="hongoumandel-effect" class="slide level2 center">
-<h2>Hong–Ou–Mandel effect</h2>
-<ul>
-<li><p>Two photons (bosons) approach a beam splitter from either side</p></li>
-<li><p>Start in orthogonal states, end up in orthogonal states e.g.</p></li>
-</ul>
-<p><span class="math display">
-\begin{aligned}
-\lvert{\text{Left}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle+ \lvert{\text{Right}}\rangle\right)\\\\
-\lvert{\text{Right}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle- \lvert{\text{Right}}\rangle\right)
-\end{aligned}
-</span></p>
 </section>
 <section class="slide level2 center">
 
@@ -531,26 +415,53 @@ H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>If we start in <span class="math display">\frac{1}{\sqrt{2}}[\varphi_\text{L}(\mathbf{r}_1)\varphi_\text{R}(\mathbf{r}_2)\pm \varphi_\text{R}(\mathbf{r}_1)\varphi_\text{L}(\mathbf{r}_2)]</span> What state do we end up in?</p>
-</div>
-</div>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/HOM.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
-</div>
-</section>
-<section id="noninteracting-particles" class="slide level2 center">
-<h2>Noninteracting particles</h2>
+<p>Show that these states have the form</p>
 <p><span class="math display">
-H = \sum_{i=1}^{N} \overbrace{\left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]}^{\equiv H_\text{sp}\text{, single particle Hamiltonian}}
+\psi(z,\bar z) = f(z) \exp\left(-\frac{qB}{4}\left|z\right|^2\right)
+</span></p>
+<p>where <span class="math inline">f(z)</span> is an arbitrary analytic function.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><p><span class="math inline">f(z)=a_0 + a_1z + a_2 z^2+\ldots</span> for arbitrary <span class="math inline">a_n</span></p></li>
+<li><p>Landau levels highly degenerate</p></li>
+</ul>
+</section>
+<section id="notation" class="slide level2 center">
+<h2>Notation</h2>
+<ul>
+<li>Write LLL wavefunction as <span class="math inline">f(z)</span>, leaving Gaussian in inner product</li>
+</ul>
+<p><span class="math display">
+\langle{f_1}\rvert f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right),
 </span></p>
 <ul>
-<li><p><span class="math inline">H_\text{sp}</span> has eigenstates <span class="math inline">\{\varphi_\alpha(\mathbf{r})\}</span> and eigenenergies <span class="math inline">\{E_\alpha\}</span></p></li>
-<li><p>Eigenstatate of <span class="math inline">N</span> <em>distinguishable</em> particles <span class="math display">
-\lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
+<li><p>Units with <strong>magnetic length</strong> <span class="math inline">\ell \equiv (qB)^{-1/2}=1</span></p></li>
+<li><p>A possible orthonormal basis is <span class="math inline">f_n(z) = \frac{z^n}{\sqrt{2^n n!}}</span></p></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show this</p>
+</div>
+</div>
+</div>
+</section>
+<section id="filled-lll-of-fermions" class="slide level2 center">
+<h2>Filled LLL of Fermions</h2>
+<ul>
+<li><p>Lift degeneracy by adding harmonic potential <span class="math display">
+V_\text{harm}(x,y) = \frac{v}{2}\left(x^2+y^2\right) = \frac{v}{2}\left|z\right|^2
 </span></p></li>
+<li><p>Problem: <span class="math inline">V_\text{harm}(z,\bar z)f(z)</span> is not in LLL</p></li>
+<li><p>Consider only the action of <span class="math inline">V</span> in the LLL subspace</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -564,172 +475,30 @@ H = \sum_{i=1}^{N} \overbrace{\left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\rig
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Why is the energy</p>
-<p><span class="math display">
-E = \sum_{j=1}^N E_{\alpha_j}?
+<p>By considering matrix elements <span class="math inline">\langle{f_1}\rvert V\lvert{f_2}\rangle</span> between LLL states, show (by integrating by parts) that it is possible to replace any occurrence of <span class="math inline">\bar z</span> in <span class="math inline">V</span> with <span class="math inline">2\partial_z</span> <em>acting on the analytic part of the wavefunction</em>.</p>
+<p>Note that the order is important: all the <span class="math inline">\partial_z</span> must stand to the left of the <span class="math inline">z</span>, Thus <span class="math display">
+V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right)
 </span></p>
 </div>
 </div>
 </div>
-</section>
-<section id="symmetrize-antisymmetrize" class="slide level2 center">
-<h2>Symmetrize / Antisymmetrize</h2>
-<p><span class="math display">
-\mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \mathrm{sgn}(\pi)P_\pi
-</span></p>
 <ul>
-<li><p><span class="math inline">\pi</span> is one of <span class="math inline">N!</span> permutations of <span class="math inline">N</span> objects</p></li>
-<li><p><span class="math inline">P_\pi</span> is permutation <em>operator</em> for permutation <span class="math inline">\pi</span></p></li>
-<li><p>For two particles there are two permutations: <span class="math inline">\pi=(12)</span> and <span class="math inline">\pi=(21)</span></p></li>
-</ul>
-<p><span class="math display">
-P_{(21)}\Psi(\mathbf{r}_1,\mathbf{r}_2) = \Psi(\mathbf{r}_2,\mathbf{r}_1)
-</span></p>
-</section>
-<section id="signature-of-permutation" class="slide level2 center">
-<h2>Signature of Permutation</h2>
-<ul>
-<li><p><span class="math inline">\mathrm{sgn}(\pi)</span> is the <strong>signature</strong> of the permutation</p></li>
-<li><p><span class="math inline">\pm1</span> for <span class="math inline">\pi</span> involving an even (odd) number of exchanges</p></li>
-</ul>
-</section>
-<section id="symmetric-and-antisymmetric-product-states" class="slide level2 center">
-<h2>Symmetric and antisymmetric product states</h2>
-<p><span class="math display">
-\begin{aligned}
-\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
-\lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
-\end{aligned}
-</span></p>
-<ul>
-<li><strong>Occupation numbers</strong> <span class="math inline">\{N_{\alpha}\}</span> give number of particles in state <span class="math inline">\alpha</span></li>
+<li>Applied to <span class="math inline">f_n(z)</span>, <span class="math inline">V</span> just counts the degree: <span class="math inline">V_\text{harm} f_n = v(1+n)f_n</span></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Explicitly:</li>
+<li><p>Fill states <span class="math inline">n=0,1,\ldots N-1</span></p></li>
+<li><p>As for 1D fermions, single particle states are powers <span class="math inline">z^n</span>.</p></li>
+<li><p>Identical arguments imply</p></li>
 </ul>
 <p><span class="math display">
-\begin{aligned}
-\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})\\
-\lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{\frac{1}{N!}}\sum_\pi \mathrm{sgn}(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})
-\end{aligned}
-</span></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Show that these are normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\lvert{\varphi_\alpha}\rangle</span> are orthonormal</p>
-</div>
-</div>
-</div>
-</section>
-<section id="occupation-numbers" class="slide level2 center">
-<h2>Occupation Numbers</h2>
-<ul>
-<li><p>State is characterized only by <strong>occupation numbers</strong> <span class="math inline">\{N_{\alpha}\}</span>. Use these as a label instead</p></li>
-<li><p><strong>Caution</strong>: To fix the sign of the fermion wavefunction, have to choose an order e.g.&nbsp;<span class="math inline">\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})</span></p></li>
-<li><p>The total energy is</p></li>
-</ul>
-<p><span class="math display">
-E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
-</span></p>
-</section>
-<section id="slater-determinant" class="slide level2 center">
-<h2>Slater Determinant</h2>
-<ul>
-<li>The fermion product state is a determinant!</li>
-</ul>
-<p><span class="math display">
-   \lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\frac{1}{\sqrt{N!}}\begin{vmatrix}
-   \varphi_{\alpha_{1}}(\mathbf{r_{1}}) &amp;   \varphi_{\alpha_{1}}(\mathbf{r_{2}}) &amp; \cdots &amp; \varphi_{\alpha_{1}}(\mathbf{r_{N}}) \\
-   \varphi_{\alpha_{2}}(\mathbf{r_{1}}) &amp;  \cdots &amp; \cdots &amp; \cdots  \\
-   \cdots &amp; \cdots &amp; \cdots &amp; \cdots  \\
-   \varphi_{\alpha_{N}}(\mathbf{r_{1}}) &amp;  \cdots &amp; \cdots &amp; \varphi_{\alpha_{N}}(\mathbf{r_{N}})
-\end{vmatrix}
-</span></p>
-<ul>
-<li>Vanishes when two rows or two columns are identical
-<ul>
-<li>Zero if two particle coordinates coincide (<span class="math inline">\mathbf{r}_{i}=\mathbf{r}_{j}</span>)</li>
-<li>Zero if two particles occupy the same state (<span class="math inline">\alpha_{i}=\alpha_{j}</span>)</li>
-</ul></li>
-</ul>
-</section>
-<section id="noninteracting-particles-on-a-ring" class="slide level2 center">
-<h2>Noninteracting particles on a ring</h2>
-<ul>
-<li>Ring has circumference <span class="math inline">L</span>. Single particle eigenstates</li>
-</ul>
-<p><span class="math display">
-\varphi_{n}(x)=\frac{1}{\sqrt{L}}\exp\left(ik_n x\right)
-</span></p>
-<ul>
-<li><span class="math inline">k_n=\frac{2\pi n}{L}</span>, <span class="math inline">n\in\mathbb{Z}</span>. Energies are <span class="math inline">E_{n}=\frac{k_n^2}{2m}</span></li>
-</ul>
-</section>
-<section id="ground-state-of-bosons" class="slide level2 center">
-<h2>Ground State of Bosons</h2>
-<ul>
-<li>Every particle in the state <span class="math inline">\lvert{\varphi_{0}}\rangle</span> with zero energy: <span class="math inline">N_{0}=N</span></li>
-</ul>
-<p><span class="math display">
-    \Psi^{S}(x_{1},x_{2},\ldots x_{N})=\frac{1}{L^{N/2}}
-</span></p>
-<ul>
-<li>That was easy! The fermion case is harder</li>
-</ul>
-</section>
-<section id="ground-state-of-fermions" class="slide level2 center">
-<h2>Ground State of Fermions</h2>
-<ul>
-<li><p>Fill each level with one particle, starting at the bottom (Fermi sea)</p>
-<ul>
-<li><p><span class="math inline">N</span> odd: <span class="math inline">n=-(N-1)/2, -(N-3)/2,\ldots, -1, 0, 1 \ldots (N-1)/2</span></p></li>
-<li><p><span class="math inline">N</span> even: decide whether to put the last particle at <span class="math inline">n=\pm N/2</span></p></li>
-</ul></li>
-</ul>
-</section>
-<section id="complex-notation" class="slide level2 center">
-<h2>Complex notation</h2>
-<p><span class="math display">
-z_{i}=\exp(2 \pi i x_{i}/L)
-</span></p>
-<ul>
-<li>The Slater determinant is</li>
-</ul>
-<p><span class="math display">
-    \Psi_0(x_1,\ldots, x_N)=\begin{vmatrix}
-    z_{1}^{-(N-1)/2} &amp;  z_{2}^{-(N-1)/2} &amp; \cdots &amp; z_{N}^{-(N-1)/2} \\
-    z_{1}^{-(N-3)/2} &amp;  \cdots &amp; \cdots &amp; \cdots  \\
-    \cdots &amp; \cdots &amp; \cdots &amp; \cdots  \\
-    z_{1}^{(N-1)/2} &amp;  \cdots &amp; \cdots &amp; z_{N}^{(N-1)/2}
-\end{vmatrix}
+\Psi(z_1,\ldots, z_N) = \prod_{j&lt;k}^N (z_j-z_k) \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right)
 </span></p>
 </section>
 <section class="slide level2 center">
 
-<h3 id="simple-example-n3">Simple example <span class="math inline">N=3</span></h3>
-<p><span class="math display">
-\begin{aligned}
-    \Psi_0(x_1,x_2,x_3)&amp;=\begin{vmatrix}
-        z_{1}^{-1} &amp; z_{2}^{-1} &amp; z_{3}^{-1} \\
-        1 &amp; 1 &amp; 1 \\
-        z_{1} &amp; z_{2} &amp; z_{3}
-    \end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
-    &amp;=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
-    &amp;\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
-\end{aligned}
-</span></p>
-<ul>
-<li>Wavefunction vanishes <span class="math inline">x_{i}=x_{j}</span></li>
-</ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -739,127 +508,95 @@ z_{i}=\exp(2 \pi i x_{i}/L)
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Check it is periodic and totally antisymmetric</p>
+<p>Show that the density is <span class="math display">
+\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
+</span> <span class="math inline">\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt</span> is <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma fn.</a></p>
 </div>
 </div>
 </div>
-</section>
-<section id="generalization-for-n-odd" class="slide level2 center">
-<h2>Generalization for <span class="math inline">N</span> odd</h2>
-<p><span class="math display">
-\Psi_0(x_1,\ldots, x_N)\propto\prod_{i&lt;j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
-</span></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Show this using the <strong>Vandermonde determinant</strong> <span class="math display">
-\begin{vmatrix}
-1 &amp; 1 &amp; \cdots &amp; 1 \\
-z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\
-z_{1}^{2} &amp; z_{2}^{2} &amp; \cdots &amp; \cdots  \\
-z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
-\end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i})
-</span></p>
-</div>
-</div>
-</div>
-</section>
-<section id="terminology" class="slide level2 center">
-<h2>Terminology</h2>
-<ul>
-<li><p>The wavevector of the last fermion added is called the <strong>Fermi wavevector</strong> <span class="math inline">k_\text{F}</span></p></li>
-<li><p>Here <span class="math inline">k_\text{F}=\frac{(N-1)\pi}{L}</span></p></li>
-<li><p><strong>Fermi energy</strong> <span class="math inline">E_{F}=\frac{k_\text{F}^{2}}{2m}</span> is the corresponding energy</p></li>
-</ul>
-</section>
-<section id="probability-distribution" class="slide level2 center">
-<h2>Probability distribution</h2>
-<ul>
-<li>For boson ground state <span class="math inline">\Psi</span> is constant, so is <span class="math inline">|\Psi|^2</span></li>
-</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/poisson_phases.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../assets/LLLdensity.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>For fermions</li>
+<li><p>At small <span class="math inline">\left\|z\right\|</span>, approximate by infinite sum, and <span class="math inline">\rho_1\to \frac{1}{2\pi}</span></p></li>
+<li><p>The density is fixed at this value until we reach <span class="math inline">\sim\sqrt{2N}</span>, then falls to zero on scale of <span class="math inline">\ell_B</span>.</p></li>
+<li><p>The filled LLL is described by a circular droplet of fixed density <span class="math inline">\rho_1 = 1/(2\pi)</span>: one state per flux quantum <span class="math inline">\Phi_0=2\pi/q</span></p></li>
+<li><p>Changing confining potential causes the droplet to deform, but density to remain constant</p></li>
 </ul>
+</section>
+<section id="the-laughlin-wavefunction" class="slide level2 center">
+<h2>The Laughlin Wavefunction</h2>
+<ul>
+<li><p>In 1983 Robert Laughlin proposed the generalization <span class="math display">
+\Psi_m(z_1,\ldots, z_N) = \prod_{j&lt;k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
+\label{many_nu}
+</span></p></li>
+<li><p><span class="math inline">m</span> odd / even for fermions / bosons. <span class="math inline">m\neq 1</span> <strong>not</strong> a product state!</p></li>
+</ul>
+<blockquote>
+<p>This Letter presents variational ground-state and excited-state wave functions which describe the condensation of a two-dimensional electron gas into a new state of matter.</p>
+</blockquote>
+</section>
+<section id="m2-boson-state" class="slide level2 center">
+<h2><span class="math inline">m=2</span> boson state</h2>
+<ul>
+<li><p>With the repulsive potential <span class="math display">
+H_{\text{int}} = g\sum_{j&lt;k}\delta(\mathbf{r}_j-\mathbf{r}_k),\qquad g&gt;0
+</span> <span class="math inline">m=2</span> state has zero interaction energy</p></li>
+<li><p>Any state with zero interaction energy must have <span class="math inline">\Psi_2(z_1,\ldots, z_N)</span> as a factor</p></li>
+<li><p>If wavefunction has higher degree, then in the presence of potential <span class="math inline">V_\text{harm}</span> it will have higher energy, so <span class="math inline">\Psi_2</span> is ground state</p></li>
+</ul>
+</section>
+<section id="particle-distribution" class="slide level2 center">
+<h2>Particle distribution</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/1d_fermions.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../assets/LaughlinMonteCarlo.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-<section class="slide level2 center">
-
-<h3 id="marginal-distributions">Marginal distributions</h3>
 <ul>
-<li><p>One particle distribution is related to average density of particles <span class="math display">
-\rho_1(x_1) = N \int dx_2\ldots dx_N \lvert\Psi(x_1,x_2,\ldots,x_N)\rvert^2
-</span></p></li>
-<li><p>Note that density is always a <em>number</em> density (not mass density).</p></li>
-<li><p>Normalization of the wavefunction implies <span class="math display">
-\int dx \rho_1(x) = N
-</span></p></li>
-<li><p>In a translationally invariant system like the fermion gas on a ring we expect the average density to be constant.</p></li>
+<li><p>Monte Carlo samples from uncorrelated (uniform) distrubution vs.&nbsp;the Laughlin probability distribution <span class="math inline">\lvert\Psi_3(z_1,\ldots z_N)\rvert^2</span></p></li>
+<li><p>Note <em>uniformity</em> of particle distribution, in contrast with the sample of uncorrelated particles on the left</p></li>
 </ul>
 </section>
-<section id="density-operator" class="slide level2 center">
-<h2>Density Operator</h2>
+<section id="the-plasma-analogy" class="slide level2 center">
+<h2>The Plasma Analogy</h2>
 <ul>
-<li>Regard <span class="math inline">\rho_1(x_1)</span> as an expectation of a density operator <span class="math display">
-\rho(x) = \sum_j \delta(x-x_j)
-</span> so that <span class="math inline">\rho_1(x) = \langle{\Psi}\rvert \rho(x) \lvert \Psi \rangle</span></li>
+<li>Probability distribution <span class="math inline">\lvert\Psi_m(z_1,\ldots, z_N)\rvert^2</span> of particles interpreted as Boltzmann distribution of particles in a classical 2D plasma</li>
 </ul>
-</section>
-<section id="single-particle-density-matrix" class="slide level2 center">
-<h2>Single particle density matrix</h2>
 <p><span class="math display">
-g(x,y) \equiv N\int dx_2\ldots dx_N \Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N)
+\nabla^2 V = -q\delta(\mathbf{r})
+</span> - In 2D the solution describing a point charge is <span class="math display">
+V_\text{point}(\mathbf{r}) = -\frac{q}{2\pi}\log\left|\mathbf{r}\right|
+</span> - Constant background charge density <span class="math inline">-\rho_0</span> gives rise to a potential <span class="math display">
+V_\text{bg}(\mathbf{r}) = \frac{\rho_0}{4} \left|\mathbf{r}\right|^2
 </span></p>
+</section>
+<section class="slide level2 center">
+
 <ul>
-<li>Note <span class="math inline">g(x,x) = \rho_1(x)</span></li>
+<li><p>System of identical charges in a background charge has overall electrostatic energy <span class="math display">
+V(\mathbf{r}_1,\ldots,\mathbf{r}_N) = -\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right| + \frac{q\rho_0}{4}\sum_j \left|\mathbf{r}_j\right|^2
+</span></p></li>
+<li><p>At finite temperature (unnormalized) probability of finding particles at locations <span class="math inline">\mathbf{r}_1, \ldots, \mathbf{r}_N</span> is <span class="math display">
+\exp[-\beta V(\mathbf{r}_1, \ldots, \mathbf{r}_N)] = \left|\Psi_m(\mathbf{r}_1, \ldots, \mathbf{r}_N)\right|^2
+</span> where we set <span class="math inline">\beta q^2/(2\pi) = 2m</span> and <span class="math inline">\beta q\rho_0 = 2</span>.</p></li>
+<li><p><strong>These are not <em>physical</em> electrostatic fields!</strong></p></li>
 </ul>
 </section>
-<section class="slide level2 center">
-
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Starting from the Slater determinant, show that <span class="math inline">g(x,y)</span> for the ground state of the Fermi gas is <span class="math display">
-\begin{aligned}
-g(x,y) &amp;= \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} \longrightarrow \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} \\
-&amp;\longrightarrow n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
-\end{aligned}
-</span> where <span class="math inline">n \equiv \frac{k_\text{F}}{\pi}</span> is the average density</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2 center">
-
-<h3 id="pair-distribution">Pair Distribution</h3>
+<section id="ntoinfty-limit" class="slide level2 center">
+<h2><span class="math inline">N\to\infty</span> limit</h2>
 <ul>
-<li>Marginal probability distribution of a <em>pair</em> of particles <span class="math display">
-\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N\left|\Psi(x_1,x_2,\ldots,x_N)\right|^2
+<li>Introduce a continuum charge density <span class="math inline">\rho(\mathbf{r})</span> and write the energy as a functional <span class="math display">
+\begin{aligned}
+\beta V[\rho] = -m\int d^2\mathbf{r}\, d^2\mathbf{r}'\rho(\mathbf{r})\log\left|\mathbf{r}-\mathbf{r}'\right|\rho(\mathbf{r}') + \frac{1}{2}\int d^2\mathbf{r}\left|\mathbf{r}\right|^2\rho(\mathbf{r}).
+\end{aligned}
 </span></li>
-<li>The prefactor is to account for all pairs of particles</li>
 </ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -870,23 +607,15 @@ g(x,y) &amp;= \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} \longrightarrow \i
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Starting from the Slater determinant, show that <span class="math display">
-\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x_1-x_2)\right]}{k_\text{F}(x_1-x_2)}\right)^2\right]
-</span> This vanishes at <span class="math inline">x_1=x_2</span></p>
+<p>Show that minimizing the energy with respect to <span class="math inline">\rho(\mathbf{r})</span> – corresponding to finding the most likely configuration – leads to the condition <span class="math display">
+-2m\int d^2\mathbf{r}'\log\left|\mathbf{r}-\mathbf{r}'\right|\rho(\mathbf{r}') + \frac{1}{2}\left|\mathbf{r}\right|^2 = 0.
+</span></p>
 </div>
 </div>
 </div>
 </section>
-<section id="impenetrable-bose-gas" class="slide level2 center">
-<h2>Impenetrable Bose Gas</h2>
-<p><span class="math display">
-H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&lt;k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
-</span></p>
-<ul>
-<li><p>The second term is interaction between pairs of particles</p></li>
-<li><p>For fermions, the interaction has no effect at all (<span class="math inline">\delta</span>-function)!</p></li>
-<li><p>For bosons with <span class="math inline">c\to \infty</span>: <em>eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates</em></p></li>
-</ul>
+<section class="slide level2 center">
+
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -896,18 +625,68 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Why?</p>
+<p>Show that applying <span class="math inline">\nabla^2</span> to both sides gives <span class="math display">
+\rho(\mathbf{r}) = \frac{1}{2\pi m}
+</span></p>
 </div>
 </div>
 </div>
+<ul>
+<li><p>Conclusion: density is fixed at <span class="math inline">1/m</span> of value for <span class="math inline">m=1</span> case</p></li>
+<li><p>Result applies where density is non-zero, so we get a uniform droplet of radius <span class="math inline">\sqrt{2Nm}</span></p></li>
+<li><p><span class="math inline">1/m</span> is called the <strong>filling fraction</strong> of the state.</p></li>
+</ul>
 </section>
-<section id="ground-state" class="slide level2 center">
-<h2>Ground state</h2>
+<section id="excited-states-fractional-charge" class="slide level2 center">
+<h2>Excited states: fractional charge</h2>
+<ul>
+<li><p>Simplest excited state is <strong>quasihole</strong> <span class="math display">
+\begin{aligned}
+\Psi_\text{hole}(z_1,\ldots, z_N|Z) &amp;= \left(\prod_j (Z-z_j)\right)\Psi_m(z_1,\ldots, z_N)\\
+V(\mathbf{r}_1, \ldots, \mathbf{r}_N)&amp;=-\frac{q^2}{2\pi m}\sum_j \log\left|\mathbf{r}_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right|\\
+&amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
+\end{aligned}
+</span>`</p></li>
+<li><p>Charge <span class="math inline">q/m</span> at point <span class="math inline">\mathbf{R} = (X, Y)</span>, where <span class="math inline">Z=X+iY</span></p></li>
+<li><p>Plasma will screen this charge, leaving a ‘hole’ in density distribution of charge <span class="math inline">-q/m</span></p></li>
+</ul>
+</section>
+<section id="hole-state" class="slide level2 center">
+<h2>Hole state</h2>
+<ul>
+<li>20 holes with charge <span class="math inline">-20/m</span> for clarity</li>
+</ul>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+<script type="module">
+import laughlin from "./assets/laughlin-complex.js"
+const laughlinSketch = new p5(laughlin, "laughlin")
+Reveal.on( 'slidechanged', event => {
+  if (!!event.currentSlide.querySelector("#hole-state")) {
+    laughlinSketch.loop()
+  }
+  else {
+    laughlinSketch.noLoop()
+  }
+} );
+</script>
+<figure align="center">
+<div id="laughlin" style="display: inline-block">
+
+</div>
+</figure>
+</section>
+<section id="fractional-statistics" class="slide level2 center">
+<h2>Fractional Statistics</h2>
+<ul>
+<li>Two quasihole wavefunction</li>
+</ul>
 <p><span class="math display">
-\Psi_0(x_1,\ldots, x_N) = \prod_{i&lt;j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
+\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 </span></p>
 <ul>
-<li>Can calculate any observable <em>as long as</em> it’s insensitive to taking the modulus (e.g.&nbsp;average density and pair distribution)</li>
+<li><p><span class="math inline">\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2</span> is plasma with two <span class="math inline">1/m</span> charges at positions <span class="math inline">\mathbf{R}_{1,2}</span></p></li>
+<li><p>Each surrounded by depleted density of <span class="math inline">-1/m</span> of a particle</p></li>
+<li><p>(See notes) Quasiholes are <strong>anyons</strong>, particles with fractional statistics!</p></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -915,7 +694,7 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

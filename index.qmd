@@ -6,7 +6,7 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 
 [The discussions section](https://github.com/AustenLamacraft/tqm-quarto/discussions/) is a good place to ask each other questions. Try it!
 
-If you ever want access to the $\LaTeX$ for the mathematical expressions, right click and select `Show Math As` > `TeX Commands`.
+If you ever want access to the  for the mathematical expressions, right click and select `Show Math As` > `TeX Commands`.
 
 
 ::: {.callout-tip}

@@ -334,7 +334,7 @@
     "href": "slides/many-body-wavefunctions.html#independent-particles",
     "title": "Many body wavefunctions",
     "section": "Independent Particles?",
-    "text": "Independent Particles?\n\nProbability density is \\rho_{12}(\\mathbf{r}_1,\\mathbf{r}_2)=|\\Psi(\\mathbf{r}_1,\\mathbf{r}_2)|^2\nFor distinguishable particles\n\n\n\\rho_{12}(\\mathbf{r}_1,\\mathbf{r}_2)=|\\varphi_1(\\mathbf{r}_1)\\varphi_2(\\mathbf{r}_2)|^2=\\rho_1(\\mathbf{r}_1)\\rho_2(\\mathbf{r}_2)\n\n\nWork it out for identical bosons and fermions Show that \\rho_{12}(\\mathbf{r},\\mathbf{r}) = 0 for fermions, and \\rho_{12}(\\mathbf{r},\\mathbf{r}) = 2\\rho_1(\\mathbf{r})\\rho_2(\\mathbf{r}) for bosons.",
+    "text": "Independent Particles?\n\nProbability density is \\rho_{12}(\\mathbf{r}_1,\\mathbf{r}_2)=|\\Psi(\\mathbf{r}_1,\\mathbf{r}_2)|^2\nFor distinguishable particles\n\n\n\\rho_{12}(\\mathbf{r}_1,\\mathbf{r}_2)=|\\varphi_1(\\mathbf{r}_1)\\varphi_2(\\mathbf{r}_2)|^2=\\rho_1(\\mathbf{r}_1)\\rho_2(\\mathbf{r}_2)\n\n\n\n\n\n\n\nCheck\n\n\nWork it out for identical bosons and fermions. Show that \\rho_{12}(\\mathbf{r},\\mathbf{r}) = 0 for fermions, and \\rho_{12}(\\mathbf{r},\\mathbf{r}) = 2\\rho_1(\\mathbf{r})\\rho_2(\\mathbf{r}) for bosons.",
     "crumbs": [
       "Slides",
       "Many body wavefunctions"
@@ -356,7 +356,7 @@
     "href": "slides/many-body-wavefunctions.html#noninteracting-particles",
     "title": "Many body wavefunctions",
     "section": "Noninteracting particles",
-    "text": "Noninteracting particles\n\nH = \\sum_{i=1}^{N} \\overbrace{\\left[-\\frac{\\nabla_i^{2}}{2m}+V(\\mathbf{r}_i)\\right]}^{\\equiv H_\\text{sp}\\text{, single particle Hamiltonian}}\n - H_\\text{sp} has eigenstates \\{\\varphi_\\alpha(\\mathbf{r})\\} and eigenenergies \\{E_\\alpha\\}\n\nEigenstatate of N distinguishable particles \n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\varphi_{\\alpha_{1}}(\\mathbf{r_{1}})\\varphi_{\\alpha_{2}}(\\mathbf{r_{2}})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r_{N}})\n\n\n\nWhat’s the energy?",
+    "text": "Noninteracting particles\n\nH = \\sum_{i=1}^{N} \\overbrace{\\left[-\\frac{\\nabla_i^{2}}{2m}+V(\\mathbf{r}_i)\\right]}^{\\equiv H_\\text{sp}\\text{, single particle Hamiltonian}}\n\n\nH_\\text{sp} has eigenstates \\{\\varphi_\\alpha(\\mathbf{r})\\} and eigenenergies \\{E_\\alpha\\}\nEigenstatate of N distinguishable particles \n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\varphi_{\\alpha_{1}}(\\mathbf{r_{1}})\\varphi_{\\alpha_{2}}(\\mathbf{r_{2}})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r_{N}})",
     "crumbs": [
       "Slides",
       "Many body wavefunctions"
@@ -466,7 +466,7 @@
     "href": "slides/many-body-wavefunctions.html#generalization-for-n-odd",
     "title": "Many body wavefunctions",
     "section": "Generalization for N odd",
-    "text": "Generalization for N odd\n\n\\Psi_0(x_1,\\ldots, x_N)\\propto\\prod_{i&lt;j}^{N} \\sin\\left(\\frac{\\pi[x_{i}-x_{j}]}{L}\\right).\n\n\nShow this using the Vandermonde determinant \n\\begin{vmatrix}\n1 & 1 & \\cdots & 1 \\\\\nz_{1} &  z_{2} & \\cdots & \\cdots  \\\\\nz_{1}^{2} & z_{2}^{2} & \\cdots & \\cdots  \\\\\nz_{1}^{N-1} &  z_{2}^{N-1} & \\cdots & z_{N}^{N-1}\n\\end{vmatrix}=\\prod_{i&lt;j}^{N}(z_{j}-z_{i})",
+    "text": "Generalization for N odd\n\n\\Psi_0(x_1,\\ldots, x_N)\\propto\\prod_{i&lt;j}^{N} \\sin\\left(\\frac{\\pi[x_{i}-x_{j}]}{L}\\right).\n\n\n\n\n\n\n\nCheck\n\n\nShow this using the Vandermonde determinant \n\\begin{vmatrix}\n1 & 1 & \\cdots & 1 \\\\\nz_{1} &  z_{2} & \\cdots & \\cdots  \\\\\nz_{1}^{2} & z_{2}^{2} & \\cdots & \\cdots  \\\\\nz_{1}^{N-1} &  z_{2}^{N-1} & \\cdots & z_{N}^{N-1}\n\\end{vmatrix}=\\prod_{i&lt;j}^{N}(z_{j}-z_{i})",
     "crumbs": [
       "Slides",
       "Many body wavefunctions"
@@ -521,7 +521,7 @@
     "href": "slides/many-body-wavefunctions.html#impenetrable-bose-gas",
     "title": "Many body wavefunctions",
     "section": "Impenetrable Bose Gas",
-    "text": "Impenetrable Bose Gas\n\nH = -\\frac{1}{2m}\\sum_j \\frac{\\partial^2}{\\partial x_j^2} + \\overbrace{c\\sum_{j&lt;k}\\delta(x_j-x_k)}^{\\equiv H_\\text{int}}.\n\n\nThe second term is interaction between pairs of particles\nFor fermions, the interaction has no effect at all (\\delta-function)!\nFor bosons with c\\to \\infty: eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates\n\n\nWhy?",
+    "text": "Impenetrable Bose Gas\n\nH = -\\frac{1}{2m}\\sum_j \\frac{\\partial^2}{\\partial x_j^2} + \\overbrace{c\\sum_{j&lt;k}\\delta(x_j-x_k)}^{\\equiv H_\\text{int}}.\n\n\nThe second term is interaction between pairs of particles\nFor fermions, the interaction has no effect at all (\\delta-function)!\nFor bosons with c\\to \\infty: eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates\n\n\n\n\n\n\n\nCheck\n\n\nWhy?",
     "crumbs": [
       "Slides",
       "Many body wavefunctions"
@@ -550,7 +550,7 @@
     "href": "index.html",
     "title": "TQM Lectures 2024",
     "section": "",
-    "text": "These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the \\(\\LaTeX\\) for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
+    "text": "These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
     "crumbs": [
       "TQM Lectures 2024"
     ]
@@ -621,5 +621,148 @@
     "title": "References",
     "section": "",
     "text": "References"
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#landau-levels",
+    "href": "slides/quantum-hall-effect.html#landau-levels",
+    "title": "Quantum Hall Effect",
+    "section": "Landau Levels",
+    "text": "Landau Levels\n\nSingle particle Hamiltonian with vector potential\n\n\nH = -\\frac{1}{2m}\\left(\\nabla -i q \\mathbf{A}\\right)^2,\n\\label{Landau}\n\n\nFor perpendicular field\n\n\n\\partial_x A_y - \\partial_y A_x = B.\n\n\nWe choose symmetric gauge\n\n\nA_x = -\\frac{1}{2} B y,\\quad A_y = \\frac{1}{2} B x.",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#h-in-complex-coordinates",
+    "href": "slides/quantum-hall-effect.html#h-in-complex-coordinates",
+    "title": "Quantum Hall Effect",
+    "section": "H in complex coordinates",
+    "text": "H in complex coordinates\n\n\\begin{aligned}\nz &= x + i y, \\quad \\bar z  = x - iy\\\\\n\\partial_z &= \\frac{1}{2}\\left(\\partial_x - i\\partial_y\\right), \\quad \\partial_{\\bar z} = \\frac{1}{2}\\left(\\partial_x + i\\partial_y\\right)\\\\\nH &= -\\frac{2}{m}\\left(\\partial_z -\\frac{qB \\bar z}{4}\\right)\\left(\\partial_{\\bar z} +\\frac{qB z}{4}\\right) + \\frac{\\omega_c}{2}\n\\end{aligned}\n\n\n\\omega_c = \\frac{qB}{m} is the cyclotron frequency\nStates that satisfy \n\\left(\\partial_{\\bar z} +\\frac{qB z}{4}\\right)\\psi(z,\\bar z) = 0\n have energy \\omega_c/2 and belong to the lowest Landau level (LLL)",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#notation",
+    "href": "slides/quantum-hall-effect.html#notation",
+    "title": "Quantum Hall Effect",
+    "section": "Notation",
+    "text": "Notation\n\nWrite LLL wavefunction as f(z), leaving Gaussian in inner product\n\n\n\\langle{f_1}\\rvert f_2\\rangle = \\int \\frac{d^2z}{2\\pi} \\overline{f_1(z)}f_2(z) \\exp\\left(-\\left|z\\right|^2/2\\right),\n\n\nUnits with magnetic length \\ell \\equiv (qB)^{-1/2}=1\nA possible orthonormal basis is f_n(z) = \\frac{z^n}{\\sqrt{2^n n!}}\n\n\n\n\n\n\n\nCheck\n\n\nShow this",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#filled-lll-of-fermions",
+    "href": "slides/quantum-hall-effect.html#filled-lll-of-fermions",
+    "title": "Quantum Hall Effect",
+    "section": "Filled LLL of Fermions",
+    "text": "Filled LLL of Fermions\n\nLift degeneracy by adding harmonic potential \nV_\\text{harm}(x,y) = \\frac{v}{2}\\left(x^2+y^2\\right) = \\frac{v}{2}\\left|z\\right|^2\n\nProblem: V_\\text{harm}(z,\\bar z)f(z) is not in LLL\nConsider only the action of V in the LLL subspace",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#the-laughlin-wavefunction",
+    "href": "slides/quantum-hall-effect.html#the-laughlin-wavefunction",
+    "title": "Quantum Hall Effect",
+    "section": "The Laughlin Wavefunction",
+    "text": "The Laughlin Wavefunction\n\nIn 1983 Robert Laughlin proposed the generalization \n\\Psi_m(z_1,\\ldots, z_N) = \\prod_{j&lt;k}^N (z_j-z_k)^{m} \\exp\\left(-\\frac{1}{4}\\sum_{j=1}^N\\left|z_j\\right|^2\\right).\n\\label{many_nu}\n\nm odd / even for fermions / bosons. m\\neq 1 not a product state!\n\n\nThis Letter presents variational ground-state and excited-state wave functions which describe the condensation of a two-dimensional electron gas into a new state of matter.",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#m2-boson-state",
+    "href": "slides/quantum-hall-effect.html#m2-boson-state",
+    "title": "Quantum Hall Effect",
+    "section": "m=2 boson state",
+    "text": "m=2 boson state\n\nWith the repulsive potential \nH_{\\text{int}} = g\\sum_{j&lt;k}\\delta(\\mathbf{r}_j-\\mathbf{r}_k),\\qquad g&gt;0\n m=2 state has zero interaction energy\nAny state with zero interaction energy must have \\Psi_2(z_1,\\ldots, z_N) as a factor\nIf wavefunction has higher degree, then in the presence of potential V_\\text{harm} it will have higher energy, so \\Psi_2 is ground state",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#particle-distribution",
+    "href": "slides/quantum-hall-effect.html#particle-distribution",
+    "title": "Quantum Hall Effect",
+    "section": "Particle distribution",
+    "text": "Particle distribution\n\n\n\n\n\n\nMonte Carlo samples from uncorrelated (uniform) distrubution vs. the Laughlin probability distribution \\lvert\\Psi_3(z_1,\\ldots z_N)\\rvert^2\nNote uniformity of particle distribution, in contrast with the sample of uncorrelated particles on the left",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#the-plasma-analogy",
+    "href": "slides/quantum-hall-effect.html#the-plasma-analogy",
+    "title": "Quantum Hall Effect",
+    "section": "The Plasma Analogy",
+    "text": "The Plasma Analogy\n\nProbability distribution \\lvert\\Psi_m(z_1,\\ldots, z_N)\\rvert^2 of particles interpreted as Boltzmann distribution of particles in a classical 2D plasma\n\n\n\\nabla^2 V = -q\\delta(\\mathbf{r})\n - In 2D the solution describing a point charge is \nV_\\text{point}(\\mathbf{r}) = -\\frac{q}{2\\pi}\\log\\left|\\mathbf{r}\\right|\n - Constant background charge density -\\rho_0 gives rise to a potential \nV_\\text{bg}(\\mathbf{r}) = \\frac{\\rho_0}{4} \\left|\\mathbf{r}\\right|^2",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#ntoinfty-limit",
+    "href": "slides/quantum-hall-effect.html#ntoinfty-limit",
+    "title": "Quantum Hall Effect",
+    "section": "N\\to\\infty limit",
+    "text": "N\\to\\infty limit\n\nIntroduce a continuum charge density \\rho(\\mathbf{r}) and write the energy as a functional \n\\begin{aligned}\n\\beta V[\\rho] = -m\\int d^2\\mathbf{r}\\, d^2\\mathbf{r}'\\rho(\\mathbf{r})\\log\\left|\\mathbf{r}-\\mathbf{r}'\\right|\\rho(\\mathbf{r}') + \\frac{1}{2}\\int d^2\\mathbf{r}\\left|\\mathbf{r}\\right|^2\\rho(\\mathbf{r}).\n\\end{aligned}\n\n\n\n\n\n\n\n\nCheck\n\n\nShow that minimizing the energy with respect to \\rho(\\mathbf{r}) – corresponding to finding the most likely configuration – leads to the condition \n-2m\\int d^2\\mathbf{r}'\\log\\left|\\mathbf{r}-\\mathbf{r}'\\right|\\rho(\\mathbf{r}') + \\frac{1}{2}\\left|\\mathbf{r}\\right|^2 = 0.",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#excited-states-fractional-charge",
+    "href": "slides/quantum-hall-effect.html#excited-states-fractional-charge",
+    "title": "Quantum Hall Effect",
+    "section": "Excited states: fractional charge",
+    "text": "Excited states: fractional charge\n\nSimplest excited state is quasihole \n\\begin{aligned}\n\\Psi_\\text{hole}(z_1,\\ldots, z_N|Z) &= \\left(\\prod_j (Z-z_j)\\right)\\Psi_m(z_1,\\ldots, z_N)\\\\\nV(\\mathbf{r}_1, \\ldots, \\mathbf{r}_N)&=-\\frac{q^2}{2\\pi m}\\sum_j \\log\\left|\\mathbf{r}_j-\\mathbf{R}\\right|-\\frac{q^2}{2\\pi} \\sum_{j&lt;k}\\log\\left|\\mathbf{r}_j-\\mathbf{r}_k\\right|\\\\\n&+ \\frac{\\rho q_0}{4}\\sum_j \\left|\\mathbf{r}_j\\right|^2.\n\\end{aligned}\n`\nCharge q/m at point \\mathbf{R} = (X, Y), where Z=X+iY\nPlasma will screen this charge, leaving a ‘hole’ in density distribution of charge -q/m",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#hole-state",
+    "href": "slides/quantum-hall-effect.html#hole-state",
+    "title": "Quantum Hall Effect",
+    "section": "Hole state",
+    "text": "Hole state\n\n20 holes with charge -20/m for clarity",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#fractional-statistics",
+    "href": "slides/quantum-hall-effect.html#fractional-statistics",
+    "title": "Quantum Hall Effect",
+    "section": "Fractional Statistics",
+    "text": "Fractional Statistics\n\nTwo quasihole wavefunction\n\n\n\\Psi_\\text{2 hole}(z_1,\\ldots, z_N|Z_1,Z_2) = \\left(\\prod_j (Z_1-z_j)(Z_2-z_j)\\right)\\Psi_m(z_1,\\ldots, z_N).\n\n\n\\vert\\Psi_\\text{2 hole}(z_1,\\ldots, z_N\\vert Z_1,Z_2)\\rvert^2 is plasma with two 1/m charges at positions \\mathbf{R}_{1,2}\nEach surrounded by depleted density of -1/m of a particle\n(See notes) Quasiholes are anyons, particles with fractional statistics!",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "slides/quantum-hall-effect.html#quantum-hall-effect",
+    "href": "slides/quantum-hall-effect.html#quantum-hall-effect",
+    "title": "Quantum Hall Effect",
+    "section": "Quantum Hall Effect",
+    "text": "Quantum Hall Effect\n\nA quantum state in two dimensions\n2D electron gas in strong perpendicular magnetic fields.\nCan exist for bosons too!",
+    "crumbs": [
+      "Slides",
+      "Quantum Hall Effect"
+    ]
   }
 ]

@@ -1,12 +1,10 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrreprt}
+  a4paper,
+]{scrbook}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -125,7 +123,6 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
 \@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
@@ -193,11 +190,7 @@
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Many body wavefunctions},
-  colorlinks=true,
-  linkcolor={blue},
-  filecolor={Maroon},
-  citecolor={Blue},
-  urlcolor={Blue},
+  hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 
@@ -206,14 +199,20 @@
 \date{}
 
 \begin{document}
+\frontmatter
 \maketitle
 
 
+\mainmatter
+\newcommand{\cN}{\mathcal{N}}
 \newcommand{\br}{\mathbf{r}}
 \newcommand{\bp}{\mathbf{p}}
 \newcommand{\bk}{\mathbf{k}}
 \newcommand{\bq}{\mathbf{q}}
 \newcommand{\bv}{\mathbf{v}}
+\newcommand{\brN}{\br_1, \ldots, \br_N}
+\newcommand{\xN}{x_1, \ldots, x_N}
+\newcommand{\zN}{z_1, \ldots, z_N}
 \newcommand{\pop}{\psi^{\vphantom{\dagger}}}
 \newcommand{\pdop}{\psi^\dagger}
 \newcommand{\Pop}{\Psi^{\vphantom{\dagger}}}
@@ -233,9 +232,12 @@
 \newcommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
 \newcommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
 \newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\abs}[1]{\lvert{#1}\rvert}
 
+\[
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\E}{\mathbb{E}}
+\]
 
 We begin our study of many body quantum mechanics by examining a number
 of systems where eigenstates and eigenvalues may be found explicitly for
@@ -252,7 +254,7 @@ An \(N\) particle quantum system is described by a wavefunction of \(N\)
 arguments \(\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_N)\). The starting
 point of many body quantum mechanics is that:
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, arc=.35mm, opacityback=0, breakable, colframe=quarto-callout-warning-color-frame, toprule=.15mm, leftrule=.75mm, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, colback=white, opacityback=0, left=2mm, toprule=.15mm, breakable, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, arc=.35mm, bottomrule=.15mm]
 
 Systems of indistinguishable particles are described by \textbf{totally
 symmetric} or \textbf{totally antisymmetric} wavefunctions.
@@ -382,7 +384,7 @@ up in orthogonal states. For example, \[
 \end{align}
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 If we start in \[
 \frac{1}{\sqrt{2}}[\varphi_\text{L}(\mathbf{r}_1)\varphi_\text{R}(\mathbf{r}_2)\pm \varphi_\text{R}(\mathbf{r}_1)\varphi_\text{L}(\mathbf{r}_2)]
@@ -469,37 +471,41 @@ Equation~\ref{eq-sym-antisym}:
   \(\mathrm{sgn}(\pi)\) is the
   \href{https://en.wikipedia.org/wiki/Parity_of_a_permutation}{signature}
   of the permutation, equal to \(+1\) for permutations involving an even
-  number of exchanges, and \(-1\) for an odd number.
+  number of exchanges (transpositions), and \(-1\) for an odd number.
+  Note that although the same permutation can be accomplished with many
+  different sets of transpositions, the number of transpositions is
+  either always odd or always even.
 \end{itemize}
 
 Equation~\ref{eq-sym-antisym} allows us to write the totally symmetric
 and totally antisymmetric versions of Equation~\ref{eq-distinguishable}
 as \begin{equation}\phantomsection\label{eq-norm}{
-\begin{align}
- \lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&=\sqrt{N!\prod_{\alpha}N_{\alpha}!}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
- \lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
-\end{align}
+\begin{aligned}
+ \lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \\
+&=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})\\
+ \lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})\\
+ &=\sqrt{\frac{1}{N!}}\sum_\pi \mathrm{sgn}(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}}),
+\end{aligned}
 }\end{equation}
 
-The normalization factors yield normalized wavefunctions \emph{if} the
+where the \textbf{occupation numbers} \(\{N_{\alpha}\}\) in the boson
+case give the number of particles in state \(\alpha\). These
+normalization factors yield normalized wavefunctions \emph{if} the
 single particle state \(\lvert{\varphi_\alpha}\rangle\) are orthonormal
-(as the eigenstates of the single particle Hamiltonian are).
-
-The normalization factor in the boson case involves the
-\textbf{occupation numbers} \(\{N_{\alpha}\}\) giving the number of
-particles in state \(\alpha\). In the fermion case each \(N_{\alpha}\)
-is either \(0\) or \(1\) so the prefactor simplifies. Since the order of
-the \(\alpha\) indices is irrelevant in the boson case, and amounts only
-to a sign in the fermion case, states based on a given set of single
-particle states are more efficiently labeled by the occupation numbers.
-In terms of these numbers the total energy is
+(as the eigenstates of the single particle Hamiltonian are). In the
+fermion case each \(N_{\alpha}\) is either \(0\) or \(1\) so the
+prefactor simplifies. Since the order of the \(\alpha\) indices is
+irrelevant in the boson case, and amounts only to a sign in the fermion
+case, states based on a given set of single particle states are more
+efficiently labeled by the occupation numbers. In terms of these numbers
+the total energy is
 
 \[
  \label{quantum_statistics_TotalEnergy}
  E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
 \]
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Verify that the normalization factors in Equation~\ref{eq-norm} are
 correct.
@@ -610,7 +616,7 @@ to
 \Psi^A_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
 }\end{equation}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Show this using the \textbf{Vandermonde determinant} \[
 \begin{vmatrix}
@@ -705,7 +711,7 @@ particles, given by
 }\end{equation} Note that although I use the symbol \(\rho\), density is
 always going to be \emph{number} density (not the mass density).
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Can you explain why this is the density? Think about the simpler case of
 two particles, with discrete locations. Why is the expected number of
@@ -735,7 +741,7 @@ this is a useful quantity)
 g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\ldots,x_N).
 }\end{equation} Note that \(g(x,x) = \rho_1(x)\).
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Show that the average number of particles in a single particle state
 \(\lvert{\psi}\rangle\) is
@@ -745,7 +751,7 @@ Show that the average number of particles in a single particle state
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Starting from the Slater determinant Equation~\ref{eq-1d-det}
 (i.e.~\emph{not} from the explicit form Equation~\ref{eq-1d-fermi-gs}),
@@ -755,7 +761,7 @@ g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{k_\text{F}}^{k_\te
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Find the average number of particles in a momentum state
 \(\lvert{k}\rangle\) using Equation~\ref{eq-nbar}
@@ -769,14 +775,14 @@ Find the average number of particles in a momentum state
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-note-color!10!white, breakable, colframe=quarto-callout-note-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-note-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, coltitle=black]
 
 To understand the origin of the name \emph{single particle density
 matrix}, recall that the density matrix \(\varrho\) describes a
 \textbf{mixed state} of a quantum system, and is the appropriate
 description when the quantum state is not known. \(\varrho\) is a
-positive definite hermitian operator satisfying
-\(\mathop{\mathrm{tr}}\varrho =1\). Its spectral resolution \[
+positive definite hermitian operator satisfying \(\tr \varrho =1\). Its
+spectral resolution \[
 \varrho = \sum_\alpha p_\alpha \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert,
 \] can be thought of as a statistical mixture of different quantum
 states \(\lvert{\varphi_\alpha}\rangle\) with probabilities
@@ -789,7 +795,7 @@ product of two or more components
 from the density matrix corresponding to a pure state, we can obtain a
 density matrix for the component \(A\) alone by `tracing out' the \(B\)
 subsystem. \[
-\varrho_A = \mathop{\mathrm{tr}}_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
+\varrho_A = \tr_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
 \] The probability for system \(A\) to be in state
 \(\lvert{\psi}\rangle\in \mathcal{H}_A\) is \[
 P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
@@ -804,7 +810,7 @@ particles, and define the \textbf{pair distribution function} \[
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Starting from the Slater determinant Equation~\ref{eq-1d-det}, show that
 \[
@@ -819,7 +825,7 @@ A natural question: \[
 that the product of two density operators will contain terms involving
 the same particle, which are absent from \(\rho_2(x_1,x_2)\).
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Show that the correct relationship is \[
 \rho_2(x_1,x_2) = \langle{\Psi}\rvert\rho(x_1)\rho(x_2)\lvert{\Psi}\rangle - \rho_1(x_1)\delta(x_1-x_2).
@@ -848,7 +854,7 @@ limit. In this case, \emph{the eigenenergies coincide with those of the
 free fermion problem, and the eigenstates are just the modulus of the
 corresponding fermion eigenstate}.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Why?
 
@@ -861,7 +867,6 @@ Thus the ground state on the ring has the form \[
 \Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
 \]
 
-\begin{quote}
 It's not hard to see why this works. For a state to have a finite
 energy, the wavefunction must vanish whenever two coordinates coincide.
 This is because the interation energy has the expectation value \[
@@ -870,7 +875,6 @@ This is because the interation energy has the expectation value \[
 \] But we already have a complete set of eigenstates that obey this
 condition, namely the free fermion Slater determinants. It remains to
 make them symmetric functions by taking the modulus.
-\end{quote}
 
 This mapping is quite powerful, and allows us to calculate any
 observable of the impenetrable Bose gas in terms of free fermions
@@ -879,7 +883,7 @@ of the wavefunction. Thus the average density \(\rho_1(x)\) and pair
 distribution \(\rho_2(x_1,x_2)\) of the previous section can be found in
 this way, but the single particle density matrix \(g(x,y)\) cannot.
 
-\begin{tcolorbox}[enhanced jigsaw, colback=white, bottomrule=.15mm, left=2mm, colbacktitle=quarto-callout-tip-color!10!white, breakable, colframe=quarto-callout-tip-color-frame, leftrule=.75mm, opacitybacktitle=0.6, opacityback=0, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, toprule=.15mm, arc=.35mm, coltitle=black, rightrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacityback=0, bottomtitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, colback=white, toprule=.15mm, titlerule=0mm, arc=.35mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, left=2mm, opacitybacktitle=0.6, breakable, leftrule=.75mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, coltitle=black]
 
 Show this explicitly.
 
@@ -898,6 +902,7 @@ Baym, Gordon. 2018. \emph{Lectures on Quantum Mechanics}. CRC Press.
 \end{CSLReferences}
 
 
+\backmatter
 
 
 \end{document}

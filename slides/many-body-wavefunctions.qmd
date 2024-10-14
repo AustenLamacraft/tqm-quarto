@@ -14,11 +14,6 @@ format:
     html-math-method: katex
     preview-links: true
     katex: {
-      macros: {
-        "\\abs" : "\\left|#1\\right|",
-        "\\tr" : "\\operatorname{tr}",
-        "\\sgn" : "\\operatorname{sgn}",
-      },
       throwOnError: false,
     }
 ---
@@ -101,7 +96,11 @@ This lecture is about the general character of many body wavefunctions and what 
 
 ---
 
-> Systems of indistinguishable particles are described by __totally symmetric__ or __totally antisymmetric__ wavefunctions
+::: {.callout-warning appearance="minimal"}
+
+Systems of indistinguishable particles are described by __totally symmetric__ or __totally antisymmetric__ wavefunctions
+
+:::
 
 - The first kind are __bosons__, the second __fermions__
 
@@ -145,8 +144,12 @@ $$
 \rho_{12}(\br_1,\br_2)=|\varphi_1(\br_1)\varphi_2(\br_2)|^2=\rho_1(\br_1)\rho_2(\br_2)
 $$
 
-> Work it out for identical bosons and fermions
-> Show that $\rho_{12}(\br,\br) = 0$ for fermions, and $\rho_{12}(\br,\br) = 2\rho_1(\br)\rho_2(\br)$ for bosons.
+::: {.callout-tip}
+## Check
+
+Work it out for identical bosons and fermions. Show that $\rho_{12}(\br,\br) = 0$ for fermions, and $\rho_{12}(\br,\br) = 2\rho_1(\br)\rho_2(\br)$ for bosons.
+
+:::
 
 ---
 
@@ -178,9 +181,14 @@ $$
 
 ---
 
-> If we start in 
->$$\frac{1}{\sqrt{2}}[\varphi_\text{L}(\br_1)\varphi_\text{R}(\br_2)\pm \varphi_\text{R}(\br_1)\varphi_\text{L}(\br_2)]$$
-> What state do we end up in?
+::: {.callout-tip}
+## Check
+
+If we start in 
+$$\frac{1}{\sqrt{2}}[\varphi_\text{L}(\br_1)\varphi_\text{R}(\br_2)\pm \varphi_\text{R}(\br_1)\varphi_\text{L}(\br_2)]$$
+What state do we end up in?
+
+:::
 
 ![](../assets/HOM.png){width=70% fig-align="center"}
 
@@ -191,6 +199,7 @@ $$
 $$
  H = \sum_{i=1}^{N} \overbrace{\left[-\frac{\nabla_i^{2}}{2m}+V(\br_i)\right]}^{\equiv H_\text{sp}\text{, single particle Hamiltonian}}
 $$
+
 - $H_\text{sp}$ has eigenstates $\{\varphi_\alpha(\br)\}$ and eigenenergies $\{E_\alpha\}$
 
 - Eigenstatate of $N$ _distinguishable_ particles
@@ -198,15 +207,19 @@ $$
  \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 $$
 
-> What's the energy?
 
 ---
 
+::: {.callout-tip}
+## Check
+
+Why is the energy
+
 $$
-E = \sum_{j=1}^N E_{\alpha_j}
+E = \sum_{j=1}^N E_{\alpha_j}?
 $$
 
-> What are the energy eigenstates?
+:::
 
 ---
 
@@ -258,7 +271,12 @@ $$
 \end{aligned}
 $$
 
-> Show that these are normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal
+::: {.callout-tip}
+## Check
+
+Show that these are normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal
+
+:::
 
 ---
 
@@ -364,7 +382,12 @@ $$
 
 - Wavefunction vanishes $x_{i}=x_{j}$ 
 
-> Check it is periodic and totally antisymmetric
+::: {.callout-tip}
+## Check
+
+Check it is periodic and totally antisymmetric
+
+:::
 
 ---
 
@@ -374,16 +397,20 @@ $$
 \Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
 $$
 
+::: {.callout-tip}
+## Check
 
->	Show this using the __Vandermonde determinant__
->$$
->\begin{vmatrix}
->1 & 1 & \cdots & 1 \\
->z_{1} &  z_{2} & \cdots & \cdots  \\
->z_{1}^{2} & z_{2}^{2} & \cdots & \cdots  \\
->z_{1}^{N-1} &  z_{2}^{N-1} & \cdots & z_{N}^{N-1}
->\end{vmatrix}=\prod_{i<j}^{N}(z_{j}-z_{i})
->$$
+Show this using the __Vandermonde determinant__
+$$
+\begin{vmatrix}
+1 & 1 & \cdots & 1 \\
+z_{1} &  z_{2} & \cdots & \cdots  \\
+z_{1}^{2} & z_{2}^{2} & \cdots & \cdots  \\
+z_{1}^{N-1} &  z_{2}^{N-1} & \cdots & z_{N}^{N-1}
+\end{vmatrix}=\prod_{i<j}^{N}(z_{j}-z_{i})
+$$
+
+:::
 
 ---
 
@@ -450,14 +477,19 @@ $$
 
 ---
 
->Starting from the Slater determinant, show that $g(x,y)$ for the ground state of the Fermi gas is
->$$
->\begin{aligned}
->g(x,y) &= \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} \longrightarrow \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} \\
+::: {.callout-tip}
+## Check
+
+Starting from the Slater determinant, show that $g(x,y)$ for the ground state of the Fermi gas is
+$$
+\begin{aligned}
+g(x,y) &= \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} \longrightarrow \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} \\
 &\longrightarrow n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
->\end{aligned}
->$$
->where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
+\end{aligned}
+$$
+where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density
+
+:::
 
 ---
 
@@ -469,11 +501,17 @@ $$
 $$
 - The prefactor is to account for all pairs of particles
 
->Starting from the Slater determinant, show that
->$$
->\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x_1-x_2)\right]}{k_\text{F}(x_1-x_2)}\right)^2\right]
->$$
->This vanishes at $x_1=x_2$
+
+::: {.callout-tip}
+## Check
+
+Starting from the Slater determinant, show that
+$$
+\rho_2(x_1,x_2) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x_1-x_2)\right]}{k_\text{F}(x_1-x_2)}\right)^2\right]
+$$
+This vanishes at $x_1=x_2$
+
+:::
 
 ---
 
@@ -489,7 +527,12 @@ $$
 
 - For bosons with $c\to \infty$: _eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates_
 
-> Why?
+::: {.callout-tip}
+## Check
+
+Why?
+
+:::
 
 ---
 

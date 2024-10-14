@@ -1,0 +1,234 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  a4paper,
+]{scrbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={TQM Lectures 2024},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{TQM Lectures 2024}
+\author{}
+\date{}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+
+\mainmatter
+These are the materials for Theories of Quantum Matter, a Part III
+Physics course at the University of Cambridge taught in Michaelmas 2024.
+The materials for previous versions of the course can be found
+\href{https://austen.uk/courses/}{here}. While these are largely
+unchanged, you should regard this site as the authoritative version for
+2024.
+
+The source of these notes is
+\href{https://github.com/AustenLamacraft/tqm-quarto}{this GitHub repo}.
+If you find a typo, other problem or have any other comment on the
+material, please
+\href{https://github.com/AustenLamacraft/tqm-quarto/issues}{raise an
+issue} there.
+
+\href{https://github.com/AustenLamacraft/tqm-quarto/discussions/}{The
+discussions section} is a good place to ask each other questions. Try
+it!
+
+If you ever want access to the \(\LaTeX\) for the mathematical
+expressions, right click and select \texttt{Show\ Math\ As}
+\textgreater{} \texttt{TeX\ Commands}.
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, opacitybacktitle=0.6, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Check}, opacityback=0, toprule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colback=white, bottomtitle=1mm, arc=.35mm, colbacktitle=quarto-callout-tip-color!10!white]
+
+These ``Check'' boxes provide small exercises to check your
+understanding as you read the notes. Make sure you do them!
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, opacitybacktitle=0.6, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, opacityback=0, toprule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-note-color-frame, toptitle=1mm, colback=white, bottomtitle=1mm, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white]
+
+``Note'' boxes provide extra context that you may find interesting but
+aren't essential. Except this one. This one's important.
+
+\end{tcolorbox}
+
+Finally\ldots{}
+
+\begin{tcolorbox}[enhanced jigsaw, breakable, opacitybacktitle=0.6, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, opacityback=0, toprule=.15mm, leftrule=.75mm, left=2mm, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, toptitle=1mm, colback=white, bottomtitle=1mm, arc=.35mm, colbacktitle=quarto-callout-warning-color!10!white]
+
+In this course \(\hbar = 1\)!
+
+\end{tcolorbox}
+
+\chapter*{Lectures}\label{lectures}
+\addcontentsline{toc}{chapter}{Lectures}
+
+Take place in the Small Lecture Theatre at the Cavendish Laboratory from
+09.30-11.00 on Tuesdays and Thursdays.
+
+\chapter*{Supervisions}\label{supervisions}
+\addcontentsline{toc}{chapter}{Supervisions}
+
+There will be four supervisions, taking place in the weeks commencing
+22/10, 5/11, 19/11, and 3/12.
+
+
+\backmatter
+
+
+\end{document}
