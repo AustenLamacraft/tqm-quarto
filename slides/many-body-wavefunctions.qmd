@@ -247,6 +247,17 @@ $$
 
 -  __Occupation numbers__ $\{N_{\alpha}\}$ give number of particles in state $\alpha$
 
+---
+
+- Explicitly:
+
+$$
+\begin{aligned}
+ \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})\\
+ \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{1}{N!}}\sum_\pi \sgn(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})
+\end{aligned}
+$$
+
 > Show that these are normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal
 
 ---

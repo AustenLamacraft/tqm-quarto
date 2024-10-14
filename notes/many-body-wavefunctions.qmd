@@ -143,14 +143,16 @@ Here's the definition of the various quantities in @eq-sym-antisym:
 $$
 P_\pi \Psi(\br_1,\br_2,\ldots \br_N) = \Psi(\br_{\pi(1)}, \br_{\pi(2)},\ldots \br_{\pi(N)})
 $$
-- $\sgn(\pi)$ is the [signature](https://en.wikipedia.org/wiki/Parity_of_a_permutation) of the permutation, equal to $+1$ for permutations involving an even number of exchanges, and $-1$ for an odd number. 
+- $\sgn(\pi)$ is the [signature](https://en.wikipedia.org/wiki/Parity_of_a_permutation) of the permutation, equal to $+1$ for permutations involving an even number of exchanges (transpositions), and $-1$ for an odd number. Note that although the same permutation can be accomplished with many different sets of transpositions, the number of transpositions is either always odd or always even.
 
 @eq-sym-antisym allows us to write the totally symmetric and totally antisymmetric versions of @eq-distinguishable as
 $$
-\begin{align}
- \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
- \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}),
-\end{align}
+\begin{aligned}
+ \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \\
+&=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})\\
+ \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})\\
+ &=\sqrt{\frac{1}{N!}}\sum_\pi \sgn(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}}),
+\end{aligned}
 $$ {#eq-norm}
 
 where the __occupation numbers__ $\{N_{\alpha}\}$ in the boson case give the number of particles in state $\alpha$. These normalization factors yield normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is

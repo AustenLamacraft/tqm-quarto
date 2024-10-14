@@ -388,13 +388,15 @@ H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]
 <li><span class="math inline">\(P_\pi\)</span> denotes the corresponding permutation operator <span class="math display">\[
 P_\pi \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots \mathbf{r}_N) = \Psi(\mathbf{r}_{\pi(1)}, \mathbf{r}_{\pi(2)},\ldots \mathbf{r}_{\pi(N)})
 \]</span></li>
-<li><span class="math inline">\(\mathrm{sgn}(\pi)\)</span> is the <a href="https://en.wikipedia.org/wiki/Parity_of_a_permutation">signature</a> of the permutation, equal to <span class="math inline">\(+1\)</span> for permutations involving an even number of exchanges, and <span class="math inline">\(-1\)</span> for an odd number.</li>
+<li><span class="math inline">\(\mathrm{sgn}(\pi)\)</span> is the <a href="https://en.wikipedia.org/wiki/Parity_of_a_permutation">signature</a> of the permutation, equal to <span class="math inline">\(+1\)</span> for permutations involving an even number of exchanges (transpositions), and <span class="math inline">\(-1\)</span> for an odd number. Note that although the same permutation can be accomplished with many different sets of transpositions, the number of transpositions is either always odd or always even.</li>
 </ul>
 <p><a href="#eq-sym-antisym" class="quarto-xref">Equation&nbsp;4</a> allows us to write the totally symmetric and totally antisymmetric versions of <a href="#eq-distinguishable" class="quarto-xref">Equation&nbsp;3</a> as <span id="eq-norm"><span class="math display">\[
-\begin{align}
-\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \nonumber \\
-\lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}),
-\end{align}
+\begin{aligned}
+\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{\frac{N!}{\prod_{\alpha}N_{\alpha}!}}\mathcal{S}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}}) \\
+&amp;=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})\\
+\lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle&amp;=\sqrt{N!}\mathcal{A}\,\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})\\
+&amp;=\sqrt{\frac{1}{N!}}\sum_\pi \mathrm{sgn}(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}}),
+\end{aligned}
 \tag{5}\]</span></span></p>
 <p>where the <strong>occupation numbers</strong> <span class="math inline">\(\{N_{\alpha}\}\)</span> in the boson case give the number of particles in state <span class="math inline">\(\alpha\)</span>. These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
 <p><span class="math display">\[
