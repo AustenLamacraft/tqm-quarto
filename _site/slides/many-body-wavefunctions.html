@@ -685,7 +685,14 @@ z_{i}=\exp(2 \pi i x_{i}/L)
 \Psi_0(x_1,\ldots, x_N)\propto\prod_{i&lt;j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
 </span></p>
 <blockquote>
-<p>Show this using the <strong>Vandermonde determinant</strong> <code>$$ \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\ z_{1}^{2} &amp; z_{2}^{2} &amp; \cdots &amp; \cdots  \\ z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1} \end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i}) $$</code></p>
+<p>Show this using the <strong>Vandermonde determinant</strong> <span class="math display">
+\begin{vmatrix}
+1 &amp; 1 &amp; \cdots &amp; 1 \\
+z_{1} &amp;  z_{2} &amp; \cdots &amp; \cdots  \\
+z_{1}^{2} &amp; z_{2}^{2} &amp; \cdots &amp; \cdots  \\
+z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
+\end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i})
+</span></p>
 </blockquote>
 </section>
 <section id="terminology" class="slide level2 center">
@@ -1084,7 +1091,7 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

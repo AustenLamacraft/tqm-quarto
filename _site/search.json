@@ -183,7 +183,7 @@
     "href": "index.html",
     "title": "TQM Lectures 2024",
     "section": "",
-    "text": "These are the materials for Theories of Quantum Matter in Michaelmas 2024.\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.\n\nIf you ever want access to the \\(\\LaTeX\\) for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!",
+    "text": "These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo.\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.\n\nIf you ever want access to the \\(\\LaTeX\\) for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!",
     "crumbs": [
       "TQM Lectures 2024"
     ]
@@ -429,7 +429,7 @@
     "href": "slides/many-body-wavefunctions.html#generalization-for-n-odd",
     "title": "Many body wavefunctions",
     "section": "Generalization for N odd",
-    "text": "Generalization for N odd\n\n\\Psi_0(x_1,\\ldots, x_N)\\propto\\prod_{i&lt;j}^{N} \\sin\\left(\\frac{\\pi[x_{i}-x_{j}]}{L}\\right).\n\n\nShow this using the Vandermonde determinant $$ \\begin{vmatrix} 1 & 1 & \\cdots & 1 \\\\ z_{1} &  z_{2} & \\cdots & \\cdots  \\\\ z_{1}^{2} & z_{2}^{2} & \\cdots & \\cdots  \\\\ z_{1}^{N-1} &  z_{2}^{N-1} & \\cdots & z_{N}^{N-1} \\end{vmatrix}=\\prod_{i&lt;j}^{N}(z_{j}-z_{i}) $$",
+    "text": "Generalization for N odd\n\n\\Psi_0(x_1,\\ldots, x_N)\\propto\\prod_{i&lt;j}^{N} \\sin\\left(\\frac{\\pi[x_{i}-x_{j}]}{L}\\right).\n\n\nShow this using the Vandermonde determinant \n\\begin{vmatrix}\n1 & 1 & \\cdots & 1 \\\\\nz_{1} &  z_{2} & \\cdots & \\cdots  \\\\\nz_{1}^{2} & z_{2}^{2} & \\cdots & \\cdots  \\\\\nz_{1}^{N-1} &  z_{2}^{N-1} & \\cdots & z_{N}^{N-1}\n\\end{vmatrix}=\\prod_{i&lt;j}^{N}(z_{j}-z_{i})",
     "crumbs": [
       "Slides",
       "Many body wavefunctions"
