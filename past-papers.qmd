@@ -1,0 +1,29 @@
+# Past Papers {.unnumbered}
+
+## 2023 {.unnumbered}
+
+![](past-papers/TQM-2023-solutions.pdf){width=640px height=480px}
+
+## 2022 {.unnumbered}
+
+![](past-papers/TQM-2022-solutions.pdf){width=640px height=480px}
+
+## 2021 {.unnumbered}
+
+![](past-papers/TQM-2021-solutions.pdf){width=640px height=480px}
+
+## 2020 {.unnumbered}
+
+![](past-papers/TQM2020-Q+A.pdf){width=640px height=480px}
+
+## 2019 {.unnumbered}
+
+![](past-papers/Major2019-TQM-Q+A.pdf){width=640px height=480px}
+
+## 2018 {.unnumbered}
+
+![](past-papers/Major2018-TQM-Q+A.pdf){width=640px height=480px}
+
+## 2017 {.unnumbered}
+
+![](past-papers/Major2017_1-TQM_solutions_corrected.pdf){width=640px height=480px}

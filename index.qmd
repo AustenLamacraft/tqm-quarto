@@ -6,16 +6,6 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 
 [The discussions section](https://github.com/AustenLamacraft/tqm-quarto/discussions/) is a good place to ask each other questions. Try it!
 
-## Lectures {.unnumbered}
-
-Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.
-
-## Supervisions {.unnumbered}
-
-There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.
-
----
-
 If you ever want access to the $\LaTeX$ for the mathematical expressions, right click and select `Show Math As` > `TeX Commands`.
 
 
@@ -39,3 +29,13 @@ Finally...
 In this course $\hbar = 1$!
 
 :::
+
+## Lectures {.unnumbered}
+
+Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.
+
+## Supervisions {.unnumbered}
+
+There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.
+
+
