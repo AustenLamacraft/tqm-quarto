@@ -434,7 +434,7 @@ H &amp;= -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_
 <li>Write LLL wavefunction as <span class="math inline">f(z)</span>, leaving Gaussian in inner product</li>
 </ul>
 <p><span class="math display">
-\langle{f_1}\rvert f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right),
+\langle{f_1}\rvert f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right)
 </span></p>
 <ul>
 <li><p>Units with <strong>magnetic length</strong> <span class="math inline">\ell \equiv (qB)^{-1/2}=1</span></p></li>
@@ -509,7 +509,7 @@ V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right)
 </div>
 <div class="callout-content">
 <p>Show that the density is <span class="math display">
-\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
+\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}
 </span> <span class="math inline">\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt</span> is <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma fn.</a></p>
 </div>
 </div>
@@ -533,8 +533,7 @@ V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right)
 <h2>The Laughlin Wavefunction</h2>
 <ul>
 <li><p>In 1983 Robert Laughlin proposed the generalization <span class="math display">
-\Psi_m(z_1,\ldots, z_N) = \prod_{j&lt;k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
-\label{many_nu}
+\Psi_m(z_1,\ldots, z_N) = \prod_{j&lt;k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right)
 </span></p></li>
 <li><p><span class="math inline">m</span> odd / even for fermions / bosons. <span class="math inline">m\neq 1</span> <strong>not</strong> a product state!</p></li>
 </ul>
@@ -644,7 +643,7 @@ V(\mathbf{r}_1,\ldots,\mathbf{r}_N) = -\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\
 \begin{aligned}
 \Psi_\text{hole}(z_1,\ldots, z_N|Z) &amp;= \left(\prod_j (Z-z_j)\right)\Psi_m(z_1,\ldots, z_N)\\
 V(\mathbf{r}_1, \ldots, \mathbf{r}_N)&amp;=-\frac{q^2}{2\pi m}\sum_j \log\left|\mathbf{r}_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\mathbf{r}_j-\mathbf{r}_k\right|\\
-&amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
+&amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2
 \end{aligned}
 </span>`</p></li>
 <li><p>Charge <span class="math inline">q/m</span> at point <span class="math inline">\mathbf{R} = (X, Y)</span>, where <span class="math inline">Z=X+iY</span></p></li>
@@ -975,7 +974,7 @@ Reveal.on( 'slidechanged', event => {
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

@@ -95,7 +95,7 @@ where $f(z)$ is an arbitrary analytic function.
 - Write LLL wavefunction as $f(z)$, leaving Gaussian in inner product
 
 $$
-\bra{f_1}f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right),
+\bra{f_1}f_2\rangle = \int \frac{d^2z}{2\pi} \overline{f_1(z)}f_2(z) \exp\left(-\left|z\right|^2/2\right)
 $$
 
 - Units with __magnetic length__ $\ell \equiv (qB)^{-1/2}=1$
@@ -157,7 +157,7 @@ $$
 
 Show that the density is
 $$
-\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}.
+\rho_1(z,\bar z) = \frac{e^{-|z|^2/2}}{2\pi}\sum_{n=0}^{N-1} \frac{\left|z\right|^{2n}}{2^n n!} = \frac{1}{2\pi} \frac{\Gamma(N,|z|^2/2)}{(N-1)!}
 $$
 $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is <a href="https://en.wikipedia.org/wiki/Incomplete_gamma_function">incomplete gamma fn.</a>
 
@@ -181,8 +181,7 @@ $\Gamma(s,x) = \int^\infty_x t^{s-1}e^{-t}dt$ is <a href="https://en.wikipedia.o
 
 - In 1983 Robert Laughlin proposed the generalization
 $$
-\Psi_m(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right).
-\label{many_nu}
+\Psi_m(z_1,\ldots, z_N) = \prod_{j<k}^N (z_j-z_k)^{m} \exp\left(-\frac{1}{4}\sum_{j=1}^N\left|z_j\right|^2\right)
 $$
 
 - $m$ odd / even for fermions / bosons. $m\neq 1$ __not__ a product state!
