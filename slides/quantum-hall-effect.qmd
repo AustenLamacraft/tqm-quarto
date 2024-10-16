@@ -32,20 +32,19 @@ format:
 - Single particle Hamiltonian with vector potential
 
 $$
-H = -\frac{1}{2m}\left(\nabla -i q \mathbf{A}\right)^2,
-\label{Landau}
+H = -\frac{1}{2m}\left(\nabla -i q \mathbf{A}\right)^2
 $$
 
 - For perpendicular field
 
 $$
-\partial_x A_y - \partial_y A_x = B.
+\partial_x A_y - \partial_y A_x = B
 $$
 
 - We choose __symmetric gauge__
 
 $$
-A_x = -\frac{1}{2} B y,\quad A_y = \frac{1}{2} B x.
+A_x = -\frac{1}{2} B y,\quad A_y = \frac{1}{2} B x
 $$
 
 ---
@@ -255,7 +254,7 @@ where we set $\beta q^2/(2\pi) = 2m$ and $\beta q\rho_0 = 2$.
 - Introduce a continuum charge density $\rho(\br)$ and write the energy as a functional
 $$
 \begin{aligned}
-\beta V[\rho] = -m\int d^2\br\, d^2\br'\rho(\br)\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\int d^2\br\left|\br\right|^2\rho(\br).
+\beta V[\rho] = -m\int d^2\br\, d^2\br'\rho(\br)\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\int d^2\br\left|\br\right|^2\rho(\br)
 \end{aligned}
 $$
 
@@ -264,7 +263,7 @@ $$
 
 Show that minimizing the energy with respect to $\rho(\br)$ -- corresponding to finding the most likely configuration -- leads to the condition
 $$
--2m\int d^2\br'\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0.
+-2m\int d^2\br'\log\left|\br-\br'\right|\rho(\br') + \frac{1}{2}\left|\br\right|^2 = 0
 $$
 
 :::
@@ -336,7 +335,7 @@ Reveal.on( 'slidechanged', event => {
 - Two quasihole wavefunction
 
 $$
-\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
+\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N)
 $$
 
 - $\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2$ is plasma with two $1/m$ charges at positions $\mathbf{R}_{1,2}$
