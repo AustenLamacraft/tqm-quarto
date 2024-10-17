@@ -30,6 +30,7 @@ website:
         contents:
           - slides/many-body-wavefunctions.qmd
           - slides/quantum-hall-effect.qmd
+          - slides/elastic-chain.qmd
           
 
       - section: "Problem Sets"
