@@ -97,7 +97,6 @@ $$
 By substituting into the equation of motion show that the dispersion relation is
 $$
 \omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
-\label{coll_Dispersion}
 $$
 
 :::
