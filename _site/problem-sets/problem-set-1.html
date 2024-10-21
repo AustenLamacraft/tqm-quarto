@@ -334,13 +334,13 @@ V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
 </section>
 <section id="normal-modes-in-general" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="normal-modes-in-general"><span class="header-section-number">5</span> Normal Modes in General</h2>
-<p>Consider the more general Hamiltonian</p>
+<p>Consider the more general Hamiltonian described by an <em>even</em> potential <span class="math inline">\(V(x)\)</span></p>
 <p><span class="math display">\[
-H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j&lt;k} V(x_j-x_k) .
+H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j&lt;k} V(x_j-x_k).
 \]</span></p>
 <ol type="1">
-<li><p>Impose periodic boundary conditions and find normal modes for the oscillation about the equilibrium state – a regular arrangement of masses.</p></li>
-<li><p>Expand <span class="math inline">\(H\)</span> to quadratic order in the deviations from equilibrium and express the Hamiltonian in terms of oscillator variables <span class="math inline">\(a^{\vphantom{\dagger}}_n\)</span>, <span class="math inline">\(a^\dagger_n\)</span>.</p></li>
+<li><p>Impose periodic boundary conditions (<span class="math inline">\(V(x+L)=V(x)\)</span>) and show that <span class="math inline">\(x_j=jL/N\)</span> — a regular arrangement of masses — is an equilibrium state.</p></li>
+<li><p>Expand <span class="math inline">\(H\)</span> to quadratic order in the deviations from equilibrium, find the normal modes, and express the Hamiltonian in terms of oscillator variables <span class="math inline">\(a^{\vphantom{\dagger}}_n\)</span>, <span class="math inline">\(a^\dagger_n\)</span>.</p></li>
 <li><p>Expand to <em>cubic</em> order and express the cubic parts in terms of oscillator variables. If we considered this part of the Hamiltonian as a perturbation in time dependent perturbation theory, what transitions could occur?</p></li>
 </ol>
 </section>
@@ -510,7 +510,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -440,7 +440,6 @@ z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
 <div class="callout-content">
 <p>By substituting into the equation of motion show that the dispersion relation is <span class="math display">
 \omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
-\label{coll_Dispersion}
 </span></p>
 </div>
 </div>
@@ -1209,7 +1208,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

@@ -75,15 +75,15 @@ into a superposition of eigenstates of $V_\text{harm}$, describing the occupatio
 
 ## Normal Modes in General
 
-Consider the more general Hamiltonian
+Consider the more general Hamiltonian described by an _even_ potential $V(x)$
 
 $$
-H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k) .
+H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k).
 $$
 
-1. Impose periodic boundary conditions and find normal modes for the oscillation about the equilibrium state -- a regular arrangement of masses.
+1. Impose periodic boundary conditions ($V(x+L)=V(x)$) and show that $x_j=jL/N$ — a regular arrangement of masses — is an equilibrium state.
 
-2. Expand $H$ to quadratic order in the deviations from equilibrium and express the Hamiltonian in terms of oscillator variables $\aop_n$, $\adop_n$.
+2. Expand $H$ to quadratic order in the deviations from equilibrium, find the normal modes, and express the Hamiltonian in terms of oscillator variables $\aop_n$, $\adop_n$.
 
 3. Expand to _cubic_ order and express the cubic parts in terms of oscillator variables. If we considered this part of the Hamiltonian as a perturbation in time dependent perturbation theory, what transitions could occur?
 

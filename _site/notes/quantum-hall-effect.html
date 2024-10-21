@@ -376,7 +376,7 @@ Check
 <div class="callout-body-container callout-body">
 <p>By considering matrix elements <span class="math inline">\(\langle{f_1}\rvert V\lvert{f_2}\rangle\)</span> between LLL states, show (by integrating by parts) that it is possible to replace any occurrence of <span class="math inline">\(\bar z\)</span> in <span class="math inline">\(V\)</span> with <span class="math inline">\(2\partial_z\)</span> <em>acting on the analytic part of the wavefunction</em>.</p>
 <p>Note that the order is important: all the <span class="math inline">\(\partial_z\)</span> must stand to the left of the <span class="math inline">\(z\)</span>, Thus <span id="eq-harmonic-project"><span class="math display">\[
-V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).&gt;
+V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
 \tag{3}\]</span></span></p>
 </div>
 </div>
@@ -668,7 +668,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

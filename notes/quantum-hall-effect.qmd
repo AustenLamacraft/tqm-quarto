@@ -101,7 +101,7 @@ By considering matrix elements $\bra{f_1}V\ket{f_2}$ between LLL states, show (b
 
 Note that the order is important: all the $\partial_z$ must stand to the left of the $z$, Thus
 $$ 
-V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).>
+V_\text{harm}\longrightarrow v\partial_z z =  v\left(1+z \partial_z\right).
 $$ {#eq-harmonic-project}
 
 :::
