@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Austen Lamacraft">
 
 <title>The Elastic Chain – Theories of Quantum Matter</title>
 <style>
@@ -21,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,7 +30,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../slides/many-body-wavefunctions.html" rel="next">
+<link href="../notes/spin-models.html" rel="next">
 <link href="../notes/quantum-hall-effect.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -196,6 +175,12 @@ window.Quarto = {
  <span class="menu-text">The Elastic Chain</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -295,12 +280,6 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Austen Lamacraft </p>
-          </div>
-  </div>
     
   
     
@@ -319,7 +298,6 @@ window.Quarto = {
 \]</span></p>
 </div>
 <p>In this lecture we discuss a very simple many body system in which particles are coupled by Hooke’s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>.</p>
-<p>Reading: <span class="citation" data-cites="coleman2015introduction">Coleman (<a href="#ref-coleman2015introduction" role="doc-biblioref">2015</a>)</span>, Chapter 2.</p>
 <hr>
 <section id="the-classical-system" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="the-classical-system"><span class="header-section-number">1</span> The Classical System</h2>
@@ -843,15 +821,10 @@ I(j) = 4\sum_{n=1}^j \frac{1}{n+1/2}\sim 4\log j.
 \]</span> When all factors are replaced, this yields <a href="#eq-log-fluct" class="quarto-xref">Equation&nbsp;13</a>.</p>
 
 
-
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-coleman2015introduction" class="csl-entry" role="listitem">
-Coleman, Piers. 2015. <em>Introduction to Many-Body Physics</em>. Cambridge University Press.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -944,7 +917,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1279,8 +1252,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../slides/many-body-wavefunctions.html" class="pagination-link" aria-label="Many body wavefunctions">
-        <span class="nav-page-text">Many body wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/spin-models.html" class="pagination-link" aria-label="Spin Models">
+        <span class="nav-page-text">Spin Models</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

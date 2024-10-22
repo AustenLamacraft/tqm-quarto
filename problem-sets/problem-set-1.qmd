@@ -81,7 +81,7 @@ $$
 H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j<k} V(x_j-x_k).
 $$
 
-1. Impose periodic boundary conditions ($V(x+L)=V(x)$) and show that $x_j=jL/N$ — a regular arrangement of masses — is an equilibrium state.
+1. Impose periodic boundary conditions ($V(x+L)=V(x)$) and show that $x_j=jL/N$ (a regular arrangement of masses) is an equilibrium state.
 
 2. Expand $H$ to quadratic order in the deviations from equilibrium, find the normal modes, and express the Hamiltonian in terms of oscillator variables $\aop_n$, $\adop_n$.
 

@@ -25,6 +25,7 @@ website:
           - notes/many-body-wavefunctions.qmd
           - notes/quantum-hall-effect.qmd
           - notes/elastic-chain.qmd
+          - notes/spin-models.qmd
 
       - section: "Slides"
         contents:

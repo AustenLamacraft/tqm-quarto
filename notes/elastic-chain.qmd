@@ -1,12 +1,5 @@
 ---
 title: The Elastic Chain
-summary: Quantizing a chain. Ground state displacement fluctuations. statistics.
-author: Austen Lamacraft
-draft: false  # Is this a draft? true/false
-toc: true  # Show table of contents? true/false
-type: book  # Do not modify.
-weight: 30
-markup: pandoc
 ---
 
 
@@ -14,8 +7,7 @@ markup: pandoc
 
 In this lecture we discuss a very simple many body system in which particles are coupled by Hooke's Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>.
 
-Reading: @coleman2015introduction, Chapter 2.
-
+ 
 ---
 
 ## The Classical System
