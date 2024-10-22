@@ -517,6 +517,262 @@
     ]
   },
   {
+    "objectID": "slides/spin-models.html#ising-model",
+    "href": "slides/spin-models.html#ising-model",
+    "title": "Spin Models",
+    "section": "Ising Model",
+    "text": "Ising Model\n\nH = J\\sum_{\\langle j\\,k\\rangle} \\sigma_j \\sigma_k\n\n\n‘spin’ variables \\sigma_j=\\pm 1\n{\\langle j\\,k\\rangle} indicates sum over nearest neighbour pairs\nJ&lt;0 favours aligned spins, leading to ferromagnetism\n\n\nBut… not really a quantum model",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#n-spin-12-states-and-operators",
+    "href": "slides/spin-models.html#n-spin-12-states-and-operators",
+    "title": "Spin Models",
+    "section": "N spin-1/2: states and operators",
+    "text": "N spin-1/2: states and operators\n\n1 spin-1/2: \\psi_{\\pm} in s^z basis (say). N-spins: \\Psi_{\\sigma_1,\\ldots \\sigma_N} has 2^N components\nProduct states \\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle form a basis\n\n\n\\lvert{\\Psi}\\rangle=\\sum_{\\{\\sigma_j=\\pm\\}}\\Psi_{\\sigma_1\\cdots \\sigma_N}\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#tensor-product",
+    "href": "slides/spin-models.html#tensor-product",
+    "title": "Spin Models",
+    "section": "Tensor product",
+    "text": "Tensor product\n\nFor (distinguishable) particles product states were\n\n\n\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}(\\mathbf{r}_1,\\ldots \\mathbf{r}_N)=\\varphi_{\\alpha_{1}}(\\mathbf{r_{1}})\\varphi_{\\alpha_{2}}(\\mathbf{r_{2}})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r_{N}})\n\n\nAbstract form\n\n\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\n\nThis is a tensor product, normally denoted\n\n\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\otimes\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\otimes\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\n\nWe drop the \\otimes for brevity",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#operators",
+    "href": "slides/spin-models.html#operators",
+    "title": "Spin Models",
+    "section": "Operators",
+    "text": "Operators\n\nSpin operators obey [s^a,s^b]=i\\epsilon_{abc}s^c\nA spin operator s^a_j acts on j^\\text{th} spin\n\n\ns^a_j\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle = \\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_{j-1}}\\rangle (s^a \\lvert{\\sigma_j}\\rangle) \\lvert{\\sigma_{j+1}}\\rangle\\cdots\\lvert{\\sigma_N}\\rangle\n\n\nWhich is the same as\n\n\ns^a_j = \\overbrace{\\mathbb{1}\\otimes \\cdots \\mathbb{1}}^{j-1}\\otimes s^a \\otimes \\overbrace{\\mathbb{1} \\otimes\\cdots \\mathbb{1}}^{N-j}\n\n\n\n\n\n\n\nCheck\n\n\nWhat is [s^a_j,s^b_k] for j\\neq k?",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#heisenberg-model",
+    "href": "slides/spin-models.html#heisenberg-model",
+    "title": "Spin Models",
+    "section": "Heisenberg Model",
+    "text": "Heisenberg Model\n\nMore realistic\n\n\nH = J \\sum_{\\langle j\\,k\\rangle} \\mathbf{s}_j \\cdot \\mathbf{s}_k\n\n\n\\left[s^a_j,s^b_k\\right]=i\\delta_{jk}\\epsilon_{abc}s^c_j\nUnlike the elastic lattice, not possible to solve in general\nCaptures many of the dynamical features (e.g. spin waves) of real magnetic materials.",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#heisenberg-ferromagnetic-chain",
+    "href": "slides/spin-models.html#heisenberg-ferromagnetic-chain",
+    "title": "Spin Models",
+    "section": "Heisenberg Ferromagnetic Chain",
+    "text": "Heisenberg Ferromagnetic Chain\n\nBegin with the 1D case\n\n\nH = J \\sum_{j=1}^N \\mathbf{s}_j \\cdot \\mathbf{s}_{j+1},\n\n\nAs usual \\mathbf{s}_j=\\mathbf{s}_{j+N} (periodic boundary conditions).\nSome anisotropic materials have magnetic atoms arranged in weakly coupled chains",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#ground-state-for-j0",
+    "href": "slides/spin-models.html#ground-state-for-j0",
+    "title": "Spin Models",
+    "section": "Ground state for J<0",
+    "text": "Ground state for J&lt;0\n\n\\lvert{\\text{FM}}\\rangle \\equiv \\lvert{+}\\rangle_1 \\lvert{+}\\rangle_2 \\cdots \\lvert{+}\\rangle_N\n\n\n\n\n\n\n\nCheck\n\n\nShow that this is eigenstate of H with E_0\\equiv JN/4\n\n\n\n\nAlso eigenstate of S^z and \\mathbf{S}^2, where \\mathbf{S} is total spin\n\n\n\\mathbf{S} = \\sum_{j=1}^N \\mathbf{s}_j=(S^x, S^y, S^z)\n\n\nEigenvalues are S^z = N/2 and \\mathbf{S}^2 = \\frac{N}{2}\\left(\\frac{N}{2}+1\\right).",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#ground-state-multiplet",
+    "href": "slides/spin-models.html#ground-state-multiplet",
+    "title": "Spin Models",
+    "section": "Ground state multiplet",
+    "text": "Ground state multiplet\n\nRotational invariance implies that \\lvert{\\text{FM}}\\rangle is member of multiplet of N+1 degenerate eigenstates related by rotations\nThese states can be generated by acting with S^-=S^x-iS^y\n\n\nS^-\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N s^-_j\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N.\n\n\n\n\n\n\n\nCheck\n\n\nS^z = N/2-1, but \\mathbf{S}^2 and H unchanged.\n\n\n\n\n\\left(S^-\\right)^2\\lvert{\\text{FM}}\\rangle is constant amplitude superposition of states with two spins flipped, etc.",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#first-excited-states",
+    "href": "slides/spin-models.html#first-excited-states",
+    "title": "Spin Models",
+    "section": "First Excited States",
+    "text": "First Excited States\n\nWhat about?\n\n\n\\lvert{j}\\rangle = \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N\n\n\nIs this an eigenstate? Act with Hamiltonian, using\n\n\n\\mathbf{s}_j \\cdot \\mathbf{s}_{j+1} = s^z_js^z_{j+1} + \\frac{1}{2}\\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\\right)\n\n\nNow note that\n\n\n\\left(s^+_j s^-_{j+1} +s^-_js^+_{j+1}\\right)\\lvert{+}\\rangle_j\\lvert{-}\\rangle_{j+1} = \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#n-magnon-states",
+    "href": "slides/spin-models.html#n-magnon-states",
+    "title": "Spin Models",
+    "section": "N-Magnon States",
+    "text": "N-Magnon States\n\nA magnon has energy \\propto J\nSystem with extensive energy / finite temperature must have many magnons\nDimension of subspace of n flipped spins is \\binom{N}{n}\nMagnons can’t sit on the same site. Things get difficult!",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#antiferromagnets-are-different",
+    "href": "slides/spin-models.html#antiferromagnets-are-different",
+    "title": "Spin Models",
+    "section": "Antiferromagnets Are Different!",
+    "text": "Antiferromagnets Are Different!\n\nLet’s try and guess the ground state for J&gt;0\nSince anti-aligning spins should be favoured, we might try\n\n\n\\lvert{\\text{AFM}}\\rangle  \\equiv \\lvert{+}\\rangle_1\\lvert{-}\\rangle_{2}\\cdots \\lvert{+}\\rangle_{N-1}\\lvert{-}\\rangle_{N}\n\n\nWhat does H do? Remember\n\n\n\\mathbf{s}_j \\cdot \\mathbf{s}_{j+1} = s^z_js^z_{j+1} + \\frac{1}{2}\\overbrace{\\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\\right)}^{\\text{swaps }\\lvert{+}\\rangle_j\\lvert{-}\\rangle_{j+1}},\n spin flip terms cause spins to move about. Ground state is more complicated!",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#large-s-expansion",
+    "href": "slides/spin-models.html#large-s-expansion",
+    "title": "Spin Models",
+    "section": "Large s Expansion",
+    "text": "Large s Expansion\n\nGeneralize model to s&gt;1/2 (magnetic ions can have higher spin)\nDevelop approximations that work for s\\gg 1/2\nHope that the qualitative behaviour we find holds for s=1/2",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#holsteinprimakoff-representation",
+    "href": "slides/spin-models.html#holsteinprimakoff-representation",
+    "title": "Spin Models",
+    "section": "Holstein–Primakoff Representation",
+    "text": "Holstein–Primakoff Representation\n\nRepresent spins as oscillators!\nCoupled spins becomes coupled oscillators\nRepresentation not linear, so we get anharmonic chain\nHarmonic approximation justified when spin large",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#one-way-to-think-of-it",
+    "href": "slides/spin-models.html#one-way-to-think-of-it",
+    "title": "Spin Models",
+    "section": "One way to think of it…",
+    "text": "One way to think of it…\n\ns^{\\pm} and a^{\\vphantom{\\dagger}}, a^\\dagger both shift us up and down a ladder of states. \ns^\\pm\\lvert{s,m}\\rangle = \\sqrt{s(s+1)-m(m\\pm 1)}\\lvert{s,m\\pm 1}\\rangle\n Relation between s^z and number of quanta n is simple: s^z = s - n\nDifference: 2s+1 spin states, but infinite oscillator states\ns^+\\propto a^{\\vphantom{\\dagger}}, s^-\\propto a^\\dagger doesn’t work. Something needed to stop us lowering beyond s^z=-s \ns^- = \\sqrt{2s}a^\\dagger\\sqrt{1-\\frac{a^\\dagger a^{\\vphantom{\\dagger}}}{2s}}",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#another-way",
+    "href": "slides/spin-models.html#another-way",
+    "title": "Spin Models",
+    "section": "Another way…",
+    "text": "Another way…\n\n\n\n\n\n\nClassical spin described by point on sphere of radius \\sim s\nLarge s: approximate locally by plane\nNear north pole [s^x,s^y]=is^z\\sim is resembles [x,p]=i\nTherefore s^\\pm resemble a^{\\vphantom{\\dagger}}, a^\\dagger",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#harmonic-spin-waves",
+    "href": "slides/spin-models.html#harmonic-spin-waves",
+    "title": "Spin Models",
+    "section": "Harmonic Spin Waves",
+    "text": "Harmonic Spin Waves\n\nLarge s approximation\n\n\n\\begin{aligned}\ns^+ &\\sim \\sqrt{2s}a^{\\vphantom{\\dagger}}\\qquad s^- \\sim  \\sqrt{2s}a^\\dagger\\qquad s_z = \\left(s - a^\\dagger a^{\\vphantom{\\dagger}}\\right).\n\\end{aligned}\n\nneglecting terms of order s^{-1/2}.\n\nHeisenberg Hamiltonian becomes quadratic oscillator Hamiltonian\n\n\n\\begin{aligned}\ns^x &\\sim \\sqrt{s}x \\nonumber\\\\\ns^y &\\sim  \\sqrt{s}p\\nonumber\\\\\ns_z &= \\left(s - \\frac{1}{2}[x^2 + p^2 - 1] \\right)\n\\end{aligned}\n\nwhere x = \\frac{1}{\\sqrt{2}}(a^{\\vphantom{\\dagger}}+a^\\dagger) and p = \\frac{i}{\\sqrt{2}}(a^\\dagger-a^{\\vphantom{\\dagger}})",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#afm-case",
+    "href": "slides/spin-models.html#afm-case",
+    "title": "Spin Models",
+    "section": "AFM case",
+    "text": "AFM case\n\nClose to \\lvert{\\text{FM}}\\rangle few oscillator quanta; harmonic approximation OK\nClassically, small amplitude nonlinear oscillations treated as linear\nWhat about AFM case? Make it look like FM\nRotate every other spin through \\pi about the y axis, so that\n\n\n(s^x_j,s^y_j,s^z_j)\\longrightarrow (-s^x_j,s^y_j,-s^z_j),\\quad j\\text{ odd}.\n\n\nThe Heisenberg chain Hamiltonian becomes\n\n\nH = -J \\sum_{j=1}^N \\left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\\right]",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#ground-state-fluctuations",
+    "href": "slides/spin-models.html#ground-state-fluctuations",
+    "title": "Spin Models",
+    "section": "Ground state fluctuations",
+    "text": "Ground state fluctuations\n\nCrudest approximation\n\n\n\\langle{\\text{FM}}\\rvert s_j^z \\lvert{\\text{FM}}\\rangle = s, \\qquad \\langle{\\text{AFM}}\\rvert s_j^z \\lvert{\\text{AFM}}\\rangle = s(-1)^j\n\n\nHowever, in Holstein–Primakoff representation\n\n\ns^z_j = s - a^\\dagger_ja^{\\vphantom{\\dagger}}_j.\n\n\nHow does second term effect \\langle{0}\\rvert s^z_j \\lvert{0}\\rangle in ground state of H^{(2)}?\nWe know it doesn’t for FM, because \\lvert{\\text{FM}}\\rangle=\\lvert{0}\\rangle",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "slides/spin-models.html#afm-case-1",
+    "href": "slides/spin-models.html#afm-case-1",
+    "title": "Spin Models",
+    "section": "AFM case",
+    "text": "AFM case\n\ns^z_j = (-1)^j(s-a^\\dagger_ja^{\\vphantom{\\dagger}}_j)\n\n\nq_n q_{-n} + \\pi_n\\pi_{-n} doesn’t commute with \\sin^2(\\eta/2)q_n q_{-n} + \\cos^2(\\eta/2)\\pi_n\\pi_{-n}\nExpress both in oscillator variables\n\n\n\\begin{aligned}\n&a^{\\vphantom{\\dagger}}_\\eta = \\sqrt{\\frac{|\\tan(\\eta /2)|}{2}}\\left(q_n + \\frac{i}{|\\tan(\\eta /2)|}\\pi_{-n}\\right)\\nonumber\\\\\n&a^\\dagger_\\eta = \\sqrt{\\frac{|\\tan(\\eta /2)|}{2}}\\left(q_{-n} - \\frac{i}{|\\tan(\\eta /2)|}\\pi_{n}\\right),\\qquad \\eta=2\\pi n/N \\\\\n&\\sin^2(\\eta/2)q_n q_{-n} + \\cos^2(\\eta/2)\\pi_n\\pi_{-n}=\\frac{\\omega(\\eta)}{2}\\left[a^\\dagger_\\eta a^{\\vphantom{\\dagger}}_\\eta+a^{\\vphantom{\\dagger}}_\\eta a^\\dagger_\\eta\\right].\n\\end{aligned}",
+    "crumbs": [
+      "Slides",
+      "Spin Models"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.\n\n\n\n\nCheck out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "index.html#lectures",
+    "href": "index.html#lectures",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "index.html#supervisions",
+    "href": "index.html#supervisions",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "Check out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "macros.html",
+    "href": "macros.html",
+    "title": "Theories of Quantum Matter",
+    "section": "",
+    "text": "\\[\n\\DeclareMathOperator{\\tr}{tr}\n\\DeclareMathOperator{\\E}{\\mathbb{E}}\n\\]"
+  },
+  {
     "objectID": "slides/quantum-hall-effect.html#quantum-hall-effect",
     "href": "slides/quantum-hall-effect.html#quantum-hall-effect",
     "title": "Quantum Hall Effect",
@@ -657,43 +913,6 @@
     "crumbs": [
       "Slides",
       "Quantum Hall Effect"
-    ]
-  },
-  {
-    "objectID": "macros.html",
-    "href": "macros.html",
-    "title": "Theories of Quantum Matter",
-    "section": "",
-    "text": "\\[\n\\DeclareMathOperator{\\tr}{tr}\n\\DeclareMathOperator{\\E}{\\mathbb{E}}\n\\]"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.\n\n\n\n\nCheck out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!",
-    "crumbs": [
-      "TQM Lectures 2024"
-    ]
-  },
-  {
-    "objectID": "index.html#lectures",
-    "href": "index.html#lectures",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.",
-    "crumbs": [
-      "TQM Lectures 2024"
-    ]
-  },
-  {
-    "objectID": "index.html#supervisions",
-    "href": "index.html#supervisions",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
-    "crumbs": [
-      "TQM Lectures 2024"
     ]
   },
   {
@@ -1061,257 +1280,5 @@
     "title": "References",
     "section": "",
     "text": "References"
-  },
-  {
-    "objectID": "slides/spin-models.html#ising-model",
-    "href": "slides/spin-models.html#ising-model",
-    "title": "Spin Models",
-    "section": "Ising Model",
-    "text": "Ising Model\n\nH = J\\sum_{\\langle j\\,k\\rangle} \\sigma_j \\sigma_k\n\n\n‘spin’ variables \\sigma_j=\\pm 1\n{\\langle j\\,k\\rangle} indicates sum over nearest neighbour pairs\nJ&lt;0 favours aligned spins, leading to ferromagnetism\n\n\nBut… not really a quantum model",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#n-spin-12-states-and-operators",
-    "href": "slides/spin-models.html#n-spin-12-states-and-operators",
-    "title": "Spin Models",
-    "section": "N spin-1/2: states and operators",
-    "text": "N spin-1/2: states and operators\n\n1 spin-1/2: \\psi_{\\pm} in s^z basis (say). N-spins: \\Psi_{\\sigma_1,\\ldots \\sigma_N} has 2^N components\nProduct states \\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle form a basis\n\n\n\\lvert{\\Psi}\\rangle=\\sum_{\\{\\sigma_j=\\pm\\}}\\Psi_{\\sigma_1\\cdots \\sigma_N}\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#tensor-product",
-    "href": "slides/spin-models.html#tensor-product",
-    "title": "Spin Models",
-    "section": "Tensor product",
-    "text": "Tensor product\n\nFor (distinguishable) particles product states were\n\n\n\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}(\\mathbf{r}_1,\\ldots \\mathbf{r}_N)=\\varphi_{\\alpha_{1}}(\\mathbf{r_{1}})\\varphi_{\\alpha_{2}}(\\mathbf{r_{2}})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r_{N}})\n\n\nAbstract form\n\n\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\n\nThis is a tensor product, normally denoted\n\n\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\otimes\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\otimes\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\n\nWe drop the \\otimes for brevity",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#operators",
-    "href": "slides/spin-models.html#operators",
-    "title": "Spin Models",
-    "section": "Operators",
-    "text": "Operators\n\nSpin operators obey [s^a,s^b]=i\\epsilon_{abc}s^c\nA spin operator s^a_j acts on j^\\text{th} spin\n\n\ns^a_j\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle = \\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_{j-1}}\\rangle (s^a \\lvert{\\sigma_j}\\rangle) \\lvert{\\sigma_{j+1}}\\rangle\\cdots\\lvert{\\sigma_N}\\rangle\n\n\nWhich is the same as\n\n\ns^a_j = \\overbrace{\\mathbb{1}\\otimes \\cdots \\mathbb{1}}^{j-1}\\otimes s^a \\otimes \\overbrace{\\mathbb{1} \\otimes\\cdots \\mathbb{1}}^{N-j}\n\n\n\n\n\n\n\nCheck\n\n\nWhat is [s^a_j,s^b_k] for j\\neq k?",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#heisenberg-model",
-    "href": "slides/spin-models.html#heisenberg-model",
-    "title": "Spin Models",
-    "section": "Heisenberg Model",
-    "text": "Heisenberg Model\n\nMore realistic\n\n\nH = J \\sum_{\\langle j\\,k\\rangle} \\mathbf{s}_j \\cdot \\mathbf{s}_k\n\n\n\\left[s^a_j,s^b_k\\right]=i\\delta_{jk}\\epsilon_{abc}s^c_j\nUnlike the elastic lattice, not possible to solve in general\nCaptures many of the dynamical features (e.g. spin waves) of real magnetic materials.",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#heisenberg-ferromagnetic-chain",
-    "href": "slides/spin-models.html#heisenberg-ferromagnetic-chain",
-    "title": "Spin Models",
-    "section": "Heisenberg Ferromagnetic Chain",
-    "text": "Heisenberg Ferromagnetic Chain\n\nBegin with the 1D case\n\n\nH = J \\sum_{j=1}^N \\mathbf{s}_j \\cdot \\mathbf{s}_{j+1},\n\n\nAs usual \\mathbf{s}\\_j=\\mathbf{s}_{j+N} (periodic boundary conditions).\nSome anisotropic materials have magnetic atoms arranged in weakly coupled chains",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#ground-state-for-j0",
-    "href": "slides/spin-models.html#ground-state-for-j0",
-    "title": "Spin Models",
-    "section": "Ground state for J<0",
-    "text": "Ground state for J&lt;0\n\n\\lvert{\\text{FM}}\\rangle \\equiv \\lvert{+}\\rangle_1 \\lvert{+}\\rangle_2 \\cdots \\lvert{+}\\rangle_N\n\n\n\n\n\n\n\nCheck\n\n\nShow that this is eigenstate of H with E_0\\equiv JN/4\n\n\n\n\nAlso eigenstate of S^z and \\mathbf{S}^2, where \\mathbf{S} is total spin\n\n\n\\mathbf{S} = \\sum_{j=1}^N \\mathbf{s}_j=(S^x, S^y, S^z)\n\n\nEigenvalues are S^z = N/2 and \\mathbf{S}^2 = \\frac{N}{2}\\left(\\frac{N}{2}+1\\right).",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#ground-state-multiplet",
-    "href": "slides/spin-models.html#ground-state-multiplet",
-    "title": "Spin Models",
-    "section": "Ground state multiplet",
-    "text": "Ground state multiplet\n\nRotational invariance implies that \\lvert{\\text{FM}}\\rangle is member of multiplet of N+1 degenerate eigenstates related by rotations\nThese states can be generated by acting with S^-=S^x-iS^y\n\n\nS^-\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N s^-_j\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N.\n\n\n\n\n\n\n\nCheck\n\n\nS^z = N/2-1, but \\mathbf{S}^2 and H unchanged.\n\n\n\n\n\\left(S^-\\right)^2\\lvert{\\text{FM}}\\rangle is constant amplitude superposition of states with two spins flipped, etc.",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#first-excited-states",
-    "href": "slides/spin-models.html#first-excited-states",
-    "title": "Spin Models",
-    "section": "First Excited States",
-    "text": "First Excited States\n\nWhat about?\n\n\n\\lvert{j}\\rangle = \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N\n\n\nIs this an eigenstate? Act with Hamiltonian, using\n\n\n\\mathbf{s}_j \\cdot \\mathbf{s}_{j+1} = s^z_js^z_{j+1} + \\frac{1}{2}\\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\\right)\n\n\nNow note that\n\n\n\\left(s^+_j s^-_{j+1} +s^-_js^+_{j+1}\\right)\\lvert{+}\\rangle_j\\lvert{-}\\rangle_{j+1} = \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#n-magnon-states",
-    "href": "slides/spin-models.html#n-magnon-states",
-    "title": "Spin Models",
-    "section": "N-Magnon States",
-    "text": "N-Magnon States\n\nA magnon has energy \\propto J\nSystem with extensive energy / finite temperature must have many magnons\nDimension of subspace of n flipped spins is \\binom{N}{n}\nMagnons can’t sit on the same site. Things get difficult!",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#antiferromagnets-are-different",
-    "href": "slides/spin-models.html#antiferromagnets-are-different",
-    "title": "Spin Models",
-    "section": "Antiferromagnets Are Different!",
-    "text": "Antiferromagnets Are Different!\n\nLet’s try and guess the ground state for J&gt;0\nSince anti-aligning spins should be favoured, we might try\n\n\n\\lvert{\\text{AFM}}\\rangle  \\equiv \\lvert{+}\\rangle_1\\lvert{-}\\rangle_{2}\\cdots \\lvert{+}\\rangle_{N-1}\\lvert{-}\\rangle_{N}\n\n\nWhat does H do? Remember\n\n\n\\mathbf{s}_j \\cdot \\mathbf{s}_{j+1} = s^z_js^z_{j+1} + \\frac{1}{2}\\overbrace{\\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\\right)}^{\\text{swaps }\\lvert{+}\\rangle_j\\lvert{-}\\rangle_{j+1}},\n spin flip terms cause spins to move about. Ground state is more complicated!",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#large-s-expansion",
-    "href": "slides/spin-models.html#large-s-expansion",
-    "title": "Spin Models",
-    "section": "Large s Expansion",
-    "text": "Large s Expansion\n\nGeneralize model to s&gt;1/2 (magnetic ions can have higher spin)\nDevelop approximations that work for s\\gg 1/2\nHope that the qualitative behaviour we find holds for s=1/2",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#holsteinprimakoff-representation",
-    "href": "slides/spin-models.html#holsteinprimakoff-representation",
-    "title": "Spin Models",
-    "section": "Holstein–Primakoff Representation",
-    "text": "Holstein–Primakoff Representation\n\nRepresent spins as oscillators!\nCoupled spins becomes coupled oscillators\nRepresentation not linear, so we get anharmonic chain\nHarmonic approximation justified when spin large",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#one-way-to-think-of-it",
-    "href": "slides/spin-models.html#one-way-to-think-of-it",
-    "title": "Spin Models",
-    "section": "One way to think of it…",
-    "text": "One way to think of it…\n\ns^{\\pm} and a^{\\vphantom{\\dagger}}, a^\\dagger both shift us up and down a ladder of states. \ns^\\pm\\lvert{s,m}\\rangle = \\sqrt{s(s+1)-m(m\\pm 1)}\\lvert{s,m\\pm 1}\\rangle\n Relation between s^z and number of quanta n is simple: s^z = s - n\nDifference: 2s+1 spin states, but infinite oscillator states\ns^+\\propto a^{\\vphantom{\\dagger}}, s^-\\propto a^\\dagger doesn’t work. Something needed to stop us lowering beyond s^z=-s \ns^- = \\sqrt{2s}a^\\dagger\\sqrt{1-\\frac{a^\\dagger a^{\\vphantom{\\dagger}}}{2s}}",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#another-way",
-    "href": "slides/spin-models.html#another-way",
-    "title": "Spin Models",
-    "section": "Another way…",
-    "text": "Another way…\n\n\n\n\n\n\nClassical spin described by point on sphere of radius \\sim s\nLarge s: approximate locally by plane\nNear north pole [s^x,s^y]=is^z\\sim is resembles [x,p]=i\nTherefore s^\\pm resemble a^{\\vphantom{\\dagger}}, a^\\dagger",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#harmonic-spin-waves",
-    "href": "slides/spin-models.html#harmonic-spin-waves",
-    "title": "Spin Models",
-    "section": "Harmonic Spin Waves",
-    "text": "Harmonic Spin Waves\n\nLarge s approximation\n\n\n\\begin{aligned}\ns^+ &\\sim \\sqrt{2s}a^{\\vphantom{\\dagger}}\\qquad s^- \\sim  \\sqrt{2s}a^\\dagger\\qquad s_z = \\left(s - a^\\dagger a^{\\vphantom{\\dagger}}\\right).\n\\end{aligned}\n\nneglecting terms of order s^{-1/2}.\n\nHeisenberg Hamiltonian becomes quadratic oscillator Hamiltonian\n\n\n\\begin{aligned}\ns^x &\\sim \\sqrt{s}x \\nonumber\\\\\ns^y &\\sim  \\sqrt{s}p\\nonumber\\\\\ns_z &= \\left(s - \\frac{1}{2}[x^2 + p^2 - 1] \\right)\n\\end{aligned}\n\nwhere x = \\frac{1}{\\sqrt{2}}(a^{\\vphantom{\\dagger}}+a^\\dagger) and p = \\frac{i}{\\sqrt{2}}(a^\\dagger-a^{\\vphantom{\\dagger}})",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#afm-case",
-    "href": "slides/spin-models.html#afm-case",
-    "title": "Spin Models",
-    "section": "AFM case",
-    "text": "AFM case\n\nClose to \\lvert{\\text{FM}}\\rangle few oscillator quanta; harmonic approximation OK\nClassically, small amplitude nonlinear oscillations treated as linear\nWhat about AFM case? Make it look like FM\nRotate every other spin through \\pi about the y axis, so that\n\n\n(s^x_j,s^y_j,s^z_j)\\longrightarrow (-s^x_j,s^y_j,-s^z_j),\\quad j\\text{ odd}.\n\n\nThe Heisenberg chain Hamiltonian becomes\n\n\nH = -J \\sum_{j=1}^N \\left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\\right]",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#ground-state-fluctuations",
-    "href": "slides/spin-models.html#ground-state-fluctuations",
-    "title": "Spin Models",
-    "section": "Ground state fluctuations",
-    "text": "Ground state fluctuations\n\nCrudest approximation\n\n\n\\langle{\\text{FM}}\\rvert s_j^z \\lvert{\\text{FM}}\\rangle = s, \\qquad \\langle{\\text{AFM}}\\rvert s_j^z \\lvert{\\text{AFM}}\\rangle = s(-1)^j\n\n\nHowever, in Holstein–Primakoff representation\n\n\ns^z_j = s - a^\\dagger_ja^{\\vphantom{\\dagger}}_j.\n\n\nHow does second term effect \\langle{0}\\rvert s^z_j \\lvert{0}\\rangle in ground state of H^{(2)}?\nWe know it doesn’t for FM, because \\lvert{\\text{FM}}\\rangle=\\lvert{0}\\rangle",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "slides/spin-models.html#afm-case-1",
-    "href": "slides/spin-models.html#afm-case-1",
-    "title": "Spin Models",
-    "section": "AFM case",
-    "text": "AFM case\n\ns^z_j = (-1)^j(s-a^\\dagger_ja^{\\vphantom{\\dagger}}_j)\n\n\nq_n q_{-n} + \\pi_n\\pi_{-n} doesn’t commute with \\sin^2(\\eta/2)q_n q_{-n} + \\cos^2(\\eta/2)\\pi_n\\pi_{-n}\nExpress both in oscillator variables\n\n\n\\begin{aligned}\n&a^{\\vphantom{\\dagger}}_\\eta = \\sqrt{\\frac{|\\tan(\\eta /2)|}{2}}\\left(q_n + \\frac{i}{|\\tan(\\eta /2)|}\\pi_{-n}\\right)\\nonumber\\\\\n&a^\\dagger_\\eta = \\sqrt{\\frac{|\\tan(\\eta /2)|}{2}}\\left(q_{-n} - \\frac{i}{|\\tan(\\eta /2)|}\\pi_{n}\\right),\\qquad \\eta=2\\pi n/N \\\\\n&\\sin^2(\\eta/2)q_n q_{-n} + \\cos^2(\\eta/2)\\pi_n\\pi_{-n}=\\frac{\\omega(\\eta)}{2}\\left[a^\\dagger_\\eta a^{\\vphantom{\\dagger}}_\\eta+a^{\\vphantom{\\dagger}}_\\eta a^\\dagger_\\eta\\right].\n\\end{aligned}",
-    "crumbs": [
-      "Slides",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "notes/spin-models.html#n-spin-12-states-and-operators",
-    "href": "notes/spin-models.html#n-spin-12-states-and-operators",
-    "title": "Spin Models",
-    "section": "3 \\(N\\) spin-1/2: states and operators",
-    "text": "3 \\(N\\) spin-1/2: states and operators\n\n1 spin-1/2: \\(\\psi_{\\pm}\\) in \\(s^z\\) basis (say). \\(N\\)-spins: \\(\\Psi_{\\sigma_1,\\ldots \\sigma_N}\\) has \\(2^N\\) components\nProduct states \\(\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle\\) form a basis\n\n\\[\n\\lvert{\\Psi}\\rangle=\\sum_{\\{\\sigma_j=\\pm\\}}\\Psi_{\\sigma_1\\cdots \\sigma_N}\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle\n\\]",
-    "crumbs": [
-      "Notes",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "notes/spin-models.html#tensor-product",
-    "href": "notes/spin-models.html#tensor-product",
-    "title": "Spin Models",
-    "section": "3 Tensor product",
-    "text": "3 Tensor product\n\nFor (distinguishable) particles product states were\n\n\\[\n\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}(\\mathbf{r}_1,\\ldots \\mathbf{r}_N)=\\varphi_{\\alpha_{1}}(\\mathbf{r_{1}})\\varphi_{\\alpha_{2}}(\\mathbf{r_{2}})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r_{N}})\n\\]\n\nAbstract form\n\n\\[\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\\]\n\nThis is a tensor product, normally denoted\n\n\\[\n\\lvert{\\Psi_{\\alpha_{1}\\alpha_{2}\\cdots \\alpha_{N}}}\\rangle=\\lvert{\\varphi_{\\alpha_{1}}}\\rangle\\otimes\\lvert{\\varphi_{\\alpha_{2}}}\\rangle\\cdots\\otimes\\lvert{\\varphi_{\\alpha_{N}}}\\rangle\n\\]\n\nWe drop the \\(\\otimes\\) for brevity",
-    "crumbs": [
-      "Notes",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "notes/spin-models.html#operators",
-    "href": "notes/spin-models.html#operators",
-    "title": "Spin Models",
-    "section": "3 Operators",
-    "text": "3 Operators\n\nSpin operators obey \\([s^a,s^b]=i\\epsilon_{abc}s^c\\)\nA spin operator \\(s^a_j\\) acts on \\(j^\\text{th}\\) spin\n\n\\[\ns^a_j\\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_N}\\rangle = \\lvert{\\sigma_1}\\rangle\\lvert{\\sigma_2}\\rangle\\cdots \\lvert{\\sigma_{j-1}}\\rangle (s^a \\lvert{\\sigma_j}\\rangle) \\lvert{\\sigma_{j+1}}\\rangle\\cdots\\lvert{\\sigma_N}\\rangle\n\\]\n\nWhich is the same as\n\n\\[\ns^a_j = \\overbrace{\\mathbb{1}\\otimes \\cdots \\mathbb{1}}^{j-1}\\otimes s^a \\otimes \\overbrace{\\mathbb{1} \\otimes\\cdots \\mathbb{1}}^{N-j}\n\\]\n\n\n\n\n\n\nCheck\n\n\n\nWhat is \\([s^a_j,s^b_k]\\) for \\(j\\neq k\\)?\n\n\n\n3.1 Ground State\nLet’s try and guess some eigenstates. For simplicity we’ll begin with the 1D case, where the spins are arranged in a chain\n\\[\nH = J \\sum_{j=1}^N \\mathbf{s}_j \\cdot \\mathbf{s}_{j+1},\n\\]\nand as usual we take \\(\\mathbf{s}_j=\\mathbf{s}_{j+N}\\) (periodic boundary conditions). Such a system is called a spin chain. Surprisingly enough, crystals do exist in which magnetic atoms are arranged in this way, with only weak coupling between neighbouring chains. So models of this type are a useful description, at least in some energy window, of real materials.\n\n\n\n\n\n\nCheck\n\n\n\nWhat is the dimension of the Hilbert in which the Hamiltonian acts?\n\n\nSince Equation 1 is supposed to be a model for a magnet, we might try the state with all spins aligned\n\\[\n\\begin{equation}\n\\lvert{\\text{FM}}\\rangle \\equiv \\prod_{j=1}^N \\lvert{+}\\rangle_j,\n\\end{equation}\n\\]\nwhere for brevity we write \\(\\lvert{+}\\rangle_j = \\lvert{s^z=+1/2}\\rangle_j\\). It’s not hard to check that this is an eigenstate with energy \\(E_0\\equiv JN/4\\). Furthermore it’s an eigenstate of \\(S^z\\) and \\(\\mathbf{S}^2\\), where \\(\\mathbf{S}\\) is the total spin\n\\[\n\\mathbf{S} = \\sum_{j=1}^N \\mathbf{s}_j.\n\\]\nThe eigenvalues are \\(S^z = N/2\\) and \\(\\mathbf{S}^2 = \\frac{N}{2}\\left(\\frac{N}{2}+1\\right)\\). The rotational invariance of the Hamiltonian implies that the state \\(\\lvert{\\text{FM}}\\rangle\\) should be a member of a multiplet of \\(N+1\\) degenerate eigenstates related by rotations. These states can be generated by acting on \\(\\lvert{\\text{FM}}\\rangle\\) with \\(S^-=S^x-iS^y\\). The first is\n\\[\nS^-\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N s^-_j\\lvert{\\text{FM}}\\rangle = \\sum_{j=1}^N \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N.\n\\tag{2}\\]\n\n\n\n\n\n\nCheck\n\n\n\nVerify that \\(S^z = N/2-1\\), but that \\(\\mathbf{S}^2\\) and \\(H\\) are unchanged.\n\n\nEquation 2 is a superposition of terms with one spin flipped. If we continue the process to explore the whole multiplet, we will at each state end up with a constant amplitude superposition of all states with two spins flipped (for \\(S^z=N/2-2\\)), three flipped (for \\(S^z=N/2-3\\)) and so on.\nAre these the ground states for \\(J&lt;0\\)? One way to convince ourselves is to write the Hamiltonian as\n\\[\nH = J \\sum_{j=1}^N \\mathbf{s}_j \\cdot\\mathbf{s}_{j+1} = J \\sum_{j=1}^N \\left[(\\mathbf{s}_j+\\mathbf{s}_{j+1})^2-\\mathbf{s}_j^2 - \\mathbf{s}_{j+1}^2\\right]\n= -\\frac{3JN}{2} + J \\sum_{j=1}^N (\\mathbf{s}_j+\\mathbf{s}_{j+1})^2.\n\\]\nIt’s then clear that the last term is minimized if every neighbouring pair of spins has total spin \\(1\\), as they do for \\(\\lvert{\\text{FM}}\\rangle\\). Are there other states that satisfy this condition?\n\n\n3.2 First Excited States\nWhat about just one of the states in the superposition Equation 2?\n\\[\n\\lvert{j}\\rangle = \\lvert{+}\\rangle_1\\lvert{+}\\rangle_2\\cdots \\lvert{+}\\rangle_{j-1} \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}\\cdots \\lvert{+}\\rangle_N.\n\\]\nIs this an eigenstate? Let’s try acting on this state with the Hamiltonian. It’s convenient to write the terms in the Heisenberg Hamiltonian in terms of raising and lowering operators\n\\[\n\\mathbf{s}_j \\cdot \\mathbf{s}_{j+1} = s^z_js^z_{j+1} + \\frac{1}{2}\\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\\right),\n\\]\nwhere\n\\[\ns^+ = \\begin{pmatrix}\n0 & 1 \\\\\n0 & 0\n\\end{pmatrix},\\qquad s^- = \\begin{pmatrix}\n0 & 0 \\\\\n1 & 0\n\\end{pmatrix}\n\\]\nNow note that\n\\[\n\\left(s^+_j s^-_{j+1} +s^-_js^+_{j+1}\\right)\\lvert{+}\\rangle_j\\lvert{-}\\rangle_{j+1} = \\lvert{-}\\rangle_j\\lvert{+}\\rangle_{j+1}.\n\\]\nIt then follows that the action of \\(H\\) on the state \\(\\lvert{j}\\rangle\\) is\n\\[\nH\\lvert{j}\\rangle = (1-N/4) \\lvert{j}\\rangle - \\frac{1}{2}\\left(\\lvert{j-1}\\rangle+\\lvert{j+1}\\rangle\\right).\n\\]\n(I’ve set \\(J=-1\\) as it’s the only scale in the problem, so no harm done.) Acting with \\(H\\) therefore leaves us within the subspace spanned by the states \\(\\lvert{j}\\rangle\\). It had to, of course: this is the subspace with \\(S_z=N/2-1\\). We can think of down spins as being like particles, with the Hamiltonian conserving their number.\nWe can easily diagonalize \\(H\\) in this space by noting that it corresponds to a circulant matrix. As we saw in Lecture 3, the eigenstates are plane waves\n\\[\n\\lvert{\\eta}\\rangle = \\frac{1}{\\sqrt{N}}\\sum_{j=1}^N e^{i\\eta j}\\lvert{j}\\rangle,\n\\tag{3}\\]\nwith \\(\\eta = \\frac{2\\pi n}{N}\\), \\(n = -(N-1)/2,\\ldots, (N-1)/2\\). The eigenvalues are \\(E = E_0 + \\omega(\\eta)\\), with\n\\[\n\\omega(\\eta) = 2\\sin^2\\eta/2.\n\\tag{4}\\]\nNote that the dispersion relation is periodic, as in the case of the elastic chain, but is now quadratic, rather than linear, at small \\(\\eta\\). \\(\\eta=0\\) corresponds to the state Equation 2, and indeed the energy \\(\\omega(0)=0\\) in that case.\n\n\n\n\n\n\nThere is a general principle at work here: excitations that correspond at long wavelengths to symmetry operations have to have gapless dispersion relations. In field theory this follows from a general result called Goldstone’s theorem.\n\n\n\nIf we are thinking of the down spin as a particle, then the eigenstates Equation 3 are like plane wave states. These excitations are known as magnons.\n\n\n3.3 \\(N\\)-Magnon States\nAny system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by \\(J\\), such a system will presumably have many magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which \\(H\\) acts – it has dimension \\(\\binom{N}{n}\\) for \\(n\\) flipped spins i.e. \\(S^z = N/2-n\\). Things are obviously going to get difficult quickly! The case of two magnons is discussed in the Appendix. It turns out that for the Heisenberg model we are lucky, and we even know the form of a general energy eigenstate with \\(n\\) flipped spin. It’s called Bethe’s ansatz and we’ll meet it in Lecture 15.\nWe started our discussion with the ground state of the ferromagnetic \\(J&lt;0\\) Heisenberg model. What about \\(J&gt;0\\)? Can we guess the ground state in this case (of course, that’s equivalent to finding the highest excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?\n\n\n3.4 Antiferromagnets Are Different!\nLet’s try and guess the ground state of the antiferromagnet. Since anti-aligning spins should be favoured, we might try\n\\[\n\\lvert{\\text{AFM}}\\rangle  \\equiv \\lvert{+}\\rangle_1\\lvert{-}\\rangle_{2}\\cdots \\lvert{+}\\rangle_{N-1}\\lvert{-}\\rangle_{N},\n\\tag{5}\\]\nassuming \\(N\\) is even. Acting with the \\(H\\) reveals that we are out of luck, however. The reason is simple: regarding the down spins as particles arranged on every other site, the spin flip terms of the Hamiltonian cause them to move about. This is Bethe’s dense gas of interacting magnons.\nBut antiferromagnets, with the kind of alternating order described by Equation 5 do exist! In fact, their existence was predicted by Louis Néel in 1936 before their experimental discovery. Equation 5 is sometimes called a Néel state for this reason. In Section 6.2 you’ll find a discussion of what we mean when say that a system has an antiferromagnetic ground state, using a simple model.\nThe Heisenberg antiferromagnetic spin chain does not have an antiferromagnetic ground state. The reason, as we’ll see, is similar to that behind the absence of Bragg peaks in the elastic chain: quantum fluctuations are too strong. On the square and cubic lattices, the Heisenberg model does display antiferromagnetism in the ground state. The above considerations show us, however, that these states are a bit more complicated than Equation 5.",
-    "crumbs": [
-      "Notes",
-      "Spin Models"
-    ]
-  },
-  {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "Check out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!",
-    "crumbs": [
-      "TQM Lectures 2024"
-    ]
   }
 ]

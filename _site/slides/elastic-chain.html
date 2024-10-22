@@ -802,7 +802,7 @@ q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right)
 <ul>
 <li><p>Uncertainty in the separation of two masses increases with separation</p></li>
 <li><p>Ground state of chain <em>not</em> a crystal; more closely resembles fluid</p></li>
-<li><p>Conclusion depends on dimension (crytals <em>do</em> exist in 3D!)</p></li>
+<li><p>Conclusion depends on dimension (crystals <em>do</em> exist in 3D!)</p></li>
 </ul>
 </section>
 <section id="density-fluctuations" class="slide level2 center">
@@ -1208,7 +1208,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

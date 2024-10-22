@@ -501,7 +501,7 @@ where $\ell_\text{osc}\equiv\left(km\right)^{-1/4}$ is the __oscillator length__
 
 - Ground state of chain _not_ a crystal; more closely resembles fluid
 
-- Conclusion depends on dimension (crytals _do_ exist in 3D!)
+- Conclusion depends on dimension (crystals _do_ exist in 3D!)
 
 ---
 

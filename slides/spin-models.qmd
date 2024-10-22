@@ -140,7 +140,7 @@ $$
 H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
 $$
 
-- As usual $\mathbf{s}\_j=\mathbf{s}_{j+N}$ (periodic boundary conditions). 
+- As usual $\mathbf{s}_j=\mathbf{s}_{j+N}$ (periodic boundary conditions). 
 
 - Some anisotropic materials have magnetic atoms arranged in weakly coupled chains
 
