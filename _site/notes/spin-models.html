@@ -230,6 +230,12 @@ window.Quarto = {
  <span class="menu-text">Elastic Chain</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -268,10 +274,11 @@ window.Quarto = {
   <li><a href="#the-heisenberg-model" id="toc-the-heisenberg-model" class="nav-link active" data-scroll-target="#the-heisenberg-model"><span class="header-section-number">1</span> The Heisenberg Model</a></li>
   <li><a href="#the-heisenberg-ferromagnetic-chain" id="toc-the-heisenberg-ferromagnetic-chain" class="nav-link" data-scroll-target="#the-heisenberg-ferromagnetic-chain"><span class="header-section-number">2</span> The Heisenberg Ferromagnetic Chain</a>
   <ul class="collapse">
-  <li><a href="#ground-state" id="toc-ground-state" class="nav-link" data-scroll-target="#ground-state"><span class="header-section-number">2.1</span> Ground State</a></li>
-  <li><a href="#first-excited-states" id="toc-first-excited-states" class="nav-link" data-scroll-target="#first-excited-states"><span class="header-section-number">2.2</span> First Excited States</a></li>
-  <li><a href="#n-magnon-states" id="toc-n-magnon-states" class="nav-link" data-scroll-target="#n-magnon-states"><span class="header-section-number">2.3</span> <span class="math inline">\(N\)</span>-Magnon States</a></li>
-  <li><a href="#antiferromagnets-are-different" id="toc-antiferromagnets-are-different" class="nav-link" data-scroll-target="#antiferromagnets-are-different"><span class="header-section-number">2.4</span> Antiferromagnets Are Different!</a></li>
+  <li><a href="#states-and-operators" id="toc-states-and-operators" class="nav-link" data-scroll-target="#states-and-operators"><span class="header-section-number">2.1</span> States and operators</a></li>
+  <li><a href="#ground-state" id="toc-ground-state" class="nav-link" data-scroll-target="#ground-state"><span class="header-section-number">2.2</span> Ground State</a></li>
+  <li><a href="#first-excited-states" id="toc-first-excited-states" class="nav-link" data-scroll-target="#first-excited-states"><span class="header-section-number">2.3</span> First Excited States</a></li>
+  <li><a href="#n-magnon-states" id="toc-n-magnon-states" class="nav-link" data-scroll-target="#n-magnon-states"><span class="header-section-number">2.4</span> <span class="math inline">\(N\)</span>-Magnon States</a></li>
+  <li><a href="#antiferromagnets-are-different" id="toc-antiferromagnets-are-different" class="nav-link" data-scroll-target="#antiferromagnets-are-different"><span class="header-section-number">2.5</span> Antiferromagnets Are Different!</a></li>
   </ul></li>
   <li><a href="#large-s-expansion" id="toc-large-s-expansion" class="nav-link" data-scroll-target="#large-s-expansion"><span class="header-section-number">3</span> Large <span class="math inline">\(s\)</span> Expansion</a>
   <ul class="collapse">
@@ -337,8 +344,67 @@ H = J \sum_{\langle j\,k\rangle} \mathbf{s}_j \cdot \mathbf{s}_k.
 </section>
 <section id="the-heisenberg-ferromagnetic-chain" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="the-heisenberg-ferromagnetic-chain"><span class="header-section-number">2</span> The Heisenberg Ferromagnetic Chain</h2>
-<section id="ground-state" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="ground-state"><span class="header-section-number">2.1</span> Ground State</h3>
+<section id="states-and-operators" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="states-and-operators"><span class="header-section-number">2.1</span> States and operators</h3>
+<p>One spin-1/2 is described by a state <span class="math inline">\(\lvert{\psi}\rangle\)</span> in a two-dimensional Hilbert space. It’s common to choose as a basis the eigenstates of <span class="math inline">\(s^z\)</span>. If we denote these as <span class="math inline">\(\lvert{\pm}\rangle\)</span> with <span class="math inline">\(s^z\lvert{\pm}\rangle = \pm \frac{1}{2}\lvert{\pm}\rangle\)</span>, we write <span class="math display">\[
+\lvert{\psi}\rangle = \psi_+\lvert{+}\rangle + \psi_-\lvert{-}\rangle=\begin{pmatrix}
+\psi_+ \\
+\psi_-
+\end{pmatrix}.
+\]</span></p>
+<p>For <span class="math inline">\(N\)</span> spins we take basis of product states</p>
+<p><span class="math display">\[
+\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle, \qquad \text{where } \sigma_j=\pm.
+\]</span></p>
+<p>We met product states as explicit wavefunctions in <a href="../notes/many-body-wavefunctions.html">Lecture 1</a>. The abstract structure is called a <a href="https://en.wikipedia.org/wiki/Tensor_product">tensor product</a>, normally denoted</p>
+<p><span class="math display">\[
+\lvert{\sigma_1}\rangle\otimes\lvert{\sigma_2}\rangle\otimes\cdots \otimes \lvert{\sigma_N}\rangle
+\]</span></p>
+<p>We normally drop the <span class="math inline">\(\otimes\)</span> for brevity. In the basis of product states a general state of <span class="math inline">\(N\)</span> spin-1/2s is written</p>
+<p><span class="math display">\[
+\lvert{\Psi}\rangle=\sum_{\{\sigma_j=\pm\}}\Psi_{\sigma_1\cdots \sigma_N}\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is the dimension of the Hilbert space in which the Hamiltonian acts?</p>
+</div>
+</div>
+<p>Now we turn to operators that act on the spins. The spin operators obey the usual commutation relations</p>
+<p><span class="math display">\[
+[s^a,s^b]=i\epsilon_{abc}s^c
+\]</span></p>
+<p>For <span class="math inline">\(N\)</span> spins we write <span class="math inline">\(s^a_j\)</span> for a spin operator acting on <span class="math inline">\(j^\text{th}\)</span> spin</p>
+<p><span class="math display">\[
+s^a_j\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle = \lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_{j-1}}\rangle (s^a \lvert{\sigma_j}\rangle) \lvert{\sigma_{j+1}}\rangle\cdots\lvert{\sigma_N}\rangle,
+\]</span></p>
+<p>Alternatively, we may express this as</p>
+<p><span class="math display">\[
+s^a_j = \overbrace{\mathbb{1}\otimes \cdots \mathbb{1}}^{j-1}\otimes s^a \otimes \overbrace{\mathbb{1} \otimes\cdots \mathbb{1}}^{N-j}
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is <span class="math inline">\([s^a_j,s^b_k]\)</span> for <span class="math inline">\(j\neq k\)</span>?</p>
+</div>
+</div>
+</section>
+<section id="ground-state" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="ground-state"><span class="header-section-number">2.2</span> Ground State</h3>
 <p>Let’s try and guess some eigenstates. For simplicity we’ll begin with the 1D case, where the spins are arranged in a chain</p>
 <p><span class="math display">\[
 H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
@@ -392,8 +458,8 @@ H = J \sum_{j=1}^N \mathbf{s}_j \cdot\mathbf{s}_{j+1} = J \sum_{j=1}^N \left[(\m
 \]</span></p>
 <p>It’s then clear that the last term is minimized if every neighbouring pair of spins has total spin <span class="math inline">\(1\)</span>, as they do for <span class="math inline">\(\lvert{\text{FM}}\rangle\)</span>. Are there other states that satisfy this condition?</p>
 </section>
-<section id="first-excited-states" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="first-excited-states"><span class="header-section-number">2.2</span> First Excited States</h3>
+<section id="first-excited-states" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="first-excited-states"><span class="header-section-number">2.3</span> First Excited States</h3>
 <p>What about just one of the states in the superposition <a href="#eq-spin-lowered" class="quarto-xref">Equation&nbsp;2</a>?</p>
 <p><span class="math display">\[
 \lvert{j}\rangle = \lvert{+}\rangle_1\lvert{+}\rangle_2\cdots \lvert{+}\rangle_{j-1} \lvert{-}\rangle_j\lvert{+}\rangle_{j+1}\cdots \lvert{+}\rangle_N.
@@ -442,13 +508,13 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 </div>
 <p>If we are thinking of the down spin as a particle, then the eigenstates <a href="#eq-spin-wave" class="quarto-xref">Equation&nbsp;3</a> are like plane wave states. These excitations are known as <strong>magnons</strong>.</p>
 </section>
-<section id="n-magnon-states" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="n-magnon-states"><span class="header-section-number">2.3</span> <span class="math inline">\(N\)</span>-Magnon States</h3>
+<section id="n-magnon-states" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="n-magnon-states"><span class="header-section-number">2.4</span> <span class="math inline">\(N\)</span>-Magnon States</h3>
 <p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;#two-magnon-states&quot; data-raw=&quot;&quot;#two-magnon-states&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;#two-magnon-states&quot; >}}&quot;}">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
 <p>We started our discussion with the ground state of the ferromagnetic <span class="math inline">\(J&lt;0\)</span> Heisenberg model. What about <span class="math inline">\(J&gt;0\)</span>? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 </section>
-<section id="antiferromagnets-are-different" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="antiferromagnets-are-different"><span class="header-section-number">2.4</span> Antiferromagnets Are Different!</h3>
+<section id="antiferromagnets-are-different" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="antiferromagnets-are-different"><span class="header-section-number">2.5</span> Antiferromagnets Are Different!</h3>
 <p>Let’s try and <em>guess</em> the ground state of the antiferromagnet. Since anti-aligning spins should be favoured, we might try</p>
 <p><span id="eq-afm"><span class="math display">\[
 \lvert{\text{AFM}}\rangle  \equiv \lvert{+}\rangle_1\lvert{-}\rangle_{2}\cdots \lvert{+}\rangle_{N-1}\lvert{-}\rangle_{N},

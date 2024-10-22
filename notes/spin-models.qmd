@@ -33,6 +33,66 @@ Although it is not possible to solve this model in general, we will see that it 
 
 ## The Heisenberg Ferromagnetic Chain
 
+### States and operators
+
+One spin-1/2 is described by a state $\ket{\psi}$ in a two-dimensional Hilbert space. It's common to choose as a basis the eigenstates of $s^z$. If we denote these as $\ket{\pm}$ with $s^z\ket{\pm} = \pm \frac{1}{2}\ket{\pm}$, we write
+$$
+\ket{\psi} = \psi_+\ket{+} + \psi_-\ket{-}=\begin{pmatrix}
+\psi_+ \\
+\psi_-
+\end{pmatrix}.
+$$
+
+For $N$ spins we take basis of product states 
+
+$$
+\ket{\sigma_1}\ket{\sigma_2}\cdots \ket{\sigma_N}, \qquad \text{where } \sigma_j=\pm. 
+$$
+
+We met product states as explicit wavefunctions in [Lecture 1](many-body-wavefunctions.qmd). The abstract structure is called a [tensor product](https://en.wikipedia.org/wiki/Tensor_product), normally denoted
+
+$$
+\ket{\sigma_1}\otimes\ket{\sigma_2}\otimes\cdots \otimes \ket{\sigma_N}
+$$
+
+We normally drop the $\otimes$ for brevity. In the basis of product states a general state of $N$ spin-1/2s is written
+
+$$
+\ket{\Psi}=\sum_{\{\sigma_j=\pm\}}\Psi_{\sigma_1\cdots \sigma_N}\ket{\sigma_1}\ket{\sigma_2}\cdots \ket{\sigma_N}
+$$
+
+::: {.callout-tip}
+## Check
+
+What is the dimension of the Hilbert space in which the Hamiltonian acts?
+
+:::
+
+Now we turn to operators that act on the spins. The spin operators obey the usual commutation relations
+
+$$
+[s^a,s^b]=i\epsilon_{abc}s^c
+$$
+
+For $N$ spins we write $s^a_j$ for a spin operator acting on $j^\text{th}$ spin
+
+$$
+s^a_j\ket{\sigma_1}\ket{\sigma_2}\cdots \ket{\sigma_N} = \ket{\sigma_1}\ket{\sigma_2}\cdots \ket{\sigma_{j-1}} (s^a \ket{\sigma_j}) \ket{\sigma_{j+1}}\cdots\ket{\sigma_N},
+$$
+
+Alternatively, we may express this as
+
+$$
+s^a_j = \overbrace{\mathbb{1}\otimes \cdots \mathbb{1}}^{j-1}\otimes s^a \otimes \overbrace{\mathbb{1} \otimes\cdots \mathbb{1}}^{N-j}
+$$
+
+::: {.callout-tip}
+## Check
+
+What is $[s^a_j,s^b_k]$ for $j\neq k$?
+
+:::
+
 ### Ground State
 
 Let's try and guess some eigenstates. For simplicity we'll begin with the 1D case, where the spins are arranged in a chain

@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Elastic Chain</title>
+  <title>Theories of Quantum Matter – Spin Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Elastic Chain</h1>
+  <h1 class="title">Spin Models</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -358,77 +358,152 @@
 </span></p>
 </div>
 </section>
-<section id="the-elastic-chain" class="slide level2 center">
-<h2>The Elastic Chain</h2>
+<section id="ising-model" class="slide level2 center">
+<h2>Ising Model</h2>
+<p><span class="math display">
+H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k
+</span></p>
 <ul>
-<li><p>Simple model of quantum solid</p></li>
-<li><p>Quantum fluctuations change character of crystalline order</p></li>
+<li><p>‘spin’ variables <span class="math inline">\sigma_j=\pm 1</span></p></li>
+<li><p><span class="math inline">{\langle j\,k\rangle}</span> indicates sum over nearest neighbour pairs</p></li>
+<li><p><span class="math inline">J&lt;0</span> favours aligned spins, leading to <strong>ferromagnetism</strong></p></li>
 </ul>
-<blockquote>
-<p>The career of a young theoretical physicist consists of treating the harmonic oscillator in ever-increasing levels of abstraction</p>
-</blockquote>
-</section>
-<section id="hamiltonian" class="slide level2 center">
-<h2>Hamiltonian</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
+<div style="text-align: center;">
+<p><strong>But</strong>… not really a quantum model</p>
 </div>
+</section>
+<section id="n-spin-12-states-and-operators" class="slide level2 center">
+<h2><span class="math inline">N</span> spin-1/2: states and operators</h2>
+<ul>
+<li><p>1 spin-1/2: <span class="math inline">\psi_{\pm}</span> in <span class="math inline">s^z</span> basis (say). <span class="math inline">N</span>-spins: <span class="math inline">\Psi_{\sigma_1,\ldots \sigma_N}</span> has <span class="math inline">2^N</span> components</p></li>
+<li><p>Product states <span class="math inline">\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle</span> form a basis</p></li>
+</ul>
 <p><span class="math display">
-H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
+\lvert{\Psi}\rangle=\sum_{\{\sigma_j=\pm\}}\Psi_{\sigma_1\cdots \sigma_N}\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle
+</span></p>
+</section>
+<section id="tensor-product" class="slide level2 center">
+<h2>Tensor product</h2>
+<ul>
+<li>For (distinguishable) particles product states were</li>
+</ul>
+<p><span class="math display">
+\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}(\mathbf{r}_1,\ldots \mathbf{r}_N)=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 </span></p>
 <ul>
-<li><p>Identify <span class="math inline">u_j=u_{N+j}</span></p></li>
-<li><p>Let’s look at the classical system first</p></li>
+<li>Abstract form</li>
+</ul>
+<p><span class="math display">
+\lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\lvert{\varphi_{\alpha_{1}}}\rangle\lvert{\varphi_{\alpha_{2}}}\rangle\cdots\lvert{\varphi_{\alpha_{N}}}\rangle
+</span></p>
+<ul>
+<li>This is a <a href="https://en.wikipedia.org/wiki/Tensor_product">tensor product</a>, normally denoted</li>
+</ul>
+<p><span class="math display">
+\lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\lvert{\varphi_{\alpha_{1}}}\rangle\otimes\lvert{\varphi_{\alpha_{2}}}\rangle\cdots\otimes\lvert{\varphi_{\alpha_{N}}}\rangle
+</span></p>
+<ul>
+<li>We drop the <span class="math inline">\otimes</span> for brevity</li>
 </ul>
 </section>
-<section id="equations-of-motion" class="slide level2 center">
-<h2>Equations of Motion</h2>
-<p><span class="math display">
-m \ddot u_j = k(u_{j-1} + u_{j+1} - 2u_j).
-</span></p>
+<section id="operators" class="slide level2 center">
+<h2>Operators</h2>
 <ul>
-<li>Look for oscillatory solutions <span class="math inline">u_j(t) = u_j e^{-i\omega t}</span></li>
+<li><p>Spin operators obey <span class="math inline">[s^a,s^b]=i\epsilon_{abc}s^c</span></p></li>
+<li><p>A spin operator <span class="math inline">s^a_j</span> acts on <span class="math inline">j^\text{th}</span> spin</p></li>
 </ul>
 <p><span class="math display">
--\omega^2 \begin{pmatrix}
-u_1 \\
-u_2 \\
-\cdots \\
-u_{N-1}\\
-u_N
-\end{pmatrix} =
-\frac{k}{m}
-\begin{pmatrix}
--2 &amp; 1 &amp; 0 &amp; \cdots &amp; 1 \\
-1 &amp; -2 &amp; 1 &amp; \cdots &amp; 0\\
-\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\
-0 &amp; \cdot &amp; 1 &amp; -2 &amp; 1\\
-1 &amp; 0 &amp; \cdots &amp; 1 &amp; -2
+s^a_j\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle = \lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_{j-1}}\rangle (s^a \lvert{\sigma_j}\rangle) \lvert{\sigma_{j+1}}\rangle\cdots\lvert{\sigma_N}\rangle
+</span></p>
+<ul>
+<li>Which is the same as</li>
+</ul>
+<p><span class="math display">
+s^a_j = \overbrace{\mathbb{1}\otimes \cdots \mathbb{1}}^{j-1}\otimes s^a \otimes \overbrace{\mathbb{1} \otimes\cdots \mathbb{1}}^{N-j}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>What is <span class="math inline">[s^a_j,s^b_k]</span> for <span class="math inline">j\neq k</span>?</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Ising model Hamiltonian</li>
+</ul>
+<p><span class="math display">
+H = 4J\sum_{\langle j\,k\rangle} s^z_j s^z_k
+</span></p>
+<ul>
+<li>Eigenstates are product states <span class="math inline">\lvert{\sigma_1}\rangle\lvert{\sigma_2}\rangle\cdots \lvert{\sigma_N}\rangle</span> with energy</li>
+</ul>
+<p><span class="math display">
+E_{\sigma_1\cdots \sigma_N} = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k
+</span></p>
+<ul>
+<li>Fine for statistical mechanics but a bit boring for QM!</li>
+</ul>
+</section>
+<section id="heisenberg-model" class="slide level2 center">
+<h2>Heisenberg Model</h2>
+<ul>
+<li>More realistic</li>
+</ul>
+<p><span class="math display">
+H = J \sum_{\langle j\,k\rangle} \mathbf{s}_j \cdot \mathbf{s}_k
+</span></p>
+<ul>
+<li><p><span class="math inline">\left[s^a_j,s^b_k\right]=i\delta_{jk}\epsilon_{abc}s^c_j</span></p></li>
+<li><p>Unlike the elastic lattice, not possible to solve <em>in general</em></p></li>
+<li><p>Captures many of the dynamical features (e.g.&nbsp;spin waves) of real magnetic materials.</p></li>
+</ul>
+</section>
+<section id="heisenberg-ferromagnetic-chain" class="slide level2 center">
+<h2>Heisenberg Ferromagnetic Chain</h2>
+<ul>
+<li>Begin with the 1D case</li>
+</ul>
+<p><span class="math display">
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
+</span></p>
+<ul>
+<li><p>As usual <span class="math inline">\mathbf{s}\_j=\mathbf{s}_{j+N}</span> (periodic boundary conditions).</p></li>
+<li><p>Some anisotropic materials have magnetic atoms arranged in weakly coupled chains</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>It’s often useful to write</li>
+</ul>
+<p><span class="math display">
+\mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right)
+</span></p>
+<p>where <span class="math inline">s^\pm = s^x\pm i s^y</span> <span class="math display">
+s^+ = \begin{pmatrix}
+0 &amp; 1 \\
+0 &amp; 0
+\end{pmatrix},\qquad s^- = \begin{pmatrix}
+0 &amp; 0 \\
+1 &amp; 0
 \end{pmatrix}
-\begin{pmatrix}
-u_1 \\
-u_2 \\
-\cdots \\
-u_{N-1}\\
-u_N
-\end{pmatrix}
-</span> - Eigenvectors given by plane waves <span class="math inline">u_j = (z_n)^j</span>, where <span class="math inline">z_n</span> <span class="math display">
-z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = 0,\ldots, N-1
 </span></p>
+<p>are the spin raising and lowering operators</p>
 </section>
-<section class="slide level2 center">
-
-<ul>
-<li>Let’s take <span class="math inline">N</span> odd and index <span class="math inline">z_n</span> using positive and negative</li>
-</ul>
+<section id="ground-state-for-j0" class="slide level2 center">
+<h2>Ground state for <span class="math inline">J&lt;0</span></h2>
 <p><span class="math display">
-z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
+\lvert{\text{FM}}\rangle \equiv \lvert{+}\rangle_1 \lvert{+}\rangle_2 \cdots \lvert{+}\rangle_N
 </span></p>
-<ul>
-<li>Write <span class="math inline">\eta_n\equiv \frac{2\pi n}{N}</span>, so that eigenstates are <span class="math inline">u_j=\exp(i\eta_n j)</span></li>
-</ul>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -438,44 +513,29 @@ z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>By substituting into the equation of motion show that the dispersion relation is <span class="math display">
-\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
-</span></p>
+<p>Show that this is eigenstate of <span class="math inline">H</span> with <span class="math inline">E_0\equiv JN/4</span></p>
 </div>
 </div>
 </div>
-</section>
-<section id="dispersion" class="slide level2 center">
-<h2>Dispersion</h2>
+<ul>
+<li>Also eigenstate of <span class="math inline">S^z</span> and <span class="math inline">\mathbf{S}^2</span>, where <span class="math inline">\mathbf{S}</span> is total spin</li>
+</ul>
 <p><span class="math display">
-\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
+\mathbf{S} = \sum_{j=1}^N \mathbf{s}_j=(S^x, S^y, S^z)
 </span></p>
-<ol type="1">
-<li><span class="math inline">\omega(\eta)\to 0</span> as <span class="math inline">\eta\to 0</span>. <span class="math inline">\eta=0</span> mode corresponds to translation</li>
-<li>At small <span class="math inline">\eta</span> dispersion is <em>linear</em>, as we expect for sound waves</li>
-</ol>
-</section>
-<section id="general-solution" class="slide level2 center">
-<h2>General solution</h2>
 <ul>
-<li><p>Expressed as superposition of normal modes <span class="math display">
-u_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j}
-</span></p></li>
-<li><p><strong>Important</strong> <span class="math inline">q_{-n}=q^*_n</span> ensures that <span class="math inline">u_j</span> is real</p></li>
-<li><p>Time dependence <span class="math display">
-q_n(t) = \alpha_n e^{-i\omega(\eta_n) t} + \beta_n e^{i\omega(\eta_n) t}
-</span></p></li>
-<li><p><span class="math inline">q_0(t) = \sqrt{N}(X+Vt)</span> describes the motion of the centre of mass</p></li>
+<li>Eigenvalues are <span class="math inline">S^z = N/2</span> and <span class="math inline">\mathbf{S}^2 = \frac{N}{2}\left(\frac{N}{2}+1\right)</span>.</li>
 </ul>
 </section>
-<section id="hamiltonian-formulation" class="slide level2 center">
-<h2>Hamiltonian formulation</h2>
+<section id="ground-state-multiplet" class="slide level2 center">
+<h2>Ground state multiplet</h2>
 <ul>
-<li><p>Write momenta in terms of Fourier modes <span class="math display">
-p_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}
-</span></p></li>
-<li><p>Note change of sign in exponent! If <span class="math inline">u_j</span>, <span class="math inline">p_j</span> are canonical variables <span class="math inline">\{u_j, p_k\}=\delta_{jk}</span>, then <span class="math inline">\{q_m,\pi_n\}=\delta_{mn}</span>.</p></li>
+<li><p>Rotational invariance implies that <span class="math inline">\lvert{\text{FM}}\rangle</span> is member of multiplet of <span class="math inline">N+1</span> degenerate eigenstates related by rotations</p></li>
+<li><p>These states can be generated by acting with <span class="math inline">S^-=S^x-iS^y</span></p></li>
 </ul>
+<p><span class="math display">
+S^-\lvert{\text{FM}}\rangle = \sum_{j=1}^N s^-_j\lvert{\text{FM}}\rangle = \sum_{j=1}^N \lvert{+}\rangle_1\lvert{+}\rangle_2\cdots \lvert{+}\rangle_{j-1} \lvert{-}\rangle_j\lvert{+}\rangle_{j+1}\cdots \lvert{+}\rangle_N.
+</span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -485,442 +545,413 @@ p_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Show that in terms of the Fourier modes <span class="math display">
-H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
+<p><span class="math inline">S^z = N/2-1</span>, but <span class="math inline">\mathbf{S}^2</span> and <span class="math inline">H</span> unchanged.</p>
+</div>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\left(S^-\right)^2\lvert{\text{FM}}\rangle</span> is constant amplitude superposition of states with two spins flipped, etc.</li>
+</ul>
+</section>
+<section id="first-excited-states" class="slide level2 center">
+<h2>First Excited States</h2>
+<ul>
+<li>What about?</li>
+</ul>
+<p><span class="math display">
+\lvert{j}\rangle = \lvert{+}\rangle_1\lvert{+}\rangle_2\cdots \lvert{+}\rangle_{j-1} \lvert{-}\rangle_j\lvert{+}\rangle_{j+1}\cdots \lvert{+}\rangle_N
 </span></p>
+<ul>
+<li>Is this an eigenstate? Act with Hamiltonian, using</li>
+</ul>
+<p><span class="math display">
+\mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right)
+</span></p>
+<ul>
+<li>Now note that</li>
+</ul>
+<p><span class="math display">
+\left(s^+_j s^-_{j+1} +s^-_js^+_{j+1}\right)\lvert{+}\rangle_j\lvert{-}\rangle_{j+1} = \lvert{-}\rangle_j\lvert{+}\rangle_{j+1}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Action of <span class="math inline">H</span> on <span class="math inline">\lvert{j}\rangle</span> is</li>
+</ul>
+<p><span class="math display">
+H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rangle+\lvert{j+1}\rangle\right)
+</span> (set <span class="math inline">J=-1</span> from now)</p>
+<ul>
+<li><p>Leaves us in subspace spanned by states <span class="math inline">\lvert{j}\rangle</span>: this is subspace with <span class="math inline">S_z=N/2-1</span></p></li>
+<li><p>Flips are like <em>particles</em> (<strong>magnons</strong>), with Hamiltonian conserving number</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Eigenstates are plane waves</li>
+</ul>
+<p><span class="math display">
+H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rangle+\lvert{j+1}\rangle\right).
+</span></p>
+<p><span class="math display">
+\lvert{\eta}\rangle = \frac{1}{\sqrt{N}}\sum_{j=1}^N e^{i\eta j}\lvert{j}\rangle, \qquad \eta = \frac{2\pi n}{N}
+</span></p>
+<ul>
+<li>Eigenvalues <span class="math inline">E = E_0 + \omega(\eta)</span></li>
+</ul>
+<p><span class="math display">
+\omega(\eta) = 2\sin^2\eta/2
+</span></p>
+<ul>
+<li><p>Dispersion is periodic, as for elastic chain, but quadratic, rather than linear, at small <span class="math inline">\eta</span></p></li>
+<li><p><span class="math inline">\eta=0</span> corresponds to the state <span class="math inline">S^-\lvert{\text{FM}}\rangle</span></p></li>
+</ul>
+</section>
+<section id="n-magnon-states" class="slide level2 center">
+<h2><span class="math inline">N</span>-Magnon States</h2>
+<ul>
+<li><p>A magnon has energy <span class="math inline">\propto J</span></p></li>
+<li><p>System with extensive energy / finite temperature must have <em>many</em> magnons</p></li>
+<li><p>Dimension of subspace of <span class="math inline">n</span> flipped spins is <span class="math inline">\binom{N}{n}</span></p></li>
+<li><p>Magnons can’t sit on the same site. Things get difficult!</p></li>
+</ul>
+</section>
+<section id="antiferromagnets-are-different" class="slide level2 center">
+<h2>Antiferromagnets Are Different!</h2>
+<ul>
+<li><p>Let’s try and <em>guess</em> the ground state for <span class="math inline">J&gt;0</span></p></li>
+<li><p>Since anti-aligning spins should be favoured, we might try</p></li>
+</ul>
+<p><span class="math display">
+\lvert{\text{AFM}}\rangle  \equiv \lvert{+}\rangle_1\lvert{-}\rangle_{2}\cdots \lvert{+}\rangle_{N-1}\lvert{-}\rangle_{N}
+</span></p>
+<ul>
+<li>What does <span class="math inline">H</span> do? Remember</li>
+</ul>
+<p><span class="math display">
+\mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\overbrace{\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right)}^{\text{swaps }\lvert{+}\rangle_j\lvert{-}\rangle_{j+1}},
+</span> spin flip terms cause spins to move about. Ground state is more complicated!</p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>For the AFM chain, quantum fluctuations too strong for AFM order</p></li>
+<li><p><strong>Antiferromagnets</strong> do exist in higher dimensions, and <a href="https://en.wikipedia.org/wiki/Louis_N%C3%A9el">Néel</a> state <span class="math inline">\lvert{\text{AFM}}\rangle</span> is good starting approximation</p></li>
+</ul>
+</section>
+<section id="large-s-expansion" class="slide level2 center">
+<h2>Large <span class="math inline">s</span> Expansion</h2>
+<ul>
+<li><p>Generalize model to <span class="math inline">s&gt;1/2</span> (magnetic ions can have higher spin)</p></li>
+<li><p>Develop approximations that work for <span class="math inline">s\gg 1/2</span></p></li>
+<li><p>Hope that the <em>qualitative</em> behaviour we find holds for <span class="math inline">s=1/2</span></p></li>
+</ul>
+</section>
+<section id="holsteinprimakoff-representation" class="slide level2 center">
+<h2>Holstein–Primakoff Representation</h2>
+<ul>
+<li><p>Represent spins as oscillators!</p></li>
+<li><p>Coupled spins becomes coupled oscillators</p></li>
+<li><p>Representation not linear, so we get anharmonic chain</p></li>
+<li><p>Harmonic approximation justified when spin large</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{aligned}
+s^+ &amp;=\sqrt{2s}\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}}a^{\vphantom{\dagger}}\\
+s^- &amp;= \sqrt{2s}a^\dagger\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}} \\
+s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right)
+\end{aligned}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that <span class="math inline">[a^{\vphantom{\dagger}},a^\dagger]=1</span> reproduces the spin commutation relations <span class="math inline">[s^a,s^b]=i\epsilon_{abc}s^c</span></p>
 </div>
 </div>
 </div>
 </section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\begin{aligned}
-T =  \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2mN}\sum_{j=1}^N\left(\sum_{|n| \leq (N-1)/2} \sum_{|m| \leq (N-1)/2}\pi_n e^{-i\eta_n j} \pi_m e^{-i\eta_m j}\right)
-\end{aligned}
-</span></p>
+<section id="one-way-to-think-of-it" class="slide level2 center">
+<h2>One way to think of it…</h2>
 <ul>
-<li><strong>Key idea</strong></li>
-</ul>
-<p><span class="math display">
-\sum_{j=1}^N e^{-i(\eta_n+\eta_m) j}= N\delta_{n,-m}
-</span></p>
-<p><span class="math display">
-T = \frac{1}{2m}\sum_{|n| \leq (N-1)/2} \pi_n  \pi_{-n}
-</span></p>
-</section>
-<section id="system-of-oscillators" class="slide level2 center">
-<h2>System of oscillators</h2>
-<ul>
-<li><p>Could split amplitudes into real and imaginary parts <span class="math display">
-\begin{aligned}
-q_n &amp;= \frac{1}{\sqrt{2}}\left(q_n' + i q_n''\right),\quad q_{-n} = \frac{1}{\sqrt{2}}\left(q_n' - i q_n''\right)\\
-\pi_n &amp;= \frac{1}{\sqrt{2}}\left(\pi_n' + i \pi_n''\right),\quad \pi_{-n} = \frac{1}{\sqrt{2}}\left(\pi_n' - i \pi_n''\right),\quad n\geq 0.
-\end{aligned}
-</span> The Hamiltonian is then <span class="math inline">H=H' + H''</span> with <span class="math display">
-H' = \sum_{0 &lt; n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \eta_n) q'_n q'_{n}\right]
-</span></p></li>
-<li><p>Compare with usual SHO: read off dispersion relation</p></li>
-</ul>
-</section>
-<section id="complex-coordinates" class="slide level2 center">
-<h2>Complex Coordinates</h2>
-<p><span class="math display">
-a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right)
-</span> <span class="math display">
-H = \omega \left|a\right|^2
-</span></p>
-<ul>
-<li>Hamilton’s equations are</li>
-</ul>
-<p><span class="math display">
-\begin{aligned}
-\dot a &amp;= -i \frac{\partial H}{\partial a^*}= -i\omega a\\
-\dot a^*  &amp;= i \frac{\partial H}{\partial a} = i\omega a^*
-\end{aligned}
-</span></p>
-<ul>
-<li>Solution <span class="math inline">a(t) = e^{-i\omega t} a(0)</span></li>
-</ul>
-</section>
-<section id="complex-coordinates-normal-modes" class="slide level2 center">
-<h2>Complex coordinates: normal modes</h2>
-<p><span class="math display">
-\begin{aligned}
-a_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_n + \frac{i}{m\omega(\eta_n)}\pi_{-n}\right)\nonumber\\
-a^*_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)}\pi_{n}\right),\qquad n\neq 0
-\end{aligned}
-</span></p>
-<p><span class="math display">
-\begin{aligned}
-q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
-\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right)
-\end{aligned}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\begin{aligned}
-q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
-\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right),\\
-H &amp;= \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right]
-\end{aligned}
-</span></p>
-<ul>
-<li><span class="math inline">H</span> in terms of <span class="math inline">a_n</span>, <span class="math inline">a_n^*</span></li>
-</ul>
-<p><span class="math display">
-H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) \left|a_n\right|^2
-</span></p>
-<ul>
-<li>First term is (free) centre of mass</li>
-</ul>
-</section>
-<section id="quantum-oscillators" class="slide level2 center">
-<h2>Quantum Oscillators</h2>
-<p><span class="math inline">a</span>, <span class="math inline">a^*\longrightarrow a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span> satisfying <span class="math inline">[a^{\vphantom{\dagger}},a^\dagger]=1</span> <span class="math display">
-H = \frac{\omega}{2}\left(a^\dagger a^{\vphantom{\dagger}}+a^{\vphantom{\dagger}}a^\dagger\right)
-</span></p>
-<ul>
-<li><p>Key property is <span class="math display">
-\begin{aligned}
-\left[a^{\vphantom{\dagger}}, H\right] &amp;= \omega a^{\vphantom{\dagger}}\\
-\left[a^\dagger, H\right] &amp;= -\omega a^\dagger
-\end{aligned}
-</span></p></li>
-<li><p>If <span class="math inline">\lvert{\psi}\rangle</span> is an eigenstate of the Hamiltonian <span class="math inline">H \lvert{\psi}\rangle = E \lvert{\psi}\rangle</span> then <span class="math inline">a^\dagger\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E+\omega</span> <span class="math display">
-H a^\dagger\lvert{\psi}\rangle = a^\dagger H \lvert{\psi}\rangle + [H, a^\dagger] \lvert{\psi}\rangle = \left(E+\omega\right)a^\dagger\lvert{\psi}\rangle
+<li><p><span class="math inline">s^{\pm}</span> and <span class="math inline">a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span> both shift us up and down a ladder of states. <span class="math display">
+s^\pm\lvert{s,m}\rangle = \sqrt{s(s+1)-m(m\pm 1)}\lvert{s,m\pm 1}\rangle
+</span> Relation between <span class="math inline">s^z</span> and number of quanta <span class="math inline">n</span> is simple: <span class="math inline">s^z = s - n</span></p></li>
+<li><p>Difference: <span class="math inline">2s+1</span> spin states, but infinite oscillator states</p></li>
+<li><p><span class="math inline">s^+\propto a^{\vphantom{\dagger}}</span>, <span class="math inline">s^-\propto a^\dagger</span> doesn’t work. Something needed to stop us lowering beyond <span class="math inline">s^z=-s</span> <span class="math display">
+s^- = \sqrt{2s}a^\dagger\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}}
 </span></p></li>
 </ul>
 </section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Similarly <span class="math inline">a\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E-\omega</span></p></li>
-<li><p>Unless <span class="math inline">a^{\vphantom{\dagger}}\lvert{\psi}\rangle=0</span>, in which case <span class="math inline">\lvert{\psi}\rangle=\lvert{0}\rangle</span>, the ground state</p></li>
-<li><p>As a result <span class="math display">
-\lvert{n}\rangle = \frac{1}{\sqrt{n!}}\left(a^\dagger\right)^n\lvert{0}\rangle
-</span> The factor of <span class="math inline">\frac{1}{\sqrt{n!}}</span> normalizes the state</p></li>
-<li><p>The ground state has energy <span class="math inline">E_0=\omega/2</span></p></li>
-</ul>
-</section>
-<section id="the-quantum-chain" class="slide level2 center">
-<h2>The Quantum Chain</h2>
-<ul>
-<li><p>We have operators <span class="math inline">[a^{\vphantom{\dagger}}_m,a^\dagger_n]=\delta_{mn}</span>, and Hamiltonian <span class="math display">
-H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\omega(\eta_n)}{2}\left(a^\dagger_na^{\vphantom{\dagger}}_n+a^{\vphantom{\dagger}}_na^\dagger_n\right)
-</span></p></li>
-<li><p>General energy eigenstate may be written</p></li>
-</ul>
-<p><span class="math display">
-\begin{aligned}
-\lvert{\mathbf{N}}\rangle &amp;= \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\left(a^\dagger_n\right)^{N_n}}{\sqrt{N_n!}} \lvert{0}\rangle\\
-E(\mathbf{N}) &amp;= \overbrace{\frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega(\eta_n)}^{\equiv E_0} + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
-\end{aligned}
-</span></p>
-</section>
-<section id="oscillator-quanta-are-bosons" class="slide level2 center">
-<h2>Oscillator Quanta are Bosons!</h2>
-<ul>
-<li><p>Eigenstates labelled by occupation numbers</p></li>
-<li><p>Energy is additive <span class="math display">
-E(\mathbf{N}) = E_0 + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
-</span></p></li>
-<li><p>These are <em>not</em> the particles making up the chain!</p></li>
-</ul>
-</section>
-<section id="thermodynamic-nto-infty-limit" class="slide level2 center">
-<h2>Thermodynamic (<span class="math inline">N\to \infty</span>) limit</h2>
-<ul>
-<li>Expect to find <em>extensive</em> energy, proportional to system size <span class="math display">
-e_0 = \lim_{N\to \infty} \frac{E_0}{N}
-</span></li>
-<li>Separation of <span class="math inline">\eta_n</span> values is <span class="math inline">2\pi/N</span>, so <span class="math display">
-\sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right)
-</span> so <span class="math display">
-e_0 = \int_{-\pi}^\pi\frac{d\eta}{2\pi} \frac{\omega(\eta)}{2} = \sqrt{\frac{k}{2m}}\int_{-\pi}^\pi\frac{d\eta}{2\pi} \sqrt{1-\cos
-\eta}=\frac{2}{\pi}\sqrt{\frac{k}{m}}
-</span></li>
-</ul>
-</section>
-<section id="continuum-a-to-0-limit" class="slide level2 center">
-<h2>Continuum (<span class="math inline">a \to 0</span>) limit</h2>
-<ul>
-<li>1D elastic modulus is <span class="math display">
-\kappa \equiv \frac{\text{tension}}{\text{strain}}=\frac{k\Delta x}{\Delta x/a} = ka
-</span></li>
-<li><span class="math inline">k/m =k/(\rho a)= \kappa/(\rho a^2)</span>, where <span class="math inline">\rho</span> is mass / length <span class="math display">
-\frac{E_0}{L} =\frac{2}{\pi}\sqrt{\frac{k}{m}}\frac{N}{L} = \frac{2}{\pi}\sqrt{\frac{\kappa}{\rho}}\left(\frac{N}{L}\right)^2
-</span></li>
-<li>Energy per unit length diverges as <span class="math inline">N\to\infty</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Potential energy can be written <span class="math display">
-V = \frac{k}{2} \sum_j^N (u_j-u_{j+1})^2 \xrightarrow{N\to\infty} \frac{\kappa}{2} \int_0^L dx \left[u'(x)\right]^2.
-</span></p></li>
-<li><p>Define the Fourier modes slightly differently <span class="math display">
-u(x) = \sum_{n=-\infty}^\infty u_n e^{ik_n x}
-</span> where <span class="math inline">k_n =2\pi n/L</span>. Note that <span class="math inline">k_n x = \eta_n j</span> <span class="math display">
-V=\frac{\kappa L}{2}\sum_n k_n^2  u_nu_{-n}
-</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Defining the <em>momentum density</em> <span class="math inline">\pi(x=ja) = p_j N/L</span>, then <span class="math display">
-\left[u(x),\pi(x')\right]=i\delta(x-x')
-</span> <span class="math display">
-T = \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2\rho}\int_0^L dx\left[\pi(x)\right]^2
-</span></p></li>
-<li><p>Use mode expansion</p></li>
-</ul>
-<p><span class="math display">
-\pi(x) = \lim_{N\to\infty} \frac{p_{j=xN/L}N}{L} =\frac{1}{L}\sum_{n=-\infty}^\infty \pi_n e^{-2\pi i nx /L}
-</span></p>
-<p><span class="math display">
-T= \frac{1}{L}\sum_{n=-\infty}^\infty \frac{1}{2\rho} \pi_n\pi_{-n}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Continuum Hamiltonian <span class="math inline">H= T+V</span> <span class="math display">
-H = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho L} \pi_n\pi_{-n} + \frac{\kappa L k_n^2}{2}  u_nu_{-n} \right]
-</span></p></li>
-<li><p>We can now read off the dispersion relation <span class="math display">
-\omega(k) = c|k|
-</span> where <span class="math inline">c=\sqrt{\frac{\kappa}{\rho}}</span> is the speed of sound</p></li>
-<li><p>Lattice was origin of periodic dispersion. Now it has gone</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Transcribing the definition of the oscillator variables</li>
-</ul>
-<p><span class="math display">
-\begin{aligned}
-a_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_n + \frac{i}{\sqrt{ZkL}}\pi_{-n}\right]\nonumber\\
-a^*_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}\right]
-\end{aligned}
-</span></p>
-<ul>
-<li><span class="math inline">Z\equiv\sqrt{\kappa\rho}</span> is impedance</li>
-</ul>
-<p><span class="math display">
-H - E_0 = \sum_{n=-\infty}^\infty c\left|k_n\right|a^\dagger_na^{\vphantom{\dagger}}_n
-</span></p>
-</section>
-<section id="finite-temperature" class="slide level2 center">
-<h2>Finite Temperature</h2>
-<ul>
-<li><p>Occupancies thermal averages given by Bose function (<span class="math inline">\beta=\frac{1}{k_\text{B}T}</span>) <span class="math display">
-\langle N_n \rangle = n_\text{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1}
-</span></p></li>
-<li><p>Average energy is finite due to exponential tail of <span class="math inline">n_\text{B}(\omega)</span> <span class="math display">
-\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)n_\text{B}(\omega(\eta_n))
-</span></p></li>
-<li><p>At low energies <span class="math inline">n_{\text{B}}(\omega) \sim \frac{1}{\beta\omega}</span> and contribution of each mode is <span class="math display">
-\omega n_\text{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T
-</span></p></li>
-</ul>
-</section>
-<section id="position-fluctuations" class="slide level2 center">
-<h2>Position Fluctuations</h2>
-<ul>
-<li><p>Classical: regular arrangement of masses (+ thermal fluctuations)</p></li>
-<li><p>Quantum: <span class="math inline">u_j-u_k</span> fluctuates, even in ground state</p></li>
-</ul>
-<p><span class="math display">
-\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle\neq 0
-</span></p>
-<ul>
-<li>Write displacements in <span class="math inline">a^{\vphantom{\dagger}}_n</span>, <span class="math inline">a^\dagger_{n}</span>, then evaluate expectation</li>
-</ul>
-<p><span class="math display">
-\begin{aligned}
-u_j &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j}\\
-q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right)
-\end{aligned}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Result:</li>
-</ul>
-<p><span class="math display">
-\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle= \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right]
-</span></p>
-<p><span class="math inline">N\to\infty</span> limit</p>
-<p><span class="math display">
-\begin{aligned}
-\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle &amp;= \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\
-&amp;= \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
-\end{aligned}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
-</span></p>
+<section id="another-way" class="slide level2 center">
+<h2>Another way…</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/disp_fluct.png" class="quarto-figure quarto-figure-center"></p>
+<p><img data-src="../assets/tangent-plane.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
 </figure>
 </div>
 <ul>
-<li>When <span class="math inline">\left|j-k\right|\gg 1</span> integral dominated by <span class="math inline">\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi</span> <span class="math display">
-\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|
-</span></li>
+<li><p>Classical spin described by point on sphere of radius <span class="math inline">\sim s</span></p></li>
+<li><p>Large <span class="math inline">s</span>: approximate locally by plane</p></li>
+<li><p>Near north pole <span class="math inline">[s^x,s^y]=is^z\sim is</span> resembles <span class="math inline">[x,p]=i</span></p></li>
+<li><p>Therefore <span class="math inline">s^\pm</span> resemble <span class="math inline">a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span></p></li>
 </ul>
 </section>
-<section class="slide level2 center">
-
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Show that as <span class="math inline">\left|i-j\right|\to\infty</span> <span class="math display">
-\langle{0}\rvert\left(u_i-u_j\right)^2\lvert{0}\rangle \sim  \frac{\ell_\text{osc}^2}{\pi} \log \left|i-j\right|
-</span></p>
-<p>where <span class="math inline">\ell_\text{osc}\equiv\left(km\right)^{-1/4}</span> is the <strong>oscillator length</strong></p>
-</div>
-</div>
-</div>
+<section id="harmonic-spin-waves" class="slide level2 center">
+<h2>Harmonic Spin Waves</h2>
 <ul>
-<li><p>Uncertainty in the separation of two masses increases with separation</p></li>
-<li><p>Ground state of chain <em>not</em> a crystal; more closely resembles fluid</p></li>
-<li><p>Conclusion depends on dimension (crytals <em>do</em> exist in 3D!)</p></li>
+<li>Large <span class="math inline">s</span> approximation</li>
 </ul>
-</section>
-<section id="density-fluctuations" class="slide level2 center">
-<h2>Density Fluctuations</h2>
-<ul>
-<li><p>Alternatively, consider fluctuations of <em>density</em> <span class="math display">
-\rho(x) = \sum_{j=1}^N \delta_L(x-x_j)
-</span> <span class="math inline">x_j = ja + u_j</span>, and <span class="math inline">\delta_L(x)</span> is <span class="math inline">L</span>-periodic version of <span class="math inline">\delta</span>-function</p></li>
-<li><p>Fourier components <span class="math display">
-\rho_k = \sum_{j=1}^N\exp(-i k x_j)
-</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\rho_k = \sum_{j=1}^N\exp(-i k x_j).
-</span></p>
-<ul>
-<li>In ordered configuration <span class="math inline">x_j = ja</span>, we have</li>
-</ul>
-<p><span class="math display">
-\rho_{k_n=2\pi n/L} = \begin{cases}
-N &amp; n = 0 \mod N \\
-0 &amp; \text{ otherwise.}
-\end{cases}
-</span></p>
-<ul>
-<li><p><strong>Bragg peaks</strong> at multiples of <span class="math inline">\frac{2\pi}{a}</span> observed in diffraction experiments</p></li>
-<li><p>Translation of lattice changes phase of <span class="math inline">\rho_k</span>, so <span class="math inline">|\rho_k|^2</span> unchanged</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>What about quantum ground state? We should evaluate <span class="math display">
-\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N \langle{0}\rvert \exp(iq[x_j-x_k])\lvert{0}\rangle
-</span> Upon substituting the mode expansion we get expressions of form <span class="math display">
-\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle.
-</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Prove the Hadamard Lemma</p>
 <p><span class="math display">
 \begin{aligned}
-e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
-&amp;\equiv e^{\left[A,\cdot\right]}B,
+s^+ &amp;\sim \sqrt{2s}a^{\vphantom{\dagger}}\qquad s^- \sim  \sqrt{2s}a^\dagger\qquad s_z = \left(s - a^\dagger a^{\vphantom{\dagger}}\right).
 \end{aligned}
 </span></p>
-<p>[Hint: Consider the differential equation in <span class="math inline">x</span> obeyed by <span class="math inline">e^{xA}B e^{-xA}</span>]</p>
-</div>
-</div>
-</div>
+<p>neglecting terms of order <span class="math inline">s^{-1/2}</span>.</p>
+<ul>
+<li>Heisenberg Hamiltonian becomes quadratic oscillator Hamiltonian</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+s^x &amp;\sim \sqrt{s}x \nonumber\\
+s^y &amp;\sim  \sqrt{s}p\nonumber\\
+s_z &amp;= \left(s - \frac{1}{2}[x^2 + p^2 - 1] \right)
+\end{aligned}
+</span></p>
+<p>where <span class="math inline">x = \frac{1}{\sqrt{2}}(a^{\vphantom{\dagger}}+a^\dagger)</span> and <span class="math inline">p = \frac{i}{\sqrt{2}}(a^\dagger-a^{\vphantom{\dagger}})</span></p>
 </section>
 <section class="slide level2 center">
 
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Show that the exponent can be written in a form with all occurrences of <span class="math inline">a^\dagger</span> to the left of all <span class="math inline">a^{\vphantom{\dagger}}</span> (this operation is called <strong>normal ordering</strong>; we will meet it again).</p>
 <p><span class="math display">
-\exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger) = \exp(\lambda \mu /2) \exp(\mu a^\dagger)\exp(\lambda a^{\vphantom{\dagger}}).
-</span> [Hint: Consider the differential equations obeyed by <span class="math inline">F_1(s)=e^{s(A+B)}</span> and <span class="math inline">F_2(s)=e^{sA}e^{sB}</span>]</p>
-</div>
-</div>
-</div>
+\begin{aligned}
+s^x &amp;\sim \sqrt{s}x \nonumber\\
+s^y &amp;\sim  \sqrt{s}p\nonumber\\
+s_z &amp;= \left(s - \frac{1}{2}[x^2 + p^2 - 1] \right)
+\end{aligned}
+</span></p>
+<p><span class="math display">
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1}
+</span></p>
+<p><span class="math display">
+H\sim NJ s^2 + sNJ+ \overbrace{sJ \sum_{j=1}^N \left[x_j x_{j+1} + p_j p_{j+1}-x_j^2 - p_j^2\right]}^{\equiv H^{(2)}} + \ldots
+</span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Using <span class="math inline">\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle = \exp(\lambda \mu /2)</span> we get</li>
+<li>Use Fourier expansion of the position and momentum</li>
 </ul>
 <p><span class="math display">
-\begin{equation*}
-\begin{split}
-\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N &amp;\exp(iqa[j-k])\\
-&amp;\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right)
-\end{split}
-\end{equation*}
+\begin{aligned}
+x_j(t) &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j},\nonumber\\
+p_j(t) &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}\\
+H^{(2)} &amp;= -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]
+\end{aligned}
+</span>`</p>
+<ul>
+<li>We can read off dispersion</li>
+</ul>
+<p><span class="math display">
+\omega_{\text{FM}}(\eta) = 4s\left|J\right|\sin^2(\eta/2)
+</span> c.f. <span class="math inline">\omega(\eta) = 2\sin^2\eta/2</span> that we found for <span class="math inline">s=1/2</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+H\sim NJ s^2 + sNJ+ \overbrace{ -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]}^{\equiv H^{(2)}} + \ldots
 </span></p>
+<ul>
+<li>Ground state energy of <span class="math inline">H^{(2)}</span> is</li>
+</ul>
+<p><span class="math display">
+-2sJ\sum_{|n| \leq (N-1)/2} \frac{1}{2}\sin^2(\eta_n/2) = -sJN
+</span></p>
+<ul>
+<li>Overall <span class="math inline">E_0 = NJs^2</span>, which is exact energy of <span class="math inline">\lvert{FM}\rangle</span></li>
+</ul>
+</section>
+<section id="afm-case" class="slide level2 center">
+<h2>AFM case</h2>
+<ul>
+<li><p>Close to <span class="math inline">\lvert{\text{FM}}\rangle</span> few oscillator quanta; harmonic approximation OK</p></li>
+<li><p>Classically, small amplitude nonlinear oscillations treated as linear</p></li>
+<li><p>What about AFM case? Make it <em>look</em> like FM</p></li>
+<li><p>Rotate every other spin through <span class="math inline">\pi</span> about the <span class="math inline">y</span> axis, so that</p></li>
+</ul>
+<p><span class="math display">
+(s^x_j,s^y_j,s^z_j)\longrightarrow (-s^x_j,s^y_j,-s^z_j),\quad j\text{ odd}.
+</span></p>
+<ul>
+<li>The Heisenberg chain Hamiltonian becomes</li>
+</ul>
+<p><span class="math display">
+H = -J \sum_{j=1}^N \left[s^x_j s^x_{j+1} - s^y_j s^y_{j+1} + s^z_j s^z_{j+1}\right]
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Harmonic approximation means: close to AFM in original variables</p></li>
+<li><p>Oscillator Hamiltonian is now <span class="math display">
+H^{(2)} = 2sJ \sum_{|n| \leq (N-1)/2} \left[\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}\right],
+</span> corresponding to a dispersion relation</p></li>
+</ul>
+<p><span class="math display">
+\omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|.
+</span></p>
+<ul>
+<li><p>Vanishes at both <span class="math inline">\eta=0</span> and Brillouin zone boundary <span class="math inline">\eta=\pi</span></p></li>
+<li><p>Linear near both points, c.f. quadratic for FM</p></li>
+<li><p>Compare</p></li>
+</ul>
+<p><span class="math display">
+H_\text{FM}^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]
+</span> In FM both position and momentum terms vanish at <span class="math inline">\eta=0</span>. This is the origin of quadratic dispersion at small <span class="math inline">\eta</span></p>
+<ul>
+<li>In AFM position term vanishes at <span class="math inline">\eta=0</span>, with momentum term vanishing at <span class="math inline">\eta=\pi</span>. This gives linear dispersion at these points</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|.
+</span></p>
+<ul>
+<li>We know (by other means) exact dispersion relation for lowest excited state of momentum <span class="math inline">\eta</span> (<strong>des Cloiseaux–Pearson</strong> mode)</li>
+</ul>
+<p><span class="math display">
+\omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|,
+</span> Same functional form, but with a different overall scale</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/struct_fact.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+<p><img data-src="../assets/Heisenberg_model_dispersion.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
 </figure>
 </div>
 </section>
+<section id="ground-state-fluctuations" class="slide level2 center">
+<h2>Ground state fluctuations</h2>
+<ul>
+<li>Crudest approximation</li>
+</ul>
+<p><span class="math display">
+\langle{\text{FM}}\rvert s_j^z \lvert{\text{FM}}\rangle = s, \qquad \langle{\text{AFM}}\rvert s_j^z \lvert{\text{AFM}}\rangle = s(-1)^j
+</span></p>
+<ul>
+<li>However, in Holstein–Primakoff representation</li>
+</ul>
+<p><span class="math display">
+s^z_j = s - a^\dagger_ja^{\vphantom{\dagger}}_j.
+</span></p>
+<ul>
+<li><p>How does second term effect <span class="math inline">\langle{0}\rvert s^z_j \lvert{0}\rangle</span> in ground state of <span class="math inline">H^{(2)}</span>?</p></li>
+<li><p>We know it <em>doesn’t</em> for FM, because <span class="math inline">\lvert{\text{FM}}\rangle=\lvert{0}\rangle</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+s^z_j = s - a^\dagger_ja^{\vphantom{\dagger}}_j.
+</span></p>
+<ul>
+<li>Why doesn’t second term contribute? By translational invariance</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\langle{0}\rvert a^\dagger_j a^{\vphantom{\dagger}}_j\lvert{0}\rangle &amp;= \langle{0}\rvert\frac{1}{N}\sum_{j=1}^N a^\dagger_j a^{\vphantom{\dagger}}_j\lvert{0}\rangle\\
+\sum_{j=1}^N a^\dagger_j a^{\vphantom{\dagger}}_j &amp;= \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right).
+\end{aligned}
+</span></p>
+<ul>
+<li>commutes with</li>
+</ul>
+<p><span class="math display">
+H_\text{FM}^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]
+</span></p>
+<p>and is zero in the ground state (c.f. ground state energy)</p>
+</section>
+<section id="afm-case-1" class="slide level2 center">
+<h2>AFM case</h2>
+<p><span class="math display">
+s^z_j = (-1)^j(s-a^\dagger_ja^{\vphantom{\dagger}}_j)
+</span></p>
+<ul>
+<li><p><span class="math inline">q_n q_{-n} + \pi_n\pi_{-n}</span> doesn’t commute with <span class="math inline">\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}</span></p></li>
+<li><p>Express both in oscillator variables</p></li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+&amp;a^{\vphantom{\dagger}}_\eta = \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_n + \frac{i}{|\tan(\eta /2)|}\pi_{-n}\right)\nonumber\\
+&amp;a^\dagger_\eta = \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\tan(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N \\
+&amp;\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}=\frac{\omega(\eta)}{2}\left[a^\dagger_\eta a^{\vphantom{\dagger}}_\eta+a^{\vphantom{\dagger}}_\eta a^\dagger_\eta\right].
+\end{aligned}
+</span></p>
+</section>
 <section class="slide level2 center">
 
 <ul>
-<li>Have seen expression in exponent before!</li>
+<li>To evaluate <span class="math inline">\Delta s = \langle{0}\rvert a^\dagger_ja^{\vphantom{\dagger}}_j\lvert{0}\rangle</span> write in terms of <span class="math inline">a^\dagger_\eta</span>, <span class="math inline">a_\eta</span></li>
 </ul>
 <p><span class="math display">
--\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\sim - \frac{2\pi\ell_\text{osc}^2}{a^2}\log|j-k|
+\begin{aligned}
+\frac{1}{N}\sum_{j=1}^N a^\dagger_j a^{\vphantom{\dagger}}_j &amp;= \frac{1}{2N} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) \\
+&amp;= -\frac{1}{2} + \frac{1}{2N}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right)
+\end{aligned}
+</span> <span class="math display">
+\begin{aligned}
+\Delta s &amp;= -\frac{1}{2}+\frac{1}{4N}\sum_n \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].\\
+&amp;= -\frac{1}{2}+\frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].
+\end{aligned}
 </span></p>
 <ul>
-<li>Near first Bragg peak at <span class="math inline">q=2\pi/a</span> <span class="math display">
-\exp(i\Delta q a[j-k])\left|j-k\right|^{-2\pi\ell_\text{osc}^2/a^2}
-</span> where <span class="math inline">\Delta q</span> is deviation from <span class="math inline">2\pi/a</span>. This implies <span class="math display">
-\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle \sim \left(\Delta q\right)^{-1+2\pi\ell_\text{osc}^2/a^2}
-</span></li>
+<li>Integral diverges logarithmically at <span class="math inline">\eta=0</span> and <span class="math inline">\eta=\pi</span>.</li>
 </ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>What went wrong? Our replacement <span class="math display">
+\sum_n (\ldots) \longrightarrow \frac{N}{2\pi}\int_{-\pi}^\pi (\ldots)d\eta
+</span> failed us because the summand is singular (c.f. <span class="math inline">\langle (u_i-u_j)^2\rangle</span> in the elastic chain)</p></li>
+<li><p>At finite <span class="math inline">N</span> the sums are all finite if <span class="math inline">\eta=0, \pi</span> are excluded</p></li>
+</ul>
+<p><span class="math display">
+\Delta s \propto \log N
+</span></p>
+<ul>
+<li>No AFM in 1D at zero temperature in <span class="math inline">N\to\infty</span> limit</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Repeat the analysis on a 2D square lattice. You should find an integral over the two-dimensional Brillouin zone. Do you find divergences?</p>
+</div>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -1208,7 +1239,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

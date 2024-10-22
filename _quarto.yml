@@ -32,6 +32,7 @@ website:
           - slides/many-body-wavefunctions.qmd
           - slides/quantum-hall-effect.qmd
           - slides/elastic-chain.qmd
+          - slides/spin-models.qmd
           
 
       - section: "Problem Sets"
