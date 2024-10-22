@@ -1,5 +1,11 @@
 # TQM Lectures 2024 {.unnumbered}
 
+::: {.callout-warning appearance="minimal"}
+
+Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
+
+:::
+
 These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). While these are largely unchanged, you should regard this site as the authoritative version for 2024.
 
 The source of these notes is [this GitHub repo](https://github.com/AustenLamacraft/tqm-quarto). If you find a typo, other problem or have any other comment on the material, please [raise an issue](https://github.com/AustenLamacraft/tqm-quarto/issues) there.
@@ -38,7 +44,4 @@ Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-1
 
 There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.
 
-## News {.unnumbered}
-
-- Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
 
