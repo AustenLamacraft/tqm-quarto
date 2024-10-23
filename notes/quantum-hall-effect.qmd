@@ -1,5 +1,5 @@
 ---
-title: Quantum Hall effect
+title: Quantum Hall Effect
 ---
 
 {{< include ../macros.qmd >}}

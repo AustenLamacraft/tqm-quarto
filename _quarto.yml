@@ -26,6 +26,7 @@ website:
           - notes/quantum-hall-effect.qmd
           - notes/elastic-chain.qmd
           - notes/spin-models.qmd
+          - notes/second-quantization.qmd
 
       - section: "Slides"
         contents:
@@ -33,6 +34,7 @@ website:
           - slides/quantum-hall-effect.qmd
           - slides/elastic-chain.qmd
           - slides/spin-models.qmd
+          - slides/second-quantization.qmd
           
 
       - section: "Problem Sets"

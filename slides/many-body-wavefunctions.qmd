@@ -2,7 +2,7 @@
 https://quarto.org/docs/reference/formats/presentations/revealjs.html
 E to toggle to PDF mode -->
 ---
-title: Many body wavefunctions
+title: Many Body Wavefunctions
 number-sections: false
 format:
   revealjs:

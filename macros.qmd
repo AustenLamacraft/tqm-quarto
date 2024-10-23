@@ -31,6 +31,7 @@
 \newcommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
 \newcommand{\sgn}{\mathrm{sgn}}
 \newcommand{\abs}[1]{\lvert{#1}\rvert}
+\newcommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
 
 $$
 \DeclareMathOperator{\tr}{tr}

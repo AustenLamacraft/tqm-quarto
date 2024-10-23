@@ -1,5 +1,5 @@
 ---
-title: Many body wavefunctions
+title: Many Body Wavefunctions
 ---
 
 {{< include ../macros.qmd >}}
