@@ -250,7 +250,7 @@ $$
 \sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
 $$
 
-Hint: Show that is is true for a product state first.
+Hint: Show that this is true for a product state first.
 
 :::
 
@@ -312,7 +312,7 @@ $$
 
 ---
 
-- $\left\{\aop(\psi),\adop(\phi)\right\}=0$` can be deduced from inner product
+- $\left\{\aop(\psi),\adop(\phi)\right\}$ can be deduced from inner product
 
 $$
 \bra{\Psi}\Phi\rangle = \sum_P (-1)^P\prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,

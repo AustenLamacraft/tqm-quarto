@@ -85,8 +85,7 @@ Generalizing @eq-1-part, we represent an $N$ particle product state @eq-N-prod a
 
 $$
 \Psi^{\text{S}}(\br_1,\ldots,\br_N) \longleftrightarrow \adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}}.
-\label{A_NPart}
-$$
+$$ {#eq-N-part}
 
 For this to be a symmetric wavefunction, it's clear that we must have
 
@@ -141,7 +140,7 @@ The same relations describe the ladder operators of a set of independent harmoni
 
 $$
 \Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}(\br_1,\ldots,\br_N) \longleftrightarrow\ket{\mathbf{N}} \equiv \prod_\alpha \frac{\left(\adop_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\ket{\text{VAC}}
-$$
+$$ {#eq-prod-correspondence}
 
 The combination $\Nop_{\alpha}\equiv \adop_{\alpha}\aop_{\alpha}$ is called the __number operator__ for state $\alpha$ for obvious reasons
 
@@ -205,9 +204,31 @@ If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, show that the 
 
 $$
 \sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+$$ {#eq-freeze}
+
+Hint: Show that this is true for a product state first.
+
+::: {.callout-tip collapse="false" appearance="minimal"}
+
+### Solution
+
+Using the correspondence in @eq-N-part we write the state that results from acting with $\psi(X)$ on a product state as
+$$
+\psi(X)\adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}} = \sum_m \psi_m(X) \prod_{n\neq m} \adop(\psi_n) \ket{\text{VAC}} 
 $$
 
-Hint: Show that is is true for a product state first.
+where we used the commutation relation $[\psi(X),\adop(\psi_n)]=\bra{X}\psi_n\rangle=\psi_n(X)$. The wavefunctions appearing on the RHS on $N-1$ particle wavefunctions with arguments $x_1$ to $x_{N-1}$. Using @eq-N-part and @eq-N-prod the RHS corresponds to
+
+$$
+\begin{gather}
+ \frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(X) \sum_P \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
+=\frac{1}{\sqrt{(N-1)!}}\sum_P\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
+\end{gather}
+$$
+
+with $x_N=X$. But this just corresponds to applying the prescription @eq-freeze to the original wavefunction @eq-N-prod. Since this works for all product states, and since any state is a superposition of product states, it works more generally.
+
+:::
 
 :::
 
@@ -275,7 +296,7 @@ $$
 \label{A_aanticommute}
 $$
 
-The form of $\left\{\adop(\psi),\adop(\phi)\right\}=0$ can be deduced from the inner product between product states
+The form of $\left\{\aop(\psi),\adop(\phi)\right\}$ can be deduced from the inner product between product states
 
 $$
 \bra{\Psi}\Phi\rangle = \sum_P (-1)^P\prod_{n=1}^N\bra{\psi_n}\phi_{P_n}\rangle = \det \bra{\psi_m}\phi_{n}\rangle,
