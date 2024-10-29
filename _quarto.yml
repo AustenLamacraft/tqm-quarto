@@ -40,6 +40,7 @@ website:
       - section: "Problem Sets"
         contents:
           - problem-sets/problem-set-1.qmd
+          - problem-sets/problem-set-2.qmd
 
       - past-papers.qmd
 

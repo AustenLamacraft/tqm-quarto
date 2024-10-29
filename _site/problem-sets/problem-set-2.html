@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction – Theories of Quantum Matter</title>
+<title>Problem Set 2 – Theories of Quantum Matter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/many-body-wavefunctions.html" rel="next">
-<link href="../index.html" rel="prev">
+<link href="../past-papers.html" rel="next">
+<link href="../problem-sets/problem-set-1.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -111,7 +131,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/problem-set-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/problem-set-2.html">Problem Set 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -144,16 +164,16 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="../notes/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -232,17 +252,23 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Problem Sets</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Problem Set 2</span></a>
   </div>
 </li>
       </ul>
@@ -263,20 +289,25 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#models-of-matter" id="toc-models-of-matter" class="nav-link active" data-scroll-target="#models-of-matter"><span class="header-section-number">1</span> Models of Matter</a></li>
-  <li><a href="#structure-of-the-course" id="toc-structure-of-the-course" class="nav-link" data-scroll-target="#structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</a>
-  <ul class="collapse">
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">2.1</span> Prerequisites</a></li>
-  </ul></li>
+  <li><a href="#n-particle-hongoumandel" id="toc-n-particle-hongoumandel" class="nav-link active" data-scroll-target="#n-particle-hongoumandel"><span class="header-section-number">1</span> <span class="math inline">\(N\)</span> Particle Hong–Ou–Mandel</a></li>
+  <li><a href="#equation-of-motion-for-density" id="toc-equation-of-motion-for-density" class="nav-link" data-scroll-target="#equation-of-motion-for-density"><span class="header-section-number">2</span> Equation of Motion for Density</a></li>
+  <li><a href="#hbt-correlations-from-an-optical-lattice" id="toc-hbt-correlations-from-an-optical-lattice" class="nav-link" data-scroll-target="#hbt-correlations-from-an-optical-lattice"><span class="header-section-number">3</span> HBT Correlations From an Optical Lattice</a></li>
+  <li><a href="#mean-field-for-bosehubbard" id="toc-mean-field-for-bosehubbard" class="nav-link" data-scroll-target="#mean-field-for-bosehubbard"><span class="header-section-number">4</span> Mean Field for Bose–Hubbard</a></li>
+  <li><a href="#bosehubbard-with-spin" id="toc-bosehubbard-with-spin" class="nav-link" data-scroll-target="#bosehubbard-with-spin"><span class="header-section-number">5</span> Bose–Hubbard With Spin</a></li>
+  <li><a href="#bose-gas-with-attractive-interactions" id="toc-bose-gas-with-attractive-interactions" class="nav-link" data-scroll-target="#bose-gas-with-attractive-interactions"><span class="header-section-number">6</span> Bose Gas with Attractive Interactions</a></li>
+  <li><a href="#persistent-currents-without-rotational-symmetry" id="toc-persistent-currents-without-rotational-symmetry" class="nav-link" data-scroll-target="#persistent-currents-without-rotational-symmetry"><span class="header-section-number">7</span> Persistent Currents Without Rotational Symmetry</a></li>
+  <li><a href="#perturbation-theory-for-the-bose-gas" id="toc-perturbation-theory-for-the-bose-gas" class="nav-link" data-scroll-target="#perturbation-theory-for-the-bose-gas"><span class="header-section-number">8</span> Perturbation Theory for the Bose gas</a></li>
+  <li><a href="#bogoliubov-as-unitary-transformation" id="toc-bogoliubov-as-unitary-transformation" class="nav-link" data-scroll-target="#bogoliubov-as-unitary-transformation"><span class="header-section-number">9</span> Bogoliubov as Unitary Transformation</a></li>
+  <li><a href="#condensate-depletion-in-one-and-two-dimensions" id="toc-condensate-depletion-in-one-and-two-dimensions" class="nav-link" data-scroll-target="#condensate-depletion-in-one-and-two-dimensions"><span class="header-section-number">10</span> Condensate Depletion in One and Two Dimensions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../problem-sets/problem-set-1.html">Problem Sets</a></li><li class="breadcrumb-item"><a href="../problem-sets/problem-set-2.html">Problem Set 2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Introduction</h1>
+<h1 class="title">Problem Set 2</h1>
 </div>
 
 
@@ -293,34 +324,207 @@ window.Quarto = {
 </header>
 
 
-<p>The purpose of this course is to introduce <strong>simple models </strong> of phenomena in condensed matter physics, and to equip you with the tools needed to analyse their behaviour. This involves the application of quantum mechanics to <strong>many body systems</strong>. There is a strong overlap with the subject of <strong>quantum field theory</strong>, which deals with the quantum mechanics of continua (i.e.&nbsp;fields).</p>
-<hr>
-<section id="models-of-matter" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="models-of-matter"><span class="header-section-number">1</span> Models of Matter</h2>
-<p>It’s important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a> of magnetism, which caricatures a lattice of magnetic ions and their complex interactions. The Ising model is defined in terms of an energy function</p>
+<div class="hidden">
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 <p><span class="math display">\[
-H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k,
-\label{spin_ising}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}}
 \]</span></p>
-<p>where the ‘spin’ variables <span class="math inline">\(\sigma_j\)</span> take the values <span class="math inline">\(\pm 1\)</span>. The notation <span class="math inline">\({\langle j\,k\rangle}\)</span> indicates that the sum is over all nearest neighbour pairs on some (e.g.&nbsp;cubic) lattice. A negative coupling <span class="math inline">\(J&lt;0\)</span> tends to promote alignment of the spins.</p>
-<p>The calculation of the partition function of the Ising model, and hence of its thermodynamic behaviour, is simple in 1D, extremely hard in 2D, and – as far as we know – impossible in the most interesting case of three dimensions. As well as being intractable, it is also highly unrealistic. The complexity of the magnetic atom, consisting of tens of electrons, is reduced to a single variable describing the spin only, which is not even treated quantum mechanically. Why on earth should we care?</p>
-<p>The point is that the Ising model is a <a href="https://en.wikipedia.org/wiki/Minimal_Working_Example">minimal working example</a>. It is designed with the minimal set of ingredients necessary to demonstrate the phenomenon of ferromagnetism. The puzzle it seeks to explain is: how do a large number of microscopic ‘magnets’ (the spins), undergoing thermal fluctuations that are constantly seeking to randomize their direction, decide to develop a macroscopic magnetization in a particular direction? Why does the magnetization appear abruptly at the the <a href="https://en.wikipedia.org/wiki/Curie_temperature">Curie temperature</a>, rather than gradually? Obviously the spins cannot be independent. The fact that the Ising model has a magnetic transition shows us that a nearest neighbour coupling is enough.</p>
-<p>That we can cook up such minimal models <em>and analyze them</em>, even if we can’t solve them exactly, gives us confidence that whether we are talking about Iron, Nickel, or Cobalt, the essence of the magnetic transition is the same. By understanding something about the Ising model, we can say we have understood something about magnetism <em>in general</em>.</p>
-<p>This certainly doesn’t mean the end of story, of course. Firstly, one can try to move towards a more realistic description of ferromagnetism. What is the microscopic origin and size of the coupling? Why does Cobalt have a higher Curie temperature than Nickel? How does the magnetism interact with other properties of the metal? These are all valid questions beyond our minimal working example.</p>
-<p>Secondly, one can ask whether, with similar models, one can describe <em>qualitatively different phenomena</em>. If <span class="math inline">\(J&gt;0\)</span> do the spins <em>anti</em>-align at some transition? What if we change the lattice? Make it disordered? Let <span class="math inline">\(\sigma_j\)</span> be a vector instead of a scalar? Make it truly quantum?</p>
-<p>This course pursues this second line of investigation. We will look at the simplest models decribing interacting bosons, fermions, and spins, and try to describe the properties of the states of matter that they form. These states of matter – magnets, metals, superconductors – have real world counterparts, and by studying their toy versions we learn what makes them tick. This strategy of introducing and analyzing new models is one of the ways in which theorists try to learn what states of matter <em>may</em> exist, and under what conditions.</p>
+</div>
+<section id="n-particle-hongoumandel" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="n-particle-hongoumandel"><span class="header-section-number">1</span> <span class="math inline">\(N\)</span> Particle Hong–Ou–Mandel</h2>
+<p><em>[TP2, 2015]</em> Let’s reconsider the beam splitter discussed in <a href="../notes/many-body-wavefunctions.html">Lecture 1</a>.</p>
+<p><span class="math inline">\(a^\dagger_i\)</span>, <span class="math inline">\(a^{\vphantom{\dagger}}_i\)</span> (<span class="math inline">\(i=1,2\)</span>) create and destroy particles in the incoming states, and <span class="math inline">\(b^\dagger_i\)</span>, <span class="math inline">\(b^{\vphantom{\dagger}}_i\)</span> do the same for the outgoing states. The creation operators are related by the <span class="math inline">\(S\)</span>-matrix</p>
+<p><span class="math display">\[
+\begin{pmatrix}
+    b^\dagger_1\\
+    b^\dagger_2
+\end{pmatrix} =  \frac{1}{\sqrt{2}} \begin{pmatrix}
+    1 &amp; 1\\
+    1 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+    a^\dagger_1\\
+    a^\dagger_2
+\end{pmatrix}.
+\]</span></p>
+<p>In the following parts, give all possible occupancies of outgoing states 1 and 2, <em>and their probabilities</em>. The statistics of the particles are given in square brackets. Note that the states are not necessarily normalized.</p>
+<ol type="1">
+<li>The initial state is <span class="math inline">\(a^\dagger_1a^\dagger_2\lvert{\text{VAC}}\rangle\)</span> [Fermions].</li>
+<li>The initial state is <span class="math inline">\(a^\dagger_1a^\dagger_2\lvert{\text{VAC}}\rangle\)</span> [Bosons].</li>
+<li>The initial state is <span class="math inline">\((a^\dagger_1)^N(a^\dagger_2)^N\lvert{\text{VAC}}\rangle\)</span> [Bosons].</li>
+<li>The initial state is <span class="math inline">\(\exp(\alpha_1a^\dagger_1+\alpha_2a^\dagger_2)\lvert{\text{VAC}}\rangle\)</span> [Bosons].</li>
+</ol>
+<p>How does the distribution in part 3 <em>look</em>? Try taking the limit of a large number of particles.</p>
 </section>
-<section id="structure-of-the-course" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</h2>
-<section id="prerequisites" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">2.1</span> Prerequisites</h3>
-<p>You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don’t need to have taken TP2. One of the main methods we use – second quantization – is covered in TP2 but will be introduced again from scratch.</p>
+<section id="equation-of-motion-for-density" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="equation-of-motion-for-density"><span class="header-section-number">2</span> Equation of Motion for Density</h2>
+<p>Find the Heisenberg equation of motion of the density operator <span class="math inline">\(\rho(\mathbf{r})=\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\)</span> with the Hamiltonian</p>
+<p><span class="math display">\[
+H = \int \frac{1}{2m}\nabla\psi^\dagger\cdot\nabla\psi^{\vphantom{\dagger}}d\mathbf{r}.
+\]</span></p>
+<p>Interpret the result. Is the result changed if we introduce an interaction of the form</p>
+<p><span class="math display">\[
+H_\text{int} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, V(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1)?
+\]</span></p>
+</section>
+<section id="hbt-correlations-from-an-optical-lattice" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="hbt-correlations-from-an-optical-lattice"><span class="header-section-number">3</span> HBT Correlations From an Optical Lattice</h2>
+<p>In <span class="citation" data-cites="folling2005spatial">Fölling et al. (<a href="#ref-folling2005spatial" role="doc-biblioref">2005</a>)</span>, bosonic atoms were initially prepared in an optical lattice in a Mott state:</p>
+<p><span class="math display">\[
+\lvert{\Psi}\rangle=\prod_{i} a^\dagger_{i}\lvert{\text{VAC}}\rangle,
+\]</span></p>
+<p>where <span class="math inline">\(a^\dagger_{i}\)</span> creates a particle localized at site <span class="math inline">\(\mathbf{r}_{i}\)</span> in the lattice, with (let’s say) Gaussian wavefunction</p>
+<p><span class="math display">\[
+\varphi_{i}(\mathbf{r})=\frac{1}{\left(\pi R^{2}\right)^{3/4}}\exp\left[-\frac{\left(\mathbf{r}-\mathbf{r}_{i}\right)^2}{2R^2}\right]
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/FollingNoise.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(a) raw image (b) density of an atomic cloud following expansion from a Mott state. (c) and (d) noise correlation signal extracted from the same image.</figcaption>
+</figure>
+</div>
+<p>Show that the correlation function of momentum state occupancies is</p>
+<p><span class="math display">\[
+            \langle{\Psi}\rvert :N(\mathbf{p})N(\mathbf{p}'): \lvert \Psi \rangle=\sum_{i,j}\tilde\varphi^{*}_{i}(\mathbf{p})\tilde\varphi^{}_{i}(\mathbf{p})\tilde\varphi^{*}_{j}(\mathbf{p}')\tilde\varphi^{}_{j}(\mathbf{p}')
++\tilde\varphi^{*}_{i}(\mathbf{p})\tilde\varphi^{}_{j}(\mathbf{p})\tilde\varphi^{*}_{j}(\mathbf{p}')\tilde\varphi^{}_{i}(\mathbf{p}').          
+\]</span></p>
+<p>where <span class="math inline">\(\tilde\varphi_{i}(\mathbf{p})\)</span> is the Fourier transform of the spatial wavefunction, and <span class="math inline">\(:(\cdots):\)</span> denotes <em>normal ordering</em> of the operators between the colons. Evaluate the Fourier transform and explain the structure of the noise correlations in the above data.</p>
+</section>
+<section id="mean-field-for-bosehubbard" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="mean-field-for-bosehubbard"><span class="header-section-number">4</span> Mean Field for Bose–Hubbard</h2>
+<p>For the Bose–Hubbard model, let’s try a variational wavefunction of the form</p>
+<p><span class="math display">\[
+\left[\prod_{i}\left(\sum_{n}c_{n}\frac{(a^\dagger_{i})^{n}}{\sqrt{n!}}\right) \right]|\text{VAC}\rangle\qquad \sum_{n}|c_{n}|^{2}=1
+\]</span></p>
+<p>The N<span class="math inline">\(^{\text{th}}\)</span> Mott states has a fixed integer number of bosons per site i.e.&nbsp;<span class="math inline">\(c_{N}=1\)</span> with all other coefficients zero. We identify the superfluid phase with the region where more than one <span class="math inline">\(c_n\)</span> is nonzero, meaning that the bosons can move around.</p>
+<ol type="1">
+<li><p>Find the expectation value of <span class="math inline">\(\mathcal{H}_\mu = H-\mu N\)</span> using the above wavefunction.</p></li>
+<li><p>To find the boundary, use a self-consistent scheme. First assume that <span class="math inline">\(\langle a^{\vphantom{\dagger}}_{i}\rangle\)</span> is small. Then use perturbation theory in this quantity to see how the <span class="math inline">\(c_{n}\)</span> change to first order. Next calculate the value of <span class="math inline">\(\langle a^{\vphantom{\dagger}}_{i}\rangle\)</span> that results. The gives an equation with <span class="math inline">\(\langle a^{\vphantom{\dagger}}_{i}\rangle\)</span> on both sides, which can then be cancelled to give an equation determining the boundary between the phases. Plot the boundary as a function of <span class="math inline">\(t/U\)</span> and <span class="math inline">\(\mu/U\)</span>. Does it agree with the boundaries found in the lectures when <span class="math inline">\(t/U\)</span> is small?</p></li>
+</ol>
+</section>
+<section id="bosehubbard-with-spin" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="bosehubbard-with-spin"><span class="header-section-number">5</span> Bose–Hubbard With Spin</h2>
+<p>Consider the Bose–Hubbard model <em>with spin</em></p>
+<p><span class="math display">\[
+H = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right]  + \frac{U}{2}\sum_j \mathsf{N}^{\vphantom{\dagger}}_j(\mathsf{N}^{\vphantom{\dagger}}_j-1),
+\]</span></p>
+<p>where <span class="math inline">\(\mathsf{N}^{\vphantom{\dagger}}_j = \mathsf{N}^{\vphantom{\dagger}}_{j,\uparrow}+\mathsf{N}^{\vphantom{\dagger}}_{j,\downarrow}\)</span>. If we have a <span class="math inline">\(\nu=1\)</span> Mott state, how does the behaviour at <span class="math inline">\(t/U\ll 1\)</span> differ from the Fermi Hubbard case?</p>
+</section>
+<section id="bose-gas-with-attractive-interactions" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="bose-gas-with-attractive-interactions"><span class="header-section-number">6</span> Bose Gas with Attractive Interactions</h2>
+<ol type="1">
+<li><p>Consider the 1D Gross–Pitaevskii equation describing the attractive Lieb–Liniger model</p>
+<p><span class="math display">\[
+-\frac{1}{2m}\varphi'' - \mu \varphi - \frac{|c|}{2}\lvert{\varphi}\rvert^2\varphi = 0.
+\]</span></p>
+<p>Look for a solution on the infinite line with <span class="math inline">\(\varphi(x\to\pm\infty) =0\)</span> describing a localized ‘blob’ (properly called a <strong>bright soliton</strong>) containing <span class="math inline">\(N\)</span> bosons. Find the energy of this state.</p></li>
+<li><p>The ground state wavefunction is</p>
+<p><span class="math display">\[
+\Psi(x_1,\ldots,x_N) = \prod_{j&lt;k}\exp\left(-\frac{\lvert{c}\rvert}{2}\lvert{x_j-x_k}\rvert\right),\quad x_1&lt;x_2&lt;\cdots &lt;x_N.
+\]</span></p>
+<p>Find the probability distribution of the separations <span class="math inline">\(x_{j+1}-x_j\)</span> in this state. By equating the average density to the inverse of the mean separation, show that the resulting density profile coincides with that of the bright soliton.</p></li>
+</ol>
+</section>
+<section id="persistent-currents-without-rotational-symmetry" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="persistent-currents-without-rotational-symmetry"><span class="header-section-number">7</span> Persistent Currents Without Rotational Symmetry</h2>
+<p>A system of bosons moving on a ring of radius <span class="math inline">\(R\)</span> is described by the Hamiltonian <span class="math inline">\(H=H_1+H_2\)</span>, where</p>
+<p><span class="math display">\[
+H_1 = \int_0^{2\pi} \left[\frac{\hbar^2}{2mR^2}\frac{d\psi^\dagger}{d\theta}\frac{d\psi^{\vphantom{\dagger}}}{d\theta} +V(\theta)\psi^\dagger\psi^{\vphantom{\dagger}}\right]d\theta
+\]</span></p>
+<p>is the single particle Hamiltonian, involving some potential <span class="math inline">\(V(\theta)\)</span>, and</p>
+<p><span class="math display">\[
+H_2=\frac{U_0}{2R}\int_0^{2\pi} \psi^\dagger\psi^\dagger\psi^{\vphantom{\dagger}}\psi^{\vphantom{\dagger}}\, d\theta
+\]</span></p>
+<p>describes interactions between the particles. <span class="math inline">\(\psi^\dagger(\theta)\)</span> and <span class="math inline">\(\psi^{\vphantom{\dagger}}(\theta)\)</span> satisfy</p>
+<p><span class="math display">\[
+    \begin{split}
+        \left[\psi^{\vphantom{\dagger}}(\theta),\psi^\dagger(\theta')\right]=\delta(\theta-\theta')\\
+        \left[\psi^{\vphantom{\dagger}}(\theta),\psi^{\vphantom{\dagger}}(\theta')\right]=\left[\psi^\dagger(\theta),\psi^\dagger(\theta')\right]=0
+    \end{split}
+\]</span></p>
+<p>In the basis of angular momentum eigenstates</p>
+<p><span class="math display">\[
+\varphi_l(\theta) =\frac{e^{il\theta}}{\sqrt{2\pi }},\qquad l=0,\pm 1, \pm 2,\ldots
+\]</span></p>
+<p><span class="math inline">\(\psi^{\vphantom{\dagger}}(\theta)\)</span> may be expressed</p>
+<p><span class="math display">\[
+    \psi^{\vphantom{\dagger}}(\theta)=\sum_{l=-\infty}^\infty \varphi_l(\theta)a_l,
+\]</span></p>
+<p>where <span class="math inline">\(a_l\)</span> annihilates a particle in state <span class="math inline">\(l\)</span>. By considering <em>only</em> states <span class="math inline">\(l=0\)</span> and <span class="math inline">\(1\)</span>, show that the Hamiltonian takes the form</p>
+<p><span class="math display">\[
+\begin{align}
+H_{\text{rot}}=\text{const.}+\omega_c\left[a^\dagger_1a^{\vphantom{\dagger}}_1-a^\dagger_0a^{\vphantom{\dagger}}_0\right]+V_0\left[a^\dagger_0a^{\vphantom{\dagger}}_1+\mathrm{h.c.}\right]\nonumber\\
++\frac{U_0}{4\pi R}\left[a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0+a^\dagger_1a^\dagger_1a^{\vphantom{\dagger}}_1a^{\vphantom{\dagger}}_1+4a^\dagger_1
+a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_1\right]
+\end{align}
+\]</span></p>
+<p>and identify <span class="math inline">\(\omega_{c}\)</span> and <span class="math inline">\(V_{0}\)</span>.</p>
+<p>Introduce the Gross–Pitaevskii wavefunction</p>
+<p><span class="math display">\[
+\left[\cos\frac{\chi}{2}e^{i\varphi/2}a^\dagger_0+\sin\frac{\chi}{2}e^{-i\varphi/2}a^\dagger_1\right]^N\lvert{\text{VAC}}\rangle,
+\]</span></p>
+<p>and show that:</p>
+<ol type="1">
+<li><p>The order parameter has a node for <span class="math inline">\(\chi=\pi/2\)</span>. If <span class="math inline">\(V_0\)</span> is due to a localized potential, this node will coincide with the position of that potential (by choosing <span class="math inline">\(\varphi\)</span> appropriately).</p></li>
+<li><p>The GP variational energy is (up to a constant, and ignoring terms lower order in <span class="math inline">\(N\)</span>)</p>
+<p><span class="math display">\[
+E(\chi)/N=-\omega_c\cos\chi+V_0\cos\varphi\sin\chi+\frac{nU_0}{4}\sin^2\chi,
+\]</span></p>
+<p>where <span class="math inline">\(n=N/(2\pi R)\)</span> is the density, while the angular momentum is</p>
+<p><span class="math display">\[
+L(\chi)/N=\frac{1}{2}\left(1-\cos\chi\right).
+\]</span></p></li>
+<li><p>A metastable minimum exists for <span class="math inline">\(nU_0&gt;V_0/2\)</span> (assuming <span class="math inline">\(U_0\)</span> and <span class="math inline">\(V _0\)</span> are both much less than <span class="math inline">\(\omega_c\)</span>). That is, for small enough deviations from perfect symmetry, metastable configurations are possible, and have their origin in the repulsive interactions. The point <span class="math inline">\(\chi=\pi/2\)</span> that corresponds to an order parameter with a node is then a maximum of the energy.</p></li>
+<li><p>Finally, consider what would happen for Fock states of the form</p>
+<p><span class="math display">\[
+     \frac{1}{\sqrt{N_{0}!N_{1}!}}\left(a^\dagger_{0}\right)^{N_{0}}\left(a^\dagger_{1}\right)^{N_{1}}\lvert{\text{VAC}}\rangle.
+\]</span></p>
+<p>This situation — macroscopic occupations of more than one single particle state — is sometimes called a <em>fragmented</em> condensate.</p></li>
+</ol>
+</section>
+<section id="perturbation-theory-for-the-bose-gas" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="perturbation-theory-for-the-bose-gas"><span class="header-section-number">8</span> Perturbation Theory for the Bose gas</h2>
+<ol type="1">
+<li><p>Find an expression for the ground state energy of the Bose gas at second order in the interaction, and confirm the ultraviolet divergence found in the lectures. This can be ‘cured’ by recognizing that a real potential has a finite range, which cuts off the integral.</p></li>
+<li><p><em>[Harder]</em>. The expression for the <em>third order</em> perturbative correction is</p>
+<p><span class="math display">\[
+     E^{(3)}_{0} = \sum_{m,n\neq 0} \frac{\langle{0}\rvert H_{\text{int}} \lvert m \rangle\langle{m}\rvert H_{\text{int}} \lvert n \rangle\langle{n}\rvert H_{\text{int}} \lvert 0 \rangle}{\left(E^{(0)}_{m}-E^{(0)}_{0}\right)\left(E^{(0)}_{n}-E^{(0)}_{0}\right)}-\langle{0}\rvert H_{\text{int}} \lvert 0 \rangle\sum_{n\neq 0}\frac{|\langle{n}\rvert H_{\text{int}} \lvert 0 \rangle|^{2}}{\left(E^{(0)}_{0}-E^{(0)}_{n}\right)^{2}}.
+\]</span></p>
+<p>Show that this expression contains an <em>infrared</em> divergence (i.e.&nbsp;at low momenta). This can’t be fixed by appealing to the interaction potential, and is the reason we need Bogoliubov theory! See <span class="citation" data-cites="brueckner1957bose">Brueckner and Sawada (<a href="#ref-brueckner1957bose" role="doc-biblioref">1957</a>)</span>.</p></li>
+</ol>
+</section>
+<section id="bogoliubov-as-unitary-transformation" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="bogoliubov-as-unitary-transformation"><span class="header-section-number">9</span> Bogoliubov as Unitary Transformation</h2>
+<p>Find an antihermitian generator <span class="math inline">\(A\)</span> that generates a Bogoliubov transformation, i.e.</p>
+<p><span class="math display">\[
+\exp(A) a^{\vphantom{\dagger}}_{\mathbf{k}} \exp(-A)= \cosh\kappa_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}-\sinh\kappa_\mathbf{k}a^\dagger_{-\mathbf{k}}.
+\]</span></p>
+<p><em>Hint:</em> expand in <span class="math inline">\(\kappa_\mathbf{k}\)</span>. Compare the action of this transformation on the vacuum state with the form of the Bogoliubov transformation given in the lecture.</p>
+</section>
+<section id="condensate-depletion-in-one-and-two-dimensions" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="condensate-depletion-in-one-and-two-dimensions"><span class="header-section-number">10</span> Condensate Depletion in One and Two Dimensions</h2>
+<ol type="1">
+<li><p>Show that the condensate depletion in one dimension is logarithmically divergent in the length of the system, indicating a breakdown of Bogoliubov theory in the infinite length limit.</p></li>
+<li><p>By assuming that the Bogoliubov modes have thermal occupations at finite temperature</p>
+<p><span class="math display">\[
+\langle\langle b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}\rangle\rangle = \frac{1}{\exp\left(\beta\omega(\mathbf{p})\right)-1}\equiv n_\text{B}(\omega(\mathbf{p})),
+\]</span></p>
+<p>Show that the depletion is logarithmically divergent in the system size in <em>two</em> dimensions at finite temperature.</p></li>
+</ol>
 
 
-</section>
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-brueckner1957bose" class="csl-entry" role="listitem">
+Brueckner, KA, and K Sawada. 1957. <span>“Bose-Einstein Gas with Repulsive Interactions: General Theory.”</span> <em>Physical Review</em> 106 (6): 1117.
+</div>
+<div id="ref-folling2005spatial" class="csl-entry" role="listitem">
+Fölling, Simon, Fabrice Gerbier, Artur Widera, Olaf Mandel, Tatjana Gericke, and Immanuel Bloch. 2005. <span>“Spatial Quantum Noise Interferometry in Expanding Ultracold Atom Clouds.”</span> <em>Nature</em> 434 (7032): 481–84.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -413,7 +617,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -743,13 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="TQM Lectures 2024">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TQM Lectures 2024</span>
+      <a href="../problem-sets/problem-set-1.html" class="pagination-link" aria-label="Problem Set 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 1</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/many-body-wavefunctions.html" class="pagination-link" aria-label="Many Body Wavefunctions">
-        <span class="nav-page-text">Many Body Wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../past-papers.html" class="pagination-link" aria-label="Past Papers">
+        <span class="nav-page-text">Past Papers</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

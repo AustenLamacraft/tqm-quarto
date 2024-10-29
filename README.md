@@ -19,4 +19,5 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 - [X] Add $\hbar =1$ warning!!
 - [ ] Add advice to complete exercises
 - [ ] Build problems with PDF. How to fix
-- [ ] Favicon for site
+- [X] Favicon for site
+- [ ] Fix cot / tan disagreement between spin models lectures and slides
