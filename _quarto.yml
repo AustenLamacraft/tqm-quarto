@@ -36,6 +36,7 @@ website:
           - slides/elastic-chain.qmd
           - slides/spin-models.qmd
           - slides/second-quantization.qmd
+          - slides/more-second-quantization.qmd
           
 
       - section: "Problem Sets"
