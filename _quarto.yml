@@ -27,6 +27,7 @@ website:
           - notes/elastic-chain.qmd
           - notes/spin-models.qmd
           - notes/second-quantization.qmd
+          - notes/more-second-quantization.qmd
 
       - section: "Slides"
         contents:

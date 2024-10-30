@@ -208,7 +208,7 @@ $$ {#eq-freeze}
 
 Hint: Show that this is true for a product state first.
 
-::: {.callout-tip collapse="false" appearance="minimal"}
+::: {.callout-tip collapse="true" appearance="minimal"}
 
 ### Solution
 

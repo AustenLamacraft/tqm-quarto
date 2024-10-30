@@ -13,11 +13,12 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 ## TODOs
 
 - [X] Callouts for in-lecture problems
-- [ ] Add list of supervisions
-- [ ] Add details about supervisions
+- [X] Add list of supervisions
+- [X] Add details about supervisions
 - [X] Sun Woo correction in first lecture (normalization factor)
 - [X] Add $\hbar =1$ warning!!
-- [ ] Add advice to complete exercises
+- [X] Add advice to complete exercises
 - [ ] Build problems with PDF. How to fix
 - [X] Favicon for site
+- [ ] FQHE animation not working
 - [ ] Fix cot / tan disagreement between spin models lectures and slides
