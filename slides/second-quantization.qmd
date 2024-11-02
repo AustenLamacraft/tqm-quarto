@@ -344,7 +344,7 @@ $$
 
 ---
 
-## Explicit Form of Operators
+## How do $\aop_\alpha$ and $\adop_\alpha$ _look_?
 
 ::: {.callout-tip}
 ## Check
@@ -355,7 +355,7 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 
 ---
 
-## Single Particle Operators
+## One Particle Operators
 
 - Notation: $A$ acts on single particle states; $\hat A$ acts on $N$ particles as
 
@@ -369,7 +369,7 @@ $$
 \hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\br_j)\right]
 $$
 
-- Operators of this type are __single particle operators__
+- Operators of this type are __one particle operators__
 
 - How to represent them using creation and annihilation operators?
 
@@ -514,7 +514,7 @@ just the time dependent Schrödinger equation!
 
 ### Example 2: Density
 
-- Single particle operator for density at $\mathbf{x}$ is
+- One particle operator for density at $\mathbf{x}$ is
 
 $$
 	\rho(\mathbf{x})\equiv\delta(\mathbf{x}-\br)

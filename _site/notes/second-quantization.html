@@ -251,7 +251,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../slides/second-quantization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Second Quantization</span></a>
+ <span class="menu-text">A is for Annihilation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">B is for Bunching</span></a>
   </div>
 </li>
       </ul>
@@ -302,11 +308,16 @@ window.Quarto = {
   <li><a href="#choosing-a-basis" id="toc-choosing-a-basis" class="nav-link" data-scroll-target="#choosing-a-basis"><span class="header-section-number">1.3</span> Choosing a Basis</a></li>
   <li><a href="#the-case-of-fermions" id="toc-the-case-of-fermions" class="nav-link" data-scroll-target="#the-case-of-fermions"><span class="header-section-number">1.4</span> The Case of Fermions</a></li>
   </ul></li>
-  <li><a href="#discussion-explicit-form-of-operators" id="toc-discussion-explicit-form-of-operators" class="nav-link" data-scroll-target="#discussion-explicit-form-of-operators"><span class="header-section-number">2</span> Discussion: Explicit Form of Operators</a></li>
+  <li><a href="#discussion-how-do-avphantomdagger_alpha-and-adagger_alpha-look" id="toc-discussion-how-do-avphantomdagger_alpha-and-adagger_alpha-look" class="nav-link" data-scroll-target="#discussion-how-do-avphantomdagger_alpha-and-adagger_alpha-look"><span class="header-section-number">2</span> Discussion: How Do <span class="math inline">\(a^{\vphantom{\dagger}}_\alpha\)</span> and <span class="math inline">\(a^\dagger_\alpha\)</span> <em>Look</em>?</a></li>
   <li><a href="#representation-of-operators" id="toc-representation-of-operators" class="nav-link" data-scroll-target="#representation-of-operators"><span class="header-section-number">3</span> Representation of Operators</a>
   <ul class="collapse">
-  <li><a href="#single-particle-operators" id="toc-single-particle-operators" class="nav-link" data-scroll-target="#single-particle-operators"><span class="header-section-number">3.1</span> Single Particle Operators</a></li>
+  <li><a href="#one-particle-operators" id="toc-one-particle-operators" class="nav-link" data-scroll-target="#one-particle-operators"><span class="header-section-number">3.1</span> One Particle Operators</a></li>
   <li><a href="#two-particle-operators" id="toc-two-particle-operators" class="nav-link" data-scroll-target="#two-particle-operators"><span class="header-section-number">3.2</span> Two Particle Operators</a></li>
+  </ul></li>
+  <li><a href="#appendix-alternative-derivation-of-one--and-two-particle-operators" id="toc-appendix-alternative-derivation-of-one--and-two-particle-operators" class="nav-link" data-scroll-target="#appendix-alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4</span> Appendix: Alternative Derivation of One- and Two-particle Operators</a>
+  <ul class="collapse">
+  <li><a href="#one-particle-operators-1" id="toc-one-particle-operators-1" class="nav-link" data-scroll-target="#one-particle-operators-1"><span class="header-section-number">4.1</span> One particle operators</a></li>
+  <li><a href="#two-particle-operators-1" id="toc-two-particle-operators-1" class="nav-link" data-scroll-target="#two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -499,9 +510,9 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If a state <span class="math inline">\(\lvert{\Psi}\rangle\)</span> has wavefunction <span class="math inline">\(\Psi(x_1,\ldots, x_N)\)</span>, show that the wavefunction of the state <span class="math inline">\(\psi^{\vphantom{\dagger}}(X)\lvert{\Psi}\rangle\)</span> is the <span class="math inline">\(N-1\)</span> particle wavefunction</p>
+<p>If a state <span class="math inline">\(\lvert{\Psi}\rangle\)</span> has wavefunction <span class="math inline">\(\Psi(x_1,\ldots, x_N)\)</span>, show that the wavefunction of the state <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\lvert{\Psi}\rangle\)</span> is the <span class="math inline">\(N-1\)</span> particle wavefunction</p>
 <p><span id="eq-freeze"><span class="math display">\[
-\sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+\sqrt{N}\Psi(x,x_1,\ldots, x_{N-1})
 \tag{15}\]</span></span></p>
 <p>Hint: Show that this is true for a product state first.</p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
@@ -516,17 +527,17 @@ Solution
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Using the correspondence in <a href="#eq-N-part" class="quarto-xref">Equation&nbsp;5</a> we write the state that results from acting with <span class="math inline">\(\psi(X)\)</span> on a product state as <span class="math display">\[
-\psi(X)a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle = \sum_m \psi_m(X) \prod_{n\neq m} a^\dagger(\psi_n) \lvert{\text{VAC}}\rangle
+<p>Using the correspondence in <a href="#eq-N-part" class="quarto-xref">Equation&nbsp;5</a> we write the state that results from acting with <span class="math inline">\(\psi(x)\)</span> on a product state as <span class="math display">\[
+\psi(x)a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle = \sum_m \psi_m(x) \prod_{n\neq m} a^\dagger(\psi_n) \lvert{\text{VAC}}\rangle
 \]</span></p>
-<p>where we used the commutation relation <span class="math inline">\([\psi(X),a^\dagger(\psi_n)]=\langle{X}\rvert\psi_n\rangle=\psi_n(X)\)</span>. The wavefunctions appearing on the RHS on <span class="math inline">\(N-1\)</span> particle wavefunctions with arguments <span class="math inline">\(x_1\)</span> to <span class="math inline">\(x_{N-1}\)</span>. Using <a href="#eq-N-part" class="quarto-xref">Equation&nbsp;5</a> and <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a> the RHS corresponds to</p>
+<p>where we used the commutation relation <span class="math inline">\([\psi(x),a^\dagger(\psi_n)]=\langle{x}\rvert\psi_n\rangle=\psi_n(x)\)</span>. The wavefunctions appearing on the RHS on <span class="math inline">\(N-1\)</span> particle wavefunctions with arguments <span class="math inline">\(x_1\)</span> to <span class="math inline">\(x_{N-1}\)</span>. Using <a href="#eq-N-part" class="quarto-xref">Equation&nbsp;5</a> and <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a> the RHS corresponds to</p>
 <p><span class="math display">\[
 \begin{gather}
-\frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(X) \sum_P \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
-=\frac{1}{\sqrt{(N-1)!}}\sum_P\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
+\frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(x) \sum_{P\in S_{N-1}} \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
+=\frac{1}{\sqrt{(N-1)!}}\sum_{P \in S_{N}}\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
 \end{gather}
 \]</span></p>
-<p>with <span class="math inline">\(x_N=X\)</span>. But this just corresponds to applying the prescription <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> to the original wavefunction <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a>. Since this works for all product states, and since any state is a superposition of product states, it works more generally.</p>
+<p>with <span class="math inline">\(x_N=x\)</span>, and <span class="math inline">\(S_N\)</span> denotes the set of permutations of <span class="math inline">\(N\)</span> objects (note the change from <span class="math inline">\(S_{N-1}\)</span> to <span class="math inline">\(S_N\)</span> between the two lines). But this just corresponds to applying the prescription <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> to the original wavefunction <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a>. Since this works for all product states, and since any state is a superposition of product states, it works more generally.</p>
 </div>
 </div>
 </div>
@@ -618,10 +629,23 @@ Check
     \label{2nd_quant_PositionRelationsAnti}
 \end{gather}
 \]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Show that in the fermionic case the wavefunction of the state <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\lvert{\Psi}\rangle\)</span> is still given by <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a>.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="discussion-explicit-form-of-operators" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="discussion-explicit-form-of-operators"><span class="header-section-number">2</span> Discussion: Explicit Form of Operators</h2>
+<section id="discussion-how-do-avphantomdagger_alpha-and-adagger_alpha-look" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="discussion-how-do-avphantomdagger_alpha-and-adagger_alpha-look"><span class="header-section-number">2</span> Discussion: How Do <span class="math inline">\(a^{\vphantom{\dagger}}_\alpha\)</span> and <span class="math inline">\(a^\dagger_\alpha\)</span> <em>Look</em>?</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -638,17 +662,17 @@ Check
 </section>
 <section id="representation-of-operators" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="representation-of-operators"><span class="header-section-number">3</span> Representation of Operators</h2>
-<section id="single-particle-operators" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="single-particle-operators"><span class="header-section-number">3.1</span> Single Particle Operators</h3>
+<section id="one-particle-operators" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="one-particle-operators"><span class="header-section-number">3.1</span> One Particle Operators</h3>
 <p>Suppose we now have some operator <span class="math inline">\(A\)</span> that acts on the single particle states. We denote the action on <span class="math inline">\(N\)</span> particle states as <span class="math inline">\(\hat A\)</span></p>
-<p><span class="math display">\[
+<p><span id="eq-one-particle"><span class="math display">\[
 \hat A = \sum_{j=1}^N A_j,
-\]</span></p>
+\tag{17}\]</span></span></p>
 <p>where the subscript denotes that the operator acts on the position label <span class="math inline">\(\mathbf{r}_j\)</span> of the <span class="math inline">\(j^\text{th}\)</span> particle. The example that we have met many times already is the Hamiltonian for noninteracting particles</p>
 <p><span id="eq-h1"><span class="math display">\[
 \hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\mathbf{r}_j)\right].
-\tag{17}\]</span></span></p>
-<p>Operators of this type are known as <strong>single particle operators</strong>. We want to use our creation and annihilation operators to represent these operators.</p>
+\tag{18}\]</span></span></p>
+<p>Operators of this type are known as <strong>one particle operators</strong>. We want to use our creation and annihilation operators to represent these operators.</p>
 <p>First, the action of the operator <span class="math inline">\(A\)</span> on one of the basis states <span class="math inline">\(\lvert{\varphi_\beta}\rangle\)</span> can be written in terms of the matrix elements <span class="math inline">\(A_{\alpha\beta}=\langle{\varphi_\alpha}\rvert A \lvert \varphi_\beta \rangle\)</span> by inserting a resolution of the identity <span class="math inline">\(\sum_\alpha \lvert{\alpha}\rangle\langle{\alpha}\rvert=1\)</span> on the right <span class="math display">\[
 A\lvert{\varphi_\beta}\rangle = \sum_{\alpha} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert A \lvert \varphi_\beta \rangle = \sum_\alpha A_{\alpha\beta}\lvert{\varphi_\alpha}\rangle.
 \]</span></p>
@@ -657,7 +681,7 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 \]</span></p>
 <p>Therefore, the action of <span class="math inline">\(\hat A\)</span> on the product state <span class="math inline">\(\lvert{\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle\)</span> is <span id="eq-A-act"><span class="math display">\[
 \hat A \lvert{\Psi^{\text{S}}_{\beta_{1}\beta_{2}\cdots\beta_{N}}}\rangle = \sum_\alpha \left[A_{\alpha\beta_1}\lvert{\Psi^{\text{S}}_{\alpha\beta_{2}\cdots\beta_{N}}}\rangle +A_{\alpha\beta_2}\lvert{\Psi^{\text{S}}_{\beta_1\alpha\cdots\beta_{N}}}\rangle+\cdots A_{\alpha\beta_N}\lvert{\Psi^{\text{S}}_{\beta_1\beta_{2}\cdots\alpha}}\rangle\right]
-\tag{18}\]</span></span></p>
+\tag{19}\]</span></span></p>
 <p>Now we argue that the same job is done by</p>
 <p><span class="math display">\[
 \hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
@@ -665,12 +689,12 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 <p>acting on the state <span class="math inline">\(\lvert{\mathbf{N}}\rangle\)</span>. Indeed, we have</p>
 <p><span id="eq-bilinear"><span class="math display">\[
 \left[a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta,a^\dagger_\gamma\right]=a^\dagger_\alpha\delta_{\beta\gamma}
-\tag{19}\]</span></span></p>
+\tag{20}\]</span></span></p>
 <p>By commuting <span class="math inline">\(a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta\)</span> though each of the creation operators in</p>
 <p><span class="math display">\[
 \lvert{\mathbf{N}}\rangle \equiv \prod_\alpha \frac{\left(a^\dagger_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\lvert{\text{VAC}}\rangle,
 \]</span></p>
-<p>we reproduce the action <a href="#eq-A-act" class="quarto-xref">Equation&nbsp;18</a>. As a simple example,</p>
+<p>we reproduce the action <a href="#eq-A-act" class="quarto-xref">Equation&nbsp;19</a>. As a simple example,</p>
 <p><span class="math display">\[
 \begin{align}
     \label{2nd_quant_}
@@ -681,7 +705,7 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 <p>The second quantized form of <span class="math inline">\(\hat A\)</span> allows us to find the matrix element <span class="math inline">\(\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle\)</span> between product states made of orthonormal single particle states. This vanishes unless <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N'}\)</span> differ by the movement of of one particle. If <span class="math inline">\(N_\beta = N'_\beta-1\)</span> and <span class="math inline">\(N_\alpha = N'_\alpha+1\)</span> we have</p>
 <p><span id="eq-Aab"><span class="math display">\[
 \langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
-\tag{20}\]</span></span></p>
+\tag{21}\]</span></span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -695,10 +719,10 @@ Check
 <p>This formula is not so easy to work out in the first quantized representation. Try it!</p>
 </div>
 </div>
-<p>We worked this out for the bosonic case. However, you can check that <a href="#eq-bilinear" class="quarto-xref">Equation&nbsp;19</a>, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So <span class="math inline">\(\hat A\)</span> has the same form for fermions.</p>
+<p>We worked this out for the bosonic case. However, you can check that <a href="#eq-bilinear" class="quarto-xref">Equation&nbsp;20</a>, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So <span class="math inline">\(\hat A\)</span> has the same form for fermions.</p>
 <p>Notice that <span class="math inline">\(\mathop{\hat A}\)</span> <em>looks</em> formally like the expectation value of <span class="math inline">\(\mathop{A}\)</span> in a single particle state <span class="math inline">\(\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle\)</span>. The difference, of course, is that the <span class="math inline">\(a_{\alpha}\)</span> in <span class="math inline">\(\mathop{\hat A}\)</span> are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name <strong>second quantization</strong>, which is traditionally introduced with the caveat that what we are doing is not in any way ‘more quantum’ than before.</p>
 <p>To repeat the above prescription for emphasis: <em>A one particle operator <span class="math inline">\(\mathop{\hat A}\)</span> has a second quantized representation formally identical to the expectation value of its single particle counterpart <span class="math inline">\(\mathop{A}\)</span></em>.</p>
-<p>This probably all looks a bit abstract, so let’s turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in <a href="#eq-h1" class="quarto-xref">Equation&nbsp;17</a>. According to the above prescription, this should have the second quantized form</p>
+<p>This probably all looks a bit abstract, so let’s turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in <a href="#eq-h1" class="quarto-xref">Equation&nbsp;18</a>. According to the above prescription, this should have the second quantized form</p>
 <p><span class="math display">\[
     \label{2nd_quant_H2ndQ}
     \mathop{\hat H} \equiv \sum_{\alpha,\beta}\langle{\varphi_{\alpha}}\rvert \mathop{H} \lvert \varphi_{\beta} \rangle a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\beta},
@@ -708,7 +732,7 @@ Check
 \begin{align}
     \mathop{\hat H} \equiv \sum_{\alpha} E_{\alpha} a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\alpha}=\sum_{\alpha} E_{\alpha} \mathsf{N}^{\vphantom{\dagger}}_{\alpha}.
 \end{align}
-\tag{21}\]</span></span></p>
+\tag{22}\]</span></span></p>
 <p>Evidently this is correct: the eigenstates of this operator are just the <span class="math inline">\(N\)</span> particle basis states <span class="math inline">\(\lvert{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle\)</span>, with eigenvalues <span class="math inline">\(\sum_\alpha N_\alpha E_\alpha\)</span>.</p>
 <p>Alternatively, we can look at things in the position basis. By recalling how the expectation value of the Hamiltonian looks in this basis, we come up with</p>
 <p><span id="eq-h-pos"><span class="math display">\[
@@ -716,9 +740,9 @@ Check
     \mathop{\hat H}&amp;=\int d\mathbf{r}\left[-\frac{1}{2m}\psi^\dagger(\mathbf{r})\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right]\nonumber\\
                     &amp;=\int d\mathbf{r}\left[\frac{1}{2m}\nabla\psi^\dagger(\mathbf{r})\cdot\nabla\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right],
 \end{align}
-\tag{22}\]</span></span></p>
-<p>where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;22</a> and <a href="#eq-N-rep" class="quarto-xref">Equation&nbsp;21</a> may be seen by using <a href="#eq-psi-def" class="quarto-xref">Equation&nbsp;13</a>.</p>
-<p>The Heisenberg equation of motion corresponding to <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;22</a> is</p>
+\tag{23}\]</span></span></p>
+<p>where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> and <a href="#eq-N-rep" class="quarto-xref">Equation&nbsp;22</a> may be seen by using <a href="#eq-psi-def" class="quarto-xref">Equation&nbsp;13</a>.</p>
+<p>The Heisenberg equation of motion corresponding to <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> is</p>
 <p><span class="math display">\[
 \begin{equation}
     \label{2nd_quant_HeomFree}
@@ -729,7 +753,7 @@ Check
 \end{equation}
 \]</span></p>
 <p>which is just the time dependent Schrödinger equation!</p>
-<p>As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The single particle operator for the density at <span class="math inline">\(\mathbf{x}\)</span> is</p>
+<p>As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The one particle operator for the density at <span class="math inline">\(\mathbf{x}\)</span> is</p>
 <p><span class="math display">\[
     \label{2nd_quant_spDens}
     \rho(\mathbf{x})\equiv\delta(\mathbf{x}-\mathbf{r}).
@@ -826,7 +850,7 @@ g(\mathbf{r},\mathbf{r}')=\frac{1}{V}\sum_{|\mathbf{k}|&lt;k_{F}} e^{i\mathbf{k}
 \]</span></p>
 <p>Note that <span class="math inline">\(B_{jk}=B_{kj}\)</span> for indistinguishable particles, and that <span class="math inline">\(j=k\)</span> is excluded. The most important two particle operator that we will encounter describes interactions between pairs of particles, usually of the form <span id="eq-H-int"><span class="math display">\[
 \hat H_\text{int.} = \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k).
-\tag{23}\]</span></span></p>
+\tag{24}\]</span></span></p>
 <p>Similar to the single particle case, the action of <span class="math inline">\(\hat B\)</span> on a two particle product state <span class="math inline">\(\lvert{\varphi_{\alpha}}\rangle_1\lvert{\varphi_{\beta}}\rangle_2\)</span> can be expressed in terms of the matrix elements <span class="math display">\[
 \begin{align}
 B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi_\beta}\rvert B_{12} \lvert{\varphi_\gamma}\rangle\lvert{\varphi_\delta}\rangle\nonumber\\
@@ -837,7 +861,7 @@ B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi
 B_{12} = \sum_{\alpha\beta\gamma\delta}B_{\alpha\beta,\gamma\delta}\lvert{\varphi_\alpha}\rangle\lvert{\varphi_\beta}\rangle\langle{\varphi_\gamma}\rvert\langle{\varphi_\delta}\rvert.
 \]</span> Now we’ll argue that the second quantized representation of <span class="math inline">\(\hat B\)</span> is <span id="eq-2-part"><span class="math display">\[
 \hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma.
-\tag{24}\]</span></span></p>
+\tag{25}\]</span></span></p>
 <p>(Note the order, which is important for fermions!).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -849,7 +873,7 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check that <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;24</a> has the correct action on product states, starting with the two particle state</p>
+<p>Check that <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;25</a> has the correct action on product states, starting with the two particle state</p>
 <p><span class="math display">\[
 a^\dagger_\gamma a^\dagger_\delta\lvert{\text{VAC}}\rangle\longleftrightarrow \frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf{r}_2)\pm \varphi_\delta(\mathbf{r}_1)\varphi_\gamma(\mathbf{r}_2)\right]
 \]</span> For example, in the first quantized picture we have <span class="math display">\[
@@ -858,12 +882,12 @@ B_{12}\frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf
 \end{align}
 \]</span> Note that this is (anti-)symmetric for bosons (fermions) by virtue of <span class="math inline">\(B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}\)</span>. In second quantized notation the resulting state is written <span class="math display">\[
 \frac{1}{\sqrt{2}}\sum_{\alpha\beta}\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right]\varphi_\alpha(\mathbf{r}_1)\varphi_\beta(\mathbf{r}_2)\longleftrightarrow\sum_{\alpha\beta}B_{\alpha\beta}a^\dagger_\alpha a^\dagger_\beta\lvert{\text{VAC}}\rangle
-\]</span> Which is the same as we get if we act with <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;24</a> <span class="math display">\[
+\]</span> Which is the same as we get if we act with <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;25</a> <span class="math display">\[
 \left(\frac{1}{2}\sum_{\alpha\beta cd} B_{\alpha\beta,cd}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_da^{\vphantom{\dagger}}_c\right)a^\dagger_\gamma a^\dagger_\delta\lvert{\text{VAC}}\rangle=\sum_{\alpha\beta}B_{\alpha\beta}a^\dagger_\alpha a^\dagger_\beta\lvert{\text{VAC}}\rangle.
 \]</span> Make sure to trace down factor of 2!</p>
 </div>
 </div>
-<p>The analog of the formula <a href="#eq-Aab" class="quarto-xref">Equation&nbsp;20</a> for the matrix elements of a two particle operator between two product states is <span class="math display">\[
+<p>The analog of the formula <a href="#eq-Aab" class="quarto-xref">Equation&nbsp;21</a> for the matrix elements of a two particle operator between two product states is <span class="math display">\[
 \langle{\mathbf{N}}\rvert \hat B \lvert \mathbf{N'} \rangle =\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right] \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta},
 \label{A_Babcd}
 \]</span> with <span class="math inline">\(N_{\gamma,\delta} = N'_{\gamma,\delta}-1\)</span> and <span class="math inline">\(N_{\alpha,\beta} = N'_{\alpha,\beta}+1\)</span>.</p>
@@ -880,14 +904,14 @@ Check
 <p>Strictly this formula is not correct when <span class="math inline">\(\gamma=\delta\)</span> or <span class="math inline">\(\alpha=\beta\)</span>. In the former case <span class="math inline">\(N'_\gamma N'_\delta \to N'_\gamma (N'_\gamma-1)\)</span> and in the latter <span class="math inline">\(N_\alpha N_\beta \to N_\alpha (N_\alpha-1)\)</span>. In the thermodynamic limit these terms usually make a vanishing contribution when sums are replaced with integrals. There are exceptions: when a finite fraction of the particles are in one state (which occurs for Bose—Einstein condensates, for example). In those cases we end up neglecting <span class="math inline">\(N_\alpha-1\)</span> relative to <span class="math inline">\(N_\alpha\)</span>, however!</p>
 </div>
 </div>
-<p>Returning to the interaction <a href="#eq-H-int" class="quarto-xref">Equation&nbsp;23</a>, we can express this operator in the position basis as</p>
+<p>Returning to the interaction <a href="#eq-H-int" class="quarto-xref">Equation&nbsp;24</a>, we can express this operator in the position basis as</p>
 <p><span class="math display">\[
 \hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1).
 \]</span></p>
 <p>Remembering that <span class="math inline">\(\rho(\mathbf{r}) = \psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\)</span>, this is <em>almost</em> the same as</p>
 <p><span id="eq-V-not-normal"><span class="math display">\[
 \hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\rho(\mathbf{r}_1)\rho(\mathbf{r}_2).
-\tag{25}\]</span></span></p>
+\tag{26}\]</span></span></p>
 <p>The difference lies in the order of the operators, which prevents a particle from interacting with itself. Operators in which all annihilation operators stand to the right of all creation operators are said to be <strong>normal ordered</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -899,7 +923,7 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check that <a href="#eq-V-not-normal" class="quarto-xref">Equation&nbsp;25</a> has a zero expectation value in a 1 particle state.</p>
+<p>Check that <a href="#eq-V-not-normal" class="quarto-xref">Equation&nbsp;26</a> has a zero expectation value in a 1 particle state.</p>
 </div>
 </div>
 <p>As an example, let’s write the Hamiltonian of interacting bosons that we met in <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;many-body-wavefunctions&quot; data-raw=&quot;&quot;many-body-wavefunctions&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;many-body-wavefunctions&quot; >}}&quot;}">Lecture 1</a> in our new formalism. <span class="math display">\[
@@ -907,6 +931,41 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 \]</span></p>
 <p>where <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\)</span>, <span class="math inline">\(\psi^\dagger(x)\)</span> satisfy the canonical bosonic commutation relations <a href="#eq-position-relations" class="quarto-xref">Equation&nbsp;14</a>.</p>
 <p>We’ve succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn’t feel too smug. As I said earlier, this is a change of <em>language</em>, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb–Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we <em>can’t</em> solve exactly, like the Bose gas in higher dimensions that we’ll discuss in <a href="bose-gas.qmd">Lecture 8</a>, the second quantized framework is often a good starting point.</p>
+</section>
+</section>
+<section id="appendix-alternative-derivation-of-one--and-two-particle-operators" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="appendix-alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4</span> Appendix: Alternative Derivation of One- and Two-particle Operators</h2>
+<p>Here we give simpler derivation of the general form of one- and two- particle operators using the form <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> for the action of the field operator <span class="math inline">\(\psi(x)\)</span>, which applies in both the bosonic and fermionic cases</p>
+<section id="one-particle-operators-1" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="one-particle-operators-1"><span class="header-section-number">4.1</span> One particle operators</h3>
+<p>We show that the one-particle operator <span class="math inline">\(\hat A\)</span> in <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> has the representation</p>
+<p><span class="math display">\[
+\hat A = \int \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}({x_1})]\, d{x_1}
+\]</span></p>
+<p>where the subscript on <span class="math inline">\(A_{x}\)</span> is to indicate that the operator acts on the field operator <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\)</span> as if it were a wavefunction e.g.&nbsp;the momentum operator acts as <span class="math inline">\(p \psi^{\vphantom{\dagger}}(x)=-id\psi^{\vphantom{\dagger}}(x)/dx\)</span>. We now evaluate an arbitrary matrix element of the operator between states <span class="math inline">\(\lvert{\Psi}\rangle\)</span> and <span class="math inline">\(\lvert{\Phi}\rangle\)</span> (of any form, not necessarily product states) using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a></p>
+<p><span class="math display">\[
+\begin{align}
+\langle{\Psi}\rvert \hat A \lvert \Phi \rangle &amp;=  \int \langle{\Psi}\rvert \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 \\
+&amp;= N \int \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_1} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
+&amp;=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
+\end{align}
+\]</span></p>
+<p>The last line is just the matrix element of <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> in the first quantized representation. Note that all terms in the sum over <span class="math inline">\(j\)</span> are identical because we can permute the arguments of <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> to bring the argument <span class="math inline">\(x_j\)</span> to the first position. Any sign in the fermionic case squared and therefore has no effect.</p>
+</section>
+<section id="two-particle-operators-1" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</h3>
+<p>We show that the general two particle operator has representation</p>
+<p><span class="math display">\[
+\hat B =\frac{1}{2} \int \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)]\, dx_1 dx_2,
+\]</span></p>
+<p>where <span class="math inline">\(B_{x_1,x_2}\)</span> is an operator that acts on a pair of wavefunctions. Taking matrix elements and using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> again yields</p>
+<p><span class="math display">\[
+\begin{align}
+\langle{\Psi}\rvert \hat B \lvert \Phi \rangle &amp;= \frac{1}{2} \int \langle{\Psi}\rvert \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 dx_2\\
+&amp;= \frac{1}{2}N(N-1) \int \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_1,x_2} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
+&amp;=\sum_{j&lt;k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
+\end{align}
+\]</span></p>
 
 
 
@@ -1013,7 +1072,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

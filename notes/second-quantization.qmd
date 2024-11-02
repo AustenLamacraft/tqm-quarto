@@ -200,10 +200,10 @@ These operator-valued functions are called __quantum fields__. By introducing th
 ::: {.callout-tip}
 ## Check
 
-If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, show that the wavefunction of the state $\pop(X)\ket{\Psi}$ is the $N-1$ particle wavefunction
+If a state $\ket{\Psi}$ has wavefunction $\Psi(x_1,\ldots, x_N)$, show that the wavefunction of the state $\pop(x)\ket{\Psi}$ is the $N-1$ particle wavefunction
 
 $$
-\sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+\sqrt{N}\Psi(x,x_1,\ldots, x_{N-1})
 $$ {#eq-freeze}
 
 Hint: Show that this is true for a product state first.
@@ -212,21 +212,21 @@ Hint: Show that this is true for a product state first.
 
 ### Solution
 
-Using the correspondence in @eq-N-part we write the state that results from acting with $\psi(X)$ on a product state as
+Using the correspondence in @eq-N-part we write the state that results from acting with $\psi(x)$ on a product state as
 $$
-\psi(X)\adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}} = \sum_m \psi_m(X) \prod_{n\neq m} \adop(\psi_n) \ket{\text{VAC}} 
+\psi(x)\adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}} = \sum_m \psi_m(x) \prod_{n\neq m} \adop(\psi_n) \ket{\text{VAC}} 
 $$
 
-where we used the commutation relation $[\psi(X),\adop(\psi_n)]=\bra{X}\psi_n\rangle=\psi_n(X)$. The wavefunctions appearing on the RHS on $N-1$ particle wavefunctions with arguments $x_1$ to $x_{N-1}$. Using @eq-N-part and @eq-N-prod the RHS corresponds to
+where we used the commutation relation $[\psi(x),\adop(\psi_n)]=\bra{x}\psi_n\rangle=\psi_n(x)$. The wavefunctions appearing on the RHS on $N-1$ particle wavefunctions with arguments $x_1$ to $x_{N-1}$. Using @eq-N-part and @eq-N-prod the RHS corresponds to
 
 $$
 \begin{gather}
- \frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(X) \sum_P \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
-=\frac{1}{\sqrt{(N-1)!}}\sum_P\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
+ \frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(x) \sum_{P\in S_{N-1}} \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
+=\frac{1}{\sqrt{(N-1)!}}\sum_{P \in S_{N}}\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
 \end{gather}
 $$
 
-with $x_N=X$. But this just corresponds to applying the prescription @eq-freeze to the original wavefunction @eq-N-prod. Since this works for all product states, and since any state is a superposition of product states, it works more generally.
+with $x_N=x$, and $S_N$ denotes the set of permutations of $N$ objects (note the change from $S_{N-1}$ to $S_N$ between the two lines). But this just corresponds to applying the prescription @eq-freeze to the original wavefunction @eq-N-prod. Since this works for all product states, and since any state is a superposition of product states, it works more generally.
 
 :::
 
@@ -328,7 +328,14 @@ $$
 $$
 
 
-## Discussion: Explicit Form of Operators
+::: {.callout-tip}
+## Check
+
+Show that in the fermionic case the wavefunction of the state $\pop(x)\ket{\Psi}$ is still given by @eq-freeze.
+
+:::
+
+## Discussion: How Do $\aop_\alpha$ and $\adop_\alpha$ _Look_?
 
 ::: {.callout-tip}
 ## Check
@@ -339,13 +346,13 @@ Think about the form that the operators $\aop_\alpha$, $\adop_\alpha$ take in th
 
 ## Representation of Operators
 
-### Single Particle Operators
+### One Particle Operators
 
 Suppose we now have some operator $A$ that acts on the single particle states. We denote the action on $N$ particle states as $\hat A$
 
 $$
 \hat A = \sum_{j=1}^N A_j,
-$$
+$$ {#eq-one-particle}
 
 where the subscript denotes that the operator acts on the position label $\br_j$ of the $j^\text{th}$ particle. The example that we have met many times already is the Hamiltonian for noninteracting particles
 
@@ -353,7 +360,7 @@ $$
 \hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\br_j)\right].
 $$ {#eq-h1}
 
-Operators of this type are known as __single particle operators__. We want to use our creation and annihilation operators to represent these operators. 
+Operators of this type are known as __one particle operators__. We want to use our creation and annihilation operators to represent these operators. 
 
 First, the action of the operator $A$ on one of the basis states $\ket{\varphi_\beta}$ can be written in terms of the matrix elements $A_{\alpha\beta}=\braket{\varphi_\alpha}{A}{\varphi_\beta}$ by inserting a resolution of the identity $\sum_\alpha \ket{\alpha}\bra{\alpha}=1$ on the right
 $$
@@ -460,7 +467,7 @@ $$
 
 which is just the time dependent Schrödinger equation!
 
-As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The single particle operator for the density at $\mathbf{x}$ is
+As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The one particle operator for the density at $\mathbf{x}$ is
 
 $$
 	\label{2nd_quant_spDens}
@@ -664,3 +671,45 @@ where $\pop(x)$, $\pdop(x)$ satisfy the canonical bosonic commutation relations 
 
 We've succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn't feel too smug. As I said earlier, this is a change of _language_, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb--Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we _can't_ solve exactly, like the Bose gas in higher dimensions that we'll discuss in [Lecture 8](bose-gas.qmd), the second quantized framework is often a good starting point.
 
+Appendix: Alternative Derivation of One- and Two-particle Operators
+--------
+
+Here we give simpler derivation of the general form of one- and two- particle operators using the form @eq-freeze for the action of the field operator $\psi(x)$, which applies in both the bosonic and fermionic cases
+
+### One particle operators
+
+We show that the one-particle operator $\hat A$ in @eq-one-particle has the representation
+
+$$
+\hat A = \int \pdop(x_1) [A_{x_1} \pop({x_1})]\, d{x_1}
+$$
+
+where the subscript on $A_{x}$ is to indicate that the operator acts on the field operator $\pop(x)$ as if it were a wavefunction e.g. the momentum operator acts as $p \pop(x)=-id\pop(x)/dx$. We now evaluate an arbitrary matrix element of the operator between states $\ket{\Psi}$ and $\ket{\Phi}$ (of any form, not necessarily product states) using @eq-freeze
+
+$$
+\begin{align}
+\braket{\Psi}{\hat A}{\Phi} &=  \int \braket{\Psi}{\pdop(x_1) [A_{x_1} \pop(x_1)]}{\Phi}\, dx_1 \\ 
+&= N \int \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_1} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\ 
+&=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
+\end{align}
+$$
+
+The last line is just the matrix element of @eq-one-particle in the first quantized representation. Note that all terms in the sum over $j$ are identical because we can permute the arguments of $\Psi$ and $\Phi$ to bring the argument $x_j$ to the first position. Any sign in the fermionic case squared and therefore has no effect.
+
+### Two particle operators
+
+We show that the general two particle operator has representation
+
+$$
+\hat B =\frac{1}{2} \int \pdop(x_1)\pdop(x_2) [B_{x_1,x_2} \pop(x_2)\pop(x_1)]\, dx_1 dx_2,
+$$
+
+where $B_{x_1,x_2}$ is an operator that acts on a pair of wavefunctions. Taking matrix elements and using @eq-freeze again yields
+
+$$
+\begin{align}
+\braket{\Psi}{\hat B}{\Phi} &= \frac{1}{2} \int \braket{\Psi}{\pdop(x_1)\pdop(x_2) [B_{x_1,x_2} \pop(x_2)\pop(x_1)]}{\Phi}\, dx_1 dx_2\\
+ &= \frac{1}{2}N(N-1) \int \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_1,x_2} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\ 
+&=\sum_{j<k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
+\end{align}
+$$
