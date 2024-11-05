@@ -28,6 +28,7 @@ website:
           - notes/spin-models.qmd
           - notes/second-quantization.qmd
           - notes/more-second-quantization.qmd
+          - notes/lattice-models.qmd
 
       - section: "Slides"
         contents:
@@ -37,6 +38,7 @@ website:
           - slides/spin-models.qmd
           - slides/second-quantization.qmd
           - slides/more-second-quantization.qmd
+
           
 
       - section: "Problem Sets"

@@ -213,6 +213,12 @@ window.Quarto = {
  <span class="menu-text">B is for Bunching</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -845,12 +851,12 @@ g(\mathbf{r},\mathbf{r}')=\frac{1}{V}\sum_{|\mathbf{k}|&lt;k_{F}} e^{i\mathbf{k}
 <section id="two-particle-operators" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="two-particle-operators"><span class="header-section-number">3.2</span> Two Particle Operators</h3>
 <p>A <strong>two particle operator</strong> acts pairwise on the particles</p>
-<p><span class="math display">\[
+<p><span id="eq-two-particle"><span class="math display">\[
 \hat B = \sum_{j&lt;k} B_{jk}.
-\]</span></p>
+\tag{24}\]</span></span></p>
 <p>Note that <span class="math inline">\(B_{jk}=B_{kj}\)</span> for indistinguishable particles, and that <span class="math inline">\(j=k\)</span> is excluded. The most important two particle operator that we will encounter describes interactions between pairs of particles, usually of the form <span id="eq-H-int"><span class="math display">\[
 \hat H_\text{int.} = \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k).
-\tag{24}\]</span></span></p>
+\tag{25}\]</span></span></p>
 <p>Similar to the single particle case, the action of <span class="math inline">\(\hat B\)</span> on a two particle product state <span class="math inline">\(\lvert{\varphi_{\alpha}}\rangle_1\lvert{\varphi_{\beta}}\rangle_2\)</span> can be expressed in terms of the matrix elements <span class="math display">\[
 \begin{align}
 B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi_\beta}\rvert B_{12} \lvert{\varphi_\gamma}\rangle\lvert{\varphi_\delta}\rangle\nonumber\\
@@ -861,7 +867,7 @@ B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi
 B_{12} = \sum_{\alpha\beta\gamma\delta}B_{\alpha\beta,\gamma\delta}\lvert{\varphi_\alpha}\rangle\lvert{\varphi_\beta}\rangle\langle{\varphi_\gamma}\rvert\langle{\varphi_\delta}\rvert.
 \]</span> Now we’ll argue that the second quantized representation of <span class="math inline">\(\hat B\)</span> is <span id="eq-2-part"><span class="math display">\[
 \hat B = \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma.
-\tag{25}\]</span></span></p>
+\tag{26}\]</span></span></p>
 <p>(Note the order, which is important for fermions!).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -873,7 +879,7 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check that <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;25</a> has the correct action on product states, starting with the two particle state</p>
+<p>Check that <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;26</a> has the correct action on product states, starting with the two particle state</p>
 <p><span class="math display">\[
 a^\dagger_\gamma a^\dagger_\delta\lvert{\text{VAC}}\rangle\longleftrightarrow \frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf{r}_2)\pm \varphi_\delta(\mathbf{r}_1)\varphi_\gamma(\mathbf{r}_2)\right]
 \]</span> For example, in the first quantized picture we have <span class="math display">\[
@@ -882,7 +888,7 @@ B_{12}\frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf
 \end{align}
 \]</span> Note that this is (anti-)symmetric for bosons (fermions) by virtue of <span class="math inline">\(B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}\)</span>. In second quantized notation the resulting state is written <span class="math display">\[
 \frac{1}{\sqrt{2}}\sum_{\alpha\beta}\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right]\varphi_\alpha(\mathbf{r}_1)\varphi_\beta(\mathbf{r}_2)\longleftrightarrow\sum_{\alpha\beta}B_{\alpha\beta}a^\dagger_\alpha a^\dagger_\beta\lvert{\text{VAC}}\rangle
-\]</span> Which is the same as we get if we act with <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;25</a> <span class="math display">\[
+\]</span> Which is the same as we get if we act with <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;26</a> <span class="math display">\[
 \left(\frac{1}{2}\sum_{\alpha\beta cd} B_{\alpha\beta,cd}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_da^{\vphantom{\dagger}}_c\right)a^\dagger_\gamma a^\dagger_\delta\lvert{\text{VAC}}\rangle=\sum_{\alpha\beta}B_{\alpha\beta}a^\dagger_\alpha a^\dagger_\beta\lvert{\text{VAC}}\rangle.
 \]</span> Make sure to trace down factor of 2!</p>
 </div>
@@ -904,14 +910,14 @@ Check
 <p>Strictly this formula is not correct when <span class="math inline">\(\gamma=\delta\)</span> or <span class="math inline">\(\alpha=\beta\)</span>. In the former case <span class="math inline">\(N'_\gamma N'_\delta \to N'_\gamma (N'_\gamma-1)\)</span> and in the latter <span class="math inline">\(N_\alpha N_\beta \to N_\alpha (N_\alpha-1)\)</span>. In the thermodynamic limit these terms usually make a vanishing contribution when sums are replaced with integrals. There are exceptions: when a finite fraction of the particles are in one state (which occurs for Bose—Einstein condensates, for example). In those cases we end up neglecting <span class="math inline">\(N_\alpha-1\)</span> relative to <span class="math inline">\(N_\alpha\)</span>, however!</p>
 </div>
 </div>
-<p>Returning to the interaction <a href="#eq-H-int" class="quarto-xref">Equation&nbsp;24</a>, we can express this operator in the position basis as</p>
+<p>Returning to the interaction <a href="#eq-H-int" class="quarto-xref">Equation&nbsp;25</a>, we can express this operator in the position basis as</p>
 <p><span class="math display">\[
 \hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1).
 \]</span></p>
 <p>Remembering that <span class="math inline">\(\rho(\mathbf{r}) = \psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\)</span>, this is <em>almost</em> the same as</p>
 <p><span id="eq-V-not-normal"><span class="math display">\[
 \hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\rho(\mathbf{r}_1)\rho(\mathbf{r}_2).
-\tag{26}\]</span></span></p>
+\tag{27}\]</span></span></p>
 <p>The difference lies in the order of the operators, which prevents a particle from interacting with itself. Operators in which all annihilation operators stand to the right of all creation operators are said to be <strong>normal ordered</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -923,7 +929,7 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check that <a href="#eq-V-not-normal" class="quarto-xref">Equation&nbsp;26</a> has a zero expectation value in a 1 particle state.</p>
+<p>Check that <a href="#eq-V-not-normal" class="quarto-xref">Equation&nbsp;27</a> has a zero expectation value in a 1 particle state.</p>
 </div>
 </div>
 <p>As an example, let’s write the Hamiltonian of interacting bosons that we met in <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;many-body-wavefunctions&quot; data-raw=&quot;&quot;many-body-wavefunctions&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;many-body-wavefunctions&quot; >}}&quot;}">Lecture 1</a> in our new formalism. <span class="math display">\[
@@ -950,11 +956,11 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 &amp;=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
 \end{align}
 \]</span></p>
-<p>The last line is just the matrix element of <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> in the first quantized representation. Note that all terms in the sum over <span class="math inline">\(j\)</span> are identical because we can permute the arguments of <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> to bring the argument <span class="math inline">\(x_j\)</span> to the first position. Any sign in the fermionic case squared and therefore has no effect.</p>
+<p>The last line is just the matrix element of <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> in the first quantized representation. Note that all terms in the sum over <span class="math inline">\(j\)</span> are identical because we can permute the arguments of <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> to bring the argument <span class="math inline">\(x_j\)</span> to the first position. Any sign in the fermionic case is squared and therefore has no effect.</p>
 </section>
 <section id="two-particle-operators-1" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</h3>
-<p>We show that the general two particle operator has representation</p>
+<p>We show that the general two particle operator <a href="#eq-two-particle" class="quarto-xref">Equation&nbsp;24</a> has representation</p>
 <p><span class="math display">\[
 \hat B =\frac{1}{2} \int \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)]\, dx_1 dx_2,
 \]</span></p>
@@ -966,6 +972,7 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 &amp;=\sum_{j&lt;k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
 \end{align}
 \]</span></p>
+<p>The last line is the first quantized representation of the matrix elements of <a href="#eq-two-particle" class="quarto-xref">Equation&nbsp;24</a>. Again all terms in the sum over pairs are identical by (anti-)symmetry of the wavefunctions.</p>
 
 
 

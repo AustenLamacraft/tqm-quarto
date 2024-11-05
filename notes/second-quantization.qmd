@@ -575,7 +575,7 @@ A __two particle operator__ acts pairwise on the particles
 
 $$
 \hat B = \sum_{j<k} B_{jk}.
-$$
+$$ {#eq-two-particle}
 
 Note that $B_{jk}=B_{kj}$ for indistinguishable particles, and that $j=k$ is excluded. The most important two particle operator that we will encounter describes interactions between pairs of particles, usually of the form
 $$
@@ -694,11 +694,11 @@ $$
 \end{align}
 $$
 
-The last line is just the matrix element of @eq-one-particle in the first quantized representation. Note that all terms in the sum over $j$ are identical because we can permute the arguments of $\Psi$ and $\Phi$ to bring the argument $x_j$ to the first position. Any sign in the fermionic case squared and therefore has no effect.
+The last line is just the matrix element of @eq-one-particle in the first quantized representation. Note that all terms in the sum over $j$ are identical because we can permute the arguments of $\Psi$ and $\Phi$ to bring the argument $x_j$ to the first position. Any sign in the fermionic case is squared and therefore has no effect.
 
 ### Two particle operators
 
-We show that the general two particle operator has representation
+We show that the general two particle operator @eq-two-particle has representation
 
 $$
 \hat B =\frac{1}{2} \int \pdop(x_1)\pdop(x_2) [B_{x_1,x_2} \pop(x_2)\pop(x_1)]\, dx_1 dx_2,
@@ -713,3 +713,5 @@ $$
 &=\sum_{j<k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
 \end{align}
 $$
+
+The last line is the first quantized representation of the matrix elements of @eq-two-particle. Again all terms in the sum over pairs are identical by (anti-)symmetry of the wavefunctions.

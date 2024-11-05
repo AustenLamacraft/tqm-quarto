@@ -55,7 +55,7 @@ Show that @eq-pdf implies @eq-rho2-2nd-quant.
 
 :::
 
-@eq-eq-rho2-2nd-quant differs from $\bra{\Psi}\rho(x)\rho(y)\ket{\Psi}$ by the ordering of operators. Using the canonical commutation relations for the fields gives the relation @eq-rho-rho-norm for both bosons and fermions.
+@eq-rho2-2nd-quant differs from $\bra{\Psi}\rho(x)\rho(y)\ket{\Psi}$ by the ordering of operators. Using the canonical commutation relations for the fields gives the relation @eq-rho-rho-norm for both bosons and fermions.
 
 Let's evaluate @eq-rho2-2nd-quant for the ground state of the Fermi gas. We will find the result for a general product state, using the same strategy as we used in the last lecture for the single particle density matrix. That is, we substitute the expansion of the fields $\pop(x)$ and $\pdop(x)$ in terms of the orthonormal single particle states making up the product state
 
@@ -487,7 +487,7 @@ When written in this way, interaction Hamiltonians are sometimes associated with
 
 ![Graphical representation of the interaction @eq-vertex.](../assets/Vertex.png){width=50%}
 
-As we've already discussed, the expectation value of @eq-eq-vertex in a product state of momentum eigenstates gives two terms, with different 'pairings' of creation operators with annihilation operators. We can represent these two terms graphically as shown below.
+As we've already discussed, the expectation value of @eq-vertex in a product state of momentum eigenstates gives two terms, with different 'pairings' of creation operators with annihilation operators. We can represent these two terms graphically as shown below.
 
 ![Graphical representation of the Hartree and Fock terms.](../assets/HFDiag.png)
 

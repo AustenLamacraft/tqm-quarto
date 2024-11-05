@@ -2,6 +2,7 @@
 
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 
+\newcommand{\cE}{\mathcal{E}}
 \newcommand{\cH}{\mathcal{H}}
 \newcommand{\cN}{\mathcal{N}}
 \newcommand{\br}{\mathbf{r}}
