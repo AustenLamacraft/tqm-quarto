@@ -38,7 +38,7 @@ website:
           - slides/spin-models.qmd
           - slides/second-quantization.qmd
           - slides/more-second-quantization.qmd
-
+          - slides/lattice-models.qmd
           
 
       - section: "Problem Sets"
