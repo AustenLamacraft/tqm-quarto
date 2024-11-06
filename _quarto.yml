@@ -29,6 +29,7 @@ website:
           - notes/second-quantization.qmd
           - notes/more-second-quantization.qmd
           - notes/lattice-models.qmd
+          - notes/bose-gas.qmd
 
       - section: "Slides"
         contents:

@@ -2,6 +2,12 @@
 
 ::: {.callout-warning appearance="minimal"}
 
+Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/form/SV_0diLIYDRbcAZSaq). Closes 1st December at midnight.
+
+:::
+
+::: {.callout-warning appearance="minimal"}
+
 Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
 
 :::

@@ -198,6 +198,12 @@ window.Quarto = {
  <span class="menu-text">Lattice Models</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notes/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -243,6 +249,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">B is for Bunching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
   </div>
 </li>
       </ul>
@@ -302,6 +314,16 @@ window.Quarto = {
 
 <section id="tqm-lectures-2024" class="level1 unnumbered">
 <h1 class="unnumbered">TQM Lectures 2024</h1>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Please complete the <a href="https://cambridge.eu.qualtrics.com/jfe/form/SV_0diLIYDRbcAZSaq">feedback survey</a>. Closes 1st December at midnight.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -461,7 +483,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

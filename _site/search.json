@@ -678,172 +678,36 @@
     ]
   },
   {
-    "objectID": "slides/second-quantization.html#recap-product-states",
-    "href": "slides/second-quantization.html#recap-product-states",
-    "title": "A is for Annihilation",
-    "section": "Recap: Product States",
-    "text": "Recap: Product States\n\nNormalized state of N bosons in orthonormal states \\varphi_{\\alpha_n}(\\mathbf{r})\n\n\n\\Psi^{\\text{S}}_{\\alpha_{1}\\alpha_{2}\\cdots\\alpha_{N}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N)=\\sqrt{\\frac{\\prod_{\\alpha}N_{\\alpha}!}{N!}}\\sum_P\\varphi_{\\alpha_{1}}(\\mathbf{r}_{P_1})\\varphi_{\\alpha_{2}}(\\mathbf{r}_{P_2})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r}_{P_N})\n\n\nThe normalization factor involves occupation numbers \\{N_{\\alpha}\\} giving number of particles in state \\alpha",
+    "objectID": "slides/lattice-models.html#tight-binding-models",
+    "href": "slides/lattice-models.html#tight-binding-models",
+    "title": "Lattice Models",
+    "section": "Tight Binding Models",
+    "text": "Tight Binding Models\n\nNoninteracting Hamiltonian with periodic potential V(x+a)=V(x)\n\n\nH = \\sum_{j=1}^N \\left[-\\frac{1}{2m}\\partial_i^2 +V(x_i)\\right] = \\int \\left[\\frac{1}{2m}\\partial_x\\psi^\\dagger\\partial_x\\psi^{\\vphantom{\\dagger}}+ V(x)\\psi^\\dagger\\psi^{\\vphantom{\\dagger}}\\right] dx\n\n\nBloch’s theorem: eigenstates labelled by continuous index k (crystal momentum) and discrete index n (band index) \n\\psi_{k,n}(x) = e^{ikx} \\varphi_{k,n}(x),\n \\varphi_{k,n} is periodic; k lies in Brillouin zone (-\\pi/a,\\pi/a]\nThe eigenvalues E_n(k) give the energy bands.",
     "crumbs": [
       "Slides",
-      "A is for Annihilation"
+      "Lattice Models"
     ]
   },
   {
-    "objectID": "slides/second-quantization.html#goal",
-    "href": "slides/second-quantization.html#goal",
-    "title": "A is for Annihilation",
-    "section": "Goal",
-    "text": "Goal\n\nFor SHO\n\n\n\\frac{1}{\\sqrt{n!}}\\left(a^\\dagger\\right)^n\\lvert{0}\\rangle\\longleftrightarrow \\psi_n(x)\n representation using a^{\\vphantom{\\dagger}}, a^\\dagger very useful; never need explicit \\psi_n(x)\n\nWe want\n\n??\\longleftrightarrow \\Psi^{\\text{S}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N)\n\nMust respect inner product",
+    "objectID": "slides/lattice-models.html#bose-hubbard-model",
+    "href": "slides/lattice-models.html#bose-hubbard-model",
+    "title": "Lattice Models",
+    "section": "Bose Hubbard Model",
+    "text": "Bose Hubbard Model\n\nSimplest interacting lattice model \nH = H_t + H_U = -t \\sum_{\\langle j\\,k\\rangle}  \\left[a^\\dagger_ja^{\\vphantom{\\dagger}}_{k}+a^\\dagger_{k}a^{\\vphantom{\\dagger}}_j\\right] + \\frac{U}{2}\\sum_j N_j(N_j-1)\n N_j=a^\\dagger_ja^{\\vphantom{\\dagger}}_j, sum over all nearest neighbours\nOn-site interaction N_j(N_j-1)=a^\\dagger_ja^\\dagger_ja^{\\vphantom{\\dagger}}_ja^{\\vphantom{\\dagger}}_j\nFirst introduced to describe electrons in solids; boson version widely used in ultracold atomic physics",
     "crumbs": [
       "Slides",
-      "A is for Annihilation"
+      "Lattice Models"
     ]
   },
   {
-    "objectID": "slides/second-quantization.html#creation-annihilation-operators",
-    "href": "slides/second-quantization.html#creation-annihilation-operators",
-    "title": "A is for Annihilation",
-    "section": "Creation & Annihilation Operators",
-    "text": "Creation & Annihilation Operators\n\nWe consider states with different numbers of particles\n\\lvert{\\text{VAC}}\\rangle denotes state with no particles (the vacuum state)\na^\\dagger(\\psi) creates particle in single particle state \\psi(\\mathbf{r})\n\n\n\\psi(\\mathbf{r})\\longleftrightarrow a^\\dagger(\\psi)\\lvert{\\text{VAC}}\\rangle\n\n\nEvidently, a^\\dagger(\\psi) must be linear in \\psi\n\n\na^\\dagger\\left(c_1\\psi_1+c_2\\psi_2\\right) = c_1a^\\dagger(\\psi_1)+c_2a^\\dagger(\\psi_2)",
+    "objectID": "slides/lattice-models.html#fermi-hubbard-model",
+    "href": "slides/lattice-models.html#fermi-hubbard-model",
+    "title": "Lattice Models",
+    "section": "Fermi Hubbard Model",
+    "text": "Fermi Hubbard Model\n\nHave to introduce spin to get something interesting (why?)\n\n\nH=-t \\sum_{\\substack{\\langle j\\,k\\rangle\\\\ s=\\uparrow,\\downarrow}}  \\left[a^\\dagger_{j,s}a^{\\vphantom{\\dagger}}_{k,s}+a^\\dagger_{k,s}a^{\\vphantom{\\dagger}}_{j,s}\\right] + U\\sum_j N_\\uparrow N_\\downarrow,\n\n\nApplication cuprates: high temperature superconductors\n2D model describes strong correlations in the CuO_2 layers\nMuch harder to understand than Bose case…",
     "crumbs": [
       "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#choosing-a-basis",
-    "href": "slides/second-quantization.html#choosing-a-basis",
-    "title": "A is for Annihilation",
-    "section": "Choosing a basis",
-    "text": "Choosing a basis\n\nOrthonormal basis by \\varphi_\\alpha(\\mathbf{r})\n\n\na^\\dagger(\\varphi_\\alpha)\\equiv a^\\dagger_\\alpha,\\quad a^{\\vphantom{\\dagger}}(\\varphi_\\alpha)\\equiv a^{\\vphantom{\\dagger}}_\\alpha\n\n\nThen we have\n\n\n\\begin{aligned}\n\\left[a^{\\vphantom{\\dagger}}_\\alpha,a^{\\vphantom{\\dagger}}_\\beta\\right]=0,\\quad \\left[a^\\dagger_\\alpha,a^\\dagger_\\beta\\right]=0,\\quad \\left[a^{\\vphantom{\\dagger}}_\\alpha,a^\\dagger_\\beta\\right] = \\delta_{\\alpha\\beta}\n\\end{aligned}\n\n\nSame as ladder operators of a set of harmonic oscillators\n\n\n\\Psi^{\\text{S}}_{\\alpha_{1}\\alpha_{2}\\cdots\\alpha_{N}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) \\longleftrightarrow\\lvert{\\mathbf{N}}\\rangle \\equiv \\prod_\\alpha \\frac{\\left(a^\\dagger_\\alpha\\right)^{N_\\alpha}}{\\sqrt{N_\\alpha!}}\\lvert{\\text{VAC}}\\rangle",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#change-of-basis",
-    "href": "slides/second-quantization.html#change-of-basis",
-    "title": "A is for Annihilation",
-    "section": "Change of basis",
-    "text": "Change of basis\n\nMove to different basis \\{\\lvert{\\tilde{\\varphi}_{\\alpha}}\\rangle\\}\n\n\n\\lvert{\\tilde{\\varphi}_{\\alpha}}\\rangle=\\sum_{\\beta} \\langle{\\varphi_{\\beta}}\\rvert \\tilde{\\varphi}_{\\alpha} \\rangle\\lvert{\\varphi_{\\beta}}\\rangle\n\n\nOne particle states with wavefunctions \\varphi_{\\alpha}(\\mathbf{r}) are a^\\dagger_{\\alpha}\\lvert{\\text{VAC}}\\rangle. So,\n\n\n\\tilde{a^{\\vphantom{\\dagger}}}_{\\alpha}^\\dagger\\equiv\\sum_{\\beta} \\langle{\\varphi_{\\beta}}\\rvert \\tilde{\\varphi}_{\\alpha} \\rangle a^\\dagger_{\\beta}",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#fermions",
-    "href": "slides/second-quantization.html#fermions",
-    "title": "A is for Annihilation",
-    "section": "Fermions",
-    "text": "Fermions\n\nTrickier on account of minus signs! Seek a representation of\n\n\n\\Psi^{\\text{A}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) = \\frac{1}{\\sqrt{N!}}\\sum_P (-1)^P\\psi_1(\\mathbf{r}_{P_1})\\psi_{2}(\\mathbf{r}_{P_2})\\cdots\\psi_{N}(\\mathbf{r}_{P_N})\n\nNote: overall sign fixed by labelling of states \\psi_j\n\nIf \\Psi^{\\text{A}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) \\longleftrightarrow a^\\dagger(\\psi_1)\\cdots a^\\dagger(\\psi_N)\\lvert{\\text{VAC}}\\rangle we’ll need\n\n\n\\left\\{a^\\dagger(\\psi),a^\\dagger(\\phi)\\right\\}=0,\n \\{A,B\\}\\equiv AB+BA is anticommutator. Also\n\n\\left\\{a^{\\vphantom{\\dagger}}(\\psi),a^{\\vphantom{\\dagger}}(\\phi)\\right\\}=0",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#how-do-avphantomdagger_alpha-and-adagger_alpha-look",
-    "href": "slides/second-quantization.html#how-do-avphantomdagger_alpha-and-adagger_alpha-look",
-    "title": "A is for Annihilation",
-    "section": "How do a^{\\vphantom{\\dagger}}_\\alpha and a^\\dagger_\\alpha look?",
-    "text": "How do a^{\\vphantom{\\dagger}}_\\alpha and a^\\dagger_\\alpha look?\n\n\n\n\n\n\nCheck\n\n\nThink about the form that the operators a^{\\vphantom{\\dagger}}_\\alpha, a^\\dagger_\\alpha take in the basis of product states. Start with one state \\varphi_\\alpha. What’s the matrix form of a^\\dagger_\\alpha in terms of states \\lvert{N_\\alpha}\\rangle? Now consider two states. Can you see how the commutation and anticommutation relations can be satisfied?",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#one-particle-operators",
-    "href": "slides/second-quantization.html#one-particle-operators",
-    "title": "A is for Annihilation",
-    "section": "One Particle Operators",
-    "text": "One Particle Operators\n\nNotation: A acts on single particle states; \\hat A acts on N particles as\n\n\n\\hat A = \\sum_{j=1}^N A_j\n\n\nExample: Hamiltonian for noninteracting particles\n\n\n\\hat H = \\sum_{j=1}^N H_j = \\sum_{j=1}^N \\left[-\\frac{\\nabla_j^2}{2m}+V(\\mathbf{r}_j)\\right]\n\n\nOperators of this type are one particle operators\nHow to represent them using creation and annihilation operators?",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/second-quantization.html#two-particle-operators",
-    "href": "slides/second-quantization.html#two-particle-operators",
-    "title": "A is for Annihilation",
-    "section": "Two Particle Operators",
-    "text": "Two Particle Operators\n\nActs pairwise on the particles (B_{jk}=B_{kj} for indistinguishable particles.)\n\n\n\\hat B = \\sum_{j&lt;k} B_{jk}.\n\n\nAction of \\hat B on product state \\lvert{\\varphi_{\\alpha}}\\rangle_1\\lvert{\\varphi_{\\beta}}\\rangle_2 in terms of matrix elements\n\n\n\\begin{aligned}\nB_{\\alpha\\beta,\\gamma\\delta} &= \\langle{\\varphi_\\alpha}\\rvert_1\\langle{\\varphi_\\beta}\\rvert_2 B_{12} \\lvert{\\varphi_\\gamma}\\rangle_1\\lvert{\\varphi_\\delta}\\rangle_2\\\\\n\\hat B &= \\frac{1}{2}\\sum_{\\alpha\\beta\\gamma\\delta} B_{\\alpha\\beta,\\gamma\\delta}a^\\dagger_\\alpha a^\\dagger_\\beta a^{\\vphantom{\\dagger}}_\\delta a^{\\vphantom{\\dagger}}_\\gamma,\\qquad B_{\\alpha\\beta,\\gamma\\delta} = B_{\\beta\\alpha,\\delta\\gamma}\n\\end{aligned}\n (Note order, which is important for fermions!)",
-    "crumbs": [
-      "Slides",
-      "A is for Annihilation"
-    ]
-  },
-  {
-    "objectID": "slides/more-second-quantization.html#rho_2-from-second-quantization",
-    "href": "slides/more-second-quantization.html#rho_2-from-second-quantization",
-    "title": "B is for Bunching",
-    "section": "\\rho_2 from Second Quantization",
-    "text": "\\rho_2 from Second Quantization\n\nFrom Lecture 1: pair distribution function \n\\rho_2(x_1,x_2) = N(N-1) \\int dx_3\\ldots dx_N \\left|\\Psi(x_1,x_2,\\ldots,x_N)\\right|^2\n measures likelihood of finding particles at x_1 and x_2\nFor 1D Fermi gas ground state we found (Slater determinant, etc.) \n\\rho_2(x,y) = n^2\\left[1 - \\left(\\frac{\\sin\\left[k_\\text{F}(x-y)\\right]}{k_\\text{F}(x-y)}\\right)^2\\right]\n\nLet’s calculate using second quantization!",
-    "crumbs": [
-      "Slides",
-      "B is for Bunching"
-    ]
-  },
-  {
-    "objectID": "slides/more-second-quantization.html#hanbury-brown-and-twiss-effect",
-    "href": "slides/more-second-quantization.html#hanbury-brown-and-twiss-effect",
-    "title": "B is for Bunching",
-    "section": "Hanbury Brown and Twiss Effect",
-    "text": "Hanbury Brown and Twiss Effect\n\n\\rho_2(x,y) can show interference, as can \\rho_1(x) (‘intensity’)\nClassic BEC experiment of Andrews et al.\nEarlier demonstrations of HBT in astro, see Wikipedia for more",
-    "crumbs": [
-      "Slides",
-      "B is for Bunching"
-    ]
-  },
-  {
-    "objectID": "slides/more-second-quantization.html#hartreefock-theory",
-    "href": "slides/more-second-quantization.html#hartreefock-theory",
-    "title": "B is for Bunching",
-    "section": "Hartree–Fock Theory",
-    "text": "Hartree–Fock Theory\n\nRecall from Lecture 5\n\n\n\\hat H_\\text{int.} = \\sum_{j&lt;k} U(\\mathbf{r}_j-\\mathbf{r}_k)=\\frac{1}{2}\\int d\\mathbf{r}_1 d\\mathbf{r}_2\\, U(\\mathbf{r}_1-\\mathbf{r}_2)\\psi^\\dagger(\\mathbf{r}_1)\\psi^\\dagger(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_1).\n\n\nSince\n\n\n\\sum_{j&lt;k} U(\\mathbf{r}_j-\\mathbf{r}_k) = \\frac{1}{2}\\int \\sum_{j\\neq k}\\delta(\\mathbf{r}_1-\\mathbf{r}_j)\\delta(\\mathbf{r}_2-\\mathbf{r}_k)U(\\mathbf{r}_1-\\mathbf{r}_2) d\\mathbf{r}_1 d\\mathbf{r}_2,",
-    "crumbs": [
-      "Slides",
-      "B is for Bunching"
-    ]
-  },
-  {
-    "objectID": "macros.html",
-    "href": "macros.html",
-    "title": "Theories of Quantum Matter",
-    "section": "",
-    "text": "\\[\n\\DeclareMathOperator{\\tr}{tr}\n\\DeclareMathOperator{\\E}{\\mathbb{E}}\n\\]"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "Check out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!\n\n\n\nThese are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
-    "crumbs": [
-      "TQM Lectures 2024"
-    ]
-  },
-  {
-    "objectID": "index.html#lectures",
-    "href": "index.html#lectures",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.",
-    "crumbs": [
-      "TQM Lectures 2024"
-    ]
-  },
-  {
-    "objectID": "index.html#supervisions",
-    "href": "index.html#supervisions",
-    "title": "TQM Lectures 2024",
-    "section": "",
-    "text": "There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
-    "crumbs": [
-      "TQM Lectures 2024"
+      "Lattice Models"
     ]
   },
   {
@@ -987,6 +851,175 @@
     "crumbs": [
       "Slides",
       "Quantum Hall Effect"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "Please complete the feedback survey. Closes 1st December at midnight.\n\n\n\n\n\n\n\n\n\nCheck out these Summer internships at MPIPKS, Dresden. Deadline for applications is 30th November!\n\n\n\nThese are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found here. While these are largely unchanged, you should regard this site as the authoritative version for 2024.\nThe source of these notes is this GitHub repo. If you find a typo, other problem or have any other comment on the material, please raise an issue there.\nThe discussions section is a good place to ask each other questions. Try it!\nIf you ever want access to the for the mathematical expressions, right click and select Show Math As &gt; TeX Commands.\n\n\n\n\n\n\nCheck\n\n\n\nThese “Check” boxes provide small exercises to check your understanding as you read the notes. Make sure you do them!\n\n\n\n\n\n\n\n\nNote\n\n\n\n“Note” boxes provide extra context that you may find interesting but aren’t essential. Except this one. This one’s important.\n\n\nFinally…\n\n\n\n\n\n\nWarning\n\n\n\nIn this course \\(\\hbar = 1\\)!\n\n\n\n\nTake place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.\n\n\n\nThere will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "index.html#lectures",
+    "href": "index.html#lectures",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "index.html#supervisions",
+    "href": "index.html#supervisions",
+    "title": "TQM Lectures 2024",
+    "section": "",
+    "text": "There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.",
+    "crumbs": [
+      "TQM Lectures 2024"
+    ]
+  },
+  {
+    "objectID": "macros.html",
+    "href": "macros.html",
+    "title": "Theories of Quantum Matter",
+    "section": "",
+    "text": "\\[\n\\DeclareMathOperator{\\tr}{tr}\n\\DeclareMathOperator{\\E}{\\mathbb{E}}\n\\]"
+  },
+  {
+    "objectID": "slides/more-second-quantization.html#rho_2-from-second-quantization",
+    "href": "slides/more-second-quantization.html#rho_2-from-second-quantization",
+    "title": "B is for Bunching",
+    "section": "\\rho_2 from Second Quantization",
+    "text": "\\rho_2 from Second Quantization\n\nFrom Lecture 1: pair distribution function \n\\rho_2(x_1,x_2) = N(N-1) \\int dx_3\\ldots dx_N \\left|\\Psi(x_1,x_2,\\ldots,x_N)\\right|^2\n measures likelihood of finding particles at x_1 and x_2\nFor 1D Fermi gas ground state we found (Slater determinant, etc.) \n\\rho_2(x,y) = n^2\\left[1 - \\left(\\frac{\\sin\\left[k_\\text{F}(x-y)\\right]}{k_\\text{F}(x-y)}\\right)^2\\right]\n\nLet’s calculate using second quantization!",
+    "crumbs": [
+      "Slides",
+      "B is for Bunching"
+    ]
+  },
+  {
+    "objectID": "slides/more-second-quantization.html#hanbury-brown-and-twiss-effect",
+    "href": "slides/more-second-quantization.html#hanbury-brown-and-twiss-effect",
+    "title": "B is for Bunching",
+    "section": "Hanbury Brown and Twiss Effect",
+    "text": "Hanbury Brown and Twiss Effect\n\n\\rho_2(x,y) can show interference, as can \\rho_1(x) (‘intensity’)\nClassic BEC experiment of Andrews et al.\nEarlier demonstrations of HBT in astro, see Wikipedia for more",
+    "crumbs": [
+      "Slides",
+      "B is for Bunching"
+    ]
+  },
+  {
+    "objectID": "slides/more-second-quantization.html#hartreefock-theory",
+    "href": "slides/more-second-quantization.html#hartreefock-theory",
+    "title": "B is for Bunching",
+    "section": "Hartree–Fock Theory",
+    "text": "Hartree–Fock Theory\n\nRecall from Lecture 5\n\n\n\\hat H_\\text{int.} = \\sum_{j&lt;k} U(\\mathbf{r}_j-\\mathbf{r}_k)=\\frac{1}{2}\\int d\\mathbf{r}_1 d\\mathbf{r}_2\\, U(\\mathbf{r}_1-\\mathbf{r}_2)\\psi^\\dagger(\\mathbf{r}_1)\\psi^\\dagger(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_1).\n\n\nSince\n\n\n\\sum_{j&lt;k} U(\\mathbf{r}_j-\\mathbf{r}_k) = \\frac{1}{2}\\int \\sum_{j\\neq k}\\delta(\\mathbf{r}_1-\\mathbf{r}_j)\\delta(\\mathbf{r}_2-\\mathbf{r}_k)U(\\mathbf{r}_1-\\mathbf{r}_2) d\\mathbf{r}_1 d\\mathbf{r}_2,",
+    "crumbs": [
+      "Slides",
+      "B is for Bunching"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#recap-product-states",
+    "href": "slides/second-quantization.html#recap-product-states",
+    "title": "A is for Annihilation",
+    "section": "Recap: Product States",
+    "text": "Recap: Product States\n\nNormalized state of N bosons in orthonormal states \\varphi_{\\alpha_n}(\\mathbf{r})\n\n\n\\Psi^{\\text{S}}_{\\alpha_{1}\\alpha_{2}\\cdots\\alpha_{N}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N)=\\sqrt{\\frac{\\prod_{\\alpha}N_{\\alpha}!}{N!}}\\sum_P\\varphi_{\\alpha_{1}}(\\mathbf{r}_{P_1})\\varphi_{\\alpha_{2}}(\\mathbf{r}_{P_2})\\cdots\\varphi_{\\alpha_{N}}(\\mathbf{r}_{P_N})\n\n\nThe normalization factor involves occupation numbers \\{N_{\\alpha}\\} giving number of particles in state \\alpha",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#goal",
+    "href": "slides/second-quantization.html#goal",
+    "title": "A is for Annihilation",
+    "section": "Goal",
+    "text": "Goal\n\nFor SHO\n\n\n\\frac{1}{\\sqrt{n!}}\\left(a^\\dagger\\right)^n\\lvert{0}\\rangle\\longleftrightarrow \\psi_n(x)\n representation using a^{\\vphantom{\\dagger}}, a^\\dagger very useful; never need explicit \\psi_n(x)\n\nWe want\n\n??\\longleftrightarrow \\Psi^{\\text{S}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N)\n\nMust respect inner product",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#creation-annihilation-operators",
+    "href": "slides/second-quantization.html#creation-annihilation-operators",
+    "title": "A is for Annihilation",
+    "section": "Creation & Annihilation Operators",
+    "text": "Creation & Annihilation Operators\n\nWe consider states with different numbers of particles\n\\lvert{\\text{VAC}}\\rangle denotes state with no particles (the vacuum state)\na^\\dagger(\\psi) creates particle in single particle state \\psi(\\mathbf{r})\n\n\n\\psi(\\mathbf{r})\\longleftrightarrow a^\\dagger(\\psi)\\lvert{\\text{VAC}}\\rangle\n\n\nEvidently, a^\\dagger(\\psi) must be linear in \\psi\n\n\na^\\dagger\\left(c_1\\psi_1+c_2\\psi_2\\right) = c_1a^\\dagger(\\psi_1)+c_2a^\\dagger(\\psi_2)",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#choosing-a-basis",
+    "href": "slides/second-quantization.html#choosing-a-basis",
+    "title": "A is for Annihilation",
+    "section": "Choosing a basis",
+    "text": "Choosing a basis\n\nOrthonormal basis by \\varphi_\\alpha(\\mathbf{r})\n\n\na^\\dagger(\\varphi_\\alpha)\\equiv a^\\dagger_\\alpha,\\quad a^{\\vphantom{\\dagger}}(\\varphi_\\alpha)\\equiv a^{\\vphantom{\\dagger}}_\\alpha\n\n\nThen we have\n\n\n\\begin{aligned}\n\\left[a^{\\vphantom{\\dagger}}_\\alpha,a^{\\vphantom{\\dagger}}_\\beta\\right]=0,\\quad \\left[a^\\dagger_\\alpha,a^\\dagger_\\beta\\right]=0,\\quad \\left[a^{\\vphantom{\\dagger}}_\\alpha,a^\\dagger_\\beta\\right] = \\delta_{\\alpha\\beta}\n\\end{aligned}\n\n\nSame as ladder operators of a set of harmonic oscillators\n\n\n\\Psi^{\\text{S}}_{\\alpha_{1}\\alpha_{2}\\cdots\\alpha_{N}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) \\longleftrightarrow\\lvert{\\mathbf{N}}\\rangle \\equiv \\prod_\\alpha \\frac{\\left(a^\\dagger_\\alpha\\right)^{N_\\alpha}}{\\sqrt{N_\\alpha!}}\\lvert{\\text{VAC}}\\rangle",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#change-of-basis",
+    "href": "slides/second-quantization.html#change-of-basis",
+    "title": "A is for Annihilation",
+    "section": "Change of basis",
+    "text": "Change of basis\n\nMove to different basis \\{\\lvert{\\tilde{\\varphi}_{\\alpha}}\\rangle\\}\n\n\n\\lvert{\\tilde{\\varphi}_{\\alpha}}\\rangle=\\sum_{\\beta} \\langle{\\varphi_{\\beta}}\\rvert \\tilde{\\varphi}_{\\alpha} \\rangle\\lvert{\\varphi_{\\beta}}\\rangle\n\n\nOne particle states with wavefunctions \\varphi_{\\alpha}(\\mathbf{r}) are a^\\dagger_{\\alpha}\\lvert{\\text{VAC}}\\rangle. So,\n\n\n\\tilde{a^{\\vphantom{\\dagger}}}_{\\alpha}^\\dagger\\equiv\\sum_{\\beta} \\langle{\\varphi_{\\beta}}\\rvert \\tilde{\\varphi}_{\\alpha} \\rangle a^\\dagger_{\\beta}",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#fermions",
+    "href": "slides/second-quantization.html#fermions",
+    "title": "A is for Annihilation",
+    "section": "Fermions",
+    "text": "Fermions\n\nTrickier on account of minus signs! Seek a representation of\n\n\n\\Psi^{\\text{A}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) = \\frac{1}{\\sqrt{N!}}\\sum_P (-1)^P\\psi_1(\\mathbf{r}_{P_1})\\psi_{2}(\\mathbf{r}_{P_2})\\cdots\\psi_{N}(\\mathbf{r}_{P_N})\n\nNote: overall sign fixed by labelling of states \\psi_j\n\nIf \\Psi^{\\text{A}}(\\mathbf{r}_1,\\ldots,\\mathbf{r}_N) \\longleftrightarrow a^\\dagger(\\psi_1)\\cdots a^\\dagger(\\psi_N)\\lvert{\\text{VAC}}\\rangle we’ll need\n\n\n\\left\\{a^\\dagger(\\psi),a^\\dagger(\\phi)\\right\\}=0,\n \\{A,B\\}\\equiv AB+BA is anticommutator. Also\n\n\\left\\{a^{\\vphantom{\\dagger}}(\\psi),a^{\\vphantom{\\dagger}}(\\phi)\\right\\}=0",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#how-do-avphantomdagger_alpha-and-adagger_alpha-look",
+    "href": "slides/second-quantization.html#how-do-avphantomdagger_alpha-and-adagger_alpha-look",
+    "title": "A is for Annihilation",
+    "section": "How do a^{\\vphantom{\\dagger}}_\\alpha and a^\\dagger_\\alpha look?",
+    "text": "How do a^{\\vphantom{\\dagger}}_\\alpha and a^\\dagger_\\alpha look?\n\n\n\n\n\n\nCheck\n\n\nThink about the form that the operators a^{\\vphantom{\\dagger}}_\\alpha, a^\\dagger_\\alpha take in the basis of product states. Start with one state \\varphi_\\alpha. What’s the matrix form of a^\\dagger_\\alpha in terms of states \\lvert{N_\\alpha}\\rangle? Now consider two states. Can you see how the commutation and anticommutation relations can be satisfied?",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#one-particle-operators",
+    "href": "slides/second-quantization.html#one-particle-operators",
+    "title": "A is for Annihilation",
+    "section": "One Particle Operators",
+    "text": "One Particle Operators\n\nNotation: A acts on single particle states; \\hat A acts on N particles as\n\n\n\\hat A = \\sum_{j=1}^N A_j\n\n\nExample: Hamiltonian for noninteracting particles\n\n\n\\hat H = \\sum_{j=1}^N H_j = \\sum_{j=1}^N \\left[-\\frac{\\nabla_j^2}{2m}+V(\\mathbf{r}_j)\\right]\n\n\nOperators of this type are one particle operators\nHow to represent them using creation and annihilation operators?",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
+    ]
+  },
+  {
+    "objectID": "slides/second-quantization.html#two-particle-operators",
+    "href": "slides/second-quantization.html#two-particle-operators",
+    "title": "A is for Annihilation",
+    "section": "Two Particle Operators",
+    "text": "Two Particle Operators\n\nActs pairwise on the particles (B_{jk}=B_{kj} for indistinguishable particles.)\n\n\n\\hat B = \\sum_{j&lt;k} B_{jk}.\n\n\nAction of \\hat B on product state \\lvert{\\varphi_{\\alpha}}\\rangle_1\\lvert{\\varphi_{\\beta}}\\rangle_2 in terms of matrix elements\n\n\n\\begin{aligned}\nB_{\\alpha\\beta,\\gamma\\delta} &= \\langle{\\varphi_\\alpha}\\rvert_1\\langle{\\varphi_\\beta}\\rvert_2 B_{12} \\lvert{\\varphi_\\gamma}\\rangle_1\\lvert{\\varphi_\\delta}\\rangle_2\\\\\n\\hat B &= \\frac{1}{2}\\sum_{\\alpha\\beta\\gamma\\delta} B_{\\alpha\\beta,\\gamma\\delta}a^\\dagger_\\alpha a^\\dagger_\\beta a^{\\vphantom{\\dagger}}_\\delta a^{\\vphantom{\\dagger}}_\\gamma,\\qquad B_{\\alpha\\beta,\\gamma\\delta} = B_{\\beta\\alpha,\\delta\\gamma}\n\\end{aligned}\n (Note order, which is important for fermions!)",
+    "crumbs": [
+      "Slides",
+      "A is for Annihilation"
     ]
   },
   {
@@ -1657,36 +1690,58 @@
     ]
   },
   {
-    "objectID": "slides/lattice-models.html#tight-binding-models",
-    "href": "slides/lattice-models.html#tight-binding-models",
-    "title": "Lattice Models",
-    "section": "Tight Binding Models",
-    "text": "Tight Binding Models\n\nNoninteracting Hamiltonian with periodic potential V(x+a)=V(x)\n\n\nH = \\sum_{j=1}^N \\left[-\\frac{1}{2m}\\partial_i^2 +V(x_i)\\right] = \\int \\left[\\frac{1}{2m}\\partial_x\\psi^\\dagger\\partial_x\\psi^{\\vphantom{\\dagger}}+ V(x)\\psi^\\dagger\\psi^{\\vphantom{\\dagger}}\\right] dx\n\n\nBloch’s theorem: eigenstates labelled by continuous index k (crystal momentum) and discrete index n (band index) \n\\psi_{k,n}(x) = e^{ikx} \\varphi_{k,n}(x),\n \\varphi_{k,n} is periodic; k lies in Brillouin zone (-\\pi/a,\\pi/a]\nThe eigenvalues E_n(k) give the energy bands.",
+    "objectID": "notes/bose-gas.html",
+    "href": "notes/bose-gas.html",
+    "title": "Bose Gas",
+    "section": "",
+    "text": "\\[\n\\DeclareMathOperator{\\tr}{tr}\n\\DeclareMathOperator{\\E}{\\mathbb{E}}\n\\]\nYou know that noninteracting bosons form a Bose condensate: we will see how weak interactions alter this picture, and make a connection to the phenomenon of superfluidity.",
     "crumbs": [
-      "Slides",
-      "Lattice Models"
+      "Notes",
+      "Bose Gas"
     ]
   },
   {
-    "objectID": "slides/lattice-models.html#bose-hubbard-model",
-    "href": "slides/lattice-models.html#bose-hubbard-model",
-    "title": "Lattice Models",
-    "section": "Bose Hubbard Model",
-    "text": "Bose Hubbard Model\n\nSimplest interacting lattice model \nH = H_t + H_U = -t \\sum_{\\langle j\\,k\\rangle}  \\left[a^\\dagger_ja^{\\vphantom{\\dagger}}_{k}+a^\\dagger_{k}a^{\\vphantom{\\dagger}}_j\\right] + \\frac{U}{2}\\sum_j N_j(N_j-1)\n N_j=a^\\dagger_ja^{\\vphantom{\\dagger}}_j, sum over all nearest neighbours\nOn-site interaction N_j(N_j-1)=a^\\dagger_ja^\\dagger_ja^{\\vphantom{\\dagger}}_ja^{\\vphantom{\\dagger}}_j\nFirst introduced to describe electrons in solids; boson version widely used in ultracold atomic physics",
+    "objectID": "notes/bose-gas.html#the-grosspitaevskii-approximation",
+    "href": "notes/bose-gas.html#the-grosspitaevskii-approximation",
+    "title": "Bose Gas",
+    "section": "1 The Gross–Pitaevskii Approximation",
+    "text": "1 The Gross–Pitaevskii Approximation\nOur first attack on the problem is variational. It’s very easy to come up with a variational wavefunction for the ground state of a Bose gas: put all the particles in the same single particle state!\n\\[\n\\Psi(\\mathbf{r}_1,\\ldots \\mathbf{r}_N) = \\prod_{j=1}^N \\varphi_0(\\mathbf{r}_i)= \\frac{1}{\\sqrt{N!}}\\left(a^\\dagger(\\varphi_0)\\right)^N\\lvert{\\text{VAC}}\\rangle.\n\\tag{1}\\]\nA state with a macroscopic number of particles in a single particle state is known as a Bose condensate. You have probably studied the statistical mechanics of an ideal Bose gas before: the main feature is a condensation temperature below which macroscopic occupation occurs.\nWe know that if we have a noninteracting Hamiltonian\n\\[\nH = \\sum\\left[-\\frac{\\nabla_i^2}{2m} + V(\\mathbf{r}_i)\\right],\n\\]\nthen the ground state has exactly the form Equation 1, with \\(\\varphi_0(\\mathbf{r})\\) the ground state of the single particle Hamiltonian. After adding interactions to the Hamiltonian, in the form\n\\[\nH_\\text{int.} = \\sum_{j&lt;k} U(\\mathbf{r}_j-\\mathbf{r}_k) = \\frac{1}{2}\\int d\\mathbf{r}_1 d\\mathbf{r}_2\\, U(\\mathbf{r}_1-\\mathbf{r}_2)\\psi^\\dagger(\\mathbf{r}_1)\\psi^\\dagger(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_2)\\psi^{\\vphantom{\\dagger}}(\\mathbf{r}_1).\n\\]\nit is no longer true that the exact ground state has the form Equation 1, but we can treat \\(\\varphi_0(\\mathbf{r})\\) as a variational function that we must find. This leads to the Gross–Pitaevskii equation.\n\n1.1 Gross–Pitaevskii Equation\nFrom now on we will take a model of short-ranged interactions for simplicity\n\\[\nU(\\mathbf{r}-\\mathbf{r}') = U_0\\delta(\\mathbf{r}-\\mathbf{r}')\n\\]\nTo implement the variational calculation we need to find\n\\[\n\\langle E \\rangle = \\frac{\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle}{\\langle{\\Psi}\\rvert \\Psi \\rangle}\n\\]\nIn fact, it turns out to be more convenient to minimize \\(\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle\\), using a Lagrange multiplier to fix the normalization. We have\n\\[\n\\begin{align}\n\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle=N \\int d\\mathbf{r}\\left[\\frac{1}{2m}|\\nabla\\varphi_0|^2+V(\\mathbf{r})|\\varphi_0(\\mathbf{r})|^2\n\\right]\\\\\n+\\frac{1}{2}N(N-1)U_0\\int d\\mathbf{r}|\\varphi_0(\\mathbf{r})|^4.\n\\end{align}\n\\tag{2}\\]\nFor large \\(N\\), we can neglect the difference between \\(N\\) and \\(N+1\\). Now we want to extremize this functional with respect to \\(\\varphi_0(\\mathbf{r})\\), keeping \\(\\varphi_{0}(\\mathbf{r})\\) normalized. To do this we introduce a Lagrange multiplier \\(\\mu N\\) (the factor of \\(N\\) will become clear shortly) and extremize the functional\n\\[\n\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle - \\mu N \\int d\\mathbf{r}|\\varphi_{0}(\\mathbf{r})|^{2}.\n\\]\nTo find the extremum requires a standard application of the calculus of variations, yielding the equation\n\\[\n    \\left[-\\frac{1}{2m}\\nabla^2-\\mu+V(\\mathbf{r})+NU_0|\\varphi_0(\\mathbf{r})|^2\\right]\\varphi_0(\\mathbf{r})=0.\n\\tag{3}\\]\nIt’s convenient to deal with the stray factor of \\(N\\) in Equation 3 by defining \\(\\varphi(\\mathbf{r})\\equiv\\sqrt{N}\\varphi_{0}(\\mathbf{r})\\). \\(\\varphi(\\mathbf{r})\\) is known as the condensate wavefunction or order parameter. Later we will give a more general definition that does not depend on the above variational approximation. We have thus obtained the Gross–Pitaevskii equation\n\\[\n\\left[-\\frac{1}{2m}\\nabla^2-\\mu+V(\\mathbf{r})+U_0|\\varphi(\\mathbf{r})|^2\\right]\\varphi(\\mathbf{r})=0.\n\\]\nIt remains to fix the Lagrange multiplier \\(\\mu\\). This is done by demanding that \\(\\int d\\mathbf{r}\\,\\lvert{\\varphi(\\mathbf{r})}\\rvert^{2}=N\\). Since \\(\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle- \\mu \\int d\\mathbf{r}\\lvert{\\varphi(\\mathbf{r})}\\rvert^{2}=\\langle{\\Psi}\\rvert H-\\mu \\mathsf{N} \\lvert \\Psi \\rangle\\) was extremized under general variations, including those that changed \\(N\\), we must have\n\\[\n    \\label{bose_static_GPmu}\n    \\mu=\\frac{\\partial\\langle{\\Psi}\\rvert H \\lvert \\Psi \\rangle}{\\partial N},\n\\]\nso that \\(\\mu\\) is identified with the chemical potential.\nA fundamental effect of the nonlinearity of the GP equation is that there exists a length scale set by the typical value of \\(|\\varphi(\\mathbf{r})|^2\\sim n\\) and the interaction strength\n\\[\n\\xi\\equiv \\frac{1}{\\sqrt{2m n U_0}}\n\\]\nThis healing length determines the scale over which \\(\\varphi(\\mathbf{r})\\) is disturbed by the introduction of a localized potential of scale \\(\\ll \\xi\\). It is a fundamental length scale in the system.\n\n\n\n\n\n\nCheck\n\n\n\nShow that near a hard wall, where the condensate wavefunction goes to zero, \\(\\varphi(\\mathbf{r})\\) is given by \\[\n\\varphi(x)=\\varphi_{\\infty}\\tanh \\frac{x}{\\sqrt{2}\\xi}\n\\]\nwhere \\(x\\) is the distance from the wall, and \\(\\varphi_{\\infty}=\\sqrt{n_{\\infty}}\\) is fixed by the density of the condensate far from the wall.\n\n\n\n\n1.2 Some Observables\nWith the ansatz Equation 1 for the wavefunction, we can obtain various observables without difficulty. The density and current density are\n\\[\n\\begin{align}\n\\rho(\\mathbf{r})&=|\\varphi(\\mathbf{r})|^2,\\\\\n\\mathbf{j}(\\mathbf{r})&=-\\frac{i}{2m}\\left[\\varphi^{*}(\\mathbf{r})\\left(\\nabla\\varphi(\\mathbf{r})\\right)-\\left(\\nabla\\varphi^{*}(\\mathbf{r})\\right)\\varphi(\\mathbf{r})\\right]\n\\end{align}\n\\]\nAlternatively, one may write this is terms of the velocity field of the gas, using \\(\\mathbf{j}=\\rho \\mathbf{v}\\), and the decomposition of \\(\\varphi(\\mathbf{r})\\) into magnitude and phase\n\\[\n    \\varphi(\\mathbf{r})=\\sqrt{\\rho(\\mathbf{r})}e^{i\\chi(\\mathbf{r})}.\n\\]\nWe thus find the superfluid velocity\n\\[\n    \\mathbf{v}_{s}\\equiv\\frac{1}{m}\\nabla\\chi.\n\\tag{4}\\]\nThe name is to distinguish this contribution from that arising from thermal excitations. For the moment we are considering zero temperature, so this is all there is.\nThe usefulness of the Gross–Pitaevskii equations lies in its ability to describe spatially nonuniform situations. Often, nonuniformity is imposed by an external potential, but there is an important class of configurations that are stable – or metastable – for topological reasons.\n\n\n1.3 Example: Vortex\nSince Equation 4 tells us that the superfluid velocity is a gradient of something, we may expect it to be irrotational\n\\[\n\\nabla\\times \\mathbf{v}_s = 0,\n\\]\nor equivalently to have vanishing circulation\n\\[\n\\oint \\mathbf{v}_s\\cdot d\\mathbf{l}=0\n\\]\naround any closed loop. However, it is possible for the phase of the wavefunction to increase by a multiple of \\(2\\pi\\) around a closed loop, which still gives a single-valued condensate wavefunction since \\(\\varphi(\\mathbf{r})=\\sqrt{\\rho(\\mathbf{r})}e^{i\\chi(\\mathbf{r})}\\). Thus in general the circulation\n\\[\n\\oint \\mathbf{v}_s\\cdot d\\mathbf{l}=\\frac{2\\pi \\ell}{m},\\quad \\ell\\in\\mathbb{Z},\n\\]\nwhich is known as the Onsager–Feynmann quantization condition. A localized configuration with finite circulation is called a vortex in fluid dynamics, but in a normal fluid there is no reason for the vorticity to be quantized. Restoring Planck’s constant just this once\n\\[\n\\oint \\mathbf{v}_s\\cdot d\\mathbf{l}=\\frac{h\\ell}{m},\\quad \\ell\\in\\mathbb{Z},\n\\]\nshows that this is a truly quantum phenomenon.\nA non-zero winding of the phase requires that \\(\\rho(\\mathbf{r})\\) vanishes at a point (in two dimensions) or on a line (in three). Let’s see how such configurations are described by the Gross–Pitaevskii theory.\nWe are going to look for 2D solutions where the phase winds \\(\\ell\\) times as we encircle the origin\n\\[\n\\varphi(r,\\theta)\\xrightarrow{r\\to\\infty} \\sqrt{n} e^{i\\ell\\theta}.\n\\tag{5}\\]\nWe parameterize the solution as \\(\\varphi(r,\\theta) = \\sqrt{n} f(r/\\xi)e^{i\\ell\\theta}\\), measuring distances in terms of the healing length. Substituting into the Gross–Pitaevskii equation gives an equation in \\(s\\equiv r/\\xi\\).\n\\[\n-f'' -\\frac{f'}{s} + \\frac{\\ell^2 f}{s^2} - f +f^3 =0.\n\\]\nWe take \\(\\mu = U_0 n\\) to get the behaviour Equation 5 at infinity.\n\n\n\n\n\n\nCheck\n\n\n\nWithout finding the solution explicitly, show that \\(f(s)\\sim s^\\ell\\) for small \\(s\\), and \\(f(s\\to\\infty) \\to 1\\).\n\n\nThe region of suppressed density, of characteristic size \\(\\xi\\), is called the vortex core. In three dimensions, the vortex core is a line.\nWe can find the energy of the vortex state by substituting the solution back into the energy functional Equation 2 to find the energy excess relative to a uniform state of density \\(n\\)\n\\[\n\\Delta E = \\int d\\mathbf{r}\\left[\\frac{n^2}{2m\\xi^2}(f')^2+\\frac{U}{2}n^2 \\left(f^2-1\\right)^2\\right] + \\frac{n^2}{2m}\\int d\\mathbf{r}\\, f^2(\\nabla\\chi)^2.\n\\]\nThe first integral is finite, and arises purely from the departure of the density away from its bulk value. The second represents the contribution to the kinetic energy arising from the winding of the vortex’s phase. Since we have\n\\[\n\\nabla \\chi = \\frac{\\ell}{r}\\hat{\\mathbf{e}}_\\theta,\n\\]\nthis contribution to the energy is logarithmically divergent.\n\\[\n\\Delta E = \\text{const.} + \\frac{\\pi n \\ell^2}{m}\\log\\left(\\frac{L}{\\xi}\\right).\n\\]\nThere is far-reaching analogy between the superfluid velocity fields of vortices and the magnetostatics of current-carrying wires,\n\n\n\nVortices\nMagnetostatics\n\n\n\n\nVortex cores\nWires\n\n\nSuperfluid velocity \\(\\mathbf{v}_s\\)\nMagnetic field, \\(\\mathbf{B}\\)\n\n\nKinetic Energy\nMagnetostatic Energy\n\n\n\nVortices with \\(\\lvert{\\ell}\\rvert&gt;1\\) are generally unstable, and will break into multiple vortices of winding \\(\\ell=\\pm 1\\). Like vortices repel each other, and can form spectacular vortex lattices, akin to crystals.\n\n\n\nVortex lattice in a Bose–Einstein condensate of Sodium atoms. Source: Ketterle group, MIT\n\n\nVortices are one manifestation of the phenomenon of superfluidity: persistent flow without resistance. The true ground state of the system does not have such flows, of course, so these flows are only metastable (as long as rotational symmetry is broken, so that angular momentum is not conserved). In the case of the vortex, it can only decay by its core leaving the system. An even simpler example is provided by currents flowing in a ring, a situation studied in Problem Set 2, which illustrates the important role played by repulsive interactions.",
     "crumbs": [
-      "Slides",
-      "Lattice Models"
+      "Notes",
+      "Bose Gas"
     ]
   },
   {
-    "objectID": "slides/lattice-models.html#fermi-hubbard-model",
-    "href": "slides/lattice-models.html#fermi-hubbard-model",
-    "title": "Lattice Models",
-    "section": "Fermi Hubbard Model",
-    "text": "Fermi Hubbard Model\n\nHave to introduce spin to get something interesting (why?)\n\n\nH=-t \\sum_{\\substack{\\langle j\\,k\\rangle\\\\ s=\\uparrow,\\downarrow}}  \\left[a^\\dagger_{j,s}a^{\\vphantom{\\dagger}}_{k,s}+a^\\dagger_{k,s}a^{\\vphantom{\\dagger}}_{j,s}\\right] + U\\sum_j N_\\uparrow N_\\downarrow,\n\n\nApplication cuprates: high temperature superconductors\n2D model describes strong correlations in the CuO_2 layers\nMuch harder to understand than Bose case…",
+    "objectID": "notes/bose-gas.html#bogoliubov-theory",
+    "href": "notes/bose-gas.html#bogoliubov-theory",
+    "title": "Bose Gas",
+    "section": "2 Bogoliubov Theory",
+    "text": "2 Bogoliubov Theory\nHow can we improve upon the Gross–Pitaevskii approximation? From now on we focus on a uniform condensate with no external potential \\(V(\\mathbf{r})\\), in which case the condensate wavefunction is just a constant \\(\\varphi(\\mathbf{r})=\\sqrt{n}\\). As usual we work in a plane wave basis, where the Hamiltonian takes the form\n\\[\nH =\\sum_\\mathbf{k}\\epsilon(\\mathbf{k})a^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_\\mathbf{k}+ \\overbrace{\\frac{U_0}{2V}\\sum_{\\mathbf{k}_1+\\mathbf{k}_2=\\mathbf{k}_3+\\mathbf{k}_4} a^\\dagger_{\\mathbf{k}_1}a^\\dagger_{\\mathbf{k}_2}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_3}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_4}}^{\\equiv H_\\text{int}},\n\\]\nwith \\(\\epsilon(\\mathbf{k})=\\mathbf{k}^2/2m\\), and \\(V\\) the volume. The Gross–Pitaevskii approximation to the ground state is\n\\[\n\\lvert{\\Psi_\\text{GP}}\\rangle = \\frac{1}{\\sqrt{N!}}\\left(a^\\dagger_0\\right)^N\\lvert{\\text{VAC}}\\rangle.\n\\]\nWhen \\(H_\\text{int}\\) acts on this state, the only terms that contribute are those with \\(\\mathbf{k}_3=\\mathbf{k}_4=0\\)\n\\[\nH_\\text{int}\\lvert{\\Psi_\\text{GP}}\\rangle =  \\frac{U_0}{2V}\\sum_{\\mathbf{k}} a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}}a^{\\vphantom{\\dagger}}_{0}a^{\\vphantom{\\dagger}}_{0}\\lvert{\\Psi_\\text{GP}}\\rangle.\n\\]\nThus, if we want a better wavefunction, we are going to have to add some \\((+\\mathbf{k}, -\\mathbf{k})\\) pairs!\n\n2.1 Bogoliubov Hamiltonian\nWhen interactions are weak, we expect that the true ground state is close to \\(\\lvert{\\Psi_\\text{GP}}\\rangle\\), so that most of the particles remain in the zero momentum state, with relatively few pairs created. Remembering that\n\\[\na^{\\vphantom{\\dagger}}\\lvert{N}\\rangle = \\sqrt{N}\\lvert{N-1}\\rangle,\\quad a^\\dagger\\lvert{N}\\rangle = \\sqrt{N+1}\\lvert{N+1}\\rangle,\n\\label{bose_aN}\n\\]\nwe see that a term in the Hamiltonian with \\(a^{\\vphantom{\\dagger}}_0\\) or \\(a^\\dagger_0\\) is going to be more important – on account of the large occupancy of \\(\\mathbf{k}=0\\) – than a term without. For this reason we divide up the interaction Hamiltonian according to the number of occurrences of these operators\n\\[\n\\begin{align}\nH_\\text{int} = &\\frac{U_0}{2V}a^\\dagger_0a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_0 \\\\\\nonumber\n&+\\frac{U_0}{2V}\\sum_{\\mathbf{k}\\neq0}\\left[a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}}a^{\\vphantom{\\dagger}}_{0}a^{\\vphantom{\\dagger}}_{0} + a^\\dagger_{0}a^\\dagger_{0}a^{\\vphantom{\\dagger}}_{\\mathbf{k}}a^{\\vphantom{\\dagger}}_{-\\mathbf{k}}+4a^\\dagger_\\mathbf{k}a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_\\mathbf{k}\\right]\\\\\\nonumber\n&+\\frac{U_0}{V}\\sum_{\\substack{\\mathbf{k}_1=\\mathbf{k}_2+\\mathbf{k}_3\\\\ \\mathbf{k}_{1,2,3}\\neq 0}}\\left[a^\\dagger_{\\mathbf{k}_3}a^\\dagger_{\\mathbf{k}_2}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_1}a^{\\vphantom{\\dagger}}_0 +a^\\dagger_0a^\\dagger_{\\mathbf{k}_1}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_2}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_3}\\right]\\\\\\nonumber\n&+\\frac{U_0}{2V}\\sum_{\\substack{\\mathbf{k}_1+\\mathbf{k}_2=\\mathbf{k}_3+\\mathbf{k}_4\\\\ \\mathbf{k}_{1,2,3,4}\\neq 0}} a^\\dagger_{\\mathbf{k}_1}a^\\dagger_{\\mathbf{k}_2}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_3}a^{\\vphantom{\\dagger}}_{\\mathbf{k}_4}.\n\\end{align}\n\\]\nThe Gross–Pitaevskii approximation corresponds to the first term. We are now going to additionally keep the second term, and neglect the third and fourth. Thus we study the Hamiltonian\n\\[\n\\begin{align}\nH_\\text{pair} &= \\sum_\\mathbf{k}\\epsilon(\\mathbf{k})a^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_\\mathbf{k}+\\frac{U_0}{2V}a^\\dagger_0a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_0 \\nonumber\\\\ &\\quad+\\frac{U_0}{2V}\\sum_{\\mathbf{k}\\neq0}\\left[a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}}a^{\\vphantom{\\dagger}}_{0}a^{\\vphantom{\\dagger}}_{0} + a^\\dagger_{0}a^\\dagger_{0}a^{\\vphantom{\\dagger}}_{\\mathbf{k}}a^{\\vphantom{\\dagger}}_{-\\mathbf{k}}+4a^\\dagger_\\mathbf{k}a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_\\mathbf{k}\\right].\n\\end{align}\n\\tag{6}\\]\nThe second line describes the movement of pairs between zero momentum and \\((+\\mathbf{k},-\\mathbf{k})\\). To separate as much as possible the \\(\\mathbf{k}\\neq 0\\) modes from the \\(\\mathbf{k}=0\\) mode we use\n\\[\na^\\dagger_0a^{\\vphantom{\\dagger}}_0 = N - N',\\quad N'\\equiv \\sum_{\\mathbf{k}\\neq 0} N_\\mathbf{k}\n\\]\nso that\n\\[\na^\\dagger_0a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_0 =  N(N-1) - 2N'N_0+O(N_0^0   ).\n\\]\nIn this way, Equation 6 becomes\n\\[\n\\begin{align}\nH_\\text{pair} = &N\\epsilon(0)+\\frac{U_0}{2V}N(N-1) \\nonumber\\\\\\nonumber\n&+\\sum_{\\mathbf{k}\\neq 0}\\left(\\left[\\epsilon(\\mathbf{k})-\\epsilon(0)\\right]a^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_\\mathbf{k}\\right.\\\\\n&\\left.+\\frac{U_0}{2V}\\left[a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}}a^{\\vphantom{\\dagger}}_{0}a^{\\vphantom{\\dagger}}_{0} + a^\\dagger_{0}a^\\dagger_{0}a^{\\vphantom{\\dagger}}_{\\mathbf{k}}a^{\\vphantom{\\dagger}}_{-\\mathbf{k}}+2a^\\dagger_\\mathbf{k}a^\\dagger_0a^{\\vphantom{\\dagger}}_0a^{\\vphantom{\\dagger}}_\\mathbf{k}\\right]\\right).\n\\end{align}\n\\tag{7}\\]\nEven though \\(\\epsilon(0)=0\\) for the situation we are interested in right now, we have included the general case in Equation 7 to emphasize that it is the energy difference between \\(0\\) and \\(\\mathbf{k}\\) that is important: any energy offset appears as a constant in the first term.\nEven now it’s not so easy to solve this problem. One last vital simplification is needed. We are going to replace the operators \\(a^\\dagger_0\\), \\(a^{\\vphantom{\\dagger}}_0\\) with \\(\\sqrt{N}\\), giving a quadratic Hamiltonian. That may sound like a pretty odd thing to do: after all, the resulting Hamiltonian no longer conserves the number of particles! Let’s see why this is a good approximation.\nConsider the action of the Hamiltonian Equation 6 on a product state of the form \\(\\lvert{\\Psi'}\\rangle\\otimes\\lvert{N_0}\\rangle_0\\), where \\(\\lvert{\\Psi'}\\rangle\\) lives in the many body Hilbert space made from non-zero momentum single particle states and \\(\\lvert{N_0}\\rangle_0\\) has \\(N_0\\) particles in the zero momentum state.\nThe action of \\(a^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_0\\) on this state is\n\\[\n\\begin{align}\na^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_0\\lvert{\\Psi'}\\rangle\\otimes\\lvert{N_0}\\rangle_0 &= \\left(a^\\dagger_\\mathbf{k}\\lvert{\\Psi'}\\rangle\\right)\\otimes a^{\\vphantom{\\dagger}}_0\\lvert{N_0}\\rangle_0\\nonumber\\\\\n&= \\left(a^\\dagger_\\mathbf{k}\\lvert{\\Psi'}\\rangle\\right)\\otimes \\sqrt{N_0}\\lvert{N_0-1}\\rangle_0.\n\\end{align}\n\\]\nLikewise\n\\[\n\\begin{align}\na^{\\vphantom{\\dagger}}_\\mathbf{k}a^\\dagger_0\\lvert{\\Psi'}\\rangle\\otimes\\lvert{N_0}\\rangle_0 &= \\left(a^{\\vphantom{\\dagger}}_\\mathbf{k}\\lvert{\\Psi'}\\rangle\\right)\\otimes a^\\dagger_0\\lvert{N_0}\\rangle_0 \\nonumber\\\\\n&= \\left(a^{\\vphantom{\\dagger}}_\\mathbf{k}\\lvert{\\Psi'}\\rangle\\right)\\otimes \\sqrt{N_0+1}\\lvert{N_0+1}\\rangle_0.\n\\end{align}\n\\]\nSince \\(N_0\\) is assumed to be large, we ignore the difference between \\(N_0\\) and \\(N_0+1\\). To be more precise, we are assuming that in the states we are going to find, \\(N_0\\) will not fluctuate substantially. If this is the case, the matrix elements of \\(H_\\text{pair}\\) are approximately unchanged when we make the replacement mentioned above, leaving us with the Bogoliubov Hamiltonian\n\\[\n\\begin{aligned}\nH_\\text{pair} &= N\\epsilon(0)+\\frac{U_0}{2V}N(N-1) \\nonumber\\\\\n&+\\sum_{\\mathbf{k}\\neq 0}\\left(\\left[\\tilde\\epsilon(\\mathbf{k})+U_0n_0\\right]a^\\dagger_\\mathbf{k}a^{\\vphantom{\\dagger}}_\\mathbf{k}+\\frac{U_0n_0}{2}\\left[a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}} + a^{\\vphantom{\\dagger}}_{\\mathbf{k}}a^{\\vphantom{\\dagger}}_{-\\mathbf{k}}\\right]\\right).\n\\end{aligned}\n\\tag{8}\\]\nwhere \\(n_0 = N_0/V\\) is the density of particles in the zero momentum state, and we have defined \\(\\tilde\\epsilon(\\mathbf{k})\\equiv\\epsilon(\\mathbf{k})-\\epsilon(0)\\). The Hamiltonian Equation 8 can be diagonalized by a Bogoliubov transformation.\n\n\n2.2 Bogoliubov transformation\nThis is a change of variables that arises often in many body physics, so we’ll take some time to introduce it in a general context. Suppose we have a Hermitian operator that is quadratic in two bosons \\(a^{\\vphantom{\\dagger}}_{1,2}\\) with the following form\n\\[\nh = \\epsilon\\left[a^\\dagger_1a^{\\vphantom{\\dagger}}_1+a^\\dagger_2a^{\\vphantom{\\dagger}}_2\\right] + \\delta\\left[a^\\dagger_1a^\\dagger_2+a^{\\vphantom{\\dagger}}_1a^{\\vphantom{\\dagger}}_2\\right].\n\\]\nIt’s convenient to write this as\n\\[\nh = \\begin{pmatrix}\na^\\dagger_1 & a^{\\vphantom{\\dagger}}_2\n\\end{pmatrix}\n\\begin{pmatrix}\n\\epsilon & \\delta \\\\\n\\delta & \\epsilon\n\\end{pmatrix}\n\\begin{pmatrix}\na^{\\vphantom{\\dagger}}_1 \\\\ a^\\dagger_2\n\\end{pmatrix}-\\epsilon\n\\]\nIt is possible to express \\(h\\) in terms of some new bosons \\(b^{\\vphantom{\\dagger}}_{1,2}\\) in the form\n\\[\nh = \\Omega\\left[b^\\dagger_1b^{\\vphantom{\\dagger}}_1+b^\\dagger_2b^{\\vphantom{\\dagger}}_2\\right] +\\text{const.}\n\\]\n(because then the spectrum is obvious). We look to express the new bosons linearly in terms of the old as follows\n\\[\n\\begin{pmatrix}\nb^{\\vphantom{\\dagger}}_1 \\\\ b^\\dagger_2\n\\end{pmatrix}=\n\\Lambda\n\\begin{pmatrix}\na^{\\vphantom{\\dagger}}_1 \\\\ a^\\dagger_2\n\\end{pmatrix}\n\\]\nwhere \\(\\Lambda\\) is some \\(2\\times 2\\) matrix. What conditions should \\(\\Lambda\\) satisfy?\n\n\n\n\n\n\nCheck\n\n\n\nShow that if we want the new bosons \\(b^{\\vphantom{\\dagger}}_{1,2}\\) to satisfy the same commutation relations as the original \\(a_{1,2}\\), we must have \\[\n\\Lambda^\\dagger \\sigma_3 \\Lambda = \\sigma_3\n\\]\n\n\nThe following parameterization satisfies this condition and is sufficiently general for our needs\n\\[\n\\Lambda=\n\\begin{pmatrix}\n\\cosh\\kappa & \\sinh\\kappa \\\\\n\\sinh\\kappa & \\cosh\\kappa\n\\end{pmatrix}.\n\\]\nNotice the differences from a rotation matrix:\n\nHyperbolic instead of trignometric functions\nNo sign difference between the off digaonal elements.\n\n\n\n\n\n\n\nCheck\n\n\n\nShow that \\[\n\\begin{align}\n\\tanh 2\\kappa = \\frac{\\delta}{\\epsilon},\\qquad \\Omega = \\sqrt{\\epsilon^2-\\delta^2\\nonumber}\\\\\nh = \\Omega\\left[b^\\dagger_1b^{\\vphantom{\\dagger}}_1+b^\\dagger_2b^{\\vphantom{\\dagger}}_2\\right] + \\Omega - \\epsilon.\n\\end{align}\n\\]\nThe form of \\(\\Omega\\) is most easily understood by noting that the transformation preserves the determinant (\\(\\det\\Lambda=1\\)).\n\nWhat happens if \\(\\delta&gt;\\epsilon\\)?\nWhat changes if \\(\\begin{pmatrix}\n\\epsilon & \\delta \\\\\n\\delta & \\epsilon\n\\end{pmatrix}\\longrightarrow \\begin{pmatrix}\n\\epsilon_1 & \\delta \\\\\n\\delta & \\epsilon_2\n\\end{pmatrix}\\)?\n\n\n\nApplying the same logic to our Hamiltonian ?@eq-HY gives\n\\[\nb^{\\vphantom{\\dagger}}_\\mathbf{p}=a^{\\vphantom{\\dagger}}_\\mathbf{p}\\cosh\\kappa_\\mathbf{p}+a^\\dagger_{-\\mathbf{p}}\\sinh\\kappa_\\mathbf{p}\\nonumber\\\\\n\\qquad \\tanh2\\kappa_\\mathbf{p}=\\frac{n_0 U_0}{\\tilde\\epsilon(\\mathbf{p})+n_0 U_0},\n\\]\n(make sure you understand where the \\(1/2\\) went!) and\n\\[\nH=E_0+\\sum_{\\mathbf{p}\\neq 0}\\omega(\\mathbf{p})b^\\dagger_\\mathbf{p}\nb^{\\vphantom{\\dagger}}_\\mathbf{p}.\n\\]\nHere \\(\\omega(\\mathbf{p})\\) is the Bogoliubov dispersion relation\n\\[\n\\omega(\\mathbf{p}) = \\sqrt{\\tilde\\epsilon(\\mathbf{p})\\left(\\tilde\\epsilon(\\mathbf{p})+2U_0n_0\\right)},\n\\]\nand the ground state energy is\n\\[\nE_0=\\frac{1}{2}nU_0  N+\\sum_{\\mathbf{p}\\neq 0}\\frac{1}{2}\\left[\\omega(\\mathbf{p})-\\tilde\\epsilon(\\mathbf{p})-n_0U_0\\right].\n\\]\nSomewhat annoyingly, this integral is divergent in the ultraviolet. However, this is actually nothing to do with the many body physics of the problem, but is rather related to the need to regularize a \\(\\delta\\)-function potential in three dimensions (see Problem Set 2. The cure is described in the Appendix, but it isn’t too important in what follows.\n\n\n2.3 The Ground State\nSo far, our ground state is just defined by the condition that it is a vacuum of Bogoliubov excitations\n\\[\nb^{\\vphantom{\\dagger}}_\\mathbf{k}\\lvert{0}\\rangle=\\left(\\cosh\\kappa_\\mathbf{k}a^{\\vphantom{\\dagger}}_\\mathbf{k}+\\sinh\\kappa_\\mathbf{k}a^\\dagger_{-\\mathbf{k}}\\right)\\lvert{0}\\rangle=0.\n\\]\nBut what does it look like? A state (unnormalized) that satisfies the above equation is\n\\[\n\\lvert{0}\\rangle=\\prod_{\\mathbf{k}\\neq 0} \\exp\\left(-\\frac{1}{2}\\tanh\\kappa_\\mathbf{k}a^\\dagger_{\\mathbf{k}}a^\\dagger_{-\\mathbf{k}}\\right)\\lvert{\\Psi_\\text{GP}}\\rangle\n\\tag{9}\\]\n\n\n\n\n\n\nCheck\n\n\n\nShow this. If you’ve seen coherent states before, remember that the state \\(e^{\\alpha a^\\dagger}\\lvert{\\text{VAC}}\\rangle\\) is an eigenstate of \\(a^{\\vphantom{\\dagger}}\\) with eigenvalue \\(\\alpha\\).\n\n\nThe form Equation 9 shows explicitly that the state consists of a superposition of pairs excited out of the \\(\\mathbf{k}=0\\) condensate. As we’ve discussed, we don’t actually keep track of the loss of particles from the condensate in the Bogoliubov approximation, on the assumption that it is small.\nWe can get some feeling for the properties of the ground state by considering the density fluctuations. Recall that the Fourier components of the density operator are\n\\[\n\\rho_\\mathbf{q}= \\sum_\\mathbf{k}a^\\dagger_{\\mathbf{k}-\\mathbf{q}}a^{\\vphantom{\\dagger}}_\\mathbf{k}.\n\\]\nOn the basis of the logic that we’ve been following so far, the most important terms will be those where one of \\(a^\\dagger_{\\mathbf{k}-\\mathbf{q}}\\) or \\(a^{\\vphantom{\\dagger}}_\\mathbf{k}\\) acts on the condensate. Thus\n\\[\n\\rho_\\mathbf{q}\\sim \\sqrt{N}\\left(a^\\dagger_{-\\mathbf{q}} + a^{\\vphantom{\\dagger}}_{\\mathbf{q}}\\right) = \\sqrt{N}e^{-\\kappa_\\mathbf{q}} \\left(b^\\dagger_{-\\mathbf{q}} + b^{\\vphantom{\\dagger}}_{\\mathbf{q}}\\right),\n\\]\nwhere\n\\[\ne^{-\\kappa_\\mathbf{q}} = \\sqrt{\\frac{\\tilde\\epsilon(\\mathbf{q})}{\\omega(\\mathbf{q})}}.\n\\]\nThe density fluctuations in the ground state are then\n\\[\n\\langle{0}\\rvert \\rho_{-\\mathbf{q}}\\rho_{\\mathbf{q}} \\lvert 0 \\rangle = N\\frac{\\tilde\\epsilon(\\mathbf{q})}{\\omega(\\mathbf{q})}\\xrightarrow{\\mathbf{q}\\to 0} \\frac{N\\lvert{\\mathbf{q}}\\rvert}{2mc}.\n\\]\nOn the right hand side we have used the low momentum form of the Bogoliubov dispersion\n\\[\n\\omega(\\mathbf{q})\\xrightarrow{\\mathbf{q}\\to 0} c\\lvert{\\mathbf{q}}\\rvert\n\\]\nwhere \\(c = \\sqrt{\\frac{n_0U_0}{m}}\\) is the speed of sound. We see that the density fluctuations vanish as the wavevector goes to zero. This is to be contrasted with the result that we would find in the Gross–Pitaevskii ground state (or ground state of the ideal gas)\n\\[\n\\langle{0}\\rvert \\rho_{-\\mathbf{q}}\\rho_{\\mathbf{q}} \\lvert 0 \\rangle = N.\n\\]\ncorresponding to uncorrelated, Poissonian fluctuations of number inside any volume of the gas. If we were to take a snapshot of the particles at any instant in the interacting gas, we would see a picture similar to the image of the Laughlin state in Lecture 2.\nThe other qualitatively new feature of the Bogoliubov ground state is that the zero momentum state is depleted. We find the momentum distribution by first writing the number operator \\(N_\\mathbf{p}=a^\\dagger_{\\mathbf{p}}a^{\\vphantom{\\dagger}}_{\\mathbf{p}}\\) in terms of the Bogoliubov quasiparticles\n\\[\n    a^\\dagger_{\\mathbf{p}}a^{\\vphantom{\\dagger}}_{\\mathbf{p}}=(b^\\dagger_\\mathbf{p}\\cosh\\kappa_{\\mathbf{p}}-b^{\\vphantom{\\dagger}}_{-\\mathbf{p}}\\sinh\\kappa_{\\mathbf{p}})(b^{\\vphantom{\\dagger}}_\\mathbf{p}\\cosh\\kappa_{\\mathbf{p}}-b^\\dagger_{-\\mathbf{p}}\\sinh\\kappa_{\\mathbf{p}}),\n\\]\nand then finding the average\n\\[\n\\langle N_\\mathbf{p}\\rangle=\\langle a^\\dagger_{\\mathbf{p}}a^{\\vphantom{\\dagger}}_{\\mathbf{p}}\\rangle = \\sinh^2\\kappa_{p}\\xrightarrow{ \\lvert{\\mathbf{p}}\\rvert\\ll \\xi^{-1}}\\frac{mc_s}{2\\lvert{\\mathbf{p}}\\rvert}.\n\\]\nThe radial density distribution \\(4\\pi p^2 N_\\mathbf{p}\\) is peaked around \\(\\xi^{-1}\\). Summing over \\(\\mathbf{p}\\) gives the fraction of atoms not in the condensate\n\\[\n\\frac{1}{N}\\sum_{\\mathbf{p}\\neq 0} \\langle N_\\mathbf{p}\\rangle=\\frac{8}{3\\sqrt{\\pi}}\\sqrt{n a^3},\n\\]\nwhere we used the Born approximation for the scattering length \\(a=\\frac{mU_0}{4\\pi}\\). Excluding the value \\(\\mathbf{p}=0\\) has no effect, because of the vanishing phase space at small momentum in three dimensions.\nUnder typical experimental conditions in experiments on ultracold atoms the depletion does not much exceed \\(0.01\\), which justifies the use of the GP approximation. Liquid He\\(^{4}\\), the first superfluid to be discovered, can be described as an interacting Bose condensate, but the depletion is much larger (the condensate fraction – the fraction of atoms in the condensate – is around 10%). The Bogoliubov approximation does not provide a quantiatively accurate description in this case.\nIn the previous lecture we met another situation where the depletion can be increased. Applying a lattice effectively reduces the kinetic energy relative to the interaction, and leads eventually to a quantum phase transition out of the superfluid state.",
     "crumbs": [
-      "Slides",
-      "Lattice Models"
+      "Notes",
+      "Bose Gas"
+    ]
+  },
+  {
+    "objectID": "notes/bose-gas.html#appendix",
+    "href": "notes/bose-gas.html#appendix",
+    "title": "Bose Gas",
+    "section": "3 Appendix",
+    "text": "3 Appendix\n\n3.1 Regularizing the ground state energy\nTo find the ground state energy in the Bogoliubov theory we have to compute the sum\n\\[\n\\begin{equation}\n\\sum_{\\mathbf{p}\\neq 0}\\frac{1}{2}\\left[\\omega(\\mathbf{p})-\\frac{\\mathbf{p}^2}{2m}-n_0U_0\\right].\n\\end{equation}\n\\tag{10}\\]\nAfter turning it into an integral in the usual way, we have\n\\[\n\\frac{V}{4\\pi^2 m}\\left[\\overbrace{\\int_0^\\Lambda p^2 \\sqrt{p^2\\left(p^2+\\frac{2}{\\xi^2}\\right)}dp}^{\\equiv I(\\Lambda)} - \\int_0^\\Lambda \\left(p^4 + \\frac{p^2}{\\xi^2}\\right) dp \\right]\n\\]\nwhere we have introduced an upper cutoff \\(\\Lambda\\) to see what happens as it increases to infinity. The first integral comes from the \\(\\omega(\\mathbf{p})\\) in the summand. \\(\\xi\\equiv \\frac{1}{\\sqrt{2m n U_0}}\\) is the healing length as before. Introducing the substitution \\(u=p^2\\) gives\n\\[\n\\begin{align}\nI(\\Lambda) &= \\frac{1}{2}\\int^{\\Lambda^2}_0 u\\sqrt{u+\\frac{2}{\\xi^2}} du \\nonumber \\\\\n&= \\left[\\frac{1}{5}\\left(u+\\frac{2}{\\xi^2}\\right)^{5/2}-\\frac{2}{3\\xi^2} \\left(u+\\frac{2}{\\xi^2}\\right)^{3/2}\\right]^{\\Lambda^2}_0\\nonumber \\\\\n&= \\frac{\\Lambda^5}{5} + \\frac{\\Lambda^3}{3\\xi^2} -\\frac{\\Lambda}{2\\xi^4}+\\cdots.\n\\end{align}\n\\tag{11}\\] In the expansion we have retained only the terms with positive powers of \\(\\Lambda\\). By comparing with the definition of \\(I(\\Lambda)\\), we can see that these terms arise from the first three terms in the large \\(p\\) expansion of the integrand\n\\[\n\\begin{equation}\np^2 \\sqrt{p^2\\left(p^2+\\frac{2}{\\xi^2}\\right)} = p^4 + \\frac{p^2}{\\xi^2} - \\frac{1}{2\\xi^2}.\n\\end{equation}\n\\tag{12}\\]\nIn the original sum Equation 10 the contributions of the first two terms in Equation 12 are cancelled by subtracting \\(\\frac{1}{2}\\left[\\frac{\\mathbf{p}^2}{2m}+n_0U_0\\right]\\). This still leaves us with a divergence \\(\\propto \\Lambda\\) arising from last term of Equation 12. On the other hand, the sum\n\\[\nE_\\text{reg}\\equiv\\sum_{\\mathbf{p}\\neq 0}\\frac{1}\n{2}\\left[\\omega(\\mathbf{p})-\\tilde\\epsilon(\\mathbf{p})-n_0U_0+ \\frac{(n_0U_0)^2}{2\\tilde\\epsilon(\\mathbf{p})}\\right]\n\\]\nis finite as \\(\\Lambda\\to \\infty\\), because all positive powers of \\(\\Lambda\\) cancelled. The value is then given by the lower limit of the expression in Equation 11.\n\\[\nE_\\text{reg} = \\frac{V}{m\\pi^2}\\frac{16}{15}(mnU_0)^{5/2}\n\\]\nOK, but so what? That isn’t what we wanted. But notice that the regularized energy can be used to write the total energy as\n\\[\nE_0=\\frac{1}{2}nU_0  N\\left[1-\\frac{1}{V}\\sum_\\mathbf{p}\\frac{U_0}{2\\tilde\\epsilon(\\mathbf{p})}\\right]+E_\\text{reg}.\n\\]\nIn this form, the term we have added and subtracted can be identified as the contribution to the ground state energy in second order perturbation theory. This is divergent at large momentum for a delta function interaction, but this divergence goes away when we consider a finite range potential (we won’t show this, but it’s not too hard). Assuming that this contribution is finite because the interaction potential has a small (relative to \\(\\xi\\)) but finite range, we can then write\n\\[\nE_0=\\frac{1}{2}nN\\frac{4\\pi}{m}\\left(a_0+a_1\\right)+\\frac{1}{2}n_0N\\frac{4\\pi}{m}a_0\\frac\n{128}{15\\sqrt{\\pi}}\\left(n a_0^3\\right)^{1/2},\n\\]\nwhere\n\\[\na_0=(m/4\\pi)U_0,\\qquad a_1=-(m/4\\pi)\\frac{U_0^2}{V}\\sum_\\mathbf{p}\\frac{1}{2\\tilde\\epsilon\n(\\mathbf{p})}.\n\\]\nare the first two terms in the Born approximation for the scattering length \\(a=a_0+a_1+\\cdots\\). This strongly suggests that these two terms can really be expressed only in erms of the true scattering length. Notice also that the second term has a weird \\(U_0^{5/2}\\) dependence on the interaction strength, which is presumably connected to perturbation theory breaking down at the third order (see Problem Set 2).",
+    "crumbs": [
+      "Notes",
+      "Bose Gas"
+    ]
+  },
+  {
+    "objectID": "notes/bose-gas.html#references",
+    "href": "notes/bose-gas.html#references",
+    "title": "Bose Gas",
+    "section": "4 References",
+    "text": "4 References\n{% bibliography –cited %}",
+    "crumbs": [
+      "Notes",
+      "Bose Gas"
     ]
   }
 ]
