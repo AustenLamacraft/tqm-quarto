@@ -537,7 +537,7 @@
 <section class="slide level2 center">
 
 <ul>
-<li><p><span class="math inline">N</span> noninteracting bosons occupying in ground state <span class="math inline">\varphi\_{0}(\mathbf{r})</span> of some potential: a <strong>Bose condensate</strong></p></li>
+<li><p><span class="math inline">N</span> noninteracting bosons occupying ground state <span class="math inline">\varphi_{0}(\mathbf{r})</span> of some potential: a <strong>Bose condensate</strong></p></li>
 <li><p><span class="math inline">N</span>-body wavefunction is <span class="math display">
   \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N)=\prod_i^N \varphi_0(\mathbf{r}_i)
 </span> <span class="math display">
@@ -1225,7 +1225,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

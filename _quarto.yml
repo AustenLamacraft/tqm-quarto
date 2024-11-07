@@ -40,6 +40,7 @@ website:
           - slides/second-quantization.qmd
           - slides/more-second-quantization.qmd
           - slides/lattice-models.qmd
+          - slides/bose-gas.qmd
           
 
       - section: "Problem Sets"

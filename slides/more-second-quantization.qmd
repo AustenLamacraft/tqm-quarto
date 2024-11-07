@@ -205,7 +205,7 @@ $$
 
 ---
 
-- $N$ noninteracting bosons occupying in ground state $\varphi\_{0}(\br)$ of some potential: a __Bose condensate__
+- $N$ noninteracting bosons occupying ground state $\varphi_{0}(\br)$ of some potential: a __Bose condensate__
 
 - $N$-body wavefunction is
 $$

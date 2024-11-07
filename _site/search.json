@@ -1743,5 +1743,38 @@
       "Notes",
       "Bose Gas"
     ]
+  },
+  {
+    "objectID": "slides/bose-gas.html#grosspitaevskii-approximation",
+    "href": "slides/bose-gas.html#grosspitaevskii-approximation",
+    "title": "Bose Gas",
+    "section": "Gross–Pitaevskii Approximation",
+    "text": "Gross–Pitaevskii Approximation\n\nVariational appraoch to Bose gas (c.f. Hartree–Fock)\nPut all particles in same single particle state!\n\n\n\\Psi(\\mathbf{r}_1,\\ldots \\mathbf{r}_N) = \\prod_{j=1}^N \\varphi_0(\\mathbf{r}_i)= \\frac{1}{\\sqrt{N!}}\\left(a^\\dagger(\\varphi_0)\\right)^N\\lvert{\\text{VAC}}\\rangle.\n\n\nState with macroscopic number of particles in a single particle state is a Bose condensate",
+    "crumbs": [
+      "Slides",
+      "Bose Gas"
+    ]
+  },
+  {
+    "objectID": "slides/bose-gas.html#bogoliubov-theory",
+    "href": "slides/bose-gas.html#bogoliubov-theory",
+    "title": "Bose Gas",
+    "section": "Bogoliubov Theory",
+    "text": "Bogoliubov Theory\n\nHow can we improve Gross–Pitaevskii approximation?\nWhat about excited states?\nFrom now on… uniform condensate with no V(\\mathbf{r})=0",
+    "crumbs": [
+      "Slides",
+      "Bose Gas"
+    ]
+  },
+  {
+    "objectID": "slides/bose-gas.html#bogoliubov-transformation",
+    "href": "slides/bose-gas.html#bogoliubov-transformation",
+    "title": "Bose Gas",
+    "section": "Bogoliubov transformation",
+    "text": "Bogoliubov transformation\n\nSuppose we have an operator\n\n\nh = \\epsilon\\left[a^\\dagger_1a^{\\vphantom{\\dagger}}_1+a^\\dagger_2a^{\\vphantom{\\dagger}}_2\\right] + \\delta\\left[a^\\dagger_1a^\\dagger_2+a^{\\vphantom{\\dagger}}_1a^{\\vphantom{\\dagger}}_2\\right]\n\n\nWant to express h in terms of some new bosons b^{\\vphantom{\\dagger}}_{1,2} as \nh = \\Omega\\left[b^\\dagger_1b^{\\vphantom{\\dagger}}_1+b^\\dagger_2b^{\\vphantom{\\dagger}}_2\\right] +\\text{const.}\n (because then the spectrum is obvious).",
+    "crumbs": [
+      "Slides",
+      "Bose Gas"
+    ]
   }
 ]

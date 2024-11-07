@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Lattice Models</title>
+  <title>Theories of Quantum Matter – Bose Gas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lattice Models</h1>
+  <h1 class="title">Bose Gas</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -359,474 +359,683 @@
 </div>
 </section>
 <section>
-<section id="lattice-models" class="title-slide slide level1 center">
-<h1>Lattice Models</h1>
+<section id="bose-gas" class="title-slide slide level1 center">
+<h1>Bose Gas</h1>
 <ul>
-<li>Defined on a discrete lattice</li>
-<li>Apply to <strong>deep periodic potentials</strong>: few states / site are enough</li>
-<li>Capture physics of <strong>strong correlations</strong></li>
+<li>Noninteracting bosons form a Bose–Einstein condensate (BEC)</li>
+<li>What do interactions do?</li>
+<li>BEC closely related to <strong>superfluidity</strong></li>
 </ul>
 </section>
-<section id="tight-binding-models" class="slide level2 center">
-<h2>Tight Binding Models</h2>
+<section id="grosspitaevskii-approximation" class="slide level2 center">
+<h2>Gross–Pitaevskii Approximation</h2>
 <ul>
-<li>Noninteracting Hamiltonian with periodic potential <span class="math inline">V(x+a)=V(x)</span></li>
+<li><p>Variational appraoch to Bose gas (c.f. Hartree–Fock)</p></li>
+<li><p>Put all particles in same single particle state!</p></li>
 </ul>
 <p><span class="math display">
-H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_i^2 +V(x_i)\right] = \int \left[\frac{1}{2m}\partial_x\psi^\dagger\partial_x\psi^{\vphantom{\dagger}}+ V(x)\psi^\dagger\psi^{\vphantom{\dagger}}\right] dx
+\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle.
 </span></p>
 <ul>
-<li><p><a href="https://en.wikipedia.org/wiki/Bloch_wave">Bloch’s theorem</a>: eigenstates labelled by continuous index <span class="math inline">k</span> (<strong>crystal momentum</strong>) and discrete index <span class="math inline">n</span> (<strong>band index</strong>) <span class="math display">
-\psi_{k,n}(x) = e^{ikx} \varphi_{k,n}(x),
-</span> <span class="math inline">\varphi_{k,n}</span> is periodic; <span class="math inline">k</span> lies in <strong>Brillouin zone</strong> <span class="math inline">(-\pi/a,\pi/a]</span></p></li>
-<li><p>The eigenvalues <span class="math inline">E_n(k)</span> give the <strong>energy bands</strong>.</p></li>
+<li>State with macroscopic number of particles in a single particle state is a <strong>Bose condensate</strong></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>When lattice potential <em>deep</em> wavefunctions in lowest band(s) highly localized</p></li>
-<li><p>Introduce <span class="math inline">a^\dagger_j</span>, <span class="math inline">a^{\vphantom{\dagger}}_j</span> describing localized state <span class="math inline">\varphi_j(x)</span> at site <span class="math inline">j</span></p></li>
-<li><p><span class="math inline">\varphi_j(x)</span> not eigenstates: coupling between sites described by <strong>tight binding Hamiltonian</strong></p></li>
+<li>For noninteracting Hamiltonian</li>
 </ul>
 <p><span class="math display">
-H_t = -t \sum_{j} \left[a^\dagger_ja^{\vphantom{\dagger}}_{j+1}+a^\dagger_{j+1}a^{\vphantom{\dagger}}_j\right]
+H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\mathbf{r}_i)\right],
 </span></p>
 <ul>
-<li>Plays role of kinetic energy in our models (c.f. magnon in spin chain in <a href="../notes/spin-models.html">Lecture 4</a></li>
-</ul>
-</section>
-<section id="bose-hubbard-model" class="slide level2 center">
-<h2>Bose Hubbard Model</h2>
-<ul>
-<li><p>Simplest interacting lattice model <span class="math display">
-H = H_t + H_U = -t \sum_{\langle j\,k\rangle}  \left[a^\dagger_ja^{\vphantom{\dagger}}_{k}+a^\dagger_{k}a^{\vphantom{\dagger}}_j\right] + \frac{U}{2}\sum_j N_j(N_j-1)
-</span> <span class="math inline">N_j=a^\dagger_ja^{\vphantom{\dagger}}_j</span>, sum over all nearest neighbours</p></li>
-<li><p>On-site interaction <span class="math inline">N_j(N_j-1)=a^\dagger_ja^\dagger_ja^{\vphantom{\dagger}}_ja^{\vphantom{\dagger}}_j</span></p></li>
-<li><p>First introduced to describe electrons in solids; boson version widely used in ultracold atomic physics</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="the-mott-state">The Mott State</h3>
-<ul>
-<li><span class="math inline">U=0</span> limit easy (no interactions); what about <span class="math inline">U/t\to\infty</span>?</li>
-</ul>
-<p><span class="math display">
-E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1)
-</span></p>
-<ul>
-<li><p>Ground state: fill <span class="math inline">N_\text{sites}</span> sites as uniformly as possible</p></li>
-<li><p>Easy if filling <span class="math inline">\nu \equiv N_{\text{particles}}/N_\text{sites}</span> is integer</p></li>
+<li>Ground state is exactly <span class="math display">
+\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle.
+</span> with <span class="math inline">\varphi_0(\mathbf{r})</span> the ground state of single particle Hamiltonian</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Notation: <strong>ceiling</strong> <span class="math inline">\lceil \nu\rceil</span> is smallest integer bigger than <span class="math inline">\nu</span>, <strong>floor</strong> <span class="math inline">\lfloor \nu\rfloor</span> is largest integer smaller than <span class="math inline">\mu</span></p></li>
-<li><p>Number of sites with occupancy <span class="math inline">\lceil \nu\rceil</span> is <span class="math inline">N_\text{sites}\left(\nu - \lfloor \nu\rfloor\right)</span></p></li>
-<li><p>Ground state energy is piecewise linear in <span class="math inline">\nu</span> <span class="math display">
-\frac{E_0}{N_\text{sites}} = \left(\nu - \lfloor \nu\rfloor\right)e(\lceil \nu\rceil) + \left(\lceil \nu\rceil - \nu\right)e(\lfloor \nu\rfloor)
-</span> <span class="math inline">e(N) = \frac{U}{2}N(N-1)</span></p></li>
-<li><p>Chemical potential <span class="math inline">\mu = \frac{\partial E_0}{\partial N_\text{particles}}</span> is piecewise constant</p></li>
-</ul>
-<p><span class="math display">
-\mu = e(\lceil \nu\rceil) -e(\lfloor \nu\rfloor)=U\lfloor \nu\rfloor
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/steps.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-<ul>
-<li><p>Think about varying <span class="math inline">\mu</span>: values between <span class="math inline">UN</span> and <span class="math inline">U(N-1)</span> correspond to integer filling <span class="math inline">\nu=N</span></p></li>
-<li><p>States of integer filling are <strong>Mott states</strong>, after <a href="https://en.wikipedia.org/wiki/Nevill_Francis_Mott">Nevill Mott</a></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="effect-of-hopping-mott-states">Effect of hopping: Mott states</h3>
-<ul>
-<li><p>Do Mott states survive when <span class="math inline">t\neq 0</span>? Treat <span class="math inline">t</span> as perturbation</p></li>
-<li><p>Unperturbed eigenstates of have fixed occupation <span class="math inline">N_j</span> on site <span class="math inline">j</span></p></li>
-</ul>
-<p><span class="math display">
-\lvert{\mathbf{N}}\rangle = \bigotimes_j \lvert{N_j}\rangle_j
-</span></p>
-<ul>
-<li>Applying <span class="math inline">H_t</span> gives a superposition of states, each with one particle moved to an adjacent site.</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>How is a Mott state (all sites with the same occupation) affected by <span class="math inline">H_t</span> in first order perturbation theory?</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2 center">
-
-<h3 id="effect-of-hopping-away-from-mott-state">Effect of hopping: away from Mott state</h3>
-<ul>
-<li><p>Mott state of filling <span class="math inline">\nu=N</span> + 1 extra particle</p></li>
-<li><p>Place particle on one of <span class="math inline">N_\text{sites}</span> sites: degenerate ground state when <span class="math inline">t=0</span></p></li>
-<li><p><span class="math inline">H_t</span> mixes these states: <strong>degenerate perturbation theory</strong> (other states separated by energies of order <span class="math inline">U</span>)</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Ground state multiplet</li>
-</ul>
-<p><span class="math display">
-\lvert{i,+}\rangle\equiv \frac{a^\dagger_i}{\sqrt{N+1}}\bigotimes_{j} \lvert{N}\rangle_j
-</span></p>
-<ul>
-<li>Only states <span class="math inline">\lvert{i\pm 1,+}\rangle</span> are coupled by <span class="math inline">H_t</span>, with matrix elements</li>
-</ul>
-<p><span class="math display">
-\langle{j|H_t|k}\rvert = \lvert - \rangle t(N+1)
-</span></p>
-<ul>
-<li>Within degenerate multiplet, <span class="math inline">H_t</span> corresponds to tight binding model</li>
-</ul>
-<p><span class="math display">
-H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \left[\lvert{j,+}\rangle\langle{k,+}\rvert+\text{h.c.}\right]
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-H_t\rvert_{+} = -t(N+1) \sum_{\langle j\,k\rangle} \left[\lvert{j,+}\rangle\langle{k,+}\rvert+\text{h.c.}\right]
-</span></p>
-<ul>
-<li><p>Only many body effect is factor of <span class="math inline">N</span> due to Bose statistics</p></li>
-<li><p>Splitting of degenerate states given by dispersion (<span class="math inline">d</span> dimensions)</p></li>
-</ul>
-<p><span class="math display">
-\omega_+(\boldsymbol{\eta}) = -2t(N+1)\sum_{n=1}^d\cos\eta_n
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Alternatively <em>remove</em> a particle from Mott state</li>
-</ul>
-<p><span class="math display">
-\lvert{i,-}\rangle\equiv \frac{a^{\vphantom{\dagger}}_i}{\sqrt{N}}\bigotimes_{j} \lvert{N}\rangle_j
-</span></p>
-<ul>
-<li>Within these states, <span class="math inline">H_t</span> takes form</li>
-</ul>
-<p><span class="math display">
-H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-}\rvert+\text{h.c.}\right]
-</span></p>
-<p><span class="math display">
-\omega_-(\boldsymbol{\eta}) = -2tN\sum_{n=1}^d\cos\eta_n
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<h3 id="changes-to-phase-diagram">Changes to phase diagram</h3>
-<ul>
-<li>Introduce the grand canonical Hamiltonian</li>
-</ul>
-<p><span class="math display">
-\mathcal{H}_\mu = H - \mu N_\text{particles}
-</span></p>
-<ul>
-<li>At <span class="math inline">t=0</span> the energies of Mott states with filling <span class="math inline">\nu=N</span> are <span class="math display">
-\frac{\mathcal{E}^{(N)}_\mu}{N_\text{sites}} = \frac{U}{2}N(N-1)-\mu N
-</span> <span class="math inline">\mathcal{E}^{(N)}_\mu</span> and <span class="math inline">\mathcal{E}^{(N+1)}_\mu</span> degenerate when <span class="math inline">\mu=UN</span> for <span class="math inline">t=0</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Compare with ground state with one extra particle on top of <span class="math inline">N</span> Mott state</p></li>
-<li><p>Particle at bottom of tight binding band has energy <span class="math inline">-2td(N+1)</span></p></li>
-<li><p>Together with extra energy of interaction we have overall</p></li>
-</ul>
-<p><span class="math display">
-\mathcal{E}^{(N)}_\mu + UN - \mu -2dt(N+1)
-</span></p>
-<ul>
-<li>For <span class="math inline">t&gt;\frac{UN-\mu}{2d(N+1)}</span> state with an extra particle actually has a <em>lower</em> energy: Mott state not the ground state</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Energy of ground state with one ‘hole’ in <span class="math inline">N+1</span> Mott state is</li>
-</ul>
-<p><span class="math display">
-\mathcal{E}^{(N+1)}_\mu - UN + \mu -2dt(N+1)
-</span></p>
-<ul>
-<li>Introducing a hole is thus favoured for <span class="math inline">t&gt;\frac{\mu-UN}{2d(N+1)}</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/MottPerturb.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Our analysis applies only at small <span class="math inline">t/U</span></p></li>
-<li><p>If <span class="math inline">t/U\to\infty</span> we have a <strong>Bose condensate</strong>: all the particles can sit in the <span class="math inline">\eta=0</span> Bloch state</p></li>
-<li><p>When interactions are finite but small, we will see in the next lecture that the result is a <strong>superfluid</strong>.</p></li>
-<li><p>The boundaries that we have have found can be connected (<a href="../problem-sets/problem-set-2.html#mean-field-for-bose--hubbard">Problem Set 2</a> for a variational approach)</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/BHPhase.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-<ul>
-<li>Note diminishing size of Mott lobes: consequence of enhanced hopping in the effective tight binding models</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/mott_state_cake.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
-<ul>
-<li>Mott wedding cake (Source: Cheng Chin, University of Chicago)</li>
-</ul>
-</section>
-<section id="fermi-hubbard-model" class="slide level2 center">
-<h2>Fermi Hubbard Model</h2>
-<ul>
-<li>Have to introduce <em>spin</em> to get something interesting (<strong>why?</strong>)</li>
-</ul>
-<p><span class="math display">
-H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,
-</span></p>
-<ul>
-<li><p>Application <strong>cuprates</strong>: high temperature superconductors</p></li>
-<li><p>2D model describes strong correlations in the CuO<span class="math inline">_2</span> layers</p></li>
-<li><p>Much harder to understand than Bose case…</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="utto-infty"><span class="math inline">U/t\to \infty</span></h3>
-<ul>
-<li><p>Three Mott staes to 0, 1, or 2 particles per site</p></li>
-<li><p>2 particles on site make a spin singlet <span class="math inline">\frac{1}{\sqrt{2}}(\lvert{\uparrow}\rangle\lvert{\downarrow}\rangle-\lvert{\downarrow}\rangle\lvert{\uparrow}\rangle)</span></p></li>
-<li><p>At <strong>half filling</strong> (1 particle / site) can have <span class="math inline">\lvert{\uparrow/\downarrow}\rangle</span>.</p></li>
-<li><p><span class="math inline">\nu=1</span> Mott state is <strong>massively degenerate</strong>, with a ground state multiplet consisting of <span class="math inline">2^{N_\text{sites}}</span> possible spin configurations</p></li>
-<li><p>What happens when <span class="math inline">U/t</span> large but finite?</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="two-sites-two-fermions">Two Sites, Two Fermions</h3>
-<ul>
-<li>6 states altogether in the Hilbert space</li>
+<li>Add interaction</li>
 </ul>
 <p><span class="math display">
 \begin{align*}
-a^\dagger_{1,\uparrow}a^\dagger_{1,\downarrow} \lvert{\text{VAC}}\rangle,\quad a^\dagger_{2,\uparrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\\
-a^\dagger_{1,s}a^\dagger_{2,s'} \lvert{\text{VAC}}\rangle,\quad s,s'=\uparrow,\downarrow.
+H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
+&amp;= \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1)
 \end{align*}
 </span></p>
 <ul>
-<li>Top two states have energy <span class="math inline">U</span> when <span class="math inline">t=0</span>; rest have energy 0.</li>
-</ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>[Try this before continuing!] How does the degeneracy of these states get lifted at finite <span class="math inline">t</span>? Try writing down the Hamiltonian restricted to these states.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2 center">
-
-<h3 id="effective-hamiltonian">Effective Hamiltonian</h3>
-<ul>
-<li><p>Find <strong>effective Hamiltonian</strong> <span class="math inline">H_\text{eff}</span> that acts only on the half filled Mott states to describe splitting when <span class="math inline">t/U\neq 0</span> is finite</p></li>
-<li><p>Solving the <span class="math inline">H_\text{eff}</span> comes later!</p></li>
-<li><p>Need <strong>second order</strong> degenerate perturbation theory because <span class="math inline">H_t</span> has zero matrix elements in degenerate subspace</p></li>
+<li><p>Ground state is more complicated, but can use BEC form with <span class="math inline">\varphi_0(\mathbf{r})</span> as a variational function</p></li>
+<li><p>Optimal <span class="math inline">\varphi_0(\mathbf{r})</span> obeys <strong>Gross–Pitaevskii equation</strong></p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
+<h3 id="grosspitaevskii-equation">Gross–Pitaevskii Equation</h3>
 <ul>
-<li>Hamiltonian has block structure, with off-diagonal block <span class="math inline">V\propto t</span></li>
+<li>Take short-ranged interactions for simplicity</li>
 </ul>
 <p><span class="math display">
-H = \begin{pmatrix}
-H_{\text{Mott}} &amp; V^{} \\
-V^\dagger &amp; H_\text{Not} \\
+U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
+</span></p>
+<ul>
+<li>For variational calculation we need</li>
+</ul>
+<p><span class="math display">
+\langle E \rangle = \frac{\braket{\Psi|H|\Psi}}{\braket{\Psi|\Psi}}
+</span></p>
+<ul>
+<li>Minimize <span class="math inline">\braket{\Psi|H|\Psi}</span> and fix norm. using Lagrange multiplier</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+\langle{\Psi|H|\Psi}\rvert = \lvert N \rangle \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
+\right]\\
++\frac{1}{2}N(N-1)U_0\int d\mathbf{r}|\varphi_0(\mathbf{r})|^4
+\end{align*}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Neglect difference between <span class="math inline">N</span> and <span class="math inline">N+1</span> <span class="math display">
+\begin{align*}
+\langle{\Psi|H|\Psi}\rvert = \lvert N \rangle \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
+\right]\\
++\frac{1}{2}N^2 U_0\int d\mathbf{r}|\varphi_0(\mathbf{r})|^4
+\end{align*}
+</span></p></li>
+<li><p>Extremize the functional</p></li>
+</ul>
+<p><span class="math display">
+\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle N \int d\mathbf{r}|\varphi_{0}(\mathbf{r})|^{2}.
+</span></p>
+<ul>
+<li>Calculus of variations yields</li>
+</ul>
+<p><span class="math display">
+    \left[-\frac{1}{2m}\nabla^2-\mu+V(\mathbf{r})+NU_0|\varphi_0(\mathbf{r})|^2\right]\varphi_0(\mathbf{r})=0
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Define <span class="math inline">\varphi(\mathbf{r})\equiv\sqrt{N}\varphi_{0}(\mathbf{r})</span></p></li>
+<li><p><span class="math inline">\varphi(\mathbf{r})</span> is <strong>condensate wavefunction</strong> or <strong>order parameter</strong>. Obeys <strong>Gross–Pitaevskii equation</strong></p></li>
+</ul>
+<p><span class="math display">
+\left[-\frac{1}{2m}\nabla^2-\mu+V(\mathbf{r})+U_0|\varphi(\mathbf{r})|^2\right]\varphi(\mathbf{r})=0.
+</span></p>
+<ul>
+<li><p>Fix Lagrange multiplier <span class="math inline">\mu</span> by <span class="math inline">\int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=N</span></p></li>
+<li><p><span class="math inline">\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle\int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=\braket{\Psi|H-\mu \mathsf{N}|\Psi}</span> was extremized under general variations, including change in <span class="math inline">N</span> <span class="math display">
+  \mu=\frac{\partial\braket{\Psi|H|\Psi}}{\partial N},
+</span> <span class="math inline">\mu</span> is identified with the chemical potential.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="healing-length">Healing length</h3>
+<ul>
+<li>1D, no potential</li>
+</ul>
+<p><span class="math display">
+\left[-\frac{1}{2m}\partial_x^2-\mu+U_0|\varphi|^2\right]\varphi(x)=0.
+</span></p>
+<ul>
+<li>Dimensionless form <span class="math inline">\varphi(\mathbf{r})=\sqrt{n}\phi(\mathbf{r}/\xi)</span> for <span class="math inline">\mu=U_0n</span></li>
+</ul>
+<p><span class="math display">
+-\frac{1}{2m \xi^2}\phi''+\mu (|\phi|^2-1)\phi(x)=0.
+</span></p>
+<ul>
+<li>If we set <span class="math inline">\xi\equiv \frac{1}{\sqrt{2m \mu}}=\frac{1}{\sqrt{2m n U_0}}</span> then</li>
+</ul>
+<p><span class="math display">
+-\phi''+(|\phi|^2-1)\phi(x)=0.
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><strong>Healing length</strong> <span class="math inline">\xi</span> is scale on which <span class="math inline">\varphi(\mathbf{r})</span> disturbed by localized perturbation of scale <span class="math inline">\ll \xi</span></li>
+</ul>
+<blockquote>
+<p>Near a wall</p>
+<p><span class="math display">
+\varphi(x)=\varphi_{\infty}\tanh \frac{x}{\sqrt{2}\xi}
+</span></p>
+<p>where <span class="math inline">x</span> is distance from wall, and <span class="math inline">\varphi_{\infty}=\sqrt{n}</span> is fixed by the density far away.</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<h3 id="condensate-in-a-can"><a href="https://physics.aps.org/articles/v6/s72">Condensate in a Can</a></h3>
+<p align="center">
+<img src="assets/can.png" alt="drawing" width="700" class="center">
+</p>
+</section>
+<section class="slide level2 center">
+
+<h3 id="some-observables">Some Observables</h3>
+<ul>
+<li>Density and current density</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+\rho(\mathbf{r})&amp;=|\varphi(\mathbf{r})|^2,\\
+\mathbf{j}(\mathbf{r})&amp;=-\frac{i}{2m}\left[\varphi^{*}(\mathbf{r})\left(\nabla\varphi(\mathbf{r})\right)-\left(\nabla\varphi^{*}(\mathbf{r})\right)\varphi(\mathbf{r})\right]
+\end{align*}
+</span></p>
+<ul>
+<li>Useful decomposition into magnitude and phase</li>
+</ul>
+<p><span class="math display">
+    \varphi(\mathbf{r})=\sqrt{\rho(\mathbf{r})}e^{i\chi(\mathbf{r})}.
+</span></p>
+<ul>
+<li>Using <span class="math inline">\mathbf{j}=\rho \mathbf{v}</span> we get <strong>superfluid velocity</strong></li>
+</ul>
+<p><span class="math display">
+    \mathbf{v}_{s}\equiv\frac{1}{m}\nabla\chi.
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<h3 id="example-vortex">Example: Vortex</h3>
+<ul>
+<li><p>Expect <span class="math inline">\mathbf{v}_{s}=\frac{1}{m}\nabla\chi</span> to be <em>irrotational</em> <span class="math display">
+\nabla\times \mathbf{v}_s = 0,
+</span></p></li>
+<li><p>Equivalently to have vanishing <em>circulation</em> around any closed loop</p></li>
+</ul>
+<p><span class="math display">
+\oint \mathbf{v}_s\cdot d\mathbf{l}=0
+</span></p>
+<ul>
+<li>Phase can <em>increase</em> by a multiple of <span class="math inline">2\pi</span> around a closed loop, so <span class="math display">
+\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z},
+</span> <strong>Onsager–Feynmann quantization condition</strong>.</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Localized configuration with finite circulation is a <strong>vortex</strong> in fluid dynamics</p></li>
+<li><p>In normal fluid there is no reason for the vorticity to be quantized <span class="math display">
+\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{h\ell}{m},\quad \ell\in\mathbb{Z},
+</span> shows that this is a truly <em>quantum</em> phenomenon.</p></li>
+<li><p>A non-zero winding of phase requires that <span class="math inline">\rho(\mathbf{r})</span> vanishes at a point (in 2D) or on a line (in 3D)</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Look for 2D solutions where phase winds <span class="math inline">\ell</span> times around origin</li>
+</ul>
+<p><span class="math display">
+\varphi(r,\theta)\xrightarrow{r\to\infty} \sqrt{n} e^{i\ell\theta}
+</span></p>
+<ul>
+<li>Paremeterize <span class="math inline">\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}</span> to give an equation in <span class="math inline">s\equiv r/\xi</span> (set <span class="math inline">\mu=U_0 n</span> as before).</li>
+</ul>
+<p><span class="math display">
+-f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
+</span></p>
+<blockquote>
+<p>Without finding the solution explicitly, show that <span class="math inline">f(s)\sim s^\ell</span> for small <span class="math inline">s</span>, and <span class="math inline">f(s\to\infty) \to 1</span>.</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Region of suppressed density size <span class="math inline">\xi</span>, is <strong>vortex core</strong></p></li>
+<li><p>In three dimensions, vortex core is a line</p></li>
+<li><p>Find energy of vortex by substituting solution back into energy</p></li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+\langle{\Psi|H|\Psi}\rvert = \lvert \int  \rangle d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi|^2+V(\mathbf{r})|\varphi(\mathbf{r})|^2
+\right]+\frac{1}{2}U_0\int d\mathbf{r}|\varphi(\mathbf{r})|^4.
+\end{align*}
+</span></p>
+<ul>
+<li>Excess energy (relative to uniform state of density <span class="math inline">n</span>)</li>
+</ul>
+<p><span class="math display">
+\Delta E = \int d\mathbf{r}\left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n^2}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\Delta E = \int d\mathbf{r}\left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n^2}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
+</span></p>
+<ul>
+<li><p>First integral is finite: due to density <span class="math inline">\neq</span> bulk value</p></li>
+<li><p>Second is KE contribution from winding of vortex</p></li>
+</ul>
+<p><span class="math display">
+\nabla \chi = \frac{\ell}{r}\hat{\mathbf{e}}_\theta,
+</span></p>
+<ul>
+<li>This contribution to the energy is <em>logarithmically divergent</em>.</li>
+</ul>
+<p><span class="math display">
+\Delta E = \text{const.} + \frac{\pi n \ell^2}{m}\log\left(\frac{L}{\xi}\right).
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Far-reaching analogy between superfluid velocity fields of vortices and magnetostatics of current-carrying wires,</li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Vortices</th>
+<th>Magnetostatics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vortex cores</td>
+<td>Wires</td>
+</tr>
+<tr class="even">
+<td>Superfluid velocity <span class="math inline">\mathbf{v}_s</span></td>
+<td>Magnetic field, <span class="math inline">\mathbf{B}</span></td>
+</tr>
+<tr class="odd">
+<td>Kinetic Energy</td>
+<td>Magnetostatic Energy</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Vortices with <span class="math inline">\lvert{\ell}\rvert&gt;1</span> generally unstable: break into multiple vortices of winding <span class="math inline">\ell=\pm 1</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Like vortices repel each other, and can form spectacular <strong>vortex lattices</strong>, akin to crystals.</li>
+</ul>
+<p align="center">
+<img src="assets/3dLattices.jpg" alt="drawing" width="500" class="center">
+</p>
+<ul>
+<li>Vortices are one manifestation of <strong>superfluidity</strong></li>
+</ul>
+</section>
+<section id="bogoliubov-theory" class="slide level2 center">
+<h2>Bogoliubov Theory</h2>
+<ul>
+<li><p>How can we improve Gross–Pitaevskii approximation?</p></li>
+<li><p>What about <strong>excited states</strong>?</p></li>
+<li><p>From now on… uniform condensate with no <span class="math inline">V(\mathbf{r})=0</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+H =\sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+ \overbrace{\frac{U_0}{2V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}}^{\equiv H_\text{int}},
+</span> - <span class="math inline">\epsilon(\mathbf{k})=\mathbf{k}^2/2m</span>, and <span class="math inline">V</span> the volume</p>
+<ul>
+<li><p>GP approximation to ground state is <span class="math inline">\lvert{\Psi_\text{GP}}\rangle = \frac{1}{\sqrt{N!}}\left(a^\dagger_0\right)^N\lvert{\text{VAC}}\rangle</span></p></li>
+<li><p>Act with <span class="math inline">H_\text{int}</span>: only terms that contribute have <span class="math inline">\mathbf{k}_3=\mathbf{k}_4=0</span></p></li>
+</ul>
+<p><span class="math display">
+H_\text{int}\lvert{\Psi_\text{GP}}\rangle =  \frac{U_0}{2V}\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0}\lvert{\Psi_\text{GP}}\rangle.
+</span></p>
+<ul>
+<li>For a better wavefunction, need to add some <span class="math inline">(\mathbf{k}, -\mathbf{k})</span> pairs!</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="bogoliubov-hamiltonian">Bogoliubov Hamiltonian</h3>
+<ul>
+<li><p>When interactions <em>weak</em>, expect true ground state close to <span class="math inline">\lvert{\Psi_\text{GP}}\rangle</span></p></li>
+<li><p>Most particles in zero momentum state, with few <span class="math inline">(\mathbf{k}, -\mathbf{k})</span> pairs</p></li>
+<li><p>Remember that</p></li>
+</ul>
+<p><span class="math display">
+a^{\vphantom{\dagger}}\lvert{N}\rangle = \sqrt{N}\lvert{N-1}\rangle,\quad a^\dagger\lvert{N}\rangle = \sqrt{N+1}\lvert{N+1}\rangle,
+</span></p>
+<ul>
+<li>A term in <span class="math inline">H_\text{int}</span> with <span class="math inline">a^{\vphantom{\dagger}}_0</span> or <span class="math inline">a^\dagger_0</span> is more important than one without. Arrange Hamiltonian by occurrences of <span class="math inline">a^{\vphantom{\dagger}}_0</span>, <span class="math inline">a^\dagger_0</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{align*}
+H_\text{int} = \frac{U_0}{2V}a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 + \frac{U_0}{2V}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+4a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]\\\nonumber
++\frac{U_0}{V}\sum_{\substack{\mathbf{k}_1=\mathbf{k}_2+\mathbf{k}_3\\ \mathbf{k}_{1,2,3}\neq 0}}\left[a^\dagger_{\mathbf{k}_3}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_1}a^{\vphantom{\dagger}}_0 +a^\dagger_0a^\dagger_{\mathbf{k}_1}a^{\vphantom{\dagger}}_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}\right]+\frac{U_0}{2V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4\\ \mathbf{k}_{1,2,3,4}\neq 0}} a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}
+\end{align*}
+</span></p>
+<ul>
+<li><p>Gross–Pitaevskii approximation corresponds to the first term</p></li>
+<li><p>We now keep second term, and neglect third and fourth</p></li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 \nonumber\\ &amp;\quad+\frac{U_0}{2V}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+4a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{align*}
+H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 \nonumber\\ &amp;\quad+\frac{U_0}{2V}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+4a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span></p>
+<ul>
+<li>Rewrite second term using <span class="math inline">a^\dagger_0a^{\vphantom{\dagger}}_0 = N - N'</span>, with <span class="math inline">N'\equiv \sum_{\mathbf{k}\neq 0} N_\mathbf{k}</span></li>
+<li>Then <span class="math inline">a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 =  N(N-1) - 2N'N_0+O(N_0^0   )</span></li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1)
++\sum_{\mathbf{k}\neq 0}\left[\epsilon(\mathbf{k})-\epsilon(0)\right]a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\\
+&amp;+\frac{U_0}{2V}\sum_{\mathbf{k}\neq 0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{align*}
+H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1)
++\sum_{\mathbf{k}\neq 0}\left[\epsilon(\mathbf{k})-\epsilon(0)\right]a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\\
+&amp;+\frac{U_0}{2V}\sum_{\mathbf{k}\neq 0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span></p>
+<blockquote>
+<p>Weird trick alert! <strong>Replace</strong> <span class="math inline">a^\dagger_0</span>, <span class="math inline">a^{\vphantom{\dagger}}_0</span> with <span class="math inline">\sqrt{N}</span>, giving quadratic Hamiltonian (that we can solve)</p>
+</blockquote>
+<ul>
+<li>Resulting Hamiltonian no longer conserves particle number</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Let’s see why this is a good approximation.</p></li>
+<li><p>Consider action of Hamiltonian on state of form <span class="math inline">\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0</span></p></li>
+</ul>
+<p><span class="math display">
+a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_0\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0 = \left(a^\dagger_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes a^{\vphantom{\dagger}}_0\lvert{N_0}\rangle_0 = \left(a^\dagger_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes \sqrt{N_0}\lvert{N_0-1}\rangle_0
+</span> <span class="math display">
+a^{\vphantom{\dagger}}_\mathbf{k}a^\dagger_0\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0 = \left(a^{\vphantom{\dagger}}_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes a^\dagger_0\lvert{N_0}\rangle_0 = \left(a^{\vphantom{\dagger}}_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes \sqrt{N_0+1}\lvert{N_0+1}\rangle_0
+</span></p>
+<ul>
+<li><p>Ignore the difference between <span class="math inline">N_0</span> and <span class="math inline">N_0+1</span></p></li>
+<li><p>If <span class="math inline">N_0</span> doesn’t fluctuate much <strong>matrix elements</strong> of <span class="math inline">H_\text{pair}</span> are approximately unchanged when replace operator with numbers</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Result is <strong>Bogoliubov Hamiltonian</strong> <span class="math display">
+\begin{align*}
+H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span> <span class="math inline">n_0 = N_0/V</span> is density of particles in zero momentum state</p></li>
+<li><p>Hamiltonian diagonalized by <strong>Bogoliubov transformation</strong></p></li>
+</ul>
+</section>
+<section id="bogoliubov-transformation" class="slide level2 center">
+<h2>Bogoliubov transformation</h2>
+<ul>
+<li>Suppose we have an operator</li>
+</ul>
+<p><span class="math display">
+h = \epsilon\left[a^\dagger_1a^{\vphantom{\dagger}}_1+a^\dagger_2a^{\vphantom{\dagger}}_2\right] + \delta\left[a^\dagger_1a^\dagger_2+a^{\vphantom{\dagger}}_1a^{\vphantom{\dagger}}_2\right]
+</span></p>
+<ul>
+<li>Want to express <span class="math inline">h</span> in terms of some new bosons <span class="math inline">b^{\vphantom{\dagger}}_{1,2}</span> as <span class="math display">
+h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dagger}}_2\right] +\text{const.}
+</span> (because then the spectrum is obvious).</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+h = \begin{pmatrix}
+a^\dagger_1 &amp; a^{\vphantom{\dagger}}_2
+\end{pmatrix}
+\begin{pmatrix}
+\epsilon &amp; \delta \\\\
+\delta &amp; \epsilon
+\end{pmatrix}
+\begin{pmatrix}
+a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
+\end{pmatrix}-\epsilon
+</span></p>
+<ul>
+<li>Try to express new bosons linearly in terms of old <span class="math display">
+\begin{pmatrix}
+b^{\vphantom{\dagger}}_1 \\\\ b^\dagger_2
+\end{pmatrix}=
+\Lambda
+\begin{pmatrix}
+a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
+\end{pmatrix}
+</span> <span class="math inline">\Lambda</span> is some <span class="math inline">2\times 2</span> matrix. What conditions should it satisfy?</li>
+</ul>
+<blockquote>
+<p>If <span class="math inline">b^{\vphantom{\dagger}}_{1,2}</span> satisfy usual commutation relations then <span class="math display">
+\Lambda^\dagger \sigma_3 \Lambda = \sigma_3
+</span></p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Following parameterization is sufficient for our <span class="math inline">h</span></li>
+</ul>
+<p><span class="math display">
+\Lambda=
+\begin{pmatrix}
+\cosh\kappa &amp; \sinh\kappa \\\\
+\sinh\kappa &amp; \cosh\kappa
 \end{pmatrix}
 </span></p>
 <ul>
-<li><strong>Notation</strong>: <span class="math inline">P_\text{Mott}</span> is projection operator on to the <span class="math inline">2^{N_\text{sites}}</span> Mott states <span class="math display">
-\begin{align*}
-H_\text{Mott}= P_\text{Mott} H P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
-V^{} = P_\text{Mott} H P_\text{Not},\qquad V^\dagger = P_\text{Not} H P_\text{Mott}.
-\end{align*}
-</span> <span class="math inline">P_\text{Not}\equiv 1-P_\text{Mott}</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>For Hubbard model <span class="math display">
-\begin{align*}
-H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H_U P_\text{Not}\\
-V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
-\end{align*}
-</span> <span class="math inline">H_{\text{Mott}}=0</span> (<span class="math inline">\nu=1</span> states have no interaction energy)</p></li>
-<li><p>Write eigenvalue equation in block form</p></li>
-</ul>
-<p><span class="math display">
-\begin{pmatrix}
-0 &amp; V^{} \\
-V^\dagger &amp; H_\text{Not} \\
-\end{pmatrix}
-\begin{pmatrix}
-\lvert{\Psi}\rangle\\
-\lvert{\Phi}\rangle
-\end{pmatrix} = E
-\begin{pmatrix}
-\lvert{\Psi}\rangle\\
-\lvert{\Phi}\rangle
-\end{pmatrix}.
-</span></p>
-<ul>
-<li>Eliminate <span class="math inline">\lvert{\Phi}\rangle</span></li>
-</ul>
-<p><span class="math display">
--V^{}\left(H_\text{Not}-E\right)^{-1}V^\dagger\lvert{\Psi}\rangle = E\lvert{\Psi}\rangle.
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
--V^{}\left(H_\text{Not}-E\right)^{-1}V^\dagger\lvert{\Psi}\rangle = E\lvert{\Psi}\rangle.
-</span></p>
-<ul>
-<li><p>Not an eigenvalue equation because of <span class="math inline">E</span> on LHS</p></li>
-<li><p><strong>But</strong> if <span class="math inline">E\ll</span> eigenvalues of <span class="math inline">H_\text{Not}=O(U)</span></p></li>
-</ul>
-<p><span class="math display">
-H_\text{eff} =-V^{} H^{-1}_\text{Not}V^\dagger.
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<h3 id="form-of-h_texteff">Form of <span class="math inline">H_\text{eff}</span></h3>
-<p><span class="math display">
-H_\text{eff} =-V^{} H^{-1}_\text{Not}V^\dagger.
-</span></p>
+<li><p>Notice differences from rotation matrix:</p>
 <ol type="1">
-<li><p><span class="math inline">V^\dagger</span> creates states with adjacent hole and <strong>doublon</strong> (doubly occupied site)</p></li>
-<li><p><span class="math inline">H_\text{Not}</span> acting on these states is just <span class="math inline">U</span></p></li>
-<li><p><span class="math inline">V</span> has to remove the hole and doublon</p></li>
-</ol>
+<li>Hyperbolic instead of trignometric functions</li>
+<li>No sign difference between the off digaonal elements.</li>
+</ol></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
 <p><span class="math display">
-H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\langle j\,k\rangle s,s'} \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s} a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{j,s'}+j\leftrightarrow k\right]
+h = \begin{pmatrix}
+a^\dagger_1 &amp; a^{\vphantom{\dagger}}_2
+\end{pmatrix}
+\begin{pmatrix}
+\epsilon &amp; \delta \\\\
+\delta &amp; \epsilon
+\end{pmatrix}
+\begin{pmatrix}
+a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
+\end{pmatrix}-\epsilon
+</span></p>
+<p><span class="math display">
+\begin{pmatrix}
+b^{\vphantom{\dagger}}_1 \\\\ b^\dagger_2
+\end{pmatrix}=
+\begin{pmatrix}
+\cosh\kappa &amp; \sinh\kappa \\\\
+\sinh\kappa &amp; \cosh\kappa
+\end{pmatrix}
+\begin{pmatrix}
+a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
+\end{pmatrix}
+</span></p>
+<blockquote>
+<p><span class="math display">
+\begin{align*}
+\tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
+h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dagger}}_2\right] + \Omega - \epsilon.
+\end{align*}
+</span> What happens if <span class="math inline">\delta&gt;\epsilon</span>?</p>
+<p>What changes if <span class="math inline">\begin{pmatrix}
+\epsilon &amp; \delta \\\\
+\delta &amp; \epsilon
+\end{pmatrix}\longrightarrow \begin{pmatrix}
+\epsilon_1 &amp; \delta \\\\
+\delta &amp; \epsilon_2
+\end{pmatrix}</span>?</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Apply to Bogoliubov Hamiltonian <span class="math display">
+\begin{align*}
+H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
+\end{align*}
+</span></li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_\mathbf{p}\cosh\kappa_\mathbf{p}+a^\dagger_{-\mathbf{p}}\sinh\kappa_\mathbf{p}\nonumber\\
+\tanh2\kappa_\mathbf{p}=\frac{n_0 U_0}{\epsilon(\mathbf{p})+n_0 U_0}
+\end{align*}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <p><span class="math display">
-H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\langle j\,k\rangle s,s'} \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s} a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{j,s'}+j\leftrightarrow k\right]
+H=E_0+\sum_{\mathbf{p}\neq 0}\omega(\mathbf{p})b^\dagger_\mathbf{p}
+b^{\vphantom{\dagger}}_\mathbf{p}.
 </span></p>
 <ul>
-<li>Re-write by first reordering the operators (anticommutation!)</li>
+<li><span class="math inline">\omega(\mathbf{p})</span> is the Bogoliubov dispersion relation</li>
 </ul>
 <p><span class="math display">
-a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s} a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{j,s'} = -a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{k,s} + \delta_{s^{}s'}a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}
+\omega(\mathbf{p}) = \sqrt{\epsilon(\mathbf{p})\left(\epsilon(\mathbf{p})+2U_0n_0\right)}
 </span></p>
 <ul>
-<li>Then use identity</li>
+<li>Ground state energy is</li>
 </ul>
 <p><span class="math display">
-\delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a d}\cdot \boldsymbol{\sigma}_{c b} + \delta_{ad}\delta_{cb}\right]
+E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0\right]
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0\right]
+</span></p>
+<ul>
+<li>Annoyingly, this integral is divergent at high momenta because</li>
+</ul>
+<p><span class="math display">
+\omega(\mathbf{p})\underset{|\mathbf{p}| \to \infty}{\longrightarrow} \epsilon(\mathbf{p}) + n_0 U_0 -\frac{(n_0 U_0)^2}{2\epsilon(\mathbf{p})}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>In <span class="math inline">d</span> dimensions (<span class="math inline">d=1</span>, chain; <span class="math inline">d=2</span> square lattice; <span class="math inline">d=3</span> cubic lattice) <span class="math display">
-H_\text{eff} = -\frac{dN_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
-</span> with <span class="math inline">J=\frac{2t^2}{U}</span> and</li>
+<li><p>We can cure the problem by writing <span class="math display">
+\begin{align*}
+E_0&amp;=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\mathbf{p}\frac{U_0}{2\epsilon(\mathbf{p})}\right]}^{\text{1st and 2nd order PT}}\\
+&amp;+\overbrace{\sum_{\mathbf{p}\neq 0}\frac{1}
+{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0+ \frac{(n_0U_0)^2}{2\epsilon(\mathbf{p})}\right]}^{\text{finite}}
+\end{align*}
+</span></p></li>
+<li><p>Term added and subtracted is contribution to the ground state energy in second order perturbation theory</p></li>
+<li><p>See <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot; data-raw=&quot;&quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot; >}}&quot;}">Appendix</a> and <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot; data-raw=&quot;&quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot; >}}&quot;}">Problem Set 2</a> for further discussion</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="the-ground-state">The Ground State</h3>
+<ul>
+<li>So far, ground state defined by condition that it is a vacuum of Bogoliubov excitations</li>
 </ul>
 <p><span class="math display">
-\mathbf{s}_j=\frac{1}{2}\sum_{s,s'}a^\dagger_{j,s}\boldsymbol{\sigma}_{s^{}s'}a^{\vphantom{\dagger}}_{j,s'}.
+b^{\vphantom{\dagger}}_\mathbf{k}\lvert{0}\rangle=\left(\cosh\kappa_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\sinh\kappa_\mathbf{k}a^\dagger_{-\mathbf{k}}\right)\lvert{0}\rangle=0.
 </span></p>
 <ul>
-<li><span class="math inline">H_\text{eff}</span> is spin-1/2 antiferromagnetic Heisenberg model!</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="doping">Doping</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/Cuphasediag.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-<ul>
-<li><p>At half filling, cuprates are antiferromangetic Mott insulators</p></li>
-<li><p>Superconductivity emerges when materials <strong>doped</strong>, introducing electrons or holes into CuO<span class="math inline">_2</span> planes</p></li>
-<li><p>Superconductivity appears where antiferromagnetism dies. Why?</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="t-j-model">t-J model</h3>
-<ul>
-<li>Effective Hamiltonian that describes doped Mott insulator</li>
+<li>A state (unnormalized) that satisfies this condition is</li>
 </ul>
 <p><span class="math display">
-H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + J\sum_{&lt;j\,k&gt;}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right]
+\lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\mathbf{k}a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
+</span></p>
+<blockquote>
+<p>Show this. If you’ve seen coherent states before, remember that the state <span class="math inline">e^{\alpha a^\dagger}\lvert{\text{VAC}}\rangle</span> is an eigenstate of <span class="math inline">a^{\vphantom{\dagger}}</span> with eigenvalue <span class="math inline">\alpha</span>.</p>
+</blockquote>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Recall that Fourier components of density operator are</li>
+</ul>
+<p><span class="math display">
+\rho_\mathbf{q}= \sum_\mathbf{k}a^\dagger_{\mathbf{k}-\mathbf{q}}a^{\vphantom{\dagger}}_\mathbf{k}
 </span></p>
 <ul>
-<li><p>Hopping term allows holes or doubly occupied sites to move</p></li>
-<li><p>Heisenberg exchange term only acts between sites with one particle. <span class="math inline">\mathbf{s}_j</span> vanish on empty or doubly occupied sites</p></li>
+<li>Most important terms: <span class="math inline">a^\dagger_{\mathbf{k}-\mathbf{q}}</span> or <span class="math inline">a^{\vphantom{\dagger}}_\mathbf{k}</span> acts on the condensate</li>
+</ul>
+<p><span class="math display">
+\rho_\mathbf{q}\sim \sqrt{N}\left(a^\dagger_{-\mathbf{q}} + a^{\vphantom{\dagger}}_{\mathbf{q}}\right) = \sqrt{N}e^{-\kappa_\mathbf{q}} \left(b^\dagger_{-\mathbf{q}} + b^{\vphantom{\dagger}}_{\mathbf{q}}\right)
+</span></p>
+<p><span class="math display">
+e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Density fluctuations in ground state <span class="math display">
+\langle{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0}\rvert = \lvert N \rangle\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}\xrightarrow{\mathbf{q}\to 0} \frac{N\lvert{\mathbf{q}}\rvert}{2mc}.
+</span> (Used low momentum form of Bogoliubov dispersion) <span class="math display">
+\omega(\mathbf{q})\xrightarrow{\mathbf{q}\to 0} c\lvert{\mathbf{q}}\rvert
+</span> where <span class="math inline">c = \sqrt{\frac{n_0U_0}{m}}</span> is the speed of sound)</p></li>
+<li><p>c.f Gross–Pitaevskii ground state (Poissonian fluctuations) <span class="math display">
+\langle{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0}\rvert = \lvert N \rangle
+</span></p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/quanta-high-tc.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
-</div>
+<h3 id="quantum-depletion">Quantum Depletion</h3>
+<ul>
+<li><p>Finite fraction of particles have <span class="math inline">\mathbf{p}\neq 0</span>. Let’s find <span class="math inline">\langle N_\mathbf{p}\rangle</span></p></li>
+<li><p><span class="math inline">N_\mathbf{p}=a^\dagger_{\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}}</span> in terms of Bogoliubov quasiparticles</p></li>
+</ul>
+<p><span class="math display">
+    a^\dagger_{\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}}=(b^\dagger_\mathbf{p}\cosh\kappa_{\mathbf{p}}-b^{\vphantom{\dagger}}_{-\mathbf{p}}\sinh\kappa_{\mathbf{p}})(b^{\vphantom{\dagger}}_\mathbf{p}\cosh\kappa_{\mathbf{p}}-b^\dagger_{-\mathbf{p}}\sinh\kappa_{\mathbf{p}})
+</span></p>
+<ul>
+<li>Then evaluate expectation</li>
+</ul>
+<p><span class="math display">
+\langle N_\mathbf{p}\rangle=\langle a^\dagger_{\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}}\rangle = \sinh^2\kappa_{p}\xrightarrow{ \lvert{\mathbf{p}}\rvert\ll \xi^{-1}}\frac{mc_s}{2\lvert{\mathbf{p}}\rvert}
+</span></p>
+<ul>
+<li>Radial density distribution <span class="math inline">4\pi p^2 N_\mathbf{p}</span> peaked around <span class="math inline">\xi^{-1}</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Fraction of atoms <em>not</em> in the condensate <span class="math display">
+\frac{1}{N}\sum_{\mathbf{p}\neq 0} \langle N_\mathbf{p}\rangle=\frac{8}{3\sqrt{\pi}}\sqrt{n a^3},
+</span> Born approximation for scattering length <span class="math inline">a=\frac{mU_0}{4\pi}</span></p></li>
+<li><p>Typical experimental conditions in experiments on ultracold atoms: depletion does not much exceed <span class="math inline">0.01</span>, which justifies GP approximation</p></li>
+<li><p>Liquid He<span class="math inline">^{4}</span> is an interacting Bose condensate, but depletion is much larger (<em>condensate fraction</em> <span class="math inline">\sim 10\%</span>). Bogoliubov not accurate here</p></li>
+<li><p>Applying a lattice can lead to total depletion and a <strong>quantum phase transition</strong> out of superfluid state</p></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
