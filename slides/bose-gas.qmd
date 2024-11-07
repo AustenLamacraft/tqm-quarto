@@ -73,11 +73,7 @@ $$
 
 ### Gross--Pitaevskii Equation
 
-- Take short-ranged interactions for simplicity
-
-$$
-U(\br-\br') = U_0\delta(\br-\br')
-$$
+- Take short-ranged interactions for simplicity $U(\br-\br') = U_0\delta(\br-\br')$
 
 - For variational calculation we need
 
@@ -163,21 +159,23 @@ $$
 
 - __Healing length__ $\xi$ is scale on which $\varphi(\br)$ disturbed by localized perturbation of scale $\ll \xi$
 
-> Near a wall
->
-> $$
->  \varphi(x)=\varphi_{\infty}\tanh \frac{x}{\sqrt{2}\xi}
-> $$
->
-> where $x$ is distance from wall, and $\varphi_{\infty}=\sqrt{n}$ is fixed by the density far away.
+::: {.callout-tip}
+## Check
+
+Near a wall
+$$
+\varphi(x)=\varphi_{\infty}\tanh \frac{x}{\sqrt{2}\xi}
+$$
+
+where $x$ is distance from wall, and $\varphi_{\infty}=\sqrt{n}$ is fixed by the density far away.
+
+:::
 
 ---
 
 ### [Condensate in a Can](https://physics.aps.org/articles/v6/s72)
 
-<p align="center">
-<img src="assets/can.png" alt="drawing" width="700" class="center"/>
-</p>
+![](../assets/can.png){width=70% fig-align="center"}
 
 ---
 
@@ -251,7 +249,12 @@ $$
 -f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
 $$
 
-> Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$.
+::: {.callout-tip}
+## Check
+
+Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $s$, and $f(s\to\infty) \to 1$.
+
+:::
 
 ---
 
@@ -310,10 +313,7 @@ Kinetic Energy | Magnetostatic Energy
 
 - Like vortices repel each other, and can form spectacular __vortex lattices__, akin to crystals.
 
-
-<p align="center">
-<img src="assets/3dLattices.jpg" alt="drawing" width="500" class="center"/>
-</p>
+![](../assets/3dLattices.jpg){width=50% fig-align="center"}
 
 -  Vortices are one manifestation of __superfluidity__
 
@@ -410,8 +410,12 @@ H_\text{pair} = &N\epsilon(0)+\frac{U_0}{2V}N(N-1)
 \end{align*}
 $$
 
-> Weird trick alert!
-> __Replace__  $\adop_0$, $\aop_0$ with $\sqrt{N}$, giving quadratic Hamiltonian (that we can solve)
+::: {.callout-warning appearance="minimal"}
+
+Weird trick alert!
+__Replace__  $\adop_0$, $\aop_0$ with $\sqrt{N}$, giving quadratic Hamiltonian (that we can solve)
+
+:::
 
 - Resulting Hamiltonian no longer conserves particle number
 
@@ -487,10 +491,15 @@ $$
 $$
 $\Lambda$ is some $2\times 2$ matrix. What conditions should it satisfy?
 
-> If $\bop_{1,2}$ satisfy usual commutation relations then
-> $$
-> \Lambda^\dagger \sigma_3 \Lambda = \sigma_3
-> $$
+::: {.callout-tip}
+## Check
+
+If $\bop_{1,2}$ satisfy usual commutation relations then
+$$
+\Lambda^\dagger \sigma_3 \Lambda = \sigma_3
+$$
+
+:::
 
 ---
 
@@ -537,21 +546,26 @@ $$
 \end{pmatrix}
 $$
 
->$$
->\begin{align*}
-> \tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
-> h = \Omega\left[\bdop_1\bop_1+\bdop_2\bop_2\right] + \Omega - \epsilon.
->\end{align*}
->$$
-> What happens if $\delta>\epsilon$?
-> 
-> What changes if $\begin{pmatrix}
+::: {.callout-tip}
+## Check
+
+$$
+\begin{align*}
+\tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
+h = \Omega\left[\bdop_1\bop_1+\bdop_2\bop_2\right] + \Omega - \epsilon.
+\end{align*}
+$$
+What happens if $\delta>\epsilon$?
+ 
+What changes if $\begin{pmatrix}
 \epsilon & \delta \\\\
 \delta & \epsilon
 \end{pmatrix}\longrightarrow \begin{pmatrix}
 \epsilon_1 & \delta \\\\
 \delta & \epsilon_2
 \end{pmatrix}$?
+
+:::
 
 ---
 
@@ -614,7 +628,7 @@ $$
 
 - Term added and subtracted is contribution to the ground state energy in second order perturbation theory
 
-- See [Appendix]({{< ref "courses/tqm/bose-gas#regularizing-the-ground-state-energy" >}}) and [Problem Set 2]({{< ref "courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas" >}}) for further discussion
+- See [Appendix](../notes/bose-gas.qmd#regularizing-the-ground-state-energy) and [Problem Set 2](../problem-sets/problem-set-2.qmd#perturbation-theory-for-the-bose-gas) for further discussion
 
 ---
 
@@ -632,7 +646,12 @@ $$
 \ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\bk\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
 $$
 
-> Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{\text{VAC}}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
+::: {.callout-tip}
+## Check
+
+Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{\text{VAC}}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
+
+:::
 
 ---
 

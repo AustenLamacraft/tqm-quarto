@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../slides/many-body-wavefunctions.html" rel="next">
+<link href="../notes/bose-gas.html" rel="next">
 <link href="../notes/more-second-quantization.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -199,6 +199,12 @@ window.Quarto = {
  <span class="menu-text">Lattice Models</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -250,6 +256,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../slides/lattice-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
   </div>
 </li>
       </ul>
@@ -596,11 +608,11 @@ V^{} = P_\text{Mott} H P_\text{Not},\qquad V^\dagger = P_\text{Not} H P_\text{Mo
 <p>In the case of the Hubbard model, we have</p>
 <p><span class="math display">\[
 \begin{align}
-H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H_U P_\text{Not}\\
+H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
 V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
 \end{align}
 \]</span></p>
-<p>We write the eigenvalue equation in block form</p>
+<p>Note that both <span class="math inline">\(H_U\)</span> and <span class="math inline">\(H_t\)</span> contribute to <span class="math inline">\(H_\text{Not}\)</span> because <span class="math inline">\(H_t\)</span> can move particles and holes around in a non-Mott state. We write the eigenvalue equation in block form</p>
 <p><span class="math display">\[
 \begin{pmatrix}
 H_{\text{Mott}} &amp; V^{} \\
@@ -772,7 +784,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1107,8 +1119,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../slides/many-body-wavefunctions.html" class="pagination-link" aria-label="Many Body Wavefunctions">
-        <span class="nav-page-text">Many Body Wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/bose-gas.html" class="pagination-link" aria-label="Bose Gas">
+        <span class="nav-page-text">Bose Gas</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

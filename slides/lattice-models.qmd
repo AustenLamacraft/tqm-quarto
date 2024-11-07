@@ -287,7 +287,7 @@ $$
 ### $U/t\to \infty$
 
 
-- Three Mott staes to 0, 1, or 2 particles per site
+- Three Mott states to 0, 1, or 2 particles per site
 
 - 2 particles on site make a spin singlet $\frac{1}{\sqrt{2}}(\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow})$
 
@@ -356,7 +356,7 @@ $P_\text{Not}\equiv 1-P_\text{Mott}$
 - For Hubbard model
 $$
 \begin{align*}
-H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H_U P_\text{Not}\\
+H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
 V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
 \end{align*}
 $$

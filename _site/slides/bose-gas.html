@@ -414,13 +414,8 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 
 <h3 id="grosspitaevskii-equation">Gross–Pitaevskii Equation</h3>
 <ul>
-<li>Take short-ranged interactions for simplicity</li>
-</ul>
-<p><span class="math display">
-U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
-</span></p>
-<ul>
-<li>For variational calculation we need</li>
+<li><p>Take short-ranged interactions for simplicity <span class="math inline">U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')</span></p></li>
+<li><p>For variational calculation we need</p></li>
 </ul>
 <p><span class="math display">
 \langle E \rangle = \frac{\braket{\Psi|H|\Psi}}{\braket{\Psi|\Psi}}
@@ -501,20 +496,31 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <ul>
 <li><strong>Healing length</strong> <span class="math inline">\xi</span> is scale on which <span class="math inline">\varphi(\mathbf{r})</span> disturbed by localized perturbation of scale <span class="math inline">\ll \xi</span></li>
 </ul>
-<blockquote>
-<p>Near a wall</p>
-<p><span class="math display">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Near a wall <span class="math display">
 \varphi(x)=\varphi_{\infty}\tanh \frac{x}{\sqrt{2}\xi}
 </span></p>
 <p>where <span class="math inline">x</span> is distance from wall, and <span class="math inline">\varphi_{\infty}=\sqrt{n}</span> is fixed by the density far away.</p>
-</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
 <h3 id="condensate-in-a-can"><a href="https://physics.aps.org/articles/v6/s72">Condensate in a Can</a></h3>
-<p align="center">
-<img src="assets/can.png" alt="drawing" width="700" class="center">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/can.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -583,9 +589,19 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <p><span class="math display">
 -f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
 </span></p>
-<blockquote>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
 <p>Without finding the solution explicitly, show that <span class="math inline">f(s)\sim s^\ell</span> for small <span class="math inline">s</span>, and <span class="math inline">f(s\to\infty) \to 1</span>.</p>
-</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -662,9 +678,11 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <ul>
 <li>Like vortices repel each other, and can form spectacular <strong>vortex lattices</strong>, akin to crystals.</li>
 </ul>
-<p align="center">
-<img src="assets/3dLattices.jpg" alt="drawing" width="500" class="center">
-</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/3dLattices.jpg" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
 <ul>
 <li>Vortices are one manifestation of <strong>superfluidity</strong></li>
 </ul>
@@ -754,9 +772,13 @@ H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1)
 &amp;+\frac{U_0}{2V}\sum_{\mathbf{k}\neq 0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
 \end{align*}
 </span></p>
-<blockquote>
+<div class="callout callout-warning no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
 <p>Weird trick alert! <strong>Replace</strong> <span class="math inline">a^\dagger_0</span>, <span class="math inline">a^{\vphantom{\dagger}}_0</span> with <span class="math inline">\sqrt{N}</span>, giving quadratic Hamiltonian (that we can solve)</p>
-</blockquote>
+</div>
+</div>
+</div>
 <ul>
 <li>Resulting Hamiltonian no longer conserves particle number</li>
 </ul>
@@ -827,11 +849,21 @@ a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
 \end{pmatrix}
 </span> <span class="math inline">\Lambda</span> is some <span class="math inline">2\times 2</span> matrix. What conditions should it satisfy?</li>
 </ul>
-<blockquote>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
 <p>If <span class="math inline">b^{\vphantom{\dagger}}_{1,2}</span> satisfy usual commutation relations then <span class="math display">
 \Lambda^\dagger \sigma_3 \Lambda = \sigma_3
 </span></p>
-</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -879,7 +911,15 @@ b^{\vphantom{\dagger}}_1 \\\\ b^\dagger_2
 a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
 \end{pmatrix}
 </span></p>
-<blockquote>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
 <p><span class="math display">
 \begin{align*}
 \tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
@@ -893,7 +933,9 @@ h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dag
 \epsilon_1 &amp; \delta \\\\
 \delta &amp; \epsilon_2
 \end{pmatrix}</span>?</p>
-</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -953,7 +995,7 @@ E_0&amp;=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\mathbf{p}\frac{U_
 \end{align*}
 </span></p></li>
 <li><p>Term added and subtracted is contribution to the ground state energy in second order perturbation theory</p></li>
-<li><p>See <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot; data-raw=&quot;&quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;courses/tqm/bose-gas#regularizing-the-ground-state-energy&quot; >}}&quot;}">Appendix</a> and <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot; data-raw=&quot;&quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;courses/tqm/problem-sets/problem-set-2#perturbation-theory-for-the-bose-gas&quot; >}}&quot;}">Problem Set 2</a> for further discussion</p></li>
+<li><p>See <a href="../notes/bose-gas.html#regularizing-the-ground-state-energy">Appendix</a> and <a href="../problem-sets/problem-set-2.html#perturbation-theory-for-the-bose-gas">Problem Set 2</a> for further discussion</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -971,9 +1013,19 @@ b^{\vphantom{\dagger}}_\mathbf{k}\lvert{0}\rangle=\left(\cosh\kappa_\mathbf{k}a^
 <p><span class="math display">
 \lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\mathbf{k}a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
 </span></p>
-<blockquote>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
 <p>Show this. If you’ve seen coherent states before, remember that the state <span class="math inline">e^{\alpha a^\dagger}\lvert{\text{VAC}}\rangle</span> is an eigenstate of <span class="math inline">a^{\vphantom{\dagger}}</span> with eigenvalue <span class="math inline">\alpha</span>.</p>
-</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 

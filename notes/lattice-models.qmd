@@ -305,12 +305,12 @@ In the case of the Hubbard model, we have
 
 $$
 \begin{align}
-H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H_U P_\text{Not}\\
+H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
 V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
 \end{align}
 $$
 
-We write the eigenvalue equation in block form
+Note that both $H_U$ and $H_t$ contribute to $H_\text{Not}$ because $H_t$ can move particles and holes around in a non-Mott state. We write the eigenvalue equation in block form
 
 $$
 \begin{pmatrix}
