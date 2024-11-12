@@ -584,7 +584,23 @@ Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>[Try this before continuing!] How does the degeneracy of these states get lifted at finite <span class="math inline">\(t\)</span>? Try writing down the Hamiltonian restricted to these states.</p>
+<p>How does the degeneracy of these states get lifted at finite <span class="math inline">\(t\)</span>? Try writing down the Hamiltonian restricted to these states.</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -685,7 +701,7 @@ Check
 <p><span id="eq-filled-H-eff"><span class="math display">\[
 H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + J\sum_{&lt;j\,k&gt;}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right].
 \tag{9}\]</span></span></p>
-<p>The term involving <span class="math inline">\(N_j N_k\)</span> keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it’s just the “constant” term in <a href="#eq-filled-H-eff" class="quarto-xref">Equation&nbsp;9</a>. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators <span class="math inline">\(\mathbf{s}_j\)</span> vanish when they act on an empty or doubly occupied site.</p>
+<p>The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector <span class="math inline">\(\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})\)</span>. The term involving <span class="math inline">\(N_j N_k\)</span> keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it’s just the “constant” term in <a href="#eq-filled-H-eff" class="quarto-xref">Equation&nbsp;9</a>. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators <span class="math inline">\(\mathbf{s}_j\)</span> vanish when they act on an empty or doubly occupied site.</p>
 
 
 </section>

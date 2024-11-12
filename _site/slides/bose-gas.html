@@ -374,7 +374,7 @@
 <li><p>Put all particles in same single particle state!</p></li>
 </ul>
 <p><span class="math display">
-\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle.
+\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle
 </span></p>
 <ul>
 <li>State with macroscopic number of particles in a single particle state is a <strong>Bose condensate</strong></li>
@@ -383,14 +383,14 @@
 <section class="slide level2 center">
 
 <ul>
-<li>For noninteracting Hamiltonian</li>
+<li>For the non-interacting Hamiltonian</li>
 </ul>
 <p><span class="math display">
-H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\mathbf{r}_i)\right],
+H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\mathbf{r}_i)\right]
 </span></p>
 <ul>
 <li>Ground state is exactly <span class="math display">
-\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle.
+\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N) = \prod_{j=1}^N \varphi_0(\mathbf{r}_i)= \frac{1}{\sqrt{N!}}\left(a^\dagger(\varphi_0)\right)^N\lvert{\text{VAC}}\rangle,
 </span> with <span class="math inline">\varphi_0(\mathbf{r})</span> the ground state of single particle Hamiltonian</li>
 </ul>
 </section>
@@ -444,7 +444,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li><p>Extremize the functional</p></li>
 </ul>
 <p><span class="math display">
-\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle N \int d\mathbf{r}|\varphi_{0}(\mathbf{r})|^{2}.
+\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle N \int d\mathbf{r}|\varphi_{0}(\mathbf{r})|^{2}
 </span></p>
 <ul>
 <li>Calculus of variations yields</li>
@@ -460,7 +460,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li><p><span class="math inline">\varphi(\mathbf{r})</span> is <strong>condensate wavefunction</strong> or <strong>order parameter</strong>. Obeys <strong>Gross–Pitaevskii equation</strong></p></li>
 </ul>
 <p><span class="math display">
-\left[-\frac{1}{2m}\nabla^2-\mu+V(\mathbf{r})+U_0|\varphi(\mathbf{r})|^2\right]\varphi(\mathbf{r})=0.
+\left[-\frac{1}{2m}\nabla^2-\mu+V(\mathbf{r})+U_0|\varphi(\mathbf{r})|^2\right]\varphi(\mathbf{r})=0
 </span></p>
 <ul>
 <li><p>Fix Lagrange multiplier <span class="math inline">\mu</span> by <span class="math inline">\int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=N</span></p></li>
@@ -476,19 +476,19 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li>1D, no potential</li>
 </ul>
 <p><span class="math display">
-\left[-\frac{1}{2m}\partial_x^2-\mu+U_0|\varphi|^2\right]\varphi(x)=0.
+\left[-\frac{1}{2m}\partial_x^2-\mu+U_0|\varphi|^2\right]\varphi(x)=0
 </span></p>
 <ul>
 <li>Dimensionless form <span class="math inline">\varphi(\mathbf{r})=\sqrt{n}\phi(\mathbf{r}/\xi)</span> for <span class="math inline">\mu=U_0n</span></li>
 </ul>
 <p><span class="math display">
--\frac{1}{2m \xi^2}\phi''+\mu (|\phi|^2-1)\phi(x)=0.
+-\frac{1}{2m \xi^2}\phi''+\mu (|\phi|^2-1)\phi(x)=0
 </span></p>
 <ul>
 <li>If we set <span class="math inline">\xi\equiv \frac{1}{\sqrt{2m \mu}}=\frac{1}{\sqrt{2m n U_0}}</span> then</li>
 </ul>
 <p><span class="math display">
--\phi''+(|\phi|^2-1)\phi(x)=0.
+-\phi''+(|\phi|^2-1)\phi(x)=0
 </span></p>
 </section>
 <section class="slide level2 center">
@@ -538,13 +538,13 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li>Useful decomposition into magnitude and phase</li>
 </ul>
 <p><span class="math display">
-    \varphi(\mathbf{r})=\sqrt{\rho(\mathbf{r})}e^{i\chi(\mathbf{r})}.
+    \varphi(\mathbf{r})=\sqrt{\rho(\mathbf{r})}e^{i\chi(\mathbf{r})}
 </span></p>
 <ul>
 <li>Using <span class="math inline">\mathbf{j}=\rho \mathbf{v}</span> we get <strong>superfluid velocity</strong></li>
 </ul>
 <p><span class="math display">
-    \mathbf{v}_{s}\equiv\frac{1}{m}\nabla\chi.
+    \mathbf{v}_{s}\equiv\frac{1}{m}\nabla\chi
 </span></p>
 </section>
 <section class="slide level2 center">
@@ -561,8 +561,8 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 </span></p>
 <ul>
 <li>Phase can <em>increase</em> by a multiple of <span class="math inline">2\pi</span> around a closed loop, so <span class="math display">
-\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z},
-</span> <strong>Onsager–Feynmann quantization condition</strong>.</li>
+\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z}
+</span> This is the <strong>Onsager–Feynmann quantization condition</strong></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -613,7 +613,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <p><span class="math display">
 \begin{align*}
 \langle{\Psi|H|\Psi}\rvert = \lvert \int  \rangle d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi|^2+V(\mathbf{r})|\varphi(\mathbf{r})|^2
-\right]+\frac{1}{2}U_0\int d\mathbf{r}|\varphi(\mathbf{r})|^4.
+\right]+\frac{1}{2}U_0\int d\mathbf{r}|\varphi(\mathbf{r})|^4
 \end{align*}
 </span></p>
 <ul>
@@ -636,10 +636,10 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 \nabla \chi = \frac{\ell}{r}\hat{\mathbf{e}}_\theta,
 </span></p>
 <ul>
-<li>This contribution to the energy is <em>logarithmically divergent</em>.</li>
+<li>This contribution to the energy is <em>logarithmically divergent</em></li>
 </ul>
 <p><span class="math display">
-\Delta E = \text{const.} + \frac{\pi n \ell^2}{m}\log\left(\frac{L}{\xi}\right).
+\Delta E = \text{const.} + \frac{\pi n \ell^2}{m}\log\left(\frac{L}{\xi}\right)
 </span></p>
 </section>
 <section class="slide level2 center">
@@ -705,7 +705,7 @@ H =\sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}
 <li><p>Act with <span class="math inline">H_\text{int}</span>: only terms that contribute have <span class="math inline">\mathbf{k}_3=\mathbf{k}_4=0</span></p></li>
 </ul>
 <p><span class="math display">
-H_\text{int}\lvert{\Psi_\text{GP}}\rangle =  \frac{U_0}{2V}\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0}\lvert{\Psi_\text{GP}}\rangle.
+H_\text{int}\lvert{\Psi_\text{GP}}\rangle =  \frac{U_0}{2V}\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0}\lvert{\Psi_\text{GP}}\rangle
 </span></p>
 <ul>
 <li>For a better wavefunction, need to add some <span class="math inline">(\mathbf{k}, -\mathbf{k})</span> pairs!</li>

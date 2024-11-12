@@ -275,7 +275,13 @@ The top two states have energy $U$ when $t=0$; the bottom 4 have energy 0.
 ::: {.callout-tip}
 ## Check
 
-[Try this before continuing!] How does the degeneracy of these states get lifted at finite $t$? Try writing down the Hamiltonian restricted to these states.
+How does the degeneracy of these states get lifted at finite $t$? Try writing down the Hamiltonian restricted to these states.
+
+::: {.callout-tip collapse="true" appearance="minimal"}
+
+### Solution
+
+:::
 
 :::
 
@@ -393,5 +399,5 @@ $$
 H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + J\sum_{<j\,k>}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right].
 $$ {#eq-filled-H-eff}
 
-The term involving $N_j N_k$ keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it's just the "constant" term in @eq-filled-H-eff. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators $\mathbf{s}_j$ vanish when they act on an empty or doubly occupied site.
+The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector $\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})$. The term involving $N_j N_k$ keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it's just the "constant" term in @eq-filled-H-eff. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators $\mathbf{s}_j$ vanish when they act on an empty or doubly occupied site.
 

@@ -34,7 +34,7 @@ format:
 - Put all particles in same single particle state!
 
 $$
-\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}.
+\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}
 $$
 
 - State with macroscopic number of particles in a single particle state is a __Bose condensate__
@@ -42,15 +42,15 @@ $$
 ---
 
 
-- For noninteracting Hamiltonian
+- For the non-interacting Hamiltonian
 
 $$
-H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\br_i)\right],
+H = \sum\left[-\frac{\nabla_i^2}{2m} + V(\br_i)\right]
 $$
 
 - Ground state is exactly
 $$
-\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}.
+\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}},
 $$
 with $\varphi_0(\br)$ the ground state of single particle Hamiltonian
 
@@ -105,7 +105,7 @@ $$
 - Extremize the functional
 
 $$
-\braket{\Psi|H|\Psi} - \mu N \int d\br |\varphi_{0}(\br)|^{2}.
+\braket{\Psi|H|\Psi} - \mu N \int d\br |\varphi_{0}(\br)|^{2}
 $$
 
 - Calculus of variations yields
@@ -121,7 +121,7 @@ $$
 - $\varphi(\br)$ is __condensate wavefunction__ or __order parameter__. Obeys __Gross--Pitaevskii equation__
 
 $$
-\left[-\frac{1}{2m}\nabla^2-\mu+V(\br)+U_0|\varphi(\br)|^2\right]\varphi(\br)=0.
+\left[-\frac{1}{2m}\nabla^2-\mu+V(\br)+U_0|\varphi(\br)|^2\right]\varphi(\br)=0
 $$
 
 - Fix Lagrange multiplier $\mu$ by $\int d\br\abs{\varphi(\br)}^{2}=N$
@@ -139,20 +139,20 @@ $\mu$ is identified with the chemical potential.
 - 1D, no potential 
 
 $$
-\left[-\frac{1}{2m}\partial_x^2-\mu+U_0|\varphi|^2\right]\varphi(x)=0.
+\left[-\frac{1}{2m}\partial_x^2-\mu+U_0|\varphi|^2\right]\varphi(x)=0
 $$
 
 - Dimensionless form $\varphi(\br)=\sqrt{n}\phi(\br/\xi)$ for $\mu=U_0n$
 
 $$
--\frac{1}{2m \xi^2}\phi''+\mu (|\phi|^2-1)\phi(x)=0.
+-\frac{1}{2m \xi^2}\phi''+\mu (|\phi|^2-1)\phi(x)=0
 $$
 
 
 - If we set $\xi\equiv \frac{1}{\sqrt{2m \mu}}=\frac{1}{\sqrt{2m n U_0}}$ then
 
 $$
--\phi''+(|\phi|^2-1)\phi(x)=0.
+-\phi''+(|\phi|^2-1)\phi(x)=0
 $$
 
 ---
@@ -193,13 +193,13 @@ $$
 - Useful decomposition into magnitude and phase
 
 $$
-	\varphi(\br)=\sqrt{\rho(\br)}e^{i\chi(\br)}.
+	\varphi(\br)=\sqrt{\rho(\br)}e^{i\chi(\br)}
 $$
 
 - Using $\mathbf{j}=\rho \mathbf{v}$ we get __superfluid velocity__
 
 $$
-	\mathbf{v}_{s}\equiv\frac{1}{m}\nabla\chi.
+	\mathbf{v}_{s}\equiv\frac{1}{m}\nabla\chi
 $$
 
 ---
@@ -219,9 +219,9 @@ $$
 
 - Phase can _increase_ by a multiple of $2\pi$ around a closed loop, so
 $$
-\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z},
+\oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z}
 $$
-__Onsager--Feynmann quantization condition__. 
+This is the __Onsager--Feynmann quantization condition__
 
 ---
 
@@ -267,7 +267,7 @@ Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $
 $$
 \begin{align*}
 \braket{\Psi|H|\Psi}=\int d\br \left[\frac{1}{2m}|\nabla\varphi|^2+V(\br)|\varphi(\br)|^2
-\right]+\frac{1}{2}U_0\int d\br |\varphi(\br)|^4.
+\right]+\frac{1}{2}U_0\int d\br |\varphi(\br)|^4
 \end{align*}
 $$
 
@@ -291,10 +291,10 @@ $$
 \nabla \chi = \frac{\ell}{r}\hat{\mathbf{e}}_\theta,
 $$
 
-- This contribution to the energy is _logarithmically divergent_.
+- This contribution to the energy is _logarithmically divergent_
 
 $$
-\Delta E = \text{const.} + \frac{\pi n \ell^2}{m}\log\left(\frac{L}{\xi}\right).
+\Delta E = \text{const.} + \frac{\pi n \ell^2}{m}\log\left(\frac{L}{\xi}\right)
 $$
 
 ---
@@ -340,7 +340,7 @@ $$
 - Act with $H_\text{int}$: only terms that contribute have $\bk_3=\bk_4=0$
 
 $$
-H_\text{int}\ket{\Psi_\text{GP}} =  \frac{U_0}{2V}\sum_{\bk} \adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0}\ket{\Psi_\text{GP}}.
+H_\text{int}\ket{\Psi_\text{GP}} =  \frac{U_0}{2V}\sum_{\bk} \adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0}\ket{\Psi_\text{GP}}
 $$
 
 - For a better wavefunction, need to add some $(\bk, -\bk)$ pairs!
