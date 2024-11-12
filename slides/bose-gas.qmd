@@ -85,7 +85,7 @@ $$
 
 $$
 \begin{align*}
-\braket{\Psi|H|\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
+\Braket{\Psi|H|\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
 \right]\\
 +\frac{1}{2}N(N-1)U_0\int d\br |\varphi_0(\br)|^4
 \end{align*}
@@ -96,7 +96,7 @@ $$
 - Neglect difference between $N$ and $N+1$
 $$
 \begin{align*}
-\braket{\Psi|H|\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
+\Braket{\Psi|H|\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
 \right]\\
 +\frac{1}{2}N^2 U_0\int d\br |\varphi_0(\br)|^4
 \end{align*}
@@ -105,7 +105,7 @@ $$
 - Extremize the functional
 
 $$
-\braket{\Psi|H|\Psi} - \mu N \int d\br |\varphi_{0}(\br)|^{2}
+\Braket{\Psi|H|\Psi} - \mu N \int d\br |\varphi_{0}(\br)|^{2}
 $$
 
 - Calculus of variations yields
@@ -126,11 +126,11 @@ $$
 
 - Fix Lagrange multiplier $\mu$ by $\int d\br\abs{\varphi(\br)}^{2}=N$
 
-- $\braket{\Psi|H|\Psi}- \mu \int d\br \abs{\varphi(\br)}^{2}=\braket{\Psi|H-\mu \mathsf{N}|\Psi}$ was extremized under general variations, including change in $N$
+- $\Braket{\Psi|H|\Psi}- \mu \int d\br \abs{\varphi(\br)}^{2}=\Braket{\Psi|H-\mu \mathsf{N}|\Psi}$ was extremized under general variations, including change in $N$
 $$
-	\mu=\frac{\partial\braket{\Psi|H|\Psi}}{\partial N},
+	\mu=\frac{\partial\braket{\Psi|H|\Psi}}{\partial N}
 $$
-$\mu$ is identified with the chemical potential.
+Thus, $\mu$ is identified with the chemical potential
 
 ---
 
@@ -243,7 +243,7 @@ $$
 \varphi(r,\theta)\xrightarrow{r\to\infty} \sqrt{n} e^{i\ell\theta}
 $$
 
-- Paremeterize $\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}$ to give an equation in $s\equiv r/\xi$ (set $\mu=U_0 n$ as before).
+- Parameterize $\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}$ to give an equation in $s\equiv r/\xi$ (set $\mu=U_0 n$ as before).
 
 $$
 -f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
@@ -266,7 +266,7 @@ Without finding the solution explicitly, show that $f(s)\sim s^\ell$ for small $
 
 $$
 \begin{align*}
-\braket{\Psi|H|\Psi}=\int d\br \left[\frac{1}{2m}|\nabla\varphi|^2+V(\br)|\varphi(\br)|^2
+\Braket{\Psi|H|\Psi}=\int d\br \left[\frac{1}{2m}|\nabla\varphi|^2+V(\br)|\varphi(\br)|^2
 \right]+\frac{1}{2}U_0\int d\br |\varphi(\br)|^4
 \end{align*}
 $$
@@ -462,7 +462,7 @@ $$
 $$
 h = \Omega\left[\bdop_1\bop_1+\bdop_2\bop_2\right] +\text{const.}
 $$
-(because then the spectrum is obvious). 
+(because then the spectrum is obvious)
 
 ---
 
@@ -491,6 +491,19 @@ $$
 $$
 $\Lambda$ is some $2\times 2$ matrix. What conditions should it satisfy?
 
+
+---
+
+$$
+\begin{pmatrix}
+\bop_1 \\\\ \bdop_2
+\end{pmatrix}=
+\Lambda
+\begin{pmatrix}
+\aop_1 \\\\ \adop_2
+\end{pmatrix}
+$$
+
 ::: {.callout-tip}
 ## Check
 
@@ -502,6 +515,10 @@ $$
 :::
 
 ---
+
+$$
+\Lambda^\dagger \sigma_3 \Lambda = \sigma_3
+$$
 
 - Following parameterization is sufficient for our $h$
 
@@ -555,9 +572,7 @@ $$
 h = \Omega\left[\bdop_1\bop_1+\bdop_2\bop_2\right] + \Omega - \epsilon.
 \end{align*}
 $$
-What happens if $\delta>\epsilon$?
- 
-What changes if $\begin{pmatrix}
+What happens if $\delta>\epsilon$? What changes if $\begin{pmatrix}
 \epsilon & \delta \\\\
 \delta & \epsilon
 \end{pmatrix}\longrightarrow \begin{pmatrix}
@@ -675,7 +690,7 @@ $$
 
 - Density fluctuations in ground state
 $$
-\braket{0|\rho_{-\bq}\rho_{\bq}|0} = N\frac{\epsilon(\bq)}{\omega(\bq)}\xrightarrow{\bq\to 0} \frac{N\abs{\bq}}{2mc}.
+\Braket{0|\rho_{-\bq}\rho_{\bq}|0} = N\frac{\epsilon(\bq)}{\omega(\bq)}\xrightarrow{\bq\to 0} \frac{N\abs{\bq}}{2mc}.
 $$
 (Used low momentum form of Bogoliubov dispersion)
 $$
@@ -685,7 +700,7 @@ where $c = \sqrt{\frac{n_0U_0}{m}}$ is the speed of sound)
 
 - c.f Gross--Pitaevskii ground state (Poissonian fluctuations)
 $$
-\braket{0|\rho_{-\bq}\rho_{\bq}|0} = N
+\Braket{0|\rho_{-\bq}\rho_{\bq}|0} = N
 $$
 
 

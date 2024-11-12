@@ -769,7 +769,7 @@ H_\text{eff} = -\frac{V^{}V^\dagger}{U} = -\frac{t^2}{U} \sum_{\langle j\,k\rang
 <li>Re-write by first reordering the operators (anticommutation!)</li>
 </ul>
 <p><span class="math display">
-a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s} a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{j,s'} = -a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{k,s} + \delta_{s^{}s'}a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}
+a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s} a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{j,s'} = -a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}a^\dagger_{k,s'}a^{\vphantom{\dagger}}_{k,s} + \delta_{s^{}s'}a^\dagger_{j,s}a^{\vphantom{\dagger}}_{j,s'}\qquad j\neq k
 </span></p>
 <ul>
 <li>Then use identity</li>
@@ -816,6 +816,7 @@ H_\text{eff} = -\frac{dN_\text{sites}t^2}{2U}+J\sum_{\langle j\,k\rangle} \mathb
 H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + J\sum_{&lt;j\,k&gt;}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right]
 </span></p>
 <ul>
+<li><p>Together with constraint that there are no doubly occupied sites. Could be achieved by applying projector <span class="math inline">\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})</span></p></li>
 <li><p>Hopping term allows holes or doubly occupied sites to move</p></li>
 <li><p>Heisenberg exchange term only acts between sites with one particle. <span class="math inline">\mathbf{s}_j</span> vanish on empty or doubly occupied sites</p></li>
 </ul>

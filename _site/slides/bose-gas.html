@@ -425,7 +425,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 </ul>
 <p><span class="math display">
 \begin{align*}
-\langle{\Psi|H|\Psi}\rvert = \lvert N \rangle \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
+\Braket{\Psi|H|\Psi}=N \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
 \right]\\
 +\frac{1}{2}N(N-1)U_0\int d\mathbf{r}|\varphi_0(\mathbf{r})|^4
 \end{align*}
@@ -436,7 +436,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <ul>
 <li><p>Neglect difference between <span class="math inline">N</span> and <span class="math inline">N+1</span> <span class="math display">
 \begin{align*}
-\langle{\Psi|H|\Psi}\rvert = \lvert N \rangle \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
+\Braket{\Psi|H|\Psi}=N \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
 \right]\\
 +\frac{1}{2}N^2 U_0\int d\mathbf{r}|\varphi_0(\mathbf{r})|^4
 \end{align*}
@@ -444,7 +444,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li><p>Extremize the functional</p></li>
 </ul>
 <p><span class="math display">
-\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle N \int d\mathbf{r}|\varphi_{0}(\mathbf{r})|^{2}
+\Braket{\Psi|H|\Psi} - \mu N \int d\mathbf{r}|\varphi_{0}(\mathbf{r})|^{2}
 </span></p>
 <ul>
 <li>Calculus of variations yields</li>
@@ -464,9 +464,9 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 </span></p>
 <ul>
 <li><p>Fix Lagrange multiplier <span class="math inline">\mu</span> by <span class="math inline">\int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=N</span></p></li>
-<li><p><span class="math inline">\langle{\Psi|H|\Psi}\rvert - \lvert \mu  \rangle\int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=\braket{\Psi|H-\mu \mathsf{N}|\Psi}</span> was extremized under general variations, including change in <span class="math inline">N</span> <span class="math display">
-  \mu=\frac{\partial\braket{\Psi|H|\Psi}}{\partial N},
-</span> <span class="math inline">\mu</span> is identified with the chemical potential.</p></li>
+<li><p><span class="math inline">\Braket{\Psi|H|\Psi}- \mu \int d\mathbf{r}\lvert{\varphi(\mathbf{r})}\rvert^{2}=\Braket{\Psi|H-\mu \mathsf{N}|\Psi}</span> was extremized under general variations, including change in <span class="math inline">N</span> <span class="math display">
+  \mu=\frac{\partial\braket{\Psi|H|\Psi}}{\partial N}
+</span> Thus, <span class="math inline">\mu</span> is identified with the chemical potential</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -584,7 +584,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 \varphi(r,\theta)\xrightarrow{r\to\infty} \sqrt{n} e^{i\ell\theta}
 </span></p>
 <ul>
-<li>Paremeterize <span class="math inline">\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}</span> to give an equation in <span class="math inline">s\equiv r/\xi</span> (set <span class="math inline">\mu=U_0 n</span> as before).</li>
+<li>Parameterize <span class="math inline">\varphi(r,\theta) = \sqrt{n} f(r/\xi)e^{i\ell\theta}</span> to give an equation in <span class="math inline">s\equiv r/\xi</span> (set <span class="math inline">\mu=U_0 n</span> as before).</li>
 </ul>
 <p><span class="math display">
 -f'' -\frac{f'}{s} + \frac{\ell^2 f}{s^2} - f +f^3 =0.
@@ -612,7 +612,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 </ul>
 <p><span class="math display">
 \begin{align*}
-\langle{\Psi|H|\Psi}\rvert = \lvert \int  \rangle d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi|^2+V(\mathbf{r})|\varphi(\mathbf{r})|^2
+\Braket{\Psi|H|\Psi}=\int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi|^2+V(\mathbf{r})|\varphi(\mathbf{r})|^2
 \right]+\frac{1}{2}U_0\int d\mathbf{r}|\varphi(\mathbf{r})|^4
 \end{align*}
 </span></p>
@@ -821,7 +821,7 @@ h = \epsilon\left[a^\dagger_1a^{\vphantom{\dagger}}_1+a^\dagger_2a^{\vphantom{\d
 <ul>
 <li>Want to express <span class="math inline">h</span> in terms of some new bosons <span class="math inline">b^{\vphantom{\dagger}}_{1,2}</span> as <span class="math display">
 h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dagger}}_2\right] +\text{const.}
-</span> (because then the spectrum is obvious).</li>
+</span> (because then the spectrum is obvious)</li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -849,6 +849,18 @@ a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
 \end{pmatrix}
 </span> <span class="math inline">\Lambda</span> is some <span class="math inline">2\times 2</span> matrix. What conditions should it satisfy?</li>
 </ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{pmatrix}
+b^{\vphantom{\dagger}}_1 \\\\ b^\dagger_2
+\end{pmatrix}=
+\Lambda
+\begin{pmatrix}
+a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
+\end{pmatrix}
+</span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -867,6 +879,9 @@ a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
 </section>
 <section class="slide level2 center">
 
+<p><span class="math display">
+\Lambda^\dagger \sigma_3 \Lambda = \sigma_3
+</span></p>
 <ul>
 <li>Following parameterization is sufficient for our <span class="math inline">h</span></li>
 </ul>
@@ -925,8 +940,7 @@ a^{\vphantom{\dagger}}_1 \\\\ a^\dagger_2
 \tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
 h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dagger}}_2\right] + \Omega - \epsilon.
 \end{align*}
-</span> What happens if <span class="math inline">\delta&gt;\epsilon</span>?</p>
-<p>What changes if <span class="math inline">\begin{pmatrix}
+</span> What happens if <span class="math inline">\delta&gt;\epsilon</span>? What changes if <span class="math inline">\begin{pmatrix}
 \epsilon &amp; \delta \\\\
 \delta &amp; \epsilon
 \end{pmatrix}\longrightarrow \begin{pmatrix}
@@ -1049,12 +1063,12 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}}
 
 <ul>
 <li><p>Density fluctuations in ground state <span class="math display">
-\langle{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0}\rvert = \lvert N \rangle\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}\xrightarrow{\mathbf{q}\to 0} \frac{N\lvert{\mathbf{q}}\rvert}{2mc}.
+\Braket{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0} = N\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}\xrightarrow{\mathbf{q}\to 0} \frac{N\lvert{\mathbf{q}}\rvert}{2mc}.
 </span> (Used low momentum form of Bogoliubov dispersion) <span class="math display">
 \omega(\mathbf{q})\xrightarrow{\mathbf{q}\to 0} c\lvert{\mathbf{q}}\rvert
 </span> where <span class="math inline">c = \sqrt{\frac{n_0U_0}{m}}</span> is the speed of sound)</p></li>
 <li><p>c.f Gross–Pitaevskii ground state (Poissonian fluctuations) <span class="math display">
-\langle{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0}\rvert = \lvert N \rangle
+\Braket{0|\rho_{-\mathbf{q}}\rho_{\mathbf{q}}|0} = N
 </span></p></li>
 </ul>
 </section>

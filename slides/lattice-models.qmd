@@ -426,7 +426,7 @@ $$
 - Re-write by first reordering the operators (anticommutation!)
 
 $$
- \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'} = -\adop_{j,s}\aop_{j,s'}\adop_{k,s'}\aop_{k,s} + \delta_{s^{}s'}\adop_{j,s}\aop_{j,s'}
+ \adop_{j,s}\aop_{k,s} \adop_{k,s'}\aop_{j,s'} = -\adop_{j,s}\aop_{j,s'}\adop_{k,s'}\aop_{k,s} + \delta_{s^{}s'}\adop_{j,s}\aop_{j,s'}\qquad j\neq k
 $$
 
 - Then use identity
@@ -471,6 +471,8 @@ $$
 $$
 H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + J\sum_{<j\,k>}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right]
 $$
+
+- Together with constraint that there are no doubly occupied sites. Could be achieved by applying projector $\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})$
 
 - Hopping term allows holes or doubly occupied sites to move
 
