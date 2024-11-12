@@ -281,6 +281,69 @@ How does the degeneracy of these states get lifted at finite $t$? Try writing do
 
 ### Solution
 
+The first thing to note is that the Hamiltonian $H_t$ has no effect on the states $\adop_{1,\uparrow}\adop_{2,\uparrow} \ket{\text{VAC}}$ and $\adop_{1,\downarrow}\adop_{2,\downarrow} \ket{\text{VAC}}$, because it is not possible to move two fermions with the same spin to the same site. Thus we need to consider only the four states
+
+$$
+\begin{aligned}
+\ket{1}&=\adop_{1,\uparrow}\adop_{1,\downarrow} \ket{\text{VAC}}\\
+\ket{2}&=\adop_{2,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
+\ket{3}&=\adop_{1,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
+\ket{4}&=\adop_{1,\downarrow}\adop_{2,\uparrow} \ket{\text{VAC}}\\
+\end{aligned}
+$$
+
+$H_t$ connects $\ket{1}$ and $\ket{2}$ with $\ket{3}$ and $\ket{4}$. We compute the matrix elements
+
+$$
+\begin{aligned}
+\Braket{1|H_t|3} &= \Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+&=-t\Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\downarrow}\aop_{2,\downarrow} \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+&=t\\
+\Braket{2|H_t|3} &= \Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+&=-t\Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\uparrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+&=-t\\
+\Braket{1|H_t|4} &= \Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+&=-t\Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\aop_{2,\uparrow} \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+&=t\\
+\Braket{2|H_t|4} &= \Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+&=-t\Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\downarrow}\aop_{1,\downarrow} \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+&=t
+\end{aligned}
+$$
+
+This gives the Hamiltonian
+
+$$
+\Braket{j|H|k} = \begin{pmatrix}
+U & 0 & t & -t \\
+0 & U & t & -t \\
+t & t & 0 & 0 \\
+-t & -t & 0 & 0
+\end{pmatrix}
+$$
+
+Note that the off-diagonal block 
+
+$$
+\begin{pmatrix}
+t & -t \\
+t & -t
+\end{pmatrix}
+$$
+
+only connects the states $\frac{1}{\sqrt{2}}\left(\ket{1}+\ket{2}\right)$ and $\frac{1}{\sqrt{2}}\left(\ket{3}-\ket{4}\right)$, and we arrive at the $2\times 2$ matrix
+
+$$
+\begin{pmatrix}
+U & 2t \\
+2t & 0
+\end{pmatrix}
+$$
+
+with eigenvalues $U/2 \pm \sqrt{U^2/4+4t^2}$. Expanding for small $t/U$ gives $U + \frac{4t^2}{U}$ and $-4t^2/U$.
+
+Note that the state $\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$ is a spin-triplet, which is why its energy is unaffected, like the states $\adop_{1,\uparrow}\adop_{2,\uparrow} \ket{\text{VAC}}$ and $\adop_{1,\downarrow}\adop_{2,\downarrow} \ket{\text{VAC}}$ that we discarded initially. The effect of finite $t$ is therefore to lower the energy of the singlet state by $4t^2/U$ relative to the triplet state.
+
 :::
 
 :::
