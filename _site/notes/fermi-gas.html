@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Fermi Gas – Theories of Quantum Matter</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../slides/many-body-wavefunctions.html" rel="next">
+<link href="../notes/bose-gas.html" rel="prev">
+<link href="../favicon-32x32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/fermi-gas.html">Fermi Gas</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TQM Lectures 2024</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many Body Wavefunctions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/elastic-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Elastic Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A is for Annihilation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">B is for Bunching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/fermi-gas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Slides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many Body Wavefunctions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/elastic-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elastic Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A is for Annihilation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">B is for Bunching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Problem Sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../past-papers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past Papers</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#weakly-interacting-fermi-gas" id="toc-weakly-interacting-fermi-gas" class="nav-link active" data-scroll-target="#weakly-interacting-fermi-gas"><span class="header-section-number">1</span> Weakly Interacting Fermi Gas</a></li>
+  <li><a href="#perturbation-theory-to-second-order" id="toc-perturbation-theory-to-second-order" class="nav-link" data-scroll-target="#perturbation-theory-to-second-order"><span class="header-section-number">2</span> Perturbation Theory to Second Order</a>
+  <ul class="collapse">
+  <li><a href="#landau-f-function" id="toc-landau-f-function" class="nav-link" data-scroll-target="#landau-f-function"><span class="header-section-number">2.1</span> Landau <span class="math inline">\(f\)</span> function</a></li>
+  <li><a href="#quasiparticle-energy-varepsilon_smathbfk" id="toc-quasiparticle-energy-varepsilon_smathbfk" class="nav-link" data-scroll-target="#quasiparticle-energy-varepsilon_smathbfk"><span class="header-section-number">2.2</span> Quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span></a></li>
+  </ul></li>
+  <li><a href="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle" id="toc-eigenstates-in-perturbation-theory-what-is-a-quasiparticle" class="nav-link" data-scroll-target="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle"><span class="header-section-number">3</span> Eigenstates in Perturbation Theory: What is a Quasiparticle?</a></li>
+  <li><a href="#collisions" id="toc-collisions" class="nav-link" data-scroll-target="#collisions"><span class="header-section-number">4</span> Collisions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/fermi-gas.html">Fermi Gas</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Fermi Gas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<p><span class="math display">\[
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\]</span></p>
+</div>
+<p>A Fermi gas with weak interactions provides an example of one of the ‘standard models’ of condensed matter physics: Landau’s <strong>Fermi liquid</strong> theory.</p>
+<p>Reading: <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#ref-landau1980statistical" role="doc-biblioref">1980</a>)</span></p>
+<hr>
+<section id="weakly-interacting-fermi-gas" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="weakly-interacting-fermi-gas"><span class="header-section-number">1</span> Weakly Interacting Fermi Gas</h2>
+<p>We are going to study the following simple model of a Fermi gas with short-ranged interactions</p>
+<p><span class="math display">\[
+H = \int d\mathbf{r}\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\psi^\dagger_s\cdot\nabla\psi^{\vphantom{\dagger}}_s + U_0 \psi^\dagger_\uparrow\psi^\dagger_\downarrow\psi^{\vphantom{\dagger}}_\downarrow\psi^{\vphantom{\dagger}}_\uparrow\right].
+\]</span></p>
+<p>As with the Bose gas, it’s most convenient to work in momentum space</p>
+<p><span class="math display">\[
+H =\sum_{\mathbf{k},s} \epsilon(\mathbf{k})a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} + \overbrace{\frac{U_0}{V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1,\uparrow}a^\dagger_{\mathbf{k}_2,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_3,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_4,\uparrow}}^{\equiv H_\text{int}},
+\]</span></p>
+<p>with <span class="math inline">\(\epsilon(\mathbf{k})=\mathbf{k}^2/2m\)</span>, and <span class="math inline">\(V\)</span> the volume. At <span class="math inline">\(U_0=0\)</span> the eigenstates are of course the product states of single particle momentum states specified by the occupancies <span class="math inline">\(N_{s}(\mathbf{k}) = 0,1\)</span>. The ground state is the Fermi sphere of radius <span class="math inline">\(k_\text{F}\)</span> in momentum space with <span class="math inline">\(N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert)\)</span>. Low energy excited states will have <span class="math inline">\(N_{s}(\mathbf{k})=1\)</span> for <span class="math inline">\(\lvert{\mathbf{k}}\rvert\ll k_\text{F}\)</span> and <span class="math inline">\(N_{s}(\mathbf{k})=0\)</span> for <span class="math inline">\(\lvert{\mathbf{k}}\rvert\gg k_\text{F}\)</span>. In perturbation theory we may still <em>label</em> the eigenstates by these occupation numbers even though the eigenstates are no longer occupation number eigenstates. Instead, we say that these labels give the occupation numbers of <strong>quasiparticles</strong> with fermionic statistics. The energy of the eigenstates can then be expressed in terms of the quasiparticle distribution.</p>
+<p>Without interactions the energy of a state <span class="math inline">\(\lvert{\mathbf{N}}\rangle\)</span> is</p>
+<p><span class="math display">\[
+E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k}).
+\]</span></p>
+<p>In the presence of interactions this function is no longer linear in the occupation numbers. The second order expansion of the energy in terms of the deviation of the occupancies from the ground state values is the key ingredient of Landau’s theory.</p>
+</section>
+<section id="perturbation-theory-to-second-order" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="perturbation-theory-to-second-order"><span class="header-section-number">2</span> Perturbation Theory to Second Order</h2>
+<p>The standard expressions for the perturbed energy to second order in the perturbation are of course</p>
+<p><span id="eq-2nd"><span class="math display">\[
+\begin{align}
+E^{(1)}(\mathbf{N}) &amp;= \langle{\mathbf{N}}\rvert H_\text{int} \lvert \mathbf{N} \rangle\\
+E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
+\end{align}
+\tag{1}\]</span></span></p>
+<p>The first order correction is easily found to be</p>
+<p><span class="math display">\[
+E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\mathbf{k})N_{\downarrow}(\mathbf{k}') = \frac{U_0}{V}N_\uparrow N_\downarrow.
+\]</span></p>
+<p>This is just the energy we found when we discussed the Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>. For the second order correction we need the matrix element <span class="math inline">\(\langle{\mathbf{N}'}\rvert H_\text{int} \lvert \mathbf{N} \rangle\)</span>, which is nonzero if</p>
+<p><span class="math display">\[
+\begin{align}
+N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
+N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
+\end{align}
+\]</span></p>
+<p>for <span class="math inline">\(\mathbf{k}_i\)</span> satisfying <span class="math inline">\(\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4\)</span>. In this case</p>
+<p><span class="math display">\[
+\langle{\mathbf{N}'}\rvert H_\text{int} \lvert \mathbf{N} \rangle = \frac{U_0}{V} \left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4),
+\]</span></p>
+<p>(ignoring any coinciding momenta) where the occupancies are either zero or one. In this way we end up with the second order correction</p>
+<p><span id="eq-E2"><span class="math display">\[
+E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}.
+\tag{2}\]</span></span></p>
+<section id="landau-f-function" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="landau-f-function"><span class="header-section-number">2.1</span> Landau <span class="math inline">\(f\)</span> function</h3>
+<p>Evaluating <a href="#eq-E2" class="quarto-xref">Equation&nbsp;2</a>, even for the ground state, is a bit arduous on account of the three independent momentum sums. Fortunately, we are more interested in how the <em>excitation energies</em> are affected by interactions. This means we focus on the <em>change</em> in the occupation relative to the ground state, denoted by <span class="math inline">\(n_s(\mathbf{k})\)</span> and defined through</p>
+<p><span class="math display">\[
+N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
+\]</span></p>
+<p>This might seem a bit odd given that <span class="math inline">\(N_{s}(\mathbf{k})=\pm 1\)</span>. You should think of this expansion in terms of the continuum limit, where the <span class="math inline">\(\mathbf{k}\)</span> values become finely spaced. In this limit <span class="math inline">\(n_\mathbf{k}\)</span> represents the <em>mean</em> deviation from the Fermi sphere in that region of <span class="math inline">\(\mathbf{k}\)</span>-space.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/FermiN.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption><span class="math inline">\(n_\mathbf{k}\)</span> as a smoothed deviation from the Fermi step.</figcaption>
+</figure>
+</div>
+<p>The excitation energy above the ground state of an eigenstate labelled by occupancies <span class="math inline">\(N_\mathbf{k}\)</span> can then be expanded in <span class="math inline">\(n_\mathbf{k}\)</span></p>
+<p><span id="eq-fdef"><span class="math display">\[
+\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
+\tag{3}\]</span></span></p>
+<p>This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> and interaction function <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
+<p>To first order in the interaction we have the not-so-interesting result</p>
+<p><span class="math display">\[
+\begin{align}
+\varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
+f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
+\label{fermi_first}
+\end{align}
+\]</span></p>
+<p>where the meaning of the <span class="math inline">\(\bar s\)</span> is <span class="math inline">\(\bar\uparrow=\downarrow\)</span>, <span class="math inline">\(\bar\downarrow=\uparrow\)</span>. The second order contributions to the <span class="math inline">\(f\)</span>-function are more interesting, however. For example</p>
+<p><span class="math display">\[
+\begin{align}
+f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
+\left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right].
+\end{align}
+\]</span></p>
+<p>We will be interested in the low temperature limit, in which <span class="math inline">\(n_{s}(\mathbf{k})\)</span> is non-zero only in a very narrow region of size <span class="math inline">\(k_\text{B} T\)</span> around the Fermi surface. In this limit we can take the <span class="math inline">\(\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}\)</span>, so that</p>
+<p><span class="math display">\[
+\begin{align}
+f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N(\mathbf{k}_3)(1-N(\mathbf{k}_2))}{\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}_2)}
++\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N(\mathbf{k}_3)(1-N(\mathbf{k}_2))}{\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}_2)}\right].
+\end{align}
+\]</span></p>
+<p>In which we have assumed the state around which we expand is unpolarized, i.e.&nbsp;<span class="math inline">\(N_{s}(\mathbf{k})\)</span> is independent of <span class="math inline">\(s\)</span>.</p>
+<p>The expression for <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\)</span> is more complicated</p>
+<p><span class="math display">\[
+\begin{align}
+f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
+\left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right].
+\end{align}
+\]</span></p>
+<p>Evaluating these expressions is simpler than calculating <a href="#eq-E2" class="quarto-xref">Equation&nbsp;2</a>, as we have only one independent momentum. The <em>new feature</em> that comes at second order is a nontrivial dependence of <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> on the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span>.</p>
+<p>It’s a bit fiddly to get at, but let’s work it out for the simpler case of <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span>!. The continuum limit is</p>
+<p><span id="eq-fcont"><span class="math display">\[
+\begin{align}
+f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right.\nonumber\\
+\left.+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right].
+\end{align}
+\tag{4}\]</span></span></p>
+<p>So we need to find the integral</p>
+<p><span class="math display">\[
+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}.
+\]</span></p>
+<p>Note that the denominator can be written</p>
+<p><span class="math display">\[
+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)= \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}_2-\mathbf{k}_3\right) = \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}-\mathbf{k}'\right),
+\]</span></p>
+<p>where <span class="math inline">\(\mathbf{k}-\mathbf{k}'\)</span> is fixed. Writing</p>
+<p><span class="math display">\[
+\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right),
+\]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/FermiGeometry.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Geometry of the integral for <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span>.</figcaption>
+</figure>
+</div>
+<p>the denominator becomes</p>
+<p><span class="math display">\[
+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3) = \frac{2}{m}\mathbf{K}\cdot\mathbf{q},
+\]</span></p>
+<p>for fixed <span class="math inline">\(\mathbf{q}\)</span>. Thus, only the angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\(\mathbf{K}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> enters the integral. The conditions <span class="math inline">\(\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\)</span> and <span class="math inline">\(\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}\)</span> become</p>
+<p><span class="math display">\[
+\begin{align}
+\left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2,
+\end{align}
+\]</span></p>
+<p>which gives the range of <span class="math inline">\(K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)\)</span></p>
+<p><span class="math display">\[
+K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta},
+\]</span></p>
+<p>and we must have <span class="math inline">\(\theta&lt;\pi/2\)</span>. In terms of these variables the integral becomes</p>
+<p><span class="math display">\[
+\begin{align}
+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
+\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
+&amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}.
+\end{align}
+\]</span></p>
+<p>The other integral in <a href="#eq-fcont" class="quarto-xref">Equation&nbsp;4</a> is the same but in the interval <span class="math inline">\((\pi/2,\pi)\)</span>. Thus we have Finally</p>
+<p><span class="math display">\[
+\begin{align}
+f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
+&amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
+\end{align}
+\]</span></p>
+<p>Here <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span> i.e.&nbsp;<span class="math inline">\(\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2\)</span>. We won’t go through the calculation of <span class="math inline">\(f_{+-}(\mathbf{k},\mathbf{k}')\)</span>, but just record the final answer.</p>
+<p>The definition <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> implied a certain quantization axis for spin. To write things in an invariant way, we should think of the occupation number <span class="math inline">\(N(\mathbf{k})\)</span> as a <span class="math inline">\(2\times 2\)</span> matrix that can describe an arbitrary spin orientation, with elements</p>
+<p><span class="math display">\[
+\mathsf{N}(\mathbf{k})=\begin{pmatrix}
+N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
+N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k}).
+\end{pmatrix}
+\]</span></p>
+<p>The <span class="math inline">\(f\)</span>-function then has <em>four</em> spin indices</p>
+<p><span class="math display">\[
+\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}'),
+\]</span></p>
+<p>with</p>
+<p><span id="eq-ffinal"><span class="math display">\[
+\begin{align}
+f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
+\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
+\end{align}
+\tag{5}\]</span></span></p>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The message to take away from this calculation is not the detailed functional form of <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;5</a>, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions</p>
+<p><span id="eq-fgdef"><span class="math display">\[
+\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}.
+\tag{6}\]</span></span></p>
+<p>The functions <span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> have been made dimensionless by scaling by the density of states at the Fermi surface <span class="math inline">\(\nu(E_F)\equiv k_{\text{F}}m/\pi^2\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="quasiparticle-energy-varepsilon_smathbfk" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="quasiparticle-energy-varepsilon_smathbfk"><span class="header-section-number">2.2</span> Quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span></h3>
+<p>So far we haven’t had much to say about the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> introduced in <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a>. Evaluating the second order correction is going to be difficult, as it will involve two momentum integrations instead of one. What can we say on general grounds? We expect that</p>
+<p><span id="eq-vfdef"><span class="math display">\[
+\varepsilon_s(\mathbf{k}) - E_\text{F} = v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F}).
+\tag{7}\]</span></span></p>
+<p>The Fermi velocity <span class="math inline">\(v_\text{F}\)</span> defined by this expression may be altered by the interactions, allowing us to define an <strong>effective mass</strong></p>
+<p><span id="eq-mdef"><span class="math display">\[
+m_* = \frac{k_\text{F}}{v_\text{F}}.
+\tag{8}\]</span></span></p>
+<p>Fortunately, we can get at this quantity using the results we already have, thanks to the following sneaky trick (due to Landau). If we increment the momentum of each quasiparticle by a small amount <span class="math inline">\(\delta\mathbf{k}\)</span>, we can compute the new energy using our energy functional <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a>, along with a new distribution function</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/FermiShift.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Shifting the Fermi sea to increase the momentum.</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\begin{align}
+N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
+&amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}- \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
+\end{align}
+\]</span></p>
+<p>Treating the last three terms as <span class="math inline">\(n_s(\mathbf{k})\)</span>, our excitation energy changes to first order in <span class="math inline">\(\delta\mathbf{k}\)</span> by an amount</p>
+<p><span class="math display">\[
+\begin{align}
+\Delta E &amp;= \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
+&amp;+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
+\end{align}
+\]</span></p>
+<p>(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is</p>
+<p><span id="eq-gal"><span class="math display">\[
+\Delta E = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k},
+\tag{9}\]</span></span></p>
+<p>where the total momentum <span class="math inline">\(\mathbf{P}\)</span> can be written</p>
+<p><span class="math display">\[
+\mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
+\]</span></p>
+<p>If <a href="#eq-gal" class="quarto-xref">Equation&nbsp;9</a> holds for all <span class="math inline">\(n_s(\mathbf{k})\)</span> and <span class="math inline">\(\delta\mathbf{k}\)</span>, we have (ignoring second order in <span class="math inline">\(n_s(\mathbf{k})\)</span>)</p>
+<p><span class="math display">\[
+\frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}.
+\]</span></p>
+<p>Restricting ourselves to momenta close to the Fermi surface, and using our definitions <a href="#eq-fgdef" class="quarto-xref">Equation&nbsp;6</a>, <a href="#eq-vfdef" class="quarto-xref">Equation&nbsp;7</a> and <a href="#eq-mdef" class="quarto-xref">Equation&nbsp;8</a> gives the relation</p>
+<p><span class="math display">\[
+\frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}.
+\]</span></p>
+<p>If we write <span class="math inline">\(\mathbf{k}'=\cos\phi \mathbf{k}+ \sin\phi \mathbf{k}_\perp\)</span>, with <span class="math inline">\(\mathbf{k}_\perp\cdot\mathbf{k}=0\)</span>, this gives Landau’s famous result</p>
+<p><span class="math display">\[
+\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}.
+\]</span></p>
+<p>For the <span class="math inline">\(F(\phi)\)</span> that we found in <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;5</a> from second order perturbation theory, this gives the effective mass correction</p>
+<p><span class="math display">\[
+\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
+\]</span></p>
+<p>(Use the substitution <span class="math inline">\(u=\sin\phi/2\)</span> to do the integral.) Again, the point is not the value that we’ve obtained, but the argument we used to do so. In systems with strong interactions it’s possible for the effective mass to be very different from the bare mass: in the <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> <span class="math inline">\(m_*/m\)</span> can approach 1000! Despite being so far from the noninteracting limit, Landau’s picture of fermionic quasiparticles still applies.</p>
+</section>
+</section>
+<section id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle"><span class="header-section-number">3</span> Eigenstates in Perturbation Theory: What is a Quasiparticle?</h2>
+<p>So far we’ve focused on the energies of the excited states of the gas. But what do these quasiparticle states <em>look</em> like? In perturbation theory at least, we can see fairly explicitly. At first order we have</p>
+<p><span class="math display">\[
+\lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle.
+\]</span></p>
+<p>Let’s consider the Fermi sea ground state <span class="math inline">\(\lvert{\text{FS}}\rangle\)</span>. What states can appear in the above sum in this case? The only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/2ph.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Two particle-hole pairs created out of the Fermi sea.</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\lvert{0}\rangle=\lvert{\text{FS}}\rangle+\text{two particle-hole pair states}+\cdots
+\]</span></p>
+<p>What about an excited state? Consider the state</p>
+<p><span class="math display">\[
+a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle,
+\]</span></p>
+<p>having momentum <span class="math inline">\(\mathbf{k}\)</span> and spin <span class="math inline">\(s\)</span>. When the interactions are switched on, this state will be modified to a state we’ll denote <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span>. At first order, two kinds of states can contribute to the modifed state:</p>
+<ol type="1">
+<li>States with a pair of particle-hole pairs, as before, but with the extra particle at <span class="math inline">\(\mathbf{k}\)</span>. The coefficients of these states are <em>the same</em> as for the corresponding states in the correction for <span class="math inline">\(\lvert{0}\rangle\)</span>, as you should check.</li>
+<li>States with a single particle-hole pair and with the extra particle moved from <span class="math inline">\(\mathbf{k}\)</span>​ to another momentum.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/phscatter.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Particle scatters, creating a particle-hole pair.</figcaption>
+</figure>
+</div>
+<p>Let’s compare <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{\mathbf{k},s}\lvert{0}\rangle\)</span>, the state obtained by creating a particle in the <em>exact</em> ground state of the problem. In first order perturbation theory, <span class="math inline">\(\lvert{0}\rangle\)</span> includes the first kind of state above (2 particle-hole pair states). The states only differ because of the contribution of the second kind. To first order, the single quasiparticle state is therefore</p>
+<p><span id="eq-ph-peturb"><span class="math display">\[
+\begin{align}
+\lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \nonumber\\
+&amp;\qquad + \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})},
+\end{align}
+\tag{10}\]</span></span></p>
+<p>where <span class="math inline">\(\sqrt{z_k}\)</span> is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
+<p>Normalizing <a href="#eq-ph-peturb" class="quarto-xref">Equation&nbsp;10</a> gives</p>
+<p><span id="eq-z"><span class="math display">\[
+z_\mathbf{k}= 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots.
+\tag{11}\]</span></span></p>
+<p>This quantity can be interpreted in terms of the overlap of the single quasiparticle state <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle\)</span>.</p>
+<p><span class="math display">\[
+z_\mathbf{k}= \frac{\lvert{\langle{\mathbf{k},s}\rvert a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}\rvert^2}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}
+\]</span></p>
+<p>A finite overlap – evaluated for quasiparticles at the Fermi surface – is a requirement for the Fermi liquid picture to hold. If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear with it!</p>
+<p>Obviously evaluating the integrals in <a href="#eq-z" class="quarto-xref">Equation&nbsp;11</a> is a challenge involving a double integral over momentum, but I have it on good authority (see <span class="citation" data-cites="abrikosov2012methods">Abrikosov, Gorkov, and Dzyaloshinski (<a href="#ref-abrikosov2012methods" role="doc-biblioref">2012</a>)</span>, though they don’t give the details) that the answer is</p>
+<p><span class="math display">\[
+z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
+\]</span></p>
+<p>This is also the occupation number of the original fermions <span class="math inline">\(\langle{0}\rvert a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} \lvert 0 \rangle\)</span> (not the quasiparticles!) just below the Fermi surface in the ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a>. There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/FermiJump.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Discontinutity in the ground state occupation number.</figcaption>
+</figure>
+</div>
+</section>
+<section id="collisions" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="collisions"><span class="header-section-number">4</span> Collisions</h2>
+<p>The picture we have developed so far of eigenstates labelled by quasiparticle occupations is actually a bit of an oversimplification. When we apply the second order perturbation theory formula <a href="#eq-2nd" class="quarto-xref">Equation&nbsp;1</a> we have to omit degenerate states. It isn’t really enough to insist that the occupancies differ <span class="math inline">\(\mathbf{N}'\neq \mathbf N\)</span>, because many states with different occupancies have the same energy in the thermodynamic limit. From a time-dependent point of view, the interaction can cause transitions between these states, leading to the quasiparticle distribution changing over time. The rate of these transitions can be described by the Fermi golden rule.</p>
+<p><span class="math display">\[
+\Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \lvert{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}\rvert^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))
+\]</span></p>
+<p>By considering the volume of phase space available for the scattering of a quasiparticle of energy <span class="math inline">\(\Delta\)</span> above the Fermi surface, you should be able to argue that the <em>total</em> rate, obtained by integrating over all possible final states, varies like <span class="math inline">\(\Delta^2\)</span>. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/Collision.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Vanishing phase space volume at low energies.</figcaption>
+</figure>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-abrikosov2012methods" class="csl-entry" role="listitem">
+Abrikosov, Aleksei Alekseevich, Lev Petrovich Gorkov, and Igor Ekhielevich Dzyaloshinski. 2012. <em>Methods of Quantum Field Theory in Statistical Physics</em>. Courier Corporation.
+</div>
+<div id="ref-landau1980statistical" class="csl-entry" role="listitem">
+Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii Mikhailovich Lifshitz, and LP Pitaevskii. 1980. <em>Statistical Physics: Theory of the Condensed State</em>. Vol. 9. Butterworth-Heinemann.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/bose-gas.html" class="pagination-link" aria-label="Bose Gas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bose Gas</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../slides/many-body-wavefunctions.html" class="pagination-link" aria-label="Many Body Wavefunctions">
+        <span class="nav-page-text">Many Body Wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

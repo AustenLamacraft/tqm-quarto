@@ -30,6 +30,7 @@ website:
           - notes/more-second-quantization.qmd
           - notes/lattice-models.qmd
           - notes/bose-gas.qmd
+          - notes/fermi-gas.qmd
 
       - section: "Slides"
         contents:
@@ -41,6 +42,7 @@ website:
           - slides/more-second-quantization.qmd
           - slides/lattice-models.qmd
           - slides/bose-gas.qmd
+          - slides/fermi-gas.qmd
           
 
       - section: "Problem Sets"
