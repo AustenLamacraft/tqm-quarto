@@ -205,6 +205,12 @@ window.Quarto = {
  <span class="menu-text">Bose Gas</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/fermi-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -264,6 +270,12 @@ window.Quarto = {
  <span class="menu-text">Bose Gas</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -285,6 +297,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
   </div>
 </li>
       </ul>
@@ -749,7 +767,7 @@ Check
 <p>At half filling, the cuprates are antiferromangetic Mott insulators. Superconductivity emerges when the materials are doped by changing their stoichiometry. This introduces electrons or holes into the CuO<span class="math inline">\(_2\)</span> planes that are modeled by the Hubbard Hamiltonian. Antiferromagnetic order is believed to be destroyed by freely moving holes – think how the Néel ordering is disrupted – and indeed superconductivity appears where antiferromagnetism dies. The precise relationship between the two phenomena is – like much of the physics of the cuprates – not clear.</p>
 <p>An effective Hamiltonian that describes the doped Mott insulator is the <a href="https://en.wikipedia.org/wiki/T-J_model">t-J model</a></p>
 <p><span id="eq-filled-H-eff"><span class="math display">\[
-H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + J\sum_{&lt;j\,k&gt;}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right].
+H_\text{eff} = -t \sum_{\substack{\langle j,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + J\sum_{\langle j,k\rangle}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right].
 \tag{9}\]</span></span></p>
 <p>The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector <span class="math inline">\(\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})\)</span>. The term involving <span class="math inline">\(N_j N_k\)</span> keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it’s just the “constant” term in <a href="#eq-filled-H-eff" class="quarto-xref">Equation&nbsp;9</a>. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators <span class="math inline">\(\mathbf{s}_j\)</span> vanish when they act on an empty or doubly occupied site.</p>
 

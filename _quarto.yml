@@ -31,6 +31,7 @@ website:
           - notes/lattice-models.qmd
           - notes/bose-gas.qmd
           - notes/fermi-gas.qmd
+          
 
       - section: "Slides"
         contents:
@@ -49,6 +50,7 @@ website:
         contents:
           - problem-sets/problem-set-1.qmd
           - problem-sets/problem-set-2.qmd
+          - problem-sets/problem-set-3.qmd
 
       - past-papers.qmd
 

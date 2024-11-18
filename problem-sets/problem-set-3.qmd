@@ -70,15 +70,15 @@ Find the dynamical structure factor for a 1D Fermi gas, and verify the Onsager b
 
 ## $S_\rho(q)$ for the Elastic Chain
 
-In [Lecture 3]({{< ref "courses/tqm/elastic-chain" >}}) we found the static structure factor of the elastic chain. Verify the Onsager bound.
+In [Lecture 3](../notes/elastic-chain.qmd) we found the static structure factor of the elastic chain. Verify the Onsager bound.
 
 ## Ground State Energy of Jellium in Perturbation Theory
 
-In [Lecture 9]({{< ref "courses/tqm/fermi-gas" >}}) we found the corrections to the eigenenergies of a Fermi gas to second order in the interaction. Show that for Jellium the correction to the ground state energy has an infrared divergence.
+In [Lecture 9](../notes/fermi-gas.qmd) we found the corrections to the eigenenergies of a Fermi gas to second order in the interaction. Show that for Jellium the correction to the ground state energy has an infrared divergence.
 
 ## Limits of the Polarization
 
-Check the two limits for the polarization described at the end of [Lecture 12]({{< ref "jellium" >}}).
+Check the two limits for the polarization described at the end of [Lecture 12](../notes/jellium.qmd).
 
 ## Explicit Evaluation of Green's Functions
 
@@ -89,8 +89,7 @@ G_\bk(\tau) = e^{-\xi(\bk)\tau}\begin{cases}
 	1-\langle N_\bk\rangle & \tau>0\\
 	-\langle N_\bk \rangle & \tau<0
 	\end{cases}
-	\label{Gexp}
-$$		
+$$ {#eq-Gexp}
 
 where $\langle N_\bk\rangle = n_\text{F}(\xi(\bp))$, and $n_\text{F}(\omega)=\frac{1}{e^{\beta\omega}+1}$ is the Fermi--Dirac distribution.
 
@@ -100,4 +99,4 @@ $$
 G_\bk(\tau) = T\sum_{\epsilon_n} \frac{e^{-i\epsilon_n \tau}}{-i\epsilon_n+\xi(\bk)}.
 $$
 
-Evaluate the sum to find $\eqref{Gexp}$. In the lecture, we used the auxillary function $\tanh\left(\frac{\beta\epsilon}{2}\right)$ to turn the Matsubara sum into an integral. Here, to be able to deform the contour in a useful way, we must use $n_\text{F}(\omega)$ or $1-n_\text{F}(\omega)$.
+Evaluate the sum to find @eq-Gexp. In the lecture, we used the auxillary function $\tanh\left(\frac{\beta\epsilon}{2}\right)$ to turn the Matsubara sum into an integral. Here, to be able to deform the contour in a useful way, we must use $n_\text{F}(\omega)$ or $1-n_\text{F}(\omega)$.
