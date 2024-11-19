@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Fermi Gas</title>
+  <title>Theories of Quantum Matter – Elastic Chain</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Fermi Gas</h1>
+  <h1 class="title">Elastic Chain</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -358,463 +358,576 @@
 </span></p>
 </div>
 </section>
-<section>
-<section id="fermi-gas" class="title-slide slide level1 center">
-<h1>Fermi Gas</h1>
+<section id="the-elastic-chain" class="slide level2 center">
+<h2>The Elastic Chain</h2>
 <ul>
-<li><p>We’ll study Fermi gas with weak interactions (perturbation theory)</p></li>
-<li><p>Illustrates Landau’s <strong>Fermi liquid</strong> theory, a ‘standard model’ of condensed matter</p></li>
-<li><p>Landau’s theory applies more generally, even when interactions not weak</p></li>
+<li><p>Simple model of quantum solid</p></li>
+<li><p>Quantum fluctuations change character of crystalline order</p></li>
 </ul>
+<blockquote>
+<p>The career of a young theoretical physicist consists of treating the harmonic oscillator in ever-increasing levels of abstraction</p>
+</blockquote>
 </section>
-<section id="weakly-interacting-fermi-gas" class="slide level2 center">
-<h2>Weakly Interacting Fermi Gas</h2>
-<ul>
-<li>Fermi gas with short-ranged interactions</li>
-</ul>
-<p><span class="math display">
-H = \int d\mathbf{r}\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\psi^\dagger_s\cdot\nabla\psi^{\vphantom{\dagger}}_s + U_0 \psi^\dagger_\uparrow\psi^\dagger_\downarrow\psi^{\vphantom{\dagger}}_\downarrow\psi^{\vphantom{\dagger}}_\uparrow\right]
-</span></p>
-<ul>
-<li>Work in momentum space <span class="math display">
-H =\sum_{\mathbf{k},s} \epsilon(\mathbf{k})a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} + \overbrace{\frac{U_0}{V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1,\uparrow}a^\dagger_{\mathbf{k}_2,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_3,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_4,\uparrow}}^{\equiv H_\text{int}}
-</span> with <span class="math inline">\epsilon(\mathbf{k})=\mathbf{k}^2/2m</span>, and <span class="math inline">V</span> the volume</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p><span class="math inline">U_0=0</span>: eigenstates are product states <span class="math inline">\lvert{\mathbf{N}}\rangle</span> of single particle momentum states specified by the occupancies <span class="math inline">N_{s}(\mathbf{k}) = 0,1</span></p></li>
-<li><p>Ground state is Fermi sphere of radius <span class="math inline">k_\text{F}</span> in momentum space with <span class="math inline">N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert)</span>.</p></li>
-<li><p>Low energy excited states will have <span class="math inline">N_{s}(\mathbf{k})=1</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\ll k_\text{F}</span> and <span class="math inline">N_{s}(\mathbf{k})=0</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\gg k_\text{F}</span>.</p></li>
-<li><p>In perturbation theory we can still <em>label</em> eigenstates by these occupation numbers even though eigenstates <span class="math inline">\neq\lvert{\mathbf{N}}\rangle</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Without interaction energy of a state <span class="math inline">\lvert{\mathbf{N}}\rangle</span> is</li>
-</ul>
-<p><span class="math display">
-E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k})
-</span></p>
-<ul>
-<li><p>For <span class="math inline">U_0\neq 0</span> energy <span class="math inline">E(\mathbf{N})</span> is function of labels, but no longer linear</p></li>
-<li><p>Second order expansion of energy in terms of <em>deviation</em> of occupancies from ground state values is key ingredient of Landau’s theory</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="perturbation-theory-to-second-order">Perturbation Theory to Second Order</h3>
-<ul>
-<li>Second order perturbation theory for the energies</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-E^{(1)}(\mathbf{N}) &amp;= \Braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
-E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}
-\end{align*}
-</span></p>
-<ul>
-<li>First order correction is easy</li>
-</ul>
-<p><span class="math display">
-E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\mathbf{k})N_{\downarrow}(\mathbf{k}') = \frac{U_0}{V}N_\uparrow N_\downarrow
-</span> (energy used in Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>)</p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>For second order we need <span class="math inline">\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}}</span>, nonzero if <span class="math display">
-\begin{align*}
-N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
-N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
-\end{align*}
-</span> for <span class="math inline">\mathbf{k}_i</span> satisfying <span class="math inline">\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4</span> <span class="math display">
-\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)
-</span> (ignoring any coinciding momenta; occupancies 0 or 1)</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<h3 id="landau-f-function">Landau <span class="math inline">f</span> function</h3>
-<ul>
-<li><p><span class="math inline">E^{(2)}(\mathbf{N})</span> has three independent momentum sums! 🙀</p></li>
-<li><p>We are after <em>excitation energies</em>, so expand in <em>change</em> in occupation</p></li>
-</ul>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<ul>
-<li><span class="math inline">n_\mathbf{k}</span> is <em>mean</em> deviation from Fermi sphere in continuum limit:</li>
-</ul>
+<section id="hamiltonian" class="slide level2 center">
+<h2>Hamiltonian</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/FermiN.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
 </figure>
 </div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Excitation energy expanded in <span class="math inline">n_\mathbf{k}</span></li>
-</ul>
 <p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}')
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
 </span></p>
 <ul>
-<li><p>This is Landau’s <strong>key idea</strong>, not restricted to perturbation theory</p></li>
-<li><p>At first order <span class="math display">
-\begin{align*}
-\varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots
-\end{align*}
-</span> <span class="math inline">\bar s</span> is <span class="math inline">\bar\uparrow=\downarrow</span>, <span class="math inline">\bar\downarrow=\uparrow</span> 🥱</p></li>
+<li><p>Identify <span class="math inline">u_j=u_{N+j}</span></p></li>
+<li><p>Let’s look at the classical system first</p></li>
 </ul>
 </section>
-<section class="slide level2 center">
-
-<ul>
-<li>Second order contributions to <span class="math inline">f</span>-function more interesting</li>
-</ul>
+<section id="equations-of-motion" class="slide level2 center">
+<h2>Equations of Motion</h2>
 <p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
-\left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><span class="math inline">f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')</span> is more complicated <span class="math display">
-\begin{align*}
-f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
-\left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span> (just for reference)</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p><span class="math inline">n_{s}(\mathbf{k})\neq 0</span> in energy window of size <span class="math inline">k_\text{B} T</span> around Fermi surface</p></li>
-<li><p>At low <span class="math inline">T</span> take <span class="math inline">\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}</span>. <em>New feature</em> at second order is nontrivial dependence of <span class="math inline">f_{s^{}s'}(\mathbf{k},\mathbf{k}')</span> on angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span>.</p></li>
-<li><p>Assume ground state unpolarized, i.e.&nbsp;<span class="math inline">N_{s}(\mathbf{k})</span> independent of <span class="math inline">s</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Let’s work out angular dependence for <span class="math inline">f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')</span> (simpler, only have one independent momentum 😀)</p></li>
-<li><p>Thermodynamic limit</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right]
-\end{align*}
+m \ddot u_j = k(u_{j-1} + u_{j+1} - 2u_j).
 </span></p>
 <ul>
-<li>Need integral</li>
+<li>Look for oscillatory solutions <span class="math inline">u_j(t) = u_j e^{-i\omega t}</span></li>
 </ul>
 <p><span class="math display">
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator can be written (<span class="math inline">\mathbf{k}-\mathbf{k}'</span> is fixed) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)= \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}_2-\mathbf{k}_3\right) = \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}-\mathbf{k}'\right)
-</span></p></li>
-<li><p>Notation <span class="math inline">\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right)</span></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiGeometry.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator becomes (for fixed <span class="math inline">\mathbf{q}</span>) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3) = \frac{2}{m}\mathbf{K}\cdot\mathbf{q}
-</span></p></li>
-<li><p>Only angle <span class="math inline">\theta</span> between <span class="math inline">\mathbf{K}</span> and <span class="math inline">\mathbf{q}</span> enters integral</p></li>
-<li><p>Conditions <span class="math inline">\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}</span> and <span class="math inline">\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}</span> become</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2
-\end{align*}
-</span></p>
-<p>which gives range of <span class="math inline">K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)</span></p>
-<p><span class="math display">
-K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta},\qquad  \theta&lt;\pi/2
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>In terms of these variables</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
-\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
-&amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}
-\end{align*}
-</span></p>
-<ul>
-<li>Other integral is same but in interval <span class="math inline">(\pi/2,\pi)</span>. Finally… <span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
-&amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right]
-\end{align*}
-</span> <span class="math inline">\phi</span> is the angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span> i.e.&nbsp;<span class="math inline">\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Our definition of <span class="math inline">f</span> implied quantization axis for spin</p></li>
-<li><p>To write things in invariant way, think of occupation number <span class="math inline">N(\mathbf{k})</span> as <span class="math inline">2\times 2</span> matrix</p></li>
-</ul>
-<p><span class="math display">
-\mathsf{N}(\mathbf{k})=\begin{pmatrix}
-N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
-N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k})
+-\omega^2 \begin{pmatrix}
+u_1 \\
+u_2 \\
+\cdots \\
+u_{N-1}\\
+u_N
+\end{pmatrix} =
+\frac{k}{m}
+\begin{pmatrix}
+-2 &amp; 1 &amp; 0 &amp; \cdots &amp; 1 \\
+1 &amp; -2 &amp; 1 &amp; \cdots &amp; 0\\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\
+0 &amp; \cdot &amp; 1 &amp; -2 &amp; 1\\
+1 &amp; 0 &amp; \cdots &amp; 1 &amp; -2
 \end{pmatrix}
-</span></p>
-<ul>
-<li><span class="math inline">f</span>-function then has <em>four</em> spin indices</li>
-</ul>
-<p><span class="math display">
-\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}')
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\begin{align*}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
-\end{align*}
-</span> (again, just for reference)</p>
-<ul>
-<li><strong>Key message</strong>: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math display">
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
-</span></li>
-<li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> made dimensionless by scaling by density of states at Fermi surface <span class="math inline">\nu(E_F)\equiv k_{\text{F}}m/\pi^2</span>.</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="quasiparticle-energy-varepsilon_smathbfk">Quasiparticle energy <span class="math inline">\varepsilon_s(\mathbf{k})</span></h3>
-<p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
-</span></p>
-<ul>
-<li><p><span class="math inline">\varepsilon_s(\mathbf{k})</span> will involve two momentum sums 😟</p></li>
-<li><p>What can we say on general grounds? Near Fermi surface expect</p></li>
-</ul>
-<p><span class="math display">
-\varepsilon_s(\mathbf{k}) - E_\text{F} \approx v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F})
-</span></p>
-<ul>
-<li>Fermi velocity <span class="math inline">v_\text{F}</span> altered by interactions. Define <strong>effective mass</strong></li>
-</ul>
-<p><span class="math display">
-m_* = \frac{k_\text{F}}{v_\text{F}}
+\begin{pmatrix}
+u_1 \\
+u_2 \\
+\cdots \\
+u_{N-1}\\
+u_N
+\end{pmatrix}
+</span> - Eigenvectors given by plane waves <span class="math inline">u_j = (z_n)^j</span>, where <span class="math inline">z_n</span> <span class="math display">
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = 0,\ldots, N-1
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Can get <span class="math inline">m_*</span> using results we have already, using one simple trick</p></li>
-<li><p>Shift momentum of each quasiparticle by <span class="math inline">\delta\mathbf{k}</span>, giving new <span class="math inline">N_s(\mathbf{k})</span></p></li>
+<li>Let’s take <span class="math inline">N</span> odd and index <span class="math inline">z_n</span> using positive and negative</li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
-&amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
 </span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiShift.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
-</figure>
+<ul>
+<li>Write <span class="math inline">\eta_n\equiv \frac{2\pi n}{N}</span>, so that eigenstates are <span class="math inline">u_j=\exp(i\eta_n j)</span></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>By substituting into the equation of motion show that the dispersion relation is <span class="math display">
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
+</span></p>
+</div>
+</div>
 </div>
 </section>
-<section class="slide level2 center">
-
-<ul>
-<li>Compute energy using Landau functional</li>
-</ul>
+<section id="dispersion" class="slide level2 center">
+<h2>Dispersion</h2>
 <p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
 </span></p>
-<ul>
-<li>Treat last three terms as <span class="math inline">n_s(\mathbf{k})</span>. Excitation energy changes <span class="math display">
-\begin{align*}
-\Delta E(\text{after})-\Delta E(\text{before}) = \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
-+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
-\end{align*}
-</span> (to first order in <span class="math inline">\delta\mathbf{k}</span>. Integrate by parts in first term)</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>On grounds of Galilean invariance, this change must be <span class="math display">
-\Delta E(\text{after})-\Delta E(\text{before}) = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k}
-</span> where total momentum <span class="math inline">\mathbf{P}</span> is</li>
-</ul>
-<p><span class="math display">
-\mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>If two expressions for <span class="math inline">\Delta E(\text{after})-\Delta E(\text{before})</span> equal for all <span class="math inline">n_s(\mathbf{k})</span> and <span class="math inline">\delta\mathbf{k}</span> to first order</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}
-</span></p>
-<ul>
-<li>For momenta close to the Fermi surface</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}
-</span></p>
-<ul>
-<li>If <span class="math inline">\mathbf{k}'=\cos\phi \mathbf{k}+ \sin\phi \mathbf{k}_\perp</span>, with <span class="math inline">\mathbf{k}_\perp\cdot\mathbf{k}=0</span>, we get</li>
-</ul>
-<p><span class="math display">
-\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>For the <span class="math inline">F(\phi)</span> that we found in <span class="math inline">2^{\text{nd}}</span> order perturbation theory <span class="math display">
-\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
-</span> (Use the substitution <span class="math inline">u=\sin\phi/2</span> to do the integral.)</p></li>
-<li><p>In systems with strong interactions <span class="math inline">m_*/m</span> may be much larger!</p></li>
-<li><p>In <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> <span class="math inline">m_*/m</span> can approach 1000! Landau’s picture of fermionic quasiparticles still applies.</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
-<ul>
-<li><p>What do these quasiparticle states <em>look</em> like? Let’s see what perturbation theory says</p></li>
-<li><p>At first order we have</p></li>
-</ul>
-<p><span class="math display">
-\lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Consider the Fermi sea ground state <span class="math inline">\lvert{\text{FS}}\rangle</span>. What states <span class="math inline">\lvert{\mathbf{N'}}\rangle</span> can appear this case?</p></li>
-<li><p>Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/2ph.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>What about an excited state? If we consider the state <span class="math display">
-a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle
-</span> two kinds of states can contribute</p>
 <ol type="1">
-<li><p>Create a pair of particle-hole pairs</p></li>
-<li><p>Create a single particle-hole pair and move particle at <span class="math inline">\mathbf{k}</span></p></li>
-</ol></li>
+<li><span class="math inline">\omega(\eta)\to 0</span> as <span class="math inline">\eta\to 0</span>. <span class="math inline">\eta=0</span> mode corresponds to translation</li>
+<li>At small <span class="math inline">\eta</span> dispersion is <em>linear</em>, as we expect for sound waves</li>
+</ol>
+</section>
+<section id="general-solution" class="slide level2 center">
+<h2>General solution</h2>
+<ul>
+<li><p>Expressed as superposition of normal modes <span class="math display">
+u_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j}
+</span></p></li>
+<li><p><strong>Important</strong> <span class="math inline">q_{-n}=q^*_n</span> ensures that <span class="math inline">u_j</span> is real</p></li>
+<li><p>Time dependence <span class="math display">
+q_n(t) = \alpha_n e^{-i\omega(\eta_n) t} + \beta_n e^{i\omega(\eta_n) t}
+</span></p></li>
+<li><p><span class="math inline">q_0(t) = \sqrt{N}(X+Vt)</span> describes the motion of the centre of mass</p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/phscatter.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
-</figure>
+</section>
+<section id="hamiltonian-formulation" class="slide level2 center">
+<h2>Hamiltonian formulation</h2>
+<ul>
+<li><p>Write momenta in terms of Fourier modes <span class="math display">
+p_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}
+</span></p></li>
+<li><p>Note change of sign in exponent! If <span class="math inline">u_j</span>, <span class="math inline">p_j</span> are canonical variables <span class="math inline">\{u_j, p_k\}=\delta_{jk}</span>, then <span class="math inline">\{q_m,\pi_n\}=\delta_{mn}</span>.</p></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that in terms of the Fourier modes <span class="math display">
+H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
+</span></p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
+<p><span class="math display">
+\begin{aligned}
+T =  \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2mN}\sum_{j=1}^N\left(\sum_{|n| \leq (N-1)/2} \sum_{|m| \leq (N-1)/2}\pi_n e^{-i\eta_n j} \pi_m e^{-i\eta_m j}\right)
+\end{aligned}
+</span></p>
 <ul>
-<li><p>Consider <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span>, creating a particle in <em>exact</em> ground state</p></li>
-<li><p>Since <span class="math inline">\lvert{0}\rangle</span> includes the first type of state (2 particle-hole pair states), <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span> is only missing second kind</p></li>
-<li><p>Single quasiparticle state is <span class="math display">
-\begin{align*}
-\lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \\
-&amp;+ \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})}
-\end{align*}
-</span> <span class="math inline">\sqrt{z_k}</span> is a normalization factor</p></li>
+<li><strong>Key idea</strong></li>
 </ul>
+<p><span class="math display">
+\sum_{j=1}^N e^{-i(\eta_n+\eta_m) j}= N\delta_{n,-m}
+</span></p>
+<p><span class="math display">
+T = \frac{1}{2m}\sum_{|n| \leq (N-1)/2} \pi_n  \pi_{-n}
+</span></p>
+</section>
+<section id="system-of-oscillators" class="slide level2 center">
+<h2>System of oscillators</h2>
+<ul>
+<li><p>Could split amplitudes into real and imaginary parts <span class="math display">
+\begin{aligned}
+q_n &amp;= \frac{1}{\sqrt{2}}\left(q_n' + i q_n''\right),\quad q_{-n} = \frac{1}{\sqrt{2}}\left(q_n' - i q_n''\right)\\
+\pi_n &amp;= \frac{1}{\sqrt{2}}\left(\pi_n' + i \pi_n''\right),\quad \pi_{-n} = \frac{1}{\sqrt{2}}\left(\pi_n' - i \pi_n''\right),\quad n\geq 0.
+\end{aligned}
+</span> The Hamiltonian is then <span class="math inline">H=H' + H''</span> with <span class="math display">
+H' = \sum_{0 &lt; n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \eta_n) q'_n q'_{n}\right]
+</span></p></li>
+<li><p>Compare with usual SHO: read off dispersion relation</p></li>
+</ul>
+</section>
+<section id="complex-coordinates" class="slide level2 center">
+<h2>Complex Coordinates</h2>
+<p><span class="math display">
+a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right)
+</span> <span class="math display">
+H = \omega \left|a\right|^2
+</span></p>
+<ul>
+<li>Hamilton’s equations are</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\dot a &amp;= -i \frac{\partial H}{\partial a^*}= -i\omega a\\
+\dot a^*  &amp;= i \frac{\partial H}{\partial a} = i\omega a^*
+\end{aligned}
+</span></p>
+<ul>
+<li>Solution <span class="math inline">a(t) = e^{-i\omega t} a(0)</span></li>
+</ul>
+</section>
+<section id="complex-coordinates-normal-modes" class="slide level2 center">
+<h2>Complex coordinates: normal modes</h2>
+<p><span class="math display">
+\begin{aligned}
+a_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_n + \frac{i}{m\omega(\eta_n)}\pi_{-n}\right)\nonumber\\
+a^*_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)}\pi_{n}\right),\qquad n\neq 0
+\end{aligned}
+</span></p>
+<p><span class="math display">
+\begin{aligned}
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
+\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right)
+\end{aligned}
+</span></p>
 </section>
 <section class="slide level2 center">
 
-<p>Normalizing, <span class="math inline">1-z_\mathbf{k}</span> is</p>
 <p><span class="math display">
-\begin{align*}
-\left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots
-\end{align*}
+\begin{aligned}
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
+\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right),\\
+H &amp;= \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right]
+\end{aligned}
 </span></p>
 <ul>
-<li>This is overlap of single quasiparticle state <span class="math inline">\lvert{\mathbf{k},s}\rangle</span> with <span class="math inline">a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle</span>.</li>
+<li><span class="math inline">H</span> in terms of <span class="math inline">a_n</span>, <span class="math inline">a_n^*</span></li>
 </ul>
 <p><span class="math display">
-z_\mathbf{k}= \frac{\lvert{\braket{\mathbf{k},s|a^\dagger_{\mathbf{k},s}|0}}\rvert^2}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) \left|a_n\right|^2
 </span></p>
-</section>
-<section class="slide level2 center">
-
 <ul>
-<li><p>A finite overlap – for quasiparticles at the Fermi surface – is requirement for Fermi liquid picture to hold</p></li>
-<li><p>If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear!</p></li>
-<li><p>For our example (hard!): <span class="math display">
-z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
+<li>First term is (free) centre of mass</li>
+</ul>
+</section>
+<section id="quantum-oscillators" class="slide level2 center">
+<h2>Quantum Oscillators</h2>
+<p><span class="math inline">a</span>, <span class="math inline">a^*\longrightarrow a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span> satisfying <span class="math inline">[a^{\vphantom{\dagger}},a^\dagger]=1</span> <span class="math display">
+H = \frac{\omega}{2}\left(a^\dagger a^{\vphantom{\dagger}}+a^{\vphantom{\dagger}}a^\dagger\right)
+</span></p>
+<ul>
+<li><p>Key property is <span class="math display">
+\begin{aligned}
+\left[a^{\vphantom{\dagger}}, H\right] &amp;= \omega a^{\vphantom{\dagger}}\\
+\left[a^\dagger, H\right] &amp;= -\omega a^\dagger
+\end{aligned}
+</span></p></li>
+<li><p>If <span class="math inline">\lvert{\psi}\rangle</span> is an eigenstate of the Hamiltonian <span class="math inline">H \lvert{\psi}\rangle = E \lvert{\psi}\rangle</span> then <span class="math inline">a^\dagger\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E+\omega</span> <span class="math display">
+H a^\dagger\lvert{\psi}\rangle = a^\dagger H \lvert{\psi}\rangle + [H, a^\dagger] \lvert{\psi}\rangle = \left(E+\omega\right)a^\dagger\lvert{\psi}\rangle
 </span></p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>This is also occupation number of fermions <span class="math inline">\braket{0|a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s}|0}</span> (<em>not</em> quasiparticles!) just below <span class="math inline">k_\text{F}</span> in ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a></p></li>
-<li><p>There is a corresponding result just above</p></li>
-<li><p>Even with interactions, finite step in distribution function at <span class="math inline">k_\text{F}</span></p></li>
+<li><p>Similarly <span class="math inline">a\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E-\omega</span></p></li>
+<li><p>Unless <span class="math inline">a^{\vphantom{\dagger}}\lvert{\psi}\rangle=0</span>, in which case <span class="math inline">\lvert{\psi}\rangle=\lvert{0}\rangle</span>, the ground state</p></li>
+<li><p>As a result <span class="math display">
+\lvert{n}\rangle = \frac{1}{\sqrt{n!}}\left(a^\dagger\right)^n\lvert{0}\rangle
+</span> The factor of <span class="math inline">\frac{1}{\sqrt{n!}}</span> normalizes the state</p></li>
+<li><p>The ground state has energy <span class="math inline">E_0=\omega/2</span></p></li>
 </ul>
+</section>
+<section id="the-quantum-chain" class="slide level2 center">
+<h2>The Quantum Chain</h2>
+<ul>
+<li><p>We have operators <span class="math inline">[a^{\vphantom{\dagger}}_m,a^\dagger_n]=\delta_{mn}</span>, and Hamiltonian <span class="math display">
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\omega(\eta_n)}{2}\left(a^\dagger_na^{\vphantom{\dagger}}_n+a^{\vphantom{\dagger}}_na^\dagger_n\right)
+</span></p></li>
+<li><p>General energy eigenstate may be written</p></li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\lvert{\mathbf{N}}\rangle &amp;= \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\left(a^\dagger_n\right)^{N_n}}{\sqrt{N_n!}} \lvert{0}\rangle\\
+E(\mathbf{N}) &amp;= \overbrace{\frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega(\eta_n)}^{\equiv E_0} + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
+\end{aligned}
+</span></p>
+</section>
+<section id="oscillator-quanta-are-bosons" class="slide level2 center">
+<h2>Oscillator Quanta are Bosons!</h2>
+<ul>
+<li><p>Eigenstates labelled by occupation numbers</p></li>
+<li><p>Energy is additive <span class="math display">
+E(\mathbf{N}) = E_0 + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
+</span></p></li>
+<li><p>These are <em>not</em> the particles making up the chain!</p></li>
+</ul>
+</section>
+<section id="thermodynamic-nto-infty-limit" class="slide level2 center">
+<h2>Thermodynamic (<span class="math inline">N\to \infty</span>) limit</h2>
+<ul>
+<li>Expect to find <em>extensive</em> energy, proportional to system size <span class="math display">
+e_0 = \lim_{N\to \infty} \frac{E_0}{N}
+</span></li>
+<li>Separation of <span class="math inline">\eta_n</span> values is <span class="math inline">2\pi/N</span>, so <span class="math display">
+\sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right)
+</span> so <span class="math display">
+e_0 = \int_{-\pi}^\pi\frac{d\eta}{2\pi} \frac{\omega(\eta)}{2} = \sqrt{\frac{k}{2m}}\int_{-\pi}^\pi\frac{d\eta}{2\pi} \sqrt{1-\cos
+\eta}=\frac{2}{\pi}\sqrt{\frac{k}{m}}
+</span></li>
+</ul>
+</section>
+<section id="continuum-a-to-0-limit" class="slide level2 center">
+<h2>Continuum (<span class="math inline">a \to 0</span>) limit</h2>
+<ul>
+<li>1D elastic modulus is <span class="math display">
+\kappa \equiv \frac{\text{tension}}{\text{strain}}=\frac{k\Delta x}{\Delta x/a} = ka
+</span></li>
+<li><span class="math inline">k/m =k/(\rho a)= \kappa/(\rho a^2)</span>, where <span class="math inline">\rho</span> is mass / length <span class="math display">
+\frac{E_0}{L} =\frac{2}{\pi}\sqrt{\frac{k}{m}}\frac{N}{L} = \frac{2}{\pi}\sqrt{\frac{\kappa}{\rho}}\left(\frac{N}{L}\right)^2
+</span></li>
+<li>Energy per unit length diverges as <span class="math inline">N\to\infty</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Potential energy can be written <span class="math display">
+V = \frac{k}{2} \sum_j^N (u_j-u_{j+1})^2 \xrightarrow{N\to\infty} \frac{\kappa}{2} \int_0^L dx \left[u'(x)\right]^2.
+</span></p></li>
+<li><p>Define the Fourier modes slightly differently <span class="math display">
+u(x) = \sum_{n=-\infty}^\infty u_n e^{ik_n x}
+</span> where <span class="math inline">k_n =2\pi n/L</span>. Note that <span class="math inline">k_n x = \eta_n j</span> <span class="math display">
+V=\frac{\kappa L}{2}\sum_n k_n^2  u_nu_{-n}
+</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Defining the <em>momentum density</em> <span class="math inline">\pi(x=ja) = p_j N/L</span>, then <span class="math display">
+\left[u(x),\pi(x')\right]=i\delta(x-x')
+</span> <span class="math display">
+T = \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2\rho}\int_0^L dx\left[\pi(x)\right]^2
+</span></p></li>
+<li><p>Use mode expansion</p></li>
+</ul>
+<p><span class="math display">
+\pi(x) = \lim_{N\to\infty} \frac{p_{j=xN/L}N}{L} =\frac{1}{L}\sum_{n=-\infty}^\infty \pi_n e^{-2\pi i nx /L}
+</span></p>
+<p><span class="math display">
+T= \frac{1}{L}\sum_{n=-\infty}^\infty \frac{1}{2\rho} \pi_n\pi_{-n}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Continuum Hamiltonian <span class="math inline">H= T+V</span> <span class="math display">
+H = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho L} \pi_n\pi_{-n} + \frac{\kappa L k_n^2}{2}  u_nu_{-n} \right]
+</span></p></li>
+<li><p>We can now read off the dispersion relation <span class="math display">
+\omega(k) = c|k|
+</span> where <span class="math inline">c=\sqrt{\frac{\kappa}{\rho}}</span> is the speed of sound</p></li>
+<li><p>Lattice was origin of periodic dispersion. Now it has gone</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Transcribing the definition of the oscillator variables</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+a_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_n + \frac{i}{\sqrt{ZkL}}\pi_{-n}\right]\nonumber\\
+a^*_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}\right]
+\end{aligned}
+</span></p>
+<ul>
+<li><span class="math inline">Z\equiv\sqrt{\kappa\rho}</span> is impedance</li>
+</ul>
+<p><span class="math display">
+H - E_0 = \sum_{n=-\infty}^\infty c\left|k_n\right|a^\dagger_na^{\vphantom{\dagger}}_n
+</span></p>
+</section>
+<section id="finite-temperature" class="slide level2 center">
+<h2>Finite Temperature</h2>
+<ul>
+<li><p>Occupancies thermal averages given by Bose function (<span class="math inline">\beta=\frac{1}{k_\text{B}T}</span>) <span class="math display">
+\langle N_n \rangle = n_\text{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1}
+</span></p></li>
+<li><p>Average energy is finite due to exponential tail of <span class="math inline">n_\text{B}(\omega)</span> <span class="math display">
+\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)n_\text{B}(\omega(\eta_n))
+</span></p></li>
+<li><p>At low energies <span class="math inline">n_{\text{B}}(\omega) \sim \frac{1}{\beta\omega}</span> and contribution of each mode is <span class="math display">
+\omega n_\text{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T
+</span></p></li>
+</ul>
+</section>
+<section id="position-fluctuations" class="slide level2 center">
+<h2>Position Fluctuations</h2>
+<ul>
+<li><p>Classical: regular arrangement of masses (+ thermal fluctuations)</p></li>
+<li><p>Quantum: <span class="math inline">u_j-u_k</span> fluctuates, even in ground state</p></li>
+</ul>
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle\neq 0
+</span></p>
+<ul>
+<li>Write displacements in <span class="math inline">a^{\vphantom{\dagger}}_n</span>, <span class="math inline">a^\dagger_{n}</span>, then evaluate expectation</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+u_j &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j}\\
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right)
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Result:</li>
+</ul>
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle= \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right]
+</span></p>
+<p><span class="math inline">N\to\infty</span> limit</p>
+<p><span class="math display">
+\begin{aligned}
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle &amp;= \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\
+&amp;= \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
+</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/FermiJump.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><img data-src="../assets/disp_fluct.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
+<ul>
+<li>When <span class="math inline">\left|j-k\right|\gg 1</span> integral dominated by <span class="math inline">\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi</span> <span class="math display">
+\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that as <span class="math inline">\left|i-j\right|\to\infty</span> <span class="math display">
+\langle{0}\rvert\left(u_i-u_j\right)^2\lvert{0}\rangle \sim  \frac{\ell_\text{osc}^2}{\pi} \log \left|i-j\right|
+</span></p>
+<p>where <span class="math inline">\ell_\text{osc}\equiv\left(km\right)^{-1/4}</span> is the <strong>oscillator length</strong></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Uncertainty in the separation of two masses increases with separation</p></li>
+<li><p>Ground state of chain <em>not</em> a crystal; more closely resembles fluid</p></li>
+<li><p>Conclusion depends on dimension (crystals <em>do</em> exist in 3D!)</p></li>
+</ul>
+</section>
+<section id="density-fluctuations" class="slide level2 center">
+<h2>Density Fluctuations</h2>
+<ul>
+<li><p>Alternatively, consider fluctuations of <em>density</em> <span class="math display">
+\rho(x) = \sum_{j=1}^N \delta_L(x-x_j)
+</span> <span class="math inline">x_j = ja + u_j</span>, and <span class="math inline">\delta_L(x)</span> is <span class="math inline">L</span>-periodic version of <span class="math inline">\delta</span>-function</p></li>
+<li><p>Fourier components <span class="math display">
+\rho_k = \sum_{j=1}^N\exp(-i k x_j)
+</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\rho_k = \sum_{j=1}^N\exp(-i k x_j).
+</span></p>
+<ul>
+<li>In ordered configuration <span class="math inline">x_j = ja</span>, we have</li>
+</ul>
+<p><span class="math display">
+\rho_{k_n=2\pi n/L} = \begin{cases}
+N &amp; n = 0 \mod N \\
+0 &amp; \text{ otherwise.}
+\end{cases}
+</span></p>
+<ul>
+<li><p><strong>Bragg peaks</strong> at multiples of <span class="math inline">\frac{2\pi}{a}</span> observed in diffraction experiments</p></li>
+<li><p>Translation of lattice changes phase of <span class="math inline">\rho_k</span>, so <span class="math inline">|\rho_k|^2</span> unchanged</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>What about quantum ground state? We should evaluate <span class="math display">
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N \langle{0}\rvert \exp(iq[x_j-x_k])\lvert{0}\rangle
+</span> Upon substituting the mode expansion we get expressions of form <span class="math display">
+\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle.
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Prove the Hadamard Lemma</p>
+<p><span class="math display">
+\begin{aligned}
+e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
+&amp;\equiv e^{\left[A,\cdot\right]}B,
+\end{aligned}
+</span></p>
+<p>[Hint: Consider the differential equation in <span class="math inline">x</span> obeyed by <span class="math inline">e^{xA}B e^{-xA}</span>]</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that the exponent can be written in a form with all occurrences of <span class="math inline">a^\dagger</span> to the left of all <span class="math inline">a^{\vphantom{\dagger}}</span> (this operation is called <strong>normal ordering</strong>; we will meet it again).</p>
+<p><span class="math display">
+\exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger) = \exp(\lambda \mu /2) \exp(\mu a^\dagger)\exp(\lambda a^{\vphantom{\dagger}}).
+</span> [Hint: Consider the differential equations obeyed by <span class="math inline">F_1(s)=e^{s(A+B)}</span> and <span class="math inline">F_2(s)=e^{sA}e^{sB}</span>]</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Using <span class="math inline">\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle = \exp(\lambda \mu /2)</span> we get</li>
+</ul>
+<p><span class="math display">
+\begin{equation*}
+\begin{split}
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N &amp;\exp(iqa[j-k])\\
+&amp;\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right)
+\end{split}
+\end{equation*}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/struct_fact.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Have seen expression in exponent before!</li>
+</ul>
+<p><span class="math display">
+-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\sim - \frac{2\pi\ell_\text{osc}^2}{a^2}\log|j-k|
+</span></p>
+<ul>
+<li>Near first Bragg peak at <span class="math inline">q=2\pi/a</span> <span class="math display">
+\exp(i\Delta q a[j-k])\left|j-k\right|^{-2\pi\ell_\text{osc}^2/a^2}
+</span> where <span class="math inline">\Delta q</span> is deviation from <span class="math inline">2\pi/a</span>. This implies <span class="math display">
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle \sim \left(\Delta q\right)^{-1+2\pi\ell_\text{osc}^2/a^2}
+</span></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -1095,7 +1208,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

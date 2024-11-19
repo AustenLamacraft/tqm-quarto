@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Fermi Gas</title>
+  <title>Theories of Quantum Matter – B is for Bunching</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Fermi Gas</h1>
+  <h1 class="title">B is for Bunching</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -359,455 +359,585 @@
 </div>
 </section>
 <section>
-<section id="fermi-gas" class="title-slide slide level1 center">
-<h1>Fermi Gas</h1>
+<section id="more-second-quantization" class="title-slide slide level1 center">
+<h1>More Second Quantization</h1>
 <ul>
-<li><p>We’ll study Fermi gas with weak interactions (perturbation theory)</p></li>
-<li><p>Illustrates Landau’s <strong>Fermi liquid</strong> theory, a ‘standard model’ of condensed matter</p></li>
-<li><p>Landau’s theory applies more generally, even when interactions not weak</p></li>
-</ul>
-</section>
-<section id="weakly-interacting-fermi-gas" class="slide level2 center">
-<h2>Weakly Interacting Fermi Gas</h2>
-<ul>
-<li>Fermi gas with short-ranged interactions</li>
+<li><a href="../slides/more-second-quantization.html">Lecture 1</a>: density correlations in ground state of 1D Fermi gas</li>
 </ul>
 <p><span class="math display">
-H = \int d\mathbf{r}\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\psi^\dagger_s\cdot\nabla\psi^{\vphantom{\dagger}}_s + U_0 \psi^\dagger_\uparrow\psi^\dagger_\downarrow\psi^{\vphantom{\dagger}}_\downarrow\psi^{\vphantom{\dagger}}_\uparrow\right]
+\rho_2(x,y) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}\right)^2\right]
 </span></p>
 <ul>
-<li>Work in momentum space <span class="math display">
-H =\sum_{\mathbf{k},s} \epsilon(\mathbf{k})a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} + \overbrace{\frac{U_0}{V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1,\uparrow}a^\dagger_{\mathbf{k}_2,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_3,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_4,\uparrow}}^{\equiv H_\text{int}}
-</span> with <span class="math inline">\epsilon(\mathbf{k})=\mathbf{k}^2/2m</span>, and <span class="math inline">V</span> the volume</li>
+<li><p>How to find this using second quantization?</p></li>
+<li><p>What can these correlations tell us about interactions?</p></li>
 </ul>
 </section>
-<section class="slide level2 center">
-
+<section id="rho_2-from-second-quantization" class="slide level2 center">
+<h2><span class="math inline">\rho_2</span> from Second Quantization</h2>
 <ul>
-<li><p><span class="math inline">U_0=0</span>: eigenstates are product states <span class="math inline">\lvert{\mathbf{N}}\rangle</span> of single particle momentum states specified by the occupancies <span class="math inline">N_{s}(\mathbf{k}) = 0,1</span></p></li>
-<li><p>Ground state is Fermi sphere of radius <span class="math inline">k_\text{F}</span> in momentum space with <span class="math inline">N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert)</span>.</p></li>
-<li><p>Low energy excited states will have <span class="math inline">N_{s}(\mathbf{k})=1</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\ll k_\text{F}</span> and <span class="math inline">N_{s}(\mathbf{k})=0</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\gg k_\text{F}</span>.</p></li>
-<li><p>In perturbation theory we can still <em>label</em> eigenstates by these occupation numbers even though eigenstates <span class="math inline">\neq\lvert{\mathbf{N}}\rangle</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Without interaction energy of a state <span class="math inline">\lvert{\mathbf{N}}\rangle</span> is</li>
-</ul>
-<p><span class="math display">
-E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k})
-</span></p>
-<ul>
-<li><p>For <span class="math inline">U_0\neq 0</span> energy <span class="math inline">E(\mathbf{N})</span> is function of labels, but no longer linear</p></li>
-<li><p>Second order expansion of energy in terms of <em>deviation</em> of occupancies from ground state values is key ingredient of Landau’s theory</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="perturbation-theory-to-second-order">Perturbation Theory to Second Order</h3>
-<ul>
-<li>Second order perturbation theory for the energies</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-E^{(1)}(\mathbf{N}) &amp;= \Braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
-E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}
-\end{align*}
-</span></p>
-<ul>
-<li>First order correction is easy</li>
-</ul>
-<p><span class="math display">
-E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\mathbf{k})N_{\downarrow}(\mathbf{k}') = \frac{U_0}{V}N_\uparrow N_\downarrow
-</span> (energy used in Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>)</p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>For second order we need <span class="math inline">\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}}</span>, nonzero if <span class="math display">
-\begin{align*}
-N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
-N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
-\end{align*}
-</span> for <span class="math inline">\mathbf{k}_i</span> satisfying <span class="math inline">\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4</span> <span class="math display">
-\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)
-</span> (ignoring any coinciding momenta; occupancies 0 or 1)</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<h3 id="landau-f-function">Landau <span class="math inline">f</span> function</h3>
-<ul>
-<li><p><span class="math inline">E^{(2)}(\mathbf{N})</span> has three independent momentum sums! 🙀</p></li>
-<li><p>We are after <em>excitation energies</em>, so expand in <em>change</em> in occupation</p></li>
-</ul>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<ul>
-<li><span class="math inline">n_\mathbf{k}</span> is <em>mean</em> deviation from Fermi sphere in continuum limit:</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiN.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Excitation energy expanded in <span class="math inline">n_\mathbf{k}</span></li>
-</ul>
-<p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}')
-</span></p>
-<ul>
-<li><p>This is Landau’s <strong>key idea</strong>, not restricted to perturbation theory</p></li>
-<li><p>At first order <span class="math display">
-\begin{align*}
-\varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots
-\end{align*}
-</span> <span class="math inline">\bar s</span> is <span class="math inline">\bar\uparrow=\downarrow</span>, <span class="math inline">\bar\downarrow=\uparrow</span> 🥱</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Second order contributions to <span class="math inline">f</span>-function more interesting</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
-\left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><span class="math inline">f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')</span> is more complicated <span class="math display">
-\begin{align*}
-f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
-\left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span> (just for reference)</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p><span class="math inline">n_{s}(\mathbf{k})\neq 0</span> in energy window of size <span class="math inline">k_\text{B} T</span> around Fermi surface</p></li>
-<li><p>At low <span class="math inline">T</span> take <span class="math inline">\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}</span>. <em>New feature</em> at second order is nontrivial dependence of <span class="math inline">f_{s^{}s'}(\mathbf{k},\mathbf{k}')</span> on angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span>.</p></li>
-<li><p>Assume ground state unpolarized, i.e.&nbsp;<span class="math inline">N_{s}(\mathbf{k})</span> independent of <span class="math inline">s</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Let’s work out angular dependence for <span class="math inline">f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')</span> (simpler, only have one independent momentum 😀)</p></li>
-<li><p>Thermodynamic limit</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right]
-\end{align*}
-</span></p>
-<ul>
-<li>Need integral</li>
-</ul>
-<p><span class="math display">
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator can be written (<span class="math inline">\mathbf{k}-\mathbf{k}'</span> is fixed) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)= \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}_2-\mathbf{k}_3\right) = \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}-\mathbf{k}'\right)
+<li><p>From <a href="../slides/many-body-wavefunctions.html">Lecture 1</a>: <strong>pair distribution function</strong> <span class="math display">
+\rho_2(x_1,x_2) = N(N-1) \int dx_3\ldots dx_N \left|\Psi(x_1,x_2,\ldots,x_N)\right|^2
+</span> measures likelihood of finding particles at <span class="math inline">x_1</span> and <span class="math inline">x_2</span></p></li>
+<li><p>For 1D Fermi gas ground state we found (Slater determinant, etc.) <span class="math display">
+\rho_2(x,y) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}\right)^2\right]
 </span></p></li>
-<li><p>Notation <span class="math inline">\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right)</span></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiGeometry.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator becomes (for fixed <span class="math inline">\mathbf{q}</span>) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3) = \frac{2}{m}\mathbf{K}\cdot\mathbf{q}
-</span></p></li>
-<li><p>Only angle <span class="math inline">\theta</span> between <span class="math inline">\mathbf{K}</span> and <span class="math inline">\mathbf{q}</span> enters integral</p></li>
-<li><p>Conditions <span class="math inline">\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}</span> and <span class="math inline">\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}</span> become</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2
-\end{align*}
-</span></p>
-<p>which gives range of <span class="math inline">K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)</span></p>
-<p><span class="math display">
-K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta},\qquad  \theta&lt;\pi/2
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>In terms of these variables</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
-\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
-&amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}
-\end{align*}
-</span></p>
-<ul>
-<li>Other integral is same but in interval <span class="math inline">(\pi/2,\pi)</span>. Finally… <span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
-&amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right]
-\end{align*}
-</span> <span class="math inline">\phi</span> is the angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span> i.e.&nbsp;<span class="math inline">\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2</span></li>
+<li><p>Let’s calculate using second quantization!</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
-<ul>
-<li><p>Our definition of <span class="math inline">f</span> implied quantization axis for spin</p></li>
-<li><p>To write things in invariant way, think of occupation number <span class="math inline">N(\mathbf{k})</span> as <span class="math inline">2\times 2</span> matrix</p></li>
-</ul>
 <p><span class="math display">
-\mathsf{N}(\mathbf{k})=\begin{pmatrix}
-N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
-N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k})
-\end{pmatrix}
+\rho_2(x,y) = N(N-1) \int dx_3\ldots dx_N \left|\Psi(x,y,\ldots,x_N)\right|^2
 </span></p>
 <ul>
-<li><span class="math inline">f</span>-function then has <em>four</em> spin indices</li>
+<li>Recall from <a href="../slides/second-quantization.html">Lecture 5</a></li>
 </ul>
 <p><span class="math display">
-\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}')
+\begin{align*}
+\lvert{\Psi}\rangle&amp;\longleftrightarrow \Psi(x_1,\ldots, x_N)\nonumber\\
+\psi(X)\lvert{\Psi}\rangle&amp;\longleftrightarrow \sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})\\
+\end{align*}
+</span></p>
+<ul>
+<li>Second quantized form</li>
+</ul>
+<p><span class="math display">
+\rho_2(x,y) =\braket{\Psi|\psi^\dagger(x)\psi^\dagger(y)\psi^{\vphantom{\dagger}}(y)\psi^{\vphantom{\dagger}}(x)|\Psi}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <p><span class="math display">
-\begin{align*}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
-\end{align*}
-</span> (again, just for reference)</p>
+\rho_2(x,y) =\braket{\Psi|\psi^\dagger(x)\psi^\dagger(y)\psi^{\vphantom{\dagger}}(y)\psi^{\vphantom{\dagger}}(x)|\Psi}
+</span></p>
 <ul>
-<li><strong>Key message</strong>: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math display">
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
+<li><p>Operators in which all annihilation operators stand to the right of all creation operators are said to be <strong>normal ordered</strong></p></li>
+<li><p>Two particle terms in the Hamiltonian are normal ordered to prevent particle interacting with itself!</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\rho_2(x,y) =\braket{\Psi|\psi^\dagger(x)\psi^\dagger(y)\psi^{\vphantom{\dagger}}(y)\psi^{\vphantom{\dagger}}(x)|\Psi}
+</span></p>
+<ul>
+<li>Insert expansion</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+    \psi^{\vphantom{\dagger}}(x)=\sum_{\beta}  \varphi^{}_{\beta}(x)a^{\vphantom{\dagger}}_{\beta},\\
+  \psi^\dagger(x)=\sum_{\beta}  \varphi^*_{\beta}(x)a^\dagger_{\beta}.
+\end{align*}
+</span></p>
+<ul>
+<li>This gives</li>
+</ul>
+<p><span class="math display">
+\rho_2(x,y)=\sum_{\alpha, \beta, \gamma, \delta}\varphi^{*}_{\alpha}(x)\varphi^{*}_{\beta}(y)\varphi^{}_{\gamma}(y)\varphi^{}_{\delta}(x)\braket{\Psi|a^\dagger_{\alpha}a^\dagger_{\beta}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\delta}|\Psi}.
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\braket{\Psi|a^\dagger_{\alpha}a^\dagger_{\beta}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\delta}|\Psi}
+</span></p>
+<ul>
+<li>When <span class="math inline">\lvert{\Psi}\rangle=\lvert{\mathbf{N}}\rangle</span> (product state using <span class="math inline">a^\dagger_\alpha</span>) have two possibilities <span class="math display">
+\begin{align*}
+  &amp;\alpha =\delta,\, \beta=\gamma, \text{ or }\\
+&amp;\alpha=\gamma,\, \beta=\delta,
+\end{align*}
+</span> which give rise to two groups of terms <span class="math display">
+\begin{align*}
+\braket{\mathbf{N}|a^\dagger_{\alpha}a^\dagger_{\gamma}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\alpha}|\mathbf{N}}&amp;=N_{\alpha}N_{\gamma}\nonumber\\
+  \braket{\mathbf{N}|a^\dagger_{\alpha}a^\dagger_{\gamma}a^{\vphantom{\dagger}}_{\alpha}a^{\vphantom{\dagger}}_{\gamma}|\mathbf{N}}&amp;=\pm N_{\alpha}N_{\gamma}\qquad\text{if }\alpha\neq\gamma,
+\end{align*}
+</span> <span class="math inline">\pm</span> corresponding to bosons and fermions</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{align*}
+\rho_2(x,y)&amp;=\sum_{\alpha, \beta, \gamma, \delta}\varphi^{*}_{\alpha}(x)\varphi^{*}_{\beta}(y)\varphi^{}_{\gamma}(y)\varphi^{}_{\delta}(x)\braket{\Psi|a^\dagger_{\alpha}a^\dagger_{\beta}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\delta}|\Psi}\\
+&amp;=\sum_{\alpha, \beta}N_\alpha N_\beta\left[\lvert{\varphi_{\alpha}(x)}\rvert^2\lvert{\varphi_{\beta}(y)}\rvert^2 \pm \varphi^*_\alpha(x)\varphi^{}_\alpha(y)\varphi^*_\beta(y)\varphi^{}_\beta(x) \right].
+\end{align*}
+</span></p>
+<ul>
+<li><p>Notice <span class="math inline">\alpha=\beta=\gamma=\delta</span> has a factor <span class="math inline">2N_\alpha^2</span></p></li>
+<li><p><strong>Should have</strong> <span class="math inline">N_\alpha(N_\alpha-1)</span> for bosons; zero for fermions</p></li>
+<li><p>Involves sum over a <em>single index</em>, general case is sum over two indices. Often not important in thermodynamic limit.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>For plane wave states we have the usual prescription <span class="math display">
+\sum_\alpha(\cdots) \longrightarrow L\int (\cdots)\frac{dk}{2\pi}
+</span> assuming integrand smooth</p></li>
+<li><p>Error from “wrong” terms has extra <span class="math inline">L^{-1}</span></p></li>
+<li><p>Careful with Bose condensates, where one state has finite fraction of particles</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{align*}
+\rho_2(x,y)&amp;=\sum_{\alpha, \beta, \gamma, \delta}\varphi^{*}_{\alpha}(x)\varphi^{*}_{\beta}(y)\varphi^{}_{\gamma}(y)\varphi^{}_{\delta}(x)\braket{\Psi|a^\dagger_{\alpha}a^\dagger_{\beta}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\delta}|\Psi}\\
+&amp;=\sum_{\alpha, \beta}N_\alpha N_\beta\left[\lvert{\varphi_{\alpha}(x)}\rvert^2\lvert{\varphi_{\beta}(y)}\rvert^2 \pm \varphi^*_\alpha(x)\varphi^{}_\alpha(y)\varphi^*_\beta(y)\varphi^{}_\beta(x) \right].
+\end{align*}
+</span></p>
+<ul>
+<li>Can express using density <span class="math inline">\rho_1(x)</span> and density matrix as <span class="math inline">g(x,y)</span> <span class="math display">
+\rho_2(x,y) = \rho_1(x)\rho_1(y) \pm g(x,y)g(y,x)
+</span> for ground state of the Fermi gas, reproduces <span class="math display">
+\rho_2(x,y) = n^2\left[1 - \left(\frac{\sin\left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}\right)^2\right]
 </span></li>
-<li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> made dimensionless by scaling by density of states at Fermi surface <span class="math inline">\nu(E_F)\equiv k_{\text{F}}m/\pi^2</span>.</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
-<h3 id="quasiparticle-energy-varepsilon_smathbfk">Quasiparticle energy <span class="math inline">\varepsilon_s(\mathbf{k})</span></h3>
-<p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
-</span></p>
-<ul>
-<li><p><span class="math inline">\varepsilon_s(\mathbf{k})</span> will involve two momentum sums 😟</p></li>
-<li><p>What can we say on general grounds? Near Fermi surface expect</p></li>
-</ul>
-<p><span class="math display">
-\varepsilon_s(\mathbf{k}) - E_\text{F} \approx v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F})
-</span></p>
-<ul>
-<li>Fermi velocity <span class="math inline">v_\text{F}</span> altered by interactions. Define <strong>effective mass</strong></li>
-</ul>
-<p><span class="math display">
-m_* = \frac{k_\text{F}}{v_\text{F}}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Can get <span class="math inline">m_*</span> using results we have already, using one simple trick</p></li>
-<li><p>Shift momentum of each quasiparticle by <span class="math inline">\delta\mathbf{k}</span>, giving new <span class="math inline">N_s(\mathbf{k})</span></p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
-&amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
-</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/FermiShift.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
+<p><img data-src="../assets/1DFermiGasCorrelation.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
-</section>
-<section class="slide level2 center">
-
 <ul>
-<li>Compute energy using Landau functional</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
-</span></p>
-<ul>
-<li>Treat last three terms as <span class="math inline">n_s(\mathbf{k})</span>. Excitation energy changes <span class="math display">
-\begin{align*}
-\Delta E(\text{after})-\Delta E(\text{before}) = \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
-+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
-\end{align*}
-</span> (to first order in <span class="math inline">\delta\mathbf{k}</span>. Integrate by parts in first term)</li>
+<li><p>‘Hole’ set by <span class="math inline">\lambda_\text{F}</span> or mean particle separation</p></li>
+<li><p>Decaying <strong>Friedel oscillations</strong>, indicating liquid-like correlations</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>On grounds of Galilean invariance, this change must be <span class="math display">
-\Delta E(\text{after})-\Delta E(\text{before}) = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k}
-</span> where total momentum <span class="math inline">\mathbf{P}</span> is</li>
-</ul>
-<p><span class="math display">
-\mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>If two expressions for <span class="math inline">\Delta E(\text{after})-\Delta E(\text{before})</span> equal for all <span class="math inline">n_s(\mathbf{k})</span> and <span class="math inline">\delta\mathbf{k}</span> to first order</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}
-</span></p>
-<ul>
-<li>For momenta close to the Fermi surface</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}
-</span></p>
-<ul>
-<li>If <span class="math inline">\mathbf{k}'=\cos\phi \mathbf{k}+ \sin\phi \mathbf{k}_\perp</span>, with <span class="math inline">\mathbf{k}_\perp\cdot\mathbf{k}=0</span>, we get</li>
-</ul>
-<p><span class="math display">
-\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>For the <span class="math inline">F(\phi)</span> that we found in <span class="math inline">2^{\text{nd}}</span> order perturbation theory <span class="math display">
-\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
-</span> (Use the substitution <span class="math inline">u=\sin\phi/2</span> to do the integral.)</p></li>
-<li><p>In systems with strong interactions <span class="math inline">m_*/m</span> may be much larger!</p></li>
-<li><p>In <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> <span class="math inline">m_*/m</span> can approach 1000! Landau’s picture of fermionic quasiparticles still applies.</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
-<ul>
-<li><p>What do these quasiparticle states <em>look</em> like? Let’s see what perturbation theory says</p></li>
-<li><p>At first order we have</p></li>
-</ul>
-<p><span class="math display">
-\lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Consider the Fermi sea ground state <span class="math inline">\lvert{\text{FS}}\rangle</span>. What states <span class="math inline">\lvert{\mathbf{N'}}\rangle</span> can appear this case?</p></li>
-<li><p>Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/2ph.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>What about an excited state? If we consider the state <span class="math display">
-a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle
-</span> two kinds of states can contribute</p>
-<ol type="1">
-<li><p>Create a pair of particle-hole pairs</p></li>
-<li><p>Create a single particle-hole pair and move particle at <span class="math inline">\mathbf{k}</span></p></li>
-</ol></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/phscatter.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Consider <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span>, creating a particle in <em>exact</em> ground state</p></li>
-<li><p>Since <span class="math inline">\lvert{0}\rangle</span> includes the first type of state (2 particle-hole pair states), <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span> is only missing second kind</p></li>
-<li><p>Single quasiparticle state is <span class="math display">
-\begin{align*}
-\lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \\
-&amp;+ \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})}
-\end{align*}
-</span> <span class="math inline">\sqrt{z_k}</span> is a normalization factor</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<p>Normalizing, <span class="math inline">1-z_\mathbf{k}</span> is</p>
-<p><span class="math display">
-\begin{align*}
-\left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots
-\end{align*}
-</span></p>
-<ul>
-<li>This is overlap of single quasiparticle state <span class="math inline">\lvert{\mathbf{k},s}\rangle</span> with <span class="math inline">a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle</span>.</li>
-</ul>
-<p><span class="math display">
-z_\mathbf{k}= \frac{\lvert{\braket{\mathbf{k},s|a^\dagger_{\mathbf{k},s}|0}}\rvert^2}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>A finite overlap – for quasiparticles at the Fermi surface – is requirement for Fermi liquid picture to hold</p></li>
-<li><p>If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear!</p></li>
-<li><p>For our example (hard!): <span class="math display">
-z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
+<li><p>For bosons <span class="math display">
+\rho_2(x,y) = \rho_1(x)\rho_1(y) + g(x,y)g(y,x),
 </span></p></li>
+<li><p>If <span class="math inline">g(x,y)\to 0</span> as <span class="math inline">\lvert{x-y}\rvert\to\infty</span> <span class="math inline">\rho_2(x,x)</span> is <em>twice</em> the value at <span class="math inline">\lvert{x-y}\rvert\to\infty</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\rho_2(x,y) = \rho_1(x)\rho_1(y) \pm g(x,y)g(y,x),
+</span></p>
+<ul>
+<li><p>For different occupations can recalculate <span class="math inline">\rho_1(x)</span> and <span class="math inline">g(x,y)</span></p></li>
+<li><p>Applies to <strong>product states</strong> only</p></li>
+</ul>
+</section>
+<section id="hanbury-brown-and-twiss-effect" class="slide level2 center">
+<h2>Hanbury Brown and Twiss Effect</h2>
+<ul>
+<li><p><span class="math inline">\rho_2(x,y)</span> can show <strong>interference</strong>, as can <span class="math inline">\rho_1(x)</span> (‘intensity’)</p></li>
+<li><p>Classic BEC experiment of <a href="https://science.sciencemag.org/content/275/5300/637">Andrews et al.</a></p></li>
+<li><p>Earlier demonstrations of HBT in astro, see <a href="https://en.wikipedia.org/wiki/Hanbury_Brown_and_Twiss_effect">Wikipedia</a> for more</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>This is also occupation number of fermions <span class="math inline">\braket{0|a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s}|0}</span> (<em>not</em> quasiparticles!) just below <span class="math inline">k_\text{F}</span> in ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a></p></li>
-<li><p>There is a corresponding result just above</p></li>
-<li><p>Even with interactions, finite step in distribution function at <span class="math inline">k_\text{F}</span></p></li>
+<li><p><span class="math inline">N</span> noninteracting bosons occupying ground state <span class="math inline">\varphi_{0}(\mathbf{r})</span> of some potential: a <strong>Bose condensate</strong></p></li>
+<li><p><span class="math inline">N</span>-body wavefunction is <span class="math display">
+  \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots,\mathbf{r}_N)=\prod_i^N \varphi_0(\mathbf{r}_i)
+</span> <span class="math display">
+  \lvert{\Psi}\rangle=\frac{1}{\sqrt{N!}}\left(a^\dagger_0\right)^N\lvert{\text{VAC}}\rangle
+</span> where <span class="math inline">a^\dagger_0</span> creates particle in state <span class="math inline">\varphi_0(\mathbf{r})</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="experiment-of-andrews-et-al.">Experiment of <a href="https://science.sciencemag.org/content/275/5300/637">Andrews et al.</a></h3>
+<ul>
+<li><p>Two identical BECs side by side</p></li>
+<li><p>Switch off potentials: particles fly out</p></li>
+<li><p>After some time wavefunctions overlap. What do we see?</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="a-simpler-situation..">A simpler situation..</h3>
+<ul>
+<li><p>One BEC, each atom in superposition of <span class="math inline">\varphi_L(\mathbf{r})</span> and <span class="math inline">\varphi_R(\mathbf{r})</span> <span class="math display">
+  \lvert{\bar N_L,\bar N_R}\rangle_\theta\equiv\frac{1}{\sqrt{N!}}\left[\sqrt{\frac{\bar N_L}{N}}e^{-i\theta/2}
+  a^\dagger_L+\sqrt{\frac{\bar N_R}{N}}e^{i\theta/2}a^\dagger_R\right]^N\lvert{\text{VAC}}\rangle
+</span> <span class="math inline">\bar N_{L,R}</span> are average particle number (<span class="math inline">N=\bar N_L+\bar N_R</span>)</p></li>
+<li><p>System evolves for time <span class="math inline">t</span>. Recall that field operator obeys <span class="math display">
+i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}{2m}\nabla^2\psi^{\vphantom{\dagger}}(\mathbf{r},t)
+</span> (no potential)</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Write the field operator <span class="math display">
+\psi^{\vphantom{\dagger}}(\mathbf{r})=\varphi_L(\mathbf{r},t)a^{\vphantom{\dagger}}_L+\varphi_R(\mathbf{r},t)a^{\vphantom{\dagger}}_R+\cdots,
+</span> where wavefunctions <span class="math inline">\varphi_{L/R}(\mathbf{r},t)</span> obey free particle Schrödinger</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+\rho_1(\mathbf{r},t)=\bar N_L|\varphi_L(\mathbf{r},t)|^2+\bar N_R|\varphi_R(\mathbf{r},t)|^2+\overbrace{2\sqrt{\bar N_L \bar
+N_R}\mathrm{Re}\,e^{i\theta}\,\varphi^*_L(\mathbf{r},t)\varphi_R(\mathbf{r},t)}^{\equiv\rho_{\mathrm{int}(
+\mathbf{r},t)}}
+\end{align*}
+</span></p>
+<ul>
+<li><p>If clouds begin overlap, last term can give interference fringes</p></li>
+<li><p><em>Relative phase</em> has real physical effect.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Consider a Gaussian wavefunction of width <span class="math inline">R_0</span> at time <span class="math inline">t=0</span>. Show (by substitution into the Schrödinger equation is fine) that this function evolves as</p>
+<p><span class="math display">
+\varphi(\mathbf{r},t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\mathbf{r}^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right]
+</span></p>
+<p>where <span class="math inline">R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="back-to-andrews">Back to Andrews…</h3>
+<ul>
+<li><p>Do same thing with two condensates of <em>fixed particle number</em></p></li>
+<li><p>System is in product state (often <strong>Fock state</strong> in this context) <span class="math display">
+  \lvert{N_L,N_R}\rangle\equiv\frac{1}{\sqrt{N_L! N_R!}}\left(a^\dagger_L\right)^{N_L}\left(a^\dagger_R\right)^{N_R}\lvert{\text{VAC}}\rangle
+</span></p></li>
+<li><p>Compute density as before <span class="math display">
+  \rho_1(\mathbf{r},t)=N_L|\varphi_L(\mathbf{r},t)|^2+N_R|\varphi_R(\mathbf{r},t)|^2
+</span> which differs from the previous result by the absence of the interference term.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>But a single image is <strong>not an expectation value</strong>!</p></li>
+<li><p>Correlation function can tell us about fluctuations between images</p></li>
+<li><p>Our result for <span class="math inline">\rho_2</span> gives</p></li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+    \rho_2(\mathbf{r},\mathbf{r}')&amp;=\rho_1(\mathbf{r})\rho_1(\mathbf{r}')
+    +N_LN_{R}\varphi_L^*(\mathbf{r})\varphi_R^*(\mathbf{r}')\varphi_L(\mathbf{r}')\varphi_R(\mathbf{r}) \nonumber\\
+    &amp;\qquad+N_{L}N_R\varphi_R^*(\mathbf{r})\varphi_L^*(\mathbf{r}')
+    \varphi_R(\mathbf{r}')\varphi_L(\mathbf{r})
+\end{align*}
+</span></p>
+<ul>
+<li>Second line contains interference fringes!</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p><span class="math inline">\rho_2</span> gives probability of finding an atom at <span class="math inline">\mathbf{r}'</span> if there is one at <span class="math inline">\mathbf{r}</span></p></li>
+<li><p><strong>Conclusion:</strong> in each measurement of density, fringes are present but with <em>random phase</em></p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/FermiJump.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><img data-src="../assets/AndrewsFringes.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
 </div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Expectations in Fock state can be obtained using relative phase state, but with subsequent averaging over phase.</li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Prove this by showing that the density matrix</p>
+<p><span class="math display">
+\rho=\int_0^{2\pi}\frac{d\theta}{2\pi}\lvert{\bar N_L,\bar N_R}\rangle_\theta\langle{\bar N_R,\bar N_L}\rvert_\theta
+</span></p>
+<p>coincides with that of a mixture of Fock states with binomial distribution of atoms into states <span class="math inline">\varphi_{L}</span>, <span class="math inline">\varphi_{r}</span>. At large <span class="math inline">N</span> this distribution becomes sharply peaked at occupations <span class="math inline">\bar N_L</span>, <span class="math inline">\bar N_R</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="hartreefock-theory" class="slide level2 center">
+<h2>Hartree–Fock Theory</h2>
+<ul>
+<li>Recall from <a href="../slides/second-quantization.html">Lecture 5</a></li>
+</ul>
+<p><span class="math display">
+\hat H_\text{int.} = \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k)=\frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1).
+</span></p>
+<ul>
+<li>Since</li>
+</ul>
+<p><span class="math display">
+\sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) = \frac{1}{2}\int \sum_{j\neq k}\delta(\mathbf{r}_1-\mathbf{r}_j)\delta(\mathbf{r}_2-\mathbf{r}_k)U(\mathbf{r}_1-\mathbf{r}_2) d\mathbf{r}_1 d\mathbf{r}_2,
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Find expectation value of interaction energy in a product state</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+    \langle \hat V\rangle &amp;= \overbrace{\frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\, \rho_1(\mathbf{r}) U(\mathbf{r}-\mathbf{r}')\rho_1(\mathbf{r}')}^{\equiv E_\text{Hartree}} \\
+    &amp;\qquad\overbrace{\pm \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})}^{\equiv E_\text{Fock}}
+\end{align*}
+</span></p>
+<ul>
+<li><p>The two terms are <strong>Hartree</strong> and <strong>Fock</strong> (or <strong>exchange</strong>) contributions</p></li>
+<li><p>Basis of variational <strong>Hartree–Fock method</strong> for many body systems: approximate ground state by product state</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="hartreefock-for-electron-gas">Hartree–Fock for Electron Gas</h3>
+<ul>
+<li><p>What about spin?</p></li>
+<li><p>Use field operators <span class="math inline">\psi^{\vphantom{\dagger}}_\sigma(\mathbf{r})</span>, <span class="math inline">\psi^\dagger_\sigma(\mathbf{r}')</span> satisfying</p></li>
+</ul>
+<p><span class="math display">
+\begin{gather*}
+    \left\{\psi^{\vphantom{\dagger}}_{\sigma_1}(\mathbf{r}_1),\psi^\dagger_{\sigma_2}(\mathbf{r}_2)\right\}=\delta_{\sigma_1\sigma_2}\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
+    \left\{\psi^{\vphantom{\dagger}}_{\sigma_1}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}_{\sigma_2}(\mathbf{r}_2)\right\}=\left\{\psi^\dagger_{\sigma_1}(\mathbf{r}_1),\psi^\dagger_{\sigma_2}(\mathbf{r}_2)\right\}=0
+\end{gather*}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Density matrix is a matrix in spin space as well as real space</li>
+</ul>
+<p><span class="math display">
+g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \braket{\Psi|\psi^\dagger_{\sigma_1}(\mathbf{r}_1)\psi^{\vphantom{\dagger}}_{\sigma_2}(\mathbf{r}_2)|\Psi}.
+</span></p>
+<ul>
+<li>From <span class="math inline">g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2)</span> we get density <em>and</em> spin density</li>
+</ul>
+<p><span class="math display">
+\mathbf{\rho}(\mathbf{r}) = \operatorname{tr}\left[g(\mathbf{r},\mathbf{r})\right],\quad \mathbf{s}(\mathbf{r}) = \frac{1}{2}\operatorname{tr}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r})\right]
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Spin-independent interaction</li>
+</ul>
+<p><span class="math display">
+\hat H_\text{int.} = \frac{1}{2}\sum_{\sigma_1,\sigma_2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger_{\sigma_1}(\mathbf{r}_1)\psi^\dagger_{\sigma_2}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}_{\sigma_2}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}_{\sigma_1}(\mathbf{r}_1)
+</span></p>
+<ul>
+<li>Hartree–Fock energy then</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+    \langle \hat H_\text{int.}\rangle &amp;=\frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\, \rho(\mathbf{r}) U(\mathbf{r}-\mathbf{r}')\rho(\mathbf{r}')\\
+    &amp;- \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\operatorname{tr}\left[g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})\right]
+\end{align*}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Fock term can be rewritten using identity <span class="math display">
+\delta_{ab}\delta_{cd} = \frac{1}{2}\left[\boldsymbol{\sigma}_{a c}\cdot \boldsymbol{\sigma}_{d b} + \delta_{ac}\delta_{db}\right],
+</span> which gives <span class="math display">
+\begin{align*}
+E_{\text{Fock}} &amp;=-\frac{1}{4} \int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\operatorname{tr}\left[g(\mathbf{r},\mathbf{r}')\right]\operatorname{tr}\left[g(\mathbf{r}',\mathbf{r})\right]\\&amp;-\frac{1}{4}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\operatorname{tr}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r}')\right]\cdot\operatorname{tr}\left[\boldsymbol{\sigma}g(\mathbf{r}',\mathbf{r})\right]
+\end{align*}
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Suppose <span class="math inline">U(\mathbf{r})=V_0 \delta(\mathbf{r})</span></li>
+</ul>
+<p><span class="math display">
+E_{\text{Fock}} =-\frac{V_0}{4} \int d\mathbf{r}\, \rho(\mathbf{r})^2-V_0\int d\mathbf{r}\, \mathbf{s}(\mathbf{r})\cdot\mathbf{s}(\mathbf{r})
+</span></p>
+<ul>
+<li>Second term favours ferromagnetism for <span class="math inline">V_0&gt;0</span> (c.f. Hund’s rules)</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>This is most succintly put by the formula <span class="math display">
+\rho_2(\mathbf{r},\mathbf{r}) = \frac{1}{2}\rho(\mathbf{r})^2 - 2\mathbf{s}(\mathbf{r})\cdot\mathbf{s}(\mathbf{r})
+</span> So <span class="math inline">\lvert{\mathbf{s}(\mathbf{r})}\rvert=\rho(\mathbf{r})/2\longrightarrow\rho_2(\mathbf{r},\mathbf{r})=0</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Hartree–Fock energy forms the basis of variational method using product states</p></li>
+<li><p>For a Hamiltonian with translational invariance <span class="math display">
+H = \int d\mathbf{r}\frac{1}{2m}\nabla\psi^\dagger\cdot\nabla\psi^{\vphantom{\dagger}}+ \frac{1}{2}\int d\mathbf{r}d\mathbf{r}' U(\mathbf{r}-\mathbf{r}')\psi^\dagger(\mathbf{r})\psi^\dagger(\mathbf{r}')\psi^{\vphantom{\dagger}}(\mathbf{r}')\psi^{\vphantom{\dagger}}(\mathbf{r})
+</span> guaranteed to involve with plane wave single particle states. Only variational parameters are <em>occupancies</em> of states</p></li>
+<li><p>If translational symmetry is broken, have to allow the states — as well as the occupancies — to vary.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="stoner-criterion-for-ferromagnetism">Stoner Criterion for Ferromagnetism</h3>
+<ul>
+<li><p>Polarizing spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!)</p></li>
+<li><p>Price to pay is increased kinetic energy!</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Ground state kinetic energy of <span class="math inline">N</span> (spinless) fermions in three dimensions, obtained from</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+N &amp;= \sum_{|\mathbf{k}|&lt;k_\text{F}}1\longrightarrow L^3 \int_{|\mathbf{k}|&lt;k_\text{F}} \frac{d\mathbf{k}}{(2\pi)^3} = \frac{k_\text{F}^3L^3}{6\pi^2} \\
+E_\text{kin} &amp;= \sum_{|\mathbf{k}|&lt;k_\text{F}} \frac{\mathbf{k}^2}{2m} \longrightarrow L^3 \int_{|\mathbf{k}|&lt;k_\text{F}} \frac{d\mathbf{k}}{(2\pi)^3} \frac{\mathbf{k}^2}{2m}\\
+&amp;= \frac{k_\text{F}^5L^3}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3}
+\end{align*}
+</span></p>
+<ul>
+<li>Total energy is <span class="math inline">E_\text{kin}(n_\uparrow,n_\downarrow) = (\text{const.})\frac{L^3}{m}\left(n_\uparrow^{5/3}+n_\downarrow^{5/3}\right)</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Writing <span class="math inline">n=n_\uparrow+n_\downarrow</span> <span class="math inline">\bar s = \left(n_\uparrow-n_\downarrow\right)/2</span>, we have</li>
+</ul>
+<p><span class="math display">
+E_\text{kin}(n, \bar s) = \frac{cL^3}{m}\left(\left[n/2+\bar s\right]^{5/3}+\left[n/2-\bar s\right]^{5/3}\right).
+</span></p>
+<ul>
+<li>In terms of the <strong>polarization</strong> <span class="math inline">P \equiv \frac{n_\uparrow-n_\downarrow}{n}</span> in range <span class="math inline">[-1,1]</span></li>
+</ul>
+<p><span class="math display">
+E_\text{kin}(P) = \frac{E_\text{K}}{2}\left[(1+P)^{5/3}+(1-P)^{5/3}\right].
+</span></p>
+<ul>
+<li><span class="math inline">E^{(0)}_\text{kin}(n, \bar s)</span> is minimized for <span class="math inline">s=0</span>.</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Total Hartree–Fock energy is</li>
+</ul>
+<p><span class="math display">
+E_\text{HF}(n,\bar s) = \frac{V_0L^3}{2} n^2 - \frac{V_0L^3}{2} \left(n_\uparrow^2+n_\downarrow^2\right) =  \frac{V_0L^3}{2} \left(\frac{1}{2}n^2 - 2\bar s^2\right).
+</span></p>
+<ul>
+<li>In terms of <span class="math inline">P</span></li>
+</ul>
+<p><span class="math display">
+E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Minimize the total energy <span class="math inline">E(P) = E_\text{kin}(P) + E_\text{HF}(P)</span> to show</p>
+<ol type="1">
+<li>For <span class="math inline">E_V/E_K&lt;10/9</span> the ground state is non-magnetic.</li>
+<li>As <span class="math inline">E_V/E_K</span> increases past <span class="math inline">10/9</span> the magnetization begins to increase.</li>
+<li>At <span class="math inline">E_V/E_K&gt;\frac{5}{6}2^{2/3}</span> is the ground state is fully polarized.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="excited-state-energies">Excited State Energies</h3>
+<p><span class="math display">
+\begin{align*}
+    \psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\frac{1}{L^{3/2}}\sum_{\mathbf{k}} \exp(i\mathbf{k}\cdot\mathbf{r})a^{\vphantom{\dagger}}_{\mathbf{k}} \\
+  \psi^\dagger(\mathbf{r})\equiv\frac{1}{L^{3/2}}\sum_{\mathbf{k}} \exp(-i\mathbf{k}\cdot\mathbf{r})a^\dagger_{\mathbf{k}}
+\end{align*}
+</span></p>
+<ul>
+<li>Express interaction Hamiltonian in Fourier components</li>
+</ul>
+<p><span class="math display">
+U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \exp(i\mathbf{q}\cdot[\mathbf{r}-\mathbf{r}']).
+</span></p>
+<p><span class="math display">
+\hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} \tilde U(\mathbf{k}_1-\mathbf{k}_4) a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Graphical representation</li>
+</ul>
+<p><span class="math display">
+\hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} \tilde U(\mathbf{k}_1-\mathbf{k}_4) a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/Vertex.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\langle{\mathbf{N}}\rvert \hat H_\text{int.} \lvert \mathbf{N} \rangle = \frac{1}{2V}\tilde U(0) \sum_{\mathbf{k}_1,\mathbf{k}_2} N_{\mathbf{k}_1}N_{\mathbf{k}_2} - \frac{1}{2V} \sum_{\mathbf{k}_1,\mathbf{k}_2} \tilde U(\mathbf{k}_1-\mathbf{k}_2) N_{\mathbf{k}_1}N_{\mathbf{k}_2}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/HFDiag.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\langle{\mathbf{N}}\rvert \hat H_\text{int.} \lvert \mathbf{N} \rangle = \frac{1}{2V}\tilde U(0) \sum_{\mathbf{k}_1,\mathbf{k}_2} N_{\mathbf{k}_1}N_{\mathbf{k}_2} - \frac{1}{2V} \sum_{\mathbf{k}_1,\mathbf{k}_2} \tilde U(\mathbf{k}_1-\mathbf{k}_2) N_{\mathbf{k}_1}N_{\mathbf{k}_2}
+</span></p>
+<ul>
+<li><p>Hartree term just depends on total number</p></li>
+<li><p>Fock term depends on the individual occupations</p></li>
+<li><p>Interaction energy to add a single particle to state <span class="math inline">\mathbf{k}</span> is</p></li>
+</ul>
+<p><span class="math display">
+\Delta U_{\mathbf{k}} = \frac{\tilde U(0)}{V} \sum_{\mathbf{k}'} N_{\mathbf{k}'} - \frac{1}{V}\sum_{\mathbf{k}'} \tilde U(\mathbf{k}-\mathbf{k}') N_{\mathbf{k}'}
+</span></p>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -1095,7 +1225,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

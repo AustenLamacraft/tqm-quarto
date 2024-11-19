@@ -17,8 +17,6 @@ format:
 
 {{< include ../macros.qmd >}}
 
----
-
 # Fermi Gas
 
 - We'll study Fermi gas with weak interactions (perturbation theory)
@@ -42,7 +40,7 @@ $$
 $$
 H =\sum_{\bk,s} \epsilon(\bk)\adop_{\bk,s}\aop_{\bk,s} + \overbrace{\frac{U_0}{V}\sum_{\bk_1+\bk_2=\bk_3+\bk_4} \adop_{\bk_1,\uparrow}\adop_{\bk_2,\downarrow}\aop_{\bk_3,\downarrow}\aop_{\bk_4,\uparrow}}^{\equiv H_\text{int}}
 $$
-with $\epsilon(\bk)=\bk^2/2m$, and $V$ the volume. 
+with $\epsilon(\bk)=\bk^2/2m$, and $V$ the volume
 
 ---
 
@@ -74,14 +72,15 @@ $$
 
 $$
 \begin{align*}
-E^{(1)}(\mathbf{N}) &= \braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
+E^{(1)}(\mathbf{N}) &= \Braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
 E^{(2)}(\mathbf{N}) &= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\abs{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}
 \end{align*}
 $$
 
 - First order correction is easy
+
 $$
-E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\bk,\bk'} N_{\uparrow}(\bk)N_{\downarrow}(\bk') = \frac{U_0}{V}N_\uparrow N_\downarrow.
+E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\bk,\bk'} N_{\uparrow}(\bk)N_{\downarrow}(\bk') = \frac{U_0}{V}N_\uparrow N_\downarrow
 $$
 (energy used in Stoner criterion in [Lecture 6](../notes/more-second-quantization.qmd))
 
@@ -160,7 +159,7 @@ $$
 
 ---
 
-- $f_{\uparrow\uparrow}(\bk,\bk')$ is more complicated
+- $f_{\uparrow\downarrow}(\bk,\bk')$ is more complicated
 $$
 \begin{align*}
 f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
@@ -179,11 +178,9 @@ $$
 
 ---
 
-- It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{\uparrow\uparrow}(\bk,\bk')$!
-(only have one independent momentum 😀)
+- Let's work out angular dependence for $f_{\uparrow\uparrow}(\bk,\bk')$ (simpler, only have one independent momentum 😀)
 
-
-- Continuum limit
+- Thermodynamic limit
 
 $$
 \begin{align*}
@@ -219,12 +216,15 @@ $$
 - Only angle $\theta$ between $\mathbf{K}$ and $\bq$ enters integral
 
 - Conditions $\abs{\bk_2}>k_\text{F}$ and $\abs{\bk_3}<k_\text{F}$ become
+
 $$
 \begin{align*}
 \left(\mathbf{K}+\bq\right)^2>k_\text{F}^2,\quad \left(\mathbf{K}-\bq\right)^2<k_\text{F}^2
 \end{align*}
 $$
+
 which gives range of $K_-(\theta)<\abs{\mathbf{K}}<K_+(\theta)$
+
 $$
 K_{\pm}(\theta)=\pm q\abs{\cos\theta}+\sqrt{k_\text{F}^2-q^2\sin^2\theta},\qquad  \theta<\pi/2
 $$
@@ -260,14 +260,14 @@ $\phi$ is the angle between $\bk$ and $\bk'$ i.e. $\abs{\bk-\bk'}=2q=2k_\text{F}
 $$
 \mathsf{N}(\bk)=\begin{pmatrix}
 N_{\uparrow\uparrow}(\bk) & N_{\uparrow\downarrow}(\bk) \\
-N_{\downarrow\uparrow}(\bk) & N_{\downarrow\downarrow}(\bk).
+N_{\downarrow\uparrow}(\bk) & N_{\downarrow\downarrow}(\bk)
 \end{pmatrix}
 $$
 
 - $f$-function then has _four_ spin indices
 
 $$
-\frac{1}{2V}\sum_{\bk, s_1,s_2,\bk', s_3,s_4} f_{s_1s_2,s_3s_4}(\bk,\bk')n_{s_1s_2}(\bk)n_{s_3s_4}(\bk'),
+\frac{1}{2V}\sum_{\bk, s_1,s_2,\bk', s_3,s_4} f_{s_1s_2,s_3s_4}(\bk,\bk')n_{s_1s_2}(\bk)n_{s_3s_4}(\bk')
 $$
 
 ---
@@ -310,7 +310,7 @@ $$
 
 ---
 
-- Can get $m_*$ using results we have alrady, using one simple trick
+- Can get $m_*$ using results we have already, using one simple trick
 
 - Shift momentum of each quasiparticle by $\delta\bk$, giving new $N_s(\bk)$
 
@@ -464,7 +464,11 @@ $$
 
 ---
 
-This is also the occupation number of the original fermions $\braket{0|\adop_{\bk,s}\aop_{\bk,s}|0}$ (not the quasiparticles!) just below the Fermi surface in the ground state (see [Problem Set 3](../problem-sets/problem-set-3.qmd#nmathbfk-in-the-ground-state). There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.
+- This is also occupation number of fermions $\braket{0|\adop_{\bk,s}\aop_{\bk,s}|0}$ (_not_ quasiparticles!) just below $k_\text{F}$ in ground state (see [Problem Set 3](../problem-sets/problem-set-3.qmd#nmathbfk-in-the-ground-state)
+
+- There is a corresponding result just above
+
+- Even with interactions, finite step in distribution function at $k_\text{F}$
 
 ![](../assets/FermiJump.png){width=60% fig-align="center"}
 

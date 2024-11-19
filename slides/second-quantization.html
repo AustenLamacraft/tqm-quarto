@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Fermi Gas</title>
+  <title>Theories of Quantum Matter – A is for Annihilation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Fermi Gas</h1>
+  <h1 class="title">A is for Annihilation</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -359,454 +359,789 @@
 </div>
 </section>
 <section>
-<section id="fermi-gas" class="title-slide slide level1 center">
-<h1>Fermi Gas</h1>
+<section id="second-quantization" class="title-slide slide level1 center">
+<h1>Second Quantization</h1>
 <ul>
-<li><p>We’ll study Fermi gas with weak interactions (perturbation theory)</p></li>
-<li><p>Illustrates Landau’s <strong>Fermi liquid</strong> theory, a ‘standard model’ of condensed matter</p></li>
-<li><p>Landau’s theory applies more generally, even when interactions not weak</p></li>
+<li>Avoid dealing explicitly with <span class="math inline">\Psi(\mathbf{r}_1,\ldots,\mathbf{r}_N)</span></li>
+<li>Represent <span class="math inline">H</span> and other operators using occupation numbers</li>
+<li>Synonymous with Quantum Field Theory</li>
 </ul>
 </section>
-<section id="weakly-interacting-fermi-gas" class="slide level2 center">
-<h2>Weakly Interacting Fermi Gas</h2>
+<section id="recap-product-states" class="slide level2 center">
+<h2>Recap: Product States</h2>
 <ul>
-<li>Fermi gas with short-ranged interactions</li>
+<li>Normalized state of <span class="math inline">N</span> bosons in orthonormal states <span class="math inline">\varphi_{\alpha_n}(\mathbf{r})</span></li>
 </ul>
 <p><span class="math display">
-H = \int d\mathbf{r}\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\psi^\dagger_s\cdot\nabla\psi^{\vphantom{\dagger}}_s + U_0 \psi^\dagger_\uparrow\psi^\dagger_\downarrow\psi^{\vphantom{\dagger}}_\downarrow\psi^{\vphantom{\dagger}}_\uparrow\right]
+\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}(\mathbf{r}_1,\ldots,\mathbf{r}_N)=\sqrt{\frac{\prod_{\alpha}N_{\alpha}!}{N!}}\sum_P\varphi_{\alpha_{1}}(\mathbf{r}_{P_1})\varphi_{\alpha_{2}}(\mathbf{r}_{P_2})\cdots\varphi_{\alpha_{N}}(\mathbf{r}_{P_N})
 </span></p>
 <ul>
-<li>Work in momentum space <span class="math display">
-H =\sum_{\mathbf{k},s} \epsilon(\mathbf{k})a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} + \overbrace{\frac{U_0}{V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1,\uparrow}a^\dagger_{\mathbf{k}_2,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_3,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_4,\uparrow}}^{\equiv H_\text{int}}
-</span> with <span class="math inline">\epsilon(\mathbf{k})=\mathbf{k}^2/2m</span>, and <span class="math inline">V</span> the volume</li>
+<li>The normalization factor involves <strong>occupation numbers</strong> <span class="math inline">\{N_{\alpha}\}</span> giving number of particles in state <span class="math inline">\alpha</span></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p><span class="math inline">U_0=0</span>: eigenstates are product states <span class="math inline">\lvert{\mathbf{N}}\rangle</span> of single particle momentum states specified by the occupancies <span class="math inline">N_{s}(\mathbf{k}) = 0,1</span></p></li>
-<li><p>Ground state is Fermi sphere of radius <span class="math inline">k_\text{F}</span> in momentum space with <span class="math inline">N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert)</span>.</p></li>
-<li><p>Low energy excited states will have <span class="math inline">N_{s}(\mathbf{k})=1</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\ll k_\text{F}</span> and <span class="math inline">N_{s}(\mathbf{k})=0</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\gg k_\text{F}</span>.</p></li>
-<li><p>In perturbation theory we can still <em>label</em> eigenstates by these occupation numbers even though eigenstates <span class="math inline">\neq\lvert{\mathbf{N}}\rangle</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Without interaction energy of a state <span class="math inline">\lvert{\mathbf{N}}\rangle</span> is</li>
+<li>Unnormalized symmetric product state using <span class="math inline">\psi_n(\mathbf{r})</span>, not necessarily orthonormal</li>
 </ul>
 <p><span class="math display">
-E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k})
+\Psi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N})
 </span></p>
 <ul>
-<li><p>For <span class="math inline">U_0\neq 0</span> energy <span class="math inline">E(\mathbf{N})</span> is function of labels, but no longer linear</p></li>
-<li><p>Second order expansion of energy in terms of <em>deviation</em> of occupancies from ground state values is key ingredient of Landau’s theory</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="perturbation-theory-to-second-order">Perturbation Theory to Second Order</h3>
-<ul>
-<li>Second order perturbation theory for the energies</li>
+<li>Inner product with another symmetric state formed from <span class="math inline">\phi_n(\mathbf{r})</span></li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-E^{(1)}(\mathbf{N}) &amp;= \Braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
-E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}
-\end{align*}
+\Phi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\phi_1(\mathbf{r}_{P_1})\phi_{2}(\mathbf{r}_{P_2})\cdots\phi_{N}(\mathbf{r}_{P_N})
+</span></p>
+<p><span class="math display">
+\langle{\Psi}\rvert\Phi\rangle = \sum_P \prod_{n=1}^N\langle{\psi_n}\rvert\phi_{P_n}\rangle = \operatorname{perm} \langle{\psi_m}\rvert\phi_{n}\rangle
 </span></p>
 <ul>
-<li>First order correction is easy</li>
+<li>This is the <a href="https://en.wikipedia.org/wiki/Permanent">permanent</a> of the matrix <span class="math inline">\langle{\psi_m}\rvert\phi_{n}\rangle</span></li>
 </ul>
-<p><span class="math display">
-E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\mathbf{k})N_{\downarrow}(\mathbf{k}') = \frac{U_0}{V}N_\uparrow N_\downarrow
-</span> (energy used in Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>)</p>
 </section>
-<section class="slide level2 center">
-
+<section id="goal" class="slide level2 center">
+<h2>Goal</h2>
 <ul>
-<li>For second order we need <span class="math inline">\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}}</span>, nonzero if <span class="math display">
-\begin{align*}
-N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
-N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
-\end{align*}
-</span> for <span class="math inline">\mathbf{k}_i</span> satisfying <span class="math inline">\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4</span> <span class="math display">
-\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)
-</span> (ignoring any coinciding momenta; occupancies 0 or 1)</li>
+<li>For SHO</li>
 </ul>
 <p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
+\frac{1}{\sqrt{n!}}\left(a^\dagger\right)^n\lvert{0}\rangle\longleftrightarrow \psi_n(x)
+</span> representation using <span class="math inline">a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span> very useful; never need explicit <span class="math inline">\psi_n(x)</span></p>
+<ul>
+<li>We want</li>
+</ul>
+<p><span class="math display">??\longleftrightarrow \Psi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N)</span></p>
+<ul>
+<li>Must respect inner product</li>
+</ul>
+</section>
+<section id="creation-annihilation-operators" class="slide level2 center">
+<h2>Creation &amp; Annihilation Operators</h2>
+<ul>
+<li><p>We consider states with different numbers of particles</p></li>
+<li><p><span class="math inline">\lvert{\text{VAC}}\rangle</span> denotes state with no particles (<strong>the vacuum state</strong>)</p></li>
+<li><p><span class="math inline">a^\dagger(\psi)</span> creates particle in single particle state <span class="math inline">\psi(\mathbf{r})</span></p></li>
+</ul>
+<p><span class="math display">
+\psi(\mathbf{r})\longleftrightarrow a^\dagger(\psi)\lvert{\text{VAC}}\rangle
+</span></p>
+<ul>
+<li>Evidently, <span class="math inline">a^\dagger(\psi)</span> must be linear in <span class="math inline">\psi</span></li>
+</ul>
+<p><span class="math display">
+a^\dagger\left(c_1\psi_1+c_2\psi_2\right) = c_1a^\dagger(\psi_1)+c_2a^\dagger(\psi_2)
 </span></p>
 </section>
 <section class="slide level2 center">
 
-<h3 id="landau-f-function">Landau <span class="math inline">f</span> function</h3>
 <ul>
-<li><p><span class="math inline">E^{(2)}(\mathbf{N})</span> has three independent momentum sums! 🙀</p></li>
-<li><p>We are after <em>excitation energies</em>, so expand in <em>change</em> in occupation</p></li>
+<li><p>If <span class="math inline">\lvert{\Psi}\rangle</span> has <span class="math inline">N</span> particle state, <span class="math inline">a^\dagger(\psi)\lvert{\Psi}\rangle</span> has <span class="math inline">N+1</span> particles</p></li>
+<li><p>Since this is orthogonal to the vacuum state</p></li>
 </ul>
 <p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
+\langle{\text{VAC}}\rvert a^\dagger(\psi)\lvert{\Psi}\rangle=0
+</span> for any state <span class="math inline">\lvert{\Psi}\rangle</span></p>
+<ul>
+<li>Taking the adjoint, this means</li>
+</ul>
+<p><span class="math display">
+a^{\vphantom{\dagger}}(\psi)\lvert{\text{VAC}}\rangle=0
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><span class="math inline">N</span> particle product state</li>
+</ul>
+<p><span class="math display">
+\Psi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) \longleftrightarrow a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle
 </span></p>
 <ul>
-<li><span class="math inline">n_\mathbf{k}</span> is <em>mean</em> deviation from Fermi sphere in continuum limit:</li>
+<li>To be <em>symmetric</em> wavefunction, we must have</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiN.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
+<p><span class="math display">
+\left[a^\dagger(\psi),a^\dagger(\phi)\right]=0
+</span> for any states <span class="math inline">\psi(\mathbf{r})</span> and <span class="math inline">\phi(\mathbf{r})</span>. Taking the adjoint gives</p>
+<p><span class="math display">
+\left[a^{\vphantom{\dagger}}(\psi),a^{\vphantom{\dagger}}(\phi)\right]=0
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Inner product between two one particle states</li>
+</ul>
+<p><span class="math display">
+\langle{\psi}\rvert\phi\rangle = \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}(\psi)a^\dagger(\phi) \lvert \text{VAC} \rangle
+</span></p>
+<ul>
+<li>We impose</li>
+</ul>
+<p><span class="math display">
+\left[a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right] = \langle{\psi}\rvert \phi \rangle
+</span> together with <span class="math inline">a^{\vphantom{\dagger}}(\psi)\lvert{\text{VAC}}\rangle=0</span> this gives correct inner product</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that this also reproduces the inner product for <span class="math inline">N</span>-particle product states</p>
+</div>
+</div>
+</div>
+</section>
+<section id="choosing-a-basis" class="slide level2 center">
+<h2>Choosing a basis</h2>
+<ul>
+<li>Orthonormal basis by <span class="math inline">\varphi_\alpha(\mathbf{r})</span></li>
+</ul>
+<p><span class="math display">
+a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\varphi_\alpha)\equiv a^{\vphantom{\dagger}}_\alpha
+</span></p>
+<ul>
+<li>Then we have</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\left[a^{\vphantom{\dagger}}_\alpha,a^{\vphantom{\dagger}}_\beta\right]=0,\quad \left[a^\dagger_\alpha,a^\dagger_\beta\right]=0,\quad \left[a^{\vphantom{\dagger}}_\alpha,a^\dagger_\beta\right] = \delta_{\alpha\beta}
+\end{aligned}
+</span></p>
+<ul>
+<li>Same as ladder operators of a set of harmonic oscillators</li>
+</ul>
+<p><span class="math display">
+\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) \longleftrightarrow\lvert{\mathbf{N}}\rangle \equiv \prod_\alpha \frac{\left(a^\dagger_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\lvert{\text{VAC}}\rangle
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><span class="math inline">\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\equiv a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\alpha}</span> is <strong>number operator</strong> for state <span class="math inline">\alpha</span></li>
+</ul>
+<p><span class="math display">
+\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\lvert{\mathbf{N}}\rangle=N_{\alpha}\lvert{\mathbf{N}}\rangle
+</span></p>
+<ul>
+<li>Commutation relations tell us</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+    \left[a^{\vphantom{\dagger}}_{\alpha},\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\right]=a^{\vphantom{\dagger}}_{\alpha}\qquad
+    \left[a^\dagger_{\alpha},\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\right]=-a^\dagger_{\alpha}
+\end{aligned}
+</span></p>
+<ul>
+<li>I think of the first one as:</li>
+</ul>
+<blockquote>
+<p>“count then destroy minus destroy then count”</p>
+</blockquote>
+</section>
+<section id="change-of-basis" class="slide level2 center">
+<h2>Change of basis</h2>
+<ul>
+<li>Move to different basis <span class="math inline">\{\lvert{\tilde{\varphi}_{\alpha}}\rangle\}</span></li>
+</ul>
+<p><span class="math display">
+\lvert{\tilde{\varphi}_{\alpha}}\rangle=\sum_{\beta} \langle{\varphi_{\beta}}\rvert \tilde{\varphi}_{\alpha} \rangle\lvert{\varphi_{\beta}}\rangle
+</span></p>
+<ul>
+<li>One particle states with wavefunctions <span class="math inline">\varphi_{\alpha}(\mathbf{r})</span> are <span class="math inline">a^\dagger_{\alpha}\lvert{\text{VAC}}\rangle</span>. So,</li>
+</ul>
+<p><span class="math display">
+\tilde{a^{\vphantom{\dagger}}}_{\alpha}^\dagger\equiv\sum_{\beta} \langle{\varphi_{\beta}}\rvert \tilde{\varphi}_{\alpha} \rangle a^\dagger_{\beta}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Often we work in position eigenstates <span class="math inline">\{\lvert{\mathbf{r}}\rangle\}</span>, so <span class="math inline">\langle{\varphi_{\beta}}\rvert \mathbf{r} \rangle=\varphi^{*}_{\beta}(\mathbf{r})</span></p></li>
+<li><p>Denoting corresponding creation operator as <span class="math inline">\psi^\dagger(\mathbf{r})</span></p></li>
+</ul>
+<p><span class="math display">
+\psi^\dagger(\mathbf{r})\equiv\sum_{\beta}  \varphi^{*}_{\beta}(\mathbf{r})a^\dagger_{\beta}
+</span></p>
+<ul>
+<li>Conjugate is</li>
+</ul>
+<p><span class="math display">
+\psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\sum_{\beta}  \varphi_{\beta}(\mathbf{r})a^{\vphantom{\dagger}}_{\beta}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>These are <strong>quantum fields</strong> with commutation relations</li>
+</ul>
+<p><span class="math display">
+\begin{gather*}
+    \left[\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right]=\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
+    \left[\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\right]=\left[\psi^\dagger(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right]=0
+\end{gather*}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>If a state <span class="math inline">\lvert{\Psi}\rangle</span> has wavefunction <span class="math inline">\Psi(x_1,\ldots, x_N)</span>, show that the wavefunction of the state <span class="math inline">\psi^{\vphantom{\dagger}}(X)\lvert{\Psi}\rangle</span> is the <span class="math inline">N-1</span> particle wavefunction</p>
+<p><span class="math display">
+\sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})
+</span></p>
+<p>Hint: Show that this is true for a product state first.</p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Excitation energy expanded in <span class="math inline">n_\mathbf{k}</span></li>
+<li>Often use eigenstates of the free particle Hamiltonian <span class="math inline">H=\frac{\mathbf{p}^{2}}{2m}</span></li>
 </ul>
 <p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}')
-</span></p>
+\begin{aligned}
+    \lvert{\mathbf{k}}\rangle=\frac{\exp(i\mathbf{k}\cdot \mathbf{r})}{\sqrt{V}}, \quad \mathbf{k}=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
+\end{aligned}
+</span> with <span class="math inline">V=L_{x}L_{y}L_{z}</span> (periodic b.c.)</p>
 <ul>
-<li><p>This is Landau’s <strong>key idea</strong>, not restricted to perturbation theory</p></li>
-<li><p>At first order <span class="math display">
-\begin{align*}
-\varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots
-\end{align*}
-</span> <span class="math inline">\bar s</span> is <span class="math inline">\bar\uparrow=\downarrow</span>, <span class="math inline">\bar\downarrow=\uparrow</span> 🥱</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Second order contributions to <span class="math inline">f</span>-function more interesting</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
-\left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><span class="math inline">f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')</span> is more complicated <span class="math display">
-\begin{align*}
-f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
-\left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span> (just for reference)</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p><span class="math inline">n_{s}(\mathbf{k})\neq 0</span> in energy window of size <span class="math inline">k_\text{B} T</span> around Fermi surface</p></li>
-<li><p>At low <span class="math inline">T</span> take <span class="math inline">\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}</span>. <em>New feature</em> at second order is nontrivial dependence of <span class="math inline">f_{s^{}s'}(\mathbf{k},\mathbf{k}')</span> on angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span>.</p></li>
-<li><p>Assume ground state unpolarized, i.e.&nbsp;<span class="math inline">N_{s}(\mathbf{k})</span> independent of <span class="math inline">s</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Let’s work out angular dependence for <span class="math inline">f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')</span> (simpler, only have one independent momentum 😀)</p></li>
-<li><p>Thermodynamic limit</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right]
-\end{align*}
-</span></p>
-<ul>
-<li>Need integral</li>
-</ul>
-<p><span class="math display">
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator can be written (<span class="math inline">\mathbf{k}-\mathbf{k}'</span> is fixed) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)= \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}_2-\mathbf{k}_3\right) = \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}-\mathbf{k}'\right)
-</span></p></li>
-<li><p>Notation <span class="math inline">\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right)</span></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiGeometry.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator becomes (for fixed <span class="math inline">\mathbf{q}</span>) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3) = \frac{2}{m}\mathbf{K}\cdot\mathbf{q}
-</span></p></li>
-<li><p>Only angle <span class="math inline">\theta</span> between <span class="math inline">\mathbf{K}</span> and <span class="math inline">\mathbf{q}</span> enters integral</p></li>
-<li><p>Conditions <span class="math inline">\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}</span> and <span class="math inline">\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}</span> become</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2
-\end{align*}
-</span></p>
-<p>which gives range of <span class="math inline">K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)</span></p>
-<p><span class="math display">
-K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta},\qquad  \theta&lt;\pi/2
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>In terms of these variables</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
-\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
-&amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}
-\end{align*}
-</span></p>
-<ul>
-<li>Other integral is same but in interval <span class="math inline">(\pi/2,\pi)</span>. Finally… <span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
-&amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right]
-\end{align*}
-</span> <span class="math inline">\phi</span> is the angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span> i.e.&nbsp;<span class="math inline">\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2</span></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Our definition of <span class="math inline">f</span> implied quantization axis for spin</p></li>
-<li><p>To write things in invariant way, think of occupation number <span class="math inline">N(\mathbf{k})</span> as <span class="math inline">2\times 2</span> matrix</p></li>
-</ul>
-<p><span class="math display">
-\mathsf{N}(\mathbf{k})=\begin{pmatrix}
-N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
-N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k})
-\end{pmatrix}
-</span></p>
-<ul>
-<li><span class="math inline">f</span>-function then has <em>four</em> spin indices</li>
-</ul>
-<p><span class="math display">
-\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}')
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\begin{align*}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
-\end{align*}
-</span> (again, just for reference)</p>
-<ul>
-<li><strong>Key message</strong>: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math display">
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
+<li>Matrix elements of transformation between to position basis <span class="math inline">\{\lvert{\mathbf{r}}\rangle\}</span> are <span class="math inline">\langle{\mathbf{k}}\rvert\mathbf{r}\rangle=\exp(-i\mathbf{k}\cdot \mathbf{r})/\sqrt{V}</span> <span class="math display">
+\psi^\dagger(\mathbf{r})\equiv\frac{1}{\sqrt{V}}\sum_{\mathbf{k}} \exp(-i\mathbf{k}\cdot\mathbf{r})a^\dagger_{\mathbf{k}}
+</span> and similarly <span class="math display">
+  \psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\frac{1}{\sqrt{V}}\sum_{\mathbf{k}} \exp(i\mathbf{k}\cdot\mathbf{r})a^{\vphantom{\dagger}}_{\mathbf{k}}
 </span></li>
-<li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> made dimensionless by scaling by density of states at Fermi surface <span class="math inline">\nu(E_F)\equiv k_{\text{F}}m/\pi^2</span>.</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
-<h3 id="quasiparticle-energy-varepsilon_smathbfk">Quasiparticle energy <span class="math inline">\varepsilon_s(\mathbf{k})</span></h3>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>What is the wavefunction of the two-particle state</p>
 <p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
+\sum_\mathbf{k}c_\mathbf{k}a^\dagger_\mathbf{k}a^\dagger_{-\mathbf{k}}\lvert{\text{VAC}}\rangle?
 </span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="fermions" class="slide level2 center">
+<h2>Fermions</h2>
 <ul>
-<li><p><span class="math inline">\varepsilon_s(\mathbf{k})</span> will involve two momentum sums 😟</p></li>
-<li><p>What can we say on general grounds? Near Fermi surface expect</p></li>
+<li>Trickier on account of minus signs! Seek a representation of</li>
 </ul>
 <p><span class="math display">
-\varepsilon_s(\mathbf{k}) - E_\text{F} \approx v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F})
+\Psi^{\text{A}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P (-1)^P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N})
 </span></p>
+<p>Note: overall sign fixed by labelling of states <span class="math inline">\psi_j</span></p>
 <ul>
-<li>Fermi velocity <span class="math inline">v_\text{F}</span> altered by interactions. Define <strong>effective mass</strong></li>
+<li>If <span class="math inline">\Psi^{\text{A}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) \longleftrightarrow a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle</span> we’ll need</li>
 </ul>
 <p><span class="math display">
-m_* = \frac{k_\text{F}}{v_\text{F}}
+\left\{a^\dagger(\psi),a^\dagger(\phi)\right\}=0,
+</span> <span class="math inline">\{A,B\}\equiv AB+BA</span> is <strong>anticommutator</strong>. Also</p>
+<p><span class="math display">
+\left\{a^{\vphantom{\dagger}}(\psi),a^{\vphantom{\dagger}}(\phi)\right\}=0
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Can get <span class="math inline">m_*</span> using results we have already, using one simple trick</p></li>
-<li><p>Shift momentum of each quasiparticle by <span class="math inline">\delta\mathbf{k}</span>, giving new <span class="math inline">N_s(\mathbf{k})</span></p></li>
+<li><span class="math inline">\left\{a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right\}</span> can be deduced from inner product</li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
-&amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
+\langle{\Psi}\rvert\Phi\rangle = \sum_P (-1)^P\prod_{n=1}^N\langle{\psi_n}\rvert\phi_{P_n}\rangle = \det \langle{\psi_m}\rvert\phi_{n}\rangle,
 </span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiShift.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
-</figure>
+<p>which works out if</p>
+<p><span class="math display">
+\left\{a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right\} = \langle{\psi}\rvert \phi \rangle
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Check this.</p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Compute energy using Landau functional</li>
+<li>Introducing field operators in position basis as before leads to</li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
+\begin{gather*}
+    \left\{\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right\}=\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
+    \left\{\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\right\}=\left\{\psi^\dagger(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right\}=0
+\end{gather*}
+</span></p>
+</section>
+<section id="how-do-avphantomdagger_alpha-and-adagger_alpha-look" class="slide level2 center">
+<h2>How do <span class="math inline">a^{\vphantom{\dagger}}_\alpha</span> and <span class="math inline">a^\dagger_\alpha</span> <em>look</em>?</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Think about the form that the operators <span class="math inline">a^{\vphantom{\dagger}}_\alpha</span>, <span class="math inline">a^\dagger_\alpha</span> take in the basis of product states. Start with one state <span class="math inline">\varphi_\alpha</span>. What’s the matrix form of <span class="math inline">a^\dagger_\alpha</span> in terms of states <span class="math inline">\lvert{N_\alpha}\rangle</span>? Now consider two states. Can you see how the commutation and anticommutation relations can be satisfied?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="one-particle-operators" class="slide level2 center">
+<h2>One Particle Operators</h2>
+<ul>
+<li>Notation: <span class="math inline">A</span> acts on single particle states; <span class="math inline">\hat A</span> acts on <span class="math inline">N</span> particles as</li>
+</ul>
+<p><span class="math display">
+\hat A = \sum_{j=1}^N A_j
 </span></p>
 <ul>
-<li>Treat last three terms as <span class="math inline">n_s(\mathbf{k})</span>. Excitation energy changes <span class="math display">
-\begin{align*}
-\Delta E(\text{after})-\Delta E(\text{before}) = \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
-+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
-\end{align*}
-</span> (to first order in <span class="math inline">\delta\mathbf{k}</span>. Integrate by parts in first term)</li>
+<li>Example: Hamiltonian for noninteracting particles</li>
+</ul>
+<p><span class="math display">
+\hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\mathbf{r}_j)\right]
+</span></p>
+<ul>
+<li><p>Operators of this type are <strong>one particle operators</strong></p></li>
+<li><p>How to represent them using creation and annihilation operators?</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>On grounds of Galilean invariance, this change must be <span class="math display">
-\Delta E(\text{after})-\Delta E(\text{before}) = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k}
-</span> where total momentum <span class="math inline">\mathbf{P}</span> is</li>
+<li>Action of <span class="math inline">A</span> on states <span class="math inline">\lvert{\varphi_\alpha}\rangle</span> written</li>
 </ul>
 <p><span class="math display">
-\mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
+A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langle{\varphi_\beta}\rvert A \lvert \varphi_\alpha \rangle = \sum_\beta A_{\beta\alpha}\lvert{\varphi_\beta}\rangle
+</span></p>
+<ul>
+<li>Action of <span class="math inline">\hat A</span> on product state <span class="math inline">\lvert{\Psi^{\text{S/A}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle</span> is</li>
+</ul>
+<p><span class="math display">
+\hat A \lvert{\Psi^{\text{S/A}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle = \sum_\beta \left[A_{\beta\alpha_1}\lvert{\Psi^{\text{S/A}}_{\beta\alpha_{2}\cdots\alpha_{N}}}\rangle +A_{\beta\alpha_2}\lvert{\Psi^{\text{S/A}}_{\alpha_1\beta\cdots\alpha_{N}}}\rangle+\cdots A_{\beta\alpha_N}\lvert{\Psi^{\text{S/A}}_{\alpha_1\alpha_{2}\cdots\beta}}\rangle\right]
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>If two expressions for <span class="math inline">\Delta E(\text{after})-\Delta E(\text{before})</span> equal for all <span class="math inline">n_s(\mathbf{k})</span> and <span class="math inline">\delta\mathbf{k}</span> to first order</li>
+<li>We’ll see same job is done by</li>
 </ul>
 <p><span class="math display">
-\frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}
+\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
+</span> acting on state <span class="math inline">\lvert{\mathbf{N}}\rangle \equiv \prod_\alpha \frac{\left(a^\dagger_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\lvert{\text{VAC}}\rangle</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>We have</li>
+</ul>
+<p><span class="math display">
+\left[a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta,a^\dagger_\gamma\right]=a^\dagger_\alpha\delta_{\beta\gamma}
+</span> for bosons <em>and fermions</em></p>
+<ul>
+<li>Commute <span class="math inline">a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta</span> though each of creation operators in <span class="math inline">\lvert{\mathbf{N}}\rangle</span>, e.g.</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+    \mathop{\hat A}a^\dagger_{\beta}\lvert{\text{VAC}}\rangle&amp;=\left(\left[\mathop{\hat A},a^\dagger_{\beta}\right]+a^\dagger_{\beta}\mathop{\hat A}\right)\lvert{\text{VAC}}\rangle\nonumber\\
+                            &amp;=\sum_{\alpha} A_{\alpha \beta} a^\dagger_{\alpha}\lvert{\text{VAC}}\rangle
+\end{aligned}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Try it for a two particle state!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
 </span></p>
 <ul>
-<li>For momenta close to the Fermi surface</li>
+<li><p>Find matrix element <span class="math inline">\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle</span> between product states made of orthonormal single particle states</p></li>
+<li><p>Vanishes unless <span class="math inline">N_\beta = N'_\beta-1</span> and <span class="math inline">N_\alpha = N'_\alpha+1</span> we have</p></li>
 </ul>
 <p><span class="math display">
-\frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}
+\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>This formula is not so easy to work out in the first quantized representation. Try it!</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Same for bosons and fermions</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
 </span></p>
 <ul>
-<li>If <span class="math inline">\mathbf{k}'=\cos\phi \mathbf{k}+ \sin\phi \mathbf{k}_\perp</span>, with <span class="math inline">\mathbf{k}_\perp\cdot\mathbf{k}=0</span>, we get</li>
+<li><p>Like <em>expectation value</em> of <span class="math inline">\mathop{A}</span> in single particle state <span class="math inline">\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle</span></p></li>
+<li><p>But <span class="math inline">a_\alpha</span> are <em>operators</em> not <em>numbers</em>. This is the origin of the name <strong>second quantization</strong></p></li>
+<li><p>Resemblance makes it easy to write down second quantized form</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="example-1-noninteracting-hamiltonian">Example 1: noninteracting Hamiltonian</h3>
+<p><span class="math display">
+\hat H = \sum_{j=1}^N H_j = \sum_{j=1}^N \left[-\frac{\nabla_j^2}{2m}+V(\mathbf{r}_j)\right]
+</span></p>
+<ul>
+<li><p>Second quantized form <span class="math display">
+  \mathop{\hat H} \equiv \sum_{\alpha,\beta}\langle{\varphi_{\alpha}}\rvert \mathop{H} \lvert \varphi_{\beta} \rangle a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\beta},
+</span> <span class="math inline">H</span> is single particle Hamiltonian <span class="math inline">H=-\frac{1}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})</span></p></li>
+<li><p>If basis <span class="math inline">\lvert{\varphi_{\alpha}}\rangle</span> is eigenbasis of <span class="math inline">H</span>: <span class="math inline">\langle{\varphi_{\alpha}}\rvert \mathop{H} \lvert \varphi_{\beta} \rangle=E_{\alpha}\delta_{\alpha \beta}</span> and</p></li>
 </ul>
 <p><span class="math display">
-\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}
+\begin{aligned}
+    \mathop{\hat H} \equiv \sum_{\alpha} E_{\alpha} a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\alpha}=\sum_{\alpha} E_{\alpha} \mathsf{N}^{\vphantom{\dagger}}_{\alpha}
+\end{aligned}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>For the <span class="math inline">F(\phi)</span> that we found in <span class="math inline">2^{\text{nd}}</span> order perturbation theory <span class="math display">
-\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
-</span> (Use the substitution <span class="math inline">u=\sin\phi/2</span> to do the integral.)</p></li>
-<li><p>In systems with strong interactions <span class="math inline">m_*/m</span> may be much larger!</p></li>
-<li><p>In <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> <span class="math inline">m_*/m</span> can approach 1000! Landau’s picture of fermionic quasiparticles still applies.</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
-<ul>
-<li><p>What do these quasiparticle states <em>look</em> like? Let’s see what perturbation theory says</p></li>
-<li><p>At first order we have</p></li>
+<li>In the position basis</li>
 </ul>
 <p><span class="math display">
-\lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle
+\begin{aligned}
+    \mathop{\hat H}&amp;=\int d\mathbf{r}\left[-\frac{1}{2m}\psi^\dagger(\mathbf{r})\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right]\nonumber\\
+                    &amp;=\int d\mathbf{r}\left[\frac{1}{2m}\nabla\psi^\dagger(\mathbf{r})\cdot\nabla\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right],
+\end{aligned}
+</span> (integration by parts)</p>
+<ul>
+<li>Confirm equality to previous expression using</li>
+</ul>
+<p><span class="math display">
+    \psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\sum_{\beta}  \varphi_{\beta}(\mathbf{r})a^{\vphantom{\dagger}}_{\beta}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Consider the Fermi sea ground state <span class="math inline">\lvert{\text{FS}}\rangle</span>. What states <span class="math inline">\lvert{\mathbf{N'}}\rangle</span> can appear this case?</p></li>
-<li><p>Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p></li>
+<li>Heisenberg equation of motion for <span class="math inline">\psi^{\vphantom{\dagger}}(\mathbf{r})=e^{i\hat Ht}\psi^{\vphantom{\dagger}}(\mathbf{r}) e^{-i\hat H t}</span> with noninteracting Hamiltonian</li>
 </ul>
+<p><span class="math display">
+    \begin{split}
+    i\partial_{t}\psi^{\vphantom{\dagger}}(\mathbf{r},t) &amp;= -\left[\mathop{\hat H},\psi^{\vphantom{\dagger}}(\mathbf{r},t)\right]\\
+    &amp;= -\frac{1}{2m}\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r},t)+V(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r},t)
+    \end{split}
+</span> just the time dependent Schrödinger equation!</p>
+</section>
+<section class="slide level2 center">
+
+<h3 id="example-2-density">Example 2: Density</h3>
+<ul>
+<li>One particle operator for density at <span class="math inline">\mathbf{x}</span> is</li>
+</ul>
+<p><span class="math display">
+    \rho(\mathbf{x})\equiv\delta(\mathbf{x}-\mathbf{r})
+</span></p>
+<ul>
+<li><p>Expectation value in single particle state <span class="math inline">\varphi(\mathbf{r})</span> is <span class="math inline">\rho(\mathbf{x})=\lvert{\varphi(\mathbf{x})}\rvert^{2}</span></p></li>
+<li><p>Second quantized form of the operator is then</p></li>
+</ul>
+<p><span class="math display">
+    \hat\rho(\mathbf{x})\equiv\psi^\dagger(\mathbf{x})\psi^{\vphantom{\dagger}}(\mathbf{x})
+</span></p>
+<ul>
+<li><strong>Check:</strong> integrating over position should give total number of particles</li>
+</ul>
+<p><span class="math display">
+    \hat N=\int d\mathbf{x}\, \psi^\dagger(\mathbf{x})\psi^{\vphantom{\dagger}}(\mathbf{x})=\sum_{\alpha} a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{a}=\sum_{\alpha}\mathsf{N}^{\vphantom{\dagger}}_{\alpha}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Expectation value of density in product state <span class="math inline">\lvert{N_{0},N_{1}\ldots}\rangle</span></li>
+</ul>
+<p><span class="math display">
+    \langle{N_{0},N_{1}\ldots}\rvert  \hat\rho(\mathbf{r}) \lvert N_{0},N_{1}\ldots \rangle = \sum_{\alpha} N_{\alpha}\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}.
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Prove using <span class="math inline">\psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\sum_{\beta}  \varphi_{\beta}(\mathbf{r})a^{\vphantom{\dagger}}_{\beta}</span></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Interpretation: <span class="math inline">\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}</span> is probability to find a particle in state <span class="math inline">\alpha</span> at position <span class="math inline">\mathbf{r}</span>. Density is weighted by occupation</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="example-3-current-operator">Example 3: Current operator</h3>
+<p><span class="math display">
+    \hat{\mathbf{j}}(\mathbf{r})=-i\frac{1}{2m}\left[\psi^\dagger(\mathbf{r})\left(\nabla\psi^{\vphantom{\dagger}}(\mathbf{r})\right)-\left(\nabla\psi^\dagger(\mathbf{r})\right)\psi^{\vphantom{\dagger}}(\mathbf{r})\right].
+</span></p>
+<ul>
+<li>Often we consider Fourier components of density or current</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+    \hat\rho_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat\rho(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}-\mathbf{q}/2}a^{\vphantom{\dagger}}_{\mathbf{k}+\mathbf{q}/2}\nonumber\\
+    \hat{\mathbf{j}}_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat{\mathbf{j}}(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} \frac{\mathbf{k}}{m}a^\dagger_{\mathbf{k}-\mathbf{q}/2}a^{\vphantom{\dagger}}_{\mathbf{k}+\mathbf{q}/2}.
+\end{aligned}
+</span></p>
+<ul>
+<li><span class="math inline">\mathbf{q}=0</span> modes are total particle number and <span class="math inline">\frac{1}{m}\times</span> total momentum, respectively</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="single-particle-density-matrix">Single particle density matrix</h3>
+<ul>
+<li>From <a href="../notes/many-body-wavefunctions.html">Lecture 1</a></li>
+</ul>
+<p><span class="math display">
+    g(\mathbf{r},\mathbf{r}') \equiv N \int d\mathbf{r}_{2}\cdots d\mathbf{r}_{N}\,\Psi^{*}(\mathbf{r},\mathbf{r}_{2},\ldots,\mathbf{r}_{N})\Psi(\mathbf{r}',\mathbf{r}_{2},\ldots,\mathbf{r}_{N}).
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that this can be written as</p>
+<p><span class="math display">
+g(\mathbf{r},\mathbf{r}')= \langle{\Psi}\rvert \psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r}') \lvert \Psi \rangle
+</span></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Similar calculation as for density gives</li>
+</ul>
+<p><span class="math display">
+    g(\mathbf{r},\mathbf{r}') = \sum_{\alpha} N_{\alpha}\varphi_{\alpha}^{*}(\mathbf{r})\varphi^{}_{\alpha}(\mathbf{r}')
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>For 3D <span class="math inline">N_{\mathbf{k}}=1</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert&lt;k_{F}</span>, and <span class="math inline">0</span> otherwise</li>
+</ul>
+<p><span class="math display">
+\lvert{\text{Fermi sea}}\rangle = \prod_{|\mathbf{k}|&lt;k_F} a^\dagger_\mathbf{k}\lvert{\text{VAC}}\rangle
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">
+\begin{aligned}
+    g(\mathbf{r},\mathbf{r}')&amp;=\frac{1}{V}\sum_{|\mathbf{k}|&lt;k_{F}} e^{i\mathbf{k}\cdot(\mathbf{r}'-\mathbf{r})}=\int_{|\mathbf{k}|&lt;k_{F}} \frac{d\mathbf{k}}{(2\pi)^{3}}\,e^{i\mathbf{k}\cdot(\mathbf{r}'-\mathbf{r})}\nonumber\\
+    &amp;=\frac{k_{F}^{3}}{2\pi^{2}}\left[\frac{\sin\left(k_{F}|\mathbf{r}'-\mathbf{r}|\right)}{(k_{F}|\mathbf{r}'-\mathbf{r}|)^{3}}-\frac{\cos\left(k_{F}|\mathbf{r}'-\mathbf{r}|\right)}{(k_{F}|\mathbf{r}'-\mathbf{r}|)^{2}}\right].
+\end{aligned}
+</span></p>
+<p>Note that <span class="math inline">g(\mathbf{r},\mathbf{r})=\frac{k_{F}^{3}}{6\pi^{2}}=n</span></p>
+</div>
+</div>
+</div>
+<ul>
+<li>c.f. earlier calculation in 1D using Slater determinant</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/2ph.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+<p><img data-src="../assets/FermiDensityMatrixCut.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
 </figure>
+</div>
+</section>
+<section id="two-particle-operators" class="slide level2 center">
+<h2>Two Particle Operators</h2>
+<ul>
+<li>Acts <em>pairwise</em> on the particles (<span class="math inline">B_{jk}=B_{kj}</span> for indistinguishable particles.)</li>
+</ul>
+<p><span class="math display">
+\hat B = \sum_{j&lt;k} B_{jk}.
+</span></p>
+<ul>
+<li>Action of <span class="math inline">\hat B</span> on product state <span class="math inline">\lvert{\varphi_{\alpha}}\rangle_1\lvert{\varphi_{\beta}}\rangle_2</span> in terms of matrix elements</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert_1\langle{\varphi_\beta}\rvert_2 B_{12} \lvert{\varphi_\gamma}\rangle_1\lvert{\varphi_\delta}\rangle_2\\
+\hat B &amp;= \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma,\qquad B_{\alpha\beta,\gamma\delta} = B_{\beta\alpha,\delta\gamma}
+\end{aligned}
+</span> (Note order, which is important for fermions!)</p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{aligned}
+B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert_1\langle{\varphi_\beta}\rvert_2 B_{12} \lvert{\varphi_\gamma}\rangle_1\lvert{\varphi_\delta}\rangle_2\\
+\hat B &amp;= \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma.
+\end{aligned}
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Check this works on product states (<span class="math inline">N=2</span> first)</p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>What about an excited state? If we consider the state <span class="math display">
-a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle
-</span> two kinds of states can contribute</p>
-<ol type="1">
-<li><p>Create a pair of particle-hole pairs</p></li>
-<li><p>Create a single particle-hole pair and move particle at <span class="math inline">\mathbf{k}</span></p></li>
-</ol></li>
+<li>Remember that for one particle operators</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/phscatter.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
-</figure>
+<p><span class="math display">
+\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}
+</span></p>
+<ul>
+<li>For two particle operators</li>
+</ul>
+<p><span class="math display">
+\langle{\mathbf{N}}\rvert \hat B \lvert \mathbf{N'} \rangle =  \left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right] \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}
+</span> with <span class="math inline">N_{\gamma,\delta} = N'_{\gamma,\delta}-1</span> and <span class="math inline">N_{\alpha,\beta} = N'_{\alpha,\beta}+1</span></p>
+<ul>
+<li>For fermions the overall sign depends on convention: best to write states explicitly rather than matrix elements</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\langle{\mathbf{N}}\rvert \hat B \lvert \mathbf{N'} \rangle =  \left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right] \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}.
+</span></p>
+<ul>
+<li>Strictly we have</li>
+</ul>
+<p><span class="math display">
+\begin{gather*}
+N'_\gamma N'_\delta \to N'_\gamma (N'_\gamma-1) &amp;&amp; \gamma=\delta\\
+N_\alpha N_\beta \to N_\alpha (N_\alpha-1) &amp;&amp; \alpha=\beta
+\end{gather*}
+</span> In thermodynamic limit these terms usually make a vanishing contribution when sums replaced with integrals</p>
+<ul>
+<li>Exceptions: when a finite fraction of particles are in one state (which occurs for Bose—Einstein condensates). In those cases we end up neglecting <span class="math inline">N_\alpha-1</span> relative to <span class="math inline">N_\alpha</span>, however!</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="example-pairwise-interaction">Example: pairwise interaction</h3>
+<p><span class="math display">
+\hat H_\text{int.} = \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k).
+</span></p>
+<ul>
+<li>Expressing in position basis</li>
+</ul>
+<p><span class="math display">
+\hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1)
+</span></p>
+<ul>
+<li>Remembering that <span class="math inline">\rho(\mathbf{r}) = \psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})</span>, this is <em>almost</em></li>
+</ul>
+<p><span class="math display">
+\frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\rho(\mathbf{r}_1)\rho(\mathbf{r}_2)
+</span> Operator order prevents a particle from interacting with itself!</p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\hat H_\text{int.} = \frac{1}{2}\int d\mathbf{r}_1 d\mathbf{r}_2\, U(\mathbf{r}_1-\mathbf{r}_2)\psi^\dagger(\mathbf{r}_1)\psi^\dagger(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\psi^{\vphantom{\dagger}}(\mathbf{r}_1)
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\hat H_\text{int}</span> has zero expectation for 1 particle</p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Consider <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span>, creating a particle in <em>exact</em> ground state</p></li>
-<li><p>Since <span class="math inline">\lvert{0}\rangle</span> includes the first type of state (2 particle-hole pair states), <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span> is only missing second kind</p></li>
-<li><p>Single quasiparticle state is <span class="math display">
-\begin{align*}
-\lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \\
-&amp;+ \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})}
-\end{align*}
-</span> <span class="math inline">\sqrt{z_k}</span> is a normalization factor</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<p>Normalizing, <span class="math inline">1-z_\mathbf{k}</span> is</p>
-<p><span class="math display">
-\begin{align*}
-\left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots
-\end{align*}
-</span></p>
-<ul>
-<li>This is overlap of single quasiparticle state <span class="math inline">\lvert{\mathbf{k},s}\rangle</span> with <span class="math inline">a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle</span>.</li>
+<li>Hamiltonian of interacting bosons from <a href="../notes/many-body-wavefunctions.html">Lecture 1</a></li>
 </ul>
 <p><span class="math display">
-z_\mathbf{k}= \frac{\lvert{\braket{\mathbf{k},s|a^\dagger_{\mathbf{k},s}|0}}\rvert^2}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>A finite overlap – for quasiparticles at the Fermi surface – is requirement for Fermi liquid picture to hold</p></li>
-<li><p>If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear!</p></li>
-<li><p>For our example (hard!): <span class="math display">
-z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
-</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>This is also occupation number of fermions <span class="math inline">\braket{0|a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s}|0}</span> (<em>not</em> quasiparticles!) just below <span class="math inline">k_\text{F}</span> in ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a></p></li>
-<li><p>There is a corresponding result just above</p></li>
-<li><p>Even with interactions, finite step in distribution function at <span class="math inline">k_\text{F}</span></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiJump.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&lt;k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
+</span> has second quantized form <span class="math display">
+H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{\dagger}}(x) + \frac{c}{2}\psi^\dagger(x)\psi^\dagger(x)\psi^{\vphantom{\dagger}}(x)\psi^{\vphantom{\dagger}}(x)\right]
+</span> <span class="math inline">\psi^{\vphantom{\dagger}}(x)</span>, <span class="math inline">\psi^\dagger(x)</span> satisfy the canonical bosonic commutation relations</p>
+<div class="callout callout-warning no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>QFT is a language</strong>, but writing something in a new way doesn’t (necessarily) make it easier to solve!</p>
+</div>
+</div>
 </div>
 
 <div class="quarto-auto-generated-content">
@@ -1095,7 +1430,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
