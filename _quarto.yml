@@ -31,6 +31,7 @@ website:
           - notes/lattice-models.qmd
           - notes/bose-gas.qmd
           - notes/fermi-gas.qmd
+          - notes/superconductivity.qmd
           
 
       - section: "Slides"
@@ -44,6 +45,7 @@ website:
           - slides/lattice-models.qmd
           - slides/bose-gas.qmd
           - slides/fermi-gas.qmd
+          - slides/superconductivity.qmd
           
 
       - section: "Problem Sets"

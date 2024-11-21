@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>Theories of Quantum Matter – Fermi Gas</title>
+  <title>Theories of Quantum Matter – Superconductivity</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -342,7 +342,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Fermi Gas</h1>
+  <h1 class="title">Superconductivity</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -359,455 +359,388 @@
 </div>
 </section>
 <section>
-<section id="fermi-gas" class="title-slide slide level1 center">
-<h1>Fermi Gas</h1>
+<section id="superconductivity" class="title-slide slide level1 center">
+<h1>Superconductivity</h1>
 <ul>
-<li><p>We’ll study Fermi gas with weak interactions (perturbation theory)</p></li>
-<li><p>Illustrates Landau’s <strong>Fermi liquid</strong> theory, a ‘standard model’ of condensed matter</p></li>
-<li><p>Landau’s theory applies more generally, even when interactions not weak</p></li>
+<li><p><strong>Bardeen, Cooper and Schrieffer’s</strong> (BCS) theory of superconductivity</p></li>
+<li><p>Idea: electrons in a superconductor bind to form <strong>Cooper pairs</strong> that behave like bosons</p></li>
+<li><p>The phenomena of superconductivity and superfluidity are closely linked: superconductor is ‘like’ BEC of Cooper pairs</p></li>
 </ul>
 </section>
-<section id="weakly-interacting-fermi-gas" class="slide level2 center">
-<h2>Weakly Interacting Fermi Gas</h2>
+<section class="slide level2 center">
+
 <ul>
-<li>Fermi gas with short-ranged interactions</li>
+<li>Same Hamiltonian as before</li>
 </ul>
 <p><span class="math display">
 H = \int d\mathbf{r}\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\psi^\dagger_s\cdot\nabla\psi^{\vphantom{\dagger}}_s + U_0 \psi^\dagger_\uparrow\psi^\dagger_\downarrow\psi^{\vphantom{\dagger}}_\downarrow\psi^{\vphantom{\dagger}}_\uparrow\right]
 </span></p>
 <ul>
-<li>Work in momentum space <span class="math display">
+<li>For a pair of particles of opposite spin, this is equivalent to</li>
+</ul>
+<p><span class="math display">
+H = -\frac{1}{2m}\left[\nabla_1^2+\nabla_2^2\right] + U_0\delta(\mathbf{r}_1-\mathbf{r}_2)
+</span></p>
+<ul>
+<li>For <span class="math inline">U_0&lt;0</span> and sufficiently large, expect a bound state to form with a symmetric spatial wavefunction and a spin singlet</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Discussion: Cooper’s problem</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="the-bcs-wavefunction">The BCS Wavefunction</h3>
+<p>In momentum space our Hamiltonian is</p>
+<p><span class="math display">
 H =\sum_{\mathbf{k},s} \epsilon(\mathbf{k})a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} + \overbrace{\frac{U_0}{V}\sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} a^\dagger_{\mathbf{k}_1,\uparrow}a^\dagger_{\mathbf{k}_2,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_3,\downarrow}a^{\vphantom{\dagger}}_{\mathbf{k}_4,\uparrow}}^{\equiv H_\text{int}}
-</span> with <span class="math inline">\epsilon(\mathbf{k})=\mathbf{k}^2/2m</span>, and <span class="math inline">V</span> the volume</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p><span class="math inline">U_0=0</span>: eigenstates are product states <span class="math inline">\lvert{\mathbf{N}}\rangle</span> of single particle momentum states specified by the occupancies <span class="math inline">N_{s}(\mathbf{k}) = 0,1</span></p></li>
-<li><p>Ground state is Fermi sphere of radius <span class="math inline">k_\text{F}</span> in momentum space with <span class="math inline">N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert)</span>.</p></li>
-<li><p>Low energy excited states will have <span class="math inline">N_{s}(\mathbf{k})=1</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\ll k_\text{F}</span> and <span class="math inline">N_{s}(\mathbf{k})=0</span> for <span class="math inline">\lvert{\mathbf{k}}\rvert\gg k_\text{F}</span>.</p></li>
-<li><p>In perturbation theory we can still <em>label</em> eigenstates by these occupation numbers even though eigenstates <span class="math inline">\neq\lvert{\mathbf{N}}\rangle</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Without interaction energy of a state <span class="math inline">\lvert{\mathbf{N}}\rangle</span> is</li>
-</ul>
-<p><span class="math display">
-E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k})
 </span></p>
 <ul>
-<li><p>For <span class="math inline">U_0\neq 0</span> energy <span class="math inline">E(\mathbf{N})</span> is function of labels, but no longer linear</p></li>
-<li><p>Second order expansion of energy in terms of <em>deviation</em> of occupancies from ground state values is key ingredient of Landau’s theory</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="perturbation-theory-to-second-order">Perturbation Theory to Second Order</h3>
-<ul>
-<li>Second order perturbation theory for the energies</li>
+<li><p>Take interaction between the two species to be attractive <span class="math inline">U_0&lt;0</span></p></li>
+<li><p>Ground state of non-interacting problem is</p></li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-E^{(1)}(\mathbf{N}) &amp;= \Braket{\mathbf{N}|H_\text{int}|\mathbf{N}}\\
-E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}
-\end{align*}
-</span></p>
-<ul>
-<li>First order correction is easy</li>
-</ul>
-<p><span class="math display">
-E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\mathbf{k})N_{\downarrow}(\mathbf{k}') = \frac{U_0}{V}N_\uparrow N_\downarrow
-</span> (energy used in Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>)</p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>For second order we need <span class="math inline">\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}}</span>, nonzero if <span class="math display">
-\begin{align*}
-N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
-N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
-\end{align*}
-</span> for <span class="math inline">\mathbf{k}_i</span> satisfying <span class="math inline">\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4</span> <span class="math display">
-\Braket{\mathbf{N}'|H_\text{int}|\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)
-</span> (ignoring any coinciding momenta; occupancies 0 or 1)</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
+\lvert{\text{FS}}\rangle=\prod_{|\mathbf{p}|&lt;k_\text{F}} a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\text{VAC}}\rangle.
 </span></p>
 </section>
 <section class="slide level2 center">
 
-<h3 id="landau-f-function">Landau <span class="math inline">f</span> function</h3>
+<p>Application of interaction Hamiltonian <span class="math inline">H_\text{int}</span> generates terms of form <span class="math display">
+a^\dagger_{\mathbf{p}+\mathbf{q}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p}'\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}'+\mathbf{q}\uparrow}\lvert{\text{FS}}\rangle
+</span> with <span class="math inline">|\mathbf{p}|,|\mathbf{p}+\mathbf{q}|&gt;k_\text{F},|\mathbf{p}'|,|\mathbf{p}'+\mathbf{q}|&lt;k_\text{F}</span></p>
 <ul>
-<li><p><span class="math inline">E^{(2)}(\mathbf{N})</span> has three independent momentum sums! 🙀</p></li>
-<li><p>We are after <em>excitation energies</em>, so expand in <em>change</em> in occupation</p></li>
+<li><p>Note difference from Bose case: don’t just create pair excitations with zero centre of mass momentum <span class="math inline">\mathbf{q}=0</span></p></li>
+<li><p>Nevertheless, BCS theory makes assumption that ground state involves a superposition of zero momentum pairs only</p></li>
+<li><p>We can write such a state very generally as</p></li>
 </ul>
 <p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
+\lvert{\text{pair}}\rangle\equiv\sum_{\sum_\mathbf{p}n^P_\mathbf{p}=N/2} c_{\{n^P_{\mathbf{p}}\}} \prod_{\mathbf{p}}\left[a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\right]^
+{n_{\mathbf{p}}}\lvert{\text{VAC}}\rangle
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Restricting ourselves to states of this form means that</li>
+</ul>
+<p><span class="math display">
+\Braket{\text{pair}|H_\text{int}|\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\Braket{\text{pair}|\tilde H_{\text{int}}|\text{pair}},
 </span></p>
 <ul>
-<li><span class="math inline">n_\mathbf{k}</span> is <em>mean</em> deviation from Fermi sphere in continuum limit:</li>
+<li>First term is the Hartree–Fock energy and</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiN.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
+<p><span class="math display">
+\tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\mathbf{p}, \mathbf{p}'}a^\dagger_
+{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p}'\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}'\uparrow}.
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Why? There is some double counting of terms that is irrelevant as <span class="math inline">V\to\infty</span></p>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Excitation energy expanded in <span class="math inline">n_\mathbf{k}</span></li>
-</ul>
-<p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}')
-</span></p>
-<ul>
-<li><p>This is Landau’s <strong>key idea</strong>, not restricted to perturbation theory</p></li>
-<li><p>At first order <span class="math display">
-\begin{align*}
-\varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
-f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots
-\end{align*}
-</span> <span class="math inline">\bar s</span> is <span class="math inline">\bar\uparrow=\downarrow</span>, <span class="math inline">\bar\downarrow=\uparrow</span> 🥱</p></li>
+<li><p>Introduce the pair operators <span class="math inline">b^\dagger_\mathbf{p}=a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}}</span>, <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}</span></p></li>
+<li><p>For <span class="math inline">\Braket{\text{pair}|\cdots|\text{pair}}</span> we can replace <span class="math inline">H\to H_\text{pair}</span> <span class="math display">
+H_{\text{pair}}=2\sum_{\mathbf{p}}\epsilon_{\mathbf{p}}b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}+\frac{U_0}{V}\sum'_{\mathbf{p},\mathbf{p}'} b^\dagger_\mathbf{p}
+b^{\vphantom{\dagger}}_{\mathbf{p}'}
+</span> since <span class="math inline">2b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}= a^\dagger_{\mathbf{p},\uparrow}a^{\vphantom{\dagger}}_{\mathbf{p},\uparrow}+a^\dagger_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}</span> on these states</p></li>
+<li><p><em>Looks</em> quadratic. Can we solve it?</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Second order contributions to <span class="math inline">f</span>-function more interesting</li>
-</ul>
-<p><span class="math display">
-E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4}\frac{\left(1-N_{\uparrow}(\mathbf{k}_1)\right)\left(1-N_{\downarrow}(\mathbf{k}_2)\right)N_{\downarrow}(\mathbf{k}_3)N_{\uparrow}(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}
-</span></p>
-<p><span class="math display">
-N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
-</span></p>
-<p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
-\left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><span class="math inline">f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')</span> is more complicated <span class="math display">
-\begin{align*}
-f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
-\left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right]
-\end{align*}
-</span> (just for reference)</li>
+<li><p>Nope! <span class="math inline">b^\dagger_\mathbf{p}</span>, <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}</span> don’t obey canonical Bose commutation relations</p></li>
+<li><p>Pair operators <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}</span> commute at different momenta <span class="math display">
+[b^{\vphantom{\dagger}}_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^\dagger_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=0\qquad \mathbf{p}\neq\mathbf{p}',
+</span> but obey the <em>hardcore constraint</em> <span class="math display">
+(b^\dagger_\mathbf{p})^2=0
+</span> (can’t create two fermions in same state)</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p><span class="math inline">n_{s}(\mathbf{k})\neq 0</span> in energy window of size <span class="math inline">k_\text{B} T</span> around Fermi surface</p></li>
-<li><p>At low <span class="math inline">T</span> take <span class="math inline">\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}</span>. <em>New feature</em> at second order is nontrivial dependence of <span class="math inline">f_{s^{}s'}(\mathbf{k},\mathbf{k}')</span> on angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span>.</p></li>
-<li><p>Assume ground state unpolarized, i.e.&nbsp;<span class="math inline">N_{s}(\mathbf{k})</span> independent of <span class="math inline">s</span></p></li>
+<li>Try variational state (pair amplitudes factorize c.f. Bogoliubov)</li>
+</ul>
+<p><span class="math display">
+\lvert{N \text{ pair}}\rangle\equiv\left[\sum_\mathbf{p}c_\mathbf{p}b^\dagger_\mathbf{p}\right]^{N/2}\lvert{\text{VAC}}\rangle
+</span></p>
+<ul>
+<li>Energy expectation still tricky. For instance, what is the expectation value of the kinetic energy?</li>
+</ul>
+<p><span class="math display">
+\mathrm{K.E}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}\langle b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}\rangle\equiv 2\sum_\mathbf{p}\epsilon_{\mathbf{p}} \langle n^P_
+\mathbf{p}\rangle,
+</span></p>
+<ul>
+<li>Finding average number of pairs <span class="math inline">\langle n^P_\mathbf{p}\rangle</span> not obvious</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Let’s work out angular dependence for <span class="math inline">f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')</span> (simpler, only have one independent momentum 😀)</p></li>
-<li><p>Thermodynamic limit</p></li>
+<li>BCS considered normalized wavefunction</li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right]
-\end{align*}
+\lvert{\text{BCS}}\rangle =\prod_\mathbf{p}\left[v_\mathbf{p}b^\dagger_\mathbf{p}+u_\mathbf{p}\right]\lvert{\text{VAC}}\rangle\qquad |u_\mathbf{p}|^2+|v_\mathbf{p}|
+^2=1.
 </span></p>
 <ul>
-<li>Need integral</li>
+<li>Superposition of states with different total number of particles</li>
 </ul>
-<p><span class="math display">
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}
-</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Projection to fixed number <span class="math inline">N</span> of particles matches <span class="math display">
+\lvert{N \text{ pair}}\rangle\equiv\left[\sum_\mathbf{p}c_\mathbf{p}b^\dagger_\mathbf{p}\right]^{N/2}\lvert{\text{VAC}}\rangle
+</span> if <span class="math inline">c_\mathbf{p}=v_\mathbf{p}/u_\mathbf{p}</span>.</p>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Denominator can be written (<span class="math inline">\mathbf{k}-\mathbf{k}'</span> is fixed) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)= \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}_2-\mathbf{k}_3\right) = \frac{1}{2m}\left(\mathbf{k}_2+\mathbf{k}_3\right)\cdot\left(\mathbf{k}-\mathbf{k}'\right)
+<li><span class="math inline">\langle n^P_\mathbf{p}\rangle= v_\mathbf{p}^2</span> and total variational energy of this state is</li>
+</ul>
+<p><span class="math display">
+\Braket{\text{BCS}|H|\text{BCS}}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
+\mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}.
+</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show this</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="how-about-that-non-conserving-wavefunction">How about that non-conserving wavefunction?</h3>
+<ul>
+<li><p>Expectation of any particle number conserving operator is <span class="math display">
+\Braket{\text{BCS}|\mathcal{O}|\text{BCS}}=\sum_N P_N \Braket{N \text{ pair}|\mathcal{O}|N\text{ pair}},
 </span></p></li>
-<li><p>Notation <span class="math inline">\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right)</span></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiGeometry.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Denominator becomes (for fixed <span class="math inline">\mathbf{q}</span>) <span class="math display">
-\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3) = \frac{2}{m}\mathbf{K}\cdot\mathbf{q}
+<li><p>The probabilities <span class="math inline">P_N</span> are <span class="math display">
+P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf{p}|^2+\left(1-n^P_\mathbf{p}\right)|u_\mathbf{p}|^2 \right],
 </span></p></li>
-<li><p>Only angle <span class="math inline">\theta</span> between <span class="math inline">\mathbf{K}</span> and <span class="math inline">\mathbf{q}</span> enters integral</p></li>
-<li><p>Conditions <span class="math inline">\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}</span> and <span class="math inline">\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}</span> become</p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2
-\end{align*}
-</span></p>
-<p>which gives range of <span class="math inline">K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)</span></p>
-<p><span class="math display">
-K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta},\qquad  \theta&lt;\pi/2
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>In terms of these variables</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
-\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
-&amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}
-\end{align*}
-</span></p>
-<ul>
-<li>Other integral is same but in interval <span class="math inline">(\pi/2,\pi)</span>. Finally… <span class="math display">
-\begin{align*}
-f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
-&amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right]
-\end{align*}
-</span> <span class="math inline">\phi</span> is the angle between <span class="math inline">\mathbf{k}</span> and <span class="math inline">\mathbf{k}'</span> i.e.&nbsp;<span class="math inline">\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2</span></li>
 </ul>
 </section>
 <section class="slide level2 center">
 
-<ul>
-<li><p>Our definition of <span class="math inline">f</span> implied quantization axis for spin</p></li>
-<li><p>To write things in invariant way, think of occupation number <span class="math inline">N(\mathbf{k})</span> as <span class="math inline">2\times 2</span> matrix</p></li>
-</ul>
 <p><span class="math display">
-\mathsf{N}(\mathbf{k})=\begin{pmatrix}
-N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
-N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k})
-\end{pmatrix}
+P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf{p}|^2+\left(1-n^P_\mathbf{p}\right)|u_\mathbf{p}|^2 \right]
 </span></p>
 <ul>
-<li><span class="math inline">f</span>-function then has <em>four</em> spin indices</li>
+<li>Distribution strongly peaked around <span class="math display">
+\langle N \rangle=2\sum_\mathbf{p}|v_\mathbf{p}|^2=2\sum_\mathbf{p}\langle n^P_\mathbf{p}
+\rangle
+</span> with a variance that is <span class="math inline">O(N)</span>. Thus at large <span class="math inline">N</span></li>
 </ul>
 <p><span class="math display">
-\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}')
+\Braket{\text{BCS}|\mathcal{O}|\text{BCS}}\to \Braket{\langle N\rangle \text{ pair}|\mathcal{O}|\langle N\rangle\text{ pair}}
 </span></p>
 </section>
 <section class="slide level2 center">
 
-<p><span class="math display">
-\begin{align*}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
-\end{align*}
-</span> (again, just for reference)</p>
+<h3 id="anderson-spin-chain">Anderson spin chain</h3>
 <ul>
-<li><strong>Key message</strong>: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math display">
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
-</span></li>
-<li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> made dimensionless by scaling by density of states at Fermi surface <span class="math inline">\nu(E_F)\equiv k_{\text{F}}m/\pi^2</span>.</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="quasiparticle-energy-varepsilon_smathbfk">Quasiparticle energy <span class="math inline">\varepsilon_s(\mathbf{k})</span></h3>
-<p><span class="math display">
-\Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
-</span></p>
-<ul>
-<li><p><span class="math inline">\varepsilon_s(\mathbf{k})</span> will involve two momentum sums 😟</p></li>
-<li><p>What can we say on general grounds? Near Fermi surface expect</p></li>
+<li><span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}</span>, <span class="math inline">b^\dagger_\mathbf{p}</span>, and <span class="math inline">b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2</span> behave as the components of a spin-1/2 <span class="math display">
+S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphantom{\dagger}}_\mathbf{p},\quad S^z_\mathbf{p}= b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2,
+</span> on account of the commutation relations (<strong>Anderson spins</strong>)</li>
 </ul>
 <p><span class="math display">
-\varepsilon_s(\mathbf{k}) - E_\text{F} \approx v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F})
+\left[b^\dagger_\mathbf{p},b^{\vphantom{\dagger}}_\mathbf{p}\right]=2\left(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\right)\nonumber\\
+\left[b^\dagger_\mathbf{p},\left(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\right)\right]=-b^\dagger_\mathbf{p}.
 </span></p>
 <ul>
-<li>Fermi velocity <span class="math inline">v_\text{F}</span> altered by interactions. Define <strong>effective mass</strong></li>
-</ul>
-<p><span class="math display">
-m_* = \frac{k_\text{F}}{v_\text{F}}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Can get <span class="math inline">m_*</span> using results we have already, using one simple trick</p></li>
-<li><p>Shift momentum of each quasiparticle by <span class="math inline">\delta\mathbf{k}</span>, giving new <span class="math inline">N_s(\mathbf{k})</span></p></li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
-&amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
-</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiShift.png" class="quarto-figure quarto-figure-center" style="width:40.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Compute energy using Landau functional</li>
-</ul>
-<p><span class="math display">
-\begin{align*}
-N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}-  \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align*}
-</span></p>
-<ul>
-<li>Treat last three terms as <span class="math inline">n_s(\mathbf{k})</span>. Excitation energy changes <span class="math display">
-\begin{align*}
-\Delta E(\text{after})-\Delta E(\text{before}) = \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
-+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
-\end{align*}
-</span> (to first order in <span class="math inline">\delta\mathbf{k}</span>. Integrate by parts in first term)</li>
+<li><span class="math inline">H_\text{pair}</span> is a spin chain <span class="math display">
+H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'},
+</span> where we included chemical potential by defining <span class="math inline">\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu</span>.</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>On grounds of Galilean invariance, this change must be <span class="math display">
-\Delta E(\text{after})-\Delta E(\text{before}) = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k}
-</span> where total momentum <span class="math inline">\mathbf{P}</span> is</li>
-</ul>
-<p><span class="math display">
-\mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>If two expressions for <span class="math inline">\Delta E(\text{after})-\Delta E(\text{before})</span> equal for all <span class="math inline">n_s(\mathbf{k})</span> and <span class="math inline">\delta\mathbf{k}</span> to first order</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}
-</span></p>
-<ul>
-<li>For momenta close to the Fermi surface</li>
-</ul>
-<p><span class="math display">
-\frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}
-</span></p>
-<ul>
-<li>If <span class="math inline">\mathbf{k}'=\cos\phi \mathbf{k}+ \sin\phi \mathbf{k}_\perp</span>, with <span class="math inline">\mathbf{k}_\perp\cdot\mathbf{k}=0</span>, we get</li>
-</ul>
-<p><span class="math display">
-\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>For the <span class="math inline">F(\phi)</span> that we found in <span class="math inline">2^{\text{nd}}</span> order perturbation theory <span class="math display">
-\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
-</span> (Use the substitution <span class="math inline">u=\sin\phi/2</span> to do the integral.)</p></li>
-<li><p>In systems with strong interactions <span class="math inline">m_*/m</span> may be much larger!</p></li>
-<li><p>In <a href="https://en.wikipedia.org/wiki/Heavy_fermion_material">heavy fermion materials</a> <span class="math inline">m_*/m</span> can approach 1000! Landau’s picture of fermionic quasiparticles still applies.</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<h3 id="eigenstates-in-perturbation-theory-what-is-a-quasiparticle">Eigenstates in Perturbation Theory: What is a Quasiparticle?</h3>
-<ul>
-<li><p>What do these quasiparticle states <em>look</em> like? Let’s see what perturbation theory says</p></li>
-<li><p>At first order we have</p></li>
-</ul>
-<p><span class="math display">
-\lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}|H_\text{int}|\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>Consider the Fermi sea ground state <span class="math inline">\lvert{\text{FS}}\rangle</span>. What states <span class="math inline">\lvert{\mathbf{N'}}\rangle</span> can appear this case?</p></li>
-<li><p>Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/2ph.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
-</div>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>What about an excited state? If we consider the state <span class="math display">
-a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle
-</span> two kinds of states can contribute</p>
+<li><p>Parameterize <span class="math display">
+\left(u_\mathbf{p},v_\mathbf{p}\right)=(\cos(\theta_\mathbf{p}/2)e^{-i\varphi_\mathbf{p}/2},\sin(\theta_\mathbf{p}/2)e^{i\varphi_\mathbf{p}/2})
+</span> then the variational energy is (except for a constant) <span class="math display">
+\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\theta_\mathbf{p}\sin\theta_{\mathbf{p}'}\cos\left(\varphi_\mathbf{p}-\varphi_{\mathbf{p}'}\right)
+</span></p></li>
+<li><p>Interpretation</p>
 <ol type="1">
-<li><p>Create a pair of particle-hole pairs</p></li>
-<li><p>Create a single particle-hole pair and move particle at <span class="math inline">\mathbf{k}</span></p></li>
+<li><p>First term tends to align spins with z-axis in - direction for <span class="math inline">\xi_\mathbf{p}&lt;0</span> and in + direction for <span class="math inline">\xi_\mathbf{p}&gt;0</span></p></li>
+<li><p>Second term – from attractive <span class="math inline">H_\text{int}</span> – wants the spins to lie in the x-y plane</p></li>
 </ol></li>
 </ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="minimize-energy">Minimize energy</h3>
+<ul>
+<li><p>For <span class="math inline">U_0&gt;0</span> (repulsive interactions), spins all point in <span class="math inline">\pm z</span> direction, forming ‘domain wall’ where <span class="math inline">\xi_{\mathbf{p}}</span> changes sign at Fermi surface</p></li>
+<li><p>Relationship between spin picture and average number of pairs is <span class="math display">
+\langle n^P_{\mathbf{p}}\rangle=v_\mathbf{p}^2=\left[1-\cos\theta_\mathbf{p}\right]/2,
+</span> so this corresponds to sharp Fermi step.</p></li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/phscatter.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+<p><img data-src="../assets/sharp-step.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>Consider <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span>, creating a particle in <em>exact</em> ground state</p></li>
-<li><p>Since <span class="math inline">\lvert{0}\rangle</span> includes the first type of state (2 particle-hole pair states), <span class="math inline">a^\dagger_{\mathbf{k},s}\lvert{0}\rangle</span> is only missing second kind</p></li>
-<li><p>Single quasiparticle state is <span class="math display">
-\begin{align*}
-\lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \\
-&amp;+ \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})}
-\end{align*}
-</span> <span class="math inline">\sqrt{z_k}</span> is a normalization factor</p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<p>Normalizing, <span class="math inline">1-z_\mathbf{k}</span> is</p>
-<p><span class="math display">
-\begin{align*}
-\left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots
-\end{align*}
-</span></p>
-<ul>
-<li>This is overlap of single quasiparticle state <span class="math inline">\lvert{\mathbf{k},s}\rangle</span> with <span class="math inline">a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle</span>.</li>
-</ul>
-<p><span class="math display">
-z_\mathbf{k}= \frac{\lvert{\braket{\mathbf{k},s|a^\dagger_{\mathbf{k},s}|0}}\rvert^2}{\braket{0|a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s}|0}}
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>A finite overlap – for quasiparticles at the Fermi surface – is requirement for Fermi liquid picture to hold</p></li>
-<li><p>If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear!</p></li>
-<li><p>For our example (hard!): <span class="math display">
-z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
-</span></p></li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><p>This is also occupation number of fermions <span class="math inline">\braket{0|a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s}|0}</span> (<em>not</em> quasiparticles!) just below <span class="math inline">k_\text{F}</span> in ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a></p></li>
-<li><p>There is a corresponding result just above</p></li>
-<li><p>Even with interactions, finite step in distribution function at <span class="math inline">k_\text{F}</span></p></li>
+<li><p>For <span class="math inline">U_0&lt;0</span>, system can lower its energy by taking <span class="math inline">\sin\theta_\mathbf{p}\neq 0</span></p></li>
+<li><p>Lowering of interaction energy more than compensates increase in kinetic energy that comes from smearing the step</p></li>
+<li><p>All angles <span class="math inline">\varphi_\mathbf{p}</span>, describing angle in x-y plane, should be equal</p></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/FermiJump.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+<p><img data-src="../assets/bcs-step.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
 </figure>
 </div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\theta_\mathbf{p}\sin\theta_{\mathbf{p}'}
+</span> - Taking the extremum of energy with respect to angles <span class="math inline">\theta_{\mathbf{p}}</span> gives <span class="math display">
+\xi_{\mathbf{p}}\sin\theta_\mathbf{p}-|\Delta|\cos\theta_\mathbf{p}=0,
+</span> where the <strong>gap parameter</strong> is <span class="math display">
+\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u_\mathbf{p}v^*_\mathbf{p}.
+</span> <span class="math display">
+\cos\theta_\mathbf{p}=\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
+(\mathbf{p})^2+|\Delta|^2}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Solution corresponds to alignment of spin vector with the direction of the effective `magnetic field’</li>
+</ul>
+<p><span class="math display">
+\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
+</span></p>
+<ul>
+<li>To be self-consistent, must satisfy the <strong>gap equation</strong> <span class="math display">
+\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}\frac{\Delta}{E_\mathbf{p}}
+</span> with continuum limit <span class="math display">
+\Delta=-\frac{U_0}{2}\int \frac{d\mathbf{p}}{\left(2\pi\right)^3} \frac{\Delta}{E_\mathbf{p}}
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\Delta=-\frac{U_0}{2}\int \frac{d\mathbf{p}}{\left(2\pi\right)^3} \frac{\Delta}{E_\mathbf{p}}
+</span></p>
+<ul>
+<li><p>For <span class="math inline">U_0&gt;0</span> there are no non-trivial solutions (<span class="math inline">\Delta=0</span> always)</p></li>
+<li><p>For any <span class="math inline">U_0&lt;0</span> there is always a solution at finite <span class="math inline">\Delta</span>.</p></li>
+<li><p>Integral divergent at high <span class="math inline">\mathbf{p}</span>. More significantly, for small <span class="math inline">\Delta</span>, RHS is <span class="math display">
+\sim-\frac{U_0}{2}\nu(\mu)\Delta\log \Lambda/\Delta,
+</span> <span class="math inline">\Lambda</span> is high energy cut-off and <span class="math inline">\nu(\mu)</span> is density of states per spin</p></li>
+<li><p>No matter how small the attraction <span class="math inline">U_0&lt;0</span>, always a solution with finite <span class="math inline">\Delta</span>. This is the <strong>Cooper phenomenon</strong>.</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<h3 id="quasiparticle-excitations">Quasiparticle Excitations</h3>
+<ul>
+<li><p>Like Bogoliubov, BCS theory also lets us discuss <em>excitations</em></p></li>
+<li><p>Can solve BCS hamiltonian by Bogoliubov (we didn’t) but can introduce Bogoliubov-type excitations after the fact</p></li>
+</ul>
+<p><span class="math display">
+\lvert{\text{BCS}}\rangle =\prod_\mathbf{p}\left[v_\mathbf{p}a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}+u_\mathbf{p}\right]\lvert{\text{VAC}}\rangle
+</span></p>
+<ul>
+<li>Can show that <span class="math display">
+\begin{align*}
+\alpha^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}&amp;=u_{\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}-v_{\mathbf{p}}a^\dagger_{-\mathbf{p}\downarrow}\\
+\alpha^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}&amp;=u_{-\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}+v_{-\mathbf{p}}a^\dagger_{-\mathbf{p}\uparrow},
+\end{align*}
+</span> satisfy fermion anticommutation relations and annihilate BCS state <span class="math display">
+\alpha^{\vphantom{\dagger}}_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=0.
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\lvert{\mathbf{p},s}\rangle=\alpha^\dagger_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=a^\dagger_{\mathbf{p},s}\prod_{\mathbf{p}'\neq \mathbf{p}} \left[v_{\mathbf{p}'}a^\dagger_
+{\mathbf{p}'\uparrow}a^\dagger_{-\mathbf{p}'\downarrow}+u_{\mathbf{p}'}\right]\lvert{\text{VAC}}\rangle,
+</span></p>
+<ul>
+<li><p>If we chose <span class="math inline">s=\uparrow</span> so that <span class="math inline">\left(\mathbf{p},\uparrow\right)</span> state is certainly occupied it means that <span class="math inline">a^\dagger_{\mathbf{p}
+\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0</span></p></li>
+<li><p>Corresponding term no longer appears in interaction term when it is applied to this state</p></li>
+<li><p>The level is said to be `blocked’. Thus it certainly is an eigenstate of the pair problem, if <span class="math inline">\lvert{\text{BCS}}\rangle</span> is. What is its energy?</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Have to take into account kinetic energy as well as loss of attractive interaction energy</li>
+</ul>
+<p><span class="math display">
+E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\rangle\right)}^{\left(\mathbf{p},s\right)\,\mathrm{occupied}}
+\overbrace{-\langle n^P_\mathbf{p}\rangle}^{\left(-\mathbf{p},-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
+\mathbf{p}}^{\mathrm{`blocking'}}=E_{\mathbf{p}}
+</span></p>
+<ul>
+<li>These quasiparticle excitations always have a gap <span class="math inline">\Delta_{s}</span> given by</li>
+</ul>
+<p><span class="math display">
+\Delta_s=\min_\mathbf{p}E_\mathbf{p}=\begin{cases}
+\Delta, &amp; \mu&gt;0,\\
+\sqrt{\Delta^2+\mu^2},&amp;  \mu&lt;0.
+\end{cases}
+</span></p>
+<ul>
+<li>Features of the quasiparticle dispersion</li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -1095,7 +1028,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
