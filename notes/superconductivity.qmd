@@ -166,8 +166,10 @@ $$
 on account of the commutation relations
 
 $$
+\begin{align}
 \left[\bdop_\bp,\bop_\bp\right]=2\left(\bdop_\bp\bop_\bp-1/2\right)\nonumber\\
 \left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp.
+\end{align}
 $$
 
 This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain
@@ -194,7 +196,7 @@ equivalently, the configurations of the spins. For $U_0>0$ (repulsive interactio
 the $\pm z$ direction, forming a 'domain wall' where $\xi_{\bp}$ changes sign at the Fermi surface. The relationship between the spin picture and the average number of pairs is
 
 $$
-\langle n^P_{\bp}\rangle=v_\bp^2=\left[1-\cos\theta_\bp\right]/2,
+\langle n^P_{\bp}\rangle=v_\bp^2=\left[1+\cos\theta_\bp\right]/2,
 $$
 
 so we see that this corresponds simply to a sharp fermi step. For $U_0<0$, the system can lower its

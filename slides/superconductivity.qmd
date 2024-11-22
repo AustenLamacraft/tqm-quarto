@@ -247,8 +247,10 @@ $$
 on account of the commutation relations (__Anderson spins__)
 
 $$
+\begin{aligned}
 \left[\bdop_\bp,\bop_\bp\right]=2\left(\bdop_\bp\bop_\bp-1/2\right)\nonumber\\
-\left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp.
+\left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp
+\end{aligned}
 $$
 
 - $H_\text{pair}$ is a spin chain
@@ -284,7 +286,7 @@ $$
 
 - Relationship between spin picture and average number of pairs is
 $$
-\langle n^P_{\bp}\rangle=v_\bp^2=\left[1-\cos\theta_\bp\right]/2,
+\langle n^P_{\bp}\rangle=v_\bp^2=\left[1+\cos\theta_\bp\right]/2,
 $$
 so this corresponds to sharp Fermi step. 
 
