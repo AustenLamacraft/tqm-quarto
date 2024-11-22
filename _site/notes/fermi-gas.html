@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../notes/superconductivity.qmd" rel="next">
+<link href="../notes/superconductivity.html" rel="next">
 <link href="../notes/bose-gas.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -231,6 +231,12 @@ window.Quarto = {
  <span class="menu-text">Fermi Gas</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/superconductivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Superconductivity</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -294,6 +300,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/superconductivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Superconductivity</span></a>
   </div>
 </li>
       </ul>
@@ -534,7 +546,7 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \in
 &amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
 \end{align}
 \]</span></p>
-<p>Here <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span> i.e.&nbsp;<span class="math inline">\(\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2\)</span>. We won’t go through the calculation of <span class="math inline">\(f_{+-}(\mathbf{k},\mathbf{k}')\)</span>, but just record the final answer.</p>
+<p>Here <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span> i.e.&nbsp;<span class="math inline">\(\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2\)</span>. We won’t go through the calculation of <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\)</span>, but just record the final answer.</p>
 <p>The definition <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> implied a certain quantization axis for spin. To write things in an invariant way, we should think of the occupation number <span class="math inline">\(N(\mathbf{k})\)</span> as a <span class="math inline">\(2\times 2\)</span> matrix that can describe an arbitrary spin orientation, with elements</p>
 <p><span class="math display">\[
 \mathsf{N}(\mathbf{k})=\begin{pmatrix}
@@ -660,13 +672,13 @@ a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle,
 <p><span id="eq-ph-peturb"><span class="math display">\[
 \begin{align}
 \lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \nonumber\\
-&amp;\qquad + \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s,s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})},
+&amp;\qquad + \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})},
 \end{align}
 \tag{10}\]</span></span></p>
 <p>where <span class="math inline">\(\sqrt{z_k}\)</span> is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
 <p>Normalizing <a href="#eq-ph-peturb" class="quarto-xref">Equation&nbsp;10</a> gives</p>
 <p><span id="eq-z"><span class="math display">\[
-z_\mathbf{k}= 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s,s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots.
+z_\mathbf{k}= 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots.
 \tag{11}\]</span></span></p>
 <p>This quantity can be interpreted in terms of the overlap of the single quasiparticle state <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle\)</span>.</p>
 <p><span class="math display">\[
@@ -1138,8 +1150,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/superconductivity.qmd" class="pagination-link" aria-label="">
-        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/superconductivity.html" class="pagination-link" aria-label="Superconductivity">
+        <span class="nav-page-text">Superconductivity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

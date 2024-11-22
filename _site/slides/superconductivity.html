@@ -363,7 +363,7 @@
 <h1>Superconductivity</h1>
 <ul>
 <li><p><strong>Bardeen, Cooper and Schrieffer’s</strong> (BCS) theory of superconductivity</p></li>
-<li><p>Idea: electrons in a superconductor bind to form <strong>Cooper pairs</strong> that behave like bosons</p></li>
+<li><p>Idea: electrons bind to form <strong>Cooper pairs</strong> that behave like bosons</p></li>
 <li><p>The phenomena of superconductivity and superfluidity are closely linked: superconductor is ‘like’ BEC of Cooper pairs</p></li>
 </ul>
 </section>
@@ -437,14 +437,14 @@ a^\dagger_{\mathbf{p}+\mathbf{q}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vp
 <li>Restricting ourselves to states of this form means that</li>
 </ul>
 <p><span class="math display">
-\Braket{\text{pair}|H_\text{int}|\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\Braket{\text{pair}|\tilde H_{\text{int}}|\text{pair}},
+\Braket{\text{pair}|H_\text{int}|\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\Braket{\text{pair}|\tilde H_{\text{int}}|\text{pair}}
 </span></p>
 <ul>
 <li>First term is the Hartree–Fock energy and</li>
 </ul>
 <p><span class="math display">
 \tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\mathbf{p}, \mathbf{p}'}a^\dagger_
-{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p}'\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}'\uparrow}.
+{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p}'\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}'\uparrow}
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -477,10 +477,11 @@ b^{\vphantom{\dagger}}_{\mathbf{p}'}
 <li><p>Nope! <span class="math inline">b^\dagger_\mathbf{p}</span>, <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}</span> don’t obey canonical Bose commutation relations</p></li>
 <li><p>Pair operators <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}</span> commute at different momenta <span class="math display">
 [b^{\vphantom{\dagger}}_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^\dagger_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=0\qquad \mathbf{p}\neq\mathbf{p}',
-</span> but obey the <em>hardcore constraint</em> <span class="math display">
-(b^\dagger_\mathbf{p})^2=0
-</span> (can’t create two fermions in same state)</p></li>
+</span> but obey the <em>hardcore constraint</em></p></li>
 </ul>
+<p><span class="math display">
+(b^\dagger_\mathbf{p})^2=0
+</span> (can’t create two fermions in same state)</p>
 </section>
 <section class="slide level2 center">
 
@@ -536,7 +537,7 @@ b^{\vphantom{\dagger}}_{\mathbf{p}'}
 </ul>
 <p><span class="math display">
 \Braket{\text{BCS}|H|\text{BCS}}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
-\mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}.
+\mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -556,13 +557,17 @@ b^{\vphantom{\dagger}}_{\mathbf{p}'}
 
 <h3 id="how-about-that-non-conserving-wavefunction">How about that non-conserving wavefunction?</h3>
 <ul>
-<li><p>Expectation of any particle number conserving operator is <span class="math display">
-\Braket{\text{BCS}|\mathcal{O}|\text{BCS}}=\sum_N P_N \Braket{N \text{ pair}|\mathcal{O}|N\text{ pair}},
-</span></p></li>
-<li><p>The probabilities <span class="math inline">P_N</span> are <span class="math display">
-P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf{p}|^2+\left(1-n^P_\mathbf{p}\right)|u_\mathbf{p}|^2 \right],
-</span></p></li>
+<li>Expectation of any particle number conserving operator is</li>
 </ul>
+<p><span class="math display">
+\Braket{\text{BCS}|\mathcal{O}|\text{BCS}}=\sum_N P_N \Braket{N \text{ pair}|\mathcal{O}|N\text{ pair}}
+</span></p>
+<ul>
+<li>The probabilities <span class="math inline">P_N</span> are</li>
+</ul>
+<p><span class="math display">
+P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf{p}|^2+\left(1-n^P_\mathbf{p}\right)|u_\mathbf{p}|^2 \right]
+</span></p>
 </section>
 <section class="slide level2 center">
 
@@ -570,11 +575,12 @@ P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf
 P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf{p}|^2+\left(1-n^P_\mathbf{p}\right)|u_\mathbf{p}|^2 \right]
 </span></p>
 <ul>
-<li>Distribution strongly peaked around <span class="math display">
+<li>Distribution strongly peaked around</li>
+</ul>
+<p><span class="math display">
 \langle N \rangle=2\sum_\mathbf{p}|v_\mathbf{p}|^2=2\sum_\mathbf{p}\langle n^P_\mathbf{p}
 \rangle
-</span> with a variance that is <span class="math inline">O(N)</span>. Thus at large <span class="math inline">N</span></li>
-</ul>
+</span> with a variance that is <span class="math inline">O(N)</span>. Thus at large <span class="math inline">N</span></p>
 <p><span class="math display">
 \Braket{\text{BCS}|\mathcal{O}|\text{BCS}}\to \Braket{\langle N\rangle \text{ pair}|\mathcal{O}|\langle N\rangle\text{ pair}}
 </span></p>
@@ -601,14 +607,14 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 
 <ul>
 <li><p>Parameterize <span class="math display">
-\left(u_\mathbf{p},v_\mathbf{p}\right)=(\cos(\theta_\mathbf{p}/2)e^{-i\varphi_\mathbf{p}/2},\sin(\theta_\mathbf{p}/2)e^{i\varphi_\mathbf{p}/2})
+\left(v_\mathbf{p},u_\mathbf{p}\right)=(\cos(\theta_\mathbf{p}/2)e^{i\varphi_\mathbf{p}/2},\sin(\theta_\mathbf{p}/2)e^{-i\varphi_\mathbf{p}/2})
 </span> then the variational energy is (except for a constant) <span class="math display">
-\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\Braket{\text{BCS}|H|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}\cos\left(\varphi_\mathbf{p}-\varphi_{\mathbf{p}'}\right)
 </span></p></li>
 <li><p>Interpretation</p>
 <ol type="1">
-<li><p>First term tends to align spins with z-axis in - direction for <span class="math inline">\xi_\mathbf{p}&lt;0</span> and in + direction for <span class="math inline">\xi_\mathbf{p}&gt;0</span></p></li>
+<li><p>First term tends to align spins with z-axis in + direction for <span class="math inline">\xi_\mathbf{p}&lt;0</span> and in - direction for <span class="math inline">\xi_\mathbf{p}&gt;0</span></p></li>
 <li><p>Second term – from attractive <span class="math inline">H_\text{int}</span> – wants the spins to lie in the x-y plane</p></li>
 </ol></li>
 </ul>
@@ -644,14 +650,14 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <section class="slide level2 center">
 
 <p><span class="math display">
-\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\Braket{\text{BCS}|H|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}
 </span> - Taking the extremum of energy with respect to angles <span class="math inline">\theta_{\mathbf{p}}</span> gives <span class="math display">
-\xi_{\mathbf{p}}\sin\theta_\mathbf{p}-|\Delta|\cos\theta_\mathbf{p}=0,
+\xi_{\mathbf{p}}\sin\theta_\mathbf{p}+|\Delta|\cos\theta_\mathbf{p}=0,
 </span> where the <strong>gap parameter</strong> is <span class="math display">
-\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u_\mathbf{p}v^*_\mathbf{p}.
+\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u^*_\mathbf{p}v_\mathbf{p}.
 </span> <span class="math display">
-\cos\theta_\mathbf{p}=\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
+\cos\theta_\mathbf{p}=-\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
 (\mathbf{p})^2+|\Delta|^2}
 </span></p>
 </section>
@@ -661,7 +667,7 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <li>Solution corresponds to alignment of spin vector with the direction of the effective `magnetic field’</li>
 </ul>
 <p><span class="math display">
-\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
+\left(\mathrm{Re}\,\Delta,\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
 </span></p>
 <ul>
 <li>To be self-consistent, must satisfy the <strong>gap equation</strong> <span class="math display">

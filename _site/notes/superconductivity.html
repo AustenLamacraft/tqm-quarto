@@ -504,9 +504,9 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 <p><span class="math display">\[
 H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'},
 \]</span></p>
-<p>where we have included the chemical potential by defining <span class="math inline">\(\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu\)</span>. If we parameterize <span class="math inline">\(\left(u_\mathbf{p},v_\mathbf{p}\right)\)</span> as <span class="math inline">\((\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2})\)</span> then the variational energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;8</a> has the form (except for a constant)</p>
+<p>where we have included the chemical potential by defining <span class="math inline">\(\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu\)</span>. If we parameterize <span class="math inline">\(\left(v_\mathbf{p},u_\mathbf{p}\right)\)</span> as <span class="math inline">\((\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})\)</span> then the variational energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;8</a> has the form (except for a constant)</p>
 <p><span id="eq-spin-en"><span class="math display">\[
-\langle{\text{BCS}}\rvert H \lvert \text{BCS} \rangle=-\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\langle{\text{BCS}}\rvert H \lvert \text{BCS} \rangle=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}\cos\left(\varphi_\mathbf{p}-\varphi_{\mathbf{p}'}\right).
 \tag{9}\]</span></span></p>
 <p>The interpretation of <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;9</a> is the following. The first term tends to align the spins with the z-axis in the - direction for <span class="math inline">\(\xi_\mathbf{p}&lt;0\)</span> and in the + direction for <span class="math inline">\(\xi_\mathbf{p}&gt;0\)</span>. On the other hand, the second term, originating from the potential energy between the constituents of a pair, wants the spins to lie in the x-y plane. Of course, the spins are really quantum mechanical spin-1/2 operators. The direction corresponds to the direction of <span class="math inline">\(\langle \mathbf{S}\rangle\)</span> in the BCS state.</p>
@@ -522,20 +522,20 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 </figure>
 </div>
 <p><span class="math display">\[
-\xi_{\mathbf{p}}\sin\theta_\mathbf{p}-|\Delta|\cos\theta_\mathbf{p}=0,
+\xi_{\mathbf{p}}\sin\theta_\mathbf{p}+|\Delta|\cos\theta_\mathbf{p}=0,
 \]</span></p>
 <p>where it is convenient to introduce the <strong>gap parameter</strong></p>
 <p><span class="math display">\[
-\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u_\mathbf{p}v^*_\mathbf{p}.
+\Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u^*_\mathbf{p}v_\mathbf{p}.
 \]</span></p>
 <p>Thus we have</p>
 <p><span class="math display">\[
-\cos\theta_\mathbf{p}=\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
+\cos\theta_\mathbf{p}=-\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
 (\mathbf{p})^2+|\Delta|^2}.
 \]</span></p>
 <p>The meaning of these solutions is very simple. They correspond to the alignment of the spin vector with the direction of the effective `magnetic field’</p>
 <p><span id="eq-heff"><span class="math display">\[
-\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
+\left(\mathrm{Re}\,\Delta,\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
 \tag{10}\]</span></span></p>
 <p>To be self-consistent, the solution must further satisfy the <strong>gap equation</strong></p>
 <p><span id="eq-gap-eq"><span class="math display">\[
@@ -598,7 +598,12 @@ N=2\sum_\mathbf{p}\langle n^P_\mathbf{p}\rangle=2\sum_\mathbf{p}v_{\mathbf{p}}^2
 \end{align}
 \]</span></p>
 <p>where <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Delta_0\)</span> are measured in units of <span class="math inline">\(E_F=p_F^2/2m\)</span>, and the unit of length is <span class="math inline">\(k_\text{F}^{-1}\)</span>. In these units the total density of particles of both types is <span class="math inline">\(1/3\pi^2\)</span>.</p>
-<p><img src="BCS-BEC.png" class="img-fluid"> <em>Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction).</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/BCS-BEC.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction).</figcaption>
+</figure>
+</div>
 <p>The point <span class="math inline">\(1/k_\text{F}a=0\)</span>, where the scattering length diverges, corresponds to the formation of a bound state. This is an interesting part of the phase diagram, because here (if the temperature is zero) there is only one energy scale (the Fermi energy) and only one length scale (the fermi wavelength). All quantities such as <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\mu\)</span> are simply some universal fraction of the Fermi energy. In particular the equation of state of the system is</p>
 <p><span class="math display">\[
 E/V=\alpha\frac{3}{5}E_Fn\propto n^{5/3}.

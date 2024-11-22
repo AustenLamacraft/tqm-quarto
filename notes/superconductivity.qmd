@@ -176,11 +176,11 @@ $$
 H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
 $$
 
-where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(u_\bp,v_\bp\right)$ as $(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2})$
+where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(v_\bp,u_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
 then the variational energy @eq-bcs-en has the form (except for a constant)
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=-\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\braket{\text{BCS}}{H}{\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right).
 $$ {#eq-spin-en}
 
@@ -206,26 +206,26 @@ angles $\varphi_\bp$, describing the angle in the x-y plane, should be equal. Ta
 ![Anderson spin configurations and the associated distribution functions for the free fermi gas (top) and the BCS state (bottom).](../assets/wall.png){width=70%}
 
 $$
-\xi_{\bp}\sin\theta_\bp-|\Delta|\cos\theta_\bp=0,
+\xi_{\bp}\sin\theta_\bp+|\Delta|\cos\theta_\bp=0,
 $$
 
 where it is convenient to introduce the __gap parameter__
 
 $$
-\Delta=-\frac{U_0}{2V}\sum_\bp e^{i\varphi}\sin\theta_\bp=-\frac{U_0}{V}\sum_\bp u_\bp v^*_\bp.
+\Delta=-\frac{U_0}{2V}\sum_\bp e^{i\varphi}\sin\theta_\bp=-\frac{U_0}{V}\sum_\bp u^*_\bp v_\bp.
 $$
 
 Thus we have
 
 $$
-\cos\theta_\bp=\frac{\xi_{\bp}}{E_\bp},\qquad \sin\theta_\bp=\frac{|\Delta|}{E_\bp}, \qquad E_\bp=\sqrt{\xi
+\cos\theta_\bp=-\frac{\xi_{\bp}}{E_\bp},\qquad \sin\theta_\bp=\frac{|\Delta|}{E_\bp}, \qquad E_\bp=\sqrt{\xi
 (\bp)^2+|\Delta|^2}.
 $$
 
 The meaning of these solutions is very simple. They correspond to the alignment of the spin vector with the direction of the effective `magnetic field'
 
 $$
-\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\bp\right)
+\left(\mathrm{Re}\,\Delta,\mathrm{Im}\,\Delta,\xi_\bp\right)
 $$ {#eq-heff}
 
 To be self-consistent, the solution must further satisfy the __gap equation__
@@ -316,8 +316,7 @@ $$
 
 where $\mu$ and $\Delta_0$ are measured in units of $E_F=p_F^2/2m$, and the unit of length is $k_\text{F}^{-1}$. In these units the total density of particles of both types is $1/3\pi^2$.
 
-![](BCS-BEC.png)
-_Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction)._
+![Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction).](../assets/BCS-BEC.png){width=70%}
 
 The point $1/k_\text{F}a=0$, where the scattering length diverges, corresponds to the formation of a bound state. This is an interesting part of the phase diagram, because here (if the temperature is zero) there is only one energy scale (the Fermi energy) and only one length scale (the fermi wavelength). All quantities such as $\Delta$ and $\mu$ are simply some universal fraction of the Fermi energy. In particular the equation of state of the system is
 

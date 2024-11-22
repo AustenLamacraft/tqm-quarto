@@ -22,7 +22,7 @@ format:
 
 - __Bardeen, Cooper and Schrieffer's__ (BCS) theory of superconductivity
 
-- Idea: electrons in a superconductor bind to form __Cooper pairs__ that behave like bosons
+- Idea: electrons bind to form __Cooper pairs__ that behave like bosons
 
 - The phenomena of superconductivity and superfluidity are closely linked: superconductor is 'like' BEC of Cooper pairs
 
@@ -96,14 +96,14 @@ $$
 - Restricting ourselves to states of this form means that
 
 $$
-\Braket{\text{pair}|H_\text{int}|\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\Braket{\text{pair}|\tilde H_{\text{int}}|\text{pair}},
+\Braket{\text{pair}|H_\text{int}|\text{pair}} = \frac{U_0}{V}N_\uparrow N_\downarrow+\Braket{\text{pair}|\tilde H_{\text{int}}|\text{pair}}
 $$
 
 - First term is the Hartree--Fock energy and
 
 $$
 \tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
-{\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow}.
+{\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow}
 $$
 
 
@@ -136,6 +136,7 @@ $$
 [\bop_\bp,\bop_{\bp'}]=[\bdop_\bp,\bdop_{\bp'}]=[\bdop_\bp,\bop_{\bp'}]=0\qquad \bp\neq\bp',
 $$
 but obey the _hardcore constraint_
+
 $$
 (\bdop_\bp)^2=0
 $$
@@ -189,7 +190,7 @@ energy of this state is
 
 $$
 \Braket{\text{BCS}|H|\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
-\bp u_{\bp'}v^*_{\bp'}.
+\bp u_{\bp'}v^*_{\bp'}
 $$
 
 ::: {.callout-tip}
@@ -204,13 +205,15 @@ Show this
 ### How about that non-conserving wavefunction?
 
  - Expectation of any particle number conserving operator is
+
 $$
-\Braket{\text{BCS}|\cO|\text{BCS}}=\sum_N P_N \Braket{N \text{ pair}|\cO|N\text{ pair}},
+\Braket{\text{BCS}|\cO|\text{BCS}}=\sum_N P_N \Braket{N \text{ pair}|\cO|N\text{ pair}}
 $$
 
 - The probabilities $P_N$ are
+
 $$
-P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp |v_\bp|^2+\left(1-n^P_\bp\right)|u_\bp|^2 \right],
+P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp |v_\bp|^2+\left(1-n^P_\bp\right)|u_\bp|^2 \right]
 $$
 
 ---
@@ -220,6 +223,7 @@ P_N=\sum_{\sum n^P_\bp=N/2}\prod_\bp \left[n^P_\bp |v_\bp|^2+\left(1-n^P_\bp\rig
 $$
 
 - Distribution strongly peaked around 
+
 $$
 \langle N \rangle=2\sum_\bp |v_\bp|^2=2\sum_\bp \langle n^P_\bp
 \rangle
@@ -257,18 +261,18 @@ where we included chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu
 
  - Parameterize 
  $$
- \left(u_\bp,v_\bp\right)=(\cos(\theta_\bp/2)e^{-i\varphi_\bp/2},\sin(\theta_\bp/2)e^{i\varphi_\bp/2})
+ \left(v_\bp,u_\bp\right)=(\cos(\theta_\bp/2)e^{i\varphi_\bp/2},\sin(\theta_\bp/2)e^{-i\varphi_\bp/2})
  $$
 then the variational energy is (except for a constant)
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right)
 $$
 
 
 - Interpretation
 
-  1. First term tends to align spins with z-axis in - direction for $\xi_\bp<0$ and in + direction for $\xi_\bp>0$
+  1. First term tends to align spins with z-axis in + direction for $\xi_\bp<0$ and in - direction for $\xi_\bp>0$
 
   2. Second term – from attractive $H_\text{int}$ – wants the spins to lie in the x-y plane
 
@@ -300,19 +304,19 @@ so this corresponds to sharp Fermi step.
 ---
 
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=-\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}
 $$
 - Taking  the extremum of energy with respect to angles $\theta_{\bp}$ gives
 $$
-\xi_{\bp}\sin\theta_\bp-|\Delta|\cos\theta_\bp=0,
+\xi_{\bp}\sin\theta_\bp+|\Delta|\cos\theta_\bp=0,
 $$
 where the __gap parameter__ is
 $$
-\Delta=-\frac{U_0}{2V}\sum_\bp e^{i\varphi}\sin\theta_\bp=-\frac{U_0}{V}\sum_\bp u_\bp v^*_\bp.
+\Delta=-\frac{U_0}{2V}\sum_\bp e^{i\varphi}\sin\theta_\bp=-\frac{U_0}{V}\sum_\bp u^*_\bp v_\bp.
 $$
 $$
-\cos\theta_\bp=\frac{\xi_{\bp}}{E_\bp},\qquad \sin\theta_\bp=\frac{|\Delta|}{E_\bp}, \qquad E_\bp=\sqrt{\xi
+\cos\theta_\bp=-\frac{\xi_{\bp}}{E_\bp},\qquad \sin\theta_\bp=\frac{|\Delta|}{E_\bp}, \qquad E_\bp=\sqrt{\xi
 (\bp)^2+|\Delta|^2}
 $$
 
@@ -321,7 +325,7 @@ $$
 - Solution corresponds to alignment of spin vector with the direction of the effective `magnetic field'
 
 $$
-\left(\mathrm{Re}\,\Delta.\mathrm{Im}\,\Delta,\xi_\bp\right)
+\left(\mathrm{Re}\,\Delta,\mathrm{Im}\,\Delta,\xi_\bp\right)
 $$
 
 - To be self-consistent, must satisfy the __gap equation__
