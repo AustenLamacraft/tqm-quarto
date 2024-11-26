@@ -39,10 +39,10 @@
 \newcommand{\abs}[1]{\lvert{#1}\rvert}
 \newcommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
 
-$$
+
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\E}{\mathbb{E}}
-$$
+
 
 :::
 
