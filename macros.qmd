@@ -6,6 +6,7 @@
 \newcommand{\cH}{\mathcal{H}}
 \newcommand{\cN}{\mathcal{N}}
 \newcommand{\cO}{\mathcal{O}}
+\newcommand{\cP}{\mathcal{P}}
 \newcommand{\br}{\mathbf{r}}
 \newcommand{\bp}{\mathbf{p}}
 \newcommand{\bk}{\mathbf{k}}

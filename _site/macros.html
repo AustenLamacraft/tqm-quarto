@@ -217,6 +217,9 @@ window.Quarto = {
  <span class="menu-text">Superconductivity</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+ <span class="menu-text">notes/response-and-correlation.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -286,6 +289,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./slides/superconductivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Superconductivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/response-and-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Response and Correlation</span></a>
   </div>
 </li>
       </ul>
@@ -442,7 +451,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

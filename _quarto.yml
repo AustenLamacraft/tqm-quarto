@@ -32,6 +32,7 @@ website:
           - notes/bose-gas.qmd
           - notes/fermi-gas.qmd
           - notes/superconductivity.qmd
+          - notes/response-and-correlation.qmd
           
 
       - section: "Slides"
@@ -46,6 +47,7 @@ website:
           - slides/bose-gas.qmd
           - slides/fermi-gas.qmd
           - slides/superconductivity.qmd
+          - slides/response-and-correlation.qmd
           
 
       - section: "Problem Sets"
