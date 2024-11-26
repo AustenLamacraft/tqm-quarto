@@ -412,10 +412,6 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<p><span class="math display">\[
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}}
-\]</span></p>
 </div>
 <p>We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of <strong>second quantization</strong> represents the beginning of the field theoretic description of many body systems.</p>
 <p>Reading: <span class="citation" data-cites="baym2018lectures">Baym (<a href="#ref-baym2018lectures" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="nazarov2013advanced">Nazarov and Danon (<a href="#ref-nazarov2013advanced" role="doc-biblioref">2013</a>)</span>.</p>
@@ -849,8 +845,8 @@ Check
 <p><span class="math display">\[
 \begin{align}
     \label{2nd_quant_FourierComp}
-    \hat\rho_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat\rho(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}-\mathbf{q}/2}a^{\vphantom{\dagger}}_{\mathbf{k}+\mathbf{q}/2}\nonumber\\
-    \hat{\mathbf{j}}_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat{\mathbf{j}}(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} \frac{\mathbf{k}}{m}a^\dagger_{\mathbf{k}-\mathbf{q}/2}a^{\vphantom{\dagger}}_{\mathbf{k}+\mathbf{q}/2}.
+    \hat\rho_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat\rho(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}-\mathbf{q}}a^{\vphantom{\dagger}}_{\mathbf{k}}\nonumber\\
+    \hat{\mathbf{j}}_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat{\mathbf{j}}(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\frac{1}{m}\sum_{\mathbf{k}} (\mathbf{k}-\mathbf{q}/2)a^\dagger_{\mathbf{k}-\mathbf{q}}a^{\vphantom{\dagger}}_{\mathbf{k}}.
 \end{align}
 \]</span></p>
 <p>The <span class="math inline">\(\mathbf{q}=0\)</span> modes are just the total particle number and <span class="math inline">\(\frac{1}{m}\)</span> times the total momentum, respectively.</p>
@@ -1139,7 +1135,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

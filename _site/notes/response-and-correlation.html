@@ -415,10 +415,6 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<p><span class="math display">\[
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}}
-\]</span></p>
 </div>
 <p>Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?</p>
 <hr>
@@ -564,7 +560,7 @@ m\ddot y +m\omega_0^2 y + \gamma \dot y =f_\text{noise}(t),
 <p>where <span class="math inline">\(f_\text{noise}(t) = \frac{2\tau}{c}u'_\text{in}(t)\)</span> is a random force due to thermal fluctuations. As this derivation makes clear, the noise and the damping have a common origin.</p>
 <p>On account of the infinite bandwidth of the string, <span class="math inline">\(f_\text{noise}\)</span> is white noise</p>
 <p><span id="eq-noise-var"><span class="math display">\[
-\E\left[f_\text{noise}(t)f_\text{noise}(t')\right] = 2\gamma k_\text{B}T\delta(t-t').
+\mathop{\mathrm{\mathbb{E}}}\left[f_\text{noise}(t)f_\text{noise}(t')\right] = 2\gamma k_\text{B}T\delta(t-t').
 \tag{9}\]</span></span></p>
 <p>A differential equation driven by noise like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a> is known as a <strong>Langevin equation</strong> in physics and as a <strong>stochastic differential equation</strong> (SDE) in mathematics.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -590,11 +586,11 @@ dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
 <p>where <span class="math inline">\(W\)</span> is a <a href="https://en.wikipedia.org/wiki/Wiener_process">Wiener process</a>. Writing the equation in terms of differentials avoids the awkward subject of infinite forces.</p>
 <p>The motion of the oscillator in response to the thermal noise can be calculated using the response function. In the frequency domain, <a href="#eq-noise-var" class="quarto-xref">Equation&nbsp;9</a> is</p>
 <p><span class="math display">\[
-\E\left[\tilde f_\text{noise}(\omega)\tilde f_\text{noise}(\omega')\right] = 4\pi \gamma k_\text{B}T\delta(\omega+\omega'),
+\mathop{\mathrm{\mathbb{E}}}\left[\tilde f_\text{noise}(\omega)\tilde f_\text{noise}(\omega')\right] = 4\pi \gamma k_\text{B}T\delta(\omega+\omega'),
 \]</span></p>
 <p>giving a power spectrum of oscillator fluctuations</p>
 <p><span id="eq-power"><span class="math display">\[
-\E\left[\tilde y(\omega)\tilde y(\omega')\right] = 4\pi \gamma k_\text{B}T |\chi(\omega)|^2 \delta(\omega+\omega').
+\mathop{\mathrm{\mathbb{E}}}\left[\tilde y(\omega)\tilde y(\omega')\right] = 4\pi \gamma k_\text{B}T |\chi(\omega)|^2 \delta(\omega+\omega').
 \tag{10}\]</span></span></p>
 <p>Noting that</p>
 <p><span class="math display">\[
@@ -602,7 +598,7 @@ dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
 \]</span></p>
 <p>we can write <a href="#eq-power" class="quarto-xref">Equation&nbsp;10</a> as</p>
 <p><span id="eq-power-final"><span class="math display">\[
-\E\left[\tilde y(\omega)\tilde y(\omega')\right] = 2\pi S(\omega)\delta(\omega+\omega'),
+\mathop{\mathrm{\mathbb{E}}}\left[\tilde y(\omega)\tilde y(\omega')\right] = 2\pi S(\omega)\delta(\omega+\omega'),
 \tag{11}\]</span></span></p>
 <p>where</p>
 <p><span id="eq-classical-fdt"><span class="math display">\[
@@ -622,9 +618,9 @@ H = \frac{p^2}{2m} + \frac{1}{2}m\omega_0^2 y^2,
 \]</span></p>
 <p>while at finite temperature</p>
 <p><span class="math display">\[
-\langle\langle y^2\rangle\rangle=\tr\left[\rho\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}.
+\langle\langle y^2\rangle\rangle=\mathop{\mathrm{tr}}\left[\rho\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}.
 \]</span></p>
-<p>where <span class="math inline">\(\rho = e^{-\beta H}/Z\)</span> is the equilibrium density matrix, and <span class="math inline">\(Z=\tr[e^{-\beta H}]\)</span> is the partition function. The double angular brackets <span class="math inline">\(\langle\langle (\cdots)\rangle\rangle\)</span> denote that we are taking quantum <em>and thermal</em> expectations.</p>
+<p>where <span class="math inline">\(\rho = e^{-\beta H}/Z\)</span> is the equilibrium density matrix, and <span class="math inline">\(Z=\mathop{\mathrm{tr}}[e^{-\beta H}]\)</span> is the partition function. The double angular brackets <span class="math inline">\(\langle\langle (\cdots)\rangle\rangle\)</span> denote that we are taking quantum <em>and thermal</em> expectations.</p>
 <p>Now what about <em>time dependent fluctuations</em>? This is what was calculated in <a href="#eq-power-final" class="quarto-xref">Equation&nbsp;11</a> for the classical damped oscillator. A natural candidate is</p>
 <p><span class="math display">\[
 \langle\langle y(t)y(0)\rangle\rangle,
@@ -805,7 +801,7 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 <p><span class="math display">\[
 S_{AB}(t) \equiv \langle\langle A_I(t)B_I(0)\rangle\rangle.
 \]</span></p>
-<p>Recalling that <span class="math display">\[\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\tr\left[e^{-\beta H}\cdots\right],\]</span> you should be able to show that</p>
+<p>Recalling that <span class="math display">\[\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\mathop{\mathrm{tr}}\left[e^{-\beta H}\cdots\right],\]</span> you should be able to show that</p>
 <p><span class="math display">\[
 S_{AB}(t) = S_{BA}(-t-i\beta).
 \]</span></p>

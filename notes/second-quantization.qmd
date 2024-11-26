@@ -509,8 +509,8 @@ Often we consider the Fourier components of the density or current
 $$
 \begin{align}
 	\label{2nd_quant_FourierComp}
-	\hat\rho_{\bq}\equiv\int d\br\, \hat\rho(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \adop_{\bk-\bq/2}\aop_{\bk+\bq/2}\nonumber\\
-	\hat{\mathbf{j}}_{\bq}\equiv\int d\br\, \hat{\mathbf{j}}(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \frac{\bk}{m}\adop_{\bk-\bq/2}\aop_{\bk+\bq/2}.
+	\hat\rho_{\bq}\equiv\int d\br\, \hat\rho(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \adop_{\bk-\bq}\aop_{\bk}\nonumber\\
+	\hat{\mathbf{j}}_{\bq}\equiv\int d\br\, \hat{\mathbf{j}}(\br)e^{-i\bq \cdot \br}=\frac{1}{m}\sum_{\bk} (\bk-\bq/2)\adop_{\bk-\bq}\aop_{\bk}.
 \end{align}
 $$
 
