@@ -660,3 +660,21 @@ $$
 Check compressibility sum rule
 
 :::
+
+---
+
+### Example 3: FQHE
+
+- Assuming __single mode approximation__
+
+$$
+S_\rho(\bq,\omega) \sim 2\pi S_\rho(\bq) \delta(\omega - \omega(\bq))
+$$
+
+- Can use $S_\rho(\bq)$ to find dispersion (see e.g. @girvin2002quantum for FQHE)
+
+$$
+\omega(\bq) = \frac{N\bq^2}{2m S_\rho(\bq)}
+$$
+
+![](../assets/girvin-sma.png){width=40% fig-align="center"}

@@ -2022,5 +2022,16 @@
       "Problem Sets",
       "Problem Set 2"
     ]
+  },
+  {
+    "objectID": "slides/response-and-correlation.html#references",
+    "href": "slides/response-and-correlation.html#references",
+    "title": "Response and Correlation",
+    "section": "",
+    "text": "Example 3: FQHE\n\nAssuming single mode approximation\n\n\nS_\\rho(\\mathbf{q},\\omega) \\sim 2\\pi S_\\rho(\\mathbf{q}) \\delta(\\omega - \\omega(\\mathbf{q}))\n\n\nCan use S_\\rho(\\mathbf{q}) to find dispersion (see e.g. Girvin (2002) for FQHE)\n\n\n\\omega(\\mathbf{q}) = \\frac{N\\mathbf{q}^2}{2m S_\\rho(\\mathbf{q})}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGirvin, Steven M. 2002. “The Quantum Hall Effect: Novel Excitations and Broken Symmetries.” In Aspects Topologiques de La Physique En Basse Dimension. Topological Aspects of Low Dimensional Systems: Session LXIX. 7–31 July 1998, 53–175. Springer.",
+    "crumbs": [
+      "Slides",
+      "Response and Correlation"
+    ]
   }
 ]
