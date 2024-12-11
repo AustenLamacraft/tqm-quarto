@@ -29,7 +29,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -584,6 +604,42 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \in
 <section class="slide level2 center">
 
 <ul>
+<li>Write quadratic contribution in a way that allows a rotationally invariant formulation (see the <a href="../notes/fermi-gas.html#rotationally-invariant-formulation">Appendix</a>)</li>
+</ul>
+<p><span class="math display">
+\begin{align*}
+\frac{1}{2V \nu(E_F)}\sum_{\mathbf{k},\mathbf{k}'} &amp;\left(F(\phi)\left[n_\uparrow(\mathbf{k})+n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')+n_\downarrow(\mathbf{k}')\right]\right.\\ &amp;\left.+ G(\phi)\left[n_\uparrow(\mathbf{k})-n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')-n_\downarrow(\mathbf{k}')\right]\right)
+\end{align*}
+</span> <span class="math display">
+\begin{align*}
+F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') + f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right]\\
+G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') - f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right]
+\end{align*}
+</span></p>
+<ul>
+<li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> scaled by density of states per unit volume at Fermi surface <span class="math inline">\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2</span>.</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p>The explicit form of the functions <span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> is (see <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#/references" role="doc-biblioref" onclick="">1980</a>)</span>)</p>
+<p><span class="math display">
+\begin{align*}
+F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
+G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]
+\end{align*}
+</span></p>
+<div class="callout callout-warning no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>The message to take away from this calculation is not the detailed functional forms, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
 <li><p>Our definition of <span class="math inline">f</span> implied quantization axis for spin</p></li>
 <li><p>To write things in invariant way, think of occupation number <span class="math inline">N(\mathbf{k})</span> as <span class="math inline">2\times 2</span> matrix</p></li>
 </ul>
@@ -604,13 +660,13 @@ N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k})
 
 <p><span class="math display">
 \begin{align*}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
+f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_2}\delta_{s_3s_4}\right.\nonumber\\
+\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}\right]
 \end{align*}
 </span> (again, just for reference)</p>
 <ul>
 <li><strong>Key message</strong>: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math display">
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
+\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}
 </span></li>
 <li><span class="math inline">F(\phi)</span> and <span class="math inline">G(\phi)</span> made dimensionless by scaling by density of states at Fermi surface <span class="math inline">\nu(E_F)\equiv k_{\text{F}}m/\pi^2</span>.</li>
 </ul>
@@ -792,7 +848,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
 </span></p></li>
 </ul>
 </section>
-<section class="slide level2 center">
+<section class="slide level2 smaller scrollable" id="references">
 
 <ul>
 <li><p>This is also occupation number of fermions <span class="math inline">\braket{0|a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s}|0}</span> (<em>not</em> quasiparticles!) just below <span class="math inline">k_\text{F}</span> in ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a></p></li>
@@ -808,6 +864,11 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-landau1980statistical" class="csl-entry" role="listitem">
+Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii Mikhailovich Lifshitz, and LP Pitaevskii. 1980. <em>Statistical Physics: Theory of the Condensed State</em>. Vol. 9. Butterworth-Heinemann.
 </div>
 </div>
 </section></section>
@@ -1091,7 +1152,7 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

@@ -253,6 +253,41 @@ $\phi$ is the angle between $\bk$ and $\bk'$ i.e. $\abs{\bk-\bk'}=2q=2k_\text{F}
 
 ---
 
+- Write quadratic contribution in a way that allows a rotationally invariant formulation (see the [Appendix](../notes/fermi-gas.qmd#rotationally-invariant-formulation))
+
+$$
+\begin{align*}
+\frac{1}{2V \nu(E_F)}\sum_{\bk,\bk'} &\left(F(\phi)\left[n_\uparrow(\bk)+n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')+n_\downarrow(\bk')\right]\right.\\ &\left.+ G(\phi)\left[n_\uparrow(\bk)-n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')-n_\downarrow(\bk')\right]\right)
+\end{align*}
+$$
+$$
+\begin{align*}
+F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') + f_{\uparrow\downarrow}(\bk,\bk')\right]\\
+G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') - f_{\uparrow\downarrow}(\bk,\bk')\right]
+\end{align*}
+$$ 
+
+- $F(\phi)$ and $G(\phi)$ scaled by density of states per unit volume at Fermi surface $\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2$.
+
+---
+
+The explicit form of the functions $F(\phi)$ and $G(\phi)$ is (see @landau1980statistical)
+
+$$
+\begin{align*}
+F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
+G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]
+\end{align*} 
+$$
+
+::: {.callout-warning appearance="minimal"}
+
+The message to take away from this calculation is not the detailed functional forms, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions $F(\phi)$ and $G(\phi)$
+
+:::
+
+---
+
 - Our definition of $f$ implied quantization axis for spin
 
 - To write things in invariant way, think of occupation number $N(\bk)$ as $2\times 2$ matrix
@@ -274,15 +309,15 @@ $$
 
 $$
 \begin{align*}
-f_{s_1s_2,s_3s_4}(\bk,\bk') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
+f_{s_1s_2,s_3s_4}(\bk,\bk') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_2}\delta_{s_3s_4}\right.\nonumber\\
+\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}\right]
 \end{align*}
 $$
 (again, just for reference)
 
 - __Key message__: interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions
 $$
-\nu(E_F)f_{s_1s_2,s_3s_4}(\bk,\bk') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}
+\nu(E_F)f_{s_1s_2,s_3s_4}(\bk,\bk') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}
 $$
 - $F(\phi)$ and $G(\phi)$ made dimensionless by scaling by density of states at Fermi surface $\nu(E_F)\equiv k_{\text{F}}m/\pi^2$.
 

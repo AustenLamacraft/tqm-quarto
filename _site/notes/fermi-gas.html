@@ -375,6 +375,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle" id="toc-eigenstates-in-perturbation-theory-what-is-a-quasiparticle" class="nav-link" data-scroll-target="#eigenstates-in-perturbation-theory-what-is-a-quasiparticle"><span class="header-section-number">3</span> Eigenstates in Perturbation Theory: What is a Quasiparticle?</a></li>
   <li><a href="#collisions" id="toc-collisions" class="nav-link" data-scroll-target="#collisions"><span class="header-section-number">4</span> Collisions</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix"><span class="header-section-number">5</span> Appendix</a>
+  <ul class="collapse">
+  <li><a href="#rotationally-invariant-formulation" id="toc-rotationally-invariant-formulation" class="nav-link" data-scroll-target="#rotationally-invariant-formulation"><span class="header-section-number">5.1</span> Rotationally invariant formulation</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -468,7 +472,7 @@ N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
 <p><span id="eq-fdef"><span class="math display">\[
 \Delta E = \sum_{\mathbf{k},s} \varepsilon_s(\mathbf{k})n_{s}(\mathbf{k}) + \frac{1}{2V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})n_{s'}(\mathbf{k}').
 \tag{3}\]</span></span></p>
-<p>This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> and interaction function <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
+<p>Note that <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> is symmetric under exchange of <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span>, and <span class="math inline">\(s\)</span> and <span class="math inline">\(s'\)</span>. This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> and interaction function <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
 <p>To first order in the interaction we have the not-so-interesting result</p>
 <p><span class="math display">\[
 \begin{align}
@@ -491,8 +495,8 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\math
 +\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N(\mathbf{k}_3)(1-N(\mathbf{k}_2))}{\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}_2)}\right].
 \end{align}
 \]</span></p>
-<p>In which we have assumed the state around which we expand is unpolarized, i.e.&nbsp;<span class="math inline">\(N_{s}(\mathbf{k})\)</span> is independent of <span class="math inline">\(s\)</span>.</p>
-<p>The expression for <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\)</span> is more complicated</p>
+<p>In which we have assumed the state around which we expand is unpolarized, i.e.&nbsp;<span class="math inline">\(N_{s}(\mathbf{k})\)</span> is independent of <span class="math inline">\(s\)</span>. In this case <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')=f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span></p>
+<p>The expression for <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')=f_{\downarrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span> is more complicated</p>
 <p><span class="math display">\[
 \begin{align}
 f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
@@ -555,35 +559,34 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \in
 \end{align}
 \]</span></p>
 <p>Here <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span> i.e.&nbsp;<span class="math inline">\(\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2\)</span>. We won’t go through the calculation of <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\)</span>, but just record the final answer.</p>
-<p>The definition <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> implied a certain quantization axis for spin. To write things in an invariant way, we should think of the occupation number <span class="math inline">\(N(\mathbf{k})\)</span> as a <span class="math inline">\(2\times 2\)</span> matrix that can describe an arbitrary spin orientation, with elements</p>
-<p><span class="math display">\[
-\mathsf{N}(\mathbf{k})=\begin{pmatrix}
-N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
-N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k}).
-\end{pmatrix}
-\]</span></p>
-<p>The <span class="math inline">\(f\)</span>-function then has <em>four</em> spin indices</p>
-<p><span class="math display">\[
-\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}'),
-\]</span></p>
-<p>with</p>
-<p><span id="eq-ffinal"><span class="math display">\[
+<p>Before doing that, let us first write the quadratic contribution to <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> in an alternative way that allows us to generalize to a fully rotationally invariant formulation (see the <a href="#rotationally-invariant-formulation">Appendix</a>)</p>
+<p><span id="eq-f-rewrite"><span class="math display">\[
 \begin{align}
-f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\delta_{s_1s_3}\delta_{s_2s_4}\right.\nonumber\\
-\left.\left(1+ \frac{mU_0 k_\text{F}}{2\pi^2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}\right]
+\frac{1}{2V \nu(E_F)}\sum_{\mathbf{k},\mathbf{k}'} &amp;\left(F(\phi)\left[n_\uparrow(\mathbf{k})+n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')+n_\downarrow(\mathbf{k}')\right]\right.\\ &amp;\left.+ G(\phi)\left[n_\uparrow(\mathbf{k})-n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')-n_\downarrow(\mathbf{k}')\right]\right).
 \end{align}
 \tag{5}\]</span></span></p>
+<p>Here we have defined</p>
+<p><span id="eq-fgdef"><span class="math display">\[
+\begin{align}
+F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') + f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right]\\
+G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') - f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right].
+\end{align}
+\tag{6}\]</span></span></p>
+<p><span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> have been made dimensionless by scaling by the density of states per unit volume at the Fermi surface <span class="math inline">\(\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2\)</span>.</p>
+<p>The explicit form of the functions <span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> is (see <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#ref-landau1980statistical" role="doc-biblioref">1980</a>)</span>)</p>
+<p><span id="eq-ffinal"><span class="math display">\[
+\begin{align}
+F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
+G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right].
+\end{align}
+\tag{7}\]</span></span></p>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>The message to take away from this calculation is not the detailed functional form of <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;5</a>, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions</p>
-<p><span id="eq-fgdef"><span class="math display">\[
-\nu(E_F)f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_3}\delta_{s_2s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_3}\cdot\boldsymbol{\sigma}_{s_2s_4}.
-\tag{6}\]</span></span></p>
-<p>The functions <span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> have been made dimensionless by scaling by the density of states at the Fermi surface <span class="math inline">\(\nu(E_F)\equiv k_{\text{F}}m/\pi^2\)</span>.</p>
+<p>The message to take away from this calculation is not the detailed functional form of <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;7</a>, but the fact that the interaction between quasiparticles in an interacting Fermi gas is defined in terms of a pair of functions <span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span></p>
 </div>
 </div>
 </div>
@@ -593,11 +596,11 @@ f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = \frac{U_0}{2}\left[\left(1+ \frac{mU
 <p>So far we haven’t had much to say about the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> introduced in <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a>. Evaluating the second order correction is going to be difficult, as it will involve two momentum integrations instead of one. What can we say on general grounds? We expect that</p>
 <p><span id="eq-vfdef"><span class="math display">\[
 \varepsilon_s(\mathbf{k}) - E_\text{F} = v_\text{F}(\lvert{\mathbf{k}}\rvert-k_\text{F}).
-\tag{7}\]</span></span></p>
+\tag{8}\]</span></span></p>
 <p>The Fermi velocity <span class="math inline">\(v_\text{F}\)</span> defined by this expression may be altered by the interactions, allowing us to define an <strong>effective mass</strong></p>
 <p><span id="eq-mdef"><span class="math display">\[
 m_* = \frac{k_\text{F}}{v_\text{F}}.
-\tag{8}\]</span></span></p>
+\tag{9}\]</span></span></p>
 <p>Fortunately, we can get at this quantity using the results we already have, thanks to the following sneaky trick (due to Landau). If we increment the momentum of each quasiparticle by a small amount <span class="math inline">\(\delta\mathbf{k}\)</span>, we can compute the new energy using our energy functional <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a>, along with a new distribution function</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -621,16 +624,16 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathb
 <p>(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is</p>
 <p><span id="eq-gal"><span class="math display">\[
 \Delta E = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k},
-\tag{9}\]</span></span></p>
+\tag{10}\]</span></span></p>
 <p>where the total momentum <span class="math inline">\(\mathbf{P}\)</span> can be written</p>
 <p><span class="math display">\[
 \mathbf{P} = \sum_{\mathbf{k},s} \mathbf{k}n_{s}(\mathbf{k}).
 \]</span></p>
-<p>If <a href="#eq-gal" class="quarto-xref">Equation&nbsp;9</a> holds for all <span class="math inline">\(n_s(\mathbf{k})\)</span> and <span class="math inline">\(\delta\mathbf{k}\)</span>, we have (ignoring second order in <span class="math inline">\(n_s(\mathbf{k})\)</span>)</p>
+<p>If <a href="#eq-gal" class="quarto-xref">Equation&nbsp;10</a> holds for all <span class="math inline">\(n_s(\mathbf{k})\)</span> and <span class="math inline">\(\delta\mathbf{k}\)</span>, we have (ignoring second order in <span class="math inline">\(n_s(\mathbf{k})\)</span>)</p>
 <p><span class="math display">\[
 \frac{\mathbf{k}}{m} = \nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) +  \sum_{s'}\int  f_{s^{}s'}(\mathbf{k},\mathbf{k}')\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}' \frac{d\mathbf{k}'}{(2\pi)^3}.
 \]</span></p>
-<p>Restricting ourselves to momenta close to the Fermi surface, and using our definitions <a href="#eq-fgdef" class="quarto-xref">Equation&nbsp;6</a>, <a href="#eq-vfdef" class="quarto-xref">Equation&nbsp;7</a> and <a href="#eq-mdef" class="quarto-xref">Equation&nbsp;8</a> gives the relation</p>
+<p>Restricting ourselves to momenta close to the Fermi surface, and using our definitions <a href="#eq-fgdef" class="quarto-xref">Equation&nbsp;6</a>, <a href="#eq-vfdef" class="quarto-xref">Equation&nbsp;8</a> and <a href="#eq-mdef" class="quarto-xref">Equation&nbsp;9</a> gives the relation</p>
 <p><span class="math display">\[
 \frac{\mathbf{k}}{m} = \frac{\mathbf{k}}{m_*} +\frac{1}{m} \int F(\phi) \mathbf{k}' \frac{d\Omega_{\mathbf{k}'}}{4\pi}.
 \]</span></p>
@@ -638,7 +641,7 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathb
 <p><span class="math display">\[
 \frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}.
 \]</span></p>
-<p>For the <span class="math inline">\(F(\phi)\)</span> that we found in <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;5</a> from second order perturbation theory, this gives the effective mass correction</p>
+<p>For the <span class="math inline">\(F(\phi)\)</span> that we found in <a href="#eq-ffinal" class="quarto-xref">Equation&nbsp;7</a> from second order perturbation theory, this gives the effective mass correction</p>
 <p><span class="math display">\[
 \frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
 \]</span></p>
@@ -682,18 +685,18 @@ a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle,
 \lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \nonumber\\
 &amp;\qquad + \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})},
 \end{align}
-\tag{10}\]</span></span></p>
+\tag{11}\]</span></span></p>
 <p>where <span class="math inline">\(\sqrt{z_k}\)</span> is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
-<p>Normalizing <a href="#eq-ph-peturb" class="quarto-xref">Equation&nbsp;10</a> gives</p>
+<p>Normalizing <a href="#eq-ph-peturb" class="quarto-xref">Equation&nbsp;11</a> gives</p>
 <p><span id="eq-z"><span class="math display">\[
 z_\mathbf{k}= 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert,\lvert{\mathbf{k}_1}\rvert&gt;k_\text{F}\\ s'}}\frac{1}{\left[\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})\right]^2}+\cdots.
-\tag{11}\]</span></span></p>
+\tag{12}\]</span></span></p>
 <p>This quantity can be interpreted in terms of the overlap of the single quasiparticle state <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{s,\mathbf{k}}\lvert{0}\rangle\)</span>.</p>
 <p><span class="math display">\[
 z_\mathbf{k}= \frac{\lvert{\langle{\mathbf{k},s}\rvert a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}\rvert^2}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}
 \]</span></p>
 <p>A finite overlap – evaluated for quasiparticles at the Fermi surface – is a requirement for the Fermi liquid picture to hold. If it were to vanish, any resemblance of the quasiparticle to a free fermion would disappear with it!</p>
-<p>Obviously evaluating the integrals in <a href="#eq-z" class="quarto-xref">Equation&nbsp;11</a> is a challenge involving a double integral over momentum, but I have it on good authority (see <span class="citation" data-cites="abrikosov2012methods">Abrikosov, Gorkov, and Dzyaloshinski (<a href="#ref-abrikosov2012methods" role="doc-biblioref">2012</a>)</span>, though they don’t give the details) that the answer is</p>
+<p>Obviously evaluating the integrals in <a href="#eq-z" class="quarto-xref">Equation&nbsp;12</a> is a challenge involving a double integral over momentum, but I have it on good authority (see <span class="citation" data-cites="abrikosov2012methods">Abrikosov, Gorkov, and Dzyaloshinski (<a href="#ref-abrikosov2012methods" role="doc-biblioref">2012</a>)</span>, though they don’t give the details) that the answer is</p>
 <p><span class="math display">\[
 z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
 \]</span></p>
@@ -718,9 +721,38 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
 <figcaption>Vanishing phase space volume at low energies.</figcaption>
 </figure>
 </div>
+</section>
+<section id="appendix" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="appendix"><span class="header-section-number">5</span> Appendix</h2>
+<section id="rotationally-invariant-formulation" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="rotationally-invariant-formulation"><span class="header-section-number">5.1</span> Rotationally invariant formulation</h3>
+<p>The definition <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> implied a certain quantization axis for spin. To write things in an invariant way, we should think of the occupation number <span class="math inline">\(\mathsf{N}(\mathbf{k})\)</span> as a <span class="math inline">\(2\times 2\)</span> matrix that can describe an arbitrary spin orientation, with elements</p>
+<p><span class="math display">\[
+\mathsf{N}(\mathbf{k})=\begin{pmatrix}
+N_{\uparrow\uparrow}(\mathbf{k}) &amp; N_{\uparrow\downarrow}(\mathbf{k}) \\
+N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k}).
+\end{pmatrix}
+\]</span></p>
+<p>The <span class="math inline">\(f\)</span>-function then has <em>four</em> spin indices</p>
+<p><span class="math display">\[
+\frac{1}{2V}\sum_{\mathbf{k}, s_1,s_2,\mathbf{k}', s_3,s_4} f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')n_{s_1s_2}(\mathbf{k})n_{s_3s_4}(\mathbf{k}').
+\]</span></p>
+<p>When the occupation numbers matrix is diagonal, we identify <span class="math inline">\(n_{\uparrow\uparrow}(\mathbf{k}) = n_\uparrow(\mathbf{k})\)</span> and <span class="math inline">\(n_{\downarrow\downarrow}(\mathbf{k}) = n_\downarrow(\mathbf{k})\)</span>.</p>
+<p>When rotated, <span class="math inline">\(\mathsf{N}\)</span> transforms by conjugation by a matrix <span class="math inline">\(\mathsf{U}\in SU(2)\)</span> <span class="math display">\[
+\mathsf{N} \longrightarrow \mathsf{U}\mathsf{N} \mathsf{U}^\dagger.
+\]</span></p>
+<p>There are thus two rotationally invariant contributions to <span class="math inline">\(f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}')\)</span>, with index structure <span class="math inline">\(\delta_{s_1s_2}\delta_{s_3s_4}\)</span> and <span class="math inline">\(\delta_{s_1s_4}\delta_{s_2s_3}\)</span>. Alternatively, we can use the identity involving Pauli matrices that we met in <a href="../notes/more-second-quantization.html">Lecture 6</a></p>
+<p><span class="math display">\[
+\delta_{s_1s_4}\delta_{s_2s_3} = \frac{1}{2}\left[\boldsymbol{\sigma}_{s_1s_2}\cdot \boldsymbol{\sigma}_{s_3s_4} + \delta_{s_1s_2}\delta_{s_3s_4}\right].
+\]</span></p>
+<p>This shows that the two rotationally invariant contributions can be taken to have the index structure <span class="math inline">\(\delta_{s_1s_2}\delta_{s_3s_4}\)</span> and <span class="math inline">\(\boldsymbol{\sigma}_{s_1s_2}\cdot \boldsymbol{\sigma}_{s_3s_4}\)</span>. Comparing with <a href="#eq-f-rewrite" class="quarto-xref">Equation&nbsp;5</a> in the diagonal case gives</p>
+<p><span class="math display">\[
+\nu(E_\text{F})f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}.
+\]</span></p>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
@@ -823,7 +855,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

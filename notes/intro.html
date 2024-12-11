@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>past-papers – Theories of Quantum Matter</title>
+<title>Introduction – Theories of Quantum Matter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./problem-sets/problem-set-3.html" rel="prev">
-<link href="./favicon-32x32.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../notes/many-body-wavefunctions.html" rel="next">
+<link href="../index.html" rel="prev">
+<link href="../favicon-32x32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -81,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./past-papers.html">Past Papers</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Theories of Quantum Matter</a> 
+      <a href="../">Theories of Quantum Matter</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -108,88 +138,88 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">TQM Lectures 2024</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Notes</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many Body Wavefunctions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quantum Hall Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/elastic-chain.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/elastic-chain.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Elastic Chain</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/spin-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/spin-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Spin Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/second-quantization.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/second-quantization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A is for Annihilation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/more-second-quantization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">B is for Bunching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/lattice-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/lattice-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lattice Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/bose-gas.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/bose-gas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bose Gas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/fermi-gas.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/fermi-gas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermi Gas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/superconductivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/superconductivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Superconductivity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notes/response-and-correlation.html" class="sidebar-item-text sidebar-link">
+  <a href="../notes/response-and-correlation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Response and Correlation</span></a>
   </div>
 </li>
@@ -206,67 +236,67 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Many Body Wavefunctions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quantum Hall Effect</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/elastic-chain.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/elastic-chain.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elastic Chain</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/spin-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/spin-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Spin Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/second-quantization.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/second-quantization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A is for Annihilation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">B is for Bunching</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/lattice-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/lattice-models.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lattice Models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/bose-gas.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/bose-gas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bose Gas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Fermi Gas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/superconductivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/superconductivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Superconductivity</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slides/response-and-correlation.html" class="sidebar-item-text sidebar-link">
+  <a href="../slides/response-and-correlation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Response and Correlation</span></a>
   </div>
 </li>
@@ -283,19 +313,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./problem-sets/problem-set-3.html" class="sidebar-item-text sidebar-link">
+  <a href="../problem-sets/problem-set-3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problem Set 3</span></a>
   </div>
 </li>
@@ -303,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./past-papers.html" class="sidebar-item-text sidebar-link active">
+  <a href="../past-papers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Past Papers</span></a>
   </div>
 </li>
@@ -317,15 +347,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#past-papers" id="toc-past-papers" class="nav-link active" data-scroll-target="#past-papers">Past Papers</a>
+  <li><a href="#models-of-matter" id="toc-models-of-matter" class="nav-link active" data-scroll-target="#models-of-matter"><span class="header-section-number">1</span> Models of Matter</a></li>
+  <li><a href="#structure-of-the-course" id="toc-structure-of-the-course" class="nav-link" data-scroll-target="#structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">2023</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2022</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2021</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2020</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2019</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">2018</a></li>
-  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">2017</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites"><span class="header-section-number">2.1</span> Prerequisites</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -333,38 +358,47 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/intro.html">Introduction</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Introduction</h1>
+</div>
 
 
 
-<section id="past-papers" class="level1 unnumbered">
-<h1 class="unnumbered">Past Papers</h1>
-<section id="section" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section">2023</h2>
-<p><embed src="past-papers/TQM-2023-solutions.pdf" width="640" height="480"></p>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The purpose of this course is to introduce <strong>simple models </strong> of phenomena in condensed matter physics, and to equip you with the tools needed to analyse their behaviour. This involves the application of quantum mechanics to <strong>many body systems</strong>. There is a strong overlap with the subject of <strong>quantum field theory</strong>, which deals with the quantum mechanics of continua (i.e.&nbsp;fields).</p>
+<hr>
+<section id="models-of-matter" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="models-of-matter"><span class="header-section-number">1</span> Models of Matter</h2>
+<p>It’s important to realise that in general simple models are neither tractable, nor display simple behaviour! To take an example: all students of physics are familiar with the <a href="https://en.wikipedia.org/wiki/Ising_model">Ising model</a> of magnetism, which caricatures a lattice of magnetic ions and their complex interactions. The Ising model is defined in terms of an energy function</p>
+<p><span class="math display">\[
+H = J\sum_{\langle j\,k\rangle} \sigma_j \sigma_k,
+\label{spin_ising}
+\]</span></p>
+<p>where the ‘spin’ variables <span class="math inline">\(\sigma_j\)</span> take the values <span class="math inline">\(\pm 1\)</span>. The notation <span class="math inline">\({\langle j\,k\rangle}\)</span> indicates that the sum is over all nearest neighbour pairs on some (e.g.&nbsp;cubic) lattice. A negative coupling <span class="math inline">\(J&lt;0\)</span> tends to promote alignment of the spins.</p>
+<p>The calculation of the partition function of the Ising model, and hence of its thermodynamic behaviour, is simple in 1D, extremely hard in 2D, and – as far as we know – impossible in the most interesting case of three dimensions. As well as being intractable, it is also highly unrealistic. The complexity of the magnetic atom, consisting of tens of electrons, is reduced to a single variable describing the spin only, which is not even treated quantum mechanically. Why on earth should we care?</p>
+<p>The point is that the Ising model is a <a href="https://en.wikipedia.org/wiki/Minimal_Working_Example">minimal working example</a>. It is designed with the minimal set of ingredients necessary to demonstrate the phenomenon of ferromagnetism. The puzzle it seeks to explain is: how do a large number of microscopic ‘magnets’ (the spins), undergoing thermal fluctuations that are constantly seeking to randomize their direction, decide to develop a macroscopic magnetization in a particular direction? Why does the magnetization appear abruptly at the the <a href="https://en.wikipedia.org/wiki/Curie_temperature">Curie temperature</a>, rather than gradually? Obviously the spins cannot be independent. The fact that the Ising model has a magnetic transition shows us that a nearest neighbour coupling is enough.</p>
+<p>That we can cook up such minimal models <em>and analyze them</em>, even if we can’t solve them exactly, gives us confidence that whether we are talking about Iron, Nickel, or Cobalt, the essence of the magnetic transition is the same. By understanding something about the Ising model, we can say we have understood something about magnetism <em>in general</em>.</p>
+<p>This certainly doesn’t mean the end of story, of course. Firstly, one can try to move towards a more realistic description of ferromagnetism. What is the microscopic origin and size of the coupling? Why does Cobalt have a higher Curie temperature than Nickel? How does the magnetism interact with other properties of the metal? These are all valid questions beyond our minimal working example.</p>
+<p>Secondly, one can ask whether, with similar models, one can describe <em>qualitatively different phenomena</em>. If <span class="math inline">\(J&gt;0\)</span> do the spins <em>anti</em>-align at some transition? What if we change the lattice? Make it disordered? Let <span class="math inline">\(\sigma_j\)</span> be a vector instead of a scalar? Make it truly quantum?</p>
+<p>This course pursues this second line of investigation. We will look at the simplest models decribing interacting bosons, fermions, and spins, and try to describe the properties of the states of matter that they form. These states of matter – magnets, metals, superconductors – have real world counterparts, and by studying their toy versions we learn what makes them tick. This strategy of introducing and analyzing new models is one of the ways in which theorists try to learn what states of matter <em>may</em> exist, and under what conditions.</p>
 </section>
-<section id="section-1" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-1">2022</h2>
-<p><embed src="past-papers/TQM-2022-solutions.pdf" width="640" height="480"></p>
-</section>
-<section id="section-2" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-2">2021</h2>
-<p><embed src="past-papers/TQM-2021-solutions.pdf" width="640" height="480"></p>
-</section>
-<section id="section-3" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-3">2020</h2>
-<p><embed src="past-papers/TQM2020-Q+A.pdf" width="640" height="480"></p>
-</section>
-<section id="section-4" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-4">2019</h2>
-<p><embed src="past-papers/Major2019-TQM-Q+A.pdf" width="640" height="480"></p>
-</section>
-<section id="section-5" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-5">2018</h2>
-<p><embed src="past-papers/Major2018-TQM-Q+A.pdf" width="640" height="480"></p>
-</section>
-<section id="section-6" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="section-6">2017</h2>
-<p><embed src="past-papers/Major2017_1-TQM_solutions_corrected.pdf" width="640" height="480"></p>
+<section id="structure-of-the-course" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="structure-of-the-course"><span class="header-section-number">2</span> Structure of the Course</h2>
+<section id="prerequisites" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="prerequisites"><span class="header-section-number">2.1</span> Prerequisites</h3>
+<p>You should have taken a quantum mechanics course at the level of the advanced quantum course in Part II. You don’t need to have taken TP2. One of the main methods we use – second quantization – is covered in TP2 but will be introduced again from scratch.</p>
 
 
 </section>
@@ -793,11 +827,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./problem-sets/problem-set-3.html" class="pagination-link" aria-label="Problem Set 3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Set 3</span>
+      <a href="../index.html" class="pagination-link" aria-label="TQM Lectures 2024">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">TQM Lectures 2024</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../notes/many-body-wavefunctions.html" class="pagination-link" aria-label="Many Body Wavefunctions">
+        <span class="nav-page-text">Many Body Wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
