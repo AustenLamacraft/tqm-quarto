@@ -511,7 +511,7 @@ Normally we write $A(t)$ rather than $A_I(t)$, as this is the Heisenberg picture
 
 ### Fluctuation Dissipation Theorem
 
-The Kubo formula makes it clear that there is a connection between response functions and noise correlations. Let's find the connection in its most general form. We start from the correlation function
+The Kubo formula makes it clear that there is a connection between response functions and noise correlations.  Let's find the connection in its most general form. We start from the correlation function
 
 $$
 S_{AB}(t) \equiv \langle\langle A_I(t)B_I(0)\rangle\rangle.
@@ -549,7 +549,7 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] & t>0\\
 \end{cases}
 $$
 
-We write this as $\chi_{AB}(t) = i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]$, where $\theta(t)$ is the step function
+We write this as $\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle$, where $\theta(t)$ is the step function
 
 $$
 \theta(t)=\begin{cases}
@@ -558,38 +558,26 @@ $$
 \end{cases}.
 $$
 
-$\chi_{AB}(\omega)$ can then be expressed as the convolution. The Fourier transform of the step function is
+Consider now the dissipative part of $\chi_{AB}(t)$
 
-$$
-\tilde\theta(\omega) = \frac{i}{\omega+i0},
-$$
-
-giving
-
-$$
 \begin{align}
-\chi_{AB}(\omega)&= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
-&=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
+\chi_{AB}''(t) &= \frac{-i}{2}\left(\chi_{AB}(t) - \chi_{BA}(-t)\right)\\
+&= \frac{1}{2}\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle\\
+&= \frac{1}{2} \left(S_{AB}(t)-S_{BA}(-t)\right).
 \end{align}
-$$ {#eq-conv}
 
-To make sense of this formula, use the Kramers--Kronig relation @eq-kk to write
+::: {.callout-tip}
+## Check
+Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy E=\Tr[\rho H] due to a perturbation $\Sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i. If stuck, see Chaikin, Lubensky section 7.6.3.
 
-$$
-\begin{align}
-\chi_{AB}(\omega) &=\chi'(\omega) + i\chi''(\omega)\\
-&= \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega} + i\chi''(\omega)\\
-&= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
-\end{align}
-$$ {#eq-kk-chi}
+:::
 
-where we have used the formula
+The Fourier transform of this function is
 
 $$
-\frac{1}{x+i0} = \mathcal{P}\frac{1}{x} -i\pi\delta(x).
+\chi_{AB}''(\omega)=\frac{1}{2} \left(S_{AB}(\omega)-S_{BA}(-\omega)\right).
 $$
-
-Comparing @eq-conv and @eq-kk-chi gives
+Finally, we obtain
 
 $$
 S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right].
