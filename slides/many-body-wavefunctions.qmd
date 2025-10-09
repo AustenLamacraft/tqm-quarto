@@ -65,7 +65,7 @@ $$
 ![](../assets/ElasticChain.png){width=50% fig-align="center"}
 
 $$
-H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right]
 $$
 
 - New techniques to represent wavefunctions and Hamiltonians (__second quantization__ aka __quantum field theory__)
@@ -77,13 +77,18 @@ $$
 
 - Course website [tqm.tripos.org](https://tqm.tripos.org) (updated with slides)
 
-- Migrating from [austen.uk/courses/tqm](https://austen.uk/courses/tqm) 
-
-- Lecture capture (all three screens)
+- Lecture capture
 
 - Lectures are 90 minutes with 5 minute break roughly halfway
 
-- Supervision details to follow
+- Supervision in w/c 21/10, 4/11, 18/11, and 2/12. Details to follow
+
+::: {.callout-tip}
+## Check
+
+Small exercises to check your understanding as you read the notes. Make sure you do them!
+
+:::
 
 # $\hbar = 1$! {.center}
 
@@ -113,7 +118,7 @@ Systems of indistinguishable particles are described by __totally symmetric__ or
 - A pair of particles in states $\ket{\varphi_1}$ and $\ket{\varphi_2}$
 
 $$
-\Psi(\br_1,\br_2)\stackrel{?}{=} \varphi_1(\br_1)\varphi_2(\br_2)
+\Psi_\text{dist.}(\br_1,\br_2)\stackrel{?}{=} \varphi_1(\br_1)\varphi_2(\br_2)
 $$
 
 - This would be fine for _distinguishable_ particles
@@ -190,6 +195,8 @@ What state do we end up in?
 
 :::
 
+For bosons ($+$ sign) the different terms may be represented
+
 ![](../assets/HOM.png){width=70% fig-align="center"}
 
 ---
@@ -223,21 +230,22 @@ $$
 
 ---
 
-## Symmetrize / Antisymmetrize
+## Permutations 
 
 $$
- \mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \sgn(\pi)P_\pi
+ \Psi(\br_1,\br_2)=\frac{1}{\sqrt{2}}[\Psi_\text{dist.}(\br_1,\br_2) \pm \Psi_\text{dist.}(\br_2,\br_1)]
+  % \varphi_1(\br_1)\varphi_2(\br_2)\pm \varphi_2(\br_1)\varphi_1(\br_2)]
 $$
 
-- $\pi$ is one of $N!$ permutations of $N$ objects
+- For more particles we have to include all possible _permutations_
 
-- $P_\pi$ is permutation _operator_ for permutation $\pi$
+- $N!$ permutations of $N$ objects
 
-- For two particles there are two permutations: $\pi=(12)$ and $\pi=(21)$
+- A permutation $\pi$ may be represented by a reordering of $1,\ldots N$ 
 
-$$
-P_{(21)}\Psi(\br_1,\br_2) = \Psi(\br_2,\br_1)
-$$
+- e.g. $\pi=(312)$ for $N=3$
+
+- Equivalently a function $\pi$ of $1,\ldots N$: $\pi(1)=3$, $\pi(2)=1$, $\pi(3)=2$
 
 ---
 
@@ -246,6 +254,22 @@ $$
 - $\sgn(\pi)$ is the __signature__ of the permutation
 
 - $\pm1$ for $\pi$ involving an even (odd) number of exchanges
+
+---
+
+## Symmetrize / Antisymmetrize
+
+$$
+ \mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \sgn(\pi)P_\pi
+$$
+
+- $P_\pi$ is permutation _operator_ for permutation $\pi$
+
+- For two particles there are two permutations: $\pi=(12)$ and $\pi=(21)$
+
+$$
+P_{(21)}\Psi(\br_1,\br_2) = \Psi(\br_2,\br_1)
+$$
 
 ---
 
@@ -270,6 +294,14 @@ $$
  \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}&=\sqrt{\frac{1}{N!}}\sum_\pi \sgn(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}})
 \end{aligned}
 $$
+
+- Note that it doesn't matter if we permute _coordinates_ or state labels $\alpha_i$
+
+$$
+\ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N})
+$$
+
+---
 
 ::: {.callout-tip}
 ## Check
@@ -394,7 +426,7 @@ Check it is periodic and totally antisymmetric
 ## Generalization for $N$ odd
 
 $$
-\Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
+\Psi_0(x_1,\ldots, x_N)\propto\prod_{i<j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)
 $$
 
 ::: {.callout-tip}
@@ -445,14 +477,14 @@ $$
 \rho_1(x_1) = N \int dx_2\ldots dx_N \lvert\Psi(x_1,x_2,\ldots,x_N)\rvert^2
 $$
 
-- Note that density is always a _number_ density (not mass density).
+- Note that density is always a _number_ density (not mass density)
 
 - Normalization of the wavefunction implies
 $$
 \int dx \rho_1(x) = N
 $$
 
-- In a translationally invariant system like the fermion gas on a ring we expect the average density to be constant.
+- In a translationally invariant system like the fermion gas on a ring we expect the average density to be constant
 
 ---
 
@@ -518,7 +550,7 @@ This vanishes at $x_1=x_2$
 ## Impenetrable Bose Gas
 
 $$
-H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j<k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j<k}\delta(x_j-x_k)}^{\equiv H_\text{int}}
 $$
 
 - The second term is interaction between pairs of particles
@@ -539,7 +571,7 @@ Why?
 ## Ground state
 
 $$
-\Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
+\Psi_0(x_1,\ldots, x_N) = \prod_{i<j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|
 $$
 
 - Can calculate any observable _as long as_ it's insensitive to taking the modulus (e.g. average density and pair distribution)
