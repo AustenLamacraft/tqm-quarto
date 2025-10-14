@@ -2,47 +2,45 @@
 
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 
-\newcommand{\cE}{\mathcal{E}}
-\newcommand{\cH}{\mathcal{H}}
-\newcommand{\cN}{\mathcal{N}}
-\newcommand{\cO}{\mathcal{O}}
-\newcommand{\cP}{\mathcal{P}}
-\newcommand{\br}{\mathbf{r}}
-\newcommand{\bp}{\mathbf{p}}
-\newcommand{\bk}{\mathbf{k}}
-\newcommand{\bq}{\mathbf{q}}
-\newcommand{\bv}{\mathbf{v}}
-\newcommand{\brN}{\br_1, \ldots, \br_N}
-\newcommand{\xN}{x_1, \ldots, x_N}
-\newcommand{\zN}{z_1, \ldots, z_N}
-\newcommand{\pop}{\psi^{\vphantom{\dagger}}}
-\newcommand{\pdop}{\psi^\dagger}
-\newcommand{\Pop}{\Psi^{\vphantom{\dagger}}}
-\newcommand{\Pdop}{\Psi^\dagger}
-\newcommand{\Phop}{\Phi^{\vphantom{\dagger}}}
-\newcommand{\Phdop}{\Phi^\dagger}
-\newcommand{\phop}{\phi^{\vphantom{\dagger}}}
-\newcommand{\phdop}{\phi^\dagger}
-\newcommand{\aop}{a^{\vphantom{\dagger}}}
-\newcommand{\adop}{a^\dagger}
-\newcommand{\bop}{b^{\vphantom{\dagger}}}
-\newcommand{\bdop}{b^\dagger}
-\newcommand{\cop}{c^{\vphantom{\dagger}}}
-\newcommand{\cdop}{c^\dagger}
-\newcommand{\alop}{\alpha^{\vphantom{\dagger}}}
-\newcommand{\aldop}{\alpha^\dagger}
-\newcommand{\bra}[1]{\langle{#1}\rvert}
-\newcommand{\ket}[1]{\lvert{#1}\rangle}
-\newcommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
-\newcommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
-\newcommand{\sgn}{\mathrm{sgn}}
-\newcommand{\abs}[1]{\lvert{#1}\rvert}
-\newcommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
+\providecommand{\cE}{\mathcal{E}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\br}{\mathbf{r}}
+\providecommand{\bp}{\mathbf{p}}
+\providecommand{\bk}{\mathbf{k}}
+\providecommand{\bq}{\mathbf{q}}
+\providecommand{\bv}{\mathbf{v}}
+\providecommand{\brN}{\br_1, \ldots, \br_N}
+\providecommand{\xN}{x_1, \ldots, x_N}
+\providecommand{\zN}{z_1, \ldots, z_N}
+\providecommand{\pop}{\psi^{\vphantom{\dagger}}}
+\providecommand{\pdop}{\psi^\dagger}
+\providecommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\providecommand{\Pdop}{\Psi^\dagger}
+\providecommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\providecommand{\Phdop}{\Phi^\dagger}
+\providecommand{\phop}{\phi^{\vphantom{\dagger}}}
+\providecommand{\phdop}{\phi^\dagger}
+\providecommand{\aop}{a^{\vphantom{\dagger}}}
+\providecommand{\adop}{a^\dagger}
+\providecommand{\bop}{b^{\vphantom{\dagger}}}
+\providecommand{\bdop}{b^\dagger}
+\providecommand{\cop}{c^{\vphantom{\dagger}}}
+\providecommand{\cdop}{c^\dagger}
+\providecommand{\alop}{\alpha^{\vphantom{\dagger}}}
+\providecommand{\aldop}{\alpha^\dagger}
+\providecommand{\bra}[1]{\langle{#1}\rvert}
+\providecommand{\ket}[1]{\lvert{#1}\rangle}
+\providecommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
+\providecommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
+\providecommand{\sgn}{\mathrm{sgn}}
+\providecommand{\abs}[1]{\lvert{#1}\rvert}
+\providecommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
 
-
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}}
-
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 
 :::
 

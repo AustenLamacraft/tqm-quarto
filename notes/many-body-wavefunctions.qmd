@@ -77,20 +77,20 @@ $$
 
 This also follows from taking the square modulus of @eq-product-wavefunction. The result implied by the wavefunction @eq-sym is
 $$
-\begin{align}
+\begin{aligned}
 \rho_{12}(\br_1,\br_2) &= \frac{1}{2}\left[\rho_1(\br_1)\rho_2(\br_2)+\rho_1(\br_2)\rho_2(\br_1)\right] \\
 &\pm\frac{1}{2}\left[\varphi^{}_1(\br_1)\varphi^*_2(\br_1)\varphi^{}_2(\br_2)\varphi^*_1(\br_2)+\varphi^{}_1(\br_2)\varphi^*_2(\br_2)\varphi^{}_2(\br_1)\varphi^*_1(\br_1)\right].
-\end{align}
+\end{aligned}
 $$
 
 In particular, $\rho_{12}(\br,\br) = 0$ for fermions, and $\rho_{12}(\br,\br) = 2\rho_1(\br)\rho_2(\br)$ for bosons. The first result is natural from the  standpoint of the exclusion principle, while the second is perhaps more surprising. This shows that, because probabilities arise from the squares of amplitudes, identical particles in quantum mechanics are never truly independent.
 
 One dramatic illustration of this deviation from our classical intuition is provided by the [Hong–Ou–Mandel](https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect) effect in quantum optics. In simplified terms, we imagine wavepackets describing two photons (bosons) approaching a 50:50 beam splitter from either side.  Because of the unitarity of scattering, the two photons end up in orthogonal states. For example,
 $$
-\begin{align}
+\begin{aligned}
 \ket{\text{Left}}\to\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}+ \ket{\text{Right}}\right)\\\\
 \ket{\text{Right}}\to\frac{1}{\sqrt{2}}\left(\ket{\text{Left}}- \ket{\text{Right}}\right)
-\end{align}
+\end{aligned}
 $$
 
 
@@ -130,7 +130,7 @@ $$ {#eq-distinguishable}
 
 Such states are called __product states__. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.
 
-As we've just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of _symmetrization_ and _antisymmetrization_
+As we've just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. The generalization of the two-particle states @eq-sym to many particles involves summing over all permutations of particle coordinates $\br_i$ with respect to the state labels $\alpha_i$. To write these down we introduce the operators of _symmetrization_ and _antisymmetrization_
 
 $$
 \mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \sgn(\pi)P_\pi
@@ -155,7 +155,13 @@ $$
 \end{aligned}
 $$ {#eq-norm}
 
-where the __occupation numbers__ $\{N_{\alpha}\}$ in the boson case give the number of particles in state $\alpha$. These normalization factors yield normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is
+where the __occupation numbers__ $\{N_{\alpha}\}$ in the boson case give the number of particles in state $\alpha$. Note that it doesn't matter if we permute _coordinates_ or state labels $\alpha_i$ in @eq-norm. Thus the symmetric product state can also be written
+
+$$
+\ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N}).
+$$
+
+These normalization factors yield normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is
 
 $$
  \label{quantum_statistics_TotalEnergy}
@@ -223,7 +229,7 @@ $$ {#eq-1d-det}
 Let's evaluate this complicated looking expression in a simple case. With three particles we have
 
 $$
-\begin{align}
+\begin{aligned}
 	\Psi^A_0(x_1,x_2,x_3)&=\begin{vmatrix}
 		z_{1}^{-1} & z_{2}^{-1} & z_{3}^{-1} \\
 		1 & 1 & 1 \\
@@ -231,7 +237,7 @@ $$
 	\end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
 	&=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
 	&\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
-\end{align} 
+\end{aligned} 
 $$ {#eq-3-particle}
 
 The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.

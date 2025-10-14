@@ -407,6 +407,8 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 </div>
 <p>Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.</p>
 <p>Reading: <span class="citation" data-cites="nazarov2013advanced">Nazarov and Danon (<a href="#ref-nazarov2013advanced" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="baym2018lectures">Baym (<a href="#ref-baym2018lectures" role="doc-biblioref">2018</a>)</span></p>
@@ -667,7 +669,7 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 \]</span></p>
 <p>From <span class="math inline">\(g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2)\)</span> we can extract the spin density as well the density</p>
 <p><span class="math display">\[
-\mathbf{\rho}(\mathbf{r}) = \mathop{\mathrm{tr}}\left[g(\mathbf{r},\mathbf{r})\right],\quad \mathbf{s}(\mathbf{r}) = \frac{1}{2}\mathop{\mathrm{tr}}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r})\right].
+\mathbf{\rho}(\mathbf{r}) = \tr\left[g(\mathbf{r},\mathbf{r})\right],\quad \mathbf{s}(\mathbf{r}) = \frac{1}{2}\tr\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r})\right].
 \]</span></p>
 <p>(I’ve dropped the subscript from <span class="math inline">\(\rho_1(\mathbf{r})\)</span> here.) An spin-independent interaction potential is described by a Hamiltonian of the form</p>
 <p><span class="math display">\[
@@ -677,7 +679,7 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 <p><span class="math display">\[
 \begin{align}
     \langle \hat H_\text{int.}\rangle &amp;=\frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\, \rho(\mathbf{r}) U(\mathbf{r}-\mathbf{r}')\rho(\mathbf{r}')\nonumber\\
-    &amp;- \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathop{\mathrm{tr}}\left[g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})\right].
+    &amp;- \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})\right].
   \label{2nd_quant_HFSpin}
 \end{align}
 \]</span></p>
@@ -709,7 +711,7 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 <p>which gives</p>
 <p><span class="math display">\[
 \begin{align}
-E_{\text{Fock}} &amp;=-\frac{1}{4} \int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathop{\mathrm{tr}}\left[g(\mathbf{r},\mathbf{r}')\right]\mathop{\mathrm{tr}}\left[g(\mathbf{r}',\mathbf{r})\right]\nonumber\\&amp;-\frac{1}{4}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathop{\mathrm{tr}}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r}')\right]\cdot\mathop{\mathrm{tr}}\left[\boldsymbol{\sigma}g(\mathbf{r}',\mathbf{r})\right].
+E_{\text{Fock}} &amp;=-\frac{1}{4} \int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[g(\mathbf{r},\mathbf{r}')\right]\tr\left[g(\mathbf{r}',\mathbf{r})\right]\nonumber\\&amp;-\frac{1}{4}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r}')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\mathbf{r}',\mathbf{r})\right].
 \end{align}
 \]</span></p>
 <p>Suppose we had a <span class="math inline">\(\delta\)</span>-function interaction <span class="math inline">\(U(\mathbf{r})=V_0 \delta(\mathbf{r})\)</span>. Then the Fock energy can be written</p>

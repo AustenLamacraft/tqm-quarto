@@ -407,6 +407,8 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 </div>
 <p>A Fermi gas with weak interactions provides an example of one of the ‘standard models’ of condensed matter physics: Landau’s <strong>Fermi liquid</strong> theory.</p>
 <p>Reading: <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#ref-landau1980statistical" role="doc-biblioref">1980</a>)</span></p>
@@ -432,10 +434,10 @@ E^{(0)}(\mathbf{N}) = \sum_{\mathbf{k},s} \epsilon(\mathbf{k})N_{s}(\mathbf{k}).
 <h2 data-number="2" class="anchored" data-anchor-id="perturbation-theory-to-second-order"><span class="header-section-number">2</span> Perturbation Theory to Second Order</h2>
 <p>The standard expressions for the perturbed energy to second order in the perturbation are of course</p>
 <p><span id="eq-2nd"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 E^{(1)}(\mathbf{N}) &amp;= \langle{\mathbf{N}}\rvert H_\text{int} \lvert \mathbf{N} \rangle\\
 E^{(2)}(\mathbf{N}) &amp;= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\lvert{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}\rvert^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
-\end{align}
+\end{aligned}
 \tag{1}\]</span></span></p>
 <p>The first order correction is easily found to be</p>
 <p><span class="math display">\[
@@ -443,10 +445,10 @@ E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\mathbf{k},\mathbf{k}'} N_{\uparrow}(\
 \]</span></p>
 <p>This is just the energy we found when we discussed the Stoner criterion in <a href="../notes/more-second-quantization.html">Lecture 6</a>. For the second order correction we need the matrix element <span class="math inline">\(\langle{\mathbf{N}'}\rvert H_\text{int} \lvert \mathbf{N} \rangle\)</span>, which is nonzero if</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 N'_{\mathbf{k}_1,\uparrow} = N_{\uparrow}(\mathbf{k}_1) + 1, \quad N'_{\downarrow}(\mathbf{k}_2) = N_{\downarrow}(\mathbf{k}_2) + 1\\
 N'_{\downarrow}(\mathbf{k}_3) = N_{\downarrow}(\mathbf{k}_3) - 1, \quad N'_{\uparrow}(\mathbf{k}_4) = N_{\uparrow}(\mathbf{k}_4) - 1,
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>for <span class="math inline">\(\mathbf{k}_i\)</span> satisfying <span class="math inline">\(\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4\)</span>. In this case</p>
 <p><span class="math display">\[
@@ -476,41 +478,41 @@ N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
 <p>Note that <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> is symmetric under exchange of <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span>, and <span class="math inline">\(s\)</span> and <span class="math inline">\(s'\)</span>. This expansion is the key idea in the theory of the Fermi liquid. Although we will calculate the quasiparticle energy <span class="math inline">\(\varepsilon_s(\mathbf{k})\)</span> and interaction function <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> using perturbation theory, Landau’s idea was that <em>any</em> interacting Fermi system could be described in similar terms, as long as the ground state does not change abruptly as we increase the interaction from zero (normally a thought experiment!). An example of an abrupt change would be a transition from liquid to solid (crystallization).</p>
 <p>To first order in the interaction we have the not-so-interesting result</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \varepsilon_s(\mathbf{k}) &amp;= \epsilon(\mathbf{k}) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
 f_{\uparrow\downarrow} &amp;= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
 \label{fermi_first}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>where the meaning of the <span class="math inline">\(\bar s\)</span> is <span class="math inline">\(\bar\uparrow=\downarrow\)</span>, <span class="math inline">\(\bar\downarrow=\uparrow\)</span>. The second order contributions to the <span class="math inline">\(f\)</span>-function are more interesting, however. For example</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k})+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}')-\epsilon(\mathbf{k}_2)}\right.\nonumber\\
 \left.+\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N_{\downarrow}(\mathbf{k}_3)(1-N_{\downarrow}(\mathbf{k}_2))}{\epsilon(\mathbf{k}')+\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})-\epsilon(\mathbf{k}_2)}\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>We will be interested in the low temperature limit, in which <span class="math inline">\(n_{s}(\mathbf{k})\)</span> is non-zero only in a very narrow region of size <span class="math inline">\(k_\text{B} T\)</span> around the Fermi surface. In this limit we can take the <span class="math inline">\(\lvert{\mathbf{k}}\rvert=\lvert{\mathbf{k}'}\rvert=k_\text{F}\)</span>, so that</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = -\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2} \frac{N(\mathbf{k}_3)(1-N(\mathbf{k}_2))}{\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}_2)}
 +\sum_{\mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2}\frac{N(\mathbf{k}_3)(1-N(\mathbf{k}_2))}{\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k}_2)}\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>In which we have assumed the state around which we expand is unpolarized, i.e.&nbsp;<span class="math inline">\(N_{s}(\mathbf{k})\)</span> is independent of <span class="math inline">\(s\)</span>. In this case <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')=f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span></p>
 <p>The expression for <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')=f_{\downarrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span> is more complicated</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}') = U_0 + f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') +\frac{U_0^2}{V}\left[\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_3+\mathbf{k}_4}\frac{N(\mathbf{k}_3)N(\mathbf{k}_4)}{\epsilon(\mathbf{k}_3)+\epsilon(\mathbf{k}_4)-2E_\text{F}}\right.\nonumber\\
 \left.\sum_{\mathbf{k}+\mathbf{k}'=\mathbf{k}_1+\mathbf{k}_2}\frac{(1-N(\mathbf{k}_1))(1-N(\mathbf{k}_2))}{2E_\text{F}-\epsilon(\mathbf{k}_1)-\epsilon(\mathbf{k}_2)}\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Evaluating these expressions is simpler than calculating <a href="#eq-E2" class="quarto-xref">Equation&nbsp;2</a>, as we have only one independent momentum. The <em>new feature</em> that comes at second order is a nontrivial dependence of <span class="math inline">\(f_{s^{}s'}(\mathbf{k},\mathbf{k}')\)</span> on the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span>.</p>
 <p>It’s a bit fiddly to get at, but let’s work it out for the simpler case of <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span>!. The continuum limit is</p>
 <p><span id="eq-fcont"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right.\nonumber\\
 \left.+\int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}'+\mathbf{k}_3=\mathbf{k}+\mathbf{k}_2 }}\frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}\right].
-\end{align}
+\end{aligned}
 \tag{4}\]</span></span></p>
 <p>So we need to find the integral</p>
 <p><span class="math display">\[

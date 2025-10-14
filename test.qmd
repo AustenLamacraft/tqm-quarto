@@ -1,0 +1,85 @@
+---
+title: "Conditional Macros"
+format:
+  html:
+    html-math-method: katex
+  pdf:
+    from: markdown-latex_macros
+---
+
+::: {.content-visible when-format="html"}
+\providecommand{\mymacro}{\texttt{HTML version of macro}}
+<!-- this version of the macro will be unfolded by Pandoc's latex_macros filter, which we deactivate for PDF  -->
+
+(This is HTML output.)
+:::
+
+::: {.content-visible when-format="pdf"}
+\providecommand{\cE}{\mathcal{E}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\br}{\mathbf{r}}
+\providecommand{\bp}{\mathbf{p}}
+\providecommand{\bk}{\mathbf{k}}
+\providecommand{\bq}{\mathbf{q}}
+\providecommand{\bv}{\mathbf{v}}
+\providecommand{\brN}{\br_1, \ldots, \br_N}
+\providecommand{\xN}{x_1, \ldots, x_N}
+\providecommand{\zN}{z_1, \ldots, z_N}
+\providecommand{\pop}{\psi^{\vphantom{\dagger}}}
+\providecommand{\pdop}{\psi^\dagger}
+\providecommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\providecommand{\Pdop}{\Psi^\dagger}
+\providecommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\providecommand{\Phdop}{\Phi^\dagger}
+\providecommand{\phop}{\phi^{\vphantom{\dagger}}}
+\providecommand{\phdop}{\phi^\dagger}
+\providecommand{\aop}{a^{\vphantom{\dagger}}}
+\providecommand{\adop}{a^\dagger}
+\providecommand{\bop}{b^{\vphantom{\dagger}}}
+\providecommand{\bdop}{b^\dagger}
+\providecommand{\cop}{c^{\vphantom{\dagger}}}
+\providecommand{\cdop}{c^\dagger}
+\providecommand{\alop}{\alpha^{\vphantom{\dagger}}}
+\providecommand{\aldop}{\alpha^\dagger}
+\providecommand{\bra}[1]{\langle{#1}\rvert}
+\providecommand{\ket}[1]{\lvert{#1}\rangle}
+\providecommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
+\providecommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
+\providecommand{\sgn}{\mathrm{sgn}}
+\providecommand{\abs}[1]{\lvert{#1}\rvert}
+\providecommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
+
+<!-- 
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
+
+<!-- this version of the macro will be unfolded by LaTeX -->
+
+(This is PDF output.)
+:::
+
+
+## Bosons and Fermions
+
+An $N$ particle quantum system is described by a wavefunction of $N$ arguments $\Psi(\br_1,\ldots, \br_N)$. The starting point of many body quantum mechanics is that:
+
+::: {.callout-warning appearance="minimal"}
+
+Systems of indistinguishable particles are described by __totally symmetric__ or __totally antisymmetric__ wavefunctions.
+
+:::
+
+Just to be clear, _totally symmetric_ means the wavefunction is unchanged by exchanging any two coordinates, whereas _totally antisymmetric_ means that it changes sign.
+
+A good fraction of this course is devoted to exploring the ramifications of this fact. Perhaps we should therefore give a _very_ quick summary of why it appears to be true.
+
+The first question is: what _are_ indistinguishable particles? I'll give a theorist's answer. Indistinguishable particles are those described by Hamiltonians that are invariant under permuting the particle's labels. Thus the sum of single particle Hamiltonians
+
+$$
+H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r_i})\right]
+$$
+
+_[did you remember that $\hbar=1$?]_ describes indistinguishable particles while

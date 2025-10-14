@@ -39,10 +39,10 @@ In the presence of interactions this function is no longer linear in the occupat
 The standard expressions for the perturbed energy to second order in the perturbation are of course
 
 $$
-\begin{align}
+\begin{aligned}
 E^{(1)}(\mathbf{N}) &= \braket{\mathbf{N}}{H_\text{int}}{\mathbf{N}}\\
 E^{(2)}(\mathbf{N}) &= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
-\end{align}
+\end{aligned}
 $$ {#eq-2nd}
 
 The first order correction is easily found to be
@@ -54,10 +54,10 @@ $$
 This is just the energy we found when we discussed the Stoner criterion in [Lecture 6](../notes/more-second-quantization.qmd). For the second order correction we need the matrix element $\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}}$, which is nonzero if
 
 $$
-\begin{align}
+\begin{aligned}
 N'_{\bk_1,\uparrow} = N_{\uparrow}(\bk_1) + 1, \quad N'_{\downarrow}(\bk_2) = N_{\downarrow}(\bk_2) + 1\\
 N'_{\downarrow}(\bk_3) = N_{\downarrow}(\bk_3) - 1, \quad N'_{\uparrow}(\bk_4) = N_{\uparrow}(\bk_4) - 1,
-\end{align}
+\end{aligned}
 $$
 
 for $\bk_i$ satisfying $\bk_1+\bk_2=\bk_3+\bk_4$. In this case
@@ -95,29 +95,29 @@ Note that $f_{s^{}s'}(\bk,\bk')$ is symmetric under exchange of $\bk$ and $\bk'$
 To first order in the interaction we have the not-so-interesting result
 
 $$
-\begin{align}
+\begin{aligned}
 \varepsilon_s(\bk) &= \epsilon(\bk) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
 f_{\uparrow\downarrow} &= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
 \label{fermi_first}
-\end{align}
+\end{aligned}
 $$
 
 where the meaning of the $\bar s$ is $\bar\uparrow=\downarrow$, $\bar\downarrow=\uparrow$. The second order contributions to the $f$-function are more interesting, however. For example
 
 $$
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
 \left.+\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk')+\epsilon(\bk_3)-\epsilon(\bk)-\epsilon(\bk_2)}\right].
-\end{align}
+\end{aligned}
 $$
 
 We will be interested in the low temperature limit, in which $n_{s}(\bk)$ is non-zero only in a very narrow region of size $k_\text{B} T$ around the Fermi surface. In this limit we can take the $\abs{\bk}=\abs{\bk'}=k_\text{F}$, so that
 
 $$
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
 +\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}\right].
-\end{align}
+\end{aligned}
 $$
 
 In which we have assumed the state around which we expand is unpolarized, i.e. $N_{s}(\bk)$ is independent of $s$. In this case $f_{\uparrow\uparrow}(\bk,\bk')=f_{\uparrow\uparrow}(\bk,\bk')$
@@ -125,10 +125,10 @@ In which we have assumed the state around which we expand is unpolarized, i.e. $
 The expression for $f_{\uparrow\downarrow}(\bk,\bk')=f_{\downarrow\uparrow}(\bk,\bk')$ is more complicated
 
 $$
-\begin{align}
+\begin{aligned}
 f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
 \left.\sum_{\bk+\bk'=\bk_1+\bk_2}\frac{(1-N(\bk_1))(1-N(\bk_2))}{2E_\text{F}-\epsilon(\bk_1)-\epsilon(\bk_2)}\right].
-\end{align}
+\end{aligned}
 $$
 
 Evaluating these expressions is simpler than calculating @eq-E2, as we have only one independent momentum. The _new feature_ that comes at second order is a nontrivial dependence of $f_{s^{}s'}(\bk,\bk')$ on the angle between $\bk$ and $\bk'$.
@@ -136,10 +136,10 @@ Evaluating these expressions is simpler than calculating @eq-E2, as we have only
 It's a bit fiddly to get at, but let's work it out for the simpler case of $f_{\uparrow\uparrow}(\bk,\bk')$!. The continuum limit is
 
 $$
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
 \left.+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk'+\bk_3=\bk+\bk_2 }}\frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right].
-\end{align}
+\end{aligned}
 $$ {#eq-fcont}
 
 So we need to find the integral

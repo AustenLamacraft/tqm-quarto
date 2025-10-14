@@ -209,7 +209,7 @@ $$
 
 - $H_\text{sp}$ has eigenstates $\{\varphi_\alpha(\br)\}$ and eigenenergies $\{E_\alpha\}$
 
-- Eigenstatate of $N$ _distinguishable_ particles
+- Eigenstate of $N$ _distinguishable_ particles
 $$
  \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 $$

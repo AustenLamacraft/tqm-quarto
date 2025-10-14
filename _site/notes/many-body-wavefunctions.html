@@ -406,6 +406,8 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 </div>
 <p>We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> – but are nevertheless very informative.</p>
 <p>Reading: <span class="citation" data-cites="baym2018lectures">(<a href="#ref-baym2018lectures" role="doc-biblioref">Baym 2018</a>)</span>.</p>
@@ -459,17 +461,17 @@ P_{ij}\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_i,\ldots, \mathbf{r}_j,\ldots \mathbf
 \label{eq:classicaljoint}
 \]</span></p>
 <p>This also follows from taking the square modulus of <a href="#eq-product-wavefunction" class="quarto-xref">Equation&nbsp;1</a>. The result implied by the wavefunction <a href="#eq-sym" class="quarto-xref">Equation&nbsp;2</a> is <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \rho_{12}(\mathbf{r}_1,\mathbf{r}_2) &amp;= \frac{1}{2}\left[\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)+\rho_1(\mathbf{r}_2)\rho_2(\mathbf{r}_1)\right] \\
 &amp;\pm\frac{1}{2}\left[\varphi^{}_1(\mathbf{r}_1)\varphi^*_2(\mathbf{r}_1)\varphi^{}_2(\mathbf{r}_2)\varphi^*_1(\mathbf{r}_2)+\varphi^{}_1(\mathbf{r}_2)\varphi^*_2(\mathbf{r}_2)\varphi^{}_2(\mathbf{r}_1)\varphi^*_1(\mathbf{r}_1)\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>In particular, <span class="math inline">\(\rho_{12}(\mathbf{r},\mathbf{r}) = 0\)</span> for fermions, and <span class="math inline">\(\rho_{12}(\mathbf{r},\mathbf{r}) = 2\rho_1(\mathbf{r})\rho_2(\mathbf{r})\)</span> for bosons. The first result is natural from the standpoint of the exclusion principle, while the second is perhaps more surprising. This shows that, because probabilities arise from the squares of amplitudes, identical particles in quantum mechanics are never truly independent.</p>
 <p>One dramatic illustration of this deviation from our classical intuition is provided by the <a href="https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect">Hong–Ou–Mandel</a> effect in quantum optics. In simplified terms, we imagine wavepackets describing two photons (bosons) approaching a 50:50 beam splitter from either side. Because of the unitarity of scattering, the two photons end up in orthogonal states. For example, <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \lvert{\text{Left}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle+ \lvert{\text{Right}}\rangle\right)\\\\
 \lvert{\text{Right}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle- \lvert{\text{Right}}\rangle\right)
-\end{align}
+\end{aligned}
 \]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -508,7 +510,7 @@ H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]
 \tag{3}\]</span></span></p>
 <p>(We will frequently switch between the wavefunction <span class="math inline">\(\varphi(\mathbf{x})\)</span> and bra-ket notation <span class="math inline">\(\lvert{\varphi}\rangle\)</span>. In the latter notation the product wavefunction in <a href="#eq-product-wavefunction" class="quarto-xref">Equation&nbsp;1</a> is written <span class="math inline">\(\lvert{\varphi_{1}}\rangle\lvert{\varphi_{2}}\rangle\)</span>)</p>
 <p>Such states are called <strong>product states</strong>. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.</p>
-<p>As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
+<p>As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. The generalization of the two-particle states <a href="#eq-sym" class="quarto-xref">Equation&nbsp;2</a> to many particles involves summing over all permutations of particle coordinates <span class="math inline">\(\mathbf{r}_i\)</span> with respect to the state labels <span class="math inline">\(\alpha_i\)</span>. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
 <p><span id="eq-sym-antisym"><span class="math display">\[
 \mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \mathrm{sgn}(\pi)P_\pi
 \tag{4}\]</span></span></p>
@@ -528,7 +530,11 @@ P_\pi \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots \mathbf{r}_N) = \Psi(\mathbf{r}_{\pi
 &amp;=\sqrt{\frac{1}{N!}}\sum_\pi \mathrm{sgn}(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}}),
 \end{aligned}
 \tag{5}\]</span></span></p>
-<p>where the <strong>occupation numbers</strong> <span class="math inline">\(\{N_{\alpha}\}\)</span> in the boson case give the number of particles in state <span class="math inline">\(\alpha\)</span>. These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
+<p>where the <strong>occupation numbers</strong> <span class="math inline">\(\{N_{\alpha}\}\)</span> in the boson case give the number of particles in state <span class="math inline">\(\alpha\)</span>. Note that it doesn’t matter if we permute <em>coordinates</em> or state labels <span class="math inline">\(\alpha_i\)</span> in <a href="#eq-norm" class="quarto-xref">Equation&nbsp;5</a>. Thus the symmetric product state can also be written</p>
+<p><span class="math display">\[
+\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N}).
+\]</span></p>
+<p>These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
 <p><span class="math display">\[
 \label{quantum_statistics_TotalEnergy}
 E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
@@ -588,7 +594,7 @@ z_{i}=\exp(2 \pi i x_{i}/L),
 \tag{7}\]</span></span></p>
 <p>Let’s evaluate this complicated looking expression in a simple case. With three particles we have</p>
 <p><span id="eq-3-particle"><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \Psi^A_0(x_1,x_2,x_3)&amp;=\begin{vmatrix}
         z_{1}^{-1} &amp; z_{2}^{-1} &amp; z_{3}^{-1} \\
         1 &amp; 1 &amp; 1 \\
@@ -596,7 +602,7 @@ z_{i}=\exp(2 \pi i x_{i}/L),
     \end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
     &amp;=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
     &amp;\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
-\end{align}
+\end{aligned}
 \tag{8}\]</span></span></p>
 <p>The vanishing of the wavefunction when <span class="math inline">\(x_{i}=x_{j}\)</span> is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.</p>
 <p><a href="#eq-3-particle" class="quarto-xref">Equation&nbsp;8</a> generalizes for any (odd) <span class="math inline">\(N\)</span> so that the ground state Slater determinant <a href="#eq-1d-det" class="quarto-xref">Equation&nbsp;7</a> is proportional to</p>
@@ -758,11 +764,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\mathop{\mathrm{tr}}\varrho =1\)</span>. Its spectral resolution <span class="math display">\[
+<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\tr \varrho =1\)</span>. Its spectral resolution <span class="math display">\[
 \varrho = \sum_\alpha p_\alpha \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert,
 \]</span> can be thought of as a statistical mixture of different quantum states <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> with probabilities <span class="math inline">\(p_\alpha\)</span>.</p>
 <p>One natural way in which density matrices arise from pure states is as follows. The Hilbert space of a composite system consists of a tensor product of two or more components <span class="math inline">\(\mathcal{H}_{AB} = \mathcal{H}_A \otimes \mathcal{H}_B\)</span>. Starting from the density matrix corresponding to a pure state, we can obtain a density matrix for the component <span class="math inline">\(A\)</span> alone by ‘tracing out’ the <span class="math inline">\(B\)</span> subsystem. <span class="math display">\[
-\varrho_A = \mathop{\mathrm{tr}}_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
+\varrho_A = \tr_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
 \]</span> The probability for system <span class="math inline">\(A\)</span> to be in state <span class="math inline">\(\lvert{\psi}\rangle\in \mathcal{H}_A\)</span> is <span class="math display">\[
 P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 \]</span> Thus you can think of the single particle density matrix <a href="#eq-spdm" class="quarto-xref">Equation&nbsp;12</a> as arising from tracing out <span class="math inline">\(N-1\)</span> particles from an <span class="math inline">\(N\)</span>-particle system.</p>

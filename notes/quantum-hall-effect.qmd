@@ -50,13 +50,25 @@ $$
 H = -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_{\bar z} +\frac{qB z}{4}\right) + \frac{\omega_c}{2}
 $$
 
-where $\omega_c = \frac{qB}{m}$ is the __cyclotron frequency__. States that satisfy
+where $\omega_c = \frac{qB}{m}$ is the __cyclotron frequency__. The Hamiltonian can be written in the form
+
+$$
+H = A^\dagger A + \frac{\omega_c}{2},
+$$
+
+where the operator $A$ is defined as
+
+$$
+A \equiv i \sqrt{\frac{2}{m}}\left(\partial_{\bar z} +\frac{qBz}{4}\right)
+$$
+
+Notice that $z^\dagger = \bar z$ while $(\partial_{\bar z})^\dagger = -\partial_z$. States that satisfy
 
 $$
 \left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
 $$
 
-therefore have energy $\omega_c/2$ and belong to the __lowest Landau level__ (LLL).
+therefore have energy $\omega_c/2$. Furthermore, these are the lowest energy states as $\braket{\psi}{A^\dagger A}{\psi}\geq 0$, and so they belong to the __lowest Landau level__ (LLL).
 
 ::: {.callout-tip}
 ## Check

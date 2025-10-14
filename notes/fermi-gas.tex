@@ -1,0 +1,916 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  a4paper,
+]{scrbook}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Fermi Gas},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Fermi Gas}
+\author{}
+\date{}
+\begin{document}
+\frontmatter
+\maketitle
+
+
+\mainmatter
+\providecommand{\cE}{\mathcal{E}}
+\providecommand{\cH}{\mathcal{H}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cO}{\mathcal{O}}
+\providecommand{\cP}{\mathcal{P}}
+\providecommand{\br}{\mathbf{r}}
+\providecommand{\bp}{\mathbf{p}}
+\providecommand{\bk}{\mathbf{k}}
+\providecommand{\bq}{\mathbf{q}}
+\providecommand{\bv}{\mathbf{v}}
+\providecommand{\brN}{\br_1, \ldots, \br_N}
+\providecommand{\xN}{x_1, \ldots, x_N}
+\providecommand{\zN}{z_1, \ldots, z_N}
+\providecommand{\pop}{\psi^{\vphantom{\dagger}}}
+\providecommand{\pdop}{\psi^\dagger}
+\providecommand{\Pop}{\Psi^{\vphantom{\dagger}}}
+\providecommand{\Pdop}{\Psi^\dagger}
+\providecommand{\Phop}{\Phi^{\vphantom{\dagger}}}
+\providecommand{\Phdop}{\Phi^\dagger}
+\providecommand{\phop}{\phi^{\vphantom{\dagger}}}
+\providecommand{\phdop}{\phi^\dagger}
+\providecommand{\aop}{a^{\vphantom{\dagger}}}
+\providecommand{\adop}{a^\dagger}
+\providecommand{\bop}{b^{\vphantom{\dagger}}}
+\providecommand{\bdop}{b^\dagger}
+\providecommand{\cop}{c^{\vphantom{\dagger}}}
+\providecommand{\cdop}{c^\dagger}
+\providecommand{\alop}{\alpha^{\vphantom{\dagger}}}
+\providecommand{\aldop}{\alpha^\dagger}
+\providecommand{\bra}[1]{\langle{#1}\rvert}
+\providecommand{\ket}[1]{\lvert{#1}\rangle}
+\providecommand{\inner}[2]{\langle{#1}\rvert #2 \rangle}
+\providecommand{\braket}[3]{\langle{#1}\rvert #2 \lvert #3 \rangle}
+\providecommand{\sgn}{\mathrm{sgn}}
+\providecommand{\abs}[1]{\lvert{#1}\rvert}
+\providecommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
+
+A Fermi gas with weak interactions provides an example of one of the
+`standard models' of condensed matter physics: Landau's Fermi liquid
+theory.
+
+Reading: Landau et al. (1980)
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\chapter{Weakly Interacting Fermi
+Gas}\label{weakly-interacting-fermi-gas}
+
+We are going to study the following simple model of a Fermi gas with
+short-ranged interactions
+
+\[
+H = \int d\br\left[ \sum_{s=\uparrow,\downarrow}\frac{1}{2m}\nabla\pdop_s\cdot\nabla\pop_s + U_0 \pdop_\uparrow\pdop_\downarrow\pop_\downarrow\pop_\uparrow\right].
+\]
+
+As with the Bose gas, it's most convenient to work in momentum space
+
+\[
+H =\sum_{\bk,s} \epsilon(\bk)\adop_{\bk,s}\aop_{\bk,s} + \overbrace{\frac{U_0}{V}\sum_{\bk_1+\bk_2=\bk_3+\bk_4} \adop_{\bk_1,\uparrow}\adop_{\bk_2,\downarrow}\aop_{\bk_3,\downarrow}\aop_{\bk_4,\uparrow}}^{\equiv H_\text{int}},
+\]
+
+with \(\epsilon(\bk)=\bk^2/2m\), and \(V\) the volume. At \(U_0=0\) the
+eigenstates are of course the product states of single particle momentum
+states specified by the occupancies \(N_{s}(\bk) = 0,1\). The ground
+state is the Fermi sphere of radius \(k_\text{F}\) in momentum space
+with \(N_{s}(\bk) = \theta(k_F-\abs{\bk})\). Low energy excited states
+will have \(N_{s}(\bk)=1\) for \(\abs{\bk}\ll k_\text{F}\) and
+\(N_{s}(\bk)=0\) for \(\abs{\bk}\gg k_\text{F}\). In perturbation theory
+we may still \emph{label} the eigenstates by these occupation numbers
+even though the eigenstates are no longer occupation number eigenstates.
+Instead, we say that these labels give the occupation numbers of
+\textbf{quasiparticles} with fermionic statistics. The energy of the
+eigenstates can then be expressed in terms of the quasiparticle
+distribution.
+
+Without interactions the energy of a state \(\ket{\mathbf{N}}\) is
+
+\[
+E^{(0)}(\mathbf{N}) = \sum_{\bk,s} \epsilon(\bk)N_{s}(\bk).
+\]
+
+In the presence of interactions this function is no longer linear in the
+occupation numbers. The second order expansion of the energy in terms of
+the deviation of the occupancies from the ground state values is the key
+ingredient of Landau's theory.
+
+\chapter{Perturbation Theory to Second
+Order}\label{perturbation-theory-to-second-order}
+
+The standard expressions for the perturbed energy to second order in the
+perturbation are of course
+
+\begin{equation}\phantomsection\label{eq-2nd}{
+\begin{aligned}
+E^{(1)}(\mathbf{N}) &= \braket{\mathbf{N}}{H_\text{int}}{\mathbf{N}}\\
+E^{(2)}(\mathbf{N}) &= \sum_{\mathbf{N}'\neq \mathbf N}\frac{\abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}.
+\end{aligned}
+}\end{equation}
+
+The first order correction is easily found to be
+
+\[
+E^{(1)}(\mathbf{N}) = \frac{U_0}{V} \sum_{\bk,\bk'} N_{\uparrow}(\bk)N_{\downarrow}(\bk') = \frac{U_0}{V}N_\uparrow N_\downarrow.
+\]
+
+This is just the energy we found when we discussed the Stoner criterion
+in \href{../notes/more-second-quantization.qmd}{Lecture 6}. For the
+second order correction we need the matrix element
+\(\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}}\), which is nonzero if
+
+\[
+\begin{aligned}
+N'_{\bk_1,\uparrow} = N_{\uparrow}(\bk_1) + 1, \quad N'_{\downarrow}(\bk_2) = N_{\downarrow}(\bk_2) + 1\\
+N'_{\downarrow}(\bk_3) = N_{\downarrow}(\bk_3) - 1, \quad N'_{\uparrow}(\bk_4) = N_{\uparrow}(\bk_4) - 1,
+\end{aligned}
+\]
+
+for \(\bk_i\) satisfying \(\bk_1+\bk_2=\bk_3+\bk_4\). In this case
+
+\[
+\braket{\mathbf{N}'}{H_\text{int}}{\mathbf{N}} = \frac{U_0}{V} \left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4),
+\]
+
+(ignoring any coinciding momenta) where the occupancies are either zero
+or one. In this way we end up with the second order correction
+
+\begin{equation}\phantomsection\label{eq-E2}{
+E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\bk_1+\bk_2=\bk_3+\bk_4}\frac{\left(1-N_{\uparrow}(\bk_1)\right)\left(1-N_{\downarrow}(\bk_2)\right)N_{\downarrow}(\bk_3)N_{\uparrow}(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-\epsilon(\bk_1)-\epsilon(\bk_2)}.
+}\end{equation}
+
+\section{\texorpdfstring{Landau \(f\)
+function}{Landau f function}}\label{landau-f-function}
+
+Evaluating Equation~\ref{eq-E2}, even for the ground state, is a bit
+arduous on account of the three independent momentum sums. Fortunately,
+we are more interested in how the \emph{excitation energies} are
+affected by interactions. This means we focus on the \emph{change} in
+the occupation relative to the ground state, denoted by \(n_s(\bk)\) and
+defined through
+
+\[
+N_{s}(\bk) = \theta(k_F-\abs{\bk}) + n_{s}(\bk)
+\]
+
+This might seem a bit odd given that \(N_{s}(\bk)=\pm 1\). You should
+think of this expansion in terms of the continuum limit, where the
+\(\bk\) values become finely spaced. In this limit \(n_\bk\) represents
+the \emph{mean} deviation from the Fermi sphere in that region of
+\(\bk\)-space.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{../assets/FermiN.png}
+
+}
+
+\caption{\(n_\bk\) as a smoothed deviation from the Fermi step.}
+
+\end{figure}%
+
+The excitation energy above the ground state of an eigenstate labelled
+by occupancies \(N_\bk\) can then be expanded in \(n_\bk\)
+
+\begin{equation}\phantomsection\label{eq-fdef}{
+\Delta E = \sum_{\bk,s} \varepsilon_s(\bk)n_{s}(\bk) + \frac{1}{2V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)n_{s'}(\bk').
+}\end{equation}
+
+Note that \(f_{s^{}s'}(\bk,\bk')\) is symmetric under exchange of
+\(\bk\) and \(\bk'\), and \(s\) and \(s'\). This expansion is the key
+idea in the theory of the Fermi liquid. Although we will calculate the
+quasiparticle energy \(\varepsilon_s(\bk)\) and interaction function
+\(f_{s^{}s'}(\bk,\bk')\) using perturbation theory, Landau's idea was
+that \emph{any} interacting Fermi system could be described in similar
+terms, as long as the ground state does not change abruptly as we
+increase the interaction from zero (normally a thought experiment!). An
+example of an abrupt change would be a transition from liquid to solid
+(crystallization).
+
+To first order in the interaction we have the not-so-interesting result
+
+\[
+\begin{aligned}
+\varepsilon_s(\bk) &= \epsilon(\bk) + \frac{U_0 N_{\bar s}}{V}+\cdots\\
+f_{\uparrow\downarrow} &= f_{\downarrow\uparrow} = U_0+\cdots,\quad f_{\uparrow\uparrow}=f_{\downarrow\downarrow}=0+\cdots,
+\label{fermi_first}
+\end{aligned}
+\]
+
+where the meaning of the \(\bar s\) is \(\bar\uparrow=\downarrow\),
+\(\bar\downarrow=\uparrow\). The second order contributions to the
+\(f\)-function are more interesting, however. For example
+
+\[
+\begin{aligned}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk)+\epsilon(\bk_3)-\epsilon(\bk')-\epsilon(\bk_2)}\right.\nonumber\\
+\left.+\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N_{\downarrow}(\bk_3)(1-N_{\downarrow}(\bk_2))}{\epsilon(\bk')+\epsilon(\bk_3)-\epsilon(\bk)-\epsilon(\bk_2)}\right].
+\end{aligned}
+\]
+
+We will be interested in the low temperature limit, in which
+\(n_{s}(\bk)\) is non-zero only in a very narrow region of size
+\(k_\text{B} T\) around the Fermi surface. In this limit we can take the
+\(\abs{\bk}=\abs{\bk'}=k_\text{F}\), so that
+
+\[
+\begin{aligned}
+f_{\uparrow\uparrow}(\bk,\bk') = -\frac{U_0^2}{V}\left[\sum_{\bk+\bk_3=\bk'+\bk_2} \frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}
++\sum_{\bk'+\bk_3=\bk+\bk_2}\frac{N(\bk_3)(1-N(\bk_2))}{\epsilon(\bk_3)-\epsilon(\bk_2)}\right].
+\end{aligned}
+\]
+
+In which we have assumed the state around which we expand is
+unpolarized, i.e.~\(N_{s}(\bk)\) is independent of \(s\). In this case
+\(f_{\uparrow\uparrow}(\bk,\bk')=f_{\uparrow\uparrow}(\bk,\bk')\)
+
+The expression for
+\(f_{\uparrow\downarrow}(\bk,\bk')=f_{\downarrow\uparrow}(\bk,\bk')\) is
+more complicated
+
+\[
+\begin{aligned}
+f_{\uparrow\downarrow}(\bk,\bk') = U_0 + f_{\uparrow\uparrow}(\bk,\bk') +\frac{U_0^2}{V}\left[\sum_{\bk+\bk'=\bk_3+\bk_4}\frac{N(\bk_3)N(\bk_4)}{\epsilon(\bk_3)+\epsilon(\bk_4)-2E_\text{F}}\right.\nonumber\\
+\left.\sum_{\bk+\bk'=\bk_1+\bk_2}\frac{(1-N(\bk_1))(1-N(\bk_2))}{2E_\text{F}-\epsilon(\bk_1)-\epsilon(\bk_2)}\right].
+\end{aligned}
+\]
+
+Evaluating these expressions is simpler than calculating
+Equation~\ref{eq-E2}, as we have only one independent momentum. The
+\emph{new feature} that comes at second order is a nontrivial dependence
+of \(f_{s^{}s'}(\bk,\bk')\) on the angle between \(\bk\) and \(\bk'\).
+
+It's a bit fiddly to get at, but let's work it out for the simpler case
+of \(f_{\uparrow\uparrow}(\bk,\bk')\)!. The continuum limit is
+
+\begin{equation}\phantomsection\label{eq-fcont}{
+\begin{aligned}
+f_{\uparrow\uparrow}(\bk,\bk') = \frac{U_0^2}{(2\pi)^3}\left[\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right.\nonumber\\
+\left.+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk'+\bk_3=\bk+\bk_2 }}\frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}\right].
+\end{aligned}
+}\end{equation}
+
+So we need to find the integral
+
+\[
+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}.
+\]
+
+Note that the denominator can be written
+
+\[
+\epsilon(\bk_2)-\epsilon(\bk_3)= \frac{1}{2m}\left(\bk_2+\bk_3\right)\cdot\left(\bk_2-\bk_3\right) = \frac{1}{2m}\left(\bk_2+\bk_3\right)\cdot\left(\bk-\bk'\right),
+\]
+
+where \(\bk-\bk'\) is fixed. Writing
+
+\[
+\mathbf{K} = \frac{1}{2}\left(\bk_2+\bk_3\right),\quad \bq = \frac{1}{2}\left(\bk_2-\bk_3\right),
+\]
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{../assets/FermiGeometry.png}
+
+}
+
+\caption{Geometry of the integral for
+\(f_{\uparrow\uparrow}(\bk,\bk')\).}
+
+\end{figure}%
+
+the denominator becomes
+
+\[
+\epsilon(\bk_2)-\epsilon(\bk_3) = \frac{2}{m}\mathbf{K}\cdot\bq,
+\]
+
+for fixed \(\bq\). Thus, only the angle \(\theta\) between
+\(\mathbf{K}\) and \(\bq\) enters the integral. The conditions
+\(\abs{\bk_2}>k_\text{F}\) and \(\abs{\bk_3}<k_\text{F}\) become
+
+\[
+\begin{align}
+\left(\mathbf{K}+\bq\right)^2>k_\text{F}^2,\quad \left(\mathbf{K}-\bq\right)^2<k_\text{F}^2,
+\end{align}
+\]
+
+which gives the range of \(K_-(\theta)<\abs{\mathbf{K}}<K_+(\theta)\)
+
+\[
+K_{\pm}(\theta)=\pm q\abs{\cos\theta}+\sqrt{k_\text{F}^2-q^2\sin^2\theta},
+\]
+
+and we must have \(\theta<\pi/2\). In terms of these variables the
+integral becomes
+
+\[
+\begin{align}
+\int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}&=
+\pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
+&=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}.
+\end{align}
+\]
+
+The other integral in Equation~\ref{eq-fcont} is the same but in the
+interval \((\pi/2,\pi)\). Thus we have Finally
+
+\[
+\begin{align}
+f_{\uparrow\uparrow}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
+&=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
+\end{align}
+\]
+
+Here \(\phi\) is the angle between \(\bk\) and \(\bk'\)
+i.e.~\(\abs{\bk-\bk'}=2q=2k_\text{F}\sin\phi/2\). We won't go through
+the calculation of \(f_{\uparrow\downarrow}(\bk,\bk')\), but just record
+the final answer.
+
+Before doing that, let us first write the quadratic contribution to
+Equation~\ref{eq-fdef} in an alternative way that allows us to
+generalize to a fully rotationally invariant formulation (see the
+\hyperref[rotationally-invariant-formulation]{Appendix})
+
+\begin{equation}\phantomsection\label{eq-f-rewrite}{
+\begin{align}
+\frac{1}{2V \nu(E_F)}\sum_{\bk,\bk'} &\left(F(\phi)\left[n_\uparrow(\bk)+n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')+n_\downarrow(\bk')\right]\right.\\ &\left.+ G(\phi)\left[n_\uparrow(\bk)-n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')-n_\downarrow(\bk')\right]\right).
+\end{align}
+}\end{equation}
+
+Here we have defined
+
+\begin{equation}\phantomsection\label{eq-fgdef}{
+\begin{align}
+F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') + f_{\uparrow\downarrow}(\bk,\bk')\right]\\
+G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') - f_{\uparrow\downarrow}(\bk,\bk')\right].
+\end{align}
+}\end{equation}
+
+\(F(\phi)\) and \(G(\phi)\) have been made dimensionless by scaling by
+the density of states per unit volume at the Fermi surface
+\(\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2\).
+
+The explicit form of the functions \(F(\phi)\) and \(G(\phi)\) is (see
+Landau et al. (1980))
+
+\begin{equation}\phantomsection\label{eq-ffinal}{
+\begin{align}
+F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
+G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right].
+\end{align} 
+}\end{equation}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, leftrule=.75mm, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, left=2mm, toprule=.15mm, breakable, opacityback=0, colback=white]
+
+The message to take away from this calculation is not the detailed
+functional form of Equation~\ref{eq-ffinal}, but the fact that the
+interaction between quasiparticles in an interacting Fermi gas is
+defined in terms of a pair of functions \(F(\phi)\) and \(G(\phi)\)
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{Quasiparticle energy
+\(\varepsilon_s(\bk)\)}{Quasiparticle energy \textbackslash varepsilon\_s(\textbackslash bk)}}\label{quasiparticle-energy-varepsilon_sbk}
+
+So far we haven't had much to say about the quasiparticle energy
+\(\varepsilon_s(\bk)\) introduced in Equation~\ref{eq-fdef}. Evaluating
+the second order correction is going to be difficult, as it will involve
+two momentum integrations instead of one. What can we say on general
+grounds? We expect that
+
+\begin{equation}\phantomsection\label{eq-vfdef}{
+\varepsilon_s(\bk) - E_\text{F} = v_\text{F}(\abs{\bk}-k_\text{F}).
+}\end{equation}
+
+The Fermi velocity \(v_\text{F}\) defined by this expression may be
+altered by the interactions, allowing us to define an \textbf{effective
+mass}
+
+\begin{equation}\phantomsection\label{eq-mdef}{
+m_* = \frac{k_\text{F}}{v_\text{F}}.
+}\end{equation}
+
+Fortunately, we can get at this quantity using the results we already
+have, thanks to the following sneaky trick (due to Landau). If we
+increment the momentum of each quasiparticle by a small amount
+\(\delta\bk\), we can compute the new energy using our energy functional
+Equation~\ref{eq-fdef}, along with a new distribution function
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{../assets/FermiShift.png}
+
+}
+
+\caption{Shifting the Fermi sea to increase the momentum.}
+
+\end{figure}%
+
+\[
+\begin{align}
+N_s(\bk-\delta\bk) &=\theta(k_F-\abs{\bk-\delta\bk}) + n_{s}(\bk-\delta\bk)+\cdots\nonumber\\
+&=\theta(k_F-\abs{\bk}) + n_s(\bk) + \delta(k_F-\abs{\bk})\hat{\bk}\cdot\delta\bk - \delta\bk \nabla_\bk n_{s}(\bk)+\cdots.
+\end{align}
+\]
+
+Treating the last three terms as \(n_s(\bk)\), our excitation energy
+changes to first order in \(\delta\bk\) by an amount
+
+\[
+\begin{align}
+\Delta E &= \sum_{\bk,s} n_{s}(\bk)\delta\bk\cdot\nabla_\bk\varepsilon_s(\bk) \nonumber\\
+&+\frac{1}{V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)\left[\delta(k_F-\abs{\bk'})\hat{\bk}'\cdot\delta\bk - \nabla_{\bk'}n_{s'}(\bk')\cdot\delta\bk\right].
+\end{align}
+\]
+
+(In the first term I have integrated by parts.) On grounds of Galilean
+invariance, however, we also know that this is
+
+\begin{equation}\phantomsection\label{eq-gal}{
+\Delta E = \frac{\mathbf{P}}{m}\cdot\delta\bk,
+}\end{equation}
+
+where the total momentum \(\mathbf{P}\) can be written
+
+\[
+\mathbf{P} = \sum_{\bk,s} \bk n_{s}(\bk).
+\]
+
+If Equation~\ref{eq-gal} holds for all \(n_s(\bk)\) and \(\delta\bk\),
+we have (ignoring second order in \(n_s(\bk)\))
+
+\[
+\frac{\bk}{m} = \nabla_\bk\varepsilon_s(\bk) +  \sum_{s'}\int  f_{s^{}s'}(\bk,\bk')\delta(k_F-\abs{\bk'})\hat{\bk}' \frac{d\bk'}{(2\pi)^3}.
+\]
+
+Restricting ourselves to momenta close to the Fermi surface, and using
+our definitions Equation~\ref{eq-fgdef}, Equation~\ref{eq-vfdef} and
+Equation~\ref{eq-mdef} gives the relation
+
+\[
+\frac{\bk}{m} = \frac{\bk}{m_*} +\frac{1}{m} \int F(\phi) \bk' \frac{d\Omega_{\bk'}}{4\pi}.
+\]
+
+If we write \(\bk'=\cos\phi \bk + \sin\phi \bk_\perp\), with
+\(\bk_\perp\cdot\bk=0\), this gives Landau's famous result
+
+\[
+\frac{1}{m} = \frac{1}{m_*} +\frac{1}{m} \int F(\phi) \cos\phi \frac{\sin\phi d\phi}{2}.
+\]
+
+For the \(F(\phi)\) that we found in Equation~\ref{eq-ffinal} from
+second order perturbation theory, this gives the effective mass
+correction
+
+\[
+\frac{m_*}{m} = 1 + \frac{1}{30\pi^4}(7\log 2 - 1)\left(mU_0k_\text{F}\right)^2+\cdots.
+\]
+
+(Use the substitution \(u=\sin\phi/2\) to do the integral.) Again, the
+point is not the value that we've obtained, but the argument we used to
+do so. In systems with strong interactions it's possible for the
+effective mass to be very different from the bare mass: in the
+\href{https://en.wikipedia.org/wiki/Heavy_fermion_material}{heavy
+fermion materials} \(m_*/m\) can approach 1000! Despite being so far
+from the noninteracting limit, Landau's picture of fermionic
+quasiparticles still applies.
+
+\chapter{Eigenstates in Perturbation Theory: What is a
+Quasiparticle?}\label{eigenstates-in-perturbation-theory-what-is-a-quasiparticle}
+
+So far we've focused on the energies of the excited states of the gas.
+But what do these quasiparticle states \emph{look} like? In perturbation
+theory at least, we can see fairly explicitly. At first order we have
+
+\[
+\ket{\mathbf{N}^{(1)}} = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\ket{\mathbf{N}'}.
+\]
+
+Let's consider the Fermi sea ground state \(\ket{\text{FS}}\). What
+states can appear in the above sum in this case? The only possibility is
+that the interaction creates two particle-hole pairs out of the Fermi
+sea, with total momentum zero.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{../assets/2ph.png}
+
+}
+
+\caption{Two particle-hole pairs created out of the Fermi sea.}
+
+\end{figure}%
+
+\[
+\ket{0}=\ket{\text{FS}}+\text{two particle-hole pair states}+\cdots
+\]
+
+What about an excited state? Consider the state
+
+\[
+\adop_{\bk,s}\ket{\text{FS}},
+\]
+
+having momentum \(\bk\) and spin \(s\). When the interactions are
+switched on, this state will be modified to a state we'll denote
+\(\ket{\bk,s}\). At first order, two kinds of states can contribute to
+the modifed state:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  States with a pair of particle-hole pairs, as before, but with the
+  extra particle at \(\bk\). The coefficients of these states are
+  \emph{the same} as for the corresponding states in the correction for
+  \(\ket{0}\), as you should check.
+\item
+  States with a single particle-hole pair and with the extra particle
+  moved from \(\bk\)\hspace{0pt} to another momentum.
+\end{enumerate}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{../assets/phscatter.png}
+
+}
+
+\caption{Particle scatters, creating a particle-hole pair.}
+
+\end{figure}%
+
+Let's compare \(\ket{\bk,s}\) with \(\adop_{\bk,s}\ket{0}\), the state
+obtained by creating a particle in the \emph{exact} ground state of the
+problem. In first order perturbation theory, \(\ket{0}\) includes the
+first kind of state above (2 particle-hole pair states). The states only
+differ because of the contribution of the second kind. To first order,
+the single quasiparticle state is therefore
+
+\begin{equation}\phantomsection\label{eq-ph-peturb}{
+\begin{align}
+\ket{\bk,s} &= \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{0} \nonumber\\
+&\qquad + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{FS}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
+\end{align}
+}\end{equation}
+
+where \(\sqrt{z_k}\) is a normalization factor. As we go to successively
+higher orders of perturbation theory, the quasiparticle state is
+`dressed' with more particle-hole pairs. The quasiparticle retains the
+conserved quantum numbers (momentum and spin in this case) of the
+fermions of the noninteracting theory.
+
+Normalizing Equation~\ref{eq-ph-peturb} gives
+
+\begin{equation}\phantomsection\label{eq-z}{
+z_\bk = 1 - \left(\frac{U_0}{V}\right)^2\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\\abs{\bk_3}<k_\text{F},\abs{\bk_2},\abs{\bk_1}>k_\text{F}\\ s'}}\frac{1}{\left[\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)\right]^2}+\cdots.
+}\end{equation}
+
+This quantity can be interpreted in terms of the overlap of the single
+quasiparticle state \(\ket{\bk,s}\) with \(\adop_{s,\bk}\ket{0}\).
+
+\[
+z_\bk = \frac{\abs{\braket{\bk,s}{\adop_{\bk,s}}{0}}^2}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}
+\]
+
+A finite overlap -- evaluated for quasiparticles at the Fermi surface --
+is a requirement for the Fermi liquid picture to hold. If it were to
+vanish, any resemblance of the quasiparticle to a free fermion would
+disappear with it!
+
+Obviously evaluating the integrals in Equation~\ref{eq-z} is a challenge
+involving a double integral over momentum, but I have it on good
+authority (see Abrikosov, Gorkov, and Dzyaloshinski (2012), though they
+don't give the details) that the answer is
+
+\[
+z_{\abs{\bk}=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
+\]
+
+This is also the occupation number of the original fermions
+\(\braket{0}{\adop_{\bk,s}\aop_{\bk,s}}{0}\) (not the quasiparticles!)
+just below the Fermi surface in the ground state (see
+\href{../problem-sets/problem-set-3.qmd\#nmathbfk-in-the-ground-state}{Problem
+Set 3}. There is a corresponding result just above. Even with
+interactions, there is a finite step in the distribution function at the
+Fermi surface.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{../assets/FermiJump.png}
+
+}
+
+\caption{Discontinutity in the ground state occupation number.}
+
+\end{figure}%
+
+\chapter{Collisions}\label{collisions}
+
+The picture we have developed so far of eigenstates labelled by
+quasiparticle occupations is actually a bit of an oversimplification.
+When we apply the second order perturbation theory formula
+Equation~\ref{eq-2nd} we have to omit degenerate states. It isn't really
+enough to insist that the occupancies differ
+\(\mathbf{N}'\neq \mathbf N\), because many states with different
+occupancies have the same energy in the thermodynamic limit. From a
+time-dependent point of view, the interaction can cause transitions
+between these states, leading to the quasiparticle distribution changing
+over time. The rate of these transitions can be described by the Fermi
+golden rule.
+
+\[
+\Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \abs{\braket{\mathbf{N'}}{H_\text{int}}{\mathbf{N}}}^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))
+\]
+
+By considering the volume of phase space available for the scattering of
+a quasiparticle of energy \(\Delta\) above the Fermi surface, you should
+be able to argue that the \emph{total} rate, obtained by integrating
+over all possible final states, varies like \(\Delta^2\). This means
+that at low energy (or temperature) such scattering is ineffective and
+the Landau picture holds.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.6\linewidth,height=\textheight,keepaspectratio]{../assets/Collision.png}
+
+}
+
+\caption{Vanishing phase space volume at low energies.}
+
+\end{figure}%
+
+\chapter{Appendix}\label{appendix}
+
+\section{Rotationally invariant
+formulation}\label{rotationally-invariant-formulation}
+
+The definition Equation~\ref{eq-fdef} implied a certain quantization
+axis for spin. To write things in an invariant way, we should think of
+the occupation number \(\mathsf{N}(\bk)\) as a \(2\times 2\) matrix that
+can describe an arbitrary spin orientation, with elements
+
+\[
+\mathsf{N}(\bk)=\begin{pmatrix}
+N_{\uparrow\uparrow}(\bk) & N_{\uparrow\downarrow}(\bk) \\
+N_{\downarrow\uparrow}(\bk) & N_{\downarrow\downarrow}(\bk).
+\end{pmatrix}
+\]
+
+The \(f\)-function then has \emph{four} spin indices
+
+\[
+\frac{1}{2V}\sum_{\bk, s_1,s_2,\bk', s_3,s_4} f_{s_1s_2,s_3s_4}(\bk,\bk')n_{s_1s_2}(\bk)n_{s_3s_4}(\bk').
+\]
+
+When the occupation numbers matrix is diagonal, we identify
+\(n_{\uparrow\uparrow}(\bk) = n_\uparrow(\bk)\) and
+\(n_{\downarrow\downarrow}(\bk) = n_\downarrow(\bk)\).
+
+When rotated, \(\mathsf{N}\) transforms by conjugation by a matrix
+\(\mathsf{U}\in SU(2)\) \[
+\mathsf{N} \longrightarrow \mathsf{U}\mathsf{N} \mathsf{U}^\dagger.
+\]
+
+There are thus two rotationally invariant contributions to
+\(f_{s_1s_2,s_3s_4}(\bk,\bk')\), with index structure
+\(\delta_{s_1s_2}\delta_{s_3s_4}\) and
+\(\delta_{s_1s_4}\delta_{s_2s_3}\). Alternatively, we can use the
+identity involving Pauli matrices that we met in
+\href{more-second-quantization.qmd}{Lecture 6}
+
+\[
+\delta_{s_1s_4}\delta_{s_2s_3} = \frac{1}{2}\left[\boldsymbol{\sigma}_{s_1s_2}\cdot \boldsymbol{\sigma}_{s_3s_4} + \delta_{s_1s_2}\delta_{s_3s_4}\right].
+\]
+
+This shows that the two rotationally invariant contributions can be
+taken to have the index structure \(\delta_{s_1s_2}\delta_{s_3s_4}\) and
+\(\boldsymbol{\sigma}_{s_1s_2}\cdot \boldsymbol{\sigma}_{s_3s_4}\).
+Comparing with Equation~\ref{eq-f-rewrite} in the diagonal case gives
+
+\[
+\nu(E_\text{F})f_{s_1s_2,s_3s_4}(\bk,\bk') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}.
+\]
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-abrikosov2012methods}
+Abrikosov, Aleksei Alekseevich, Lev Petrovich Gorkov, and Igor
+Ekhielevich Dzyaloshinski. 2012. \emph{Methods of Quantum Field Theory
+in Statistical Physics}. Courier Corporation.
+
+\bibitem[\citeproctext]{ref-landau1980statistical}
+Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii
+Mikhailovich Lifshitz, and LP Pitaevskii. 1980. \emph{Statistical
+Physics: Theory of the Condensed State}. Vol. 9. Butterworth-Heinemann.
+
+\end{CSLReferences}
+
+
+\backmatter
+
+
+\end{document}

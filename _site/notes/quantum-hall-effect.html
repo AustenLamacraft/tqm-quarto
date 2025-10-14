@@ -402,6 +402,8 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 </div>
 <p>The Fractional Quantum Hall Effect is one of the most remarkable phenomena in all of condensed matter physics. In the presence of a strong magnetic field, charged particles confined to move in the plane can form a series of new states of matter with bizarre properties. Fortunately, our understanding of this menagerie is based almost entirely on many body wavefunctions of a rather simple form.</p>
 <p>The <a href="https://en.wikipedia.org/wiki/Quantum_Hall_effect">quantum Hall effect</a> refers to quantization of the Hall conductivity <span class="math inline">\(G_{xy}= \frac{I_x}{V_y}\)</span> into integer multiples of the <strong>conductance quantum</strong> <span class="math inline">\(e^2/h\)</span>. This phenomenon is obvserved in two dimensional electon gases at low temperatures in a strong magnetic field perpendicular to the plane. Some years after its discovery, the fractional quantum Hall effect was observed, with <span class="math inline">\(G_{xy} = \nu e^2/h\)</span>, with <span class="math inline">\(\nu\)</span> taking simple fractional values <span class="math inline">\(\nu=1/3, 2/5\)</span>, etc..</p>
@@ -433,11 +435,19 @@ z = x + i y \quad \bar z  = x - iy,
 <p><span class="math display">\[
 H = -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_{\bar z} +\frac{qB z}{4}\right) + \frac{\omega_c}{2}
 \]</span></p>
-<p>where <span class="math inline">\(\omega_c = \frac{qB}{m}\)</span> is the <strong>cyclotron frequency</strong>. States that satisfy</p>
+<p>where <span class="math inline">\(\omega_c = \frac{qB}{m}\)</span> is the <strong>cyclotron frequency</strong>. The Hamiltonian can be written in the form</p>
+<p><span class="math display">\[
+H = A^\dagger A + \frac{\omega_c}{2},
+\]</span></p>
+<p>where the operator <span class="math inline">\(A\)</span> is defined as</p>
+<p><span class="math display">\[
+A \equiv i \sqrt{\frac{2}{m}}\left(\partial_{\bar z} +\frac{qBz}{4}\right)
+\]</span></p>
+<p>Notice that <span class="math inline">\(z^\dagger = \bar z\)</span> while <span class="math inline">\((\partial_{\bar z})^\dagger = -\partial_z\)</span>. States that satisfy</p>
 <p><span class="math display">\[
 \left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
 \]</span></p>
-<p>therefore have energy <span class="math inline">\(\omega_c/2\)</span> and belong to the <strong>lowest Landau level</strong> (LLL).</p>
+<p>therefore have energy <span class="math inline">\(\omega_c/2\)</span>. Furthermore, these are the lowest energy states as <span class="math inline">\(\langle{\psi}\rvert A^\dagger A \lvert \psi \rangle\geq 0\)</span>, and so they belong to the <strong>lowest Landau level</strong> (LLL).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

@@ -153,6 +153,8 @@
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} -->
 </div>
 </section>
 <section id="quantum-hall-effect" class="slide level2 center">
@@ -194,10 +196,31 @@ H &amp;= -\frac{2}{m}\left(\partial_z -\frac{qB \bar z}{4}\right)\left(\partial_
 \end{aligned}
 </span></p>
 <ul>
-<li><p><span class="math inline">\omega_c = \frac{qB}{m}</span> is the <strong>cyclotron frequency</strong></p></li>
+<li><span class="math inline">\omega_c = \frac{qB}{m}</span> is the <strong>cyclotron frequency</strong></li>
+</ul>
+</section>
+<section id="lowest-landau-level" class="slide level2 center">
+<h2>Lowest Landau level</h2>
+<p><span class="math display">
+H = A^\dagger A + \frac{\omega_c}{2}
+</span></p>
+<ul>
+<li>The operator <span class="math inline">A</span> is defined as</li>
+</ul>
+<p><span class="math display">
+A \equiv i \sqrt{\frac{2}{m}}\left(\partial_{\bar z} +\frac{qBz}{4}\right)
+</span></p>
+<ul>
+<li>Notice that <span class="math inline">z^\dagger = \bar z</span> while <span class="math inline">(\partial_{\bar z})^\dagger = -\partial_z</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
 <li><p>States that satisfy <span class="math display">
 \left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
-</span> have energy <span class="math inline">\omega_c/2</span> and belong to the <strong>lowest Landau level</strong> (LLL)</p></li>
+</span> have energy <span class="math inline">\omega_c/2</span></p></li>
+<li><p>Since <span class="math inline">\langle{\psi}\rvert A^\dagger A \lvert \psi \rangle\geq 0</span> these belong to the <strong>lowest Landau level</strong> (LLL)</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
