@@ -689,11 +689,11 @@
     ]
   },
   {
-    "objectID": "slides/many-body-wavefunctions.html#symmetrize-antisymmetrize",
-    "href": "slides/many-body-wavefunctions.html#symmetrize-antisymmetrize",
+    "objectID": "slides/many-body-wavefunctions.html#permutations",
+    "href": "slides/many-body-wavefunctions.html#permutations",
     "title": "Many Body Wavefunctions",
-    "section": "Symmetrize / Antisymmetrize",
-    "text": "Symmetrize / Antisymmetrize\n\n\\mathcal{S}=\\frac{1}{N!}\\sum_{\\pi} P_\\pi, \\qquad \\mathcal{A}=\\frac{1}{N!}\\sum_{\\pi} \\mathrm{sgn}(\\pi)P_\\pi\n\n\nP_\\pi is permutation operator for permutation \\pi\nFor two particles there are two permutations: \\pi=(12) and \\pi=(21)\n\n\nP_{(21)}\\Psi(\\mathbf{r}_1,\\mathbf{r}_2) = \\Psi(\\mathbf{r}_2,\\mathbf{r}_1)",
+    "section": "Permutations",
+    "text": "Permutations\n\n\\Psi(\\mathbf{r}_1,\\mathbf{r}_2)=\\frac{1}{\\sqrt{2}}[\\Psi_\\text{dist.}(\\mathbf{r}_1,\\mathbf{r}_2) \\pm \\Psi_\\text{dist.}(\\mathbf{r}_2,\\mathbf{r}_1)]\n  % \\varphi_1(\\br_1)\\varphi_2(\\br_2)\\pm \\varphi_2(\\br_1)\\varphi_1(\\br_2)]\n\n\nFor more particles we have to include all possible permutations\nN! permutations of N objects\nA permutation \\pi may be represented by a reordering of 1,\\ldots N\ne.g. \\pi=(312) for N=3\nEquivalently a function \\pi of 1,\\ldots N: \\pi(1)=3, \\pi(2)=1, \\pi(3)=2",
     "crumbs": [
       "Slides",
       "Many Body Wavefunctions"
@@ -705,6 +705,17 @@
     "title": "Many Body Wavefunctions",
     "section": "Signature of Permutation",
     "text": "Signature of Permutation\n\n\\mathrm{sgn}(\\pi) is the signature of the permutation\n\\pm1 for \\pi involving an even (odd) number of exchanges",
+    "crumbs": [
+      "Slides",
+      "Many Body Wavefunctions"
+    ]
+  },
+  {
+    "objectID": "slides/many-body-wavefunctions.html#symmetrize-antisymmetrize",
+    "href": "slides/many-body-wavefunctions.html#symmetrize-antisymmetrize",
+    "title": "Many Body Wavefunctions",
+    "section": "Symmetrize / Antisymmetrize",
+    "text": "Symmetrize / Antisymmetrize\n\n\\mathcal{S}=\\frac{1}{N!}\\sum_{\\pi} P_\\pi, \\qquad \\mathcal{A}=\\frac{1}{N!}\\sum_{\\pi} \\mathrm{sgn}(\\pi)P_\\pi\n\n\nP_\\pi is permutation operator for permutation \\pi\nFor two particles there are two permutations: \\pi=(12) and \\pi=(21)\n\n\nP_{(21)}\\Psi(\\mathbf{r}_1,\\mathbf{r}_2) = \\Psi(\\mathbf{r}_2,\\mathbf{r}_1)",
     "crumbs": [
       "Slides",
       "Many Body Wavefunctions"
@@ -2054,17 +2065,6 @@
     "crumbs": [
       "Problem Sets",
       "Problem Set 2"
-    ]
-  },
-  {
-    "objectID": "slides/many-body-wavefunctions.html#permutations",
-    "href": "slides/many-body-wavefunctions.html#permutations",
-    "title": "Many Body Wavefunctions",
-    "section": "Permutations",
-    "text": "Permutations\n\n\\Psi(\\mathbf{r}_1,\\mathbf{r}_2)=\\frac{1}{\\sqrt{2}}[\\Psi_\\text{dist.}(\\mathbf{r}_1,\\mathbf{r}_2) \\pm \\Psi_\\text{dist.}(\\mathbf{r}_2,\\mathbf{r}_1)]\n  % \\varphi_1(\\br_1)\\varphi_2(\\br_2)\\pm \\varphi_2(\\br_1)\\varphi_1(\\br_2)]\n\n\nFor more particles we have to include all possible permutations\nN! permutations of N objects\nA permutation \\pi may be represented by a reordering of 1,\\ldots N\ne.g. \\pi=(312) for N=3\nEquivalently a function \\pi of 1,\\ldots N: \\pi(1)=3, \\pi(2)=1, \\pi(3)=2",
-    "crumbs": [
-      "Slides",
-      "Many Body Wavefunctions"
     ]
   }
 ]
