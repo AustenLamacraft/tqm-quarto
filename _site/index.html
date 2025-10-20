@@ -128,6 +128,13 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="./index.html" class="sidebar-logo-link">
       </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -373,6 +380,16 @@ Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/for
 Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
 
 ::: -->
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>PDFs of lecture notes are now available! See “Other Formats” in the right side bar on any page of the Notes. This is an experimental feature. Let me know if it is working!</p>
+</div>
+</div>
+</div>
 <p>These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2025. The materials for previous versions of the course can be found <a href="https://austen.uk/courses/">here</a>. <strong>Note that the material contained in the Appendices is non-examinable</strong>.</p>
 <p>The source of these notes is <a href="https://github.com/AustenLamacraft/tqm-quarto">this GitHub repo</a>. If you find a typo, other problem or have any other comment on the material, please <a href="https://github.com/AustenLamacraft/tqm-quarto/issues">raise an issue</a> there.</p>
 <p><a href="https://github.com/AustenLamacraft/tqm-quarto/discussions/">The discussions section</a> is a good place to ask each other questions. Try it!</p>
@@ -503,7 +520,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

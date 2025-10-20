@@ -13,6 +13,7 @@ website:
   title: "Theories of Quantum Matter"
   favicon: favicon-32x32.png
   page-navigation: true
+  reader-mode: true
   sidebar:
     # contents: auto
     collapse-level: -1

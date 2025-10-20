@@ -12,6 +12,12 @@ Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at 
 
 ::: -->
 
+::: {.callout-warning appearance="minimal"}
+
+PDFs of lecture notes are now available! See "Other Formats" in the right side bar on any page of the Notes. This is an experimental feature. Let me know if it is working!
+
+:::
+
 These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2025. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). __Note that the material contained in the Appendices is non-examinable__.
 
 The source of these notes is [this GitHub repo](https://github.com/AustenLamacraft/tqm-quarto). If you find a typo, other problem or have any other comment on the material, please [raise an issue](https://github.com/AustenLamacraft/tqm-quarto/issues) there.
