@@ -1,0 +1,9 @@
+format:
+  html:
+    theme: cosmo
+    toc: true
+  pdf:
+    documentclass: scrbook
+    papersize: a4
+    # output-file: theories-of-quantum-matter.pdf
+    from: markdown-latex_macros

@@ -3,7 +3,7 @@ title: Problem Set 1
 summary: Product States. Fermi gas. Density, density matrix, and pair distribution.
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 
 ## Fermions and Bosons at Finite Temperature

@@ -2,7 +2,7 @@
 title: B is for Bunching
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.
 
@@ -45,10 +45,10 @@ $$ {#eq-rho2-2nd-quant}
 
 Perhaps the simplest way to get this formula is to use the correspondence that we found in [Lecture 5](second-quantization.qmd)
 $$
-\begin{align}
+\begin{aligned}
 \ket{\Psi}&\longleftrightarrow \Psi(x_1,\ldots, x_N)\nonumber\\
 \psi(X)\ket{\Psi}&\longleftrightarrow \sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})\\
-\end{align}
+\end{aligned}
 $$
 
 Show that @eq-pdf implies @eq-rho2-2nd-quant.
@@ -60,10 +60,10 @@ Show that @eq-pdf implies @eq-rho2-2nd-quant.
 Let's evaluate @eq-rho2-2nd-quant for the ground state of the Fermi gas. We will find the result for a general product state, using the same strategy as we used in the last lecture for the single particle density matrix. That is, we substitute the expansion of the fields $\pop(x)$ and $\pdop(x)$ in terms of the orthonormal single particle states making up the product state
 
 $$
-\begin{align}
+\begin{aligned}
 	\pop(x)=\sum_{\beta}  \varphi^{}_{\beta}(x)\aop_{\beta},\nonumber\\
   \pdop(x)=\sum_{\beta}  \varphi^*_{\beta}(x)\adop_{\beta}.
-\end{align}
+\end{aligned}
 $$
 
 This gives
@@ -76,27 +76,27 @@ $$
 If we are considering the expectation in a state of the form $\ket{\mathbf{N}}$, we can see that an annihilation operator for a given single particle state must be accompanied by a creation operator for the same state. There are therefore two possibilities
 
 $$
-\begin{align}
+\begin{aligned}
 	&\alpha =\delta,\, \beta=\gamma, \text{ or }\nonumber\\
   &\alpha=\gamma,\, \beta=\delta,
-\end{align}
+\end{aligned}
 $$
 
 which give rise to two groups of terms
 
 $$
-\begin{align}
+\begin{aligned}
 \braket{\mathbf{N}}{\adop_{\alpha}\adop_{\gamma}\aop_{\gamma}\aop_{\alpha}}{\mathbf{N}}&=N_{\alpha}N_{\gamma}\nonumber\\
 	\braket{\mathbf{N}}{\adop_{\alpha}\adop_{\gamma}\aop_{\alpha}\aop_{\gamma}}{\mathbf{N}}&=\pm N_{\alpha}N_{\gamma}\qquad\text{if }\alpha\neq\gamma,
-\end{align}
+\end{aligned}
 $$
 
 the $\pm$ corresponding to bosons and fermions respectively. Thus we have
 
 $$
-\begin{align}
+\begin{aligned}
 \rho_2(x,y)=\sum_{\alpha, \beta}N_\alpha N_\beta\left[\abs{\varphi_{\alpha}(x)}^2\abs{\varphi_{\beta}(y)}^2 \pm \varphi^*_\alpha(x)\varphi^{}_\alpha(y)\varphi^*_\beta(y)\varphi^{}_\beta(x) \right].
-\end{align}
+\end{aligned}
 $$ {#eq-rho2-result}
 
 You might notice that this expression weights the case $\alpha=\beta=\gamma=\delta$ by a factor $2N_\alpha^2$ when it should have $N_\alpha(N_\alpha-1)$ in the case of bosons, and zero for fermions. On the other hand, such cases amount to a sum over a _single index_, where the general case is a sum over a double index. It seems reasonable, then, that this accounting error is not important in the thermodynamic limit. For instance, in the case that $\varphi_\alpha(x)$ are plane wave states we have the usual prescription
@@ -163,11 +163,11 @@ $$
 where the wavefunctions $\varphi_{L/R}(\br,t)$ are evolving freely, and the dots denote the other states in some complete orthogonal set that includes $\varphi_L(\br)$ and $\varphi_R(\br)$: we can ignore them because they are empty. A calculation of the expectation value of $\rho(\br)=\pdop(\br)\pop(\br)$ gives
 
 $$
-	\begin{align}
+	\begin{aligned}
 	\rho_1(\br,t)=\bar N_L|\varphi_L(\br,t)|^2+\bar N_R|\varphi_R(\br,t)|^2+\overbrace{2\sqrt{\bar N_L \bar
 	N_R}\mathrm{Re}\,e^{i\theta}\,\varphi^*_L(\br,t)\varphi_R(\br,t)}^{\equiv\rho_{\mathrm{int}(
 	\br,t)}}.
-	\end{align}
+	\end{aligned}
 $$ {#eq-dens-int}
 
 If the clouds begin to overlap, the last term in @eq-dens-int comes into play. Its origin is in quantum interference between the two coherent subsystems, showing that the _relative phase_ has a real physical effect.
@@ -208,12 +208,12 @@ $$
 The final term of @eq-dens-int is then
 
 $$
-\begin{align}
+\begin{aligned}
 	\rho_{\mathrm{int}}(\br,t)&=A(\br,t)\cos\left[\theta+\frac{\br
 	\cdot\mathbf{d}}{mR_0^2R_t^2}t\right]\nonumber\\
 	A(\br,t)&=\frac{2\sqrt{\bar N_L\bar N_R}}{\pi^{3/2}R_t^3}\exp\left(-\frac{\br^2+\mathbf{d}^2/4}{R_t^2}\right)
 \label{int_term}
-\end{align}
+\end{aligned}
 $$
 
 The interference term therefore consists of regularly spaced fringes, with a separation at long times of $2\pi t/md$.
@@ -240,12 +240,12 @@ looking at an _expectation value_ of $\rho(\br)$ but rather the measured value o
 An application of our result @eq-rho2-result for the density correlations gives
 
 $$
-\begin{align}
+\begin{aligned}
 	\rho_2(\br,\br')&=\rho_1(\br)\rho_1(\br')
 	+N_LN_{R}\varphi_L^*(\br)\varphi_R^*(\br')\varphi_L(\br')\varphi_R(\br)	\nonumber\\
 	&\qquad+N_{L}N_R\varphi_R^*(\br)\varphi_L^*(\br')
 	\varphi_R(\br')\varphi_L(\br).
-\end{align}
+\end{aligned}
 $$ {#eq-dens-corr}
 
 We see that the second line contains interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at $\br'$ if there is one at $\br$. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.
@@ -290,11 +290,11 @@ $$
 we can immediately write down the expectation value of the interaction energy in a product state
 
 $$
-\begin{align}
+\begin{aligned}
 	\label{2nd_quant_HartreeFock}
 	\langle \hat V\rangle &= \overbrace{\frac{1}{2}\int d\br\, d\br'\, \rho_1(\br) U(\br-\br')\rho_1(\br')}^{\equiv E_\text{Hartree}} \nonumber\\
 	&\qquad\overbrace{\pm \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')g(\br,\br')g(\br',\br)}^{\equiv E_\text{Fock}}.
-\end{align}
+\end{aligned}
 $$
 
 The two terms are known as the __Hartree__ and __Fock__ (or __exchange__) contributions, respectively. This expression lies at the core of the variational __Hartree--Fock method__ for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn't look like a potential at all, and reflects the non-classical correlations.
@@ -304,11 +304,11 @@ The two terms are known as the __Hartree__ and __Fock__ (or __exchange__) contri
 How does the Hartree--Fock picture change when we have spin? Let's consider a system of spin-1/2 fermions. We can describe such a system in terms of field operators $\pop_\sigma(\br)$, $\pdop_\sigma(\br')$ satisfying the canonical anticommutation relations
 
 $$
-\begin{gather}
+\begin{gathered}
 	\left\{\pop_{\sigma_1}(\br_1),\pdop_{\sigma_2}(\br_2)\right\}=\delta_{\sigma_1\sigma_2}\delta(\br_1-\br_2)\nonumber\\
 	\left\{\pop_{\sigma_1}(\br_1),\pop_{\sigma_2}(\br_2)\right\}=\left\{\pdop_{\sigma_1}(\br_1),\pdop_{\sigma_2}(\br_2)\right\}=0.
 	\label{2nd_quant_PositionRelationsAnti}
-\end{gather}
+\end{gathered}
 $$
 
 The density matrix is a matrix in spin space as well as real space
@@ -332,11 +332,11 @@ $$
 The Hartree--Fock energy is then
 
 $$
-\begin{align}
+\begin{aligned}
 	\langle \hat H_\text{int.}\rangle &=\frac{1}{2}\int d\br\, d\br'\, \rho(\br) U(\br-\br')\rho(\br')\nonumber\\
 	&- \frac{1}{2}\int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')g(\br',\br)\right].
   \label{2nd_quant_HFSpin}
-\end{align}
+\end{aligned}
 $$
 
 The Fock term can be rewritten in a more useful way using the identity
@@ -365,17 +365,17 @@ The matrix elements of the right hand side are then $2\delta_{s_1,s_2'}\delta_{s
 which gives
 
 $$
-\begin{align}
+\begin{aligned}
 E_{\text{Fock}} &=-\frac{1}{4} \int d\br\, d\br'\,  U(\br-\br')\tr\left[g(\br,\br')\right]\tr\left[g(\br',\br)\right]\nonumber\\&-\frac{1}{4}\int d\br\, d\br'\,  U(\br-\br')\tr\left[\boldsymbol{\sigma}g(\br,\br')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\br',\br)\right].
-\end{align}
+\end{aligned}
 $$
 
 Suppose we had a $\delta$-function interaction $U(\br)=V_0 \delta(\br)$. Then the Fock energy can be written
 
 $$
-\begin{align}
+\begin{aligned}
 E_{\text{Fock}} =-\frac{V_0}{4} \int d\br\, \rho(\br)^2-V_0\int d\br\, \mathbf{s}(\br)\cdot\mathbf{s}(\br)
-\end{align}
+\end{aligned}
 $$
 
 The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund's rule coupling in atoms: fermions in different spin states can sit at the same spatial location, while those in the same spin state must be in different locations. For repulsive interactions occupying the same spin state is energetically favourable.  
@@ -406,11 +406,11 @@ Let us try to put a bit more flesh on the idea that repulsive interactions favou
 Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is a price to pay in increased kinetic energy. To understand why this is so, consider the ground state kinetic energy of $N$ (spinless) fermions in three dimensions, obtained from
 
 $$
-\begin{align}
+\begin{aligned}
 N = \sum_{|\bk|<k_\text{F}} 1 &\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} = \frac{k_\text{F}^3 L^3}{6\pi^2} \nonumber\\
 E_\text{kin} = \sum_{|\bk|<k_\text{F}} \frac{\bk^2}{2m} &\longrightarrow L^3 \int_{|\bk|<k_\text{F}} \frac{d\bk}{(2\pi)^3} \frac{\bk^2}{2m}\\
  &= \frac{k_\text{F}^5 L^3}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},\nonumber
-\end{align}
+\end{aligned}
 $$
 
 (The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where $n = \frac{N}{L^3}$ is the mean density. Assuming a system of fermions with spin is now polarized in the $z$-direction, we have differing densities $n_{\uparrow,\downarrow}$ of spin up and spin down fermions. Their total energy is
@@ -465,10 +465,10 @@ So far we have discussed properties of the ground state only. We can, however, e
 If we work in a translationally invariant system, the appropriate single particle states are plane waves. We write the field operators in the plane wave basis as
 
 $$
-\begin{align}
+\begin{aligned}
 	\pop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(i\bk\cdot\br)\aop_{\bk},\nonumber\\
   \pdop(\br)\equiv\frac{1}{L^{3/2}}\sum_{\bk} \exp(-i\bk\cdot\br)\adop_{\bk},
-\end{align}
+\end{aligned}
 $$
 
 and represent the interaction potential in terms of its Fourier components

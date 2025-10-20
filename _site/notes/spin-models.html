@@ -390,7 +390,7 @@ window.Quarto = {
   <li><a href="#sec-anderson" id="toc-sec-anderson" class="nav-link" data-scroll-target="#sec-anderson"><span class="header-section-number">5.2</span> The Anderson Tower</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="spin-models.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -416,8 +416,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.</p>
 <p>Reading: <span class="citation" data-cites="auerbach2012interacting">Auerbach (<a href="#ref-auerbach2012interacting" role="doc-biblioref">2012</a>)</span>.</p>
@@ -520,9 +523,7 @@ H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
 </div>
 <p>Since <a href="#eq-hberg" class="quarto-xref">Equation&nbsp;1</a> is supposed to be a model for a magnet, we might try the state with all spins aligned</p>
 <p><span class="math display">\[
-\begin{equation}
 \lvert{\text{FM}}\rangle \equiv \prod_{j=1}^N \lvert{+}\rangle_j,
-\end{equation}
 \]</span></p>
 <p>where for brevity we write <span class="math inline">\(\lvert{+}\rangle_j = \lvert{s^z=+1/2}\rangle_j\)</span>. It’s not hard to check that this is an eigenstate with energy <span class="math inline">\(E_0\equiv JN/4\)</span>. Furthermore it’s an eigenstate of <span class="math inline">\(S^z\)</span> and <span class="math inline">\(\mathbf{S}^2\)</span>, where <span class="math inline">\(\mathbf{S}\)</span> is the total spin</p>
 <p><span class="math display">\[
@@ -627,11 +628,11 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 <p>This is a way of representing spins in terms of oscillator variables so that a problem of coupled spins becomes a problem of coupled oscillators, of the kind we studied in <a href="../notes/elastic-chain.html">Lecture 3</a>. Since the map is nonlinear, the problem is not harmonic, although a harmonic approximation is a useful first step that turns out to be justified when the spins are large.</p>
 <p>The representation is</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 s^+ &amp;=\sqrt{2s}\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}}a^{\vphantom{\dagger}}\\
 s^- &amp;= \sqrt{2s}a^\dagger\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}} \\
 s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right).
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>I’m going to leave it up to you to confirm that <span class="math inline">\([a^{\vphantom{\dagger}},a^\dagger]=1\)</span> reproduces the spin commutation relations, and <a href="../problem-sets/problem-set-1.html#from-schwinger-bosons-to-holstein--primakoff">this problem</a> from Problem Set 1 should demystify why this works to some extent. A rough understanding is as follows. <span class="math inline">\(s^{\pm}\)</span> and <span class="math inline">\(a^{\vphantom{\dagger}}\)</span>, <span class="math inline">\(a^\dagger\)</span> evidently have something in common in that they shift us up and down a ladder of states. That’s why the relation between <span class="math inline">\(s^z\)</span> and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to <span class="math inline">\(\lvert{s,s}\rangle\)</span>.</p>
 <p>The difference is that in the spin case the ladder is finite, while in the oscillator it is (semi-)infinite. Thus we can’t just have <span class="math inline">\(s^+\propto a^{\vphantom{\dagger}}\)</span>. We must have something that stops us lowering beyond <span class="math inline">\(s^z=-s\)</span>, corresponding to <span class="math inline">\(2s\)</span> oscillator quanta. That’s the function of the factor in the square root in <span class="math inline">\(s^-\)</span>.</p>
@@ -640,27 +641,25 @@ s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right).
 <h3 data-number="3.2" class="anchored" data-anchor-id="harmonic-spin-waves"><span class="header-section-number">3.2</span> Harmonic Spin Waves</h3>
 <p>A large <span class="math inline">\(s\)</span> approximation already presents itself</p>
 <p><span id="eq-hp-approx"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 s^+ &amp;\sim \sqrt{2s}a^{\vphantom{\dagger}}\nonumber\\
 s^- &amp;\sim  \sqrt{2s}a^\dagger\nonumber\\
 s_z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right).
-\end{align}
+\end{aligned}
 \tag{6}\]</span></span></p>
 <p>We are neglecting terms of order <span class="math inline">\(s^{-1/2}\)</span>. The point about this approximation is that it is just what is needed to turn our Heisenberg Hamiltonian into a quadratic oscillator Hamiltonian. We get <span class="math display">\[
 H = J\sum_j \left[(s-a^\dagger_ja^{\vphantom{\dagger}}_j)(s-a^\dagger_ja^{\vphantom{\dagger}}_j) + sa^\dagger_ja^{\vphantom{\dagger}}_{j+1}+s a^\dagger_{j+1}a^{\vphantom{\dagger}}_j\right].
 \]</span> This isn’t quadratic, but note that the quartic terms have a lower power of <span class="math inline">\(s\)</span>, so in the same approximation we should drop them to give <span id="eq-h2-aop"><span class="math display">\[
-\begin{equation}
 H \sim NJs^2 + sJ\sum_j \left[a^\dagger_ja^{\vphantom{\dagger}}_{j+1}+a^\dagger_{j+1}a^{\vphantom{\dagger}}_j - 2a^\dagger_ja^{\vphantom{\dagger}}_j\right].
-\end{equation}
 \tag{7}\]</span></span> We can already see that the state with no quanta (<span class="math inline">\(a^{\vphantom{\dagger}}_j\lvert{0}\rangle=0\)</span>) is an eigenstate. In fact this is just the spin-<span class="math inline">\(s\)</span> generalization of the state <span class="math inline">\(\lvert{\text{FM}}\rangle\)</span> <span class="math display">\[
 \lvert{\text{FM}}\rangle_s \equiv \prod_{j=1}^N \lvert{s,s}\rangle_j,
 \]</span> and is the ground state for <span class="math inline">\(J&lt;0\)</span>. We could continue to analyze <a href="#eq-h2-aop" class="quarto-xref">Equation&nbsp;7</a> in terms of the operators <span class="math inline">\(a^\dagger_j\)</span> and <span class="math inline">\(a^{\vphantom{\dagger}}_j\)</span> see <a href="../problem-sets/problem-set-1.html#spin-waves-from-bogoliubov-transformation">this problem</a> from Problem Sheet 1, but instead we’re going to write <a href="#eq-hp-approx" class="quarto-xref">Equation&nbsp;6</a> as</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 s^x &amp;\sim \sqrt{s}x \nonumber\\
 s^y &amp;\sim  \sqrt{s}p\nonumber\\
 s_z &amp;= \left(s - \frac{1}{2}[x^2 + p^2 - 1] \right),
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(x = \frac{1}{\sqrt{2}}(a^{\vphantom{\dagger}}+a^\dagger)\)</span> and <span class="math inline">\(p = \frac{i}{\sqrt{2}}(a^\dagger-a^{\vphantom{\dagger}})\)</span> are canonical position and momentum coordinates.</p>
 <p>Doing this for each spin in our chain gives the Hamiltonian</p>
@@ -669,11 +668,11 @@ H\sim NJ s^2 + sNJ+ \overbrace{sJ \sum_{j=1}^N \left[x_j x_{j+1} + p_j p_{j+1}-x
 \tag{8}\]</span></span></p>
 <p>where we are dropping terms that are lower order in <span class="math inline">\(s\)</span>. <a href="#eq-harmonic" class="quarto-xref">Equation&nbsp;8</a> has the form of an harmonic chain, albeit one with a rather strange looking mass term. We can diagonalize it by using the Fourier expansion of the position and momentum as before</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 x_j(t) &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j},\nonumber\\
 p_j(t) &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 \label{spin_Fourier}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>In terms of these modes <span class="math inline">\(H^{(2)}\)</span> takes the form</p>
 <p><span id="eq-h2-fm"><span class="math display">\[
@@ -746,11 +745,11 @@ s^z_j = s - a^\dagger_ja^{\vphantom{\dagger}}_j.
 <p>This commutes with the harmonic Hamiltonian <a href="#eq-h2-fm" class="quarto-xref">Equation&nbsp;9</a>, and is zero in the ground state (c.f. <a href="#eq-h2-gs" class="quarto-xref">Equation&nbsp;10</a>). In fact, this is an exact statement not restricted to the harmonic approximation: the total number of Holstein–Primakoff bosons is conserved. The same is not true for the antiferromagnetic case <a href="#eq-h2-fm" class="quarto-xref">Equation&nbsp;9</a>. If we had written this Hamiltonian in terms of the operators <span class="math inline">\(a^\dagger_j\)</span>, <span class="math inline">\(a^{\vphantom{\dagger}}_j\)</span>, we would have found terms involving <span class="math inline">\(a^\dagger_ja^\dagger_{j+1}\)</span> and <span class="math inline">\(a^{\vphantom{\dagger}}_ja^{\vphantom{\dagger}}_{j+1}\)</span> that create pairs of bosons (see <a href="../problem-sets/problem-set-1.html#spin-waves-from-bogoliubov-transformation">this problem</a>).</p>
 <p>Next we use the oscillator coordinates just as in <a href="../notes/elastic-chain.html">Lecture 3</a>. Since we want to express <a href="#eq-h2-afm" class="quarto-xref">Equation&nbsp;11</a> in terms of ladder operators, we have to adapt our definition accordingly. For <span class="math inline">\(\eta\neq 0, \pi\)</span> the operators</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 a^{\vphantom{\dagger}}_\eta &amp;= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_n + \frac{i}{|\cot(\eta /2)|}\pi_{-n}\right)\nonumber\\
 a^\dagger_\eta &amp;= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\cot(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
 \label{spin_adef}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>satisfy</p>
 <p><span class="math display">\[
@@ -759,11 +758,11 @@ a^\dagger_\eta &amp;= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\
 <p>This puts the Hamiltonian <a href="#eq-h2-afm" class="quarto-xref">Equation&nbsp;11</a> in the desired form, so we know that the ground state satisfies <span class="math inline">\(a^{\vphantom{\dagger}}_\eta\lvert{\text{GS}}\rangle=0\)</span></p>
 <p>To evaluate <a href="#eq-spin-deplete" class="quarto-xref">Equation&nbsp;14</a>, we write it in terms of <span class="math inline">\(a^\dagger_\eta\)</span>, <span class="math inline">\(a_\eta\)</span> to give</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \Delta s &amp;= - \langle{0}\rvert\frac{1}{N}\sum_{j=1}^N a^\dagger_j a^{\vphantom{\dagger}}_j\lvert{0}\rangle\nonumber\\
 &amp;= \frac{1}{2}-\frac{1}{4N}\sum_n \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].\nonumber\\
 &amp;= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>This represents an <span class="math inline">\(O(s^0)\)</span> correction to <span class="math inline">\(\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)\)</span>. However, the integral diverges logarithmically at <span class="math inline">\(\eta=0\)</span> and <span class="math inline">\(\eta=\pi\)</span>.</p>
 <p>This indicates that our approach breaks down in the <span class="math inline">\(N\to\infty\)</span> limit: at finite <span class="math inline">\(N\)</span> the sums are all finite if <span class="math inline">\(\eta=0, \pi\)</span> are excluded.</p>
@@ -858,10 +857,10 @@ c_{j,k}\sim \exp(i\eta_1 j + i\eta_2 k)
 \]</span></p>
 <p>to work. Acting on <a href="#eq-2-mag" class="quarto-xref">Equation&nbsp;15</a> with the Hamiltonian gives the eigenvalue equation for the energy <span class="math inline">\(E = E_0 +\epsilon\)</span></p>
 <p><span id="eq-2-part"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 2c_{j,k} - \frac{1}{2}\left(c_{j+1,k}+c_{j-1,k}+c_{j,k+1}+c_{j,k-1}\right) &amp;= \epsilon c_{j,k},\quad j&gt;k+1 \nonumber\\
 c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &amp;= \epsilon c_{j,j-1}
-\end{align}
+\end{aligned}
 \tag{16}\]</span></span></p>
 <p>We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when <span class="math inline">\(j=k+1\)</span> occurs because</p>
 <ol type="1">
@@ -892,10 +891,10 @@ c_{j,k} = c_1  \exp(i\eta_1 j + i\eta_2 k) + c_2  \exp(i\eta_1 k + i\eta_2 j),\q
 <p>where we have defined the scattering phase shift, just as in the Lieb–Liniger model. The physical picture is therefore that a pair of magnons scatter elastically off each other, their wavefunction acquiring a phase shift as they do.</p>
 <p>Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires <em>complex</em> <span class="math inline">\(\eta_{1,2}\)</span></p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \eta_1 = u + i v,\quad
 \eta_2 = u - i v,\quad v&gt;0.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>We also require that <span class="math inline">\(c_2=0\)</span> in <a href="#eq-2-wave" class="quarto-xref">Equation&nbsp;17</a>, otherwise the eigenstate doesn’t decay. From <a href="#eq-c-ratio" class="quarto-xref">Equation&nbsp;18</a> we see that</p>
 <p><span class="math display">\[
@@ -922,30 +921,30 @@ e^{-v} = \cos u.
 <section id="sec-anderson" class="level3" data-number="5.2">
 <h3 data-number="5.2" class="anchored" data-anchor-id="sec-anderson"><span class="header-section-number">5.2</span> The Anderson Tower</h3>
 <p>We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite graph</a>. This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites. We call these two sets sublattice <span class="math inline">\(A\)</span> and sublattice <span class="math inline">\(B\)</span>.</p>
-<p>Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way (this discussion follows {% cite Lhuillier:2006aa %}). Introduce the Fourier components of the spin</p>
+<p>Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way (this discussion follows <span class="citation" data-cites="lhuillier2006frustrated">Lhuillier (<a href="#ref-lhuillier2006frustrated" role="doc-biblioref">2006</a>)</span>). Introduce the Fourier components of the spin</p>
 <p><span class="math display">\[
-\mathbf{s}_\mathbf{j} =  \sum_{\boldsymbol{\eta}} \tilde{\mathbf{s}}_\boldsymbol{\eta} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.
+\mathbf{s}_\mathbf{j} =  \sum_{\boldsymbol{\eta}} \tilde{\mathbf{s}}_{\boldsymbol{\eta}} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.
 \]</span></p>
 <p>Here <span class="math inline">\(\mathbf{j}\)</span> denotes a <span class="math inline">\(d\)</span>-dimensional vector of integers <span class="math inline">\(\mathbf{j}=(j_1,\ldots j_d)\)</span>, <span class="math inline">\(j=1,\ldots N\)</span> giving the position of the spin in an <span class="math inline">\(\overbrace{N\times N \times \cdots N}^{d\text{ times}}\)</span> cubic lattice, and likewise</p>
 <p><span class="math display">\[
 \boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -N/2+1,\ldots N/2
 \]</span></p>
-<p>gives all the wavevectors in the Brillouin zone. It’s easier to assume <span class="math inline">\(N\)</span> is even here, to accommodate antiferromagnetic order. In terms of <span class="math inline">\(\tilde{\mathbf{s}}_\boldsymbol{\eta}\)</span>, the <span class="math inline">\(d\)</span>-dimensional version of the Heisenberg Hamiltonian <a href="#eq-hberg" class="quarto-xref">Equation&nbsp;1</a> on the square / cubic / hypercubic lattice can be written</p>
+<p>gives all the wavevectors in the Brillouin zone. It’s easier to assume <span class="math inline">\(N\)</span> is even here, to accommodate antiferromagnetic order. In terms of <span class="math inline">\(\tilde{\mathbf{s}}_{\boldsymbol{\eta}}\)</span>, the <span class="math inline">\(d\)</span>-dimensional version of the Heisenberg Hamiltonian <a href="#eq-hberg" class="quarto-xref">Equation&nbsp;1</a> on the square / cubic / hypercubic lattice can be written</p>
 <p><span class="math display">\[
-H = JN^d\sum_{\boldsymbol{\eta}\in \text{BZ}}\gamma_{\boldsymbol{\eta}}\tilde{\mathbf{s}}_\boldsymbol{\eta}\cdot \tilde{\mathbf{s}}_{\boldsymbol{-\eta}},
+H = JN^d\sum_{\boldsymbol{\eta}\in \text{BZ}}\gamma_{\boldsymbol{\eta}}\tilde{\mathbf{s}}_{\boldsymbol{\eta}}\cdot \tilde{\mathbf{s}}_{\boldsymbol{-\eta}},
 \label{spin_HbergFT}
 \]</span></p>
 <p>where <span class="math inline">\(\gamma_{\boldsymbol{\eta}}=\frac{1}{2}\sum_{j=1}^d\cos(\eta_j)\)</span>. Now we are going to do something drastic and throw away all wavevectors apart from <span class="math inline">\(\boldsymbol{\eta}=\boldsymbol{0}\)</span> and <span class="math inline">\(\boldsymbol{\eta}  = (\pi,\ldots,\pi)\)</span>. The motivation is that</p>
 <p><span class="math display">\[
-\tilde{\mathbf{s}}_\boldsymbol{0} = \mathcal{N}^{-1}\left(\mathbf{S}_A + \mathbf{S}_B\right), \qquad\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)} = \mathcal{N}^{-1}\left(\mathbf{S}_A - \mathbf{S}_B\right),
+\tilde{\mathbf{s}}_{\boldsymbol{0}} = \mathcal{N}^{-1}\left(\mathbf{S}_A + \mathbf{S}_B\right), \qquad\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)} = \mathcal{N}^{-1}\left(\mathbf{S}_A - \mathbf{S}_B\right),
 \]</span></p>
 <p>where <span class="math inline">\(\mathbf{S}_A\)</span> and <span class="math inline">\(\mathbf{S}_B\)</span> are the total spins of the <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> sublattices, and <span class="math inline">\(\mathcal{N}= N^d\)</span> is the total number of sites. Since antiferromagnetism involves anti-alignment of spins on the different sublattices, the second component should be particularly important. Our simplified Hamiltonian is then</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 H_{AB} &amp;= \frac{J}{\mathcal{N}}\left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \left(\mathbf{S}_A - \mathbf{S}_B\right)^2\right]\\
 &amp; = \frac{4J}{\mathcal{N}}\mathbf{S}_A\cdot \mathbf{S}_B.
 \label{spin_HAB}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>(Note that <span class="math inline">\(\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)}=\tilde{\mathbf{s}}_{-(\pi,\ldots,\pi)}\)</span>) Relative to the original model, this has the unphysical feature that every sublattice <span class="math inline">\(A\)</span> spin is interacting with every sublattice <span class="math inline">\(B\)</span> spin. The factor of <span class="math inline">\(N^{-d}\)</span> does guarantee that we’ll have an extensive energy, however.</p>
 <p>What is the ground state of <span class="math inline">\(H_{AB}\)</span>, assuming <span class="math inline">\(J&gt;0\)</span>? This is easily answered by writing the Hamiltonian as</p>
@@ -982,10 +981,10 @@ E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.
 \]</span></p>
 <p>Thus the eigenstates and eigenergies of our model spin Hamiltonian can be identified with those of the rotor up to <span class="math inline">\(l=\mathcal{N}/2\)</span>. What plays the role of the direction of the rotor <span class="math inline">\(\mathbf{r}= R\mathbf{n}\)</span>, where <span class="math inline">\(\mathbf{n}\)</span> is a unit vector? Here are some things we know about <span class="math inline">\(\mathbf{n}\)</span>.</p>
 <p><span id="eq-n-idents"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \mathbf{L}\cdot \mathbf{n} = 0,\quad \mathbf{n}^2 = 1\\
 [L_j,n_k] = i\epsilon_{jkl}n_l,\quad [n_j,n_k]=0.
-\end{align}
+\end{aligned}
 \tag{20}\]</span></span></p>
 <p>We get the same relations at large <span class="math inline">\(N\)</span> if we make the identifications</p>
 <p><span class="math display">\[
@@ -1015,6 +1014,9 @@ E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-auerbach2012interacting" class="csl-entry" role="listitem">
 Auerbach, Assa. 2012. <em>Interacting Electrons and Quantum Magnetism</em>. Springer Science &amp; Business Media.
+</div>
+<div id="ref-lhuillier2006frustrated" class="csl-entry" role="listitem">
+Lhuillier, Claire. 2006. <span>“Frustrated Quantum Magnets in 2d: From n<span>é</span>el Phases to Spin Liquids.”</span>
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1090,7 +1092,7 @@ Auerbach, Assa. 2012. <em>Interacting Electrons and Quantum Magnetism</em>. Spri
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

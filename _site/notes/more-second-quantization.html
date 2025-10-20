@@ -381,7 +381,7 @@ window.Quarto = {
   <li><a href="#excited-state-energies" id="toc-excited-state-energies" class="nav-link" data-scroll-target="#excited-state-energies"><span class="header-section-number">2.4</span> Excited State Energies</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="more-second-quantization.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -407,8 +407,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>Bose or Fermi statistics gives rise to correlations in the positions of particles in a many body system, even in product states. These correlations affect the energy of many particle states, and provide the basis of the simplest approximate theories.</p>
 <p>Reading: <span class="citation" data-cites="nazarov2013advanced">Nazarov and Danon (<a href="#ref-nazarov2013advanced" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="baym2018lectures">Baym (<a href="#ref-baym2018lectures" role="doc-biblioref">2018</a>)</span></p>
@@ -445,10 +448,10 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p>Perhaps the simplest way to get this formula is to use the correspondence that we found in <a href="../notes/second-quantization.html">Lecture 5</a> <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \lvert{\Psi}\rangle&amp;\longleftrightarrow \Psi(x_1,\ldots, x_N)\nonumber\\
 \psi(X)\lvert{\Psi}\rangle&amp;\longleftrightarrow \sqrt{N}\Psi(X,x_1,\ldots, x_{N-1})\\
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Show that <a href="#eq-pdf" class="quarto-xref">Equation&nbsp;1</a> implies <a href="#eq-rho2-2nd-quant" class="quarto-xref">Equation&nbsp;4</a>.</p>
 </div>
@@ -456,10 +459,10 @@ window.Quarto = {
 <p><a href="#eq-rho2-2nd-quant" class="quarto-xref">Equation&nbsp;4</a> differs from <span class="math inline">\(\langle{\Psi}\rvert\rho(x)\rho(y)\lvert{\Psi}\rangle\)</span> by the ordering of operators. Using the canonical commutation relations for the fields gives the relation <a href="#eq-rho-rho-norm" class="quarto-xref">Equation&nbsp;2</a> for both bosons and fermions.</p>
 <p>Let’s evaluate <a href="#eq-rho2-2nd-quant" class="quarto-xref">Equation&nbsp;4</a> for the ground state of the Fermi gas. We will find the result for a general product state, using the same strategy as we used in the last lecture for the single particle density matrix. That is, we substitute the expansion of the fields <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\)</span> and <span class="math inline">\(\psi^\dagger(x)\)</span> in terms of the orthonormal single particle states making up the product state</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \psi^{\vphantom{\dagger}}(x)=\sum_{\beta}  \varphi^{}_{\beta}(x)a^{\vphantom{\dagger}}_{\beta},\nonumber\\
   \psi^\dagger(x)=\sum_{\beta}  \varphi^*_{\beta}(x)a^\dagger_{\beta}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>This gives</p>
 <p><span class="math display">\[
@@ -468,23 +471,23 @@ window.Quarto = {
 \]</span></p>
 <p>If we are considering the expectation in a state of the form <span class="math inline">\(\lvert{\mathbf{N}}\rangle\)</span>, we can see that an annihilation operator for a given single particle state must be accompanied by a creation operator for the same state. There are therefore two possibilities</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     &amp;\alpha =\delta,\, \beta=\gamma, \text{ or }\nonumber\\
   &amp;\alpha=\gamma,\, \beta=\delta,
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>which give rise to two groups of terms</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \langle{\mathbf{N}}\rvert a^\dagger_{\alpha}a^\dagger_{\gamma}a^{\vphantom{\dagger}}_{\gamma}a^{\vphantom{\dagger}}_{\alpha} \lvert \mathbf{N} \rangle&amp;=N_{\alpha}N_{\gamma}\nonumber\\
     \langle{\mathbf{N}}\rvert a^\dagger_{\alpha}a^\dagger_{\gamma}a^{\vphantom{\dagger}}_{\alpha}a^{\vphantom{\dagger}}_{\gamma} \lvert \mathbf{N} \rangle&amp;=\pm N_{\alpha}N_{\gamma}\qquad\text{if }\alpha\neq\gamma,
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>the <span class="math inline">\(\pm\)</span> corresponding to bosons and fermions respectively. Thus we have</p>
 <p><span id="eq-rho2-result"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \rho_2(x,y)=\sum_{\alpha, \beta}N_\alpha N_\beta\left[\lvert{\varphi_{\alpha}(x)}\rvert^2\lvert{\varphi_{\beta}(y)}\rvert^2 \pm \varphi^*_\alpha(x)\varphi^{}_\alpha(y)\varphi^*_\beta(y)\varphi^{}_\beta(x) \right].
-\end{align}
+\end{aligned}
 \tag{5}\]</span></span></p>
 <p>You might notice that this expression weights the case <span class="math inline">\(\alpha=\beta=\gamma=\delta\)</span> by a factor <span class="math inline">\(2N_\alpha^2\)</span> when it should have <span class="math inline">\(N_\alpha(N_\alpha-1)\)</span> in the case of bosons, and zero for fermions. On the other hand, such cases amount to a sum over a <em>single index</em>, where the general case is a sum over a double index. It seems reasonable, then, that this accounting error is not important in the thermodynamic limit. For instance, in the case that <span class="math inline">\(\varphi_\alpha(x)\)</span> are plane wave states we have the usual prescription</p>
 <p><span class="math display">\[
@@ -534,11 +537,11 @@ i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}
 \]</span></p>
 <p>where the wavefunctions <span class="math inline">\(\varphi_{L/R}(\mathbf{r},t)\)</span> are evolving freely, and the dots denote the other states in some complete orthogonal set that includes <span class="math inline">\(\varphi_L(\mathbf{r})\)</span> and <span class="math inline">\(\varphi_R(\mathbf{r})\)</span>: we can ignore them because they are empty. A calculation of the expectation value of <span class="math inline">\(\rho(\mathbf{r})=\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\)</span> gives</p>
 <p><span id="eq-dens-int"><span class="math display">\[
-    \begin{align}
+    \begin{aligned}
     \rho_1(\mathbf{r},t)=\bar N_L|\varphi_L(\mathbf{r},t)|^2+\bar N_R|\varphi_R(\mathbf{r},t)|^2+\overbrace{2\sqrt{\bar N_L \bar
     N_R}\mathrm{Re}\,e^{i\theta}\,\varphi^*_L(\mathbf{r},t)\varphi_R(\mathbf{r},t)}^{\equiv\rho_{\mathrm{int}(
     \mathbf{r},t)}}.
-    \end{align}
+    \end{aligned}
 \tag{7}\]</span></span></p>
 <p>If the clouds begin to overlap, the last term in <a href="#eq-dens-int" class="quarto-xref">Equation&nbsp;7</a> comes into play. Its origin is in quantum interference between the two coherent subsystems, showing that the <em>relative phase</em> has a real physical effect.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -574,12 +577,12 @@ R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
 \]</span></p>
 <p>The final term of <a href="#eq-dens-int" class="quarto-xref">Equation&nbsp;7</a> is then</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \rho_{\mathrm{int}}(\mathbf{r},t)&amp;=A(\mathbf{r},t)\cos\left[\theta+\frac{\mathbf{r}
     \cdot\mathbf{d}}{mR_0^2R_t^2}t\right]\nonumber\\
     A(\mathbf{r},t)&amp;=\frac{2\sqrt{\bar N_L\bar N_R}}{\pi^{3/2}R_t^3}\exp\left(-\frac{\mathbf{r}^2+\mathbf{d}^2/4}{R_t^2}\right)
 \label{int_term}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The interference term therefore consists of regularly spaced fringes, with a separation at long times of <span class="math inline">\(2\pi t/md\)</span>.</p>
 <p>Now we imagine doing the same thing with two condensates of fixed particle number, which bear no phase relation to one another. The system is described by the product state (often called a <strong>Fock state</strong> in this context)</p>
@@ -595,12 +598,12 @@ R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
 <p>This is not the end of the story, however. When we look at an absorption image of the gas, we are not looking at an <em>expectation value</em> of <span class="math inline">\(\rho(\mathbf{r})\)</span> but rather the measured value of some observable(s) <span class="math inline">\(\rho(\mathbf{r})\)</span>. The expectation value just tells us the result we would expect to get if we repeated the same experiment many times and averaged the result. We get more information by thinking about the correlation function of the density at two different points.</p>
 <p>An application of our result <a href="#eq-rho2-result" class="quarto-xref">Equation&nbsp;5</a> for the density correlations gives</p>
 <p><span id="eq-dens-corr"><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \rho_2(\mathbf{r},\mathbf{r}')&amp;=\rho_1(\mathbf{r})\rho_1(\mathbf{r}')
     +N_LN_{R}\varphi_L^*(\mathbf{r})\varphi_R^*(\mathbf{r}')\varphi_L(\mathbf{r}')\varphi_R(\mathbf{r}) \nonumber\\
     &amp;\qquad+N_{L}N_R\varphi_R^*(\mathbf{r})\varphi_L^*(\mathbf{r}')
     \varphi_R(\mathbf{r}')\varphi_L(\mathbf{r}).
-\end{align}
+\end{aligned}
 \tag{9}\]</span></span></p>
 <p>We see that the second line contains interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at <span class="math inline">\(\mathbf{r}'\)</span> if there is one at <span class="math inline">\(\mathbf{r}\)</span>. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -645,11 +648,11 @@ R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
 \]</span></p>
 <p>we can immediately write down the expectation value of the interaction energy in a product state</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \label{2nd_quant_HartreeFock}
     \langle \hat V\rangle &amp;= \overbrace{\frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\, \rho_1(\mathbf{r}) U(\mathbf{r}-\mathbf{r}')\rho_1(\mathbf{r}')}^{\equiv E_\text{Hartree}} \nonumber\\
     &amp;\qquad\overbrace{\pm \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})}^{\equiv E_\text{Fock}}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The two terms are known as the <strong>Hartree</strong> and <strong>Fock</strong> (or <strong>exchange</strong>) contributions, respectively. This expression lies at the core of the variational <strong>Hartree–Fock method</strong> for many body systems, which approximates the ground state by a product state. The Hartree term looks completely reasonable, while the Fock potential doesn’t look like a potential at all, and reflects the non-classical correlations.</p>
 </section>
@@ -657,11 +660,11 @@ R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
 <h3 data-number="2.2" class="anchored" data-anchor-id="hartreefock-for-the-electron-gas"><span class="header-section-number">2.2</span> Hartree–Fock for the Electron Gas</h3>
 <p>How does the Hartree–Fock picture change when we have spin? Let’s consider a system of spin-1/2 fermions. We can describe such a system in terms of field operators <span class="math inline">\(\psi^{\vphantom{\dagger}}_\sigma(\mathbf{r})\)</span>, <span class="math inline">\(\psi^\dagger_\sigma(\mathbf{r}')\)</span> satisfying the canonical anticommutation relations</p>
 <p><span class="math display">\[
-\begin{gather}
+\begin{gathered}
     \left\{\psi^{\vphantom{\dagger}}_{\sigma_1}(\mathbf{r}_1),\psi^\dagger_{\sigma_2}(\mathbf{r}_2)\right\}=\delta_{\sigma_1\sigma_2}\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
     \left\{\psi^{\vphantom{\dagger}}_{\sigma_1}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}_{\sigma_2}(\mathbf{r}_2)\right\}=\left\{\psi^\dagger_{\sigma_1}(\mathbf{r}_1),\psi^\dagger_{\sigma_2}(\mathbf{r}_2)\right\}=0.
     \label{2nd_quant_PositionRelationsAnti}
-\end{gather}
+\end{gathered}
 \]</span></p>
 <p>The density matrix is a matrix in spin space as well as real space</p>
 <p><span class="math display">\[
@@ -669,7 +672,7 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 \]</span></p>
 <p>From <span class="math inline">\(g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2)\)</span> we can extract the spin density as well the density</p>
 <p><span class="math display">\[
-\mathbf{\rho}(\mathbf{r}) = \tr\left[g(\mathbf{r},\mathbf{r})\right],\quad \mathbf{s}(\mathbf{r}) = \frac{1}{2}\tr\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r})\right].
+\mathbf{\rho}(\mathbf{r}) = \mathrm{tr}\left[g(\mathbf{r},\mathbf{r})\right],\quad \mathbf{s}(\mathbf{r}) = \frac{1}{2}\mathrm{tr}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r})\right].
 \]</span></p>
 <p>(I’ve dropped the subscript from <span class="math inline">\(\rho_1(\mathbf{r})\)</span> here.) An spin-independent interaction potential is described by a Hamiltonian of the form</p>
 <p><span class="math display">\[
@@ -677,11 +680,11 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 \]</span></p>
 <p>The Hartree–Fock energy is then</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \langle \hat H_\text{int.}\rangle &amp;=\frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\, \rho(\mathbf{r}) U(\mathbf{r}-\mathbf{r}')\rho(\mathbf{r}')\nonumber\\
-    &amp;- \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})\right].
+    &amp;- \frac{1}{2}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathrm{tr}\left[g(\mathbf{r},\mathbf{r}')g(\mathbf{r}',\mathbf{r})\right].
   \label{2nd_quant_HFSpin}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The Fock term can be rewritten in a more useful way using the identity</p>
 <p><span id="eq-pauli-ident"><span class="math display">\[
@@ -710,15 +713,15 @@ g_{\sigma_1\sigma_2}(\mathbf{r}_1,\mathbf{r}_2) = \langle{\Psi}\rvert \psi^\dagg
 </div>
 <p>which gives</p>
 <p><span class="math display">\[
-\begin{align}
-E_{\text{Fock}} &amp;=-\frac{1}{4} \int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[g(\mathbf{r},\mathbf{r}')\right]\tr\left[g(\mathbf{r}',\mathbf{r})\right]\nonumber\\&amp;-\frac{1}{4}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\tr\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r}')\right]\cdot\tr\left[\boldsymbol{\sigma}g(\mathbf{r}',\mathbf{r})\right].
-\end{align}
+\begin{aligned}
+E_{\text{Fock}} &amp;=-\frac{1}{4} \int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathrm{tr}\left[g(\mathbf{r},\mathbf{r}')\right]\mathrm{tr}\left[g(\mathbf{r}',\mathbf{r})\right]\nonumber\\&amp;-\frac{1}{4}\int d\mathbf{r}\, d\mathbf{r}'\,  U(\mathbf{r}-\mathbf{r}')\mathrm{tr}\left[\boldsymbol{\sigma}g(\mathbf{r},\mathbf{r}')\right]\cdot\mathrm{tr}\left[\boldsymbol{\sigma}g(\mathbf{r}',\mathbf{r})\right].
+\end{aligned}
 \]</span></p>
 <p>Suppose we had a <span class="math inline">\(\delta\)</span>-function interaction <span class="math inline">\(U(\mathbf{r})=V_0 \delta(\mathbf{r})\)</span>. Then the Fock energy can be written</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 E_{\text{Fock}} =-\frac{V_0}{4} \int d\mathbf{r}\, \rho(\mathbf{r})^2-V_0\int d\mathbf{r}\, \mathbf{s}(\mathbf{r})\cdot\mathbf{s}(\mathbf{r})
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The second term favours ferromagnetism for repulsive interactions. The physical origin is the same as the Hund’s rule coupling in atoms: fermions in different spin states can sit at the same spatial location, while those in the same spin state must be in different locations. For repulsive interactions occupying the same spin state is energetically favourable.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -748,11 +751,11 @@ H = \int d\mathbf{r}\frac{1}{2m}\nabla\psi^\dagger\cdot\nabla\psi^{\vphantom{\da
 <p>Let us try to put a bit more flesh on the idea that repulsive interactions favour ferromagnetism in fermionic systems. We will continue to use the model interaction <span class="math inline">\(U(\mathbf{r})=V_0\delta(\mathbf{r})\)</span> that we introduced in the previous section. Of course, this isn’t a realistic interaction between electrons in a metal, say, but as we’ll see in <a href="jellium.qmd">Lecture 11</a>, the long-ranged Coulomb interaction is screened and becomes finite-ranged. Thus our model is not a bad approximation to the <em>effective</em> interaction between electrons in a metal.</p>
 <p>Polarizing the spins in a Fermi gas is not without cost (otherwise everything would be ferromagnetic!): there is a price to pay in increased kinetic energy. To understand why this is so, consider the ground state kinetic energy of <span class="math inline">\(N\)</span> (spinless) fermions in three dimensions, obtained from</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 N = \sum_{|\mathbf{k}|&lt;k_\text{F}} 1 &amp;\longrightarrow L^3 \int_{|\mathbf{k}|&lt;k_\text{F}} \frac{d\mathbf{k}}{(2\pi)^3} = \frac{k_\text{F}^3 L^3}{6\pi^2} \nonumber\\
 E_\text{kin} = \sum_{|\mathbf{k}|&lt;k_\text{F}} \frac{\mathbf{k}^2}{2m} &amp;\longrightarrow L^3 \int_{|\mathbf{k}|&lt;k_\text{F}} \frac{d\mathbf{k}}{(2\pi)^3} \frac{\mathbf{k}^2}{2m}\\
 &amp;= \frac{k_\text{F}^5 L^3}{20\pi^2 m} = L^3 \frac{3}{10m}(6\pi^2)^{2/3} n^{5/3},\nonumber
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>(The assumption of a quadratic dispersion is not important here. More generally, we fill a band structure.) where <span class="math inline">\(n = \frac{N}{L^3}\)</span> is the mean density. Assuming a system of fermions with spin is now polarized in the <span class="math inline">\(z\)</span>-direction, we have differing densities <span class="math inline">\(n_{\uparrow,\downarrow}\)</span> of spin up and spin down fermions. Their total energy is</p>
 <p><span class="math display">\[
@@ -800,10 +803,10 @@ E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).
 <p>So far we have discussed properties of the ground state only. We can, however, evaluate the Hartree–Fock energy in a product state describing an excited state of a noninteracting system. This gives the first order perturbation theory correction to the excited state energy. For concreteness we will stick with fermions for now, though the method is general.</p>
 <p>If we work in a translationally invariant system, the appropriate single particle states are plane waves. We write the field operators in the plane wave basis as</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\frac{1}{L^{3/2}}\sum_{\mathbf{k}} \exp(i\mathbf{k}\cdot\mathbf{r})a^{\vphantom{\dagger}}_{\mathbf{k}},\nonumber\\
   \psi^\dagger(\mathbf{r})\equiv\frac{1}{L^{3/2}}\sum_{\mathbf{k}} \exp(-i\mathbf{k}\cdot\mathbf{r})a^\dagger_{\mathbf{k}},
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>and represent the interaction potential in terms of its Fourier components</p>
 <p><span class="math display">\[
@@ -934,7 +937,7 @@ Nazarov, Yuli V, and Jeroen Danon. 2013. <em>Advanced Quantum Mechanics: A Pract
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

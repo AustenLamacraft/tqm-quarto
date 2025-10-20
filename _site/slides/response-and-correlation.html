@@ -173,8 +173,11 @@
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 </section>
 <section>
@@ -201,8 +204,8 @@ H = \frac{p^2}{2m} + \frac{1}{2}m\omega_0^2 y^2
 
 <ul>
 <li><p>At finite temperature <span class="math display">
-\langle\langle y^2\rangle\rangle=\tr\left[\rho\\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}
-</span> <span class="math inline">\rho = e^{-\beta H}/Z</span> is equilibrium density matrix, and <span class="math inline">Z=\tr[e^{-\beta H}]</span> is partition function</p></li>
+\langle\langle y^2\rangle\rangle=\mathrm{tr}\left[\rho\\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}
+</span> <span class="math inline">\rho = e^{-\beta H}/Z</span> is equilibrium density matrix, and <span class="math inline">Z=\mathrm{tr}[e^{-\beta H}]</span> is partition function</p></li>
 <li><p>The double angular brackets <span class="math inline">\langle\langle (\cdots)\rangle\rangle</span> denote that we are taking quantum <em>and thermal</em> expectations.</p></li>
 </ul>
 </section>
@@ -503,7 +506,7 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 S_{AB}(t) \equiv \langle\langle A_I(t)B_I(0)\rangle\rangle
 </span></p>
 <ul>
-<li>Recalling that <span class="math inline">\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\tr\left[e^{-\beta H}\cdots\right]</span>, you should be able to show that</li>
+<li>Recalling that <span class="math inline">\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\mathrm{tr}\left[e^{-\beta H}\cdots\right]</span>, you should be able to show that</li>
 </ul>
 <p><span class="math display">
 S_{AB}(t) = S_{BA}(-t-i\beta)
@@ -1097,7 +1100,7 @@ Girvin, Steven M. 2002. <span>“The Quantum Hall Effect: Novel Excitations and 
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

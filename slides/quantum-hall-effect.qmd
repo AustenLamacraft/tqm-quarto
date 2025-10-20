@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 ## Quantum Hall Effect
 
@@ -240,10 +240,12 @@ $m=2$ state has zero interaction energy
 $$
 \nabla^2 V = -q\delta(\br)
 $$
+
 - In 2D the solution describing a point charge is
 $$
 V_\text{point}(\br) = -\frac{q}{2\pi}\log\left|\br\right|
 $$
+
 - Constant background charge density $-\rho_0$ gives rise to a potential
 $$
 V_\text{bg}(\br) = \frac{\rho_0}{4} \left|\br\right|^2

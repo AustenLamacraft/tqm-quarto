@@ -386,8 +386,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <section id="fermions-and-bosons-at-finite-temperature" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="fermions-and-bosons-at-finite-temperature"><span class="header-section-number">1</span> Fermions and Bosons at Finite Temperature</h2>
@@ -598,7 +601,7 @@ H = \sum_j\left[J_\parallel s^z_j s^z_{j+1} + \frac{J_\perp}{2}\left(s^+_js^-_{j
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

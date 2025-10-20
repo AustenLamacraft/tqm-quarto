@@ -382,7 +382,7 @@ window.Quarto = {
   <li><a href="#the-effect-of-temperature" id="toc-the-effect-of-temperature" class="nav-link" data-scroll-target="#the-effect-of-temperature"><span class="header-section-number">3.2</span> The Effect of Temperature</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="superconductivity.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -408,8 +408,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>Our grand tour of many body theories continues with <strong>Bardeen, Cooper and Schrieffer’s</strong> (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form <strong>Cooper pairs</strong> that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.</p>
 <hr>
@@ -508,10 +511,10 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 \]</span></p>
 <p>on account of the commutation relations</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \left[b^\dagger_\mathbf{p},b^{\vphantom{\dagger}}_\mathbf{p}\right]=2\left(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\right)\nonumber\\
 \left[b^\dagger_\mathbf{p},\left(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\right)\right]=-b^\dagger_\mathbf{p}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>This representation is sometimes called <strong>Anderson spins</strong>. In this way we can write <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;3</a> as a spin chain</p>
 <p><span class="math display">\[
@@ -605,10 +608,10 @@ N=2\sum_\mathbf{p}\langle n^P_\mathbf{p}\rangle=2\sum_\mathbf{p}v_{\mathbf{p}}^2
 \tag{16}\]</span></span></p>
 <p>The two equations <a href="#eq-reg" class="quarto-xref">Equation&nbsp;14</a> and <a href="#eq-mu-eq" class="quarto-xref">Equation&nbsp;16</a> are conveniently cast in the dimensionless form</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \frac{\pi}{2k_\text{F} a}=\int_0^{\infty} dx \left[1-\frac{x^2}{\sqrt{(x^2-\mu)^2+\Delta_0^2}} \right] \nonumber\\
 \frac{2}{3}=\int_0^{\infty} dx\, x^2\left[1-\frac{x^2-\mu}{\sqrt{(x^2-\mu)^2+\Delta_0^2}}\right]
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\Delta_0\)</span> are measured in units of <span class="math inline">\(E_F=p_F^2/2m\)</span>, and the unit of length is <span class="math inline">\(k_\text{F}^{-1}\)</span>. In these units the total density of particles of both types is <span class="math inline">\(1/3\pi^2\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -630,10 +633,10 @@ E/V=\alpha\frac{3}{5}E_Fn\propto n^{5/3}.
 \]</span></p>
 <p>it’s easy to see that the operators</p>
 <p><span class="math display">\[
-\begin{eqnarray}
-\alpha^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}&amp;=&amp;u_\mathbf{p}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}-v_\mathbf{p}a^\dagger_{-\mathbf{p}\downarrow}\nonumber\\
-\alpha^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}&amp;=&amp;u_{-\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}+v_{-\mathbf{p}}a^\dagger_{-\mathbf{p}\uparrow},
-\end{eqnarray}
+\begin{aligned}
+\alpha^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}&amp;=u_\mathbf{p}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}-v_\mathbf{p}a^\dagger_{-\mathbf{p}\downarrow}\nonumber\\
+\alpha^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}&amp;=u_{-\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}+v_{-\mathbf{p}}a^\dagger_{-\mathbf{p}\uparrow},
+\end{aligned}
 \]</span></p>
 <p>satisfy the canonical fermion anticommutation relations and annihilate the BCS state</p>
 <p><span class="math display">\[
@@ -695,12 +698,12 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 \tag{18}\]</span></span></p>
 <p>The solution of <a href="#eq-gen-gap-eq" class="quarto-xref">Equation&nbsp;18</a> is in general very difficult, but it can be greatly simplified if we assume that the range of the potential <span class="math inline">\(U(\mathbf{r})\)</span> is the shortest length scale in the problem. With this assumption we can write <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;11</a></p>
 <p><span id="eq-gap-reg"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \Delta_\mathbf{p}+\frac{1}{V}\sum_{\mathbf{p}'}U(\mathbf{p}-\mathbf{p}')\frac{\Delta_{\mathbf{p}'}}{2\epsilon_{\mathbf{p}'}}&amp;=-\frac{1}{V}\sum_{\mathbf{p}'} \left[U_0(\mathbf{p})\frac{\Delta_{\mathbf{p}'}}{2E_{\mathbf{p}'}}-U(\mathbf{p}-\mathbf{p}')\frac{\Delta_{\mathbf{p}'}}{2\epsilon_
 {\mathbf{p}'}}\right]\nonumber\\
 &amp;=-\frac{U_0(\mathbf{p})}{V}\sum_{\mathbf{p}'} \left[\frac{\Delta_{0}}{2E_{\mathbf{p}'}}-\frac{\Delta_{0}}{2\epsilon_
 {\mathbf{p}'}}\right].
-\end{align}
+\end{aligned}
 \tag{19}\]</span></span></p>
 <p>We have added the same term to both sides. However, the integral on the right hand side converges on a scale set by the momentum corresponding to the larger of <span class="math inline">\(\Delta_\mathbf{p}\)</span> or <span class="math inline">\(\mu\)</span>, which by assumption is much less than the scale on which <span class="math inline">\(U_0(\mathbf{p})\)</span> varies, and justifies replacing <span class="math inline">\(U_0(\mathbf{p}-\mathbf{p}')\)</span> with <span class="math inline">\(U_0(\mathbf{p})\)</span>, and <span class="math inline">\(\Delta_{\mathbf{p}'}\)</span> with <span class="math inline">\(\Delta_0\)</span>.</p>
 <p>By comparing the Fourier transform of <a href="#eq-inhomog" class="quarto-xref">Equation&nbsp;17</a> at <span class="math inline">\(E=0\)</span> and <a href="#eq-gap-reg" class="quarto-xref">Equation&nbsp;19</a>, we can conclude</p>
@@ -728,20 +731,20 @@ a^\dagger_{-\mathbf{p}\downarrow}-v^*_\mathbf{p}\right]\prod_{\mathbf{p}'\neq \m
 \]</span></p>
 <p>which is orthogonal to the BCS state. In the Anderson spin language this corresponds to reversing the direction of spin, as if</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 (u,v)&amp;=(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2}),\qquad \text{then}\\
 (-v^*,u^*)&amp;=i(\cos(\theta'/2)e^{-i\varphi'/2},\sin(\theta'/2)e^{i\varphi'/2}),
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>with <span class="math inline">\(\theta' = \pi/2 - \theta\)</span> and <span class="math inline">\(\varphi' = \varphi + \pi\)</span>.</p>
 <p>The excitation energy of this state is twice the ‘magnetic field’ each pair experiences <span class="math inline">\(2E(\mathbf{p})\)</span>, see <a href="#eq-heff" class="quarto-xref">Equation&nbsp;10</a>. The spin interpretation allows us to see easily that this state contributes <span class="math inline">\(-u_\mathbf{p}v_\mathbf{p}\)</span> to the self consistent equation, and occurs with probability <span class="math inline">\(n_{\uparrow}(\mathbf{p})n_{\downarrow}(-\mathbf{p})\)</span>. The overall result is thus</p>
 <p><span class="math display">\[
-\begin{eqnarray}
-\Delta&amp;=&amp;-\frac{U_0}{V}\sum_{\mathbf{p}}\frac{\Delta}{2E_{\mathbf{p}'}}(\overbrace{[1-n_{\uparrow}(\mathbf{p})][1-n_
+\begin{aligned}
+\Delta&amp;=-\frac{U_0}{V}\sum_{\mathbf{p}}\frac{\Delta}{2E_{\mathbf{p}'}}(\overbrace{[1-n_{\uparrow}(\mathbf{p})][1-n_
 {\downarrow}(-\mathbf{p})]}^{\mathrm{no\,qp}}-\overbrace{n_{\uparrow}(\mathbf{p})n_{\downarrow}(-\mathbf{p})}^{\mathrm
 {two\, qp}})\nonumber\\
-&amp;=&amp;-\frac{U_0}{V}\sum_{\mathbf{p}}\frac{\Delta}{2E_{\mathbf{p}'}}[1-n_{\uparrow}(\mathbf{p})-n_{\downarrow}(-\mathbf{p})].
-\end{eqnarray}
+&amp;=-\frac{U_0}{V}\sum_{\mathbf{p}}\frac{\Delta}{2E_{\mathbf{p}'}}[1-n_{\uparrow}(\mathbf{p})-n_{\downarrow}(-\mathbf{p})].
+\end{aligned}
 \]</span></p>
 <p>For the case <span class="math inline">\(E_s(\mathbf{p})=E(\mathbf{p})\)</span>, and in the BCS limit where <span class="math inline">\(\mu\sim E_F\)</span>, <span class="math inline">\(\Delta\ll E_F\)</span>, this is conveniently presented in the form</p>
 <p><span class="math display">\[
@@ -749,9 +752,7 @@ a^\dagger_{-\mathbf{p}\downarrow}-v^*_\mathbf{p}\right]\prod_{\mathbf{p}'\neq \m
 \]</span></p>
 <p>where <span class="math inline">\(\nu(E_F)\)</span> is the fermi surface density of states per spin, and we have left out the upper cut-off. This expression needs to be regularized as in the zero temperature case considered before. The resulting <span class="math inline">\(\Delta(T)\)</span> varies from <span class="math inline">\(\Delta(0)=\Delta_{\text{BCS}}\)</span> given by <a href="#eq-bcs-gap" class="quarto-xref">Equation&nbsp;15</a>, to zero at</p>
 <p><span class="math display">\[
-\begin{equation}\label{Tc}
 k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
-\end{equation}
 \]</span></p>
 <p>where <span class="math inline">\(\gamma\)</span> is the <a href="https://en.wikipedia.org/wiki/Euler–Mascheroni_constant">Euler–Mascheroni constant</a>. This relationship between <span class="math inline">\(T_\text{c}\)</span> and <span class="math inline">\(\Delta_\text{BCS}\)</span> is a key numerical prediction of the BCS theory. An important point is that the variation is smooth, suggesting a second order transition to a normal (non-superfluid) state above <span class="math inline">\(T_\text{c}\)</span>.</p>
 <p>There is a small problem. If we continue the calculation through the crossover, the temperature at which a non-zero <span class="math inline">\(\Delta\)</span> develops continues to increase indefinitely on the BEC side <span class="citation" data-cites="de1993crossover">De Melo, Randeria, and Engelbrecht (<a href="#ref-de1993crossover" role="doc-biblioref">1993</a>)</span></p>
@@ -855,7 +856,7 @@ Schafroth, MR. 1954. <span>“Theory of Superconductivity.”</span> <em>Physica
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

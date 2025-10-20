@@ -365,7 +365,7 @@ window.Quarto = {
   <li><a href="#regularizing-the-ground-state-energy" id="toc-regularizing-the-ground-state-energy" class="nav-link" data-scroll-target="#regularizing-the-ground-state-energy"><span class="header-section-number">3.1</span> Regularizing the ground state energy</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="bose-gas.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -391,8 +391,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>You know that noninteracting bosons form a Bose condensate: we will see how weak interactions alter this picture, and make a connection to the phenomenon of <strong>superfluidity</strong>.</p>
 <hr>
@@ -424,11 +427,11 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 \]</span></p>
 <p>In fact, it turns out to be more convenient to minimize <span class="math inline">\(\langle{\Psi}\rvert H \lvert \Psi \rangle\)</span>, using a Lagrange multiplier to fix the normalization. We have</p>
 <p><span id="eq-energy"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \langle{\Psi}\rvert H \lvert \Psi \rangle=N \int d\mathbf{r}\left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\mathbf{r})|\varphi_0(\mathbf{r})|^2
 \right]\\
 +\frac{1}{2}N(N-1)U_0\int d\mathbf{r}|\varphi_0(\mathbf{r})|^4.
-\end{align}
+\end{aligned}
 \tag{2}\]</span></span></p>
 <p>For large <span class="math inline">\(N\)</span>, we can neglect the difference between <span class="math inline">\(N\)</span> and <span class="math inline">\(N+1\)</span>. Now we want to extremize this functional with respect to <span class="math inline">\(\varphi_0(\mathbf{r})\)</span>, keeping <span class="math inline">\(\varphi_{0}(\mathbf{r})\)</span> normalized. To do this we introduce a Lagrange multiplier <span class="math inline">\(\mu N\)</span> (the factor of <span class="math inline">\(N\)</span> will become clear shortly) and extremize the functional</p>
 <p><span class="math display">\[
@@ -474,10 +477,10 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <h3 data-number="1.2" class="anchored" data-anchor-id="some-observables"><span class="header-section-number">1.2</span> Some Observables</h3>
 <p>With the ansatz <a href="#eq-gp-wavefn" class="quarto-xref">Equation&nbsp;1</a> for the wavefunction, we can obtain various observables without difficulty. The density and current density are</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \rho(\mathbf{r})&amp;=|\varphi(\mathbf{r})|^2,\\
 \mathbf{j}(\mathbf{r})&amp;=-\frac{i}{2m}\left[\varphi^{*}(\mathbf{r})\left(\nabla\varphi(\mathbf{r})\right)-\left(\nabla\varphi^{*}(\mathbf{r})\right)\varphi(\mathbf{r})\right]
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Alternatively, one may write this is terms of the velocity field of the gas, using <span class="math inline">\(\mathbf{j}=\rho \mathbf{v}\)</span>, and the decomposition of <span class="math inline">\(\varphi(\mathbf{r})\)</span> into magnitude and phase</p>
 <p><span class="math display">\[
@@ -602,18 +605,18 @@ a^{\vphantom{\dagger}}\lvert{N}\rangle = \sqrt{N}\lvert{N-1}\rangle,\quad a^\dag
 \]</span></p>
 <p>we see that a term in the Hamiltonian with <span class="math inline">\(a^{\vphantom{\dagger}}_0\)</span> or <span class="math inline">\(a^\dagger_0\)</span> is going to be more important – on account of the large occupancy of <span class="math inline">\(\mathbf{k}=0\)</span> – than a term without. For this reason we divide up the interaction Hamiltonian according to the number of occurrences of these operators</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 H_\text{int} = &amp;\frac{U_0}{2V}a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 \\\nonumber
 &amp;+\frac{U_0}{2V}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+4a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]\\\nonumber
 &amp;+\frac{U_0}{V}\sum_{\substack{\mathbf{k}_1=\mathbf{k}_2+\mathbf{k}_3\\ \mathbf{k}_{1,2,3}\neq 0}}\left[a^\dagger_{\mathbf{k}_3}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_1}a^{\vphantom{\dagger}}_0 +a^\dagger_0a^\dagger_{\mathbf{k}_1}a^{\vphantom{\dagger}}_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}\right]\\\nonumber
 &amp;+\frac{U_0}{2V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4\\ \mathbf{k}_{1,2,3,4}\neq 0}} a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The Gross–Pitaevskii approximation corresponds to the first term. We are now going to additionally keep the second term, and neglect the third and fourth. Thus we study the Hamiltonian</p>
 <p><span id="eq-H-pair"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 \nonumber\\ &amp;\quad+\frac{U_0}{2V}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+4a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right].
-\end{align}
+\end{aligned}
 \tag{6}\]</span></span></p>
 <p>The second line describes the movement of pairs between zero momentum and <span class="math inline">\((+\mathbf{k},-\mathbf{k})\)</span>. To separate as much as possible the <span class="math inline">\(\mathbf{k}\neq 0\)</span> modes from the <span class="math inline">\(\mathbf{k}=0\)</span> mode we use</p>
 <p><span class="math display">\[
@@ -625,28 +628,28 @@ a^\dagger_0a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_0 =  N(N-1)
 \]</span></p>
 <p>In this way, <a href="#eq-H-pair" class="quarto-xref">Equation&nbsp;6</a> becomes</p>
 <p><span id="eq-H-pair-2"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1) \nonumber\\\nonumber
 &amp;+\sum_{\mathbf{k}\neq 0}\left(\left[\epsilon(\mathbf{k})-\epsilon(0)\right]a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right.\\
 &amp;\left.+\frac{U_0}{2V}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]\right).
-\end{align}
+\end{aligned}
 \tag{7}\]</span></span></p>
 <p>Even though <span class="math inline">\(\epsilon(0)=0\)</span> for the situation we are interested in right now, we have included the general case in <a href="#eq-H-pair-2" class="quarto-xref">Equation&nbsp;7</a> to emphasize that it is the energy <em>difference</em> between <span class="math inline">\(0\)</span> and <span class="math inline">\(\mathbf{k}\)</span> that is important: any energy offset appears as a constant in the first term.</p>
 <p>Even now it’s not so easy to solve this problem. One last vital simplification is needed. We are going to replace the operators <span class="math inline">\(a^\dagger_0\)</span>, <span class="math inline">\(a^{\vphantom{\dagger}}_0\)</span> with <span class="math inline">\(\sqrt{N}\)</span>, giving a quadratic Hamiltonian. That may sound like a pretty odd thing to do: after all, the resulting Hamiltonian no longer conserves the number of particles! Let’s see why this is a good approximation.</p>
 <p>Consider the action of the Hamiltonian <a href="#eq-H-pair" class="quarto-xref">Equation&nbsp;6</a> on a product state of the form <span class="math inline">\(\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0\)</span>, where <span class="math inline">\(\lvert{\Psi'}\rangle\)</span> lives in the many body Hilbert space made from non-zero momentum single particle states and <span class="math inline">\(\lvert{N_0}\rangle_0\)</span> has <span class="math inline">\(N_0\)</span> particles in the zero momentum state.</p>
 <p>The action of <span class="math inline">\(a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_0\)</span> on this state is</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_0\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0 &amp;= \left(a^\dagger_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes a^{\vphantom{\dagger}}_0\lvert{N_0}\rangle_0\nonumber\\
 &amp;= \left(a^\dagger_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes \sqrt{N_0}\lvert{N_0-1}\rangle_0.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Likewise</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 a^{\vphantom{\dagger}}_\mathbf{k}a^\dagger_0\lvert{\Psi'}\rangle\otimes\lvert{N_0}\rangle_0 &amp;= \left(a^{\vphantom{\dagger}}_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes a^\dagger_0\lvert{N_0}\rangle_0 \nonumber\\
 &amp;= \left(a^{\vphantom{\dagger}}_\mathbf{k}\lvert{\Psi'}\rangle\right)\otimes \sqrt{N_0+1}\lvert{N_0+1}\rangle_0.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Since <span class="math inline">\(N_0\)</span> is assumed to be large, we ignore the difference between <span class="math inline">\(N_0\)</span> and <span class="math inline">\(N_0+1\)</span>. To be more precise, we are assuming that in the states we are going to find, <span class="math inline">\(N_0\)</span> will not fluctuate substantially. If this is the case, the <em>matrix elements</em> of <span class="math inline">\(H_\text{pair}\)</span> are approximately unchanged when we make the replacement mentioned above, leaving us with the <strong>Bogoliubov Hamiltonian</strong></p>
 <p><span id="eq-H-pair-3"><span class="math display">\[
@@ -730,10 +733,10 @@ a^{\vphantom{\dagger}}_1 \\ a^\dagger_2
 </div>
 <div class="callout-body-container callout-body">
 <p>Show that <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
 h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dagger}}_2\right] + \Omega - \epsilon.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The form of <span class="math inline">\(\Omega\)</span> is most easily understood by noting that the transformation preserves the determinant (<span class="math inline">\(\det\Lambda=1\)</span>).</p>
 <ul>
@@ -840,9 +843,7 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\tilde\epsilon(\mathbf{q})}{\omega(\mathbf{
 <h3 data-number="3.1" class="anchored" data-anchor-id="regularizing-the-ground-state-energy"><span class="header-section-number">3.1</span> Regularizing the ground state energy</h3>
 <p>To find the ground state energy in the Bogoliubov theory we have to compute the sum</p>
 <p><span id="eq-bog-sum"><span class="math display">\[
-\begin{equation}
 \sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\frac{\mathbf{p}^2}{2m}-n_0U_0\right].
-\end{equation}
 \tag{10}\]</span></span></p>
 <p>After turning it into an integral in the usual way, we have</p>
 <p><span class="math display">\[
@@ -850,16 +851,14 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\tilde\epsilon(\mathbf{q})}{\omega(\mathbf{
 \]</span></p>
 <p>where we have introduced an upper cutoff <span class="math inline">\(\Lambda\)</span> to see what happens as it increases to infinity. The first integral comes from the <span class="math inline">\(\omega(\mathbf{p})\)</span> in the summand. <span class="math inline">\(\xi\equiv \frac{1}{\sqrt{2m n U_0}}\)</span> is the healing length as before. Introducing the substitution <span class="math inline">\(u=p^2\)</span> gives</p>
 <p><span id="eq-int-eval"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 I(\Lambda) &amp;= \frac{1}{2}\int^{\Lambda^2}_0 u\sqrt{u+\frac{2}{\xi^2}} du \nonumber \\
 &amp;= \left[\frac{1}{5}\left(u+\frac{2}{\xi^2}\right)^{5/2}-\frac{2}{3\xi^2} \left(u+\frac{2}{\xi^2}\right)^{3/2}\right]^{\Lambda^2}_0\nonumber \\
 &amp;= \frac{\Lambda^5}{5} + \frac{\Lambda^3}{3\xi^2} -\frac{\Lambda}{2\xi^4}+\cdots.
-\end{align}
+\end{aligned}
 \tag{11}\]</span></span> In the expansion we have retained only the terms with positive powers of <span class="math inline">\(\Lambda\)</span>. By comparing with the definition of <span class="math inline">\(I(\Lambda)\)</span>, we can see that these terms arise from the first three terms in the large <span class="math inline">\(p\)</span> expansion of the integrand</p>
 <p><span id="eq-exp-integrand"><span class="math display">\[
-\begin{equation}
 p^2 \sqrt{p^2\left(p^2+\frac{2}{\xi^2}\right)} = p^4 + \frac{p^2}{\xi^2} - \frac{1}{2\xi^2}.
-\end{equation}
 \tag{12}\]</span></span></p>
 <p>In the original sum <a href="#eq-bog-sum" class="quarto-xref">Equation&nbsp;10</a> the contributions of the first two terms in <a href="#eq-exp-integrand" class="quarto-xref">Equation&nbsp;12</a> are cancelled by subtracting <span class="math inline">\(\frac{1}{2}\left[\frac{\mathbf{p}^2}{2m}+n_0U_0\right]\)</span>. This still leaves us with a divergence <span class="math inline">\(\propto \Lambda\)</span> arising from last term of <a href="#eq-exp-integrand" class="quarto-xref">Equation&nbsp;12</a>. On the other hand, the sum</p>
 <p><span class="math display">\[
@@ -964,7 +963,7 @@ a_0=(m/4\pi)U_0,\qquad a_1=-(m/4\pi)\frac{U_0^2}{V}\sum_\mathbf{p}\frac{1}{2\til
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

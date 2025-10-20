@@ -2,7 +2,7 @@
 title: Many Body Wavefunctions
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are __highly atypical__ -- but are nevertheless very informative.
 
@@ -120,7 +120,7 @@ where $m$ is the particle mass, and $V(\br)$ is a potential experienced by the p
 
 Let's denote the eigenstates of the single particle Hamiltonian by $\{\varphi_\alpha(\br)\}$ , and the corresponding eigenenergies by $\{E_\alpha\}$, where $\alpha$ is a shorthand for whatever quantum numbers are used to label the states.
 
-A set of labels $\{\alpha_{i}\}$ $i=1,2,\ldots N$ tells us the state of each of the particles. Thus we can write an eigenstat\ale of $N$ _distinguishable_ particles with energy $E=\sum_{i=1}^{N}E_{\alpha_{i}}$ as
+A set of labels $\{\alpha_{i}\}$ $i=1,2,\ldots N$ tells us the state of each of the particles. Thus we can write an eigenstate of $N$ _distinguishable_ particles with energy $E=\sum_{i=1}^{N}E_{\alpha_{i}}$ as
 
 $$
 \ket{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
@@ -263,10 +263,7 @@ $$
 which can be proved in a variety of ways. Proving directly that @eq-1d-fermi-gs is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity
 
 $$
-\begin{equation}
-\label{2nd_quant_cotident}
 \cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1.	\nonumber
-\end{equation}
 $$
 
 Check carefully that @eq-1d-fermi-gs is periodic and totally antisymmetric.

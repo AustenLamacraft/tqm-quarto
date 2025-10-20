@@ -153,8 +153,11 @@
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 </section>
 <section id="quantum-hall-effect" class="slide level2 center">
@@ -389,11 +392,15 @@ H_{\text{int}} = g\sum_{j&lt;k}\delta(\mathbf{r}_j-\mathbf{r}_k),\qquad g&gt;0
 </ul>
 <p><span class="math display">
 \nabla^2 V = -q\delta(\mathbf{r})
-</span> - In 2D the solution describing a point charge is <span class="math display">
-V_\text{point}(\mathbf{r}) = -\frac{q}{2\pi}\log\left|\mathbf{r}\right|
-</span> - Constant background charge density <span class="math inline">-\rho_0</span> gives rise to a potential <span class="math display">
-V_\text{bg}(\mathbf{r}) = \frac{\rho_0}{4} \left|\mathbf{r}\right|^2
 </span></p>
+<ul>
+<li><p>In 2D the solution describing a point charge is <span class="math display">
+V_\text{point}(\mathbf{r}) = -\frac{q}{2\pi}\log\left|\mathbf{r}\right|
+</span></p></li>
+<li><p>Constant background charge density <span class="math inline">-\rho_0</span> gives rise to a potential <span class="math display">
+V_\text{bg}(\mathbf{r}) = \frac{\rho_0}{4} \left|\mathbf{r}\right|^2
+</span></p></li>
+</ul>
 </section>
 <section class="slide level2 center">
 
@@ -775,7 +782,7 @@ Reveal.on( 'slidechanged', event => {
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

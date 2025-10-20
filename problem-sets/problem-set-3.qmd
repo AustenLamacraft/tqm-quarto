@@ -3,7 +3,7 @@ title: Problem Set 3
 summary: Fermi gas; Superconductivity; Response and Correlation; Jellium.
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 ## $N(\bk)$ in the Ground State
 

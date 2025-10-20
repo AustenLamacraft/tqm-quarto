@@ -18,7 +18,7 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 - [X] Sun Woo correction in first lecture (normalization factor)
 - [X] Add $\hbar =1$ warning!!
 - [X] Add advice to complete exercises
-- [ ] Build problems with PDF. How to fix?
+- [ ] Build problems with PDF. How to fix? I've tried `quarto render notes --to pdf` from the command line
 - [X] Favicon for site
 - [ ] FQHE animation not working
 - [ ] Fix cot / tan disagreement between spin models lectures and slides

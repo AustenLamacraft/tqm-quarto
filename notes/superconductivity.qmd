@@ -2,7 +2,7 @@
 title: Superconductivity
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 Our grand tour of many body theories continues with __Bardeen, Cooper and Schrieffer's__ (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form __Cooper pairs__ that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.
 
@@ -166,10 +166,10 @@ $$
 on account of the commutation relations
 
 $$
-\begin{align}
+\begin{aligned}
 \left[\bdop_\bp,\bop_\bp\right]=2\left(\bdop_\bp\bop_\bp-1/2\right)\nonumber\\
 \left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp.
-\end{align}
+\end{aligned}
 $$
 
 This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain
@@ -310,10 +310,10 @@ The two  equations @eq-reg and @eq-mu-eq are conveniently cast in the dimensionl
 form
 
 $$
-\begin{align}
+\begin{aligned}
 \frac{\pi}{2k_\text{F} a}=\int_0^{\infty} dx \left[1-\frac{x^2}{\sqrt{(x^2-\mu)^2+\Delta_0^2}} \right] \nonumber\\
 \frac{2}{3}=\int_0^{\infty} dx\, x^2\left[1-\frac{x^2-\mu}{\sqrt{(x^2-\mu)^2+\Delta_0^2}}\right]
-\end{align}
+\end{aligned}
 $$
 
 where $\mu$ and $\Delta_0$ are measured in units of $E_F=p_F^2/2m$, and the unit of length is $k_\text{F}^{-1}$. In these units the total density of particles of both types is $1/3\pi^2$.
@@ -338,10 +338,10 @@ $$
 it's easy to see that the operators
 
 $$
-\begin{eqnarray}
-\alop_{\bp\uparrow}&=&u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
-\alop_{\bp\downarrow}&=&u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
-\end{eqnarray}
+\begin{aligned}
+\alop_{\bp\uparrow}&=u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
+\alop_{\bp\downarrow}&=u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
+\end{aligned}
 $$
 
 satisfy the canonical fermion anticommutation relations and annihilate the BCS state
@@ -429,12 +429,12 @@ $$ {#eq-gen-gap-eq}
 The solution of @eq-gen-gap-eq is in general very difficult, but it can be greatly simplified if we assume that the range of the potential $U(\br)$ is the shortest length scale in the problem. With this assumption we can write @eq-gap-eq
 
 $$
-\begin{align}
+\begin{aligned}
 \Delta_\bp+\frac{1}{V}\sum_{\bp'}U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_{\bp'}}&=-\frac{1}{V}\sum_{\bp'} \left[U_0(\bp)\frac{\Delta_{\bp'}}{2E_{\bp'}}-U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_
 {\bp'}}\right]\nonumber\\
 &=-\frac{U_0(\bp)}{V}\sum_{\bp'} \left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}{2\epsilon_
 {\bp'}}\right].
-\end{align}
+\end{aligned}
 $$ {#eq-gap-reg}
 
 We have added the same term to both sides. However, the integral on the right hand side converges on a scale set by the momentum corresponding to the larger of $\Delta_\bp$ or $\mu$, which by assumption is much less than the scale on which $U_0(\bp)$ varies, and justifies replacing $U_0(\bp-\bp')$ with $U_0(\bp)$, and $\Delta_{\bp'}$ with $\Delta_0$.
@@ -475,10 +475,10 @@ $$
 which is orthogonal to the BCS state. In the Anderson spin language this corresponds to reversing the direction of spin, as if
 
 $$
-\begin{align}
+\begin{aligned}
  (u,v)&=(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2}),\qquad \text{then}\\
 (-v^*,u^*)&=i(\cos(\theta'/2)e^{-i\varphi'/2},\sin(\theta'/2)e^{i\varphi'/2}),
-\end{align}
+\end{aligned}
 $$
 
 with $\theta' = \pi/2 - \theta$ and $\varphi' = \varphi + \pi$.
@@ -486,12 +486,12 @@ with $\theta' = \pi/2 - \theta$ and $\varphi' = \varphi + \pi$.
 The excitation energy of this state is twice the 'magnetic field' each pair experiences $2E(\bp)$, see @eq-heff. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. The overall result is thus
 
 $$
-\begin{eqnarray}
-\Delta&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
+\begin{aligned}
+\Delta&=-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
 {\downarrow}(-\bp)]}^{\mathrm{no\,qp}}-\overbrace{n_{\uparrow}(\bp)n_{\downarrow}(-\bp)}^{\mathrm
 {two\, qp}})\nonumber\\
-&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
-\end{eqnarray}
+&=-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
+\end{aligned}
 $$
 
 For the case $E_s(\bp)=E(\bp)$, and in the BCS limit where $\mu\sim E_F$, $\Delta\ll E_F$, this is conveniently presented in the form
@@ -503,9 +503,7 @@ $$
 where $\nu(E_F)$ is the fermi surface density of states per spin, and we have left out the upper cut-off. This expression needs to be regularized as in the zero temperature case considered before. The resulting $\Delta(T)$ varies from $\Delta(0)=\Delta_{\text{BCS}}$ given by @eq-bcs-gap, to zero at
 
 $$
-\begin{equation}\label{Tc}
 k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
-\end{equation}
 $$
 
 where $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler–Mascheroni_constant). This relationship between $T_\text{c}$ and $\Delta_\text{BCS}$ is a key numerical prediction of the BCS theory. An important point is that the variation is smooth, suggesting a second order transition to a normal (non-superfluid) state above $T_\text{c}$.

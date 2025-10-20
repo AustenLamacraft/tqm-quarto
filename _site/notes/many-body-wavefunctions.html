@@ -380,7 +380,7 @@ window.Quarto = {
   <li><a href="#impenetrable-bose-gas" id="toc-impenetrable-bose-gas" class="nav-link" data-scroll-target="#impenetrable-bose-gas"><span class="header-section-number">2.3</span> Impenetrable Bose Gas</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="many-body-wavefunctions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -406,8 +406,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> – but are nevertheless very informative.</p>
 <p>Reading: <span class="citation" data-cites="baym2018lectures">(<a href="#ref-baym2018lectures" role="doc-biblioref">Baym 2018</a>)</span>.</p>
@@ -504,7 +507,7 @@ H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]
 \]</span></p>
 <p>where <span class="math inline">\(m\)</span> is the particle mass, and <span class="math inline">\(V(\mathbf{r})\)</span> is a potential experienced by the particles.</p>
 <p>Let’s denote the eigenstates of the single particle Hamiltonian by <span class="math inline">\(\{\varphi_\alpha(\mathbf{r})\}\)</span> , and the corresponding eigenenergies by <span class="math inline">\(\{E_\alpha\}\)</span>, where <span class="math inline">\(\alpha\)</span> is a shorthand for whatever quantum numbers are used to label the states.</p>
-<p>A set of labels <span class="math inline">\(\{\alpha_{i}\}\)</span> <span class="math inline">\(i=1,2,\ldots N\)</span> tells us the state of each of the particles. Thus we can write an eigenstatof <span class="math inline">\(N\)</span> <em>distinguishable</em> particles with energy <span class="math inline">\(E=\sum_{i=1}^{N}E_{\alpha_{i}}\)</span> as</p>
+<p>A set of labels <span class="math inline">\(\{\alpha_{i}\}\)</span> <span class="math inline">\(i=1,2,\ldots N\)</span> tells us the state of each of the particles. Thus we can write an eigenstate of <span class="math inline">\(N\)</span> <em>distinguishable</em> particles with energy <span class="math inline">\(E=\sum_{i=1}^{N}E_{\alpha_{i}}\)</span> as</p>
 <p><span id="eq-distinguishable"><span class="math display">\[
 \lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 \tag{3}\]</span></span></p>
@@ -628,10 +631,7 @@ z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
 \end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i})
 \]</span> which can be proved in a variety of ways. Proving directly that <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity</p>
 <p><span class="math display">\[
-\begin{equation}
-\label{2nd_quant_cotident}
 \cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1. \nonumber
-\end{equation}
 \]</span></p>
 <p>Check carefully that <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> is periodic and totally antisymmetric.</p>
 </div>
@@ -764,11 +764,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\tr \varrho =1\)</span>. Its spectral resolution <span class="math display">\[
+<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\mathrm{tr}\varrho =1\)</span>. Its spectral resolution <span class="math display">\[
 \varrho = \sum_\alpha p_\alpha \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert,
 \]</span> can be thought of as a statistical mixture of different quantum states <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> with probabilities <span class="math inline">\(p_\alpha\)</span>.</p>
 <p>One natural way in which density matrices arise from pure states is as follows. The Hilbert space of a composite system consists of a tensor product of two or more components <span class="math inline">\(\mathcal{H}_{AB} = \mathcal{H}_A \otimes \mathcal{H}_B\)</span>. Starting from the density matrix corresponding to a pure state, we can obtain a density matrix for the component <span class="math inline">\(A\)</span> alone by ‘tracing out’ the <span class="math inline">\(B\)</span> subsystem. <span class="math display">\[
-\varrho_A = \tr_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
+\varrho_A = \mathrm{tr}_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
 \]</span> The probability for system <span class="math inline">\(A\)</span> to be in state <span class="math inline">\(\lvert{\psi}\rangle\in \mathcal{H}_A\)</span> is <span class="math display">\[
 P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 \]</span> Thus you can think of the single particle density matrix <a href="#eq-spdm" class="quarto-xref">Equation&nbsp;12</a> as arising from tracing out <span class="math inline">\(N-1\)</span> particles from an <span class="math inline">\(N\)</span>-particle system.</p>
@@ -938,7 +938,7 @@ Baym, Gordon. 2018. <em>Lectures on Quantum Mechanics</em>. CRC Press.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

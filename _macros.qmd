@@ -39,8 +39,14 @@
 \providecommand{\abs}[1]{\lvert{#1}\rvert}
 \providecommand{\Nop}{\mathsf{N}^{\vphantom{\dagger}}}
 
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+\providecommand{\tr}{\mathrm{tr}}
+\providecommand{\E}{\mathbb{E}}
+
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 
 :::
 

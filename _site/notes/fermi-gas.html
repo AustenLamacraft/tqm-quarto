@@ -381,7 +381,7 @@ window.Quarto = {
   <li><a href="#rotationally-invariant-formulation" id="toc-rotationally-invariant-formulation" class="nav-link" data-scroll-target="#rotationally-invariant-formulation"><span class="header-section-number">5.1</span> Rotationally invariant formulation</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fermi-gas.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -407,8 +407,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>A Fermi gas with weak interactions provides an example of one of the ‘standard models’ of condensed matter physics: Landau’s <strong>Fermi liquid</strong> theory.</p>
 <p>Reading: <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#ref-landau1980statistical" role="doc-biblioref">1980</a>)</span></p>
@@ -538,9 +541,9 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_
 \]</span></p>
 <p>for fixed <span class="math inline">\(\mathbf{q}\)</span>. Thus, only the angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\(\mathbf{K}\)</span> and <span class="math inline">\(\mathbf{q}\)</span> enters the integral. The conditions <span class="math inline">\(\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\)</span> and <span class="math inline">\(\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F}\)</span> become</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \left(\mathbf{K}+\mathbf{q}\right)^2&gt;k_\text{F}^2,\quad \left(\mathbf{K}-\mathbf{q}\right)^2&lt;k_\text{F}^2,
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>which gives the range of <span class="math inline">\(K_-(\theta)&lt;\lvert{\mathbf{K}}\rvert&lt;K_+(\theta)\)</span></p>
 <p><span class="math display">\[
@@ -548,40 +551,40 @@ K_{\pm}(\theta)=\pm q\lvert{\cos\theta}\rvert+\sqrt{k_\text{F}^2-q^2\sin^2\theta
 \]</span></p>
 <p>and we must have <span class="math inline">\(\theta&lt;\pi/2\)</span>. In terms of these variables the integral becomes</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \int_{\substack{\lvert{\mathbf{k}_3}\rvert&lt;k_\text{F},\lvert{\mathbf{k}_2}\rvert&gt;k_\text{F}\\ \mathbf{k}+\mathbf{k}_3=\mathbf{k}'+\mathbf{k}_2 }} \frac{d\mathbf{k}_3}{\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)}&amp;=
 \pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
 &amp;=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The other integral in <a href="#eq-fcont" class="quarto-xref">Equation&nbsp;4</a> is the same but in the interval <span class="math inline">\((\pi/2,\pi)\)</span>. Thus we have Finally</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') &amp;= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
 &amp;=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Here <span class="math inline">\(\phi\)</span> is the angle between <span class="math inline">\(\mathbf{k}\)</span> and <span class="math inline">\(\mathbf{k}'\)</span> i.e.&nbsp;<span class="math inline">\(\lvert{\mathbf{k}-\mathbf{k}'}\rvert=2q=2k_\text{F}\sin\phi/2\)</span>. We won’t go through the calculation of <span class="math inline">\(f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\)</span>, but just record the final answer.</p>
 <p>Before doing that, let us first write the quadratic contribution to <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a> in an alternative way that allows us to generalize to a fully rotationally invariant formulation (see the <a href="#rotationally-invariant-formulation">Appendix</a>)</p>
 <p><span id="eq-f-rewrite"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \frac{1}{2V \nu(E_F)}\sum_{\mathbf{k},\mathbf{k}'} &amp;\left(F(\phi)\left[n_\uparrow(\mathbf{k})+n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')+n_\downarrow(\mathbf{k}')\right]\right.\\ &amp;\left.+ G(\phi)\left[n_\uparrow(\mathbf{k})-n_\downarrow(\mathbf{k})\right]\left[n_\uparrow(\mathbf{k}')-n_\downarrow(\mathbf{k}')\right]\right).
-\end{align}
+\end{aligned}
 \tag{5}\]</span></span></p>
 <p>Here we have defined</p>
 <p><span id="eq-fgdef"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') + f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right]\\
 G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') - f_{\uparrow\downarrow}(\mathbf{k},\mathbf{k}')\right].
-\end{align}
+\end{aligned}
 \tag{6}\]</span></span></p>
 <p><span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> have been made dimensionless by scaling by the density of states per unit volume at the Fermi surface <span class="math inline">\(\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2\)</span>.</p>
 <p>The explicit form of the functions <span class="math inline">\(F(\phi)\)</span> and <span class="math inline">\(G(\phi)\)</span> is (see <span class="citation" data-cites="landau1980statistical">Landau et al. (<a href="#ref-landau1980statistical" role="doc-biblioref">1980</a>)</span>)</p>
 <p><span id="eq-ffinal"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
 G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right].
-\end{align}
+\end{aligned}
 \tag{7}\]</span></span></p>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
@@ -612,17 +615,17 @@ m_* = \frac{k_\text{F}}{v_\text{F}}.
 </figure>
 </div>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathbf{k}}\rvert) + n_{s}(\mathbf{k}-\delta\mathbf{k})+\cdots\nonumber\\
 &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_s(\mathbf{k}) + \delta(k_F-\lvert{\mathbf{k}}\rvert)\hat{\mathbf{k}}\cdot\delta\mathbf{k}- \delta\mathbf{k}\nabla_\mathbf{k}n_{s}(\mathbf{k})+\cdots.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Treating the last three terms as <span class="math inline">\(n_s(\mathbf{k})\)</span>, our excitation energy changes to first order in <span class="math inline">\(\delta\mathbf{k}\)</span> by an amount</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \Delta E &amp;= \sum_{\mathbf{k},s} n_{s}(\mathbf{k})\delta\mathbf{k}\cdot\nabla_\mathbf{k}\varepsilon_s(\mathbf{k}) \nonumber\\
 &amp;+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is</p>
 <p><span id="eq-gal"><span class="math display">\[
@@ -684,10 +687,10 @@ a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle,
 </div>
 <p>Let’s compare <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{\mathbf{k},s}\lvert{0}\rangle\)</span>, the state obtained by creating a particle in the <em>exact</em> ground state of the problem. In first order perturbation theory, <span class="math inline">\(\lvert{0}\rangle\)</span> includes the first kind of state above (2 particle-hole pair states). The states only differ because of the contribution of the second kind. To first order, the single quasiparticle state is therefore</p>
 <p><span id="eq-ph-peturb"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \lvert{\mathbf{k},s}\rangle &amp;= \sqrt{\frac{z_k}{\langle{0}\rvert a^{\vphantom{\dagger}}_{\mathbf{k},s}a^\dagger_{\mathbf{k},s} \lvert 0 \rangle}}a^\dagger_{\mathbf{k},s}\lvert{0}\rangle \nonumber\\
 &amp;\qquad + \frac{U_0}{V}\sum_{\substack{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}\\ s'}}\frac{a^\dagger_{\mathbf{k}_1,s}a^\dagger_{\mathbf{k}_2,s'}a^{\vphantom{\dagger}}_{\mathbf{k}_3,s'}\lvert{\text{FS}}\rangle}{\epsilon(\mathbf{k}_1)+\epsilon(\mathbf{k}_2)-\epsilon(\mathbf{k}_3)-\epsilon(\mathbf{k})},
-\end{align}
+\end{aligned}
 \tag{11}\]</span></span></p>
 <p>where <span class="math inline">\(\sqrt{z_k}\)</span> is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is ‘dressed’ with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.</p>
 <p>Normalizing <a href="#eq-ph-peturb" class="quarto-xref">Equation&nbsp;11</a> gives</p>
@@ -839,7 +842,7 @@ Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii Mikhailovich Lifs
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

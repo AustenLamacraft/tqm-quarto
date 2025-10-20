@@ -390,7 +390,7 @@ window.Quarto = {
   <li><a href="#sum-rules" id="toc-sum-rules" class="nav-link" data-scroll-target="#sum-rules"><span class="header-section-number">4.2</span> Sum rules</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="response-and-correlation.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -416,8 +416,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
-<!-- \DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\E}{\mathbb{E}} -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?</p>
 <hr>
@@ -510,9 +513,9 @@ m\omega^2+i\gamma\omega - m\omega_0^2 =0,
 </div>
 <p>The real and imaginary parts encode different aspects of the response. The imaginary part is related to the power dissipated by a driving force. For <span class="math inline">\(f=f_0\cos\omega t\)</span> we have</p>
 <p><span id="eq-class-diss"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 W_\text{diss} = \langle f(t) \dot y(t)\rangle = \frac{1}{2}\omega\chi''(\omega)f_0^2.
-\end{align}
+\end{aligned}
 \tag{6}\]</span></span></p>
 <p>For stability we must have <span class="math inline">\(\omega\chi''(\omega)&gt;0\)</span> (and even).</p>
 <p>The real part is related to the shift in the <em>energy</em> of the system in the presence of a driving force. Recalling that the applied force appears in the Hamiltonian as <span class="math inline">\(-f(t)y(t)\)</span>, we find the time average</p>
@@ -526,11 +529,11 @@ E_\text{shift} = -\langle f(t) y(t)\rangle  = -\frac{1}{2}\chi'(\omega)f_0^2
 <p>When we move on to the quantum oscillator, we’re going to run into the problem that we only know how to describe Hamiltonian time evolution in quantum mechanics, that is, without dissipation. It’s possible to describe the damped oscillator in Hamiltonian terms at the expense of explicitly introducing the degrees of freedom that are doing the dissipating. You’ve met this in the realm of classical mechanics when you discuss the mechanical impedance of an elastic string.</p>
 <p>Attaching an undamped oscillator to a string under tension <span class="math inline">\(\tau\)</span> gives the coupled system</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 &amp;m\ddot y +m\omega_0^2 y =\tau\frac{\partial u(x,t)}{\partial x}\Bigg|_{x=0}\nonumber\\
 &amp;\frac{\partial^2 u}{\partial x^2}-\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}=0,\quad x&gt;0\qquad u(0,t) = y(t).
 \label{res_SHOString}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The model was orinally studied by Horace Lamb in a 1900 paper titled <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208">“On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium”</a>. Lamb wasn’t talking about the nucleus of the atom — that hadn’t yet been discovered — but of any body coupled to a continuum.</p>
 <p>If nothing is propagating towards the oscillator from the string, only away from it, we can write <span id="eq-ret"><span class="math display">\[
@@ -563,7 +566,7 @@ m\ddot y +m\omega_0^2 y + \gamma \dot y =f_\text{noise}(t),
 <p>where <span class="math inline">\(f_\text{noise}(t) = \frac{2\tau}{c}u'_\text{in}(t)\)</span> is a random force due to thermal fluctuations. As this derivation makes clear, the noise and the damping have a common origin.</p>
 <p>On account of the infinite bandwidth of the string, <span class="math inline">\(f_\text{noise}\)</span> is white noise</p>
 <p><span id="eq-noise-var"><span class="math display">\[
-\E\left[f_\text{noise}(t)f_\text{noise}(t')\right] = 2\gamma k_\text{B}T\delta(t-t').
+\mathbb{E}\left[f_\text{noise}(t)f_\text{noise}(t')\right] = 2\gamma k_\text{B}T\delta(t-t').
 \tag{9}\]</span></span></p>
 <p>A differential equation driven by noise like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a> is known as a <strong>Langevin equation</strong> in physics and as a <strong>stochastic differential equation</strong> (SDE) in mathematics.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -581,19 +584,19 @@ Note
 </div>
 <p>The mathematical way to write an equation like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a> is as the pair of first order SDEs</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 dy &amp;= \frac{p}{m} dt\nonumber \\
 dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(W\)</span> is a <a href="https://en.wikipedia.org/wiki/Wiener_process">Wiener process</a>. Writing the equation in terms of differentials avoids the awkward subject of infinite forces.</p>
 <p>The motion of the oscillator in response to the thermal noise can be calculated using the response function. In the frequency domain, <a href="#eq-noise-var" class="quarto-xref">Equation&nbsp;9</a> is</p>
 <p><span class="math display">\[
-\E\left[\tilde f_\text{noise}(\omega)\tilde f_\text{noise}(\omega')\right] = 4\pi \gamma k_\text{B}T\delta(\omega+\omega'),
+\mathbb{E}\left[\tilde f_\text{noise}(\omega)\tilde f_\text{noise}(\omega')\right] = 4\pi \gamma k_\text{B}T\delta(\omega+\omega'),
 \]</span></p>
 <p>giving a power spectrum of oscillator fluctuations</p>
 <p><span id="eq-power"><span class="math display">\[
-\E\left[\tilde y(\omega)\tilde y(\omega')\right] = 4\pi \gamma k_\text{B}T |\chi(\omega)|^2 \delta(\omega+\omega').
+\mathbb{E}\left[\tilde y(\omega)\tilde y(\omega')\right] = 4\pi \gamma k_\text{B}T |\chi(\omega)|^2 \delta(\omega+\omega').
 \tag{10}\]</span></span></p>
 <p>Noting that</p>
 <p><span class="math display">\[
@@ -601,7 +604,7 @@ dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
 \]</span></p>
 <p>we can write <a href="#eq-power" class="quarto-xref">Equation&nbsp;10</a> as</p>
 <p><span id="eq-power-final"><span class="math display">\[
-\E\left[\tilde y(\omega)\tilde y(\omega')\right] = 2\pi S(\omega)\delta(\omega+\omega'),
+\mathbb{E}\left[\tilde y(\omega)\tilde y(\omega')\right] = 2\pi S(\omega)\delta(\omega+\omega'),
 \tag{11}\]</span></span></p>
 <p>where</p>
 <p><span id="eq-classical-fdt"><span class="math display">\[
@@ -621,9 +624,9 @@ H = \frac{p^2}{2m} + \frac{1}{2}m\omega_0^2 y^2,
 \]</span></p>
 <p>while at finite temperature</p>
 <p><span class="math display">\[
-\langle\langle y^2\rangle\rangle=\tr\left[\rho\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}.
+\langle\langle y^2\rangle\rangle=\mathrm{tr}\left[\rho\, y^2\right] = \frac{\coth(\beta\omega_0/2)}{2m\omega_0}.
 \]</span></p>
-<p>where <span class="math inline">\(\rho = e^{-\beta H}/Z\)</span> is the equilibrium density matrix, and <span class="math inline">\(Z=\tr[e^{-\beta H}]\)</span> is the partition function. The double angular brackets <span class="math inline">\(\langle\langle (\cdots)\rangle\rangle\)</span> denote that we are taking quantum <em>and thermal</em> expectations.</p>
+<p>where <span class="math inline">\(\rho = e^{-\beta H}/Z\)</span> is the equilibrium density matrix, and <span class="math inline">\(Z=\mathrm{tr}[e^{-\beta H}]\)</span> is the partition function. The double angular brackets <span class="math inline">\(\langle\langle (\cdots)\rangle\rangle\)</span> denote that we are taking quantum <em>and thermal</em> expectations.</p>
 <p>Now what about <em>time dependent fluctuations</em>? This is what was calculated in <a href="#eq-power-final" class="quarto-xref">Equation&nbsp;11</a> for the classical damped oscillator. A natural candidate is</p>
 <p><span class="math display">\[
 \langle\langle y(t)y(0)\rangle\rangle,
@@ -667,10 +670,10 @@ Note
 \]</span></p>
 <p>Giving</p>
 <p><span id="eq-qSHO-noise"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 S(\omega)&amp;=\frac{\pi}{m\omega_0} \sum_n \frac{e^{-\beta E_n}}{Z} \left[n\delta(\omega+\omega_0)+(n+1)\delta(\omega-\omega_0)\right]\nonumber\\
 &amp; = \frac{\pi}{m\omega_0}\left[n_\text{B}(\omega_0)\delta(\omega+\omega_0)+(n_\text{B}(\omega_0)+1)\delta(\omega-\omega_0)\right]
-\end{align}
+\end{aligned}
 \tag{16}\]</span></span></p>
 <p>where</p>
 <p><span class="math display">\[
@@ -691,9 +694,9 @@ a^\dagger_k(t) = e^{i\omega_k t}a^\dagger_k,\quad a^{\vphantom{\dagger}}_k(t) = 
 \]</span></p>
 <p>Repeating the calculation of <span class="math inline">\(S(\omega)\)</span> gives</p>
 <p><span id="eq-qSHO-noise-gen"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 S(\omega)= 2\pi\sum_k |c_k|^2\left[n_\text{B}(\omega_k)\delta(\omega+\omega_k)+(n_\text{B}(\omega_k)+1)\delta(\omega-\omega_k)\right].
-\end{align}
+\end{aligned}
 \tag{18}\]</span></span></p>
 <p>With a continuum of modes, as in the oscillator coupled to a string, <span class="math inline">\(S(\omega)\)</span> can have a smooth (not just <span class="math inline">\(\delta\)</span>-function like) behaviour. Nevertheless, the basic relation <a href="#eq-noise-asym" class="quarto-xref">Equation&nbsp;15</a> is still obeyed.</p>
 <p>Now, we’ll show that <span class="math inline">\(S(\omega)\)</span> is related to the <em>response</em> of our quantum system, just as in the classical case. For a system of oscillators, finding the response is actually no harder, as the Heisenberg equations of motion in the presence of a driving force are exactly the same as in the classical case. Thus the response is the same. In terms of the normal modes the Hamiltonian looks like</p>
@@ -787,10 +790,10 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 \]</span></p>
 <p>The expectation value of <span class="math inline">\(A\)</span> is then</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \langle{\Psi(t)}\rvert A\lvert{\Psi(t)}\rangle &amp;= \langle{\Psi_I(t)}\rvert A_I(t) \lvert{\Psi_I(t)}\rangle \nonumber\\
 &amp;=\langle{\Psi(0)}\rvert A_I(t)\lvert{\Psi(0)}\rangle +i \int_0^t dt' \lambda_{t'}\langle{\Psi(0)}\rvert \left[A_I(t),B_I(t')\right] \lvert{\Psi(0)}\rangle.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Mixed states can be treated by averaging over a distribution of quantum states – or one can look at the equation of motion of the density matrix directly. The result allows us to identify the response function <span class="math inline">\(\chi_{AB}(t)\)</span> of <span class="math inline">\(A\)</span> due to a perturbation that couples to <span class="math inline">\(B\)</span> as</p>
 <p><span id="eq-kubo"><span class="math display">\[
@@ -804,7 +807,7 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 <p><span class="math display">\[
 S_{AB}(t) \equiv \langle\langle A_I(t)B_I(0)\rangle\rangle.
 \]</span></p>
-<p>Recalling that <span class="math display">\[\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\tr\left[e^{-\beta H}\cdots\right],\]</span> you should be able to show that</p>
+<p>Recalling that <span class="math display">\[\langle\langle\cdots \rangle\rangle = \frac{1}{Z}\mathrm{tr}\left[e^{-\beta H}\cdots\right],\]</span> you should be able to show that</p>
 <p><span class="math display">\[
 S_{AB}(t) = S_{BA}(-t-i\beta).
 \]</span></p>
@@ -846,18 +849,18 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
 \]</span></p>
 <p>giving</p>
 <p><span id="eq-conv"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \chi_{AB}(\omega)&amp;= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
 &amp;=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
-\end{align}
+\end{aligned}
 \tag{22}\]</span></span></p>
 <p>To make sense of this formula, use the Kramers–Kronig relation <a href="#eq-kk" class="quarto-xref">Equation&nbsp;5</a> to write</p>
 <p><span id="eq-kk-chi"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \chi_{AB}(\omega) &amp;=\chi'(\omega) + i\chi''(\omega)\\
 &amp;= \mathcal{P}\int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega} + i\chi''(\omega)\\
 &amp;= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
-\end{align}
+\end{aligned}
 \tag{23}\]</span></span></p>
 <p>where we have used the formula</p>
 <p><span class="math display">\[
@@ -1138,7 +1141,7 @@ Nozieres, Philippe. 2018. <em>Theory of Quantum Liquids: Superfluid Bose Liquids
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

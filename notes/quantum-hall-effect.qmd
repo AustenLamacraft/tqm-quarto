@@ -2,7 +2,7 @@
 title: Quantum Hall Effect
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 The Fractional Quantum Hall Effect is one of the most remarkable phenomena in all of condensed matter physics. In the presence of a strong magnetic field, charged particles confined to move in the plane can form a series of new states of matter with bizarre properties. Fortunately, our understanding of this menagerie is based almost entirely on many body wavefunctions of a rather simple form.
 
@@ -233,10 +233,10 @@ The plasma analogy allows us to see that this state describes a __quasiparticle_
 
 Let's see how the plasma picture is modified by the introduction of the quasihole. The electrostatic energy is now
 $$
-\begin{align}
+\begin{aligned}
 V(\brN)=&-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{2\pi} \sum_{j<k}\log\left|\br_j-\br_k\right|\\
  &+ \frac{\rho q_0}{4}\sum_j \left|\br_j\right|^2.
-\end{align}
+\end{aligned}
 $$
 This is interpreted as the introduction of a charge $q/m$ at point $\mathbf{R} = (X, Y)$, where $Z=X+iY$. The charges of the plasma will screen this charge, leaving a 'hole' in the density distribution amounting to charge $-q/m$, corresponding to $-1/m$ real particles. The quasiholes have fractional charge! 
 
@@ -274,9 +274,9 @@ $$
 $$
 The probability distribution $\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions
 $$
-\begin{align}
+\begin{aligned}
 \int \prod_{j=1}^N &d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\\ &\sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
-\end{align}
+\end{aligned}
 $$
 If we try to intepret this as the probability density of a two particle wavefunction, we arrive at
 $$

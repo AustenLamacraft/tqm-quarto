@@ -2,7 +2,7 @@
 title: Response and Correlation
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 Calculating eigenstates and eigenenergies is one thing, but what do experimentalists actually measure?
 
@@ -125,9 +125,9 @@ Check that @eq-chi-sho satisfies @eq-kk.
 The real and imaginary parts encode different aspects of the response. The imaginary part is related to the power dissipated by a driving force. For $f=f_0\cos\omega t$ we have
 
 $$
-\begin{align}
+\begin{aligned}
 W_\text{diss} = \langle f(t) \dot y(t)\rangle = \frac{1}{2}\omega\chi''(\omega)f_0^2.
-\end{align} 
+\end{aligned} 
 $$ {#eq-class-diss}
 
 For stability we must have $\omega\chi''(\omega)>0$ (and even).
@@ -147,11 +147,11 @@ When we move on to the quantum oscillator, we're going to run into the problem t
 Attaching an undamped oscillator to a string under tension $\tau$ gives the coupled system
 
 $$
-\begin{align}
+\begin{aligned}
 &m\ddot y +m\omega_0^2 y =\tau\frac{\partial u(x,t)}{\partial x}\Bigg|_{x=0}\nonumber\\
 &\frac{\partial^2 u}{\partial x^2}-\frac{1}{c^2}\frac{\partial^2 u}{\partial t^2}=0,\quad x>0\qquad u(0,t) = y(t).
 \label{res_SHOString}
-\end{align}
+\end{aligned}
 $$
 
 The model was orinally studied by Horace Lamb in a 1900 paper titled ["On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium"](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208). Lamb wasn't talking about the nucleus of the atom — that hadn't yet been discovered — but of any body coupled to a continuum.
@@ -216,10 +216,10 @@ Actually, no self-respecting mathematician would write something like @eq-sho-no
 The mathematical way to write an equation like @eq-sho-noise is as the pair of first order SDEs
 
 $$
-\begin{align}
+\begin{aligned}
 dy &= \frac{p}{m} dt\nonumber \\
 dp &= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
-\end{align}
+\end{aligned}
 $$
 
 where $W$ is a <a href="https://en.wikipedia.org/wiki/Wiener_process">Wiener process</a>. Writing the equation in terms of differentials avoids the awkward subject of infinite forces.
@@ -330,10 +330,10 @@ $$
 Giving
 
 $$
-\begin{align}
+\begin{aligned}
 S(\omega)&=\frac{\pi}{m\omega_0} \sum_n \frac{e^{-\beta E_n}}{Z} \left[n\delta(\omega+\omega_0)+(n+1)\delta(\omega-\omega_0)\right]\nonumber\\
 & = \frac{\pi}{m\omega_0}\left[n_\text{B}(\omega_0)\delta(\omega+\omega_0)+(n_\text{B}(\omega_0)+1)\delta(\omega-\omega_0)\right]
-\end{align} 
+\end{aligned} 
 $$ {#eq-qSHO-noise}
 
 where
@@ -365,9 +365,9 @@ $$
 Repeating the calculation of $S(\omega)$ gives
 
 $$
-\begin{align}
+\begin{aligned}
 S(\omega)= 2\pi\sum_k |c_k|^2\left[n_\text{B}(\omega_k)\delta(\omega+\omega_k)+(n_\text{B}(\omega_k)+1)\delta(\omega-\omega_k)\right].
-\end{align}
+\end{aligned}
 $$ {#eq-qSHO-noise-gen}
 
 With a continuum of modes, as in the oscillator coupled to a string, $S(\omega)$ can have a smooth (not just $\delta$-function like) behaviour. Nevertheless, the basic relation @eq-noise-asym is still obeyed.
@@ -495,10 +495,10 @@ $$
 The expectation value of $A$ is then
 
 $$
-\begin{align}
+\begin{aligned}
 \bra{\Psi(t)}A\ket{\Psi(t)} &= \bra{\Psi_I(t)}A_I(t) \ket{\Psi_I(t)} \nonumber\\
 &=\bra{\Psi(0)}A_I(t)\ket{\Psi(0)} +i \int_0^t dt' \lambda_{t'}\bra{\Psi(0)} \left[A_I(t),B_I(t')\right] \ket{\Psi(0)}.
-\end{align}
+\end{aligned}
 $$
 
 Mixed states can be treated by averaging over a distribution of quantum states -- or one can look at the equation of motion of the density matrix directly. The result allows us to identify the response function $\chi_{AB}(t)$ of $A$ due to a perturbation that couples to $B$ as
@@ -567,20 +567,20 @@ $$
 giving
 
 $$
-\begin{align}
+\begin{aligned}
 \chi_{AB}(\omega)&= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
 &=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
-\end{align}
+\end{aligned}
 $$ {#eq-conv}
 
 To make sense of this formula, use the Kramers--Kronig relation @eq-kk to write
 
 $$
-\begin{align}
+\begin{aligned}
 \chi_{AB}(\omega) &=\chi'(\omega) + i\chi''(\omega)\\
 &= \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega} + i\chi''(\omega)\\
 &= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
-\end{align}
+\end{aligned}
 $$ {#eq-kk-chi}
 
 where we have used the formula

@@ -2,7 +2,7 @@
 title: Fermi Gas
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 A Fermi gas with weak interactions provides an example of one of the 'standard models' of condensed matter physics: Landau's <strong>Fermi liquid</strong> theory.
 
@@ -171,9 +171,9 @@ $$
 for fixed $\bq$. Thus, only the angle $\theta$ between $\mathbf{K}$ and $\bq$ enters the integral. The conditions $\abs{\bk_2}>k_\text{F}$ and $\abs{\bk_3}<k_\text{F}$ become
 
 $$
-\begin{align}
+\begin{aligned}
 \left(\mathbf{K}+\bq\right)^2>k_\text{F}^2,\quad \left(\mathbf{K}-\bq\right)^2<k_\text{F}^2,
-\end{align}
+\end{aligned}
 $$
 
 which gives the range of $K_-(\theta)<\abs{\mathbf{K}}<K_+(\theta)$
@@ -185,20 +185,20 @@ $$
 and we must have $\theta<\pi/2$. In terms of these variables the integral becomes
 
 $$
-\begin{align}
+\begin{aligned}
 \int_{\substack{\abs{\bk_3}<k_\text{F},\abs{\bk_2}>k_\text{F}\\ \bk+\bk_3=\bk'+\bk_2 }} \frac{d\bk_3}{\epsilon(\bk_2)-\epsilon(\bk_3)}&=
 \pi m\int_0^{\pi/2} d\theta \int_{K_-(\theta)}^{K_+(\theta)} \frac{K\sin\theta}{q\cos\theta} dK\nonumber\\
 &=2\pi m\int_0^{\pi/2} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}.
-\end{align}
+\end{aligned}
 $$
 
 The other integral in @eq-fcont is the same but in the interval $(\pi/2,\pi)$. Thus we have Finally
 
 $$
-\begin{align}
+\begin{aligned}
 f_{\uparrow\uparrow}(\bk,\bk') &= \frac{U_0^2 m}{(2\pi)^2} \int_0^{\pi} d\theta \sin\theta \sqrt{k_\text{F}^2-q^2\sin^2\theta}\nonumber\\
 &=\frac{U_0^2 m k_\text{F}}{(2\pi)^2}\left[1 - \frac{\cos^2\phi/2}{2\sin\phi/2}\log\left(\frac{1-\sin\phi/2}{1+\sin\phi/2}\right)\right].
-\end{align}
+\end{aligned}
 $$
 
 Here $\phi$ is the angle between $\bk$ and $\bk'$ i.e. $\abs{\bk-\bk'}=2q=2k_\text{F}\sin\phi/2$. We won't go through the calculation of $f_{\uparrow\downarrow}(\bk,\bk')$, but just record the final answer.
@@ -206,18 +206,18 @@ Here $\phi$ is the angle between $\bk$ and $\bk'$ i.e. $\abs{\bk-\bk'}=2q=2k_\te
 Before doing that, let us first write the quadratic contribution to @eq-fdef in an alternative way that allows us to generalize to a fully rotationally invariant formulation (see the [Appendix](#rotationally-invariant-formulation))
 
 $$
-\begin{align}
+\begin{aligned}
 \frac{1}{2V \nu(E_F)}\sum_{\bk,\bk'} &\left(F(\phi)\left[n_\uparrow(\bk)+n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')+n_\downarrow(\bk')\right]\right.\\ &\left.+ G(\phi)\left[n_\uparrow(\bk)-n_\downarrow(\bk)\right]\left[n_\uparrow(\bk')-n_\downarrow(\bk')\right]\right).
-\end{align}
+\end{aligned}
 $$ {#eq-f-rewrite}
 
 Here we have defined
 
 $$
-\begin{align}
+\begin{aligned}
 F(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') + f_{\uparrow\downarrow}(\bk,\bk')\right]\\
 G(\phi)= \frac{\nu(E_\text{F})}{2}\left[f_{\uparrow\uparrow}(\bk,\bk') - f_{\uparrow\downarrow}(\bk,\bk')\right].
-\end{align}
+\end{aligned}
 $$ {#eq-fgdef}
 
 $F(\phi)$ and $G(\phi)$ have been made dimensionless by scaling by the density of states per unit volume at the Fermi surface $\nu(E_\text{F})\equiv k_{\text{F}}m/\pi^2$.
@@ -225,10 +225,10 @@ $F(\phi)$ and $G(\phi)$ have been made dimensionless by scaling by the density o
 The explicit form of the functions $F(\phi)$ and $G(\phi)$ is (see @landau1980statistical)
 
 $$
-\begin{align}
+\begin{aligned}
 F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
 G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right].
-\end{align} 
+\end{aligned} 
 $$ {#eq-ffinal}
 
 ::: {.callout-warning appearance="minimal"}
@@ -256,19 +256,19 @@ Fortunately, we can get at this quantity using the results we already have, than
 ![Shifting the Fermi sea to increase the momentum.](../assets/FermiShift.png){width=50%}
 
 $$
-\begin{align}
+\begin{aligned}
 N_s(\bk-\delta\bk) &=\theta(k_F-\abs{\bk-\delta\bk}) + n_{s}(\bk-\delta\bk)+\cdots\nonumber\\
 &=\theta(k_F-\abs{\bk}) + n_s(\bk) + \delta(k_F-\abs{\bk})\hat{\bk}\cdot\delta\bk - \delta\bk \nabla_\bk n_{s}(\bk)+\cdots.
-\end{align}
+\end{aligned}
 $$
 
 Treating the last three terms as $n_s(\bk)$, our excitation energy changes to first order in $\delta\bk$ by an amount
 
 $$
-\begin{align}
+\begin{aligned}
 \Delta E &= \sum_{\bk,s} n_{s}(\bk)\delta\bk\cdot\nabla_\bk\varepsilon_s(\bk) \nonumber\\
 &+\frac{1}{V}\sum_{\bk, s,\bk', s'} f_{s^{}s'}(\bk,\bk')n_{s}(\bk)\left[\delta(k_F-\abs{\bk'})\hat{\bk}'\cdot\delta\bk - \nabla_{\bk'}n_{s'}(\bk')\cdot\delta\bk\right].
-\end{align}
+\end{aligned}
 $$
 
 (In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is
@@ -342,10 +342,10 @@ having momentum $\bk$ and spin $s$. When the interactions are switched on, this 
 Let’s compare $\ket{\bk,s}$ with $\adop_{\bk,s}\ket{0}$, the state obtained by creating a particle in the _exact_ ground state of the problem. In first order perturbation theory, $\ket{0}$ includes the first kind of state above (2 particle-hole pair states). The states only differ because of the contribution of the second kind. To first order, the single quasiparticle state is therefore
 
 $$
-\begin{align}
+\begin{aligned}
 \ket{\bk,s} &= \sqrt{\frac{z_k}{\braket{0}{\aop_{\bk,s}\adop_{\bk,s}}{0}}}\adop_{\bk,s}\ket{0} \nonumber\\
 &\qquad + \frac{U_0}{V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk\\ s'}}\frac{\adop_{\bk_1,s}\adop_{\bk_2,s'}\aop_{\bk_3,s'}\ket{\text{FS}}}{\epsilon(\bk_1)+\epsilon(\bk_2)-\epsilon(\bk_3)-\epsilon(\bk)},
-\end{align}
+\end{aligned}
 $$ {#eq-ph-peturb}
 
 where $\sqrt{z_k}$ is a normalization factor. As we go to successively higher orders of perturbation theory, the quasiparticle state is 'dressed' with more particle-hole pairs. The quasiparticle retains the conserved quantum numbers (momentum and spin in this case) of the fermions of the noninteracting theory.
