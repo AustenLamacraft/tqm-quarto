@@ -797,6 +797,27 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 <p>We worked this out for the bosonic case. However, you can check that <a href="#eq-bilinear" class="quarto-xref">Equation&nbsp;20</a>, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So <span class="math inline">\(\hat A\)</span> has the same form for fermions.</p>
 <p>Notice that <span class="math inline">\(\mathop{\hat A}\)</span> <em>looks</em> formally like the expectation value of <span class="math inline">\(\mathop{A}\)</span> in a single particle state <span class="math inline">\(\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle\)</span>. The difference, of course, is that the <span class="math inline">\(a_{\alpha}\)</span> in <span class="math inline">\(\mathop{\hat A}\)</span> are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name <strong>second quantization</strong>, which is traditionally introduced with the caveat that what we are doing is not in any way ‘more quantum’ than before.</p>
 <p>To repeat the above prescription for emphasis: <em>A one particle operator <span class="math inline">\(\mathop{\hat A}\)</span> has a second quantized representation formally identical to the expectation value of its single particle counterpart <span class="math inline">\(\mathop{A}\)</span></em>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Another way to justify the second quantized form of the one particle operator is to start from the expression</p>
+<p><span class="math display">\[
+\hat A = \int \psi^\dagger(\mathbf{r}) \left[A \psi^{\vphantom{\dagger}}(\mathbf{r})\right] d\mathbf{r}
+\]</span></p>
+<p>and take matrix elements with general <span class="math inline">\(N\)</span>-particle state <span class="math inline">\(\lvert{\Psi}\rangle\)</span>, <span class="math inline">\(\lvert{\Phi}\rangle\)</span>. Using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> we find</p>
+<p><span class="math display">\[
+\langle{\Psi}\rvert \hat A \lvert \Phi \rangle \longleftrightarrow N \int \Psi^*(\mathbf{r}_1,\ldots\mathbf{r}_N) \left[A_{1} \Phi(\mathbf{r}_1,\ldots\mathbf{r}_N)\right] d\mathbf{r}_1\cdots d\mathbf{r}_N.
+\]</span></p>
+<p>By the symmetry or antisymmetry of the wavefunctions this is the same as taking matrix elements of the first quantized form <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a>.</p>
+</div>
+</div>
 <p>This probably all looks a bit abstract, so let’s turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in <a href="#eq-h1" class="quarto-xref">Equation&nbsp;18</a>. According to the above prescription, this should have the second quantized form</p>
 <p><span class="math display">\[
     \label{2nd_quant_H2ndQ}
@@ -817,7 +838,7 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 \end{aligned}
 \tag{23}\]</span></span></p>
 <p>where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> and <a href="#eq-N-rep" class="quarto-xref">Equation&nbsp;22</a> may be seen by using <a href="#eq-psi-def" class="quarto-xref">Equation&nbsp;13</a>.</p>
-<p>The Heisenberg equation of motion corresponding to <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> is</p>
+<p>The Heisenberg equation of motion for <span class="math inline">\(\psi^{\vphantom{\dagger}}(\mathbf{r},t)=e^{i\hat Ht}\psi^{\vphantom{\dagger}}(\mathbf{r}) e^{-i\hat H t}\)</span> with Hamiltonian <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> is</p>
 <p><span class="math display">\[
 \begin{split}
 i\partial_{t}\psi^{\vphantom{\dagger}}(\mathbf{r},t) &amp;= -\left[\mathop{\hat H},\psi^{\vphantom{\dagger}}(\mathbf{r},t)\right]\\

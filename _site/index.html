@@ -375,11 +375,16 @@ window.Quarto = {
 Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/form/SV_0diLIYDRbcAZSaq). Closes 1st December at midnight.
 
 ::: -->
-<!-- ::: {.callout-warning appearance="minimal"}
-
-Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
-
-::: -->
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Check out these <a href="assets/CMD_Summer_Internship2026.pdf">Summer internships</a> at <a href="https://www.pks.mpg.de/">MPIPKS, Dresden</a>. Deadline for applications is 30th November!</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -520,7 +525,7 @@ Warning
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

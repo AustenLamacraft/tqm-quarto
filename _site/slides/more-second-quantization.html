@@ -373,7 +373,7 @@ i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}
 
 <ul>
 <li>Write the field operator <span class="math display">
-\psi^{\vphantom{\dagger}}(\mathbf{r})=\varphi_L(\mathbf{r},t)a^{\vphantom{\dagger}}_L+\varphi_R(\mathbf{r},t)a^{\vphantom{\dagger}}_R+\cdots,
+\psi^{\vphantom{\dagger}}(\mathbf{r},t)=\varphi_L(\mathbf{r},t)a^{\vphantom{\dagger}}_L+\varphi_R(\mathbf{r},t)a^{\vphantom{\dagger}}_R+\cdots,
 </span> where wavefunctions <span class="math inline">\varphi_{L/R}(\mathbf{r},t)</span> obey free particle Schrödinger</li>
 </ul>
 <p><span class="math display">
@@ -437,7 +437,7 @@ N_R}\mathrm{Re}\,e^{i\theta}\,\varphi^*_L(\mathbf{r},t)\varphi_R(\mathbf{r},t)}^
 \end{align*}
 </span></p>
 <ul>
-<li>Second line contains interference fringes!</li>
+<li>Second and third terms contains interference fringes!</li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -1009,7 +1009,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -500,7 +500,7 @@ $$
 
 ---
 
-- Heisenberg equation of motion for $\pop(\br)=e^{i\hat Ht}\pop(\br) e^{-i\hat H t}$ with noninteracting Hamiltonian
+- Heisenberg equation of motion for $\pop(\br,t)=e^{i\hat Ht}\pop(\br) e^{-i\hat H t}$ with noninteracting Hamiltonian
 
 $$
 	\begin{split}

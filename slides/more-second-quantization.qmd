@@ -247,7 +247,7 @@ $$
 
 - Write the field operator
 $$
-\pop(\br)=\varphi_L(\br,t)\aop_L+\varphi_R(\br,t)\aop_R+\cdots,
+\pop(\br,t)=\varphi_L(\br,t)\aop_L+\varphi_R(\br,t)\aop_R+\cdots,
 $$
 where wavefunctions $\varphi_{L/R}(\br,t)$ obey free particle Schrödinger
 
@@ -312,7 +312,7 @@ $$
 \end{align*}
 $$
 
-- Second line contains interference fringes!
+- Second and third terms contains interference fringes!
 
 ---
 

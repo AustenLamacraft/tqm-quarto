@@ -425,6 +425,25 @@ Notice that $\mathop{\hat A}$ _looks_ formally like the expectation value of $\m
 
 To repeat the above prescription for emphasis: _A one particle operator $\mathop{\hat A}$ has a second quantized representation formally identical to the expectation value of its single particle counterpart $\mathop{A}$_.
 
+::: {.callout-tip}
+## Check
+
+Another way to justify the second quantized form of the one particle operator is to start from the expression
+
+$$
+\hat A = \int \pdop(\br) \left[A \pop(\br)\right] d\br
+$$
+
+and take matrix elements with general $N$-particle state $\ket{\Psi}$, $\ket{\Phi}$. Using @eq-freeze we find 
+
+$$
+\braket{\Psi}{\hat A}{\Phi} \longleftrightarrow N \int \Psi^*(\br_1,\ldots\br_N) \left[A_{1} \Phi(\br_1,\ldots\br_N)\right] d\br_1\cdots d\br_N.
+$$
+
+By the symmetry or antisymmetry of the wavefunctions this is the same as taking matrix elements of the first quantized form @eq-one-particle.
+
+:::
+
 This probably all looks a bit abstract, so let's turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in @eq-h1. According to the above prescription, this should have the second quantized form
 
 $$
@@ -453,7 +472,7 @@ $$ {#eq-h-pos}
 
 where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of @eq-h-pos and @eq-N-rep may be seen by using @eq-psi-def.
 
-The Heisenberg equation of motion corresponding to @eq-h-pos is
+The Heisenberg equation of motion for $\pop(\br,t)=e^{i\hat Ht}\pop(\br) e^{-i\hat H t}$ with Hamiltonian @eq-h-pos is
 
 $$
 \begin{split}

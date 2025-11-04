@@ -555,16 +555,17 @@ $$
 $$
 \begin{aligned}
 \bra{0}\adop_j \aop_j\ket{0} &= \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0}\\
-\sum_{j=1}^N \adop_j \aop_j &= \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right).
+\sum_{j=1}^N \adop_j \aop_j &= \frac{1}{2} \sum_{j=1}^N \left(x_j^2 + p_j^2 - 1\right) = -\frac{N}{2} + \frac{1}{2}\sum_n \left(q_n q_{-n} + \pi_n\pi_{-n}\right)
 \end{aligned}
 $$
+
+---
 
 - commutes with 
 
 $$
 H_\text{FM}^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]
 $$
-
 and is zero in the ground state (c.f. ground state energy)
 
 ---

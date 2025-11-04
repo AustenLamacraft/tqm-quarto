@@ -429,7 +429,7 @@ Can't get these to work with tex output at the moment because they end up after 
 \DeclareMathOperator{\E}{\mathbb{E}} 
 -->
 </div>
-<p>In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.</p>
+<p>The elastic chain was a model defined in terms of the displacements <span class="math inline">\(u_j\)</span> and momenta <span class="math inline">\(p_j\)</span> of <span class="math inline">\(N\)</span> particles satisfying <span class="math inline">\([u_j,p_k]=i\delta_{jk}\)</span>. In this lecture we are going to consider models where the individual degrees of freedom are quantum mechanical <em>spins</em>, defined by a vectors of operators <span class="math inline">\(\mathbf{s} = (s^x, s^y, s^z)\)</span> at each site, obeying the usual spin commutation relations <span class="math inline">\([s^a,s^b]=i\epsilon_{abc}s^c\)</span>. Such <em>spin models</em> are often used as quantum mechanical models of magnetic materials. Despite the obvious differences, we will see that there are a number of similarities between the elementary excitation of the two types of system.</p>
 <p>Reading: <span class="citation" data-cites="auerbach2012interacting">Auerbach (<a href="#ref-auerbach2012interacting" role="doc-biblioref">2012</a>)</span>.</p>
 <hr>
 <section id="the-heisenberg-model" class="level2" data-number="1">
@@ -753,8 +753,8 @@ s^z_j = s - a^\dagger_ja^{\vphantom{\dagger}}_j.
 <p>Next we use the oscillator coordinates just as in <a href="../notes/elastic-chain.html">Lecture 3</a>. Since we want to express <a href="#eq-h2-afm" class="quarto-xref">Equation&nbsp;11</a> in terms of ladder operators, we have to adapt our definition accordingly. For <span class="math inline">\(\eta\neq 0, \pi\)</span> the operators</p>
 <p><span class="math display">\[
 \begin{aligned}
-a^{\vphantom{\dagger}}_\eta &amp;= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_n + \frac{i}{|\cot(\eta /2)|}\pi_{-n}\right)\nonumber\\
-a^\dagger_\eta &amp;= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\cot(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
+a^{\vphantom{\dagger}}_\eta &amp;= \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_n + \frac{i}{|\tan(\eta /2)|}\pi_{-n}\right)\nonumber\\
+a^\dagger_\eta &amp;= \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\tan(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
 \label{spin_adef}
 \end{aligned}
 \]</span></p>

@@ -540,7 +540,7 @@ i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}
 \]</span></p>
 <p>We write the field operator as</p>
 <p><span class="math display">\[
-\psi^{\vphantom{\dagger}}(\mathbf{r})=\varphi_L(\mathbf{r},t)a^{\vphantom{\dagger}}_L+\varphi_R(\mathbf{r},t)a^{\vphantom{\dagger}}_R+\cdots,
+\psi^{\vphantom{\dagger}}(\mathbf{r},t)=\varphi_L(\mathbf{r},t)a^{\vphantom{\dagger}}_L+\varphi_R(\mathbf{r},t)a^{\vphantom{\dagger}}_R+\cdots,
 \]</span></p>
 <p>where the wavefunctions <span class="math inline">\(\varphi_{L/R}(\mathbf{r},t)\)</span> are evolving freely, and the dots denote the other states in some complete orthogonal set that includes <span class="math inline">\(\varphi_L(\mathbf{r})\)</span> and <span class="math inline">\(\varphi_R(\mathbf{r})\)</span>: we can ignore them because they are empty. A calculation of the expectation value of <span class="math inline">\(\rho(\mathbf{r})=\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\)</span> gives</p>
 <p><span id="eq-dens-int"><span class="math display">\[
@@ -612,7 +612,7 @@ R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
     \varphi_R(\mathbf{r}')\varphi_L(\mathbf{r}).
 \end{aligned}
 \tag{9}\]</span></span></p>
-<p>We see that the second line contains interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at <span class="math inline">\(\mathbf{r}'\)</span> if there is one at <span class="math inline">\(\mathbf{r}\)</span>. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.</p>
+<p>We see that the second and third terms contain interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at <span class="math inline">\(\mathbf{r}'\)</span> if there is one at <span class="math inline">\(\mathbf{r}\)</span>. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/AndrewsFringes.png" class="img-fluid figure-img" style="width:50.0%"></p>
@@ -944,7 +944,7 @@ Nazarov, Yuli V, and Jeroen Danon. 2013. <em>Advanced Quantum Mechanics: A Pract
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

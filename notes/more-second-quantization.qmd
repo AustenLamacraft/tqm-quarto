@@ -157,7 +157,7 @@ $$
 We write the field operator as
 
 $$
-\pop(\br)=\varphi_L(\br,t)\aop_L+\varphi_R(\br,t)\aop_R+\cdots,
+\pop(\br,t)=\varphi_L(\br,t)\aop_L+\varphi_R(\br,t)\aop_R+\cdots,
 $$
 
 where the wavefunctions $\varphi_{L/R}(\br,t)$ are evolving freely, and the dots denote the other states in some complete orthogonal set that includes $\varphi_L(\br)$ and $\varphi_R(\br)$: we can ignore them because they are empty. A calculation of the expectation value of $\rho(\br)=\pdop(\br)\pop(\br)$ gives
@@ -248,7 +248,7 @@ $$
 \end{aligned}
 $$ {#eq-dens-corr}
 
-We see that the second line contains interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at $\br'$ if there is one at $\br$. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.
+We see that the second and third terms contain interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at $\br'$ if there is one at $\br$. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.
 
 ![Fringes observed by interfering two Bose condensates (Source: @andrews1997observation)](../assets/AndrewsFringes.png){width=50%}
 
