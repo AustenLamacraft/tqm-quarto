@@ -570,7 +570,7 @@ H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1)
 <p><span class="math display">
 \begin{align*}
 H_\text{pair} = &amp;N\epsilon(0)+\frac{U_0}{2V}N(N-1)
-+\sum_{\mathbf{k}\neq 0}\left[\epsilon(\mathbf{k})-\epsilon(0)\right]a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\\
++\sum_{\mathbf{k}\neq 0}\overbrace{\left[\epsilon(\mathbf{k})-\epsilon(0)\right]}^{\equiv\tilde\epsilon(\mathbf{k})}a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\\
 &amp;+\frac{U_0}{2V}\sum_{\mathbf{k}\neq 0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}a^{\vphantom{\dagger}}_{0}a^{\vphantom{\dagger}}_{0} + a^\dagger_{0}a^\dagger_{0}a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^\dagger_0a^{\vphantom{\dagger}}_0a^{\vphantom{\dagger}}_\mathbf{k}\right]
 \end{align*}
 </span></p>
@@ -606,7 +606,7 @@ a^{\vphantom{\dagger}}_\mathbf{k}a^\dagger_0\lvert{\Psi'}\rangle\otimes\lvert{N_
 <ul>
 <li><p>Result is <strong>Bogoliubov Hamiltonian</strong> <span class="math display">
 \begin{align*}
-H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
+H_\text{pair} &amp;= \sum_\mathbf{k}\tilde\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
 \end{align*}
 </span> <span class="math inline">n_0 = N_0/V</span> is density of particles in zero momentum state</p></li>
 <li><p>Hamiltonian diagonalized by <strong>Bogoliubov transformation</strong></p></li>
@@ -758,14 +758,14 @@ h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dag
 <ul>
 <li>Apply to Bogoliubov Hamiltonian <span class="math display">
 \begin{align*}
-H_\text{pair} &amp;= \sum_\mathbf{k}\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
+H_\text{pair} &amp;= \sum_\mathbf{k}\tilde\epsilon(\mathbf{k})a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}+\frac{U_0}{2V}N(N-1) \nonumber\\ &amp;\quad+\frac{U_0n_0}{2}\sum_{\mathbf{k}\neq0}\left[a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}} + a^{\vphantom{\dagger}}_{\mathbf{k}}a^{\vphantom{\dagger}}_{-\mathbf{k}}+2a^\dagger_\mathbf{k}a^{\vphantom{\dagger}}_\mathbf{k}\right]
 \end{align*}
 </span></li>
 </ul>
 <p><span class="math display">
 \begin{align*}
 b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_\mathbf{p}\cosh\kappa_\mathbf{p}+a^\dagger_{-\mathbf{p}}\sinh\kappa_\mathbf{p}\nonumber\\
-\tanh2\kappa_\mathbf{p}=\frac{n_0 U_0}{\epsilon(\mathbf{p})+n_0 U_0}
+\tanh2\kappa_\mathbf{p}=\frac{n_0 U_0}{\tilde\epsilon(\mathbf{k})+n_0 U_0}
 \end{align*}
 </span></p>
 </section>
@@ -779,25 +779,25 @@ b^{\vphantom{\dagger}}_\mathbf{p}.
 <li><span class="math inline">\omega(\mathbf{p})</span> is the Bogoliubov dispersion relation</li>
 </ul>
 <p><span class="math display">
-\omega(\mathbf{p}) = \sqrt{\epsilon(\mathbf{p})\left(\epsilon(\mathbf{p})+2U_0n_0\right)}
+\omega(\mathbf{p}) = \sqrt{\tilde\epsilon(\mathbf{k})\left(\tilde\epsilon(\mathbf{k})+2U_0n_0\right)}
 </span></p>
 <ul>
 <li>Ground state energy is</li>
 </ul>
 <p><span class="math display">
-E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0\right]
+E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\tilde\epsilon(\mathbf{k})-n_0U_0\right]
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <p><span class="math display">
-E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0\right]
+E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p})-\tilde\epsilon(\mathbf{k})-n_0U_0\right]
 </span></p>
 <ul>
 <li>Annoyingly, this integral is divergent at high momenta because</li>
 </ul>
 <p><span class="math display">
-\omega(\mathbf{p})\underset{|\mathbf{p}| \to \infty}{\longrightarrow} \epsilon(\mathbf{p}) + n_0 U_0 -\frac{(n_0 U_0)^2}{2\epsilon(\mathbf{p})}
+\omega(\mathbf{p})\underset{|\mathbf{p}| \to \infty}{\longrightarrow} \tilde\epsilon(\mathbf{k}) + n_0 U_0 -\frac{(n_0 U_0)^2}{2\tilde\epsilon(\mathbf{k})}
 </span></p>
 </section>
 <section class="slide level2 center">
@@ -805,9 +805,9 @@ E_0=\frac{1}{2}nU_0  N+\sum_{\mathbf{p}\neq 0}\frac{1}{2}\left[\omega(\mathbf{p}
 <ul>
 <li><p>We can cure the problem by writing <span class="math display">
 \begin{align*}
-E_0&amp;=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\mathbf{p}\frac{U_0}{2\epsilon(\mathbf{p})}\right]}^{\text{1st and 2nd order PT}}\\
+E_0&amp;=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\mathbf{p}\frac{U_0}{2\tilde\epsilon(\mathbf{k})}\right]}^{\text{1st and 2nd order PT}}\\
 &amp;+\overbrace{\sum_{\mathbf{p}\neq 0}\frac{1}
-{2}\left[\omega(\mathbf{p})-\epsilon(\mathbf{p})-n_0U_0+ \frac{(n_0U_0)^2}{2\epsilon(\mathbf{p})}\right]}^{\text{finite}}
+{2}\left[\omega(\mathbf{p})-\tilde\epsilon(\mathbf{k})-n_0U_0+ \frac{(n_0U_0)^2}{2\tilde\epsilon(\mathbf{k})}\right]}^{\text{finite}}
 \end{align*}
 </span></p></li>
 <li><p>Term added and subtracted is contribution to the ground state energy in second order perturbation theory</p></li>
@@ -827,7 +827,7 @@ b^{\vphantom{\dagger}}_\mathbf{k}\lvert{0}\rangle=\left(\cosh\kappa_\mathbf{k}a^
 <li>A state (unnormalized) that satisfies this condition is</li>
 </ul>
 <p><span class="math display">
-\lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\mathbf{k}a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
+\lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\left[\tanh\kappa_\mathbf{k}\right]a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1173,7 +1173,7 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}}
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

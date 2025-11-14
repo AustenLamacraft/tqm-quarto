@@ -758,7 +758,7 @@ h = \Omega\left[b^\dagger_1b^{\vphantom{\dagger}}_1+b^\dagger_2b^{\vphantom{\dag
 </ul>
 </div>
 </div>
-<p>Applying the same logic to our Hamiltonian <strong>?@eq-HY</strong> gives</p>
+<p>Applying the same logic to our Hamiltonian <a href="#eq-H-pair-3" class="quarto-xref">Equation&nbsp;8</a> gives</p>
 <p><span class="math display">\[
 b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_\mathbf{p}\cosh\kappa_\mathbf{p}+a^\dagger_{-\mathbf{p}}\sinh\kappa_\mathbf{p}\nonumber\\
 \qquad \tanh2\kappa_\mathbf{p}=\frac{n_0 U_0}{\tilde\epsilon(\mathbf{p})+n_0 U_0},
@@ -786,7 +786,7 @@ b^{\vphantom{\dagger}}_\mathbf{k}\lvert{0}\rangle=\left(\cosh\kappa_\mathbf{k}a^
 \]</span></p>
 <p>But what does it <em>look</em> like? A state (unnormalized) that satisfies the above equation is</p>
 <p><span id="eq-bog-wavefn"><span class="math display">\[
-\lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\mathbf{k}a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
+\lvert{0}\rangle=\prod_{\mathbf{k}\neq 0} \exp\left(-\frac{1}{2}\left[\tanh\kappa_\mathbf{k}\right]a^\dagger_{\mathbf{k}}a^\dagger_{-\mathbf{k}}\right)\lvert{\Psi_\text{GP}}\rangle
 \tag{9}\]</span></span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -798,7 +798,7 @@ b^{\vphantom{\dagger}}_\mathbf{k}\lvert{0}\rangle=\left(\cosh\kappa_\mathbf{k}a^
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Show this. If you’ve seen coherent states before, remember that the state <span class="math inline">\(e^{\alpha a^\dagger}\lvert{\text{VAC}}\rangle\)</span> is an eigenstate of <span class="math inline">\(a^{\vphantom{\dagger}}\)</span> with eigenvalue <span class="math inline">\(\alpha\)</span>.</p>
+<p>Show this. If you’ve seen coherent states before, remember that the state <span class="math inline">\(e^{\alpha a^\dagger}\lvert{0}\rangle\)</span> is an eigenstate of <span class="math inline">\(a^{\vphantom{\dagger}}\)</span> with eigenvalue <span class="math inline">\(\alpha\)</span>.</p>
 </div>
 </div>
 <p>The form <a href="#eq-bog-wavefn" class="quarto-xref">Equation&nbsp;9</a> shows explicitly that the state consists of a superposition of pairs excited out of the <span class="math inline">\(\mathbf{k}=0\)</span> condensate. As we’ve discussed, we don’t actually keep track of the loss of particles from the condensate in the Bogoliubov approximation, on the assumption that it is small.</p>
@@ -970,7 +970,7 @@ a_0=(m/4\pi)U_0,\qquad a_1=-(m/4\pi)\frac{U_0^2}{V}\sum_\mathbf{p}\frac{1}{2\til
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

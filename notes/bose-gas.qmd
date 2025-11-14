@@ -419,7 +419,7 @@ The form of $\Omega$ is most easily understood by noting that the transformation
 
 :::
 
-Applying the same logic to our Hamiltonian @eq-HY gives
+Applying the same logic to our Hamiltonian @eq-H-pair-3 gives
 
 $$
 \bop_\bp=\aop_\bp\cosh\kappa_\bp+\adop_{-\bp}\sinh\kappa_\bp\nonumber\\
@@ -458,13 +458,13 @@ $$
 But what does it _look_ like? A state (unnormalized) that satisfies the above equation is
 
 $$
-\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\bk\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
+\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\left[\tanh\kappa_\bk\right]\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
 $$ {#eq-bog-wavefn}
 
 ::: {.callout-tip}
 ## Check
 
-Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{\text{VAC}}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
+Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{0}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
 
 :::
 
