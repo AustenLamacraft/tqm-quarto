@@ -312,7 +312,7 @@ $$ {#eq-noise-asym}
 
 ::: {.callout-note}
 
-There seems to be room for disagreement about how to define $S(\omega)$. @chaikin1995principles and @nozieres2018theory have it this way, @nazarov2013advanced have the energy axis inverted. It comes down to whether you want to think about energy going to or from the system (see later).
+There seems to be room for disagreement about how to define $S(\omega)$. @chaikin2000principles and @nozieres2018theory have it this way, @nazarov2013advanced have the energy axis inverted. It comes down to whether you want to think about energy going to or from the system (see later).
 
 :::
 

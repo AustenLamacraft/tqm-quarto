@@ -120,7 +120,7 @@ Why? There is some double counting of terms that is irrelevant as $V\to\infty$
 
 - For $\Braket{\text{pair}|\cdots|\text{pair}}$ we can replace $H\to H_\text{pair}$
 $$
-H_{\text{pair}}=2\sum_{\bp}\epsilon_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum'_{\bp,\bp'} \bdop_\bp
+H_{\text{pair}}=2\sum_{\bp}\epsilon_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum_{\bp,\bp'} \bdop_\bp
 \bop_{\bp'}
 $$
 since $2\bdop_\bp\bop_\bp = \adop_{\bp,\uparrow}\aop_{\bp,\uparrow}+\adop_{-\bp,\downarrow}\aop_{-\bp,\downarrow}$ on these states
@@ -309,7 +309,8 @@ $$
 \Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}
 $$
-- Taking  the extremum of energy with respect to angles $\theta_{\bp}$ gives
+
+- Taking the extremum of energy with respect to angles $\theta_{\bp}$ gives
 $$
 \xi_{\bp}\sin\theta_\bp+|\Delta|\cos\theta_\bp=0,
 $$
@@ -379,18 +380,22 @@ $$
 $$
 satisfy fermion anticommutation relations and annihilate BCS state
 $$
-\alop_{\bp,s}\ket{\text{BCS}}=0.
+\alop_{\bp,s}\ket{\text{BCS}}=0
 $$
 
 ---
 
 $$
 \ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_{\bp'}\adop_
-{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},
+{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}}
 $$
 
-- If we chose $s=\uparrow$ so that $\left(\bp,\uparrow\right)$ state is certainly occupied it means that $\adop_{\bp
-\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0$
+- If we chose $s=\uparrow$ then $\left(\bp,\uparrow\right)$ state is occupied and $\left(-\bp,\downarrow\right)$ empty
+$$
+\adop_{\bp
+\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0,\qquad \aop_{-\bp
+\downarrow}\aop_{\bp\uparrow}\ket{\bp,\uparrow}=0
+$$
 
 - Corresponding term no longer appears in interaction term when it is applied to this state
 

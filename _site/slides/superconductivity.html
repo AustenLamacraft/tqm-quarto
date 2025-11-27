@@ -267,7 +267,7 @@ a^\dagger_{\mathbf{p}+\mathbf{q}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vp
 <ul>
 <li><p>Introduce the pair operators <span class="math inline">b^\dagger_\mathbf{p}=a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}}</span>, <span class="math inline">b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}</span></p></li>
 <li><p>For <span class="math inline">\Braket{\text{pair}|\cdots|\text{pair}}</span> we can replace <span class="math inline">H\to H_\text{pair}</span> <span class="math display">
-H_{\text{pair}}=2\sum_{\mathbf{p}}\epsilon_{\mathbf{p}}b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}+\frac{U_0}{V}\sum'_{\mathbf{p},\mathbf{p}'} b^\dagger_\mathbf{p}
+H_{\text{pair}}=2\sum_{\mathbf{p}}\epsilon_{\mathbf{p}}b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'} b^\dagger_\mathbf{p}
 b^{\vphantom{\dagger}}_{\mathbf{p}'}
 </span> since <span class="math inline">2b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}= a^\dagger_{\mathbf{p},\uparrow}a^{\vphantom{\dagger}}_{\mathbf{p},\uparrow}+a^\dagger_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}</span> on these states</p></li>
 <li><p><em>Looks</em> quadratic. Can we solve it?</p></li>
@@ -456,14 +456,17 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <p><span class="math display">
 \Braket{\text{BCS}|H|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}
-</span> - Taking the extremum of energy with respect to angles <span class="math inline">\theta_{\mathbf{p}}</span> gives <span class="math display">
+</span></p>
+<ul>
+<li>Taking the extremum of energy with respect to angles <span class="math inline">\theta_{\mathbf{p}}</span> gives <span class="math display">
 \xi_{\mathbf{p}}\sin\theta_\mathbf{p}+|\Delta|\cos\theta_\mathbf{p}=0,
 </span> where the <strong>gap parameter</strong> is <span class="math display">
 \Delta=-\frac{U_0}{2V}\sum_\mathbf{p}e^{i\varphi}\sin\theta_\mathbf{p}=-\frac{U_0}{V}\sum_\mathbf{p}u^*_\mathbf{p}v_\mathbf{p}.
 </span> <span class="math display">
 \cos\theta_\mathbf{p}=-\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}},\qquad \sin\theta_\mathbf{p}=\frac{|\Delta|}{E_\mathbf{p}}, \qquad E_\mathbf{p}=\sqrt{\xi
 (\mathbf{p})^2+|\Delta|^2}
-</span></p>
+</span></li>
+</ul>
 </section>
 <section class="slide level2 center">
 
@@ -512,7 +515,7 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 \alpha^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}&amp;=u_{-\mathbf{p}}a^{\vphantom{\dagger}}_{\mathbf{p}\downarrow}+v_{-\mathbf{p}}a^\dagger_{-\mathbf{p}\uparrow},
 \end{align*}
 </span> satisfy fermion anticommutation relations and annihilate BCS state <span class="math display">
-\alpha^{\vphantom{\dagger}}_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=0.
+\alpha^{\vphantom{\dagger}}_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=0
 </span></li>
 </ul>
 </section>
@@ -520,11 +523,14 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 
 <p><span class="math display">
 \lvert{\mathbf{p},s}\rangle=\alpha^\dagger_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=a^\dagger_{\mathbf{p},s}\prod_{\mathbf{p}'\neq \mathbf{p}} \left[v_{\mathbf{p}'}a^\dagger_
-{\mathbf{p}'\uparrow}a^\dagger_{-\mathbf{p}'\downarrow}+u_{\mathbf{p}'}\right]\lvert{\text{VAC}}\rangle,
+{\mathbf{p}'\uparrow}a^\dagger_{-\mathbf{p}'\downarrow}+u_{\mathbf{p}'}\right]\lvert{\text{VAC}}\rangle
 </span></p>
 <ul>
-<li><p>If we chose <span class="math inline">s=\uparrow</span> so that <span class="math inline">\left(\mathbf{p},\uparrow\right)</span> state is certainly occupied it means that <span class="math inline">a^\dagger_{\mathbf{p}
-\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0</span></p></li>
+<li><p>If we chose <span class="math inline">s=\uparrow</span> then <span class="math inline">\left(\mathbf{p},\uparrow\right)</span> state is occupied and <span class="math inline">\left(-\mathbf{p},\downarrow\right)</span> empty <span class="math display">
+a^\dagger_{\mathbf{p}
+\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0,\qquad a^{\vphantom{\dagger}}_{-\mathbf{p}
+\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}\lvert{\mathbf{p},\uparrow}\rangle=0
+</span></p></li>
 <li><p>Corresponding term no longer appears in interaction term when it is applied to this state</p></li>
 <li><p>The level is said to be `blocked’. Thus it certainly is an eigenstate of the pair problem, if <span class="math inline">\lvert{\text{BCS}}\rangle</span> is. What is its energy?</p></li>
 </ul>

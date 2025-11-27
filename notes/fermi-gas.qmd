@@ -271,7 +271,7 @@ $$
 \end{aligned}
 $$
 
-(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is
+(In the first term I have integrated by parts.) On grounds of Galilean invariance (See the [Appendix](#galilean-invariance)), however, we also know that this is
 
 $$
 \Delta E = \frac{\mathbf{P}}{m}\cdot\delta\bk,
@@ -425,3 +425,64 @@ $$
 \nu(E_\text{F})f_{s_1s_2,s_3s_4}(\bk,\bk') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}.
 $$
 
+### Galilean invariance
+
+You will have encountered the idea of a Galilean transformation in classical physics: that the laws of physics are the same in all frames moving at a constant velocity with respect to each other. This means in practice that we can substitute
+
+$$
+\br \longrightarrow \br - \bv t
+$$
+
+into any solution $\br(t)$ of the equations of motion and get another solution.
+
+::: {.callout-tip}
+## Check
+
+Check that this is true for any solution of Newton's equation for a system of particles interacting via a potential that depends only on their separation
+
+$$
+m_i \frac{d^2\br_i}{dt^2} = -\sum_{j\neq i} \nabla_i V(\br_i-\br_j).
+$$
+
+Note that it is important that there is no external potential.
+
+:::
+
+What is the analogous property of the Schrödinger equation? If $\Psi(\br_1,\ldots \br_N, t)$ is a solution of the $N$-body Schrödinger equation with Hamilonian
+
+$$
+ H = -\sum_{i=1}^{N} \frac{\nabla_i^{2}}{2m} + \sum_{i<j}^N V(\br_i-\br_j),
+$$
+
+then so is
+
+$$
+\exp\left[i\left(m\bv\cdot \sum_i \br_i -\frac{Nm\bv^2t}{2}\right )\right]\Psi(\br_1 - \bv t,\ldots \br_N - \bv t, t).
+$$
+
+::: {.callout-tip}
+## Check
+
+Check this
+
+:::
+
+Let's see how this works for the simplest example of one particle in a plane-wave state with wavefunction
+
+$$
+\psi(x,t) = \exp\left[i\left(\bp\cdot\br - \epsilon(\bp) t\right)\right].
+$$
+
+The transformed wavefunction is
+
+$$
+\exp\left[i\left(m\bv\cdot \br -\frac{m\bv^2t}{2}\right )\right]\psi(\br - \bv t,t) = \exp\left[i\left((\bp + m\bv)\cdot \br - \epsilon(\bp + m\bv)t\right)\right].
+$$
+
+This makes sense: the momentum has been shifted by $\bp \longrightarrow \bp + m\bv$ with a corresponding shift for the energy. For the time independent Schrödinger equation we can likewise show that if $\Psi(\br_1,\ldots, \br_N)$ is an eigenstate of $H$ with energy $E$, then
+
+$$
+\exp\left[i\left(m\bv\cdot \sum_i \br_i \right)\right]\Psi(\br_1,\ldots \br_N)
+$$ {#eq-time-indep-galilean}
+
+is also an eigenstate with eigenvalue $E + \bv\cdot \mathbf{P}$, where $\mathbf{P}$ is the total momentum (since $[H,\mathbf{P}]=0$ there are simultaneous eigenstates of both $H$ and $\mathbf{P}$). The effect of the exponential factor in @eq-time-indep-galilean is to shift all momentum states by $\delta\bk = \bv / m$. This provides the relation between the momentum shift $\delta \bk$ and the change in the energy given in @eq-gal.

@@ -386,6 +386,7 @@ window.Quarto = {
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix"><span class="header-section-number">5</span> Appendix</a>
   <ul class="collapse">
   <li><a href="#rotationally-invariant-formulation" id="toc-rotationally-invariant-formulation" class="nav-link" data-scroll-target="#rotationally-invariant-formulation"><span class="header-section-number">5.1</span> Rotationally invariant formulation</a></li>
+  <li><a href="#galilean-invariance" id="toc-galilean-invariance" class="nav-link" data-scroll-target="#galilean-invariance"><span class="header-section-number">5.2</span> Galilean invariance</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="fermi-gas.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -634,7 +635,7 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathb
 &amp;+\frac{1}{V}\sum_{\mathbf{k}, s,\mathbf{k}', s'} f_{s^{}s'}(\mathbf{k},\mathbf{k}')n_{s}(\mathbf{k})\left[\delta(k_F-\lvert{\mathbf{k}'}\rvert)\hat{\mathbf{k}}'\cdot\delta\mathbf{k}- \nabla_{\mathbf{k}'}n_{s'}(\mathbf{k}')\cdot\delta\mathbf{k}\right].
 \end{aligned}
 \]</span></p>
-<p>(In the first term I have integrated by parts.) On grounds of Galilean invariance, however, we also know that this is</p>
+<p>(In the first term I have integrated by parts.) On grounds of Galilean invariance (See the <a href="#galilean-invariance">Appendix</a>), however, we also know that this is</p>
 <p><span id="eq-gal"><span class="math display">\[
 \Delta E = \frac{\mathbf{P}}{m}\cdot\delta\mathbf{k},
 \tag{10}\]</span></span></p>
@@ -762,6 +763,65 @@ N_{\downarrow\uparrow}(\mathbf{k}) &amp; N_{\downarrow\downarrow}(\mathbf{k}).
 <p><span class="math display">\[
 \nu(E_\text{F})f_{s_1s_2,s_3s_4}(\mathbf{k},\mathbf{k}') = F(\phi) \delta_{s_1s_2}\delta_{s_3s_4} + G(\phi)\boldsymbol{\sigma}_{s_1s_2}\cdot\boldsymbol{\sigma}_{s_3s_4}.
 \]</span></p>
+</section>
+<section id="galilean-invariance" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="galilean-invariance"><span class="header-section-number">5.2</span> Galilean invariance</h3>
+<p>You will have encountered the idea of a Galilean transformation in classical physics: that the laws of physics are the same in all frames moving at a constant velocity with respect to each other. This means in practice that we can substitute</p>
+<p><span class="math display">\[
+\mathbf{r}\longrightarrow \mathbf{r}- \mathbf{v}t
+\]</span></p>
+<p>into any solution <span class="math inline">\(\mathbf{r}(t)\)</span> of the equations of motion and get another solution.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check that this is true for any solution of Newton’s equation for a system of particles interacting via a potential that depends only on their separation</p>
+<p><span class="math display">\[
+m_i \frac{d^2\mathbf{r}_i}{dt^2} = -\sum_{j\neq i} \nabla_i V(\mathbf{r}_i-\mathbf{r}_j).
+\]</span></p>
+<p>Note that it is important that there is no external potential.</p>
+</div>
+</div>
+<p>What is the analogous property of the Schrödinger equation? If <span class="math inline">\(\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N, t)\)</span> is a solution of the <span class="math inline">\(N\)</span>-body Schrödinger equation with Hamilonian</p>
+<p><span class="math display">\[
+H = -\sum_{i=1}^{N} \frac{\nabla_i^{2}}{2m} + \sum_{i&lt;j}^N V(\mathbf{r}_i-\mathbf{r}_j),
+\]</span></p>
+<p>then so is</p>
+<p><span class="math display">\[
+\exp\left[i\left(m\mathbf{v}\cdot \sum_i \mathbf{r}_i -\frac{Nm\mathbf{v}^2t}{2}\right )\right]\Psi(\mathbf{r}_1 - \mathbf{v}t,\ldots \mathbf{r}_N - \mathbf{v}t, t).
+\]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check this</p>
+</div>
+</div>
+<p>Let’s see how this works for the simplest example of one particle in a plane-wave state with wavefunction</p>
+<p><span class="math display">\[
+\psi(x,t) = \exp\left[i\left(\mathbf{p}\cdot\mathbf{r}- \epsilon(\mathbf{p}) t\right)\right].
+\]</span></p>
+<p>The transformed wavefunction is</p>
+<p><span class="math display">\[
+\exp\left[i\left(m\mathbf{v}\cdot \mathbf{r}-\frac{m\mathbf{v}^2t}{2}\right )\right]\psi(\mathbf{r}- \mathbf{v}t,t) = \exp\left[i\left((\mathbf{p}+ m\mathbf{v})\cdot \mathbf{r}- \epsilon(\mathbf{p}+ m\mathbf{v})t\right)\right].
+\]</span></p>
+<p>This makes sense: the momentum has been shifted by <span class="math inline">\(\mathbf{p}\longrightarrow \mathbf{p}+ m\mathbf{v}\)</span> with a corresponding shift for the energy. For the time independent Schrödinger equation we can likewise show that if <span class="math inline">\(\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_N)\)</span> is an eigenstate of <span class="math inline">\(H\)</span> with energy <span class="math inline">\(E\)</span>, then</p>
+<p><span id="eq-time-indep-galilean"><span class="math display">\[
+\exp\left[i\left(m\mathbf{v}\cdot \sum_i \mathbf{r}_i \right)\right]\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N)
+\tag{13}\]</span></span></p>
+<p>is also an eigenstate with eigenvalue <span class="math inline">\(E + \mathbf{v}\cdot \mathbf{P}\)</span>, where <span class="math inline">\(\mathbf{P}\)</span> is the total momentum (since <span class="math inline">\([H,\mathbf{P}]=0\)</span> there are simultaneous eigenstates of both <span class="math inline">\(H\)</span> and <span class="math inline">\(\mathbf{P}\)</span>). The effect of the exponential factor in <a href="#eq-time-indep-galilean" class="quarto-xref">Equation&nbsp;13</a> is to shift all momentum states by <span class="math inline">\(\delta\mathbf{k}= \mathbf{v}/ m\)</span>. This provides the relation between the momentum shift <span class="math inline">\(\delta \mathbf{k}\)</span> and the change in the energy given in <a href="#eq-gal" class="quarto-xref">Equation&nbsp;10</a>.</p>
 
 
 
