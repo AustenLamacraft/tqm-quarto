@@ -462,42 +462,41 @@ a^\dagger_{\mathbf{p}+\mathbf{q}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vp
 \tag{2}\]</span></span></p>
 <p>where the numbers <span class="math inline">\(n_{\mathbf{p}}^P\)</span> are either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> (why?). Note that in writing <a href="#eq-pair-fermi" class="quarto-xref">Equation&nbsp;2</a> the number of each species is assumed to be exactly <span class="math inline">\(N/2\)</span>. Restricting ourselves to states of this form means that <span class="math display">\[
 \langle{\text{pair}}\rvert H_\text{int} \lvert \text{pair} \rangle = \frac{U_0}{V}N_\uparrow N_\downarrow+\langle{\text{pair}}\rvert \tilde H_{\text{int}} \lvert \text{pair} \rangle,
-\]</span> where the first term is the Hartree–Fock energy and <span class="math display">\[
+\]</span> where the first term is the Hartree–Fock energy and <span id="eq-bcsH"><span class="math display">\[
 \tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\mathbf{p}, \mathbf{p}'}a^\dagger_
 {\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p}'\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}'\uparrow},
-\label{super_bcsH}
-\]</span></p>
+\tag{3}\]</span></span></p>
 <p>It’s useful to introduce the operator <span class="math inline">\(b^\dagger_\mathbf{p}=a^\dagger_{\mathbf{p}\uparrow}a^\dagger_{-\mathbf{p}
 \downarrow}\)</span> and its conjugate <span class="math inline">\(b^{\vphantom{\dagger}}_\mathbf{p}=a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}\)</span>, that respectively create and destroy a <span class="math inline">\(\left(\mathbf{p}\uparrow,-\mathbf{p}\downarrow\right)\)</span> pair. Because our pair ansatz <a href="#eq-pair-fermi" class="quarto-xref">Equation&nbsp;2</a> only includes amplitudes for a given <span class="math inline">\(\left(+\mathbf{p},-\mathbf{p}\right)\)</span> pair of momenta having either none or two fermions, we can compute expectations using the pair Hamiltonian <span id="eq-pair-h"><span class="math display">\[
 H_{\text{pair}}=2\sum_{\mathbf{p}}\epsilon_{\mathbf{p}}b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'} b^\dagger_\mathbf{p}
 b^{\vphantom{\dagger}}_{\mathbf{p}'},
-\tag{3}\]</span></span> where <span class="math inline">\(2b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}= a^\dagger_{\mathbf{p},\uparrow}a^{\vphantom{\dagger}}_{\mathbf{p},\uparrow}+a^\dagger_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}\)</span> on paired states.</p>
-<p>Now, can we solve <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;3</a>? This may now look like a quadratic problem, but the pair operators <span class="math inline">\(b^{\vphantom{\dagger}}_\mathbf{p}\)</span>, while commuting at different momenta <span class="math display">\[
+\tag{4}\]</span></span> where <span class="math inline">\(2b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}= a^\dagger_{\mathbf{p},\uparrow}a^{\vphantom{\dagger}}_{\mathbf{p},\uparrow}+a^\dagger_{-\mathbf{p},\downarrow}a^{\vphantom{\dagger}}_{-\mathbf{p},\downarrow}\)</span> on paired states.</p>
+<p>Now, can we solve <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;4</a>? This may now look like a quadratic problem, but the pair operators <span class="math inline">\(b^{\vphantom{\dagger}}_\mathbf{p}\)</span>, while commuting at different momenta <span class="math display">\[
 [b^{\vphantom{\dagger}}_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^\dagger_{\mathbf{p}'}]=[b^\dagger_\mathbf{p},b^{\vphantom{\dagger}}_{\mathbf{p}'}]=0\qquad \mathbf{p}\neq\mathbf{p}',
 \]</span></p>
 <p>obey the <em>hardcore constraint</em></p>
 <p><span id="eq-hardcore"><span class="math display">\[
 (b^\dagger_\mathbf{p})^2=0,
-\tag{4}\]</span></span></p>
+\tag{5}\]</span></span></p>
 <p>which is a result of <span class="math inline">\(b^\dagger\)</span> being composed of a pair of fermions obeying the exclusion principle. Nevertheless, given that a pair that `hops’ into a level at <span class="math inline">\(\mathbf{p}\)</span> could come from any other level <span class="math inline">\(\mathbf{p}'\)</span>, it seems reasonable to try, as a variational state, one in which the amplitudes for the occupancy of each level are uncorrelated</p>
 <p><span id="eq-bcs-cons"><span class="math display">\[
 \lvert{N \text{ pair}}\rangle\equiv\left[\sum_\mathbf{p}c_\mathbf{p}b^\dagger_\mathbf{p}\right]^{N/2}\lvert{\text{VAC}}\rangle
-\tag{5}\]</span></span></p>
-<p>corresponding to <a href="#eq-pair-fermi" class="quarto-xref">Equation&nbsp;2</a> but with a set of coefficients <span class="math inline">\(c_{\{n^P_\mathbf{p}\}}\)</span> that factorizes. Finding the variational energy of <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;5</a> is still a tricky problem. For instance, what is the expectation value of the kinetic energy?</p>
+\tag{6}\]</span></span></p>
+<p>corresponding to <a href="#eq-pair-fermi" class="quarto-xref">Equation&nbsp;2</a> but with a set of coefficients <span class="math inline">\(c_{\{n^P_\mathbf{p}\}}\)</span> that factorizes. Finding the variational energy of <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;6</a> is still a tricky problem. For instance, what is the expectation value of the kinetic energy?</p>
 <p><span id="eq-ke"><span class="math display">\[
 \mathrm{K.E}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}\langle b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}\rangle\equiv 2\sum_\mathbf{p}\epsilon_{\mathbf{p}} \langle n^P_
 \mathbf{p}\rangle,
-\tag{6}\]</span></span></p>
-<p>Finding the average number of pairs <span class="math inline">\(\langle n^P_\mathbf{p}\rangle\)</span> in <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;5</a> is however not obvious. Instead, we follow the route taken by BCS, and consider instead the normalized wavefunction</p>
+\tag{7}\]</span></span></p>
+<p>Finding the average number of pairs <span class="math inline">\(\langle n^P_\mathbf{p}\rangle\)</span> in <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;6</a> is however not obvious. Instead, we follow the route taken by BCS, and consider instead the normalized wavefunction</p>
 <p><span id="eq-bcs"><span class="math display">\[
 \lvert{\text{BCS}}\rangle =\prod_\mathbf{p}\left[v_\mathbf{p}b^\dagger_\mathbf{p}+u_\mathbf{p}\right]\lvert{\text{VAC}}\rangle\qquad |u_\mathbf{p}|^2+|v_\mathbf{p}|
 ^2=1.
-\tag{7}\]</span></span></p>
-<p>This is a superposition of states with different total number of particles. Apart from the overall normalization, the projection of <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;7</a> onto a fixed number <span class="math inline">\(N\)</span> of particles corresponds exactly to <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;5</a> if <span class="math inline">\(c_\mathbf{p}=v_\mathbf{p}/u_\mathbf{p}\)</span>. Since <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;7</a> is a product of factors corresponding to each momentum separately, <span class="math inline">\(\langle n^P_\mathbf{p}\rangle\)</span> is easily found to be <span class="math inline">\(v_\mathbf{p}^2\)</span>. The total variational energy of this state is</p>
-<p><span id="eq-bcs-en"><span class="math display">\[
-\langle{\text{BCS}}\rvert H \lvert \text{BCS} \rangle=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
-\mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}.
 \tag{8}\]</span></span></p>
+<p>This is a superposition of states with different total number of particles. Apart from the overall normalization, the projection of <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;8</a> onto a fixed number <span class="math inline">\(N\)</span> of particles corresponds exactly to <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;6</a> if <span class="math inline">\(c_\mathbf{p}=v_\mathbf{p}/u_\mathbf{p}\)</span>. Since <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;8</a> is a product of factors corresponding to each momentum separately, <span class="math inline">\(\langle n^P_\mathbf{p}\rangle\)</span> is easily found to be <span class="math inline">\(v_\mathbf{p}^2\)</span>. The total variational energy of this state is</p>
+<p><span id="eq-bcs-en"><span class="math display">\[
+\langle{\text{BCS}}\rvert H_{\text{pair}} \lvert \text{BCS} \rangle=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
+\mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}.
+\tag{9}\]</span></span></p>
 <p>What about our use of a non-conserving wavefunction? The expectation value of any operator that itself conserves the number of particles can evidently be written</p>
 <p><span class="math display">\[
 \langle{\text{BCS}}\rvert \mathcal{O} \lvert \text{BCS} \rangle=\sum_N P_N \langle{N \text{ pair}}\rvert \mathcal{O} \lvert N\text{ pair} \rangle,
@@ -511,8 +510,8 @@ P_N=\sum_{\sum n^P_\mathbf{p}=N/2}\prod_\mathbf{p}\left[n^P_\mathbf{p}|v_\mathbf
 <p><span class="math display">\[
 \langle{\text{BCS}}\rvert \mathcal{O} \lvert \text{BCS} \rangle\to \langle{\langle N\rangle \text{ pair}}\rvert \mathcal{O} \lvert \langle N\rangle\text{ pair} \rangle.
 \]</span></p>
-<p>In the thermodynamic limit, we might as well work with the non-conserving form <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;7</a>. To fix the number of particles, we should introduce a chemical potential into the Hamiltonian. Note that we didn’t have to do this with the Bogoliubov theory as we fixed the number of particles in the condensate <span class="math inline">\(N_0\)</span>.</p>
-<p>There is an interesting alternative interpretation of the pair Hamiltonian <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;3</a>. Acting within the pair subspace, the three operators <span class="math inline">\(b^{\vphantom{\dagger}}_\mathbf{p}\)</span>, <span class="math inline">\(b^\dagger_\mathbf{p}\)</span>, and <span class="math inline">\(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\)</span> behave as the components of a spin-<span class="math inline">\(1/2\)</span></p>
+<p>In the thermodynamic limit, we might as well work with the non-conserving form <a href="#eq-bcs" class="quarto-xref">Equation&nbsp;8</a>. To fix the number of particles, we should introduce a chemical potential into the Hamiltonian. Note that we didn’t have to do this with the Bogoliubov theory as we fixed the number of particles in the condensate <span class="math inline">\(N_0\)</span>.</p>
+<p>There is an interesting alternative interpretation of the pair Hamiltonian <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;4</a>. Acting within the pair subspace, the three operators <span class="math inline">\(b^{\vphantom{\dagger}}_\mathbf{p}\)</span>, <span class="math inline">\(b^\dagger_\mathbf{p}\)</span>, and <span class="math inline">\(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\)</span> behave as the components of a spin-<span class="math inline">\(1/2\)</span></p>
 <p><span class="math display">\[
 S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphantom{\dagger}}_\mathbf{p},\quad S^z_\mathbf{p}= b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2,
 \]</span></p>
@@ -523,21 +522,21 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 \left[b^\dagger_\mathbf{p},\left(b^\dagger_\mathbf{p}b^{\vphantom{\dagger}}_\mathbf{p}-1/2\right)\right]=-b^\dagger_\mathbf{p}.
 \end{aligned}
 \]</span></p>
-<p>This representation is sometimes called <strong>Anderson spins</strong>. In this way we can write <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;3</a> as a spin chain</p>
+<p>This representation is sometimes called <strong>Anderson spins</strong>. In this way we can write <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;4</a> as a spin chain (up to a constant)</p>
 <p><span class="math display">\[
-H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'},
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'},
 \]</span></p>
-<p>where we have included the chemical potential by defining <span class="math inline">\(\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu\)</span>. If we parameterize <span class="math inline">\(\left(v_\mathbf{p},u_\mathbf{p}\right)\)</span> as <span class="math inline">\((\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})\)</span> then the variational energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;8</a> has the form (except for a constant)</p>
+<p>where we have included the chemical potential by defining <span class="math inline">\(\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu\)</span>. If we parameterize <span class="math inline">\(\left(v_\mathbf{p},u_\mathbf{p}\right)\)</span> as <span class="math inline">\((\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})\)</span> then the variational energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;9</a> has the form</p>
 <p><span id="eq-spin-en"><span class="math display">\[
-\langle{\text{BCS}}\rvert H \lvert \text{BCS} \rangle=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\langle{\text{BCS}}\rvert H_\mu \lvert \text{BCS} \rangle=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}\cos\left(\varphi_\mathbf{p}-\varphi_{\mathbf{p}'}\right).
-\tag{9}\]</span></span></p>
-<p>The interpretation of <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;9</a> is the following. The first term tends to align the spins with the z-axis in the - direction for <span class="math inline">\(\xi_\mathbf{p}&lt;0\)</span> and in the + direction for <span class="math inline">\(\xi_\mathbf{p}&gt;0\)</span>. On the other hand, the second term, originating from the potential energy between the constituents of a pair, wants the spins to lie in the x-y plane. Of course, the spins are really quantum mechanical spin-1/2 operators. The direction corresponds to the direction of <span class="math inline">\(\langle \mathbf{S}\rangle\)</span> in the BCS state.</p>
-<p>It remains to actually minimize the energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;8</a> to determine the <span class="math inline">\(u\)</span>’s and <span class="math inline">\(v\)</span>’s, or equivalently, the configurations of the spins. For <span class="math inline">\(U_0&gt;0\)</span> (repulsive interactions), the spins all point in the <span class="math inline">\(\pm z\)</span> direction, forming a ‘domain wall’ where <span class="math inline">\(\xi_{\mathbf{p}}\)</span> changes sign at the Fermi surface. The relationship between the spin picture and the average number of pairs is</p>
+\tag{10}\]</span></span></p>
+<p>The interpretation of <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;10</a> is the following. The first term tends to align the spins with the z-axis in the - direction for <span class="math inline">\(\xi_\mathbf{p}&lt;0\)</span> and in the + direction for <span class="math inline">\(\xi_\mathbf{p}&gt;0\)</span>. On the other hand, the second term, originating from the potential energy between the constituents of a pair, wants the spins to lie in the x-y plane. Of course, the spins are really quantum mechanical spin-1/2 operators. The direction corresponds to the direction of <span class="math inline">\(\langle \mathbf{S}\rangle\)</span> in the BCS state.</p>
+<p>It remains to actually minimize the energy <a href="#eq-bcs-en" class="quarto-xref">Equation&nbsp;9</a> to determine the <span class="math inline">\(u\)</span>’s and <span class="math inline">\(v\)</span>’s, or equivalently, the configurations of the spins. For <span class="math inline">\(U_0&gt;0\)</span> (repulsive interactions), the spins all point in the <span class="math inline">\(\pm z\)</span> direction, forming a ‘domain wall’ where <span class="math inline">\(\xi_{\mathbf{p}}\)</span> changes sign at the Fermi surface. The relationship between the spin picture and the average number of pairs is</p>
 <p><span class="math display">\[
 \langle n^P_{\mathbf{p}}\rangle=v_\mathbf{p}^2=\left[1+\cos\theta_\mathbf{p}\right]/2,
 \]</span></p>
-<p>so we see that this corresponds simply to a sharp fermi step. For <span class="math inline">\(U_0&lt;0\)</span>, the system can lower its energy by taking <span class="math inline">\(\sin\theta_\mathbf{p}\neq 0\)</span>. The lowering of the interaction energy more than compensates the increase in kinetic energy that comes from smearing the step, see <a href="#eq-ke" class="quarto-xref">Equation&nbsp;6</a>. Clearly all of the angles <span class="math inline">\(\varphi_\mathbf{p}\)</span>, describing the angle in the x-y plane, should be equal. Taking the extremum of <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;9</a> with respect to the angles <span class="math inline">\(\theta_{\mathbf{p}}\)</span> gives the condition</p>
+<p>so we see that this corresponds simply to a sharp fermi step. For <span class="math inline">\(U_0&lt;0\)</span>, the system can lower its energy by taking <span class="math inline">\(\sin\theta_\mathbf{p}\neq 0\)</span>. The lowering of the interaction energy more than compensates the increase in kinetic energy that comes from smearing the step, see <a href="#eq-ke" class="quarto-xref">Equation&nbsp;7</a>. Clearly all of the angles <span class="math inline">\(\varphi_\mathbf{p}\)</span>, describing the angle in the x-y plane, should be equal. Taking the extremum of <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;10</a> with respect to the angles <span class="math inline">\(\theta_{\mathbf{p}}\)</span> gives the condition</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/wall.png" class="img-fluid figure-img" style="width:70.0%"></p>
@@ -559,20 +558,20 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <p>The meaning of these solutions is very simple. They correspond to the alignment of the spin vector with the direction of the effective `magnetic field’</p>
 <p><span id="eq-heff"><span class="math display">\[
 \left(\mathrm{Re}\,\Delta,\mathrm{Im}\,\Delta,\xi_\mathbf{p}\right)
-\tag{10}\]</span></span></p>
+\tag{11}\]</span></span></p>
 <p>To be self-consistent, the solution must further satisfy the <strong>gap equation</strong></p>
 <p><span id="eq-gap-eq"><span class="math display">\[
 \Delta=-\frac{U_0}{2V}\sum_\mathbf{p}\frac{\Delta}{E_\mathbf{p}}.
-\tag{11}\]</span></span></p>
+\tag{12}\]</span></span></p>
 <p>It is clear that for <span class="math inline">\(U_0&gt;0\)</span> there are no non-trivial solutions (<span class="math inline">\(\Delta=0\)</span> always), while for any <span class="math inline">\(U_0&lt;0\)</span> there is always a solution at finite <span class="math inline">\(\Delta\)</span> (One can also show that it corresponds to a minimum of energy. In the repulsive case, the solution at <span class="math inline">\(\Delta=0\)</span>, which always exists, corresponds to a maximum). Passing to the continuum limit we have</p>
 <p><span id="eq-cont-sc"><span class="math display">\[
 \Delta=-\frac{U_0}{2}\int \frac{d\mathbf{p}}{\left(2\pi\right)^3} \frac{\Delta}{E_\mathbf{p}}
-\tag{12}\]</span></span></p>
+\tag{13}\]</span></span></p>
 <p>This integral is divergent in the ultraviolet. We turn to the question of how to regularize it in the next section. More significant, however, is the dependence of the right hand side on <span class="math inline">\(\Delta\)</span> for small $ $. This is</p>
 <p><span class="math display">\[
 \sim-\frac{U_0}{2}\nu(\mu)\Delta\log \Lambda/\Delta,
 \]</span></p>
-<p>where <span class="math inline">\(\Lambda\)</span> is the UV cut-off (we will shortly identify it with the Fermi energy), and <span class="math inline">\(\nu(\mu)\)</span> is the density of states per spin component at the chemical potential. This shows that no matter how small the attraction <span class="math inline">\(U_0&lt;0\)</span>, there will always be a solution of <a href="#eq-cont-sc" class="quarto-xref">Equation&nbsp;12</a> with finite <span class="math inline">\(\Delta\)</span>. This is the essence of the <strong>Cooper phenomenon</strong>. It should be compared with the situation in which there are not a macroscopically large number of particles present. In that case <span class="math inline">\(\mu=0\)</span>, so that <span class="math inline">\(\xi_{\mathbf{p}}=\epsilon(\mathbf{p})&gt;0\)</span>. Then the right hand side of <a href="#eq-cont-sc" class="quarto-xref">Equation&nbsp;12</a> has no divergence at low energies because the density of states <span class="math inline">\(\nu(E)\)</span> vanishes. The finite value of <span class="math inline">\(\Delta\)</span> is thus seen to be a consequence of the fermi sea.</p>
+<p>where <span class="math inline">\(\Lambda\)</span> is the UV cut-off (we will shortly identify it with the Fermi energy), and <span class="math inline">\(\nu(\mu)\)</span> is the density of states per spin component at the chemical potential. This shows that no matter how small the attraction <span class="math inline">\(U_0&lt;0\)</span>, there will always be a solution of <a href="#eq-cont-sc" class="quarto-xref">Equation&nbsp;13</a> with finite <span class="math inline">\(\Delta\)</span>. This is the essence of the <strong>Cooper phenomenon</strong>. It should be compared with the situation in which there are not a macroscopically large number of particles present. In that case <span class="math inline">\(\mu=0\)</span>, so that <span class="math inline">\(\xi_{\mathbf{p}}=\epsilon(\mathbf{p})&gt;0\)</span>. Then the right hand side of <a href="#eq-cont-sc" class="quarto-xref">Equation&nbsp;13</a> has no divergence at low energies because the density of states <span class="math inline">\(\nu(E)\)</span> vanishes. The finite value of <span class="math inline">\(\Delta\)</span> is thus seen to be a consequence of the fermi sea.</p>
 <p>We have shown that the BCS state, consisting of a superposition of zero momentum pairs, is a better variational state than the Fermi sea for arbitrarily weak attractive interactions. Further, it coincides with the Fermi sea at zero interaction, suggesting a smooth evolution of the ground state as interactions are switched on. What, if anything, does this have to do with the strong coupling picture of tightly bound bosonic pairs in a dilute gas that we gave in the introduction?</p>
 </section>
 <section id="discussion-heisenbergs-problem" class="level3" data-number="2.2">
@@ -580,10 +579,10 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 </section>
 <section id="the-bcs-bec-crossover" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="the-bcs-bec-crossover"><span class="header-section-number">2.3</span> The BCS-BEC Crossover</h3>
-<p>Surprisingly, the wavefunctions in the two limits are the same! This can be seen from the first quantized form of the number conserving wavefunction <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;5</a></p>
+<p>Surprisingly, the wavefunctions in the two limits are the same! This can be seen from the first quantized form of the number conserving wavefunction <a href="#eq-bcs-cons" class="quarto-xref">Equation&nbsp;6</a></p>
 <p><span id="eq-bcs-first"><span class="math display">\[
 \lvert{N \text{ pair}}\rangle=\sum_P (-1)^P \prod_{i,j=1}^{N/2} \varphi(\mathbf{r}^\uparrow_{i}-\mathbf{r}^\downarrow_{P(j)}),
-\tag{13}\]</span></span></p>
+\tag{14}\]</span></span></p>
 <p>where <span class="math inline">\(\varphi_\mathbf{p}=v_\mathbf{p}/u_\mathbf{p}\)</span>, and <span class="math inline">\(\mathbf{r}^{\uparrow,\downarrow}_j\)</span> are the positions of the spin up and spin down fermions, and we sum over all permutations of <span class="math inline">\(N/2\)</span> objects (assuming <span class="math inline">\(N\)</span> is even).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -598,22 +597,22 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <p>Do you understand where this comes from?</p>
 </div>
 </div>
-<p>At weak coupling the extent of the `pair wavefunction’ <span class="math inline">\(\varphi(\mathbf{r})\)</span> is large compared to the separation between pairs. In this limit the antisymmetrization operation, required by the exclusion principle, plays a dominant role, as we have seen. When the pair wavefunction <span class="math inline">\(\varphi(\mathbf{r})\)</span> has a much smaller extent than the typical separation between pairs, we can expect that the antisymmetrization operation in <a href="#eq-bcs-first" class="quarto-xref">Equation&nbsp;13</a> is not too important, as two fermions of the same type rarely overlap. In this limit, any given momentum state has a low average occupancy, and the hardcore constraint <a href="#eq-hardcore" class="quarto-xref">Equation&nbsp;4</a> does not play a significant role. Then <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;3</a> can really be thought of as a Hamiltonian for isolated pairs, with the corresponding binding energy. The resulting wavefunction is then essentially a Gross-Pitaevskii state of molecules. This all suggests that the BCS state is smoothly connected to the Bose–Einstein condensate (BEC), though the <strong>BCS-BEC crossover</strong>.</p>
-<p>To see how this works in detail we need to address the issue of regularizing <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;11</a>. The details are given in the Appendix, but the conclusion is very simple. The gap equation can be written in terms of the <em>scattering length</em> <span class="math inline">\(a\)</span> (if you haven’t met scattering theory before, the meaning of this quantity is explained in the Appendix too) of the two-particle potential instead of interaction strength <span class="math inline">\(U_0\)</span></p>
+<p>At weak coupling the extent of the `pair wavefunction’ <span class="math inline">\(\varphi(\mathbf{r})\)</span> is large compared to the separation between pairs. In this limit the antisymmetrization operation, required by the exclusion principle, plays a dominant role, as we have seen. When the pair wavefunction <span class="math inline">\(\varphi(\mathbf{r})\)</span> has a much smaller extent than the typical separation between pairs, we can expect that the antisymmetrization operation in <a href="#eq-bcs-first" class="quarto-xref">Equation&nbsp;14</a> is not too important, as two fermions of the same type rarely overlap. In this limit, any given momentum state has a low average occupancy, and the hardcore constraint <a href="#eq-hardcore" class="quarto-xref">Equation&nbsp;5</a> does not play a significant role. Then <a href="#eq-pair-h" class="quarto-xref">Equation&nbsp;4</a> can really be thought of as a Hamiltonian for isolated pairs, with the corresponding binding energy. The resulting wavefunction is then essentially a Gross-Pitaevskii state of molecules. This all suggests that the BCS state is smoothly connected to the Bose–Einstein condensate (BEC), though the <strong>BCS-BEC crossover</strong>.</p>
+<p>To see how this works in detail we need to address the issue of regularizing <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;12</a>. The details are given in the Appendix, but the conclusion is very simple. The gap equation can be written in terms of the <em>scattering length</em> <span class="math inline">\(a\)</span> (if you haven’t met scattering theory before, the meaning of this quantity is explained in the Appendix too) of the two-particle potential instead of interaction strength <span class="math inline">\(U_0\)</span></p>
 <p><span id="eq-reg"><span class="math display">\[
 -\frac{m}{4\pi a}\Delta=\frac{1}{V}\sum_{\mathbf{p}}\left[\frac{\Delta}{2E_{\mathbf{p}'}}-\frac{\Delta}
 {2\epsilon_{\mathbf{p}'}}\right].
-\tag{14}\]</span></span></p>
+\tag{15}\]</span></span></p>
 <p>The nice thing about this new equation is that, on account of the second term in the square brackets, the ultraviolet divergence has been eliminated.</p>
-<p>In the weak-coupling limit, the gap <span class="math inline">\(\Delta\)</span> is expected to be much smaller than the Fermi energy, and the chemical potential is just equal to the Fermi energy <span class="math inline">\(E_F=k_\text{F}^2/2m\)</span>. The integral in <a href="#eq-reg" class="quarto-xref">Equation&nbsp;14</a> can then be done explicitly to give the gap</p>
+<p>In the weak-coupling limit, the gap <span class="math inline">\(\Delta\)</span> is expected to be much smaller than the Fermi energy, and the chemical potential is just equal to the Fermi energy <span class="math inline">\(E_F=k_\text{F}^2/2m\)</span>. The integral in <a href="#eq-reg" class="quarto-xref">Equation&nbsp;15</a> can then be done explicitly to give the gap</p>
 <p><span id="eq-bcs-gap"><span class="math display">\[
 \Delta_{\mathrm{BCS}}=\frac{8}{e^2}E_F\exp\left[-\frac{\pi}{2|k_\text{F} a|}\right]
-\tag{15}\]</span></span></p>
+\tag{16}\]</span></span></p>
 <p>Outside of the weak-coupling limit, we have to account for a change in the chemical potential, in order to keep a fixed density. This is apparent from the equation</p>
 <p><span id="eq-mu-eq"><span class="math display">\[
 N=2\sum_\mathbf{p}\langle n^P_\mathbf{p}\rangle=2\sum_\mathbf{p}v_{\mathbf{p}}^2=\sum_\mathbf{p}\left[1-\frac{\xi_{\mathbf{p}}}{E_\mathbf{p}}\right]
-\tag{16}\]</span></span></p>
-<p>The two equations <a href="#eq-reg" class="quarto-xref">Equation&nbsp;14</a> and <a href="#eq-mu-eq" class="quarto-xref">Equation&nbsp;16</a> are conveniently cast in the dimensionless form</p>
+\tag{17}\]</span></span></p>
+<p>The two equations <a href="#eq-reg" class="quarto-xref">Equation&nbsp;15</a> and <a href="#eq-mu-eq" class="quarto-xref">Equation&nbsp;17</a> are conveniently cast in the dimensionless form</p>
 <p><span class="math display">\[
 \begin{aligned}
 \frac{\pi}{2k_\text{F} a}=\int_0^{\infty} dx \left[1-\frac{x^2}{\sqrt{(x^2-\mu)^2+\Delta_0^2}} \right] \nonumber\\
@@ -654,12 +653,16 @@ E/V=\alpha\frac{3}{5}E_Fn\propto n^{5/3}.
 \lvert{\mathbf{p},s}\rangle=\alpha^\dagger_{\mathbf{p},s}\lvert{\text{BCS}}\rangle=a^\dagger_{\mathbf{p},s}\prod_{\mathbf{p}'\neq \mathbf{p}} \left[v_{\mathbf{p}'}a^\dagger_
 {\mathbf{p}'\uparrow}a^\dagger_{-\mathbf{p}'\downarrow}+u_{\mathbf{p}'}\right]\lvert{\text{VAC}}\rangle,
 \]</span></p>
-<p>corresponding to the momentum state <span class="math inline">\(\mathbf{p}\)</span> certainly containing one particle with (pseudo-)spin <span class="math inline">\(s\)</span>, and the <span class="math inline">\(\left(-\mathbf{p},-s\right)\)</span> state certainly being empty. The result is an eigenstate of momentum and spin, but is it an energy eigenstate, and thus a sharply defined excitation? Note that if we chose <span class="math inline">\(s=\uparrow\)</span> so that the <span class="math inline">\(\left(\mathbf{p},\uparrow\right)\)</span> state is certainly occupied it means that <span class="math inline">\(a^\dagger_{\mathbf{p}
-\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0\)</span>, so that the corresponding term no longer appears in the interaction term when it is applied to this state. The level is said to be `blocked’. Thus it certainly is an eigenstate of the pair problem, if <span class="math inline">\(\lvert{\text{BCS}}\rangle\)</span> is. What is its energy? We have to take into account the kinetic energy as well as the loss of attractive interaction energy, see <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;9</a></p>
+<p>corresponding to the momentum state <span class="math inline">\(\mathbf{p}\)</span> certainly containing one particle with spin <span class="math inline">\(s\)</span>, and the <span class="math inline">\(\left(-\mathbf{p},-s\right)\)</span> state certainly being empty. The result is an eigenstate of momentum and spin, although it is not of course an energy eigenstate of <span class="math inline">\(H_\mu\)</span>. Nevertheless, we can regard it as an approximate variational excited state, since it is orthogonal to <span class="math inline">\(\lvert{\text{BCS}}\rangle\)</span>. To evaluate its energy, notice that if we choose <span class="math inline">\(s=\uparrow\)</span> then the <span class="math inline">\(\left(\mathbf{p},\uparrow\right)\)</span> state is occupied and <span class="math inline">\(\left(-\mathbf{p},\downarrow\right)\)</span> empty, and we have <span class="math display">\[
+a^\dagger_{\mathbf{p}
+\uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0,\qquad a^{\vphantom{\dagger}}_{-\mathbf{p}
+\downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}\lvert{\mathbf{p},\uparrow}\rangle=0
+\]</span></p>
+<p>This means that the <span class="math inline">\(\mathbf{p}\)</span>, <span class="math inline">\(-\mathbf{p}\)</span> pairs no longer contribute when <span class="math inline">\(\tilde H_{\text{int}}\)</span> (<a href="#eq-bcsH" class="quarto-xref">Equation&nbsp;3</a>) is applied. The level is said to be `blocked’, and so the effect of the attractive interaction is reduced. To find the energy of this state we have to take into account the kinetic energy as well as the loss of attractive interaction energy, see <a href="#eq-spin-en" class="quarto-xref">Equation&nbsp;10</a></p>
 <p><span class="math display">\[
 E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\rangle\right)}^{\left(\mathbf{p},s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\mathbf{p}\rangle}^{\left(-\mathbf{p},-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\mathbf{p}}^{\mathrm{`blocking'}}=E_{\mathbf{p}}
+\mathbf{p}}^{\text{``blocking"}}=E_{\mathbf{p}}
 \]</span></p>
 <p>Note that these quasiparticle excitations always have a gap <span class="math inline">\(\Delta_{s}\)</span> given by</p>
 <p><span class="math display">\[
@@ -675,7 +678,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 <h2 data-number="3" class="anchored" data-anchor-id="appendix"><span class="header-section-number">3</span> Appendix</h2>
 <section id="regularizing-the-gap-equation" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="regularizing-the-gap-equation"><span class="header-section-number">3.1</span> Regularizing the Gap Equation</h3>
-<p>The gap equation <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;11</a> has an ultraviolet divergence – which we also encountered in the Bose gas – that is really a two body effect that arises from our model <span class="math inline">\(\delta\)</span>-function potential. To see why this is so, consider the two particle Schrödinger equation</p>
+<p>The gap equation <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;12</a> has an ultraviolet divergence – which we also encountered in the Bose gas – that is really a two body effect that arises from our model <span class="math inline">\(\delta\)</span>-function potential. To see why this is so, consider the two particle Schrödinger equation</p>
 <p><span class="math display">\[
 -\frac{1}{2m}\left[\nabla_1^2+\nabla^2\right]\Psi(\mathbf{r}_1,\mathbf{r}_2) + U(\mathbf{r}_1-\mathbf{r}_2)\Psi(\mathbf{r}_1,\mathbf{r}_2)=E\Psi(\mathbf{r}_1,\mathbf{r}_2),
 \]</span></p>
@@ -690,7 +693,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 <p>where <span class="math inline">\(\Psi_\text{free}(\mathbf{r})\)</span> solves the free particle equation, giving the inhomogenous equation for <span class="math inline">\(\Psi_\text{scatt}(\mathbf{r})\)</span></p>
 <p><span id="eq-inhomog"><span class="math display">\[
 \left[E-\frac{\nabla^2}{m}\right]\Psi_\text{scatt}(\mathbf{r}) + U(\mathbf{r})\Psi_\text{scatt}(\mathbf{r})=-U(\mathbf{r})\Psi_\text{free}(\mathbf{r}).
-\tag{17}\]</span></span></p>
+\tag{18}\]</span></span></p>
 <p>It is a standard result of scattering theory that the zero energy wavefunction as the form</p>
 <p><span class="math display">\[
 \Psi(\mathbf{r})\xrightarrow{|\mathbf{r}|\gg r_0} \overbrace{1}^{\Psi_\text{free}} - \overbrace{\frac{a}{|\mathbf{r}|}}^{\Psi_\text{scatt}}
@@ -702,8 +705,8 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 <p>Returning to the BCS problem, it’s not hard to see that with a general potential the gap parameter is now momentum dependent, leading to a gap equation</p>
 <p><span id="eq-gen-gap-eq"><span class="math display">\[
 \Delta_\mathbf{p}=-\frac{1}{2}\int \frac{d\mathbf{p}'}{(2\pi)^3}\tilde U(\mathbf{p}-\mathbf{p}')\frac{\Delta_{\mathbf{p}'}}{E_{\mathbf{p}'}}.
-\tag{18}\]</span></span></p>
-<p>The solution of <a href="#eq-gen-gap-eq" class="quarto-xref">Equation&nbsp;18</a> is in general very difficult, but it can be greatly simplified if we assume that the range of the potential <span class="math inline">\(U(\mathbf{r})\)</span> is the shortest length scale in the problem. With this assumption we can write <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;11</a></p>
+\tag{19}\]</span></span></p>
+<p>The solution of <a href="#eq-gen-gap-eq" class="quarto-xref">Equation&nbsp;19</a> is in general very difficult, but it can be greatly simplified if we assume that the range of the potential <span class="math inline">\(U(\mathbf{r})\)</span> is the shortest length scale in the problem. With this assumption we can write <a href="#eq-gap-eq" class="quarto-xref">Equation&nbsp;12</a></p>
 <p><span id="eq-gap-reg"><span class="math display">\[
 \begin{aligned}
 \Delta_\mathbf{p}+\frac{1}{V}\sum_{\mathbf{p}'}U(\mathbf{p}-\mathbf{p}')\frac{\Delta_{\mathbf{p}'}}{2\epsilon_{\mathbf{p}'}}&amp;=-\frac{1}{V}\sum_{\mathbf{p}'} \left[U_0(\mathbf{p})\frac{\Delta_{\mathbf{p}'}}{2E_{\mathbf{p}'}}-U(\mathbf{p}-\mathbf{p}')\frac{\Delta_{\mathbf{p}'}}{2\epsilon_
@@ -711,9 +714,9 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 &amp;=-\frac{U_0(\mathbf{p})}{V}\sum_{\mathbf{p}'} \left[\frac{\Delta_{0}}{2E_{\mathbf{p}'}}-\frac{\Delta_{0}}{2\epsilon_
 {\mathbf{p}'}}\right].
 \end{aligned}
-\tag{19}\]</span></span></p>
+\tag{20}\]</span></span></p>
 <p>We have added the same term to both sides. However, the integral on the right hand side converges on a scale set by the momentum corresponding to the larger of <span class="math inline">\(\Delta_\mathbf{p}\)</span> or <span class="math inline">\(\mu\)</span>, which by assumption is much less than the scale on which <span class="math inline">\(U_0(\mathbf{p})\)</span> varies, and justifies replacing <span class="math inline">\(U_0(\mathbf{p}-\mathbf{p}')\)</span> with <span class="math inline">\(U_0(\mathbf{p})\)</span>, and <span class="math inline">\(\Delta_{\mathbf{p}'}\)</span> with <span class="math inline">\(\Delta_0\)</span>.</p>
-<p>By comparing the Fourier transform of <a href="#eq-inhomog" class="quarto-xref">Equation&nbsp;17</a> at <span class="math inline">\(E=0\)</span> and <a href="#eq-gap-reg" class="quarto-xref">Equation&nbsp;19</a>, we can conclude</p>
+<p>By comparing the Fourier transform of <a href="#eq-inhomog" class="quarto-xref">Equation&nbsp;18</a> at <span class="math inline">\(E=0\)</span> and <a href="#eq-gap-reg" class="quarto-xref">Equation&nbsp;20</a>, we can conclude</p>
 <p><span class="math display">\[
 \Delta_\mathbf{p}=\frac{\Delta_0\mathbf{p}^2}{4\pi a} \tilde\Psi_\text{scatt}(\mathbf{p}),
 \]</span></p>
@@ -722,7 +725,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 -\frac{m}{4\pi a}\Delta_0=\frac{1}{V}\sum_{\mathbf{p}}\left[\frac{\Delta_{0}}{2E_{\mathbf{p}'}}-\frac{\Delta_{0}}
 {2\epsilon_{\mathbf{p}'}}\right].
 \]</span></p>
-<p>Which coincides with <a href="#eq-reg" class="quarto-xref">Equation&nbsp;14</a> (we drop the subscript <span class="math inline">\(0\)</span> from now on, as we never need to discuss the high momentum behaviour of <span class="math inline">\(\Delta_\mathbf{p}\)</span> again).</p>
+<p>Which coincides with <a href="#eq-reg" class="quarto-xref">Equation&nbsp;15</a> (we drop the subscript <span class="math inline">\(0\)</span> from now on, as we never need to discuss the high momentum behaviour of <span class="math inline">\(\Delta_\mathbf{p}\)</span> again).</p>
 </section>
 <section id="the-effect-of-temperature" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="the-effect-of-temperature"><span class="header-section-number">3.2</span> The Effect of Temperature</h3>
@@ -744,7 +747,7 @@ a^\dagger_{-\mathbf{p}\downarrow}-v^*_\mathbf{p}\right]\prod_{\mathbf{p}'\neq \m
 \end{aligned}
 \]</span></p>
 <p>with <span class="math inline">\(\theta' = \pi/2 - \theta\)</span> and <span class="math inline">\(\varphi' = \varphi + \pi\)</span>.</p>
-<p>The excitation energy of this state is twice the ‘magnetic field’ each pair experiences <span class="math inline">\(2E(\mathbf{p})\)</span>, see <a href="#eq-heff" class="quarto-xref">Equation&nbsp;10</a>. The spin interpretation allows us to see easily that this state contributes <span class="math inline">\(-u_\mathbf{p}v_\mathbf{p}\)</span> to the self consistent equation, and occurs with probability <span class="math inline">\(n_{\uparrow}(\mathbf{p})n_{\downarrow}(-\mathbf{p})\)</span>. The overall result is thus</p>
+<p>The excitation energy of this state is twice the ‘magnetic field’ each pair experiences <span class="math inline">\(2E(\mathbf{p})\)</span>, see <a href="#eq-heff" class="quarto-xref">Equation&nbsp;11</a>. The spin interpretation allows us to see easily that this state contributes <span class="math inline">\(-u_\mathbf{p}v_\mathbf{p}\)</span> to the self consistent equation, and occurs with probability <span class="math inline">\(n_{\uparrow}(\mathbf{p})n_{\downarrow}(-\mathbf{p})\)</span>. The overall result is thus</p>
 <p><span class="math display">\[
 \begin{aligned}
 \Delta&amp;=-\frac{U_0}{V}\sum_{\mathbf{p}}\frac{\Delta}{2E_{\mathbf{p}'}}(\overbrace{[1-n_{\uparrow}(\mathbf{p})][1-n_
@@ -757,7 +760,7 @@ a^\dagger_{-\mathbf{p}\downarrow}-v^*_\mathbf{p}\right]\prod_{\mathbf{p}'\neq \m
 <p><span class="math display">\[
 \frac{1}{U_0\nu(E_F)}=-\int_\Delta dE \tanh\left(\frac{E}{2T}\right)\frac{\Delta}{\sqrt{E^2-\Delta^2}},
 \]</span></p>
-<p>where <span class="math inline">\(\nu(E_F)\)</span> is the fermi surface density of states per spin, and we have left out the upper cut-off. This expression needs to be regularized as in the zero temperature case considered before. The resulting <span class="math inline">\(\Delta(T)\)</span> varies from <span class="math inline">\(\Delta(0)=\Delta_{\text{BCS}}\)</span> given by <a href="#eq-bcs-gap" class="quarto-xref">Equation&nbsp;15</a>, to zero at</p>
+<p>where <span class="math inline">\(\nu(E_F)\)</span> is the fermi surface density of states per spin, and we have left out the upper cut-off. This expression needs to be regularized as in the zero temperature case considered before. The resulting <span class="math inline">\(\Delta(T)\)</span> varies from <span class="math inline">\(\Delta(0)=\Delta_{\text{BCS}}\)</span> given by <a href="#eq-bcs-gap" class="quarto-xref">Equation&nbsp;16</a>, to zero at</p>
 <p><span class="math display">\[
 k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
 \]</span></p>

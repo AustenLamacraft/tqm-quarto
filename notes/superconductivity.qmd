@@ -74,8 +74,7 @@ where the first term is the Hartree--Fock energy and
 $$
 \tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
 {\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow},
-\label{super_bcsH}
-$$
+$$ {#eq-bcsH}
 
 It's useful to introduce the operator $\bdop_\bp=\adop_{\bp\uparrow}\adop_{-\bp
 \downarrow}$ and its conjugate $\bop_\bp=\aop_{-\bp,\downarrow}\aop_{\bp\uparrow}$, that respectively create and destroy a $\left(\bp\uparrow,-\bp\downarrow\right)$ pair. Because our pair ansatz @eq-pair-fermi only includes amplitudes for a given $\left(+\bp,-\bp\right)$ pair of momenta having either none or two fermions, we can compute expectations using the pair Hamiltonian
@@ -129,7 +128,7 @@ momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. 
 energy of this state is
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\braket{\text{BCS}}{H_{\text{pair}}}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}.
 $$ {#eq-bcs-en}
 
@@ -172,17 +171,17 @@ $$
 \end{aligned}
 $$
 
-This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain
+This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain (up to a constant)
 
 $$
-H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
 $$
 
 where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(v_\bp,u_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
-then the variational energy @eq-bcs-en has the form (except for a constant)
+then the variational energy @eq-bcs-en has the form 
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\braket{\text{BCS}}{H_\mu}{\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right).
 $$ {#eq-spin-en}
 
@@ -357,13 +356,19 @@ $$
 {\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},
 $$
 
-corresponding to the momentum state $\bp$ certainly containing one particle with (pseudo-)spin $s$, and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and spin, but is it an energy eigenstate, and thus a sharply defined excitation? Note that if we chose $s=\uparrow$ so that the $\left(\bp,\uparrow\right)$ state is certainly occupied it means that $\adop_{\bp
-\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0$, so that the corresponding term no longer appears in the interaction term when it is applied to this state. The level is said to be `blocked'. Thus it certainly is an eigenstate of the pair problem, if $\ket{\text{BCS}}$ is. What is its energy? We have to take into account the kinetic energy as well as the loss of attractive interaction energy, see @eq-spin-en
+corresponding to the momentum state $\bp$ certainly containing one particle with spin $s$, and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and spin, although it is not of course an energy eigenstate of $H_\mu$. Nevertheless, we can regard it as an approximate variational excited state, since it is orthogonal to $\ket{\text{BCS}}$. To evaluate its energy, notice that if we choose $s=\uparrow$ then the $\left(\bp,\uparrow\right)$ state is occupied and $\left(-\bp,\downarrow\right)$ empty, and we have
+$$
+\adop_{\bp
+\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0,\qquad \aop_{-\bp
+\downarrow}\aop_{\bp\uparrow}\ket{\bp,\uparrow}=0
+$$
+
+This means that the $\bp$, $-\bp$ pairs no longer contribute when $\tilde H_{\text{int}}$ (@eq-bcsH) is applied. The level is said to be `blocked', and so the effect of the attractive interaction is reduced. To find the energy of this state we have to take into account the kinetic energy as well as the loss of attractive interaction energy, see @eq-spin-en
 
 $$
 E_{s}(\bp)=\xi_{\bp}[\overbrace{\left(1-\langle n^P_\bp\rangle\right)}^{\left(\bp,s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\bp\rangle}^{\left(-\bp,-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\bp}^{\mathrm{`blocking'}}=E_{\bp}
+\bp}^{\text{``blocking"}}=E_{\bp}
 $$
 
 Note that these quasiparticle excitations always have a gap $\Delta_{s}$ given by  

@@ -338,7 +338,7 @@ b^{\vphantom{\dagger}}_{\mathbf{p}'}
 <li><span class="math inline">\langle n^P_\mathbf{p}\rangle= v_\mathbf{p}^2</span> and total variational energy of this state is</li>
 </ul>
 <p><span class="math display">
-\Braket{\text{BCS}|H|\text{BCS}}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
+\Braket{\text{BCS}|H_\text{pair}|\text{BCS}}=2\sum_\mathbf{p}\epsilon_{\mathbf{p}}|v_\mathbf{p}|^2+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}u^*_\mathbf{p}v_
 \mathbf{p}u_{\mathbf{p}'}v^*_{\mathbf{p}'}
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -402,18 +402,19 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 \end{aligned}
 </span></p>
 <ul>
-<li><span class="math inline">H_\text{pair}</span> is a spin chain <span class="math display">
-H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'},
-</span> where we included chemical potential by defining <span class="math inline">\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu</span>.</li>
+<li><span class="math inline">H_\text{pair}</span> is a spin chain</li>
 </ul>
+<p><span class="math display">
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\mathbf{p}\overbrace{\xi({\mathbf{p}})}^{\xi_\mathbf{p}\equiv\epsilon(\mathbf{p})-\mu}S_\mathbf{p}^z+\frac{U_0}{V}\sum_{\mathbf{p},\mathbf{p}'}S^+_\mathbf{p}S^-_{\mathbf{p}'}
+</span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
 <li><p>Parameterize <span class="math display">
 \left(v_\mathbf{p},u_\mathbf{p}\right)=(\cos(\theta_\mathbf{p}/2)e^{i\varphi_\mathbf{p}/2},\sin(\theta_\mathbf{p}/2)e^{-i\varphi_\mathbf{p}/2})
-</span> then the variational energy is (except for a constant) <span class="math display">
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+</span> then the variational energy is <span class="math display">
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}\cos\left(\varphi_\mathbf{p}-\varphi_{\mathbf{p}'}\right)
 </span></p></li>
 <li><p>Interpretation</p>
@@ -454,7 +455,7 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 <section class="slide level2 center">
 
 <p><span class="math display">
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\mathbf{p}\xi_\mathbf{p}\cos\theta_\mathbf{p}+\frac{U_0}{4V}\sum_{\mathbf{p},\mathbf{p}'}\sin
 \theta_\mathbf{p}\sin\theta_{\mathbf{p}'}
 </span></p>
 <ul>
@@ -526,12 +527,13 @@ H_{\text{pair}}-\mu N=2\sum_\mathbf{p}\xi({\mathbf{p}})S_\mathbf{p}^z+\frac{U_0}
 {\mathbf{p}'\uparrow}a^\dagger_{-\mathbf{p}'\downarrow}+u_{\mathbf{p}'}\right]\lvert{\text{VAC}}\rangle
 </span></p>
 <ul>
+<li><p>Regard as approximate variational excited state, since orthogonal to <span class="math inline">\lvert{\text{BCS}}\rangle</span></p></li>
 <li><p>If we chose <span class="math inline">s=\uparrow</span> then <span class="math inline">\left(\mathbf{p},\uparrow\right)</span> state is occupied and <span class="math inline">\left(-\mathbf{p},\downarrow\right)</span> empty <span class="math display">
 a^\dagger_{\mathbf{p}
 \uparrow}a^\dagger_{-\mathbf{p}\downarrow}\lvert{\mathbf{p},\uparrow}\rangle=0,\qquad a^{\vphantom{\dagger}}_{-\mathbf{p}
 \downarrow}a^{\vphantom{\dagger}}_{\mathbf{p}\uparrow}\lvert{\mathbf{p},\uparrow}\rangle=0
 </span></p></li>
-<li><p>Corresponding term no longer appears in interaction term when it is applied to this state</p></li>
+<li><p>Corresponding term no longer appears when interaction is applied</p></li>
 <li><p>The level is said to be `blocked’. Thus it certainly is an eigenstate of the pair problem, if <span class="math inline">\lvert{\text{BCS}}\rangle</span> is. What is its energy?</p></li>
 </ul>
 </section>
@@ -543,7 +545,7 @@ a^\dagger_{\mathbf{p}
 <p><span class="math display">
 E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\rangle\right)}^{\left(\mathbf{p},s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\mathbf{p}\rangle}^{\left(-\mathbf{p},-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\mathbf{p}}^{\mathrm{`blocking'}}=E_{\mathbf{p}}
+\mathbf{p}}^{\mathrm{``blocking"}}=E_{\mathbf{p}}
 </span></p>
 <ul>
 <li>These quasiparticle excitations always have a gap <span class="math inline">\Delta_{s}</span> given by</li>

@@ -189,7 +189,7 @@ if $c_\bp=v_\bp/u_\bp$.
 energy of this state is
 
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\Braket{\text{BCS}|H_\text{pair}|\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}
 $$
 
@@ -253,11 +253,11 @@ $$
 \end{aligned}
 $$
 
-- $H_\text{pair}$ is a spin chain
+- $H_\text{pair}$ is a spin chain 
+
 $$
-H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\bp \overbrace{\xi({\bp})}^{\xi_\bp\equiv\epsilon(\bp)-\mu}S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'}
 $$
-where we included chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$.
 
 ---
 
@@ -265,9 +265,9 @@ where we included chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu
  $$
  \left(v_\bp,u_\bp\right)=(\cos(\theta_\bp/2)e^{i\varphi_\bp/2},\sin(\theta_\bp/2)e^{-i\varphi_\bp/2})
  $$
-then the variational energy is (except for a constant)
+then the variational energy is
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right)
 $$
 
@@ -306,7 +306,7 @@ so this corresponds to sharp Fermi step.
 ---
 
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}
 $$
 
@@ -390,6 +390,8 @@ $$
 {\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}}
 $$
 
+- Regard as approximate variational excited state, since orthogonal to $\ket{\text{BCS}}$
+
 - If we chose $s=\uparrow$ then $\left(\bp,\uparrow\right)$ state is occupied and $\left(-\bp,\downarrow\right)$ empty
 $$
 \adop_{\bp
@@ -397,7 +399,7 @@ $$
 \downarrow}\aop_{\bp\uparrow}\ket{\bp,\uparrow}=0
 $$
 
-- Corresponding term no longer appears in interaction term when it is applied to this state
+- Corresponding term no longer appears when interaction is applied
 
 -  The level is said to be `blocked'. Thus it certainly is an eigenstate of the pair problem, if $\ket{\text{BCS}}$ is. What is its energy? 
 
@@ -408,7 +410,7 @@ $$
 $$
 E_{s}(\bp)=\xi_{\bp}[\overbrace{\left(1-\langle n^P_\bp\rangle\right)}^{\left(\bp,s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\bp\rangle}^{\left(-\bp,-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\bp}^{\mathrm{`blocking'}}=E_{\bp}
+\bp}^{\mathrm{``blocking"}}=E_{\bp}
 $$
 
 - These quasiparticle excitations always have a gap $\Delta_{s}$ given by  
