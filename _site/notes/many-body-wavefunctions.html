@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,15 +53,17 @@ div.csl-indent {
 <link href="../notes/quantum-hall-effect.html" rel="next">
 <link href="../notes/intro.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +106,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -122,7 +124,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,9 +147,15 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Theories of Quantum Matter</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -159,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
+ <span class="menu-text">TQM Lectures 2025</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -379,7 +387,7 @@ window.Quarto = {
   <li><a href="#impenetrable-bose-gas" id="toc-impenetrable-bose-gas" class="nav-link" data-scroll-target="#impenetrable-bose-gas"><span class="header-section-number">2.3</span> Impenetrable Bose Gas</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="many-body-wavefunctions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -405,6 +413,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>We begin our study of many body quantum mechanics by examining a number of systems where eigenstates and eigenvalues may be found explicitly for any number of particles. Be warned that these situations are <strong>highly atypical</strong> – but are nevertheless very informative.</p>
 <p>Reading: <span class="citation" data-cites="baym2018lectures">(<a href="#ref-baym2018lectures" role="doc-biblioref">Baym 2018</a>)</span>.</p>
@@ -458,17 +471,17 @@ P_{ij}\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_i,\ldots, \mathbf{r}_j,\ldots \mathbf
 \label{eq:classicaljoint}
 \]</span></p>
 <p>This also follows from taking the square modulus of <a href="#eq-product-wavefunction" class="quarto-xref">Equation&nbsp;1</a>. The result implied by the wavefunction <a href="#eq-sym" class="quarto-xref">Equation&nbsp;2</a> is <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \rho_{12}(\mathbf{r}_1,\mathbf{r}_2) &amp;= \frac{1}{2}\left[\rho_1(\mathbf{r}_1)\rho_2(\mathbf{r}_2)+\rho_1(\mathbf{r}_2)\rho_2(\mathbf{r}_1)\right] \\
 &amp;\pm\frac{1}{2}\left[\varphi^{}_1(\mathbf{r}_1)\varphi^*_2(\mathbf{r}_1)\varphi^{}_2(\mathbf{r}_2)\varphi^*_1(\mathbf{r}_2)+\varphi^{}_1(\mathbf{r}_2)\varphi^*_2(\mathbf{r}_2)\varphi^{}_2(\mathbf{r}_1)\varphi^*_1(\mathbf{r}_1)\right].
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>In particular, <span class="math inline">\(\rho_{12}(\mathbf{r},\mathbf{r}) = 0\)</span> for fermions, and <span class="math inline">\(\rho_{12}(\mathbf{r},\mathbf{r}) = 2\rho_1(\mathbf{r})\rho_2(\mathbf{r})\)</span> for bosons. The first result is natural from the standpoint of the exclusion principle, while the second is perhaps more surprising. This shows that, because probabilities arise from the squares of amplitudes, identical particles in quantum mechanics are never truly independent.</p>
 <p>One dramatic illustration of this deviation from our classical intuition is provided by the <a href="https://en.wikipedia.org/wiki/Hong%E2%80%93Ou%E2%80%93Mandel_effect">Hong–Ou–Mandel</a> effect in quantum optics. In simplified terms, we imagine wavepackets describing two photons (bosons) approaching a 50:50 beam splitter from either side. Because of the unitarity of scattering, the two photons end up in orthogonal states. For example, <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \lvert{\text{Left}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle+ \lvert{\text{Right}}\rangle\right)\\\\
 \lvert{\text{Right}}\rangle\to\frac{1}{\sqrt{2}}\left(\lvert{\text{Left}}\rangle- \lvert{\text{Right}}\rangle\right)
-\end{align}
+\end{aligned}
 \]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -476,7 +489,7 @@ P_{ij}\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_i,\ldots, \mathbf{r}_j,\ldots \mathbf
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -501,13 +514,13 @@ H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m}+V(\mathbf{r}_i)\right]
 \]</span></p>
 <p>where <span class="math inline">\(m\)</span> is the particle mass, and <span class="math inline">\(V(\mathbf{r})\)</span> is a potential experienced by the particles.</p>
 <p>Let’s denote the eigenstates of the single particle Hamiltonian by <span class="math inline">\(\{\varphi_\alpha(\mathbf{r})\}\)</span> , and the corresponding eigenenergies by <span class="math inline">\(\{E_\alpha\}\)</span>, where <span class="math inline">\(\alpha\)</span> is a shorthand for whatever quantum numbers are used to label the states.</p>
-<p>A set of labels <span class="math inline">\(\{\alpha_{i}\}\)</span> <span class="math inline">\(i=1,2,\ldots N\)</span> tells us the state of each of the particles. Thus we can write an eigenstatof <span class="math inline">\(N\)</span> <em>distinguishable</em> particles with energy <span class="math inline">\(E=\sum_{i=1}^{N}E_{\alpha_{i}}\)</span> as</p>
+<p>A set of labels <span class="math inline">\(\{\alpha_{i}\}\)</span> <span class="math inline">\(i=1,2,\ldots N\)</span> tells us the state of each of the particles. Thus we can write an eigenstate of <span class="math inline">\(N\)</span> <em>distinguishable</em> particles with energy <span class="math inline">\(E=\sum_{i=1}^{N}E_{\alpha_{i}}\)</span> as</p>
 <p><span id="eq-distinguishable"><span class="math display">\[
 \lvert{\Psi_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle=\varphi_{\alpha_{1}}(\mathbf{r_{1}})\varphi_{\alpha_{2}}(\mathbf{r_{2}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{N}})
 \tag{3}\]</span></span></p>
 <p>(We will frequently switch between the wavefunction <span class="math inline">\(\varphi(\mathbf{x})\)</span> and bra-ket notation <span class="math inline">\(\lvert{\varphi}\rangle\)</span>. In the latter notation the product wavefunction in <a href="#eq-product-wavefunction" class="quarto-xref">Equation&nbsp;1</a> is written <span class="math inline">\(\lvert{\varphi_{1}}\rangle\lvert{\varphi_{2}}\rangle\)</span>)</p>
 <p>Such states are called <strong>product states</strong>. A general state will be expressed as a superposition of product states: they are special states which provide a frequently convenient basis.</p>
-<p>As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
+<p>As we’ve just discussed, however, we should really be dealing with a totally symmetric or totally antisymmetric wavefunction, depending on whether our identical particles are bosons or fermions. The generalization of the two-particle states <a href="#eq-sym" class="quarto-xref">Equation&nbsp;2</a> to many particles involves summing over all permutations of particle coordinates <span class="math inline">\(\mathbf{r}_i\)</span> with respect to the state labels <span class="math inline">\(\alpha_i\)</span>. To write these down we introduce the operators of <em>symmetrization</em> and <em>antisymmetrization</em></p>
 <p><span id="eq-sym-antisym"><span class="math display">\[
 \mathcal{S}=\frac{1}{N!}\sum_{\pi} P_\pi, \qquad \mathcal{A}=\frac{1}{N!}\sum_{\pi} \mathrm{sgn}(\pi)P_\pi
 \tag{4}\]</span></span></p>
@@ -527,7 +540,11 @@ P_\pi \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots \mathbf{r}_N) = \Psi(\mathbf{r}_{\pi
 &amp;=\sqrt{\frac{1}{N!}}\sum_\pi \mathrm{sgn}(\pi)\varphi_{\alpha_{1}}(\mathbf{r_{\pi(1)}})\varphi_{\alpha_{2}}(\mathbf{r_{\pi(2)}})\cdots\varphi_{\alpha_{N}}(\mathbf{r_{\pi(N)}}),
 \end{aligned}
 \tag{5}\]</span></span></p>
-<p>where the <strong>occupation numbers</strong> <span class="math inline">\(\{N_{\alpha}\}\)</span> in the boson case give the number of particles in state <span class="math inline">\(\alpha\)</span>. These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
+<p>where the <strong>occupation numbers</strong> <span class="math inline">\(\{N_{\alpha}\}\)</span> in the boson case give the number of particles in state <span class="math inline">\(\alpha\)</span>. Note that it doesn’t matter if we permute <em>coordinates</em> or state labels <span class="math inline">\(\alpha_i\)</span> in <a href="#eq-norm" class="quarto-xref">Equation&nbsp;5</a>. Thus the symmetric product state can also be written</p>
+<p><span class="math display">\[
+\lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N}).
+\]</span></p>
+<p>These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
 <p><span class="math display">\[
 \label{quantum_statistics_TotalEnergy}
 E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
@@ -538,7 +555,7 @@ E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -587,7 +604,7 @@ z_{i}=\exp(2 \pi i x_{i}/L),
 \tag{7}\]</span></span></p>
 <p>Let’s evaluate this complicated looking expression in a simple case. With three particles we have</p>
 <p><span id="eq-3-particle"><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \Psi^A_0(x_1,x_2,x_3)&amp;=\begin{vmatrix}
         z_{1}^{-1} &amp; z_{2}^{-1} &amp; z_{3}^{-1} \\
         1 &amp; 1 &amp; 1 \\
@@ -595,7 +612,7 @@ z_{i}=\exp(2 \pi i x_{i}/L),
     \end{vmatrix} = \frac{z_{1}}{z_{2}}-\frac{z_{2}}{z_{1}}+\frac{z_{3}}{z_{1}}-\frac{z_{1}}{z_{3}}+\frac{z_{2}}{z_{3}}-\frac{z_{3}}{z_{2}}\nonumber\\
     &amp;=\left(\sqrt{\frac{z_{3}}{z_{1}}}-\sqrt{\frac{z_{1}}{z_{3}}}\right)\left(\sqrt{\frac{z_{1}}{z_{2}}}-\sqrt{\frac{z_{2}}{z_{1}}}\right)\left(\sqrt{\frac{z_{2}}{z_{3}}}-\sqrt{\frac{z_{3}}{z_{2}}}\right)  \nonumber\\
     &amp;\propto \sin\left(\frac{ \pi[x_{1}-x_{2}]}{L}\right)\sin\left(\frac{ \pi[x_{3}-x_{1}]}{L}\right)\sin\left(\frac{ \pi[x_{2}-x_{3}]}{L}\right)
-\end{align}
+\end{aligned}
 \tag{8}\]</span></span></p>
 <p>The vanishing of the wavefunction when <span class="math inline">\(x_{i}=x_{j}\)</span> is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.</p>
 <p><a href="#eq-3-particle" class="quarto-xref">Equation&nbsp;8</a> generalizes for any (odd) <span class="math inline">\(N\)</span> so that the ground state Slater determinant <a href="#eq-1d-det" class="quarto-xref">Equation&nbsp;7</a> is proportional to</p>
@@ -608,7 +625,7 @@ z_{i}=\exp(2 \pi i x_{i}/L),
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -621,10 +638,7 @@ z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
 \end{vmatrix}=\prod_{i&lt;j}^{N}(z_{j}-z_{i})
 \]</span> which can be proved in a variety of ways. Proving directly that <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> is an eigenstate of the Hamiltonian is not easy, but can be accomplished using the identity</p>
 <p><span class="math display">\[
-\begin{equation}
-\label{2nd_quant_cotident}
 \cot(x-y)\cot(y-z)+\cot(y-z)\cot(z-x)+\cot(z-x)\cot(x-y)=1. \nonumber
-\end{equation}
 \]</span></p>
 <p>Check carefully that <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> is periodic and totally antisymmetric.</p>
 </div>
@@ -680,7 +694,7 @@ Figure&nbsp;1: Distribution of particle positions for noninteracting fermion and
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -705,7 +719,7 @@ g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\l
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -720,7 +734,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -735,7 +749,7 @@ g(x,y) = \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} = \int_{k_\text{F}}^{k_
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -757,11 +771,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\mathop{\mathrm{tr}}\varrho =1\)</span>. Its spectral resolution <span class="math display">\[
+<p>To understand the origin of the name <em>single particle density matrix</em>, recall that the density matrix <span class="math inline">\(\varrho\)</span> describes a <strong>mixed state</strong> of a quantum system, and is the appropriate description when the quantum state is not known. <span class="math inline">\(\varrho\)</span> is a positive definite hermitian operator satisfying <span class="math inline">\(\mathrm{tr}\varrho =1\)</span>. Its spectral resolution <span class="math display">\[
 \varrho = \sum_\alpha p_\alpha \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert,
 \]</span> can be thought of as a statistical mixture of different quantum states <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> with probabilities <span class="math inline">\(p_\alpha\)</span>.</p>
 <p>One natural way in which density matrices arise from pure states is as follows. The Hilbert space of a composite system consists of a tensor product of two or more components <span class="math inline">\(\mathcal{H}_{AB} = \mathcal{H}_A \otimes \mathcal{H}_B\)</span>. Starting from the density matrix corresponding to a pure state, we can obtain a density matrix for the component <span class="math inline">\(A\)</span> alone by ‘tracing out’ the <span class="math inline">\(B\)</span> subsystem. <span class="math display">\[
-\varrho_A = \mathop{\mathrm{tr}}_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
+\varrho_A = \mathrm{tr}_B \lvert{\Psi}\rangle\langle{\Psi}\rvert,\quad \lvert{\Psi}\rangle\in \mathcal{H}_{AB}.
 \]</span> The probability for system <span class="math inline">\(A\)</span> to be in state <span class="math inline">\(\lvert{\psi}\rangle\in \mathcal{H}_A\)</span> is <span class="math display">\[
 P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 \]</span> Thus you can think of the single particle density matrix <a href="#eq-spdm" class="quarto-xref">Equation&nbsp;12</a> as arising from tracing out <span class="math inline">\(N-1\)</span> particles from an <span class="math inline">\(N\)</span>-particle system.</p>
@@ -776,7 +790,7 @@ P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -794,7 +808,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -817,7 +831,7 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -839,7 +853,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -859,239 +873,243 @@ Baym, Gordon. 2018. <em>Lectures on Quantum Mechanics</em>. CRC Press.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1099,185 +1117,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../notes/intro.html" class="pagination-link" aria-label="Introduction">

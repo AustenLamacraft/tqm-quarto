@@ -2,7 +2,7 @@
 title: Bose Gas
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 
 You know that noninteracting bosons form a Bose condensate: we will see how weak interactions alter this picture, and make a connection to the phenomenon of __superfluidity__.
@@ -50,11 +50,11 @@ $$
 In fact, it turns out to be more convenient to minimize $\braket{\Psi}{H}{\Psi}$, using a Lagrange multiplier to fix the normalization. We have
 
 $$
-\begin{align}
+\begin{aligned}
 \braket{\Psi}{H}{\Psi}=N \int d\br \left[\frac{1}{2m}|\nabla\varphi_0|^2+V(\br)|\varphi_0(\br)|^2
 \right]\\
 +\frac{1}{2}N(N-1)U_0\int d\br |\varphi_0(\br)|^4.
-\end{align}
+\end{aligned}
 $$ {#eq-energy}
 
 For large $N$, we can neglect the difference between $N$ and $N+1$. Now we want to extremize this functional with respect to $\varphi_0(\br)$, keeping $\varphi_{0}(\br)$ normalized. To do this we introduce a Lagrange multiplier $\mu N$ (the factor of $N$ will become clear shortly) and extremize the functional
@@ -112,10 +112,10 @@ With the ansatz @eq-gp-wavefn for the wavefunction, we can obtain various observ
 difficulty. The density and current density are
 
 $$
-\begin{align}
+\begin{aligned}
 \rho(\br)&=|\varphi(\br)|^2,\\
 \mathbf{j}(\br)&=-\frac{i}{2m}\left[\varphi^{*}(\br)\left(\nabla\varphi(\br)\right)-\left(\nabla\varphi^{*}(\br)\right)\varphi(\br)\right]
-\end{align}
+\end{aligned}
 $$
 
 Alternatively, one may write this is terms of the velocity field of the gas, using $\mathbf{j}=\rho \mathbf{v}$, and the decomposition of $\varphi(\br)$ into magnitude and phase
@@ -253,20 +253,20 @@ $$
 we see that a term in the Hamiltonian with $\aop_0$ or $\adop_0$ is going to be more important -- on account of the large occupancy of $\bk=0$ -- than a term without. For this reason we divide up the interaction Hamiltonian according to the number of occurrences of these operators
 
 $$
-\begin{align}
+\begin{aligned}
 H_\text{int} = &\frac{U_0}{2V}\adop_0\adop_0\aop_0\aop_0 \\\nonumber 
 &+\frac{U_0}{2V}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+4\adop_\bk\adop_0\aop_0\aop_\bk\right]\\\nonumber
 &+\frac{U_0}{V}\sum_{\substack{\bk_1=\bk_2+\bk_3\\ \bk_{1,2,3}\neq 0}}\left[\adop_{\bk_3}\adop_{\bk_2}\aop_{\bk_1}\aop_0 +\adop_0\adop_{\bk_1}\aop_{\bk_2}\aop_{\bk_3}\right]\\\nonumber
 &+\frac{U_0}{2V}\sum_{\substack{\bk_1+\bk_2=\bk_3+\bk_4\\ \bk_{1,2,3,4}\neq 0}} \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}.
-\end{align}
+\end{aligned}
 $$
 
 The Gross--Pitaevskii approximation corresponds to the first term. We are now going to additionally keep the second term, and neglect the third and fourth. Thus we study the Hamiltonian
 
 $$
-\begin{align}
+\begin{aligned}
 H_\text{pair} &= \sum_\bk \epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2V}\adop_0\adop_0\aop_0\aop_0 \nonumber\\ &\quad+\frac{U_0}{2V}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+4\adop_\bk\adop_0\aop_0\aop_\bk\right].
-\end{align}
+\end{aligned}
 $$ {#eq-H-pair}
 
 The second line describes the movement of pairs between zero momentum and $(+\bk,-\bk)$. To separate as much as possible the $\bk\neq 0$ modes from the $\bk=0$ mode we use
@@ -284,11 +284,11 @@ $$
 In this way, @eq-H-pair becomes
 
 $$
-\begin{align}
+\begin{aligned}
 H_\text{pair} = &N\epsilon(0)+\frac{U_0}{2V}N(N-1) \nonumber\\\nonumber
 &+\sum_{\bk\neq 0}\left(\left[\epsilon(\bk)-\epsilon(0)\right]\adop_\bk\aop_\bk\right.\\
 &\left.+\frac{U_0}{2V}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+2\adop_\bk\adop_0\aop_0\aop_\bk\right]\right).
-\end{align}
+\end{aligned}
 $$ {#eq-H-pair-2}
 
 Even though $\epsilon(0)=0$ for the situation we are interested in right now, we have included the general case in @eq-H-pair-2 to emphasize that it is the energy _difference_ between $0$ and $\bk$ that is important: any energy offset appears as a constant in the first term.
@@ -300,19 +300,19 @@ Consider the action of the Hamiltonian @eq-H-pair on a product state of the form
 The action of $\adop_\bk \aop_0$ on this state is
 
 $$
-\begin{align}
+\begin{aligned}
 \adop_\bk\aop_0\ket{\Psi'}\otimes\ket{N_0}_0 &= \left(\adop_\bk \ket{\Psi'}\right)\otimes \aop_0\ket{N_0}_0\nonumber\\
  &= \left(\adop_\bk \ket{\Psi'}\right)\otimes \sqrt{N_0}\ket{N_0-1}_0.
-\end{align}
+\end{aligned}
 $$
 
 Likewise
 
 $$
-\begin{align}
+\begin{aligned}
 \aop_\bk\adop_0\ket{\Psi'}\otimes\ket{N_0}_0 &= \left(\aop_\bk \ket{\Psi'}\right)\otimes \adop_0\ket{N_0}_0 \nonumber\\
 &= \left(\aop_\bk \ket{\Psi'}\right)\otimes \sqrt{N_0+1}\ket{N_0+1}_0.
-\end{align}
+\end{aligned}
 $$
 
 Since $N_0$ is assumed to be large, we ignore the difference between $N_0$ and $N_0+1$. To be more precise, we are assuming that in the states we are going to find, $N_0$ will not fluctuate substantially. If this is the case, the _matrix elements_ of $H_\text{pair}$ are approximately unchanged when we make the replacement mentioned above, leaving us with the __Bogoliubov Hamiltonian__
@@ -399,10 +399,10 @@ Notice the differences from a rotation matrix:
 
 Show that 
 $$
-\begin{align}
+\begin{aligned}
 \tanh 2\kappa = \frac{\delta}{\epsilon},\qquad \Omega = \sqrt{\epsilon^2-\delta^2\nonumber}\\
 h = \Omega\left[\bdop_1\bop_1+\bdop_2\bop_2\right] + \Omega - \epsilon.
-\end{align}
+\end{aligned}
 $$
 
 The form of $\Omega$ is most easily understood by noting that the transformation preserves the determinant ($\det\Lambda=1$). 
@@ -419,7 +419,7 @@ The form of $\Omega$ is most easily understood by noting that the transformation
 
 :::
 
-Applying the same logic to our Hamiltonian @eq-HY gives
+Applying the same logic to our Hamiltonian @eq-H-pair-3 gives
 
 $$
 \bop_\bp=\aop_\bp\cosh\kappa_\bp+\adop_{-\bp}\sinh\kappa_\bp\nonumber\\
@@ -458,13 +458,13 @@ $$
 But what does it _look_ like? A state (unnormalized) that satisfies the above equation is
 
 $$
-\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\bk\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
+\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\left[\tanh\kappa_\bk\right]\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
 $$ {#eq-bog-wavefn}
 
 ::: {.callout-tip}
 ## Check
 
-Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{\text{VAC}}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
+Show this. If you've seen coherent states before, remember that the state $e^{\alpha \adop}\ket{0}$ is an eigenstate of $\aop$ with eigenvalue $\alpha$.
 
 :::
 
@@ -541,9 +541,7 @@ Appendix
 To find the ground state energy in the Bogoliubov theory we have to compute the sum
 
 $$
-\begin{equation}
 \sum_{\bp\neq 0}\frac{1}{2}\left[\omega(\bp)-\frac{\bp^2}{2m}-n_0U_0\right].
-\end{equation}
 $$ {#eq-bog-sum}
 
 After turning it into an integral in the usual way, we have
@@ -555,18 +553,16 @@ $$
 where we have introduced an upper cutoff $\Lambda$ to see what happens as it increases to infinity. The first integral comes from the $\omega(\bp)$ in the summand. $\xi\equiv \frac{1}{\sqrt{2m n U_0}}$ is the healing length as before. Introducing the substitution $u=p^2$ gives
 
 $$
-\begin{align}
+\begin{aligned}
 I(\Lambda) &= \frac{1}{2}\int^{\Lambda^2}_0 u\sqrt{u+\frac{2}{\xi^2}} du \nonumber \\
 &= \left[\frac{1}{5}\left(u+\frac{2}{\xi^2}\right)^{5/2}-\frac{2}{3\xi^2} \left(u+\frac{2}{\xi^2}\right)^{3/2}\right]^{\Lambda^2}_0\nonumber \\
 &= \frac{\Lambda^5}{5} + \frac{\Lambda^3}{3\xi^2} -\frac{\Lambda}{2\xi^4}+\cdots.
-\end{align}
+\end{aligned}
 $$ {#eq-int-eval}
 In the expansion we have retained only the terms with positive powers of $\Lambda$. By comparing with the definition of $I(\Lambda)$, we can see that these terms arise from the first three terms in the large $p$ expansion of the integrand
 
 $$
-\begin{equation}
 p^2 \sqrt{p^2\left(p^2+\frac{2}{\xi^2}\right)} = p^4 + \frac{p^2}{\xi^2} - \frac{1}{2\xi^2}.
-\end{equation}
 $$ {#eq-exp-integrand}
 
 In the original sum @eq-bog-sum the contributions of the first two terms in @eq-exp-integrand are cancelled by subtracting $\frac{1}{2}\left[\frac{\bp^2}{2m}+n_0U_0\right]$. This still leaves us with a divergence $\propto \Lambda$ arising from last term of @eq-exp-integrand. On the other hand, the sum

@@ -3,7 +3,7 @@ title: Problem Set 2
 summary: Second Quantization; Lattice models; Bose gas
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 
 ## $N$ Particle Hong--Ou--Mandel

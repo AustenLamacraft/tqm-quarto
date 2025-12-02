@@ -2,7 +2,7 @@
 title: Lattice Models
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 
 Models defined on discrete sites — so-called __tight binding models__ — provide a conceptually simple way to think about the effects of strong interactions between particles. The phenomenology of these models is central to many current avenues of research in condensed matter, whether in solid state or atomic physics.
@@ -264,10 +264,10 @@ As in the Bose case, we start by thinking about $U/t\to\infty$. In the limit we 
 Start by thinking about two sites and two particles. There are 6 states altogether in the Hilbert space.
 
 $$
-\begin{align}
+\begin{aligned}
 \adop_{1,\uparrow}\adop_{1,\downarrow} \ket{\text{VAC}},\quad\adop_{2,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
 \adop_{1,s}\adop_{2,s'} \ket{\text{VAC}},\quad s,s'=\uparrow,\downarrow.
-\end{align}
+\end{aligned}
 $$
 
 The top two states have energy $U$ when $t=0$; the bottom 4 have energy 0.
@@ -296,17 +296,17 @@ $H_t$ connects $\ket{1}$ and $\ket{2}$ with $\ket{3}$ and $\ket{4}$. We compute 
 
 $$
 \begin{aligned}
-\Braket{1|H_t|3} &= \Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
-&=-t\Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\downarrow}\aop_{2,\downarrow} \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+\braket{1}{H_t}{3} &= \braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\downarrow}\aop_{2,\downarrow} \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
 &=t\\
-\Braket{2|H_t|3} &= \Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
-&=-t\Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\uparrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\adop_{2,\downarrow}|\text{VAC}}\\
+\braket{2}{H_t}{3} &= \braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\uparrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
 &=-t\\
-\Braket{1|H_t|4} &= \Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
-&=-t\Braket{\text{VAC}|\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\aop_{2,\uparrow} \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+\braket{1}{H_t}{4} &= \braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\aop_{2,\uparrow} \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
 &=t\\
-\Braket{2|H_t|4} &= \Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
-&=-t\Braket{\text{VAC}|\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\downarrow}\aop_{1,\downarrow} \adop_{1,\downarrow}\adop_{2,\uparrow}|\text{VAC}}\\
+\braket{2}{H_t}{4} &= \braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\downarrow}\aop_{1,\downarrow} \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
 &=t
 \end{aligned}
 $$
@@ -314,7 +314,8 @@ $$
 This gives the Hamiltonian
 
 $$
-\Braket{j|H|k} = \begin{pmatrix}
+\braket{j}{H}{k} = 
+\begin{pmatrix}
 U & 0 & t & -t \\
 0 & U & t & -t \\
 t & t & 0 & 0 \\
@@ -364,19 +365,19 @@ $$
 Denoting by $P_\text{Mott}$ the projection operator on to the $2^{N_\text{sites}}$ Mott states, and $P_\text{Not}\equiv 1-P_\text{Mott}$, we have
 
 $$
-\begin{align}
+\begin{aligned}
 H_\text{Mott}= P_\text{Mott} H P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
 V^{} = P_\text{Mott} H P_\text{Not},\qquad V^\dagger = P_\text{Not} H P_\text{Mott}.
-\end{align}
+\end{aligned}
 $$
 
 In the case of the Hubbard model, we have
 
 $$
-\begin{align}
+\begin{aligned}
 H_\text{Mott}= P_\text{Mott} H_U P_\text{Mott},\quad H_\text{Not}= P_\text{Not}H P_\text{Not}\\
 V^{} = P_\text{Mott} H_t P_\text{Not},\qquad V^\dagger = P_\text{Not} H_t P_\text{Mott}.
-\end{align}
+\end{aligned}
 $$
 
 Note that both $H_U$ and $H_t$ contribute to $H_\text{Not}$ because $H_t$ can move particles and holes around in a non-Mott state. We write the eigenvalue equation in block form

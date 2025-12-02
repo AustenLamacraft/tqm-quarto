@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 ## Quantum Hall Effect
 
@@ -61,11 +61,29 @@ $$
 
 - $\omega_c = \frac{qB}{m}$ is the __cyclotron frequency__
 
+## Lowest Landau level
+$$
+H = A^\dagger A + \frac{\omega_c}{2}
+$$
+
+- The operator $A$ is defined as
+
+$$
+A \equiv i \sqrt{\frac{2}{m}}\left(\partial_{\bar z} +\frac{qBz}{4}\right)
+$$
+
+- Notice that $z^\dagger = \bar z$ while $(\partial_{\bar z})^\dagger = -\partial_z$
+
+---
+
+
 - States that satisfy
 $$
 \left(\partial_{\bar z} +\frac{qB z}{4}\right)\psi(z,\bar z) = 0
 $$
-have energy $\omega_c/2$ and belong to the __lowest Landau level__ (LLL)
+have energy $\omega_c/2$ 
+
+- Since $\braket{\psi}{A^\dagger A}{\psi}\geq 0$ these belong to the __lowest Landau level__ (LLL)
 
 ---
 
@@ -222,10 +240,12 @@ $m=2$ state has zero interaction energy
 $$
 \nabla^2 V = -q\delta(\br)
 $$
+
 - In 2D the solution describing a point charge is
 $$
 V_\text{point}(\br) = -\frac{q}{2\pi}\log\left|\br\right|
 $$
+
 - Constant background charge density $-\rho_0$ gives rise to a potential
 $$
 V_\text{bg}(\br) = \frac{\rho_0}{4} \left|\br\right|^2

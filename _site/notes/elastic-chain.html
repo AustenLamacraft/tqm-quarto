@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,15 +33,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="../notes/spin-models.html" rel="next">
 <link href="../notes/quantum-hall-effect.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +86,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -102,7 +104,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,9 +127,15 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Theories of Quantum Matter</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -139,7 +147,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
+ <span class="menu-text">TQM Lectures 2025</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -368,7 +376,7 @@ window.Quarto = {
   <li><a href="#sec-u-var" id="toc-sec-u-var" class="nav-link" data-scroll-target="#sec-u-var"><span class="header-section-number">3.2</span> Evaluating Equation&nbsp;12</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="elastic-chain.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -394,6 +402,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>In this lecture we discuss a very simple many body system in which particles are coupled by Hooke’s Law springs. Nevertheless, the quantization of this system has a lot to teach us about the appearance of <strong>collective excitations</strong>.</p>
 <hr>
@@ -451,7 +464,7 @@ z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -485,7 +498,7 @@ p_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j},
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -495,10 +508,10 @@ H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n
 </div>
 </div>
 <p>This <em>almost</em> looks like a system of harmonic oscillators. Bear in mind that the <span class="math inline">\(q_n\)</span> and <span class="math inline">\(\pi_n\)</span> are complex. One could, for example, split the amplitudes into their real and imaginary parts <span id="eq-r-and-i"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 q_n &amp;= \frac{1}{\sqrt{2}}\left(q_n' + i q_n''\right),\quad q_{-n} = \frac{1}{\sqrt{2}}\left(q_n' - i q_n''\right)\\
 \pi_n &amp;= \frac{1}{\sqrt{2}}\left(\pi_n' + i \pi_n''\right),\quad \pi_{-n} = \frac{1}{\sqrt{2}}\left(\pi_n' - i \pi_n''\right),\quad n\geq 0.
-\end{align}
+\end{aligned}
 \tag{5}\]</span></span> The Hamiltonian would then become <span class="math inline">\(H=H' + H''\)</span> with <span class="math display">\[
 H' = \sum_{0 &lt; n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \eta_n) q'_n q'_{n}\right].
 \]</span> and similarly for <span class="math inline">\(H''\)</span>. By comparing with the standard form <span id="eq-sho"><span class="math display">\[
@@ -508,16 +521,14 @@ H_\text{SHO} = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2,
 <section id="complex-coordinates" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="complex-coordinates"><span class="header-section-number">1.3</span> Complex Coordinates</h3>
 <p>Sticking with the classical problem, let’s introduce complex coordinates to describe the two dimensional phase space of a single oscillator <span id="eq-a-def"><span class="math display">\[
-\begin{equation}
 a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right).
-\end{equation}
 \tag{7}\]</span></span> <span class="math inline">\(a\)</span> and its conjugate satisfy <span class="math inline">\(\{a^{},a^*\}=-i\)</span>. This definition is chosen so that the Hamiltonian takes the simple form <span class="math display">\[
 H = \omega \left|a\right|^2.
 \]</span> Hamilton’s equations of motion are then <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \dot a &amp;= \{a, H \} = -i\omega a\\
 \dot a^* &amp;= \{a^*, H \} = i\omega a^*.
-\end{align}
+\end{aligned}
 \]</span> with solution <span class="math inline">\(a(t) = e^{-i\omega t} a(0)\)</span> describing circular motion in the complex <span class="math inline">\(a\)</span> plane on a contour of fixed energy.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -525,7 +536,7 @@ H = \omega \left|a\right|^2.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -533,17 +544,17 @@ Check
 </div>
 </div>
 <p>In the same way, we can introduce the coordinates <span id="eq-many-a-def"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 a_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_n + \frac{i}{m\omega(\eta_n)}\pi_{-n}\right)\nonumber\\
 a^*_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)}\pi_{n}\right),\qquad n\neq 0.
-\end{align}
+\end{aligned}
 \tag{8}\]</span></span> Remember that <span class="math inline">\(q_n = q_{-n}^*\)</span> and <span class="math inline">\(\pi_n = \pi_{-n}^*\)</span> in order that <span class="math inline">\(u_j\)</span> and <span class="math inline">\(p_j\)</span> are real. Note that <span class="math inline">\(n=0\)</span> is excluded because <span class="math inline">\(\omega(0)=0\)</span>. These coordinates satisfy <span class="math display">\[
 \{a_m,a^{*}_n\}=-i\delta_{mn}.
 \]</span> Inverting the definition <a href="#eq-many-a-def" class="quarto-xref">Equation&nbsp;8</a> gives <span class="math display">\[
-\begin{align}
+\begin{aligned}
 q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
 \pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right),
-\end{align}
+\end{aligned}
 \]</span> and inserting into the Hamiltonian <a href="#eq-h-diag" class="quarto-xref">Equation&nbsp;4</a> gives <span class="math display">\[
 H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) \left|a_n\right|^2,
 \]</span> with the first term accounting for the (free) centre of mass.</p>
@@ -554,10 +565,10 @@ H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta
 <p>In the quantum theory, the variables <span class="math inline">\(a^{\vphantom{\dagger}}\)</span>, <span class="math inline">\(a^\dagger\)</span> satisfy <span class="math inline">\([a^{\vphantom{\dagger}},a^\dagger]=1\)</span> and the Hamiltonian <a href="#eq-sho" class="quarto-xref">Equation&nbsp;6</a> takes the form <span class="math display">\[
 H = \frac{\omega}{2}\left(a^\dagger a^{\vphantom{\dagger}}+a^{\vphantom{\dagger}}a^\dagger\right).
 \]</span> Let’s remind ourselves how this formalism solves the problem of finding the eigenstates. The key observation is that <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \left[a^{\vphantom{\dagger}}, H\right] &amp;= \omega a^{\vphantom{\dagger}},\\
 \left[a^\dagger, H\right] &amp;= -\omega a^\dagger.
-\end{align}
+\end{aligned}
 \]</span> As a result, if <span class="math inline">\(\lvert{\psi}\rangle\)</span> is an eigenstate of the Hamiltonian <span class="math display">\[
 H \lvert{\psi}\rangle = E \lvert{\psi}\rangle,
 \]</span> then <span class="math inline">\(a^\dagger\lvert{\psi}\rangle\)</span> is an eigenstate with energy <span class="math inline">\(E+\omega\)</span> <span class="math display">\[
@@ -617,10 +628,10 @@ H = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho L} \pi_n\pi_{-n} + \frac{\kappa
 \omega(k) = c|k|,
 \]</span> where <span class="math inline">\(c=\sqrt{\frac{\kappa}{\rho}}\)</span> is the speed of sound. Note that the continuum limit has lead to a linear dispersion relation. This is reasonable: the lattice was the origin of the periodic dispersion relation <a href="#eq-dispersion" class="quarto-xref">Equation&nbsp;2</a>, and it has now disappeared.</p>
 <p>Transcribing the definition of the oscillator variables <a href="#eq-many-a-def" class="quarto-xref">Equation&nbsp;8</a> gives <span class="math display">\[
-\begin{align}
+\begin{aligned}
 a_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_n + \frac{i}{\sqrt{ZkL}}\pi_{-n}\right]\nonumber\\
 a^*_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}\right].
-\end{align}
+\end{aligned}
 \]</span> where <span class="math inline">\(Z\equiv\sqrt{\kappa\rho}\)</span> is the impedance. After quantization, the Hamiltonian takes the form <span class="math display">\[
 H - E_0 = \sum_{n=-\infty}^\infty c\left|k_n\right|a^\dagger_na^{\vphantom{\dagger}}_n.
 \label{coll_excess}
@@ -647,13 +658,13 @@ u_j = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j},
 \tag{11}\]</span></span> and <span class="math display">\[
 q_n = \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right).
 \]</span> To evaluate <span class="math inline">\(\eqref{coll_gsfluct}\)</span>, we write the two factors <span class="math inline">\((u_j-u_k)(u_j-u_k)\)</span> in terms of the <span class="math inline">\(a^{\vphantom{\dagger}}_n\)</span> and <span class="math inline">\(a^\dagger_n\)</span>. Contributions to the ground state expectation value arise from terms with <span class="math inline">\(a^{\vphantom{\dagger}}_n\)</span> in the left factor and <span class="math inline">\(a^\dagger_n\)</span> in the right for some <span class="math inline">\(n\)</span>. All other terms vanish. This gives <span class="math display">\[
-\begin{multline}
+\begin{aligned}
 \langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle \\ = \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right].
-\end{multline}
+\end{aligned}
 \]</span> Taking the <span class="math inline">\(N\to\infty\)</span> limit in the sum gives <span id="eq-u-var"><span class="math display">\[
-\begin{multline}
+\begin{aligned}
 \langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle = \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\ = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}.
-\end{multline}
+\end{aligned}
 \tag{12}\]</span></span> The dispersion relation <a href="#eq-dispersion" class="quarto-xref">Equation&nbsp;2</a> makes this integral a little difficult.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -667,7 +678,7 @@ q_n = \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right).
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -708,7 +719,7 @@ N &amp; n = 0 \mod N \\
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -728,7 +739,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -744,7 +755,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -755,12 +766,10 @@ Check
 </div>
 </div>
 <p>Deploying this strategy for <a href="#eq-struct" class="quarto-xref">Equation&nbsp;14</a> gives <span class="math display">\[
-\begin{equation}
 \begin{split}
 \langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N &amp;\exp(iqa[j-k])\\
 &amp;\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right).
 \end{split}
-\end{equation}
 \]</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -780,7 +789,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -827,10 +836,10 @@ f_j = \int_{-\pi}^\pi \frac{d\eta}{2\pi}\,F(\eta) e^{i\eta j}.
 <p>Alternatively, regard the <span class="math inline">\(N\to\infty\)</span> limit as sampling a function <span class="math inline">\(f(x)\)</span> ever more finely in the range (0,L]. Now it’s the DFT, rather than the inverse, that becomes an integral <span class="math display">\[
 \hat f(k) \equiv \int_0^L f(x) e^{-ik_n x}\,dx,
 \]</span> where <span class="math inline">\(k_n =2\pi n/L\)</span>. Note that <span class="math inline">\(k_n x = \eta_n j\)</span>. The pair of transformations is now <span id="eq-ft-series"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \hat f_k &amp;= \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
 f(x) &amp;= \frac{1}{L}\sum_k \hat f_k e^{ik_n x}
-\end{align}
+\end{aligned}
 \tag{18}\]</span></span> This is the conventional form of the Fourier series for a function with period <span class="math inline">\(L\)</span>.</p>
 <p>With this definition <span class="math inline">\(\hat f_k\)</span> has an extra dimension of distance (on account of the integral), which gets removed by the <span class="math inline">\(1/L\)</span> in the inverse transform.</p>
 <p>The analog of the identity <a href="#eq-dft-ident" class="quarto-xref">Equation&nbsp;16</a> is <span class="math display">\[
@@ -840,11 +849,11 @@ f(x) &amp;= \frac{1}{L}\sum_k \hat f_k e^{ik_n x}
 <section id="ltoinfty" class="level4" data-number="3.1.4">
 <h4 data-number="3.1.4" class="anchored" data-anchor-id="ltoinfty"><span class="header-section-number">3.1.4</span> <span class="math inline">\(L\to\infty\)</span></h4>
 <p>Finally we arrive at the Fourier transform, where we take <span class="math inline">\(L\to\infty\)</span>, so that the inverse transform in <a href="#eq-ft-series" class="quarto-xref">Equation&nbsp;18</a> becomes an integral too <span class="math display">\[
-\begin{align}
+\begin{aligned}
 \hat{f}(k) &amp; = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
 f(x) &amp;= \int_{-\infty}^\infty \hat f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
 \label{coll_FTTrans}
-\end{align}
+\end{aligned}
 \]</span> My preference is for taking this limit at the last possible moment, that is, sticking with discrete Fourier sums for as long as possible. There are some good(ish) reasons for this</p>
 <ol type="1">
 <li><p>Writing <span class="math inline">\(\sum_k\)</span> is easier than <span class="math inline">\(L\int \frac{dk}{2\pi}\)</span>, because the <span class="math inline">\(k_n = 2\pi n/L\)</span> can be left implicit.</p></li>
@@ -869,12 +878,12 @@ f(x)g(x) = \frac{1}{L^2}\sum_{k,k'}  f_k  g_k = \frac{1}{L}\sum_q \left(\frac{1}
 f(x)g(x) \stackrel{\text{FT}}{\longleftrightarrow} \frac{1}{L}\sum_k  f_k  g_{q-k},
 \]</span> the latter being a discrete convolution.</p>
 <p>Frequently we’ll have to calculate integrals of such products. I record some examples to give you the general idea <span id="eq-ft-examples"><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \int_{0}^L f(x)g(x)\,dx &amp;= \frac{1}{L}\sum_k  f_k  g_{-k}\nonumber\\
 \int_{0}^L f'(x)g'(x)\,dx &amp;= \frac{1}{L}\sum_k k^2 f_k  g_{-k}\nonumber\\
 \int_{0}^L f(x)g(x)h(x)\,dx &amp;=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_3=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
 \int_0^\infty  \phi(x)V(x-y)\phi(y)\,dx \,dy &amp;= \frac{1}{L}\sum_{q}  \phi_{-q} V_q \phi_q
-\end{align}
+\end{aligned}
 \tag{19}\]</span></span> Note that you can be guided to the right number of factors of <span class="math inline">\(1/L\)</span> by dimensional considerations, or from the number of ‘free’ sums over wavevectors.</p>
 <p>Finally, we often encounter the situation where we have two (or more) arguments, but there is only dependence on the difference, for example <span class="math display">\[
 F(x,x') = f(x-x').
@@ -897,7 +906,7 @@ F_{k,k'} = f_k\delta_{k,-k'}.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -924,239 +933,243 @@ I(j) = 4\sum_{n=1}^j \frac{1}{n+1/2}\sim 4\log j.
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1164,185 +1177,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../notes/quantum-hall-effect.html" class="pagination-link" aria-label="Quantum Hall Effect">

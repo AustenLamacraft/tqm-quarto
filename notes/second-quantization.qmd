@@ -2,7 +2,7 @@
 title: A is for Annihilation
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of __second quantization__ represents the beginning of the field theoretic description of many body systems.
 
@@ -131,9 +131,9 @@ $$ {#eq-ccr-basis}
 Then we have
 
 $$
-\begin{align}
+\begin{aligned}
 \left[\aop_\alpha,\aop_\beta\right]=0,\quad \left[\adop_\alpha,\adop_\beta\right]=0,\quad \left[\aop_\alpha,\adop_\beta\right] = \delta_{\alpha\beta}.
-\end{align}
+\end{aligned}
 $$
 
 The same relations describe the ladder operators of a set of independent harmonic oscillators, revealing a deep connection between these two systems. The state $\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}$ of @eq-ortho-prod -- a normalized state with $N_\alpha$ particles in state $\alpha$ -- may be written
@@ -152,11 +152,11 @@ $$
 From @eq-ccr-basis it follows that
 
 $$
-\begin{align}
+\begin{aligned}
 	\left[\aop_{\alpha},\Nop_{\alpha}\right]&=\aop_{\alpha}\nonumber\\
 	\left[\adop_{\alpha},\Nop_{\alpha}\right]&=-\adop_{\alpha}.
   \label{2nd_quant_NaComm}
-\end{align}
+\end{aligned}
 $$
 
 You can think of the first of these as "count then destroy minus destroy then count", for example.
@@ -189,10 +189,10 @@ $$ {#eq-psi-def}
 and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjugates. The relations satisfied by these operators are
 
 $$
-\begin{gather}
+\begin{gathered}
 	\left[\pop(\br_1),\pdop(\br_2)\right]=\delta(\br_1-\br_2)\nonumber\\
 	\left[\pop(\br_1),\pop(\br_2)\right]=\left[\pdop(\br_1),\pdop(\br_2)\right]=0.
-\end{gather} 
+\end{gathered} 
 $$ {#eq-position-relations}
 
 These operator-valued functions are called __quantum fields__. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different _language_ for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.
@@ -220,10 +220,10 @@ $$
 where we used the commutation relation $[\psi(x),\adop(\psi_n)]=\bra{x}\psi_n\rangle=\psi_n(x)$. The wavefunctions appearing on the RHS on $N-1$ particle wavefunctions with arguments $x_1$ to $x_{N-1}$. Using @eq-N-part and @eq-N-prod the RHS corresponds to
 
 $$
-\begin{gather}
+\begin{gathered}
  \frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(x) \sum_{P\in S_{N-1}} \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
 =\frac{1}{\sqrt{(N-1)!}}\sum_{P \in S_{N}}\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
-\end{gather}
+\end{gathered}
 $$
 
 with $x_N=x$, and $S_N$ denotes the set of permutations of $N$ objects (note the change from $S_{N-1}$ to $S_N$ between the two lines). But this just corresponds to applying the prescription @eq-freeze to the original wavefunction @eq-N-prod. Since this works for all product states, and since any state is a superposition of product states, it works more generally.
@@ -235,10 +235,10 @@ with $x_N=x$, and $S_N$ denotes the set of permutations of $N$ objects (note the
 As an example, let our original basis be the eigenbasis of the free particle Hamiltonian $H=\frac{\bp^{2}}{2m}$ with periodic boundary conditions
 
 $$
-\begin{align}
+\begin{aligned}
 	\label{2nd_quant_FreeParticleStates}
 	\ket{\bk}=\frac{\exp(i\bk \cdot \br)}{\sqrt{V}}, \quad \bk=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
-\end{align}
+\end{aligned}
 $$
 
 with $V=L_{x}L_{y}L_{z}$. The matrix elements of the transformation between this original basis and the position basis $\{\ket{\br}\}$ are $\bra{\bk}\br\rangle=\exp(-i\bk \cdot \br)/\sqrt{V}$, so we have
@@ -320,11 +320,11 @@ Check this.
 Introducing field operators in the position basis as before leads to a system of operators satisfying the anticommutation relations
 
 $$
-\begin{gather}
+\begin{gathered}
 	\left\{\pop(\br_1),\pdop(\br_2)\right\}=\delta(\br_1-\br_2)\nonumber\\
 	\left\{\pop(\br_1),\pop(\br_2)\right\}=\left\{\pdop(\br_1),\pdop(\br_2)\right\}=0.
 	\label{2nd_quant_PositionRelationsAnti}
-\end{gather}
+\end{gathered}
 $$
 
 
@@ -399,11 +399,11 @@ $$
 we reproduce the action @eq-A-act. As a simple example,
 
 $$
-\begin{align}
+\begin{aligned}
 	\label{2nd_quant_}
 	\mathop{\hat A}\adop_{\beta}\ket{\text{VAC}}&=\left(\left[\mathop{\hat A},\adop_{\beta}\right]+\adop_{\beta}\mathop{\hat A}\right)\ket{\text{VAC}}\nonumber\\
 							&=\sum_{\alpha} A_{\alpha \beta} \adop_{\alpha}\ket{\text{VAC}}.
-\end{align}
+\end{aligned}
 $$
 
 The second quantized form of $\hat A$ allows us to find the matrix element $\braket{\mathbf{N}}{\hat A}{\mathbf{N'}}$ between product states made of orthonormal single particle states. This vanishes unless $\mathbf{N}$ and $\mathbf{N'}$ differ by the movement of of one particle. If $N_\beta = N'_\beta-1$ and $N_\alpha = N'_\alpha+1$ we have
@@ -425,6 +425,25 @@ Notice that $\mathop{\hat A}$ _looks_ formally like the expectation value of $\m
 
 To repeat the above prescription for emphasis: _A one particle operator $\mathop{\hat A}$ has a second quantized representation formally identical to the expectation value of its single particle counterpart $\mathop{A}$_.
 
+::: {.callout-tip}
+## Check
+
+Another way to justify the second quantized form of the one particle operator is to start from the expression
+
+$$
+\hat A = \int \pdop(\br) \left[A \pop(\br)\right] d\br
+$$
+
+and take matrix elements with general $N$-particle state $\ket{\Psi}$, $\ket{\Phi}$. Using @eq-freeze we find 
+
+$$
+\braket{\Psi}{\hat A}{\Phi} \longleftrightarrow N \int \Psi^*(\br_1,\ldots\br_N) \left[A_{1} \Phi(\br_1,\ldots\br_N)\right] d\br_1\cdots d\br_N.
+$$
+
+By the symmetry or antisymmetry of the wavefunctions this is the same as taking matrix elements of the first quantized form @eq-one-particle.
+
+:::
+
 This probably all looks a bit abstract, so let's turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in @eq-h1. According to the above prescription, this should have the second quantized form
 
 $$
@@ -435,9 +454,9 @@ $$
 where $H$ is the single particle Hamiltonian $H=-\frac{1}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})$. This takes on a very simple form if the basis $\ket{\varphi_{\alpha}}$ is just the eigenbasis of this Hamiltonian, in which case $\braket{\varphi_{\alpha}}{\mathop{H}}{\varphi_{\beta}}=E_{\alpha}\delta_{\alpha \beta}$ and
 
 $$
-\begin{align}
+\begin{aligned}
 	\mathop{\hat H} \equiv \sum_{\alpha} E_{\alpha} \adop_{\alpha}\aop_{\alpha}=\sum_{\alpha} E_{\alpha} \Nop_{\alpha}.
-\end{align} 
+\end{aligned} 
 $$ {#eq-N-rep}
 
 Evidently this is correct: the eigenstates of this operator are just the $N$ particle basis states $\ket{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}$, with eigenvalues $\sum_\alpha N_\alpha E_\alpha$.
@@ -445,24 +464,21 @@ Evidently this is correct: the eigenstates of this operator are just the $N$ par
 Alternatively, we can look at things in the position basis. By recalling how the expectation value of the Hamiltonian looks in this basis, we come up with
 
 $$
-\begin{align}
+\begin{aligned}
 	\mathop{\hat H}&=\int d\br \left[-\frac{1}{2m}\pdop(\br)\nabla^{2}\pop(\br)+V(\br)\pdop(\br)\pop(\br)\right]\nonumber\\
 					&=\int d\br \left[\frac{1}{2m}\nabla\pdop(\br)\cdot\nabla\pop(\br)+V(\br)\pdop(\br)\pop(\br)\right],
-\end{align} 
+\end{aligned} 
 $$ {#eq-h-pos}
 
 where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of @eq-h-pos and @eq-N-rep may be seen by using @eq-psi-def.
 
-The Heisenberg equation of motion corresponding to @eq-h-pos is
+The Heisenberg equation of motion for $\pop(\br,t)=e^{i\hat Ht}\pop(\br) e^{-i\hat H t}$ with Hamiltonian @eq-h-pos is
 
 $$
-\begin{equation}
-	\label{2nd_quant_HeomFree}
-	\begin{split}
-	i\partial_{t}\pop(\br,t) &= -\left[\mathop{\hat H},\pop(\br,t)\right]\\
-	&= -\frac{1}{2m}\nabla^{2}\pop(\br,t)+V(\br)\pop(\br,t),
-	\end{split}
-\end{equation}
+\begin{split}
+i\partial_{t}\pop(\br,t) &= -\left[\mathop{\hat H},\pop(\br,t)\right]\\
+&= -\frac{1}{2m}\nabla^{2}\pop(\br,t)+V(\br)\pop(\br,t),
+\end{split}
 $$
 
 which is just the time dependent Schrödinger equation!
@@ -507,11 +523,11 @@ $$
 Often we consider the Fourier components of the density or current
 
 $$
-\begin{align}
+\begin{aligned}
 	\label{2nd_quant_FourierComp}
 	\hat\rho_{\bq}\equiv\int d\br\, \hat\rho(\br)e^{-i\bq \cdot \br}=\sum_{\bk} \adop_{\bk-\bq}\aop_{\bk}\nonumber\\
 	\hat{\mathbf{j}}_{\bq}\equiv\int d\br\, \hat{\mathbf{j}}(\br)e^{-i\bq \cdot \br}=\frac{1}{m}\sum_{\bk} (\bk-\bq/2)\adop_{\bk-\bq}\aop_{\bk}.
-\end{align}
+\end{aligned}
 $$
 
 The $\bq=0$ modes are just the total particle number and $\frac{1}{m}$ times the total momentum, respectively.
@@ -584,10 +600,10 @@ $$ {#eq-H-int}
 
 Similar to the single particle case, the action of $\hat B$ on a two particle product state $\ket{\varphi_{\alpha}}_1\ket{\varphi_{\beta}}_2$ can be expressed in terms of the matrix elements
 $$
-\begin{align}
+\begin{aligned}
 B_{\alpha\beta,\gamma\delta} &= \bra{\varphi_\alpha}\bra{\varphi_\beta} B_{12} \ket{\varphi_\gamma}\ket{\varphi_\delta}\nonumber\\
 &=\int d\br d\br' \varphi_\alpha^*(\br)\varphi_\beta^*(\br')B_{12}\varphi_\gamma(\br)\varphi_\delta(\br')
-\end{align}
+\end{aligned}
 $$
 
 Note that since $B_{12}=B_{21}$ we have $B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}$. In the first quantized representation we have
@@ -611,9 +627,9 @@ $$
 $$
 For example, in the first quantized picture we have
 $$
-\begin{align}
+\begin{aligned}
 B_{12}\frac{1}{\sqrt{2}}\left[\varphi_\gamma(\br_1)\varphi_\delta(\br_2)\pm \varphi_\delta(\br_1)\varphi_\gamma(\br_2)\right]&=\frac{1}{\sqrt{2}}\sum_{\alpha\beta}\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right]\varphi_\alpha(\br_1)\varphi_\beta(\br_2).
-\end{align}
+\end{aligned}
 $$
 Note that this is (anti-)symmetric for bosons (fermions) by virtue of $B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}$. In second quantized notation the resulting state is written
 $$
@@ -687,11 +703,11 @@ $$
 where the subscript on $A_{x}$ is to indicate that the operator acts on the field operator $\pop(x)$ as if it were a wavefunction e.g. the momentum operator acts as $p \pop(x)=-id\pop(x)/dx$. We now evaluate an arbitrary matrix element of the operator between states $\ket{\Psi}$ and $\ket{\Phi}$ (of any form, not necessarily product states) using @eq-freeze
 
 $$
-\begin{align}
+\begin{aligned}
 \braket{\Psi}{\hat A}{\Phi} &=  \int \braket{\Psi}{\pdop(x_1) [A_{x_1} \pop(x_1)]}{\Phi}\, dx_1 \\ 
 &= N \int \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_1} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\ 
 &=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
-\end{align}
+\end{aligned}
 $$
 
 The last line is just the matrix element of @eq-one-particle in the first quantized representation. Note that all terms in the sum over $j$ are identical because we can permute the arguments of $\Psi$ and $\Phi$ to bring the argument $x_j$ to the first position. Any sign in the fermionic case is squared and therefore has no effect.
@@ -707,11 +723,11 @@ $$
 where $B_{x_1,x_2}$ is an operator that acts on a pair of wavefunctions. Taking matrix elements and using @eq-freeze again yields
 
 $$
-\begin{align}
+\begin{aligned}
 \braket{\Psi}{\hat B}{\Phi} &= \frac{1}{2} \int \braket{\Psi}{\pdop(x_1)\pdop(x_2) [B_{x_1,x_2} \pop(x_2)\pop(x_1)]}{\Phi}\, dx_1 dx_2\\
  &= \frac{1}{2}N(N-1) \int \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_1,x_2} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\ 
 &=\sum_{j<k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
-\end{align}
+\end{aligned}
 $$
 
 The last line is the first quantized representation of the matrix elements of @eq-two-particle. Again all terms in the sum over pairs are identical by (anti-)symmetry of the wavefunctions.

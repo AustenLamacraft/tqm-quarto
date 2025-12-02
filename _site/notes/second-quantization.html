@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -53,15 +53,17 @@ div.csl-indent {
 <link href="../notes/more-second-quantization.html" rel="next">
 <link href="../notes/spin-models.html" rel="prev">
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +106,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -122,7 +124,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -145,9 +147,15 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Theories of Quantum Matter</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -159,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2024</span></a>
+ <span class="menu-text">TQM Lectures 2025</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -386,7 +394,7 @@ window.Quarto = {
   <li><a href="#two-particle-operators-1" id="toc-two-particle-operators-1" class="nav-link" data-scroll-target="#two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="second-quantization.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -412,6 +420,11 @@ window.Quarto = {
 
 <div class="hidden">
 <!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
 </div>
 <p>We have seen that product states can be described in terms of their occupation numbers. We now introduce a language to describe many body states, and the operators that act on them, that is adapted to this description. This method of <strong>second quantization</strong> represents the beginning of the field theoretic description of many body systems.</p>
 <p>Reading: <span class="citation" data-cites="baym2018lectures">Baym (<a href="#ref-baym2018lectures" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="nazarov2013advanced">Nazarov and Danon (<a href="#ref-nazarov2013advanced" role="doc-biblioref">2013</a>)</span>.</p>
@@ -445,7 +458,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -498,7 +511,7 @@ a^\dagger\left(c_1\psi_1+c_2\psi_2\right) = c_1a^\dagger(\psi_1)+c_2a^\dagger(\p
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -515,9 +528,9 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 \tag{9}\]</span></span></p>
 <p>Then we have</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \left[a^{\vphantom{\dagger}}_\alpha,a^{\vphantom{\dagger}}_\beta\right]=0,\quad \left[a^\dagger_\alpha,a^\dagger_\beta\right]=0,\quad \left[a^{\vphantom{\dagger}}_\alpha,a^\dagger_\beta\right] = \delta_{\alpha\beta}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The same relations describe the ladder operators of a set of independent harmonic oscillators, revealing a deep connection between these two systems. The state <span class="math inline">\(\Psi^{\text{S}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}\)</span> of <a href="#eq-ortho-prod" class="quarto-xref">Equation&nbsp;1</a> – a normalized state with <span class="math inline">\(N_\alpha\)</span> particles in state <span class="math inline">\(\alpha\)</span> – may be written</p>
 <p><span id="eq-prod-correspondence"><span class="math display">\[
@@ -530,11 +543,11 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 \]</span></p>
 <p>From <a href="#eq-ccr-basis" class="quarto-xref">Equation&nbsp;9</a> it follows that</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \left[a^{\vphantom{\dagger}}_{\alpha},\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\right]&amp;=a^{\vphantom{\dagger}}_{\alpha}\nonumber\\
     \left[a^\dagger_{\alpha},\mathsf{N}^{\vphantom{\dagger}}_{\alpha}\right]&amp;=-a^\dagger_{\alpha}.
   \label{2nd_quant_NaComm}
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>You can think of the first of these as “count then destroy minus destroy then count”, for example.</p>
 <p>Suppose we want to move to a different basis of single particle states <span class="math inline">\(\{\lvert{\tilde{\varphi}_{\alpha}}\rangle\}\)</span>, corresponding to a unitary transformation</p>
@@ -556,10 +569,10 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 \tag{13}\]</span></span></p>
 <p>and involves the wavefunctions <span class="math inline">\(\varphi_{\beta}(\mathbf{r})\)</span>, rather than their conjugates. The relations satisfied by these operators are</p>
 <p><span id="eq-position-relations"><span class="math display">\[
-\begin{gather}
+\begin{gathered}
     \left[\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right]=\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
     \left[\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\right]=\left[\psi^\dagger(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right]=0.
-\end{gather}
+\end{gathered}
 \tag{14}\]</span></span></p>
 <p>These operator-valued functions are called <strong>quantum fields</strong>. By introducing them, we have freed ourselves from many body wavefunctions. One should bear in mind that this is only a different <em>language</em> for talking about the same system: sometimes one language is better suited to the problem at hand; sometimes another.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -568,7 +581,7 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -578,12 +591,12 @@ Check
 \tag{15}\]</span></span></p>
 <p>Hint: Show that this is true for a product state first.</p>
 <div class="callout callout-style-simple callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -594,10 +607,10 @@ Solution
 \]</span></p>
 <p>where we used the commutation relation <span class="math inline">\([\psi(x),a^\dagger(\psi_n)]=\langle{x}\rvert\psi_n\rangle=\psi_n(x)\)</span>. The wavefunctions appearing on the RHS on <span class="math inline">\(N-1\)</span> particle wavefunctions with arguments <span class="math inline">\(x_1\)</span> to <span class="math inline">\(x_{N-1}\)</span>. Using <a href="#eq-N-part" class="quarto-xref">Equation&nbsp;5</a> and <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a> the RHS corresponds to</p>
 <p><span class="math display">\[
-\begin{gather}
+\begin{gathered}
 \frac{1}{\sqrt{(N-1)!}}\sum_m \psi_m(x) \sum_{P\in S_{N-1}} \psi_{1}(x_{P_1})\cdots \psi_{m-1}(x_{P_{m-1}})\psi_{m+1}(x_{P_{m}})\cdots\psi_{N}(x_{P_{N-1}}) \\
 =\frac{1}{\sqrt{(N-1)!}}\sum_{P \in S_{N}}\psi_{1}(x_{P_1})\psi_{2}(x_{P_2})\cdots\psi_{N}(x_{P_N})
-\end{gather}
+\end{gathered}
 \]</span></p>
 <p>with <span class="math inline">\(x_N=x\)</span>, and <span class="math inline">\(S_N\)</span> denotes the set of permutations of <span class="math inline">\(N\)</span> objects (note the change from <span class="math inline">\(S_{N-1}\)</span> to <span class="math inline">\(S_N\)</span> between the two lines). But this just corresponds to applying the prescription <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> to the original wavefunction <a href="#eq-N-prod" class="quarto-xref">Equation&nbsp;2</a>. Since this works for all product states, and since any state is a superposition of product states, it works more generally.</p>
 </div>
@@ -607,10 +620,10 @@ Solution
 </div>
 <p>As an example, let our original basis be the eigenbasis of the free particle Hamiltonian <span class="math inline">\(H=\frac{\mathbf{p}^{2}}{2m}\)</span> with periodic boundary conditions</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \label{2nd_quant_FreeParticleStates}
     \lvert{\mathbf{k}}\rangle=\frac{\exp(i\mathbf{k}\cdot \mathbf{r})}{\sqrt{V}}, \quad \mathbf{k}=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>with <span class="math inline">\(V=L_{x}L_{y}L_{z}\)</span>. The matrix elements of the transformation between this original basis and the position basis <span class="math inline">\(\{\lvert{\mathbf{r}}\rangle\}\)</span> are <span class="math inline">\(\langle{\mathbf{k}}\rvert\mathbf{r}\rangle=\exp(-i\mathbf{k}\cdot \mathbf{r})/\sqrt{V}\)</span>, so we have</p>
 <p><span class="math display">\[
@@ -628,7 +641,7 @@ Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -676,7 +689,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -685,11 +698,11 @@ Check
 </div>
 <p>Introducing field operators in the position basis as before leads to a system of operators satisfying the anticommutation relations</p>
 <p><span class="math display">\[
-\begin{gather}
+\begin{gathered}
     \left\{\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right\}=\delta(\mathbf{r}_1-\mathbf{r}_2)\nonumber\\
     \left\{\psi^{\vphantom{\dagger}}(\mathbf{r}_1),\psi^{\vphantom{\dagger}}(\mathbf{r}_2)\right\}=\left\{\psi^\dagger(\mathbf{r}_1),\psi^\dagger(\mathbf{r}_2)\right\}=0.
     \label{2nd_quant_PositionRelationsAnti}
-\end{gather}
+\end{gathered}
 \]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -697,7 +710,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -714,7 +727,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -758,11 +771,11 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 \]</span></p>
 <p>we reproduce the action <a href="#eq-A-act" class="quarto-xref">Equation&nbsp;19</a>. As a simple example,</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \label{2nd_quant_}
     \mathop{\hat A}a^\dagger_{\beta}\lvert{\text{VAC}}\rangle&amp;=\left(\left[\mathop{\hat A},a^\dagger_{\beta}\right]+a^\dagger_{\beta}\mathop{\hat A}\right)\lvert{\text{VAC}}\rangle\nonumber\\
                             &amp;=\sum_{\alpha} A_{\alpha \beta} a^\dagger_{\alpha}\lvert{\text{VAC}}\rangle.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The second quantized form of <span class="math inline">\(\hat A\)</span> allows us to find the matrix element <span class="math inline">\(\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle\)</span> between product states made of orthonormal single particle states. This vanishes unless <span class="math inline">\(\mathbf{N}\)</span> and <span class="math inline">\(\mathbf{N'}\)</span> differ by the movement of of one particle. If <span class="math inline">\(N_\beta = N'_\beta-1\)</span> and <span class="math inline">\(N_\alpha = N'_\alpha+1\)</span> we have</p>
 <p><span id="eq-Aab"><span class="math display">\[
@@ -774,7 +787,7 @@ A= \sum_{\alpha\beta} \lvert{\varphi_\alpha}\rangle\langle{\varphi_\alpha}\rvert
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -784,6 +797,27 @@ Check
 <p>We worked this out for the bosonic case. However, you can check that <a href="#eq-bilinear" class="quarto-xref">Equation&nbsp;20</a>, the basic relation that makes it all work, is also valid for fermions (as a commutation relation, note!). So <span class="math inline">\(\hat A\)</span> has the same form for fermions.</p>
 <p>Notice that <span class="math inline">\(\mathop{\hat A}\)</span> <em>looks</em> formally like the expectation value of <span class="math inline">\(\mathop{A}\)</span> in a single particle state <span class="math inline">\(\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle\)</span>. The difference, of course, is that the <span class="math inline">\(a_{\alpha}\)</span> in <span class="math inline">\(\mathop{\hat A}\)</span> are operators, so that the order is important, while those in the preceding expression are amplitudes. The replacement of amplitudes, or wavefunctions, by operators is the origin of the rather clumsy name <strong>second quantization</strong>, which is traditionally introduced with the caveat that what we are doing is not in any way ‘more quantum’ than before.</p>
 <p>To repeat the above prescription for emphasis: <em>A one particle operator <span class="math inline">\(\mathop{\hat A}\)</span> has a second quantized representation formally identical to the expectation value of its single particle counterpart <span class="math inline">\(\mathop{A}\)</span></em>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Another way to justify the second quantized form of the one particle operator is to start from the expression</p>
+<p><span class="math display">\[
+\hat A = \int \psi^\dagger(\mathbf{r}) \left[A \psi^{\vphantom{\dagger}}(\mathbf{r})\right] d\mathbf{r}
+\]</span></p>
+<p>and take matrix elements with general <span class="math inline">\(N\)</span>-particle state <span class="math inline">\(\lvert{\Psi}\rangle\)</span>, <span class="math inline">\(\lvert{\Phi}\rangle\)</span>. Using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> we find</p>
+<p><span class="math display">\[
+\langle{\Psi}\rvert \hat A \lvert \Phi \rangle \longleftrightarrow N \int \Psi^*(\mathbf{r}_1,\ldots\mathbf{r}_N) \left[A_{1} \Phi(\mathbf{r}_1,\ldots\mathbf{r}_N)\right] d\mathbf{r}_1\cdots d\mathbf{r}_N.
+\]</span></p>
+<p>By the symmetry or antisymmetry of the wavefunctions this is the same as taking matrix elements of the first quantized form <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a>.</p>
+</div>
+</div>
 <p>This probably all looks a bit abstract, so let’s turn to a one particle operator that we have already met, namely the noninteracting Hamiltonian in <a href="#eq-h1" class="quarto-xref">Equation&nbsp;18</a>. According to the above prescription, this should have the second quantized form</p>
 <p><span class="math display">\[
     \label{2nd_quant_H2ndQ}
@@ -791,28 +825,25 @@ Check
 \]</span></p>
 <p>where <span class="math inline">\(H\)</span> is the single particle Hamiltonian <span class="math inline">\(H=-\frac{1}{2m}\nabla_{i}^{2}+V(\mathbf{r_{i}})\)</span>. This takes on a very simple form if the basis <span class="math inline">\(\lvert{\varphi_{\alpha}}\rangle\)</span> is just the eigenbasis of this Hamiltonian, in which case <span class="math inline">\(\langle{\varphi_{\alpha}}\rvert \mathop{H} \lvert \varphi_{\beta} \rangle=E_{\alpha}\delta_{\alpha \beta}\)</span> and</p>
 <p><span id="eq-N-rep"><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \mathop{\hat H} \equiv \sum_{\alpha} E_{\alpha} a^\dagger_{\alpha}a^{\vphantom{\dagger}}_{\alpha}=\sum_{\alpha} E_{\alpha} \mathsf{N}^{\vphantom{\dagger}}_{\alpha}.
-\end{align}
+\end{aligned}
 \tag{22}\]</span></span></p>
 <p>Evidently this is correct: the eigenstates of this operator are just the <span class="math inline">\(N\)</span> particle basis states <span class="math inline">\(\lvert{\Psi^{S/A}_{\alpha_{1}\alpha_{2}\cdots \alpha_{N}}}\rangle\)</span>, with eigenvalues <span class="math inline">\(\sum_\alpha N_\alpha E_\alpha\)</span>.</p>
 <p>Alternatively, we can look at things in the position basis. By recalling how the expectation value of the Hamiltonian looks in this basis, we come up with</p>
 <p><span id="eq-h-pos"><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \mathop{\hat H}&amp;=\int d\mathbf{r}\left[-\frac{1}{2m}\psi^\dagger(\mathbf{r})\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right]\nonumber\\
                     &amp;=\int d\mathbf{r}\left[\frac{1}{2m}\nabla\psi^\dagger(\mathbf{r})\cdot\nabla\psi^{\vphantom{\dagger}}(\mathbf{r})+V(\mathbf{r})\psi^\dagger(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r})\right],
-\end{align}
+\end{aligned}
 \tag{23}\]</span></span></p>
 <p>where in the second line we have integrated by parts, assuming that boundary terms at infinity vanish. The equality of <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> and <a href="#eq-N-rep" class="quarto-xref">Equation&nbsp;22</a> may be seen by using <a href="#eq-psi-def" class="quarto-xref">Equation&nbsp;13</a>.</p>
-<p>The Heisenberg equation of motion corresponding to <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> is</p>
+<p>The Heisenberg equation of motion for <span class="math inline">\(\psi^{\vphantom{\dagger}}(\mathbf{r},t)=e^{i\hat Ht}\psi^{\vphantom{\dagger}}(\mathbf{r}) e^{-i\hat H t}\)</span> with Hamiltonian <a href="#eq-h-pos" class="quarto-xref">Equation&nbsp;23</a> is</p>
 <p><span class="math display">\[
-\begin{equation}
-    \label{2nd_quant_HeomFree}
-    \begin{split}
-    i\partial_{t}\psi^{\vphantom{\dagger}}(\mathbf{r},t) &amp;= -\left[\mathop{\hat H},\psi^{\vphantom{\dagger}}(\mathbf{r},t)\right]\\
-    &amp;= -\frac{1}{2m}\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r},t)+V(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r},t),
-    \end{split}
-\end{equation}
+\begin{split}
+i\partial_{t}\psi^{\vphantom{\dagger}}(\mathbf{r},t) &amp;= -\left[\mathop{\hat H},\psi^{\vphantom{\dagger}}(\mathbf{r},t)\right]\\
+&amp;= -\frac{1}{2m}\nabla^{2}\psi^{\vphantom{\dagger}}(\mathbf{r},t)+V(\mathbf{r})\psi^{\vphantom{\dagger}}(\mathbf{r},t),
+\end{split}
 \]</span></p>
 <p>which is just the time dependent Schrödinger equation!</p>
 <p>As a second example, consider the particle density. This is not something that one encounters very often in few particle quantum mechanics, but is obviously an observable of interest in a extended system of many particles. The one particle operator for the density at <span class="math inline">\(\mathbf{x}\)</span> is</p>
@@ -843,11 +874,11 @@ Check
 \]</span></p>
 <p>Often we consider the Fourier components of the density or current</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
     \label{2nd_quant_FourierComp}
     \hat\rho_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat\rho(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\sum_{\mathbf{k}} a^\dagger_{\mathbf{k}-\mathbf{q}}a^{\vphantom{\dagger}}_{\mathbf{k}}\nonumber\\
     \hat{\mathbf{j}}_{\mathbf{q}}\equiv\int d\mathbf{r}\, \hat{\mathbf{j}}(\mathbf{r})e^{-i\mathbf{q}\cdot \mathbf{r}}=\frac{1}{m}\sum_{\mathbf{k}} (\mathbf{k}-\mathbf{q}/2)a^\dagger_{\mathbf{k}-\mathbf{q}}a^{\vphantom{\dagger}}_{\mathbf{k}}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The <span class="math inline">\(\mathbf{q}=0\)</span> modes are just the total particle number and <span class="math inline">\(\frac{1}{m}\)</span> times the total momentum, respectively.</p>
 <p>In <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;many-body-wavefunctions&quot; data-raw=&quot;&quot;many-body-wavefunctions&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;many-body-wavefunctions&quot; >}}&quot;}">Lecture 1</a> we introduced the <strong>single particle density matrix</strong></p>
@@ -860,7 +891,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -886,7 +917,7 @@ g(\mathbf{r},\mathbf{r}')= \langle{\Psi}\rvert \psi^\dagger(\mathbf{r})\psi^{\vp
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -914,10 +945,10 @@ g(\mathbf{r},\mathbf{r}')=\frac{1}{V}\sum_{|\mathbf{k}|&lt;k_{F}} e^{i\mathbf{k}
 \hat H_\text{int.} = \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k).
 \tag{25}\]</span></span></p>
 <p>Similar to the single particle case, the action of <span class="math inline">\(\hat B\)</span> on a two particle product state <span class="math inline">\(\lvert{\varphi_{\alpha}}\rangle_1\lvert{\varphi_{\beta}}\rangle_2\)</span> can be expressed in terms of the matrix elements <span class="math display">\[
-\begin{align}
+\begin{aligned}
 B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi_\beta}\rvert B_{12} \lvert{\varphi_\gamma}\rangle\lvert{\varphi_\delta}\rangle\nonumber\\
 &amp;=\int d\mathbf{r}d\mathbf{r}' \varphi_\alpha^*(\mathbf{r})\varphi_\beta^*(\mathbf{r}')B_{12}\varphi_\gamma(\mathbf{r})\varphi_\delta(\mathbf{r}')
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>Note that since <span class="math inline">\(B_{12}=B_{21}\)</span> we have <span class="math inline">\(B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}\)</span>. In the first quantized representation we have <span class="math display">\[
 B_{12} = \sum_{\alpha\beta\gamma\delta}B_{\alpha\beta,\gamma\delta}\lvert{\varphi_\alpha}\rangle\lvert{\varphi_\beta}\rangle\langle{\varphi_\gamma}\rvert\langle{\varphi_\delta}\rvert.
@@ -931,7 +962,7 @@ B_{12} = \sum_{\alpha\beta\gamma\delta}B_{\alpha\beta,\gamma\delta}\lvert{\varph
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -939,9 +970,9 @@ Check
 <p><span class="math display">\[
 a^\dagger_\gamma a^\dagger_\delta\lvert{\text{VAC}}\rangle\longleftrightarrow \frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf{r}_2)\pm \varphi_\delta(\mathbf{r}_1)\varphi_\gamma(\mathbf{r}_2)\right]
 \]</span> For example, in the first quantized picture we have <span class="math display">\[
-\begin{align}
+\begin{aligned}
 B_{12}\frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf{r}_2)\pm \varphi_\delta(\mathbf{r}_1)\varphi_\gamma(\mathbf{r}_2)\right]&amp;=\frac{1}{\sqrt{2}}\sum_{\alpha\beta}\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right]\varphi_\alpha(\mathbf{r}_1)\varphi_\beta(\mathbf{r}_2).
-\end{align}
+\end{aligned}
 \]</span> Note that this is (anti-)symmetric for bosons (fermions) by virtue of <span class="math inline">\(B_{\alpha\beta,\gamma\delta}=B_{\beta\alpha,\delta\gamma}\)</span>. In second quantized notation the resulting state is written <span class="math display">\[
 \frac{1}{\sqrt{2}}\sum_{\alpha\beta}\left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right]\varphi_\alpha(\mathbf{r}_1)\varphi_\beta(\mathbf{r}_2)\longleftrightarrow\sum_{\alpha\beta}B_{\alpha\beta}a^\dagger_\alpha a^\dagger_\beta\lvert{\text{VAC}}\rangle
 \]</span> Which is the same as we get if we act with <a href="#eq-2-part" class="quarto-xref">Equation&nbsp;26</a> <span class="math display">\[
@@ -959,7 +990,7 @@ B_{12}\frac{1}{\sqrt{2}}\left[\varphi_\gamma(\mathbf{r}_1)\varphi_\delta(\mathbf
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -981,7 +1012,7 @@ Check
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check
+<span class="screen-reader-only">Tip</span>Check
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1006,11 +1037,11 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 \]</span></p>
 <p>where the subscript on <span class="math inline">\(A_{x}\)</span> is to indicate that the operator acts on the field operator <span class="math inline">\(\psi^{\vphantom{\dagger}}(x)\)</span> as if it were a wavefunction e.g.&nbsp;the momentum operator acts as <span class="math inline">\(p \psi^{\vphantom{\dagger}}(x)=-id\psi^{\vphantom{\dagger}}(x)/dx\)</span>. We now evaluate an arbitrary matrix element of the operator between states <span class="math inline">\(\lvert{\Psi}\rangle\)</span> and <span class="math inline">\(\lvert{\Phi}\rangle\)</span> (of any form, not necessarily product states) using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a></p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \langle{\Psi}\rvert \hat A \lvert \Phi \rangle &amp;=  \int \langle{\Psi}\rvert \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 \\
 &amp;= N \int \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_1} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
 &amp;=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The last line is just the matrix element of <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> in the first quantized representation. Note that all terms in the sum over <span class="math inline">\(j\)</span> are identical because we can permute the arguments of <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> to bring the argument <span class="math inline">\(x_j\)</span> to the first position. Any sign in the fermionic case is squared and therefore has no effect.</p>
 </section>
@@ -1022,11 +1053,11 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 \]</span></p>
 <p>where <span class="math inline">\(B_{x_1,x_2}\)</span> is an operator that acts on a pair of wavefunctions. Taking matrix elements and using <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> again yields</p>
 <p><span class="math display">\[
-\begin{align}
+\begin{aligned}
 \langle{\Psi}\rvert \hat B \lvert \Phi \rangle &amp;= \frac{1}{2} \int \langle{\Psi}\rvert \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 dx_2\\
 &amp;= \frac{1}{2}N(N-1) \int \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_1,x_2} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
 &amp;=\sum_{j&lt;k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
-\end{align}
+\end{aligned}
 \]</span></p>
 <p>The last line is the first quantized representation of the matrix elements of <a href="#eq-two-particle" class="quarto-xref">Equation&nbsp;24</a>. Again all terms in the sum over pairs are identical by (anti-)symmetry of the wavefunctions.</p>
 
@@ -1044,239 +1075,243 @@ Nazarov, Yuli V, and Jeroen Danon. 2013. <em>Advanced Quantum Mechanics: A Pract
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1284,185 +1319,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../notes/spin-models.html" class="pagination-link" aria-label="Spin Models">

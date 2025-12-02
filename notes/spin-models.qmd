@@ -2,9 +2,9 @@
 title: Spin Models
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
-In this lecture we introduce a simple quantum mechanical model of magnetism consisting of a lattice of coupled spins. As in the elastic chain, we identify the elementary excitations and their interaction.
+The elastic chain was a model defined in terms of the displacements $u_j$ and momenta $p_j$ of $N$ particles satisfying $[u_j,p_k]=i\delta_{jk}$. In this lecture we are going to consider models where the individual degrees of freedom are quantum mechanical _spins_, defined by a vectors of operators $\mathbf{s} = (s^x, s^y, s^z)$ at each site, obeying the usual spin commutation relations $[s^a,s^b]=i\epsilon_{abc}s^c$. Such _spin models_ are often used as quantum mechanical models of magnetic materials. Despite the obvious differences, we will see that there are a number of similarities between the elementary excitation of the two types of system.
 
 Reading: @auerbach2012interacting.
 
@@ -113,9 +113,7 @@ What is the dimension of the Hilbert in which the Hamiltonian acts?
 Since @eq-hberg is supposed to be a model for a magnet, we might try the state with all spins aligned
 
 $$
-\begin{equation}
 \ket{\text{FM}} \equiv \prod_{j=1}^N \ket{+}_j,
-\end{equation}
 $$
 
 where for brevity we write $\ket{+}_j = \ket{s^z=+1/2}_j$. It's not hard to check that this is an eigenstate with energy $E_0\equiv JN/4$. Furthermore it's an eigenstate of $S^z$ and $\mathbf{S}^2$, where $\mathbf{S}$ is the total spin
@@ -245,11 +243,11 @@ This is a way of representing spins in terms of oscillator variables so that a p
 The representation is
 
 $$
-\begin{align}
+\begin{aligned}
 s^+ &=\sqrt{2s}\sqrt{1-\frac{\adop\aop}{2s}}\aop \\
 s^- &= \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}} \\
 s^z &= \left(s - \adop \aop\right).
-\end{align}
+\end{aligned}
 $$
 
 I'm going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and [this problem](../problem-sets/problem-set-1.qmd#from-schwinger-bosons-to-holstein--primakoff) from Problem Set 1 should demystify why this works to some extent. A rough understanding is as follows. $s^{\pm}$ and $\aop$, $\adop$ evidently have something in common in that they shift us up and down a ladder of states. That's why the relation between $s^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.
@@ -261,11 +259,11 @@ The difference is that in the spin case the ladder is finite, while in the oscil
 A large $s$ approximation already presents itself
 
 $$
-\begin{align}
+\begin{aligned}
 s^+ &\sim \sqrt{2s}\aop \nonumber\\
 s^- &\sim  \sqrt{2s}\adop\nonumber\\
 s_z &= \left(s - \adop \aop\right).
-\end{align} 
+\end{aligned} 
 $$ {#eq-hp-approx}
 
 We are neglecting terms of order $s^{-1/2}$. The point about this approximation is that it is just what is needed to turn our Heisenberg Hamiltonian into a quadratic oscillator Hamiltonian. We get 
@@ -274,9 +272,7 @@ H = J\sum_j \left[(s-\adop_j\aop_j)(s-\adop_j\aop_j) + s\adop_j\aop_{j+1}+s \ado
 $$
 This isn't quadratic, but note that the quartic terms have a lower power of $s$, so in the same approximation we should drop them to give
 $$
-\begin{equation}
 H \sim NJs^2 + sJ\sum_j \left[\adop_j\aop_{j+1}+\adop_{j+1}\aop_j - 2\adop_j\aop_j\right].
-\end{equation} 
 $$ {#eq-h2-aop}
 We can already see that the state with no quanta ($\aop_j\ket{0}=0$) is an eigenstate. In fact this is just the spin-$s$ generalization of the state $\ket{\text{FM}}$
 $$
@@ -285,11 +281,11 @@ $$
 and is the ground state for $J<0$. We could continue to analyze @eq-h2-aop in terms of the operators $\adop_j$ and $\aop_j$ see [this problem](../problem-sets/problem-set-1.qmd#spin-waves-from-bogoliubov-transformation) from Problem Sheet 1, but instead we're going to write @eq-hp-approx as
 
 $$
-\begin{align}
+\begin{aligned}
 s^x &\sim \sqrt{s}x \nonumber\\
 s^y &\sim  \sqrt{s}p\nonumber\\
 s_z &= \left(s - \frac{1}{2}[x^2 + p^2 - 1] \right),
-\end{align}
+\end{aligned}
 $$
 
 where $x = \frac{1}{\sqrt{2}}(\aop+\adop)$ and $p = \frac{i}{\sqrt{2}}(\adop-\aop)$ are canonical position and momentum coordinates.
@@ -303,11 +299,11 @@ $$ {#eq-harmonic}
 where we are dropping terms that are lower order in $s$. @eq-harmonic has the form of an harmonic chain, albeit one with a rather strange looking mass term. We can diagonalize it by using the Fourier expansion of the position and momentum as before
 
 $$
-\begin{align}
+\begin{aligned}
 x_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j},\nonumber\\
 p_j(t) &= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 \label{spin_Fourier}
-\end{align}
+\end{aligned}
 $$
 
 In terms of these modes $H^{(2)}$ takes the form
@@ -404,11 +400,11 @@ This commutes with the harmonic Hamiltonian @eq-h2-fm, and is zero in the ground
 Next we use the oscillator coordinates just as in [Lecture 3](elastic-chain.qmd). Since we want to express @eq-h2-afm in terms of ladder operators, we have to adapt our definition accordingly. For $\eta\neq 0, \pi$ the operators
 
 $$
-\begin{align}
-\aop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_n + \frac{i}{|\cot(\eta /2)|}\pi_{-n}\right)\nonumber\\
-\adop_\eta &= \sqrt{\frac{|\cot(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\cot(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
+\begin{aligned}
+\aop_\eta &= \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_n + \frac{i}{|\tan(\eta /2)|}\pi_{-n}\right)\nonumber\\
+\adop_\eta &= \sqrt{\frac{|\tan(\eta /2)|}{2}}\left(q_{-n} - \frac{i}{|\tan(\eta /2)|}\pi_{n}\right),\qquad \eta=2\pi n/N
 \label{spin_adef}
-\end{align}
+\end{aligned}
 $$
 
 satisfy
@@ -422,11 +418,11 @@ This puts the Hamiltonian @eq-h2-afm in the desired form, so we know that the gr
 To evaluate @eq-spin-deplete, we write it in terms of $\adop_\eta$, $a_\eta$ to give
 
 $$
-\begin{align}
+\begin{aligned}
 \Delta s &= - \bra{0}\frac{1}{N}\sum_{j=1}^N \adop_j \aop_j\ket{0}\nonumber\\
  &= \frac{1}{2}-\frac{1}{4N}\sum_n \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].\nonumber\\
  &= \frac{1}{2}- \frac{1}{4}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \left[|\tan(\eta_n/2)| + |\cot(\eta_n/2)|\right].
-\end{align}
+\end{aligned}
 $$
 
 This represents an $O(s^0)$ correction to $\langle s^z_j\rangle = (-1)^j\left(s - \Delta s\right)$. However, the integral diverges logarithmically at $\eta=0$ and $\eta=\pi$. 
@@ -510,10 +506,10 @@ $$
 to work. Acting on @eq-2-mag with the Hamiltonian gives the eigenvalue equation for the energy $E = E_0 +\epsilon$
 
 $$
-\begin{align}
+\begin{aligned}
 2c_{j,k} - \frac{1}{2}\left(c_{j+1,k}+c_{j-1,k}+c_{j,k+1}+c_{j,k-1}\right) &= \epsilon c_{j,k},\quad j>k+1 \nonumber\\
 c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
-\end{align}
+\end{aligned}
 $$ {#eq-2-part}
 
 We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because
@@ -559,10 +555,10 @@ where we have defined the scattering phase shift, just as in the Lieb--Liniger m
 Returning to our particle analogy, the existence of an attractive potential for magnons suggests we should allow for the possibility of bound states. Doing so requires _complex_ $\eta_{1,2}$
 
 $$
-\begin{align}
+\begin{aligned}
 \eta_1 = u + i v,\quad
 \eta_2 = u - i v,\quad v>0.
-\end{align}
+\end{aligned}
 $$
 
 We also require that $c_2=0$ in @eq-2-wave, otherwise the eigenstate doesn't decay. From @eq-c-ratio we see that
@@ -589,39 +585,40 @@ As a function of momentum, compare the bound state energy with the lowest energy
 
 We consider a simple model due to Philip Anderson. The couplings of the nearest neighbour Heisenberg model on the chain, square and cubic lattices define a [bipartite graph](https://en.wikipedia.org/wiki/Bipartite_graph). This means that the sites (or vertices of the graph) can be grouped into two sets, with couplings only between the two sets (not within). Thus in the chain, the two sets are the even and odd sites. We call these two sets sublattice $A$ and sublattice $B$.
 
-Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way (this discussion follows {% cite Lhuillier:2006aa %}). Introduce the Fourier components of the spin
+Since it seems to be hard to solve the Heisenberg model, we simplify it in the following way (this discussion follows 
+ @lhuillier2006frustrated). Introduce the Fourier components of the spin
 
 $$
-\mathbf{s}_\mathbf{j} =  \sum_{\boldsymbol{\eta}} \tilde{\mathbf{s}}_\boldsymbol{\eta} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.
+\mathbf{s}_\mathbf{j} =  \sum_{\boldsymbol{\eta}} \tilde{\mathbf{s}}_{\boldsymbol{\eta}} e^{i \boldsymbol{\eta}\cdot \mathbf{j}}.
 $$
 
 Here $\mathbf{j}$ denotes a $d$-dimensional vector of integers $\mathbf{j}=(j_1,\ldots j_d)$, $j=1,\ldots N$ giving the position of the spin in an $\overbrace{N\times N \times \cdots N}^{d\text{ times}}$ cubic lattice, and likewise
 
 $$
-\boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -N/2+1,\ldots N/2
+ \boldsymbol{\eta} = (\eta_1,\ldots \eta_d) = \frac{2\pi}{N}(n_1,\ldots n_d),\quad n_a = -N/2+1,\ldots N/2
 $$
 
-gives all the wavevectors in the Brillouin zone. It's easier to assume $N$ is even here, to accommodate antiferromagnetic order. In terms of $\tilde{\mathbf{s}}_\boldsymbol{\eta}$, the $d$-dimensional version of the Heisenberg Hamiltonian @eq-hberg on the square / cubic / hypercubic lattice can be written
+gives all the wavevectors in the Brillouin zone. It's easier to assume $N$ is even here, to accommodate antiferromagnetic order. In terms of $\tilde{\mathbf{s}}_{\boldsymbol{\eta}}$, the $d$-dimensional version of the Heisenberg Hamiltonian @eq-hberg on the square / cubic / hypercubic lattice can be written
 
 $$
-H = JN^d\sum_{\boldsymbol{\eta}\in \text{BZ}}\gamma_{\boldsymbol{\eta}}\tilde{\mathbf{s}}_\boldsymbol{\eta}\cdot \tilde{\mathbf{s}}_{\boldsymbol{-\eta}},
+H = JN^d\sum_{\boldsymbol{\eta}\in \text{BZ}}\gamma_{\boldsymbol{\eta}}\tilde{\mathbf{s}}_{\boldsymbol{\eta}}\cdot \tilde{\mathbf{s}}_{\boldsymbol{-\eta}},
 \label{spin_HbergFT}
 $$
 
 where $\gamma_{\boldsymbol{\eta}}=\frac{1}{2}\sum_{j=1}^d\cos(\eta_j)$. Now we are going to do something drastic and throw away all wavevectors apart from $\boldsymbol{\eta}=\boldsymbol{0}$ and $\boldsymbol{\eta}  = (\pi,\ldots,\pi)$. The motivation is that
 
 $$
-\tilde{\mathbf{s}}_\boldsymbol{0} = \cN^{-1}\left(\mathbf{S}_A + \mathbf{S}_B\right), \qquad\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)} = \cN^{-1}\left(\mathbf{S}_A - \mathbf{S}_B\right),
+\tilde{\mathbf{s}}_{\boldsymbol{0}} = \cN^{-1}\left(\mathbf{S}_A + \mathbf{S}_B\right), \qquad\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)} = \cN^{-1}\left(\mathbf{S}_A - \mathbf{S}_B\right),
 $$
 
 where $\mathbf{S}_A$ and $\mathbf{S}_B$ are the total spins of the $A$ and $B$ sublattices, and $\cN = N^d$ is the total number of sites. Since antiferromagnetism involves anti-alignment of spins on the different sublattices, the second component should be particularly important. Our simplified Hamiltonian is then
 
 $$
-\begin{align}
+\begin{aligned}
 H_{AB} &= \frac{J}{\cN}\left[\left(\mathbf{S}_A + \mathbf{S}_B\right)^2 - \left(\mathbf{S}_A - \mathbf{S}_B\right)^2\right]\\
 & = \frac{4J}{\cN}\mathbf{S}_A\cdot \mathbf{S}_B.
 \label{spin_HAB}
-\end{align}
+\end{aligned}
 $$
 
 (Note that $\tilde{\mathbf{s}}_{(\pi,\ldots,\pi)}=\tilde{\mathbf{s}}_{-(\pi,\ldots,\pi)}$) Relative to the original model, this has the unphysical feature that every sublattice $A$ spin is interacting with every sublattice $B$ spin. The factor of $N^{-d}$ does guarantee that we'll have an extensive energy, however.
@@ -676,10 +673,10 @@ $$
 Thus the eigenstates and eigenergies of our model spin Hamiltonian can be identified with those of the rotor up to $l=\cN/2$. What plays the role of the direction of the rotor $\br= R\mathbf{n}$, where $\mathbf{n}$ is a unit vector? Here are some things we know about $\mathbf{n}$.
 
 $$
-\begin{align}
+\begin{aligned}
 \mathbf{L}\cdot \mathbf{n} = 0,\quad \mathbf{n}^2 = 1\\
 [L_j,n_k] = i\epsilon_{jkl}n_l,\quad [n_j,n_k]=0.
-\end{align}
+\end{aligned}
 $$ {#eq-n-idents}
 
 We get the same relations at large $N$ if we make the identifications

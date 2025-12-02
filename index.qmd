@@ -1,18 +1,24 @@
-# TQM Lectures 2024 {.unnumbered}
+# TQM Lectures 2025 {.unnumbered}
 
-::: {.callout-warning appearance="minimal"}
+<!-- ::: {.callout-warning appearance="minimal"}
 
 Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/form/SV_0diLIYDRbcAZSaq). Closes 1st December at midnight.
 
+::: -->
+
+::: {.callout-warning appearance="minimal"}
+
+Check out these [Summer internships](assets/CMD_Summer_Internship2026.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
+
 :::
 
 ::: {.callout-warning appearance="minimal"}
 
-Check out these [Summer internships](assets/SummerInternship_25_Anzeige.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
+PDFs of lecture notes are now available! See "Other Formats" in the right side bar on any page of the Notes. This is an experimental feature. Let me know if it is working!
 
 :::
 
-These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2024. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). While these are largely unchanged, you should regard this site as the authoritative version for 2024. __Note that the material contained in the Appendices is non-examinable__.
+These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2025. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). __Note that the material contained in the Appendices is non-examinable__.
 
 The source of these notes is [this GitHub repo](https://github.com/AustenLamacraft/tqm-quarto). If you find a typo, other problem or have any other comment on the material, please [raise an issue](https://github.com/AustenLamacraft/tqm-quarto/issues) there.
 
@@ -44,10 +50,10 @@ In this course $\hbar = 1$!
 
 ## Lectures {.unnumbered}
 
-Take place in the Small Lecture Theatre at the Cavendish Laboratory from 09.30-11.00 on Tuesdays and Thursdays.
+Take place in the Small Lecture Theatre at the Cavendish Laboratory from 10.15-11.45 on Tuesdays and Thursdays.
 
 ## Supervisions {.unnumbered}
 
-There will be four supervisions, taking place in the weeks commencing 22/10, 5/11, 19/11, and 3/12.
+There will be four supervisions, taking place in the weeks commencing 21/10, 4/11, 18/11, and 2/12.
 
 

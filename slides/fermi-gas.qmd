@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 # Fermi Gas
 
@@ -274,10 +274,10 @@ $$
 The explicit form of the functions $F(\phi)$ and $G(\phi)$ is (see @landau1980statistical)
 
 $$
-\begin{align*}
+\begin{aligned}
 F(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0 }{2}\left[2+\frac{\cos\phi}{2\sin\phi/2}\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]\\
 G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\left[1-\frac{1}{2}\sin\phi/2\log\frac{1+\sin\phi/2}{1-\sin\phi/2}\right]\right)\right]
-\end{align*} 
+\end{aligned} 
 $$
 
 ::: {.callout-warning appearance="minimal"}

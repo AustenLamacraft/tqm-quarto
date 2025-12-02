@@ -1,5 +1,9 @@
 # Past Papers {.unnumbered}
 
+## 2025 {.unnumbered}
+
+![](past-papers/tqm-2025-solutions.pdf){width=640px height=480px}
+
 ## 2023 {.unnumbered}
 
 ![](past-papers/TQM-2023-solutions.pdf){width=640px height=480px}

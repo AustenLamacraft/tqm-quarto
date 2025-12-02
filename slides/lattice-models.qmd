@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 # Lattice Models
 
@@ -156,7 +156,7 @@ $$
 - Only states $\ket{i\pm 1,+}$ are coupled by $H_t$, with matrix elements
 
 $$
-\braket{j|H_t|k} = -t(N+1)
+\braket{j}{H_t}{k} = -t(N+1)
 $$
 
 - Within degenerate multiplet, $H_t$ corresponds to tight binding model

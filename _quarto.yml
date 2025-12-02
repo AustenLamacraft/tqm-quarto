@@ -13,6 +13,7 @@ website:
   title: "Theories of Quantum Matter"
   favicon: favicon-32x32.png
   page-navigation: true
+  reader-mode: true
   sidebar:
     # contents: auto
     collapse-level: -1
@@ -68,6 +69,10 @@ format:
   # pdf:
   #   documentclass: scrbook
   #   papersize: a4
+  #   output-file: theories-of-quantum-matter.pdf
+  #   from: markdown-latex_macros
+  #   latex-input-paths: 
+  #     - notes
 
 execute:
   freeze: auto  # re-render only when source changes

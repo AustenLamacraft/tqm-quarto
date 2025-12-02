@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 
 # Superconductivity
@@ -120,7 +120,7 @@ Why? There is some double counting of terms that is irrelevant as $V\to\infty$
 
 - For $\Braket{\text{pair}|\cdots|\text{pair}}$ we can replace $H\to H_\text{pair}$
 $$
-H_{\text{pair}}=2\sum_{\bp}\epsilon_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum'_{\bp,\bp'} \bdop_\bp
+H_{\text{pair}}=2\sum_{\bp}\epsilon_{\bp}\bdop_\bp\bop_\bp+\frac{U_0}{V}\sum_{\bp,\bp'} \bdop_\bp
 \bop_{\bp'}
 $$
 since $2\bdop_\bp\bop_\bp = \adop_{\bp,\uparrow}\aop_{\bp,\uparrow}+\adop_{-\bp,\downarrow}\aop_{-\bp,\downarrow}$ on these states
@@ -189,7 +189,7 @@ if $c_\bp=v_\bp/u_\bp$.
 energy of this state is
 
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\Braket{\text{BCS}|H_\text{pair}|\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}
 $$
 
@@ -253,11 +253,11 @@ $$
 \end{aligned}
 $$
 
-- $H_\text{pair}$ is a spin chain
+- $H_\text{pair}$ is a spin chain 
+
 $$
-H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\bp \overbrace{\xi({\bp})}^{\xi_\bp\equiv\epsilon(\bp)-\mu}S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'}
 $$
-where we included chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$.
 
 ---
 
@@ -265,9 +265,9 @@ where we included chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu
  $$
  \left(v_\bp,u_\bp\right)=(\cos(\theta_\bp/2)e^{i\varphi_\bp/2},\sin(\theta_\bp/2)e^{-i\varphi_\bp/2})
  $$
-then the variational energy is (except for a constant)
+then the variational energy is
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right)
 $$
 
@@ -306,10 +306,11 @@ so this corresponds to sharp Fermi step.
 ---
 
 $$
-\Braket{\text{BCS}|H|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\Braket{\text{BCS}|H_\mu|\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}
 $$
-- Taking  the extremum of energy with respect to angles $\theta_{\bp}$ gives
+
+- Taking the extremum of energy with respect to angles $\theta_{\bp}$ gives
 $$
 \xi_{\bp}\sin\theta_\bp+|\Delta|\cos\theta_\bp=0,
 $$
@@ -379,20 +380,26 @@ $$
 $$
 satisfy fermion anticommutation relations and annihilate BCS state
 $$
-\alop_{\bp,s}\ket{\text{BCS}}=0.
+\alop_{\bp,s}\ket{\text{BCS}}=0
 $$
 
 ---
 
 $$
 \ket{\bp,s}=\aldop_{\bp,s}\ket{\text{BCS}}=\adop_{\bp,s}\prod_{\bp'\neq \bp} \left[v_{\bp'}\adop_
-{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},
+{\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}}
 $$
 
-- If we chose $s=\uparrow$ so that $\left(\bp,\uparrow\right)$ state is certainly occupied it means that $\adop_{\bp
-\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0$
+- Regard as approximate variational excited state, since orthogonal to $\ket{\text{BCS}}$
 
-- Corresponding term no longer appears in interaction term when it is applied to this state
+- If we chose $s=\uparrow$ then $\left(\bp,\uparrow\right)$ state is occupied and $\left(-\bp,\downarrow\right)$ empty
+$$
+\adop_{\bp
+\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0,\qquad \aop_{-\bp
+\downarrow}\aop_{\bp\uparrow}\ket{\bp,\uparrow}=0
+$$
+
+- Corresponding term no longer appears when interaction is applied
 
 -  The level is said to be `blocked'. Thus it certainly is an eigenstate of the pair problem, if $\ket{\text{BCS}}$ is. What is its energy? 
 
@@ -403,7 +410,7 @@ $$
 $$
 E_{s}(\bp)=\xi_{\bp}[\overbrace{\left(1-\langle n^P_\bp\rangle\right)}^{\left(\bp,s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\bp\rangle}^{\left(-\bp,-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\bp}^{\mathrm{`blocking'}}=E_{\bp}
+\bp}^{\mathrm{``blocking"}}=E_{\bp}
 $$
 
 - These quasiparticle excitations always have a gap $\Delta_{s}$ given by  

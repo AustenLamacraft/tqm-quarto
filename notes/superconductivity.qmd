@@ -2,7 +2,7 @@
 title: Superconductivity
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 Our grand tour of many body theories continues with __Bardeen, Cooper and Schrieffer's__ (BCS) theory of superconductivity, based on the idea that electrons in a superconductor bind to form __Cooper pairs__ that behave like bosons. The phenomena of superconductivity and superfluidity are then closely linked.
 
@@ -74,8 +74,7 @@ where the first term is the Hartree--Fock energy and
 $$
 \tilde H_{\text{int}}=\frac{U_0}{V}\sum_{\bp, \bp'}\adop_
 {\bp\uparrow}\adop_{-\bp\downarrow}\aop_{-\bp'\downarrow}\aop_{\bp'\uparrow},
-\label{super_bcsH}
-$$
+$$ {#eq-bcsH}
 
 It's useful to introduce the operator $\bdop_\bp=\adop_{\bp\uparrow}\adop_{-\bp
 \downarrow}$ and its conjugate $\bop_\bp=\aop_{-\bp,\downarrow}\aop_{\bp\uparrow}$, that respectively create and destroy a $\left(\bp\uparrow,-\bp\downarrow\right)$ pair. Because our pair ansatz @eq-pair-fermi only includes amplitudes for a given $\left(+\bp,-\bp\right)$ pair of momenta having either none or two fermions, we can compute expectations using the pair Hamiltonian
@@ -129,7 +128,7 @@ momentum separately,  $\langle n^P_\bp\rangle$ is easily found to be $v_\bp^2$. 
 energy of this state is
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
+\braket{\text{BCS}}{H_{\text{pair}}}{\text{BCS}}=2\sum_\bp \epsilon_{\bp}|v_\bp|^2+\frac{U_0}{V}\sum_{\bp,\bp'}u^*_\bp v_
 \bp u_{\bp'}v^*_{\bp'}.
 $$ {#eq-bcs-en}
 
@@ -166,23 +165,23 @@ $$
 on account of the commutation relations
 
 $$
-\begin{align}
+\begin{aligned}
 \left[\bdop_\bp,\bop_\bp\right]=2\left(\bdop_\bp\bop_\bp-1/2\right)\nonumber\\
 \left[\bdop_\bp,\left(\bdop_\bp\bop_\bp-1/2\right)\right]=-\bdop_\bp.
-\end{align}
+\end{aligned}
 $$
 
-This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain
+This representation is sometimes called __Anderson spins__. In this way we can write @eq-pair-h as a spin chain (up to a constant)
 
 $$
-H_{\text{pair}}-\mu N=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
+\overbrace{H_{\text{pair}}-\mu N}^{\equiv H_\mu}=2\sum_\bp \xi({\bp})S_\bp^z+\frac{U_0}{V}\sum_{\bp,\bp'}S^+_\bp S^-_{\bp'},
 $$
 
 where we have included the chemical potential by defining $\xi_\bp\equiv\epsilon(\bp)-\mu$. If we parameterize $\left(v_\bp,u_\bp\right)$ as $(\cos(\theta/2)e^{i\varphi/2},\sin(\theta/2)e^{-i\varphi/2})$
-then the variational energy @eq-bcs-en has the form (except for a constant)
+then the variational energy @eq-bcs-en has the form 
 
 $$
-\braket{\text{BCS}}{H}{\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
+\braket{\text{BCS}}{H_\mu}{\text{BCS}}=\sum_\bp \xi_\bp\cos\theta_\bp+\frac{U_0}{4V}\sum_{\bp,\bp'}\sin
 \theta_\bp\sin\theta_{\bp'}\cos\left(\varphi_\bp-\varphi_{\bp'}\right).
 $$ {#eq-spin-en}
 
@@ -310,10 +309,10 @@ The two  equations @eq-reg and @eq-mu-eq are conveniently cast in the dimensionl
 form
 
 $$
-\begin{align}
+\begin{aligned}
 \frac{\pi}{2k_\text{F} a}=\int_0^{\infty} dx \left[1-\frac{x^2}{\sqrt{(x^2-\mu)^2+\Delta_0^2}} \right] \nonumber\\
 \frac{2}{3}=\int_0^{\infty} dx\, x^2\left[1-\frac{x^2-\mu}{\sqrt{(x^2-\mu)^2+\Delta_0^2}}\right]
-\end{align}
+\end{aligned}
 $$
 
 where $\mu$ and $\Delta_0$ are measured in units of $E_F=p_F^2/2m$, and the unit of length is $k_\text{F}^{-1}$. In these units the total density of particles of both types is $1/3\pi^2$.
@@ -338,10 +337,10 @@ $$
 it's easy to see that the operators
 
 $$
-\begin{eqnarray}
-\alop_{\bp\uparrow}&=&u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
-\alop_{\bp\downarrow}&=&u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
-\end{eqnarray}
+\begin{aligned}
+\alop_{\bp\uparrow}&=u_\bp\aop_{\bp\uparrow}-v_\bp\adop_{-\bp\downarrow}\nonumber\\
+\alop_{\bp\downarrow}&=u_{-\bp}\aop_{\bp\downarrow}+v_{-\bp}\adop_{-\bp\uparrow},
+\end{aligned}
 $$
 
 satisfy the canonical fermion anticommutation relations and annihilate the BCS state
@@ -357,13 +356,19 @@ $$
 {\bp'\uparrow}\adop_{-\bp'\downarrow}+u_{\bp'}\right]\ket{\text{VAC}},
 $$
 
-corresponding to the momentum state $\bp$ certainly containing one particle with (pseudo-)spin $s$, and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and spin, but is it an energy eigenstate, and thus a sharply defined excitation? Note that if we chose $s=\uparrow$ so that the $\left(\bp,\uparrow\right)$ state is certainly occupied it means that $\adop_{\bp
-\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0$, so that the corresponding term no longer appears in the interaction term when it is applied to this state. The level is said to be `blocked'. Thus it certainly is an eigenstate of the pair problem, if $\ket{\text{BCS}}$ is. What is its energy? We have to take into account the kinetic energy as well as the loss of attractive interaction energy, see @eq-spin-en
+corresponding to the momentum state $\bp$ certainly containing one particle with spin $s$, and the $\left(-\bp,-s\right)$ state certainly being empty. The result is an eigenstate of momentum and spin, although it is not of course an energy eigenstate of $H_\mu$. Nevertheless, we can regard it as an approximate variational excited state, since it is orthogonal to $\ket{\text{BCS}}$. To evaluate its energy, notice that if we choose $s=\uparrow$ then the $\left(\bp,\uparrow\right)$ state is occupied and $\left(-\bp,\downarrow\right)$ empty, and we have
+$$
+\adop_{\bp
+\uparrow}\adop_{-\bp\downarrow}\ket{\bp,\uparrow}=0,\qquad \aop_{-\bp
+\downarrow}\aop_{\bp\uparrow}\ket{\bp,\uparrow}=0
+$$
+
+This means that the $\bp$, $-\bp$ pairs no longer contribute when $\tilde H_{\text{int}}$ (@eq-bcsH) is applied. The level is said to be `blocked', and so the effect of the attractive interaction is reduced. To find the energy of this state we have to take into account the kinetic energy as well as the loss of attractive interaction energy, see @eq-spin-en
 
 $$
 E_{s}(\bp)=\xi_{\bp}[\overbrace{\left(1-\langle n^P_\bp\rangle\right)}^{\left(\bp,s\right)\,\mathrm{occupied}}
 \overbrace{-\langle n^P_\bp\rangle}^{\left(-\bp,-s\right)\,\mathrm{empty}}]+\overbrace{\Delta\sin\theta_
-\bp}^{\mathrm{`blocking'}}=E_{\bp}
+\bp}^{\text{``blocking"}}=E_{\bp}
 $$
 
 Note that these quasiparticle excitations always have a gap $\Delta_{s}$ given by  
@@ -429,12 +434,12 @@ $$ {#eq-gen-gap-eq}
 The solution of @eq-gen-gap-eq is in general very difficult, but it can be greatly simplified if we assume that the range of the potential $U(\br)$ is the shortest length scale in the problem. With this assumption we can write @eq-gap-eq
 
 $$
-\begin{align}
+\begin{aligned}
 \Delta_\bp+\frac{1}{V}\sum_{\bp'}U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_{\bp'}}&=-\frac{1}{V}\sum_{\bp'} \left[U_0(\bp)\frac{\Delta_{\bp'}}{2E_{\bp'}}-U(\bp-\bp')\frac{\Delta_{\bp'}}{2\epsilon_
 {\bp'}}\right]\nonumber\\
 &=-\frac{U_0(\bp)}{V}\sum_{\bp'} \left[\frac{\Delta_{0}}{2E_{\bp'}}-\frac{\Delta_{0}}{2\epsilon_
 {\bp'}}\right].
-\end{align}
+\end{aligned}
 $$ {#eq-gap-reg}
 
 We have added the same term to both sides. However, the integral on the right hand side converges on a scale set by the momentum corresponding to the larger of $\Delta_\bp$ or $\mu$, which by assumption is much less than the scale on which $U_0(\bp)$ varies, and justifies replacing $U_0(\bp-\bp')$ with $U_0(\bp)$, and $\Delta_{\bp'}$ with $\Delta_0$.
@@ -475,10 +480,10 @@ $$
 which is orthogonal to the BCS state. In the Anderson spin language this corresponds to reversing the direction of spin, as if
 
 $$
-\begin{align}
+\begin{aligned}
  (u,v)&=(\cos(\theta/2)e^{-i\varphi/2},\sin(\theta/2)e^{i\varphi/2}),\qquad \text{then}\\
 (-v^*,u^*)&=i(\cos(\theta'/2)e^{-i\varphi'/2},\sin(\theta'/2)e^{i\varphi'/2}),
-\end{align}
+\end{aligned}
 $$
 
 with $\theta' = \pi/2 - \theta$ and $\varphi' = \varphi + \pi$.
@@ -486,12 +491,12 @@ with $\theta' = \pi/2 - \theta$ and $\varphi' = \varphi + \pi$.
 The excitation energy of this state is twice the 'magnetic field' each pair experiences $2E(\bp)$, see @eq-heff. The spin interpretation allows us to see easily that this state contributes $-u_\bp v_\bp$ to the self consistent equation, and occurs with probability $n_{\uparrow}(\bp)n_{\downarrow}(-\bp)$. The overall result is thus
 
 $$
-\begin{eqnarray}
-\Delta&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
+\begin{aligned}
+\Delta&=-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}(\overbrace{[1-n_{\uparrow}(\bp)][1-n_
 {\downarrow}(-\bp)]}^{\mathrm{no\,qp}}-\overbrace{n_{\uparrow}(\bp)n_{\downarrow}(-\bp)}^{\mathrm
 {two\, qp}})\nonumber\\
-&=&-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
-\end{eqnarray}
+&=-\frac{U_0}{V}\sum_{\bp}\frac{\Delta}{2E_{\bp'}}[1-n_{\uparrow}(\bp)-n_{\downarrow}(-\bp)].
+\end{aligned}
 $$
 
 For the case $E_s(\bp)=E(\bp)$, and in the BCS limit where $\mu\sim E_F$, $\Delta\ll E_F$, this is conveniently presented in the form
@@ -503,9 +508,7 @@ $$
 where $\nu(E_F)$ is the fermi surface density of states per spin, and we have left out the upper cut-off. This expression needs to be regularized as in the zero temperature case considered before. The resulting $\Delta(T)$ varies from $\Delta(0)=\Delta_{\text{BCS}}$ given by @eq-bcs-gap, to zero at
 
 $$
-\begin{equation}\label{Tc}
 k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
-\end{equation}
 $$
 
 where $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler–Mascheroni_constant). This relationship between $T_\text{c}$ and $\Delta_\text{BCS}$ is a key numerical prediction of the BCS theory. An important point is that the variation is smooth, suggesting a second order transition to a normal (non-superfluid) state above $T_\text{c}$.

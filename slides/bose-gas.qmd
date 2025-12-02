@@ -15,7 +15,7 @@ format:
     }
 ---
 
-{{< include ../macros.qmd >}}
+{{< include ../_macros.qmd >}}
 
 # Bose Gas
 
@@ -405,7 +405,7 @@ $$
 $$
 \begin{align*}
 H_\text{pair} = &N\epsilon(0)+\frac{U_0}{2V}N(N-1) 
-+\sum_{\bk\neq 0}\left[\epsilon(\bk)-\epsilon(0)\right]\adop_\bk\aop_\bk\\
++\sum_{\bk\neq 0}\overbrace{\left[\epsilon(\bk)-\epsilon(0)\right]}^{\equiv\tilde\epsilon(\bk)}\adop_\bk\aop_\bk\\
 &+\frac{U_0}{2V}\sum_{\bk\neq 0}\left[\adop_{\bk}\adop_{-\bk}\aop_{0}\aop_{0} + \adop_{0}\adop_{0}\aop_{\bk}\aop_{-\bk}+2\adop_\bk\adop_0\aop_0\aop_\bk\right]
 \end{align*}
 $$
@@ -441,7 +441,7 @@ $$
 - Result is __Bogoliubov Hamiltonian__
 $$
 \begin{align*}
-H_\text{pair} &= \sum_\bk \epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2V}N(N-1) \nonumber\\ &\quad+\frac{U_0n_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk} + \aop_{\bk}\aop_{-\bk}+2\adop_\bk\aop_\bk\right]
+H_\text{pair} &= \sum_\bk \tilde\epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2V}N(N-1) \nonumber\\ &\quad+\frac{U_0n_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk} + \aop_{\bk}\aop_{-\bk}+2\adop_\bk\aop_\bk\right]
 \end{align*}
 $$
 $n_0 = N_0/V$ is density of particles in zero momentum state
@@ -587,14 +587,14 @@ What happens if $\delta>\epsilon$? What changes if $\begin{pmatrix}
 - Apply to Bogoliubov Hamiltonian 
 $$
 \begin{align*}
-H_\text{pair} &= \sum_\bk \epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2V}N(N-1) \nonumber\\ &\quad+\frac{U_0n_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk} + \aop_{\bk}\aop_{-\bk}+2\adop_\bk\aop_\bk\right]
+H_\text{pair} &= \sum_\bk \tilde\epsilon(\bk)\adop_\bk\aop_\bk  +\frac{U_0}{2V}N(N-1) \nonumber\\ &\quad+\frac{U_0n_0}{2}\sum_{\bk\neq0}\left[\adop_{\bk}\adop_{-\bk} + \aop_{\bk}\aop_{-\bk}+2\adop_\bk\aop_\bk\right]
 \end{align*}
 $$
 
 $$
 \begin{align*}
 \bop_\bp=\aop_\bp\cosh\kappa_\bp+\adop_{-\bp}\sinh\kappa_\bp\nonumber\\
-\tanh2\kappa_\bp=\frac{n_0 U_0}{\epsilon(\bp)+n_0 U_0}
+\tanh2\kappa_\bp=\frac{n_0 U_0}{\tilde\epsilon(\bk)+n_0 U_0}
 \end{align*}
 $$
 
@@ -609,25 +609,25 @@ $$
 - $\omega(\bp)$ is the Bogoliubov dispersion relation
 
 $$
-\omega(\bp) = \sqrt{\epsilon(\bp)\left(\epsilon(\bp)+2U_0n_0\right)}
+\omega(\bp) = \sqrt{\tilde\epsilon(\bk)\left(\tilde\epsilon(\bk)+2U_0n_0\right)}
 $$
 
 - Ground state energy is
 
 $$
-E_0=\frac{1}{2}nU_0  N+\sum_{\bp\neq 0}\frac{1}{2}\left[\omega(\bp)-\epsilon(\bp)-n_0U_0\right]
+E_0=\frac{1}{2}nU_0  N+\sum_{\bp\neq 0}\frac{1}{2}\left[\omega(\bp)-\tilde\epsilon(\bk)-n_0U_0\right]
 $$
 
 ---
 
 $$
-E_0=\frac{1}{2}nU_0  N+\sum_{\bp\neq 0}\frac{1}{2}\left[\omega(\bp)-\epsilon(\bp)-n_0U_0\right]
+E_0=\frac{1}{2}nU_0  N+\sum_{\bp\neq 0}\frac{1}{2}\left[\omega(\bp)-\tilde\epsilon(\bk)-n_0U_0\right]
 $$
 
 - Annoyingly, this integral is divergent at high momenta because
 
 $$
-\omega(\bp)\underset{|\bp| \to \infty}{\longrightarrow} \epsilon(\bp) + n_0 U_0 -\frac{(n_0 U_0)^2}{2\epsilon(\bp)}
+\omega(\bp)\underset{|\bp| \to \infty}{\longrightarrow} \tilde\epsilon(\bk) + n_0 U_0 -\frac{(n_0 U_0)^2}{2\tilde\epsilon(\bk)}
 $$
 
 ---
@@ -635,9 +635,9 @@ $$
 - We can cure the problem by writing
 $$
 \begin{align*}
-E_0&=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\bp \frac{U_0}{2\epsilon(\bp)}\right]}^{\text{1st and 2nd order PT}}\\
+E_0&=\overbrace{\frac{1}{2}nU_0  N\left[1-\frac{1}{V}\sum_\bp \frac{U_0}{2\tilde\epsilon(\bk)}\right]}^{\text{1st and 2nd order PT}}\\
 &+\overbrace{\sum_{\bp\neq 0}\frac{1}
-{2}\left[\omega(\bp)-\epsilon(\bp)-n_0U_0+ \frac{(n_0U_0)^2}{2\epsilon(\bp)}\right]}^{\text{finite}}
+{2}\left[\omega(\bp)-\tilde\epsilon(\bk)-n_0U_0+ \frac{(n_0U_0)^2}{2\tilde\epsilon(\bk)}\right]}^{\text{finite}}
 \end{align*}
 $$
 
@@ -658,7 +658,7 @@ $$
 - A state (unnormalized) that satisfies this condition is
 
 $$
-\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\tanh\kappa_\bk\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
+\ket{0}=\prod_{\bk\neq 0} \exp\left(-\frac{1}{2}\left[\tanh\kappa_\bk\right]\adop_{\bk}\adop_{-\bk}\right)\ket{\Psi_\text{GP}}
 $$
 
 ::: {.callout-tip}
