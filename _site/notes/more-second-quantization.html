@@ -561,13 +561,14 @@ i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider a Gaussian wavefunction of width <span class="math inline">\(R_0\)</span> at time <span class="math inline">\(t=0\)</span>. Show (by substitution into the Schrödinger equation is fine) that this function evolves as</p>
+<p>Consider a Gaussian wavefunction of width <span class="math inline">\(R_0\)</span> at time <span class="math inline">\(t=0\)</span>. Show (by going to the Fourier domain, or by substitution into the Schrödinger equation) that this function evolves as</p>
 <p><span id="eq-gaussian"><span class="math display">\[
-\varphi(\mathbf{r},t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\mathbf{r}^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right],
+\varphi(\mathbf{r},t)=\left(\frac{1}{2\pi R_0^2}\right)^{1/4}\frac{1}{\sqrt{1 + it / (2mR_0^2)}}\exp\left[-\frac{\mathbf{r}^2}{4R_0^2\left(1 + it/(2mR_0^2)   \right)}\right].
+% \frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right],
 \tag{8}\]</span></span></p>
-<p>where</p>
+<p>After time <span class="math inline">\(t\)</span> the width of this wavepacket is</p>
 <p><span class="math display">\[
-R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
+R_t^2=R_0^2+\frac{t^2}{4m^2R_0^2}.
 \]</span></p>
 </div>
 </div>
@@ -944,7 +945,7 @@ Nazarov, Yuli V, and Jeroen Danon. 2013. <em>Advanced Quantum Mechanics: A Pract
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

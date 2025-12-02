@@ -175,16 +175,17 @@ If the clouds begin to overlap, the last term in @eq-dens-int comes into play. I
 ::: {.callout-tip}
 ## Check
 
-Consider a Gaussian wavefunction of width $R_0$ at time $t=0$. Show (by substitution into the Schrödinger equation is fine) that this function evolves as
+Consider a Gaussian wavefunction of width $R_0$ at time $t=0$. Show (by going to the Fourier domain, or by substitution into the Schrödinger equation) that this function evolves as
 
 $$
-\varphi(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right],
+\varphi(\br,t)=\left(\frac{1}{2\pi R_0^2}\right)^{1/4}\frac{1}{\sqrt{1 + it / (2mR_0^2)}}\exp\left[-\frac{\br^2}{4R_0^2\left(1 + it/(2mR_0^2)	\right)}\right].
+% \frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right],
 $$ {#eq-gaussian}
 
-where
+After time $t$ the width of this wavepacket is 
 
 $$
-R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2.
+R_t^2=R_0^2+\frac{t^2}{4m^2R_0^2}.
 $$
 
 :::
