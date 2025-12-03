@@ -843,14 +843,14 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
 0 &amp; t&lt;0.
 \end{cases}
 \]</span></p>
-<p>We write this as <span class="math inline">\(\chi_{AB}(t) = i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]\)</span>, where <span class="math inline">\(\theta(t)\)</span> is the step function</p>
+<p>We write this as <span class="math inline">\(\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle\)</span>, where <span class="math inline">\(\theta(t)\)</span> is the step function</p>
 <p><span class="math display">\[
 \theta(t)=\begin{cases}
 1 &amp; t\geq 0\\
 0 &amp; t&lt;0
 \end{cases}.
 \]</span></p>
-<p><span class="math inline">\(\chi_{AB}(\omega)\)</span> can then be expressed as the convolution. The Fourier transform of the step function is</p>
+<p>Consider now the dissipative part of <span class="math inline">\(\chi_{AB}(t)\)</span></p>
 <p><span class="math display">\[
 \tilde\theta(\omega) = \frac{i}{\omega+i0},
 \]</span></p>
@@ -861,7 +861,19 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
 &amp;=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
 \end{aligned}
 \tag{22}\]</span></span></p>
-<p>To make sense of this formula, use the Kramers–Kronig relation <a href="#eq-kk" class="quarto-xref">Equation&nbsp;5</a> to write</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy <span class="math inline">\(E=\mathrm{tr}[\rho H]\)</span> due to a perturbation <span class="math inline">\(\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i\)</span>. If stuck, see <span class="citation" data-cites="chaikin2000principles">Chaikin and Lubensky (<a href="#ref-chaikin2000principles" role="doc-biblioref">2000</a>)</span> Section 7.6.3.</p>
+</div>
+</div>
 <p><span id="eq-kk-chi"><span class="math display">\[
 \begin{aligned}
 \chi_{AB}(\omega) &amp;=\chi'(\omega) + i\chi''(\omega)\\
@@ -869,11 +881,10 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
 &amp;= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
 \end{aligned}
 \tag{23}\]</span></span></p>
-<p>where we have used the formula</p>
+<p>The Fourier transform of this function is</p>
 <p><span class="math display">\[
-\frac{1}{x+i0} = \mathcal{P}\frac{1}{x} -i\pi\delta(x).
-\]</span></p>
-<p>Comparing <a href="#eq-conv" class="quarto-xref">Equation&nbsp;22</a> and <a href="#eq-kk-chi" class="quarto-xref">Equation&nbsp;23</a> gives</p>
+\chi_{AB}''(\omega)=\frac{1}{2} \left(S_{AB}(\omega)-S_{BA}(-\omega)\right).
+\]</span> Finally, we obtain</p>
 <p><span id="eq-fdt-gen"><span class="math display">\[
 S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right].
 \tag{24}\]</span></span></p>
@@ -1148,7 +1159,7 @@ Nozieres, Philippe. 2018. <em>Theory of Quantum Liquids: Superfluid Bose Liquids
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

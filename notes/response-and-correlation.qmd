@@ -575,7 +575,9 @@ $$ {#eq-conv}
 
 ::: {.callout-tip}
 ## Check
-Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy E=\Tr[\rho H] due to a perturbation $\Sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i. If stuck, see Chaikin, Lubensky section 7.6.3.
+Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy $E=\tr[\rho H]$ due to a perturbation $\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i$. If stuck, see @chaikin2000principles Section 7.6.3.
+
+:::
 
 $$
 \begin{aligned}
