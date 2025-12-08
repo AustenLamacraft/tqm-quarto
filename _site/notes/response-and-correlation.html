@@ -542,7 +542,7 @@ E_\text{shift} = -\langle f(t) y(t)\rangle  = -\frac{1}{2}\chi'(\omega)f_0^2
 \label{res_SHOString}
 \end{aligned}
 \]</span></p>
-<p>The model was orinally studied by Horace Lamb in a 1900 paper titled <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208">“On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium”</a>. Lamb wasn’t talking about the nucleus of the atom — that hadn’t yet been discovered — but of any body coupled to a continuum.</p>
+<p>The model was originally studied by Horace Lamb in a 1900 paper titled <a href="https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208">“On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium”</a>. Lamb wasn’t talking about the nucleus of the atom — that hadn’t yet been discovered — but of any body coupled to a continuum.</p>
 <p>If nothing is propagating towards the oscillator from the string, only away from it, we can write <span id="eq-ret"><span class="math display">\[
 u(x,t) = y(t-x/c).
 \tag{7}\]</span></span></p>
@@ -804,9 +804,15 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 \]</span></p>
 <p>Mixed states can be treated by averaging over a distribution of quantum states – or one can look at the equation of motion of the density matrix directly. The result allows us to identify the response function <span class="math inline">\(\chi_{AB}(t)\)</span> of <span class="math inline">\(A\)</span> due to a perturbation that couples to <span class="math inline">\(B\)</span> as</p>
 <p><span id="eq-kubo"><span class="math display">\[
-\chi_{AB}(t) = i\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t&gt;0.
+\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t&gt;0.
 \tag{21}\]</span></span></p>
-<p>Normally we write <span class="math inline">\(A(t)\)</span> rather than <span class="math inline">\(A_I(t)\)</span>, as this is the Heisenberg picture for the unperturbed problem. <a href="#eq-kubo" class="quarto-xref">Equation&nbsp;21</a> is known as the <strong>Kubo formula</strong>. It expresses the response of a system in terms of the dynamics of the unperturbed system.</p>
+<p>Here <span class="math inline">\(\theta(t)\)</span> is the step function <span class="math display">\[
+\theta(t)=\begin{cases}
+1 &amp; t\geq 0\\
+0 &amp; t&lt;0
+\end{cases},
+\]</span></p>
+<p>included so that the response function is causal. Normally we write <span class="math inline">\(A(t)\)</span> rather than <span class="math inline">\(A_I(t)\)</span>, as this is the Heisenberg picture for the unperturbed problem. <a href="#eq-kubo" class="quarto-xref">Equation&nbsp;21</a> is known as the <strong>Kubo formula</strong>. It expresses the response of a system in terms of the dynamics of the unperturbed system.</p>
 </section>
 <section id="fluctuation-dissipation-theorem" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="fluctuation-dissipation-theorem"><span class="header-section-number">3.2</span> Fluctuation Dissipation Theorem</h3>
@@ -832,35 +838,13 @@ S_{AB}(t) = S_{BA}(-t-i\beta).
 </div>
 </div>
 <p>Fourier transforming, we arrive at</p>
-<p><span class="math display">\[
+<p><span id="eq-gen-asym"><span class="math display">\[
 S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega).
-\]</span></p>
-<p>We’ve met an example of this relation before, see <a href="#eq-noise-asym" class="quarto-xref">Equation&nbsp;15</a>.</p>
-<p><span class="math inline">\(\chi_{AB}(t)\)</span> can be written in terms of the correlations as</p>
-<p><span class="math display">\[
-\chi_{AB}(t) = \begin{cases}
-i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
-0 &amp; t&lt;0.
-\end{cases}
-\]</span></p>
-<p>We write this as <span class="math inline">\(\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle\)</span>, where <span class="math inline">\(\theta(t)\)</span> is the step function</p>
-<p><span class="math display">\[
-\theta(t)=\begin{cases}
-1 &amp; t\geq 0\\
-0 &amp; t&lt;0
-\end{cases}.
-\]</span></p>
-<p>Consider now the dissipative part of <span class="math inline">\(\chi_{AB}(t)\)</span></p>
-<p><span class="math display">\[
-\tilde\theta(\omega) = \frac{i}{\omega+i0},
-\]</span></p>
-<p>giving</p>
-<p><span id="eq-conv"><span class="math display">\[
-\begin{aligned}
-\chi_{AB}(\omega)&amp;= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
-&amp;=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
-\end{aligned}
 \tag{22}\]</span></span></p>
+<p>We’ve met an example of this relation before, see <a href="#eq-noise-asym" class="quarto-xref">Equation&nbsp;15</a>. We now use it to relate <span class="math inline">\(S_{AB}(\omega)\)</span> to the function <span class="math display">\[
+\chi''_{AB}(t)\equiv \frac{1}{2}\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,
+\]</span></p>
+<p>which differs from the full causal response function in <a href="#eq-kubo" class="quarto-xref">Equation&nbsp;21</a> because it is lacking the step function that makes the response causal. It turns out that this is the dissipative dissipative part of the response.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -871,24 +855,60 @@ i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy <span class="math inline">\(E=\mathrm{tr}[\rho H]\)</span> due to a perturbation <span class="math inline">\(\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i\)</span>. If stuck, see <span class="citation" data-cites="chaikin2000principles">Chaikin and Lubensky (<a href="#ref-chaikin2000principles" role="doc-biblioref">2000</a>)</span> Section 7.6.3.</p>
+<p>Show that this function governs the dissipation of energy by considering the change of the expectation value of the energy <span class="math inline">\(E=\mathrm{tr}[\rho H]\)</span> due to a perturbation <span class="math inline">\(\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i\)</span>. See <span class="citation" data-cites="chaikin2000principles">Chaikin and Lubensky (<a href="#ref-chaikin2000principles" role="doc-biblioref">2000</a>)</span> Section 7.6.3 for further details.</p>
 </div>
 </div>
-<p><span id="eq-kk-chi"><span class="math display">\[
-\begin{aligned}
-\chi_{AB}(\omega) &amp;=\chi'(\omega) + i\chi''(\omega)\\
-&amp;= \mathcal{P}\int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega} + i\chi''(\omega)\\
-&amp;= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
-\end{aligned}
-\tag{23}\]</span></span></p>
-<p>The Fourier transform of this function is</p>
+<p><span class="math inline">\(\chi''_{AB}(t)\)</span> can be written in terms of the correlations as</p>
 <p><span class="math display">\[
+\chi''_{AB}(t) = \frac{1}{2}\left[
+S_{AB}(t)-S_{BA}(-t)\right]
+\]</span></p>
+<!-- We write this as $\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle$, where $\theta(t)$ is the step function
+
+$$
+\theta(t)=\begin{cases}
+1 & t\geq 0\\
+0 & t<0
+\end{cases}.
+$$
+
+
+Consider now the dissipative part of $\chi_{AB}(t)$
+
+$$
+\tilde\theta(\omega) = \frac{i}{\omega+i0},
+$$
+
+giving
+
+$$
+\begin{aligned}
+\chi_{AB}(\omega)&= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
+&=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}.
+\end{aligned}
+$$ {#eq-conv}
+
+
+
+$$
+\begin{aligned}
+\chi_{AB}(\omega) &=\chi'(\omega) + i\chi''(\omega)\\
+&= \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega} + i\chi''(\omega)\\
+&= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\chi''(\omega')}{\omega'-\omega-i0},
+\end{aligned}
+$$ {#eq-kk-chi}
+
+The Fourier transform of this function is
+
+$$
 \chi_{AB}''(\omega)=\frac{1}{2} \left(S_{AB}(\omega)-S_{BA}(-\omega)\right).
-\]</span> Finally, we obtain</p>
+$$
+Finally, we obtain -->
+<p>Fourier transforming and using the relation <a href="#eq-gen-asym" class="quarto-xref">Equation&nbsp;22</a> gives</p>
 <p><span id="eq-fdt-gen"><span class="math display">\[
 S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right].
-\tag{24}\]</span></span></p>
-<p>This is the most general form of the quantum fluctuation dissipation relation, which we met before in the case of the oscilator, see <a href="#eq-FDT-asym" class="quarto-xref">Equation&nbsp;20</a>.</p>
+\tag{23}\]</span></span></p>
+<p>This is the most general form of the quantum fluctuation dissipation relation, which we met before in the case of the oscillator, see <a href="#eq-FDT-asym" class="quarto-xref">Equation&nbsp;20</a>.</p>
 </section>
 <section id="spectral-representation" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="spectral-representation"><span class="header-section-number">3.3</span> Spectral Representation</h3>
@@ -907,7 +927,7 @@ S_{AB}(\omega)  = 2\pi\sum_{m,n} \frac{e^{-\beta E_m}}{Z} \langle{m}\rvert A\lve
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use the spectral representation to prove the fluctuation dissipation relation <a href="#eq-fdt-gen" class="quarto-xref">Equation&nbsp;24</a>.</p>
+<p>Use the spectral representation to prove the fluctuation dissipation relation <a href="#eq-fdt-gen" class="quarto-xref">Equation&nbsp;23</a>.</p>
 </div>
 </div>
 <p>The function <span class="math inline">\(S_{AA}(\omega)\)</span> can be interpreted in terms of the Fermi golden rule, as we saw in the case of the oscillator. Notice that <span class="math inline">\(S_{AA}(\omega)&gt;0\)</span>.</p>
@@ -947,7 +967,7 @@ H_\text{pert} = \sum_{j=1}^N V(\mathbf{r}_i,t) = \int  V(\mathbf{r},t)\rho(\math
 <p>The general theory described above applies here with <span class="math inline">\(A=\rho_\mathbf{q}\)</span> and <span class="math inline">\(B=\rho_{-\mathbf{q}}\)</span>. Focusing on the case of zero temperature, we have the spectral representation of the correlation function</p>
 <p><span id="eq-S-def"><span class="math display">\[
 S_\rho(\mathbf{q},\omega) = 2\pi\sum_{n}  |\langle{0}\rvert\rho_\mathbf{q}\lvert{n}\rangle|^2 \delta(\omega-E_n+E_0),
-\tag{25}\]</span></span></p>
+\tag{24}\]</span></span></p>
 <p>where we have used <span class="math inline">\(\rho_\mathbf{q}^\dagger=\rho_{-\mathbf{q}}^{}\)</span>. This quantity is called the <strong>dynamical structure factor</strong>, on account of its importance in scattering experiments. It gives the rate at which the system makes transitions that impart energy <span class="math inline">\(\omega\)</span> and momentum <span class="math inline">\(\mathbf{q}\)</span> in the presence of the perturbation <span class="math inline">\(H_\text{pert}\)</span>.</p>
 <p>The integral</p>
 <p><span class="math display">\[
@@ -967,7 +987,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Some texts (e.g <span class="citation" data-cites="nozieres2018theory">Nozieres (<a href="#ref-nozieres2018theory" role="doc-biblioref">2018</a>)</span>) omit the <span class="math inline">\(2\pi\)</span> in the definition <a href="#eq-S-def" class="quarto-xref">Equation&nbsp;25</a>. I prefer to keep it so that <span class="math inline">\(S_\rho(\mathbf{q},t) = \langle\langle \rho_\mathbf{q}(t)\rho_{-\mathbf{q}}(0)\rangle\rangle\)</span>.</p>
+<p>Some texts (e.g <span class="citation" data-cites="nozieres2018theory">Nozieres (<a href="#ref-nozieres2018theory" role="doc-biblioref">2018</a>)</span>) omit the <span class="math inline">\(2\pi\)</span> in the definition <a href="#eq-S-def" class="quarto-xref">Equation&nbsp;24</a>. I prefer to keep it so that <span class="math inline">\(S_\rho(\mathbf{q},t) = \langle\langle \rho_\mathbf{q}(t)\rho_{-\mathbf{q}}(0)\rangle\rangle\)</span>.</p>
 </div>
 </div>
 </section>
@@ -1041,8 +1061,8 @@ p = -\frac{\partial E_0}{\partial V},
 <p>Let’s consider a simple example. Some systems, notably Bose gases, have a zero temperature dynamical structure factor that at low momentum has the following approximate form</p>
 <p><span id="eq-sma"><span class="math display">\[
 S_\rho(\mathbf{q},\omega) \sim 2\pi S_\rho(\mathbf{q}) \delta(\omega - \omega(\mathbf{q})),
-\tag{26}\]</span></span></p>
-<p>where <span class="math inline">\(\omega(\mathbf{q})\)</span> is the dispersion relation of the collective excitations. In reality, the <span class="math inline">\(\delta\)</span>-function is never infinitely sharp, but has a finite width on account of interactions between excitations causing scattering and / or decay. In the approximation <a href="#eq-sma" class="quarto-xref">Equation&nbsp;26</a>, often known as the <strong>single mode approximation</strong>, the f-sum rule tells us that</p>
+\tag{25}\]</span></span></p>
+<p>where <span class="math inline">\(\omega(\mathbf{q})\)</span> is the dispersion relation of the collective excitations. In reality, the <span class="math inline">\(\delta\)</span>-function is never infinitely sharp, but has a finite width on account of interactions between excitations causing scattering and / or decay. In the approximation <a href="#eq-sma" class="quarto-xref">Equation&nbsp;25</a>, often known as the <strong>single mode approximation</strong>, the f-sum rule tells us that</p>
 <p><span class="math display">\[
 S_\rho(\mathbf{q}) = \frac{N\mathbf{q}^2}{2m\omega(\mathbf{q})}.
 \]</span></p>

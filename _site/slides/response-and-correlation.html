@@ -490,8 +490,17 @@ i\frac{\partial \lvert{\Psi_I(t)}\rangle}{\partial t} = -\lambda_t B_I(t) \lvert
 <li><p><span class="math inline">\chi_{AB}(t)</span> of <span class="math inline">A</span> due to perturbation that couples to <span class="math inline">B</span></p></li>
 </ul>
 <p><span class="math display">
-\chi_{AB}(t) = i\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t&gt;0.
-</span> (Normally write <span class="math inline">A(t)</span> rather than <span class="math inline">A_I(t)</span>: Heisenberg picture for the unperturbed problem)</p>
+\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t&gt;0.
+</span></p>
+<ul>
+<li><span class="math inline">\theta(t)</span> is the step function</li>
+</ul>
+<p><span class="math display">
+\theta(t)=\begin{cases}
+1 &amp; t\geq 0\\
+0 &amp; t&lt;0
+\end{cases}
+</span></p>
 <ul>
 <li>This is the <strong>Kubo formula</strong>. It expresses the response of a system in terms of the dynamics of the unperturbed system.</li>
 </ul>
@@ -537,50 +546,45 @@ S_{AB}(t) = S_{BA}(-t-i\beta).
 S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega)
 </span> (we’ve seen this before!)</p>
 <ul>
-<li><span class="math inline">\chi_{AB}(t)</span> (a commutator) can be written in terms of <span class="math inline">S_{AB}(\omega)</span></li>
+<li>Use this to relate <span class="math inline">S_{AB}(\omega)</span> to the function</li>
 </ul>
 <p><span class="math display">
-\begin{align*}
-\chi_{AB}(t) &amp;= \begin{cases}
-i\left[S_{AB}(t)-S_{BA}(-t)\right] &amp; t&gt;0\\
-0 &amp; t&lt;0
-\end{cases}\\
-&amp;= i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]
-\end{align*}
-</span></p>
+\chi''_{AB}(t)\equiv \frac{1}{2}\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle
+</span> (no step function!)</p>
 </section>
 <section class="slide level2 center">
 
-<p><span class="math display">
-\chi_{AB}(t)=i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]
-</span></p>
-<ul>
-<li><span class="math inline">\chi_{AB}(\omega)</span> can then be expressed as the convolution. The Fourier transform of the step function is</li>
-</ul>
-<p><span class="math display">
-\tilde\theta(\omega) = \frac{i}{\omega+i0}
-</span> <span class="math display">
-\begin{align*}
-\chi_{AB}(\omega)&amp;= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
-&amp;=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}
-\end{align*}
-</span></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that this function governs the dissipation of energy by considering the change of the expectation value of the energy <span class="math inline">E=\mathrm{tr}[\rho H]</span> due to a perturbation <span class="math inline">\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i</span>. See <span class="citation" data-cites="chaikin2000principles">Chaikin and Lubensky (<a href="#/references" role="doc-biblioref" onclick="">2000</a>)</span> Section 7.6.3 for further details.</p>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>To make sense of this formula, use the Kramers–Kronig relation <span class="math display">
-\begin{align*}
-\chi_{AB}(\omega) &amp;=\operatorname{Re}\chi_{AB}(\omega) + i\operatorname{Im}\chi_{AB}(\omega)\\
-&amp;= \mathcal{P}\int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\operatorname{Im}\chi_{AB}(\omega')}{\omega'-\omega} + i\operatorname{Im}\chi_{AB}(\omega)\\
-&amp;= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\operatorname{Im}\chi_{AB}(\omega')}{\omega'-\omega-i0},
-\end{align*}
-</span> where we used <span class="math display">
-\frac{1}{x+i0} = \mathcal{P}\frac{1}{x} -i\pi\delta(x)
-</span></li>
-<li>Finally! <span class="math display">
-S_{AB}(\omega) = 2\operatorname{Im}\chi_{AB}(\omega)\left[n_\text{B}(\omega)+1\right]
-</span></li>
+<li><span class="math inline">\chi''_{AB}(t)</span> can be written in terms of the correlations as</li>
+</ul>
+<p><span class="math display">
+\chi''_{AB}(t) = \frac{1}{2}\left[
+S_{AB}(t)-S_{BA}(-t)\right]
+</span></p>
+<ul>
+<li>Fourier transforming and using the relation <span class="math inline">S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega)</span></li>
+</ul>
+<p><span class="math display">
+S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right]
+</span></p>
+<ul>
+<li>This is the most general form of the quantum fluctuation dissipation relation</li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -829,6 +833,9 @@ S_\rho(\mathbf{q},\omega) \sim 2\pi S_\rho(\mathbf{q}) \delta(\omega - \omega(\m
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chaikin2000principles" class="csl-entry" role="listitem">
+Chaikin, PM, and TC Lubensky. 2000. <em>Principles of Condensed Matter Physics</em>. Cambridge University Press.
+</div>
 <div id="ref-girvin2002quantum" class="csl-entry" role="listitem">
 Girvin, Steven M. 2002. <span>“The Quantum Hall Effect: Novel Excitations and Broken Symmetries.”</span> In <em>Aspects Topologiques de La Physique En Basse Dimension. Topological Aspects of Low Dimensional Systems: Session LXIX. 7–31 July 1998</em>, 53–175. Springer.
 </div>

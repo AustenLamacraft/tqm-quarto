@@ -154,7 +154,7 @@ $$
 \end{aligned}
 $$
 
-The model was orinally studied by Horace Lamb in a 1900 paper titled ["On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium"](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208). Lamb wasn't talking about the nucleus of the atom — that hadn't yet been discovered — but of any body coupled to a continuum.
+The model was originally studied by Horace Lamb in a 1900 paper titled ["On a Peculiarity of the Wave‐System due to the Free Vibrations of a Nucleus in an Extended Medium"](https://londmathsoc.onlinelibrary.wiley.com/doi/abs/10.1112/plms/s1-32.1.208). Lamb wasn't talking about the nucleus of the atom — that hadn't yet been discovered — but of any body coupled to a continuum.
 
 If nothing is propagating towards the oscillator from the string, only away from it, we can write
 $$
@@ -504,10 +504,18 @@ $$
 Mixed states can be treated by averaging over a distribution of quantum states -- or one can look at the equation of motion of the density matrix directly. The result allows us to identify the response function $\chi_{AB}(t)$ of $A$ due to a perturbation that couples to $B$ as
 
 $$
-\chi_{AB}(t) = i\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t>0.
+\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t>0.
 $$ {#eq-kubo}
 
-Normally we write $A(t)$ rather than $A_I(t)$, as this is the Heisenberg picture for the unperturbed problem. @eq-kubo is known as the __Kubo formula__. It expresses the response of a system in terms of the dynamics of the unperturbed system.
+Here $\theta(t)$ is the step function
+$$
+\theta(t)=\begin{cases}
+1 & t\geq 0\\
+0 & t<0
+\end{cases},
+$$
+
+included so that the response function is causal. Normally we write $A(t)$ rather than $A_I(t)$, as this is the Heisenberg picture for the unperturbed problem. @eq-kubo is known as the __Kubo formula__. It expresses the response of a system in terms of the dynamics of the unperturbed system.
 
 ### Fluctuation Dissipation Theorem
 
@@ -536,20 +544,29 @@ Fourier transforming, we arrive at
 
 $$
 S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega).
+$$ {#eq-gen-asym}
+
+We've met an example of this relation before, see @eq-noise-asym. We now use it to relate $S_{AB}(\omega)$ to the function
+$$
+\chi''_{AB}(t)\equiv \frac{1}{2}\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,
 $$
 
-We've met an example of this relation before, see @eq-noise-asym.
+which differs from the full causal response function in @eq-kubo because it is lacking the step function that makes the response causal. It turns out that this is the dissipative dissipative part of the response.
 
-$\chi_{AB}(t)$ can be written in terms of the correlations as
+::: {.callout-tip}
+## Check
+Show that this function governs the dissipation of energy by considering the change of the expectation value of the energy $E=\tr[\rho H]$ due to a perturbation $\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i$. See @chaikin2000principles Section 7.6.3 for further details.
+
+:::
+
+$\chi''_{AB}(t)$ can be written in terms of the correlations as
 
 $$
-\chi_{AB}(t) = \begin{cases}
-i\left[S_{AB}(t)-S_{BA}(-t)\right] & t>0\\
-0 & t<0.
-\end{cases}
+\chi''_{AB}(t) = \frac{1}{2}\left[
+S_{AB}(t)-S_{BA}(-t)\right]
 $$
 
-We write this as $\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle$, where $\theta(t)$ is the step function
+<!-- We write this as $\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle$, where $\theta(t)$ is the step function
 
 $$
 \theta(t)=\begin{cases}
@@ -557,6 +574,7 @@ $$
 0 & t<0
 \end{cases}.
 $$
+
 
 Consider now the dissipative part of $\chi_{AB}(t)$
 
@@ -573,11 +591,7 @@ $$
 \end{aligned}
 $$ {#eq-conv}
 
-::: {.callout-tip}
-## Check
-Verify that this function appears in dissipative response. Hint: consider the change of the expectation value of the energy $E=\tr[\rho H]$ due to a perturbation $\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i$. If stuck, see @chaikin2000principles Section 7.6.3.
 
-:::
 
 $$
 \begin{aligned}
@@ -592,13 +606,15 @@ The Fourier transform of this function is
 $$
 \chi_{AB}''(\omega)=\frac{1}{2} \left(S_{AB}(\omega)-S_{BA}(-\omega)\right).
 $$
-Finally, we obtain
+Finally, we obtain -->
+
+Fourier transforming and using the relation @eq-gen-asym gives
 
 $$
 S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right].
 $$ {#eq-fdt-gen}
 
-This is the most general form of the quantum fluctuation dissipation relation, which we met before in the case of the oscilator, see @eq-FDT-asym.
+This is the most general form of the quantum fluctuation dissipation relation, which we met before in the case of the oscillator, see @eq-FDT-asym.
 
 ### Spectral Representation
 

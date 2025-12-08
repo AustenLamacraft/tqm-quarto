@@ -345,9 +345,17 @@ $$
 - $\chi_{AB}(t)$ of $A$ due to perturbation that couples to $B$
 
 $$
-\chi_{AB}(t) = i\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t>0.
+\chi_{AB}(t) = i\theta(t)\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle,\quad t>0.
 $$
-(Normally write $A(t)$ rather than $A_I(t)$: Heisenberg picture for the unperturbed problem) 
+
+- $\theta(t)$ is the step function
+
+$$
+\theta(t)=\begin{cases}
+1 & t\geq 0\\
+0 & t<0
+\end{cases}
+$$
 
 - This is the __Kubo formula__. It expresses the response of a system in terms of the dynamics of the unperturbed system.
 
@@ -387,54 +395,37 @@ S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega)
 $$
 (we've seen this before!)
 
-- $\chi_{AB}(t)$ (a commutator) can be written in terms of $S_{AB}(\omega)$
+- Use this to relate $S_{AB}(\omega)$ to the function
 
 $$
-\begin{align*}
-\chi_{AB}(t) &= \begin{cases}
-i\left[S_{AB}(t)-S_{BA}(-t)\right] & t>0\\
-0 & t<0
-\end{cases}\\
-&= i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]
-\end{align*}
+\chi''_{AB}(t)\equiv \frac{1}{2}\langle\langle\left[A_I(t),B_I(0)\right]\rangle\rangle
 $$
+(no step function!)
 
 ---
 
-$$
-\chi_{AB}(t)=i\theta(t)\left[S_{AB}(t)-S_{BA}(-t)\right]
-$$
+::: {.callout-tip}
+## Check
+Show that this function governs the dissipation of energy by considering the change of the expectation value of the energy $E=\tr[\rho H]$ due to a perturbation $\sum_{i}\left( f_i e^{-i\omega t} + f_i^* e^{i\omega t}\right) O_i$. See @chaikin2000principles Section 7.6.3 for further details.
 
-- $\chi_{AB}(\omega)$ can then be expressed as the convolution. The Fourier transform of the step function is
-
-$$
-\tilde\theta(\omega) = \frac{i}{\omega+i0}
-$$
-$$
-\begin{align*}
-\chi_{AB}(\omega)&= -\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')-S_{BA}(-\omega')}{\omega-\omega'+i0}\\
-&=-\int \frac{d\omega'}{2\pi}\frac{S_{AB}(\omega')\left[1-e^{-\beta\omega'}\right]}{\omega-\omega'+i0}
-\end{align*}
-$$
+:::
 
 ---
 
-- To make sense of this formula, use the Kramers--Kronig relation
+- $\chi''_{AB}(t)$ can be written in terms of the correlations as
+
 $$
-\begin{align*}
-\chi_{AB}(\omega) &=\operatorname{Re}\chi_{AB}(\omega) + i\operatorname{Im}\chi_{AB}(\omega)\\
-&= \cP \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\operatorname{Im}\chi_{AB}(\omega')}{\omega'-\omega} + i\operatorname{Im}\chi_{AB}(\omega)\\
-&= \int_{-\infty}^\infty \frac{d\omega'}{\pi}\frac{\operatorname{Im}\chi_{AB}(\omega')}{\omega'-\omega-i0},
-\end{align*}
+\chi''_{AB}(t) = \frac{1}{2}\left[
+S_{AB}(t)-S_{BA}(-t)\right]
 $$
-where we used
+
+- Fourier transforming and using the relation $S_{AB}(\omega) = e^{\beta\omega} S_{BA}(-\omega)$
+
 $$
-\frac{1}{x+i0} = \cP\frac{1}{x} -i\pi\delta(x)
+S_{AB}(\omega) = 2\chi_{AB}''(\omega)\left[n_\text{B}(\omega)+1\right]
 $$
-- Finally!
-$$
-S_{AB}(\omega) = 2\operatorname{Im}\chi_{AB}(\omega)\left[n_\text{B}(\omega)+1\right]
-$$
+
+- This is the most general form of the quantum fluctuation dissipation relation
 
 ---
 
