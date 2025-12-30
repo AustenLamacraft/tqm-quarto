@@ -34,7 +34,7 @@ format:
 - Put all particles in same single particle state!
 
 $$
-\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}
+\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_j)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}
 $$
 
 - State with macroscopic number of particles in a single particle state is a __Bose condensate__

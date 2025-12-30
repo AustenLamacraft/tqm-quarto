@@ -631,9 +631,9 @@ H_\text{pert} = \sum_{j=1}^N V(\mathbf{r}_i,t) = \int  V(\mathbf{r},t)\rho(\math
 <li><p>In a translationally invariant system</p></li>
 </ul>
 <p><span class="math display">
-\langle\langle \rho_\mathbf{q}(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi^{\rho}_\mathbf{q}(t-t') V_\mathbf{q}(t)\,dt',
+\langle\langle \rho_\mathbf{q}(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi_\rho(\mathbf{q},t-t') V_\mathbf{q}(t')\,dt',
 </span></p>
-<p>where the density response function <span class="math inline">\chi^\rho_\mathbf{q}(t)</span> is</p>
+<p>where the density response function <span class="math inline">\chi_\rho(\mathbf{q},t)</span> is</p>
 <p><span class="math display">
 \chi_\rho(\mathbf{q},t) = i\langle\langle\left[\rho_\mathbf{q}(t),\rho_{-\mathbf{q}}(0)\right]\rangle\rangle
 </span></p>
@@ -714,13 +714,13 @@ S_\rho(\mathbf{q},\omega) = 2\pi\sum_{n}  |\langle{0}\rvert\rho_\mathbf{q}\lvert
 <li>In the presence of a potential <span class="math inline">V(\mathbf{r})</span>, energy density is</li>
 </ul>
 <p><span class="math display">
-\epsilon(\rho_0+\delta\rho) = \frac{1}{2\beta\rho_0^2} \left[\delta\rho\right]^2 + V(\mathbf{r})\delta\rho
+\epsilon(\rho+\delta\rho) = \frac{1}{2\beta\rho^2} \left[\delta\rho\right]^2 + V(\mathbf{r})\delta\rho
 </span></p>
 <ul>
 <li>Minimizing with respect to <span class="math inline">\delta\rho</span> gives</li>
 </ul>
 <p><span class="math display">
-\epsilon(V(\mathbf{r})) = - \frac{\beta\rho_0^2}{2} \left[V(\mathbf{r})\right]^2
+\epsilon(V(\mathbf{r})) = - \frac{\beta\rho^2}{2} \left[V(\mathbf{r})\right]^2
 </span></p>
 <ul>
 <li>Compare with perturbation theory</li>
@@ -736,17 +736,17 @@ S_\rho(\mathbf{q},\omega) = 2\pi\sum_{n}  |\langle{0}\rvert\rho_\mathbf{q}\lvert
 </span></p>
 <ul>
 <li>Second order perturbation theory for ground state <span class="math display">
-E^{(2)} =\frac{V_0^2}{4} \sum_{n\neq 0} \frac{|\braket{0|\rho_\mathbf{q}|n}|^2}{E_0-E_n} =-\frac{V_0^2}{4}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi}
+E^{(2)} =\frac{V_0^2}{2} \sum_{n\neq 0} \frac{|\braket{0|\rho_\mathbf{q}|n}|^2}{E_0-E_n} =-\frac{V_0^2}{2}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi}
 </span> (first order vanishes)</li>
 </ul>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li>Compare with</li>
+<li>Compare with spatial average</li>
 </ul>
 <p><span class="math display">
-\epsilon(V(\mathbf{r})) = - \frac{\beta\rho_0^2}{2} \left[V(\mathbf{r})\right]^2
+\langle\epsilon(V(\mathbf{r}))\rangle = - \frac{\beta\rho^2}{2} \langle\left[V(\mathbf{r})\right]^2\rangle = - \frac{\beta\rho^2 V_0^2}{4}
 </span></p>
 <ul>
 <li>This gives the <strong>compressibility sum rule</strong> at zero temperature</li>

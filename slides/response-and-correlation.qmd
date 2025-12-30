@@ -467,10 +467,10 @@ $$
 - In a translationally invariant system
 
 $$
-\langle\langle \rho_\bq(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi^{\rho}_\bq(t-t') V_\bq(t)\,dt',
+\langle\langle \rho_\bq(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi_\rho(\bq,t-t') V_\bq(t')\,dt',
 $$
 
-where the density response function $\chi^\rho_\bq(t)$ is
+where the density response function $\chi_\rho(\bq,t)$ is
 
 $$
 \chi_\rho(\bq,t) = i\langle\langle\left[\rho_\bq(t),\rho_{-\bq}(0)\right]\rangle\rangle
@@ -560,13 +560,13 @@ $$
 - In the presence of a potential $V(\br)$, energy density is 
 
 $$
-\epsilon(\rho_0+\delta\rho) = \frac{1}{2\beta\rho_0^2} \left[\delta\rho\right]^2 + V(\br)\delta\rho
+\epsilon(\rho+\delta\rho) = \frac{1}{2\beta\rho^2} \left[\delta\rho\right]^2 + V(\br)\delta\rho
 $$
 
 - Minimizing with respect to $\delta\rho$ gives
 
 $$
-\epsilon(V(\br)) = - \frac{\beta\rho_0^2}{2} \left[V(\br)\right]^2
+\epsilon(V(\br)) = - \frac{\beta\rho^2}{2} \left[V(\br)\right]^2
 $$
 
 - Compare with perturbation theory
@@ -581,16 +581,16 @@ $$
 
 - Second order perturbation theory for ground state
 $$
-E^{(2)} =\frac{V_0^2}{4} \sum_{n\neq 0} \frac{|\braket{0|\rho_\bq|n}|^2}{E_0-E_n} =-\frac{V_0^2}{4}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi}
+E^{(2)} =\frac{V_0^2}{2} \sum_{n\neq 0} \frac{|\braket{0|\rho_\bq|n}|^2}{E_0-E_n} =-\frac{V_0^2}{2}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi}
 $$
 (first order vanishes)
 
 ---
 
-- Compare with 
+- Compare with spatial average
 
 $$
-\epsilon(V(\br)) = - \frac{\beta\rho_0^2}{2} \left[V(\br)\right]^2
+\langle\epsilon(V(\br))\rangle = - \frac{\beta\rho^2}{2} \langle\left[V(\br)\right]^2\rangle = - \frac{\beta\rho^2 V_0^2}{4}
 $$
 
 - This gives the __compressibility sum rule__ at zero temperature

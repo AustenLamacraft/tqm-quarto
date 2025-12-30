@@ -589,11 +589,11 @@ Note
 <p>Actually, no self-respecting mathematician would write something like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a>, implying as it does that the instantaneous acceleration of the oscillator is infinite. Physicists, on the other hand, know that this is just an approximation caused by setting certain time scales to zero.</p>
 </div>
 </div>
-<p>The mathematical way to write an equation like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a> is as the pair of first order SDEs</p>
+<p>The mathematical way to write an equation like <a href="#eq-sho-noise" class="quarto-xref">Equation&nbsp;8</a> is as a pair of first order SDEs</p>
 <p><span class="math display">\[
 \begin{aligned}
 dy &amp;= \frac{p}{m} dt\nonumber \\
-dp &amp;= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
+dp &amp;= -\left[m\omega_0^2 y +\frac{\gamma p}{m}\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
 \end{aligned}
 \]</span></p>
 <p>where <span class="math inline">\(W\)</span> is a <a href="https://en.wikipedia.org/wiki/Wiener_process">Wiener process</a>. Writing the equation in terms of differentials avoids the awkward subject of infinite forces.</p>
@@ -944,9 +944,9 @@ H_\text{pert} = \sum_{j=1}^N V(\mathbf{r}_i,t) = \int  V(\mathbf{r},t)\rho(\math
 \]</span></p>
 <p>This perturbation couples to the density, and we ask how the density is affected by it. In a translationally invariant system</p>
 <p><span class="math display">\[
-\langle\langle \rho_\mathbf{q}(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi^{\rho}_\mathbf{q}(t-t') V_\mathbf{q}(t)\,dt',
+\langle\langle \rho_\mathbf{q}(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi_{\rho}(\mathbf{q},t-t') V_\mathbf{q}(t')\,dt',
 \]</span></p>
-<p>where the density response function <span class="math inline">\(\chi^\rho_\mathbf{q}(t)\)</span> is</p>
+<p>where the density response function <span class="math inline">\(\chi_\rho(\mathbf{q},t)\)</span> is</p>
 <p><span class="math display">\[
 \chi_\rho(\mathbf{q},t) = i\langle\langle\left[\rho_\mathbf{q}(t),\rho_{-\mathbf{q}}(0)\right]\rangle\rangle.
 \label{res_kubo_density}
@@ -1015,31 +1015,47 @@ T = -\frac{1}{2m}\sum_{j=1}^N \nabla_i^2.
 p = -\frac{\partial E_0}{\partial V},
 \]</span></p>
 <p>where <span class="math inline">\(E_0\)</span> is the ground state energy. Since energy is an extensive quentity we expect <span class="math inline">\(E_0 = V \epsilon(\rho)\)</span>, where <span class="math inline">\(\rho = N/V\)</span> is the density, and <span class="math inline">\(\epsilon(\rho)\)</span> the energy per unit volume. Then</p>
-<p><span class="math display">\[
+<p><span id="eq-beta-deriv"><span class="math display">\[
 \beta^{-1} = \rho^2 \epsilon''(\rho).
-\]</span></p>
-<ul>
-<li>In the presence of a potential <span class="math inline">\(V(\mathbf{r})\)</span>, energy density is</li>
-</ul>
+\tag{25}\]</span></span></p>
+<p>The inverse of the compressibility is also known as the <a href="https://en.wikipedia.org/wiki/Bulk_modulus">bulk modulus</a>, often denoted by <span class="math inline">\(\kappa\)</span>. Using <a href="#eq-beta-deriv" class="quarto-xref">Equation&nbsp;25</a> the compressibility can be related to the change in the energy density of a system in an external potential <span class="math inline">\(V(\mathbf{r})\)</span>. The potential causes the density to deviate from its value in the uniform system. This deviation can be found by considering the energy density to quadratic order in the density deviation</p>
 <p><span class="math display">\[
-\epsilon(\rho_0+\delta\rho) = \frac{1}{2\beta\rho_0^2} \left[\delta\rho\right]^2 + V(\mathbf{r})\delta\rho
+\epsilon(\rho+\delta\rho) = \frac{1}{2\beta\rho^2} \left[\delta\rho\right]^2 + V(\mathbf{r})\delta\rho.
 \]</span></p>
-<ul>
-<li>Minimizing with respect to <span class="math inline">\(\delta\rho\)</span> gives</li>
-</ul>
+<p>Minimizing this expression with respect to <span class="math inline">\(\delta\rho\)</span> gives</p>
+<p><span id="eq-v-quad"><span class="math display">\[
+\epsilon(V(\mathbf{r})) = - \frac{\beta\rho^2}{2} \left[V(\mathbf{r})\right]^2
+\tag{26}\]</span></span></p>
+<p>We now compare this expression with the result of second order perturbation theory for the energy due to the perturbation</p>
 <p><span class="math display">\[
-\epsilon(V(\mathbf{r})) = - \frac{\beta\rho_0^2}{2} \left[V(\mathbf{r})\right]^2
+\sum_j V_0 \cos(\mathbf{q}\cdot \mathbf{r}_j) = \frac{V_0}{2}\left[\rho_\mathbf{q}+\rho_{-\mathbf{q}}\right].
 \]</span></p>
-<ul>
-<li>Compare with perturbation theory</li>
-</ul>
-<p>Recall that the chemical potential <span class="math inline">\(\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)\)</span>. Then</p>
-<p><span class="math display">\[
+<p>The standard expression of second order perturbation theory (the first order vanishes) gives <span id="eq-2nd-order"><span class="math display">\[
+E^{(2)} =\frac{V_0^2}{2} \sum_{n\neq 0} \frac{|\braket{0|\rho_\mathbf{q}|n}|^2}{E_0-E_n} =-\frac{V_0^2}{2}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi}.
+\tag{27}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Confirm <a href="#eq-2nd-order" class="quarto-xref">Equation&nbsp;27</a>. Note that for a translationally invariant system, energy eigenstates are eignestates of momentum. If the ground state <span class="math inline">\(\lvert{0}\rangle\)</span> has zero momentum, then <span class="math inline">\(\rho_\mathbf{q}\lvert{0}\rangle\)</span> has momentum <span class="math inline">\(\mathbf{q}\)</span> and only has nonzero matrix elements with eigenstates of momentum <span class="math inline">\(\mathbf{q}\)</span>. For eigenstate <span class="math inline">\(\lvert{n}\rangle\)</span> with momentum <span class="math inline">\(\mathbf{q}\)</span> there is one with momentum <span class="math inline">\(-\mathbf{q}\)</span> of the same energy (by parity symmetry).</p>
+</div>
+</div>
+<p>Comparing this expression with <a href="#eq-v-quad" class="quarto-xref">Equation&nbsp;26</a>, using the average value of <span class="math inline">\(\langle\left[V(\mathbf{r})\right]^2\rangle = V_0^2/2\)</span></p>
+<!-- Recall that the chemical potential $\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)$. Then
+
+$$
 \beta = \rho^{-2} \frac{\partial \rho}{\partial \mu} = \frac{1}{\rho N}\chi'(0,0).  
-\]</span></p>
-<p>Now <span class="math inline">\(\chi'(\mathbf{q},\omega)\)</span> can be written in terms of <span class="math inline">\(\chi''(\mathbf{q},\omega)\)</span> (Kramers–Kronig) and <span class="math inline">\(\chi''(\mathbf{q},\omega)\)</span> is related to <span class="math inline">\(S_\rho(\mathbf{q},\omega)\)</span>. This gives the compressibility sum rule at zero temperature</p>
+$$
+
+Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Kronig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature -->
 <p><span class="math display">\[
-\lim_{\mathbf{q}\to 0}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\kappa}{2}.
+\lim_{\mathbf{q}\to 0}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\beta}{2}.
 \]</span></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1054,15 +1070,15 @@ p = -\frac{\partial E_0}{\partial V},
 <p>Why do we need <span class="math inline">\(\lim_{\mathbf{q}\to 0}\)</span>?</p>
 </div>
 </div>
-<p>The compressibility sum rule is often written in terms of the speed of sound <span class="math inline">\(c = (\kappa m \rho)^{-1/2}\)</span> as</p>
+<p>The compressibility sum rule is often written in terms of the speed of sound <span class="math inline">\(c = (\beta m \rho)^{-1/2}\)</span> as</p>
 <p><span class="math display">\[
 \lim_{\mathbf{q}\to 0}\int_0^\infty \frac{S(\mathbf{q},\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N}{2mc^2}.
 \]</span></p>
 <p>Let’s consider a simple example. Some systems, notably Bose gases, have a zero temperature dynamical structure factor that at low momentum has the following approximate form</p>
 <p><span id="eq-sma"><span class="math display">\[
 S_\rho(\mathbf{q},\omega) \sim 2\pi S_\rho(\mathbf{q}) \delta(\omega - \omega(\mathbf{q})),
-\tag{25}\]</span></span></p>
-<p>where <span class="math inline">\(\omega(\mathbf{q})\)</span> is the dispersion relation of the collective excitations. In reality, the <span class="math inline">\(\delta\)</span>-function is never infinitely sharp, but has a finite width on account of interactions between excitations causing scattering and / or decay. In the approximation <a href="#eq-sma" class="quarto-xref">Equation&nbsp;25</a>, often known as the <strong>single mode approximation</strong>, the f-sum rule tells us that</p>
+\tag{28}\]</span></span></p>
+<p>where <span class="math inline">\(\omega(\mathbf{q})\)</span> is the dispersion relation of the collective excitations. In reality, the <span class="math inline">\(\delta\)</span>-function is never infinitely sharp, but has a finite width on account of interactions between excitations causing scattering and / or decay. In the approximation <a href="#eq-sma" class="quarto-xref">Equation&nbsp;28</a>, often known as the <strong>single mode approximation</strong>, the f-sum rule tells us that</p>
 <p><span class="math display">\[
 S_\rho(\mathbf{q}) = \frac{N\mathbf{q}^2}{2m\omega(\mathbf{q})}.
 \]</span></p>

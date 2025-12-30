@@ -14,7 +14,7 @@ You know that noninteracting bosons form a Bose condensate: we will see how weak
 Our first attack on the problem is variational. It's very easy to come up with a variational wavefunction for the ground state of a Bose gas: put all the particles in the same single particle state!
 
 $$
-\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_i)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}.
+\Psi(\br_1,\ldots \br_N) = \prod_{j=1}^N \varphi_0(\br_j)= \frac{1}{\sqrt{N!}}\left(\adop(\varphi_0)\right)^N\ket{\text{VAC}}.
 $$ {#eq-gp-wavefn}
 
 A state with a macroscopic number of particles in a single particle state is known as a __Bose condensate__. You have probably studied the statistical mechanics of an ideal Bose gas before: the main feature is a __condensation temperature__ below which macroscopic occupation occurs.

@@ -213,12 +213,12 @@ Actually, no self-respecting mathematician would write something like @eq-sho-no
 
 :::
 
-The mathematical way to write an equation like @eq-sho-noise is as the pair of first order SDEs
+The mathematical way to write an equation like @eq-sho-noise is as a pair of first order SDEs
 
 $$
 \begin{aligned}
 dy &= \frac{p}{m} dt\nonumber \\
-dp &= -m\left[\omega_0^2 y +\gamma p\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
+dp &= -\left[m\omega_0^2 y +\frac{\gamma p}{m}\right]dt +\sqrt{2\gamma k_\text{B}T}dW,
 \end{aligned}
 $$
 
@@ -649,10 +649,10 @@ $$
 This perturbation couples to the density, and we ask how the density is affected by it. In a translationally invariant system
 
 $$
-\langle\langle \rho_\bq(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi^{\rho}_\bq(t-t') V_\bq(t)\,dt',
+\langle\langle \rho_\bq(t)\rangle\rangle = -\frac{1}{L^3} \int_{-\infty}^t  \chi_{\rho}(\bq,t-t') V_\bq(t')\,dt',
 $$
 
-where the density response function $\chi^\rho_\bq(t)$ is
+where the density response function $\chi_\rho(\bq,t)$ is
 
 $$
 \chi_\rho(\bq,t) = i\langle\langle\left[\rho_\bq(t),\rho_{-\bq}(0)\right]\rangle\rangle.
@@ -731,32 +731,52 @@ where $E_0$ is the ground state energy. Since energy is an extensive quentity we
 
 $$
 \beta^{-1} = \rho^2 \epsilon''(\rho).
-$$
+$$ {#eq-beta-deriv}
 
-- In the presence of a potential $V(\br)$, energy density is 
-
-$$
-\epsilon(\rho_0+\delta\rho) = \frac{1}{2\beta\rho_0^2} \left[\delta\rho\right]^2 + V(\br)\delta\rho
-$$
-
-- Minimizing with respect to $\delta\rho$ gives
+The inverse of the compressibility is also known as the [bulk modulus](https://en.wikipedia.org/wiki/Bulk_modulus), often denoted by $\kappa$. Using @eq-beta-deriv the compressibility can be related to the change in the energy density of a system in an external potential $V(\br)$. The potential causes the density to deviate from its value in the uniform system. This deviation can be found by considering the energy density to quadratic order in the density deviation 
 
 $$
-\epsilon(V(\br)) = - \frac{\beta\rho_0^2}{2} \left[V(\br)\right]^2
+\epsilon(\rho+\delta\rho) = \frac{1}{2\beta\rho^2} \left[\delta\rho\right]^2 + V(\br)\delta\rho.
 $$
 
-- Compare with perturbation theory
+Minimizing this expression with respect to $\delta\rho$ gives
 
-Recall that the chemical potential $\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)$. Then
+$$
+\epsilon(V(\br)) = - \frac{\beta\rho^2}{2} \left[V(\br)\right]^2
+$$ {#eq-v-quad}
+
+We now compare this expression with the result of second order perturbation theory for the energy due to the perturbation
+
+$$
+\sum_j V_0 \cos(\bq\cdot \br_j) = \frac{V_0}{2}\left[\rho_\bq+\rho_{-\bq}\right]. 
+$$
+
+The standard expression of second order perturbation theory (the first order vanishes) gives
+$$
+E^{(2)} =\frac{V_0^2}{2} \sum_{n\neq 0} \frac{|\braket{0|\rho_\bq|n}|^2}{E_0-E_n} =-\frac{V_0^2}{2}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi}.
+$$ {#eq-2nd-order}
+
+
+::: {.callout-tip}
+## Check
+
+Confirm @eq-2nd-order. Note that for a translationally invariant system, energy eigenstates are eignestates of momentum. If the ground state $\ket{0}$ has zero momentum, then $\rho_\bq\ket{0}$ has momentum $\bq$ and only has nonzero matrix elements with eigenstates of momentum $\bq$. For eigenstate $\ket{n}$ with momentum $\bq$ there is one with momentum $-\bq$ of the same energy (by parity symmetry).
+
+:::
+
+
+Comparing this expression with @eq-v-quad, using the average value of $\langle\left[V(\br)\right]^2\rangle = V_0^2/2$
+
+<!-- Recall that the chemical potential $\mu = \frac{\partial E_0}{\partial N}=\epsilon'(\rho)$. Then
 
 $$
 \beta = \rho^{-2} \frac{\partial \rho}{\partial \mu} = \frac{1}{\rho N}\chi'(0,0).  
 $$
 
-Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Kronig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature
+Now $\chi'(\bq,\omega)$ can be written in terms of $\chi''(\bq,\omega)$ (Kramers--Kronig) and $\chi''(\bq,\omega)$ is related to $S_\rho(\bq,\omega)$. This gives the compressibility sum rule at zero temperature -->
 
 $$
-\lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\kappa}{2}.
+\lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N\rho\beta}{2}.
 $$
 
 ::: {.callout-tip}
@@ -766,7 +786,7 @@ Why do we need $\lim_{\bq\to 0}$?
 
 :::
 
-The compressibility sum rule is often written in terms of the speed of sound $c = (\kappa m \rho)^{-1/2}$ as
+The compressibility sum rule is often written in terms of the speed of sound $c = (\beta m \rho)^{-1/2}$ as
 
 $$
 \lim_{\bq\to 0}\int_0^\infty \frac{S(\bq,\omega)}{\omega}\frac{d\omega}{2\pi} = \frac{N}{2mc^2}.
