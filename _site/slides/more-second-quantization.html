@@ -401,9 +401,12 @@ N_R}\mathrm{Re}\,e^{i\theta}\,\varphi^*_L(\mathbf{r},t)\varphi_R(\mathbf{r},t)}^
 <div class="callout-content">
 <p>Consider a Gaussian wavefunction of width <span class="math inline">R_0</span> at time <span class="math inline">t=0</span>. Show (by substitution into the Schrödinger equation is fine) that this function evolves as</p>
 <p><span class="math display">
-\varphi(\mathbf{r},t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\mathbf{r}^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right]
+\varphi(\mathbf{r},t)=\left(\frac{1}{2\pi \sigma_0^2}\right)^{1/4}\frac{1}{\sqrt{1 + it / (2m\sigma_0^2)}}\exp\left[-\frac{\mathbf{r}^2}{4\sigma_0^2\left(1 + it/(2m\sigma_0^2)   \right)}\right]
 </span></p>
-<p>where <span class="math inline">R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2</span>.</p>
+<p>After time <span class="math inline">t</span> the width of this wavepacket is</p>
+<p><span class="math display">
+\sigma_t^2=\sigma_0^2+\frac{t^2}{4m^2\sigma_0^2}
+</span></p>
 </div>
 </div>
 </div>
@@ -1009,7 +1012,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -271,10 +271,14 @@ $$
 Consider a Gaussian wavefunction of width $R_0$ at time $t=0$. Show (by substitution into the Schrödinger equation is fine) that this function evolves as
 
 $$
-\varphi(\br,t)=\frac{1}{\left(\pi R_t^{2}\right)^{3/4}}\exp\left[-\frac{\br^2\left(1+i t/m R_0^2)\right)}{2R_t^2}\right]
+\varphi(\br,t)=\left(\frac{1}{2\pi \sigma_0^2}\right)^{1/4}\frac{1}{\sqrt{1 + it / (2m\sigma_0^2)}}\exp\left[-\frac{\br^2}{4\sigma_0^2\left(1 + it/(2m\sigma_0^2)	\right)}\right]
 $$
 
-where $R_t^2=R_0^2+\left(\frac{ t}{mR_0}\right)^2$.
+After time $t$ the width of this wavepacket is 
+
+$$
+\sigma_t^2=\sigma_0^2+\frac{t^2}{4m^2\sigma_0^2}
+$$
 
 :::
 

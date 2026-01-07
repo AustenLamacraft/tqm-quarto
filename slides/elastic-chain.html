@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../favicon-32x32.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.24">
+
+  <title>Theories of Quantum Matter – Elastic Chain</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-db84968dd3a81be0f114100d4bbaf104.css">
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Elastic Chain</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section class="slide level2 center">
+
+<div class="hidden">
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
+</div>
+</section>
+<section id="the-elastic-chain" class="slide level2 center">
+<h2>The Elastic Chain</h2>
+<ul>
+<li><p>Simple model of quantum solid</p></li>
+<li><p>Quantum fluctuations change character of crystalline order</p></li>
+</ul>
+<blockquote>
+<p>The career of a young theoretical physicist consists of treating the harmonic oscillator in ever-increasing levels of abstraction</p>
+</blockquote>
+</section>
+<section id="hamiltonian" class="slide level2 center">
+<h2>Hamiltonian</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
+</figure>
+</div>
+<p><span class="math display">
+H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
+</span></p>
+<ul>
+<li><p>Identify <span class="math inline">u_j=u_{N+j}</span></p></li>
+<li><p>Let’s look at the classical system first</p></li>
+</ul>
+</section>
+<section id="equations-of-motion" class="slide level2 center">
+<h2>Equations of Motion</h2>
+<p><span class="math display">
+m \ddot u_j = k(u_{j-1} + u_{j+1} - 2u_j).
+</span></p>
+<ul>
+<li>Look for oscillatory solutions <span class="math inline">u_j(t) = u_j e^{-i\omega t}</span></li>
+</ul>
+<p><span class="math display">
+-\omega^2 \begin{pmatrix}
+u_1 \\
+u_2 \\
+\cdots \\
+u_{N-1}\\
+u_N
+\end{pmatrix} =
+\frac{k}{m}
+\begin{pmatrix}
+-2 &amp; 1 &amp; 0 &amp; \cdots &amp; 1 \\
+1 &amp; -2 &amp; 1 &amp; \cdots &amp; 0\\
+\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\
+0 &amp; \cdot &amp; 1 &amp; -2 &amp; 1\\
+1 &amp; 0 &amp; \cdots &amp; 1 &amp; -2
+\end{pmatrix}
+\begin{pmatrix}
+u_1 \\
+u_2 \\
+\cdots \\
+u_{N-1}\\
+u_N
+\end{pmatrix}
+</span> - Eigenvectors given by plane waves <span class="math inline">u_j = (z_n)^j</span>, where <span class="math inline">z_n</span> <span class="math display">
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = 0,\ldots, N-1
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Let’s take <span class="math inline">N</span> odd and index <span class="math inline">z_n</span> using positive and negative</li>
+</ul>
+<p><span class="math display">
+z_n = \exp\left(\frac{2\pi i n}{N}\right),\qquad n = -(N-1)/2,\ldots, (N-1)/2.
+</span></p>
+<ul>
+<li>Write <span class="math inline">\eta_n\equiv \frac{2\pi n}{N}</span>, so that eigenstates are <span class="math inline">u_j=\exp(i\eta_n j)</span></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>By substituting into the equation of motion show that the dispersion relation is <span class="math display">
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="dispersion" class="slide level2 center">
+<h2>Dispersion</h2>
+<p><span class="math display">
+\omega(\eta) = \sqrt{\frac{4k}{m}}\left|\sin\eta/2\right|
+</span></p>
+<ol type="1">
+<li><span class="math inline">\omega(\eta)\to 0</span> as <span class="math inline">\eta\to 0</span>. <span class="math inline">\eta=0</span> mode corresponds to translation</li>
+<li>At small <span class="math inline">\eta</span> dispersion is <em>linear</em>, as we expect for sound waves</li>
+</ol>
+</section>
+<section id="general-solution" class="slide level2 center">
+<h2>General solution</h2>
+<ul>
+<li><p>Expressed as superposition of normal modes <span class="math display">
+u_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n(t) e^{i\eta_n j}
+</span></p></li>
+<li><p><strong>Important</strong> <span class="math inline">q_{-n}=q^*_n</span> ensures that <span class="math inline">u_j</span> is real</p></li>
+<li><p>Time dependence <span class="math display">
+q_n(t) = \alpha_n e^{-i\omega(\eta_n) t} + \beta_n e^{i\omega(\eta_n) t}
+</span></p></li>
+<li><p><span class="math inline">q_0(t) = \sqrt{N}(X+Vt)</span> describes the motion of the centre of mass</p></li>
+</ul>
+</section>
+<section id="hamiltonian-formulation" class="slide level2 center">
+<h2>Hamiltonian formulation</h2>
+<ul>
+<li><p>Write momenta in terms of Fourier modes <span class="math display">
+p_j(t) = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}
+</span></p></li>
+<li><p>Note change of sign in exponent! If <span class="math inline">u_j</span>, <span class="math inline">p_j</span> are canonical variables <span class="math inline">\{u_j, p_k\}=\delta_{jk}</span>, then <span class="math inline">\{q_m,\pi_n\}=\delta_{mn}</span>.</p></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that in terms of the Fourier modes <span class="math display">
+H = \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right].
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{aligned}
+T =  \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2mN}\sum_{j=1}^N\left(\sum_{|n| \leq (N-1)/2} \sum_{|m| \leq (N-1)/2}\pi_n e^{-i\eta_n j} \pi_m e^{-i\eta_m j}\right)
+\end{aligned}
+</span></p>
+<ul>
+<li><strong>Key idea</strong></li>
+</ul>
+<p><span class="math display">
+\sum_{j=1}^N e^{-i(\eta_n+\eta_m) j}= N\delta_{n,-m}
+</span></p>
+<p><span class="math display">
+T = \frac{1}{2m}\sum_{|n| \leq (N-1)/2} \pi_n  \pi_{-n}
+</span></p>
+</section>
+<section id="system-of-oscillators" class="slide level2 center">
+<h2>System of oscillators</h2>
+<ul>
+<li><p>Could split amplitudes into real and imaginary parts <span class="math display">
+\begin{aligned}
+q_n &amp;= \frac{1}{\sqrt{2}}\left(q_n' + i q_n''\right),\quad q_{-n} = \frac{1}{\sqrt{2}}\left(q_n' - i q_n''\right)\\
+\pi_n &amp;= \frac{1}{\sqrt{2}}\left(\pi_n' + i \pi_n''\right),\quad \pi_{-n} = \frac{1}{\sqrt{2}}\left(\pi_n' - i \pi_n''\right),\quad n\geq 0.
+\end{aligned}
+</span> The Hamiltonian is then <span class="math inline">H=H' + H''</span> with <span class="math display">
+H' = \sum_{0 &lt; n \leq (N-1)/2} \left[\frac{1}{2m}\pi'_n \pi'_{n} + k  (1-\cos \eta_n) q'_n q'_{n}\right]
+</span></p></li>
+<li><p>Compare with usual SHO: read off dispersion relation</p></li>
+</ul>
+</section>
+<section id="complex-coordinates" class="slide level2 center">
+<h2>Complex Coordinates</h2>
+<p><span class="math display">
+a = \sqrt{\frac{m\omega}{2}}\left(x + \frac{i}{m\omega} p \right)
+</span> <span class="math display">
+H = \omega \left|a\right|^2
+</span></p>
+<ul>
+<li>Hamilton’s equations are</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\dot a &amp;= -i \frac{\partial H}{\partial a^*}= -i\omega a\\
+\dot a^*  &amp;= i \frac{\partial H}{\partial a} = i\omega a^*
+\end{aligned}
+</span></p>
+<ul>
+<li>Solution <span class="math inline">a(t) = e^{-i\omega t} a(0)</span></li>
+</ul>
+</section>
+<section id="complex-coordinates-normal-modes" class="slide level2 center">
+<h2>Complex coordinates: normal modes</h2>
+<p><span class="math display">
+\begin{aligned}
+a_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_n + \frac{i}{m\omega(\eta_n)}\pi_{-n}\right)\nonumber\\
+a^*_n &amp;= \sqrt{\frac{m\omega(\eta_n)}{2}}\left(q_{-n} - \frac{i}{m\omega(\eta_n)}\pi_{n}\right),\qquad n\neq 0
+\end{aligned}
+</span></p>
+<p><span class="math display">
+\begin{aligned}
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
+\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right)
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\begin{aligned}
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^*\right)\nonumber\\
+\pi_n &amp;= -i\sqrt{\frac{m\omega(\eta_n)}{2}}\left(a_{-n} - a_{n}^*\right),\\
+H &amp;= \sum_{|n| \leq (N-1)/2} \left[\frac{1}{2m}\pi_n \pi_{-n} + k  (1-\cos \eta_n) q_n q_{-n}\right]
+\end{aligned}
+</span></p>
+<ul>
+<li><span class="math inline">H</span> in terms of <span class="math inline">a_n</span>, <span class="math inline">a_n^*</span></li>
+</ul>
+<p><span class="math display">
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) \left|a_n\right|^2
+</span></p>
+<ul>
+<li>First term is (free) centre of mass</li>
+</ul>
+</section>
+<section id="quantum-oscillators" class="slide level2 center">
+<h2>Quantum Oscillators</h2>
+<p><span class="math inline">a</span>, <span class="math inline">a^*\longrightarrow a^{\vphantom{\dagger}}</span>, <span class="math inline">a^\dagger</span> satisfying <span class="math inline">[a^{\vphantom{\dagger}},a^\dagger]=1</span> <span class="math display">
+H = \frac{\omega}{2}\left(a^\dagger a^{\vphantom{\dagger}}+a^{\vphantom{\dagger}}a^\dagger\right)
+</span></p>
+<ul>
+<li><p>Key property is <span class="math display">
+\begin{aligned}
+\left[a^{\vphantom{\dagger}}, H\right] &amp;= \omega a^{\vphantom{\dagger}}\\
+\left[a^\dagger, H\right] &amp;= -\omega a^\dagger
+\end{aligned}
+</span></p></li>
+<li><p>If <span class="math inline">\lvert{\psi}\rangle</span> is an eigenstate of the Hamiltonian <span class="math inline">H \lvert{\psi}\rangle = E \lvert{\psi}\rangle</span> then <span class="math inline">a^\dagger\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E+\omega</span> <span class="math display">
+H a^\dagger\lvert{\psi}\rangle = a^\dagger H \lvert{\psi}\rangle + [H, a^\dagger] \lvert{\psi}\rangle = \left(E+\omega\right)a^\dagger\lvert{\psi}\rangle
+</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Similarly <span class="math inline">a\lvert{\psi}\rangle</span> is an eigenstate with energy <span class="math inline">E-\omega</span></p></li>
+<li><p>Unless <span class="math inline">a^{\vphantom{\dagger}}\lvert{\psi}\rangle=0</span>, in which case <span class="math inline">\lvert{\psi}\rangle=\lvert{0}\rangle</span>, the ground state</p></li>
+<li><p>As a result <span class="math display">
+\lvert{n}\rangle = \frac{1}{\sqrt{n!}}\left(a^\dagger\right)^n\lvert{0}\rangle
+</span> The factor of <span class="math inline">\frac{1}{\sqrt{n!}}</span> normalizes the state</p></li>
+<li><p>The ground state has energy <span class="math inline">E_0=\omega/2</span></p></li>
+</ul>
+</section>
+<section id="the-quantum-chain" class="slide level2 center">
+<h2>The Quantum Chain</h2>
+<ul>
+<li><p>We have operators <span class="math inline">[a^{\vphantom{\dagger}}_m,a^\dagger_n]=\delta_{mn}</span>, and Hamiltonian <span class="math display">
+H = \frac{\pi_0^2}{2m}+\sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\omega(\eta_n)}{2}\left(a^\dagger_na^{\vphantom{\dagger}}_n+a^{\vphantom{\dagger}}_na^\dagger_n\right)
+</span></p></li>
+<li><p>General energy eigenstate may be written</p></li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\lvert{\mathbf{N}}\rangle &amp;= \prod_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \frac{\left(a^\dagger_n\right)^{N_n}}{\sqrt{N_n!}} \lvert{0}\rangle\\
+E(\mathbf{N}) &amp;= \overbrace{\frac{1}{2}\sum_{|n| \leq (N-1)/2} \omega(\eta_n)}^{\equiv E_0} + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
+\end{aligned}
+</span></p>
+</section>
+<section id="oscillator-quanta-are-bosons" class="slide level2 center">
+<h2>Oscillator Quanta are Bosons!</h2>
+<ul>
+<li><p>Eigenstates labelled by occupation numbers</p></li>
+<li><p>Energy is additive <span class="math display">
+E(\mathbf{N}) = E_0 + \sum_{\substack{n\neq 0 \\ |n| \leq (N-1)/2}} \omega(\eta_n) N_n
+</span></p></li>
+<li><p>These are <em>not</em> the particles making up the chain!</p></li>
+</ul>
+</section>
+<section id="thermodynamic-nto-infty-limit" class="slide level2 center">
+<h2>Thermodynamic (<span class="math inline">N\to \infty</span>) limit</h2>
+<ul>
+<li>Expect to find <em>extensive</em> energy, proportional to system size <span class="math display">
+e_0 = \lim_{N\to \infty} \frac{E_0}{N}
+</span></li>
+<li>Separation of <span class="math inline">\eta_n</span> values is <span class="math inline">2\pi/N</span>, so <span class="math display">
+\sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right)
+</span> so <span class="math display">
+e_0 = \int_{-\pi}^\pi\frac{d\eta}{2\pi} \frac{\omega(\eta)}{2} = \sqrt{\frac{k}{2m}}\int_{-\pi}^\pi\frac{d\eta}{2\pi} \sqrt{1-\cos
+\eta}=\frac{2}{\pi}\sqrt{\frac{k}{m}}
+</span></li>
+</ul>
+</section>
+<section id="continuum-a-to-0-limit" class="slide level2 center">
+<h2>Continuum (<span class="math inline">a \to 0</span>) limit</h2>
+<ul>
+<li>1D elastic modulus is <span class="math display">
+\kappa \equiv \frac{\text{tension}}{\text{strain}}=\frac{k\Delta x}{\Delta x/a} = ka
+</span></li>
+<li><span class="math inline">k/m =k/(\rho a)= \kappa/(\rho a^2)</span>, where <span class="math inline">\rho</span> is mass / length <span class="math display">
+\frac{E_0}{L} =\frac{2}{\pi}\sqrt{\frac{k}{m}}\frac{N}{L} = \frac{2}{\pi}\sqrt{\frac{\kappa}{\rho}}\left(\frac{N}{L}\right)^2
+</span></li>
+<li>Energy per unit length diverges as <span class="math inline">N\to\infty</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Potential energy can be written <span class="math display">
+V = \frac{k}{2} \sum_j^N (u_j-u_{j+1})^2 \xrightarrow{N\to\infty} \frac{\kappa}{2} \int_0^L dx \left[u'(x)\right]^2.
+</span></p></li>
+<li><p>Define the Fourier modes slightly differently <span class="math display">
+u(x) = \sum_{n=-\infty}^\infty u_n e^{ik_n x}
+</span> where <span class="math inline">k_n =2\pi n/L</span>. Note that <span class="math inline">k_n x = \eta_n j</span> <span class="math display">
+V=\frac{\kappa L}{2}\sum_n k_n^2  u_nu_{-n}
+</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Defining the <em>momentum density</em> <span class="math inline">\pi(x=ja) = p_j N/L</span>, then <span class="math display">
+\left[u(x),\pi(x')\right]=i\delta(x-x')
+</span> <span class="math display">
+T = \sum_{j=1}^N \frac{p_j^2}{2m} = \frac{1}{2\rho}\int_0^L dx\left[\pi(x)\right]^2
+</span></p></li>
+<li><p>Use mode expansion</p></li>
+</ul>
+<p><span class="math display">
+\pi(x) = \lim_{N\to\infty} \frac{p_{j=xN/L}N}{L} =\frac{1}{L}\sum_{n=-\infty}^\infty \pi_n e^{-2\pi i nx /L}
+</span></p>
+<p><span class="math display">
+T= \frac{1}{L}\sum_{n=-\infty}^\infty \frac{1}{2\rho} \pi_n\pi_{-n}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Continuum Hamiltonian <span class="math inline">H= T+V</span> <span class="math display">
+H = \sum_{n=-\infty}^\infty \left[\frac{1}{2\rho L} \pi_n\pi_{-n} + \frac{\kappa L k_n^2}{2}  u_nu_{-n} \right]
+</span></p></li>
+<li><p>We can now read off the dispersion relation <span class="math display">
+\omega(k) = c|k|
+</span> where <span class="math inline">c=\sqrt{\frac{\kappa}{\rho}}</span> is the speed of sound</p></li>
+<li><p>Lattice was origin of periodic dispersion. Now it has gone</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Transcribing the definition of the oscillator variables</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+a_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_n + \frac{i}{\sqrt{ZkL}}\pi_{-n}\right]\nonumber\\
+a^*_n &amp;= \frac{1}{\sqrt{2}}\left[\sqrt{ZkL} u_{-n} - \frac{i}{\sqrt{ZkL}}\pi_{n}\right]
+\end{aligned}
+</span></p>
+<ul>
+<li><span class="math inline">Z\equiv\sqrt{\kappa\rho}</span> is impedance</li>
+</ul>
+<p><span class="math display">
+H - E_0 = \sum_{n=-\infty}^\infty c\left|k_n\right|a^\dagger_na^{\vphantom{\dagger}}_n
+</span></p>
+</section>
+<section id="finite-temperature" class="slide level2 center">
+<h2>Finite Temperature</h2>
+<ul>
+<li><p>Occupancies thermal averages given by Bose function (<span class="math inline">\beta=\frac{1}{k_\text{B}T}</span>) <span class="math display">
+\langle N_n \rangle = n_\text{B}(\omega(\eta_n))\equiv \frac{1}{\exp\left(\beta\omega(\eta_n)\right)-1}
+</span></p></li>
+<li><p>Average energy is finite due to exponential tail of <span class="math inline">n_\text{B}(\omega)</span> <span class="math display">
+\langle H - E_0 \rangle =\sum_{|n|\leq (N-1)/2} \omega(\eta_n)n_\text{B}(\omega(\eta_n))
+</span></p></li>
+<li><p>At low energies <span class="math inline">n_{\text{B}}(\omega) \sim \frac{1}{\beta\omega}</span> and contribution of each mode is <span class="math display">
+\omega n_\text{B}(\omega) \xrightarrow{\omega\to 0}  k_\text{B}T
+</span></p></li>
+</ul>
+</section>
+<section id="position-fluctuations" class="slide level2 center">
+<h2>Position Fluctuations</h2>
+<ul>
+<li><p>Classical: regular arrangement of masses (+ thermal fluctuations)</p></li>
+<li><p>Quantum: <span class="math inline">u_j-u_k</span> fluctuates, even in ground state</p></li>
+</ul>
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle\neq 0
+</span></p>
+<ul>
+<li>Write displacements in <span class="math inline">a^{\vphantom{\dagger}}_n</span>, <span class="math inline">a^\dagger_{n}</span>, then evaluate expectation</li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+u_j &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j}\\
+q_n &amp;= \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right)
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Result:</li>
+</ul>
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle= \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right]
+</span></p>
+<p><span class="math inline">N\to\infty</span> limit</p>
+<p><span class="math display">
+\begin{aligned}
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle &amp;= \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\
+&amp;= \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
+\end{aligned}
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/disp_fluct.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li>When <span class="math inline">\left|j-k\right|\gg 1</span> integral dominated by <span class="math inline">\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi</span> <span class="math display">
+\omega(\eta) \sim \sqrt{\frac{k}{m}}|\eta|
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that as <span class="math inline">\left|i-j\right|\to\infty</span> <span class="math display">
+\langle{0}\rvert\left(u_i-u_j\right)^2\lvert{0}\rangle \sim  \frac{\ell_\text{osc}^2}{\pi} \log \left|i-j\right|
+</span></p>
+<p>where <span class="math inline">\ell_\text{osc}\equiv\left(km\right)^{-1/4}</span> is the <strong>oscillator length</strong></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Uncertainty in the separation of two masses increases with separation</p></li>
+<li><p>Ground state of chain <em>not</em> a crystal; more closely resembles fluid</p></li>
+<li><p>Conclusion depends on dimension (crystals <em>do</em> exist in 3D!)</p></li>
+</ul>
+</section>
+<section id="density-fluctuations" class="slide level2 center">
+<h2>Density Fluctuations</h2>
+<ul>
+<li><p>Alternatively, consider fluctuations of <em>density</em> <span class="math display">
+\rho(x) = \sum_{j=1}^N \delta_L(x-x_j)
+</span> <span class="math inline">x_j = ja + u_j</span>, and <span class="math inline">\delta_L(x)</span> is <span class="math inline">L</span>-periodic version of <span class="math inline">\delta</span>-function</p></li>
+<li><p>Fourier components <span class="math display">
+\rho_k = \sum_{j=1}^N\exp(-i k x_j)
+</span></p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\rho_k = \sum_{j=1}^N\exp(-i k x_j).
+</span></p>
+<ul>
+<li>In ordered configuration <span class="math inline">x_j = ja</span>, we have</li>
+</ul>
+<p><span class="math display">
+\rho_{k_n=2\pi n/L} = \begin{cases}
+N &amp; n = 0 \mod N \\
+0 &amp; \text{ otherwise.}
+\end{cases}
+</span></p>
+<ul>
+<li><p><strong>Bragg peaks</strong> at multiples of <span class="math inline">\frac{2\pi}{a}</span> observed in diffraction experiments</p></li>
+<li><p>Translation of lattice changes phase of <span class="math inline">\rho_k</span>, so <span class="math inline">|\rho_k|^2</span> unchanged</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>What about quantum ground state? We should evaluate <span class="math display">
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N \langle{0}\rvert \exp(iq[x_j-x_k])\lvert{0}\rangle
+</span> Upon substituting the mode expansion we get expressions of form <span class="math display">
+\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle.
+</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Prove the Hadamard Lemma</p>
+<p><span class="math display">
+\begin{aligned}
+e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]\right]+\frac{1}{3!}\left[A,\left[A,\left[A,B\right]\right]\right]+\ldots \\
+&amp;\equiv e^{\left[A,\cdot\right]}B,
+\end{aligned}
+</span></p>
+<p>[Hint: Consider the differential equation in <span class="math inline">x</span> obeyed by <span class="math inline">e^{xA}B e^{-xA}</span>]</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Check</strong></p>
+</div>
+<div class="callout-content">
+<p>Show that the exponent can be written in a form with all occurrences of <span class="math inline">a^\dagger</span> to the left of all <span class="math inline">a^{\vphantom{\dagger}}</span> (this operation is called <strong>normal ordering</strong>; we will meet it again).</p>
+<p><span class="math display">
+\exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger) = \exp(\lambda \mu /2) \exp(\mu a^\dagger)\exp(\lambda a^{\vphantom{\dagger}}).
+</span> [Hint: Consider the differential equations obeyed by <span class="math inline">F_1(s)=e^{s(A+B)}</span> and <span class="math inline">F_2(s)=e^{sA}e^{sB}</span>]</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Using <span class="math inline">\langle{0}\rvert \exp(\lambda a^{\vphantom{\dagger}}+ \mu a^\dagger)\lvert{0}\rangle = \exp(\lambda \mu /2)</span> we get</li>
+</ul>
+<p><span class="math display">
+\begin{equation*}
+\begin{split}
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N &amp;\exp(iqa[j-k])\\
+&amp;\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right)
+\end{split}
+\end{equation*}
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/struct_fact.png" class="quarto-figure quarto-figure-center" style="width:45.0%"></p>
+</figure>
+</div>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Have seen expression in exponent before!</li>
+</ul>
+<p><span class="math display">
+-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\sim - \frac{2\pi\ell_\text{osc}^2}{a^2}\log|j-k|
+</span></p>
+<ul>
+<li>Near first Bragg peak at <span class="math inline">q=2\pi/a</span> <span class="math display">
+\exp(i\Delta q a[j-k])\left|j-k\right|^{-2\pi\ell_\text{osc}^2/a^2}
+</span> where <span class="math inline">\Delta q</span> is deviation from <span class="math inline">2\pi/a</span>. This implies <span class="math display">
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle \sim \left(\Delta q\right)^{-1+2\pi\ell_\text{osc}^2/a^2}
+</span></li>
+</ul>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
