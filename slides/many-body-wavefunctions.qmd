@@ -557,16 +557,42 @@ $$
 
 - For fermions, the interaction has no effect at all ($\delta$-function)!
 
-- For bosons with $c\to \infty$: _eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates_
-
-::: {.callout-tip}
-## Check
-
-Why?
-
-:::
+- For bosons with $c\to \infty$: _eigenenergies coincide with those of free fermions, and eigenstates are symmetrized versions of the corresponding fermion eigenstates_
 
 ---
+
+$$
+ \Psi^S(x_1,\ldots x_N)=\Psi^A(x_1,\ldots x_N)\prod_{i<j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right]
+$$
+
+- $\theta(x)$ is the step function
+$$
+\theta(x)=\begin{cases}
+1 & x\geq 0\\
+0 & x<0
+\end{cases}
+$$
+
+- Factor changes sign every time two particle coordinates are exchanged
+
+---
+
+## Why does it work?
+
+$$
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j<k}\delta(x_j-x_k)
+$$
+
+- Equivalent to a boundary condition 
+$$
+\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+$$
+
+- For $c\to\infty$ wavefunction must vanish when two coordinates coincide
+
+- This is what $\Psi^A(x_1,\ldots x_N)$ does by construction
+
+-  Property is unaltered by the alternating sign factor
 
 ## Ground state
 

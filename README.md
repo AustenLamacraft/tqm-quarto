@@ -28,7 +28,7 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 - [X] There may be an inconsistency in the definition of Anderson spins. North pole should be occupancy by a pair but the u_p, v_p parameterization says otherwise.
 - [ ] Need to update the pictures of domain walls in the BCS theory to reflect this change.
 
-- [ ] Respond to Daniil's question about FDT symmetry for different operators 
+- [X] Respond to Daniil's question about FDT symmetry for different operators 
 
 - [ ] Add material not lectured to site
 

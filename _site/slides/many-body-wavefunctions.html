@@ -722,21 +722,37 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 <ul>
 <li><p>The second term is interaction between pairs of particles</p></li>
 <li><p>For fermions, the interaction has no effect at all (<span class="math inline">\delta</span>-function)!</p></li>
-<li><p>For bosons with <span class="math inline">c\to \infty</span>: <em>eigenenergies coincide with those of free fermions, and eigenstates are modulus of fermion eigenstates</em></p></li>
+<li><p>For bosons with <span class="math inline">c\to \infty</span>: <em>eigenenergies coincide with those of free fermions, and eigenstates are symmetrized versions of the corresponding fermion eigenstates</em></p></li>
 </ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Why?</p>
-</div>
-</div>
-</div>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\Psi^S(x_1,\ldots x_N)=\Psi^A(x_1,\ldots x_N)\prod_{i&lt;j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right]
+</span></p>
+<ul>
+<li><p><span class="math inline">\theta(x)</span> is the step function <span class="math display">
+\theta(x)=\begin{cases}
+1 &amp; x\geq 0\\
+0 &amp; x&lt;0
+\end{cases}
+</span></p></li>
+<li><p>Factor changes sign every time two particle coordinates are exchanged</p></li>
+</ul>
+</section>
+<section id="why-does-it-work" class="slide level2 center">
+<h2>Why does it work?</h2>
+<p><span class="math display">
+H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + c\sum_{j&lt;k}\delta(x_j-x_k)
+</span></p>
+<ul>
+<li><p>Equivalent to a boundary condition <span class="math display">
+\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+</span></p></li>
+<li><p>For <span class="math inline">c\to\infty</span> wavefunction must vanish when two coordinates coincide</p></li>
+<li><p>This is what <span class="math inline">\Psi^A(x_1,\ldots x_N)</span> does by construction</p></li>
+<li><p>Property is unaltered by the alternating sign factor</p></li>
+</ul>
 </section>
 <section id="ground-state" class="slide level2 center">
 <h2>Ground state</h2>
@@ -1015,7 +1031,7 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -820,33 +820,33 @@ P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 </section>
 <section id="impenetrable-bose-gas" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="impenetrable-bose-gas"><span class="header-section-number">2.3</span> Impenetrable Bose Gas</h3>
-<p>There’s a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian <span class="math display">\[
+<p>There’s a bit more mileage in the 1D Fermi gas yet. Consider the following Hamiltonian <span id="eq-ll"><span class="math display">\[
 H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&lt;k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
-\label{many_LL}
-\]</span> The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a <span class="math inline">\(\delta\)</span>-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
-<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: <span class="math inline">\(c\to \infty\)</span>, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are just the modulus of the corresponding fermion eigenstate</em>.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Check
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Why?</p>
-</div>
-</div>
-<p>Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
-<p>Thus the ground state on the ring has the form <span class="math display">\[
+\tag{15}\]</span></span></p>
+<p>The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a <span class="math inline">\(\delta\)</span>-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
+<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: <span class="math inline">\(c\to \infty\)</span>, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are symmetrized verions of the corresponding fermion eigenstates</em>:</p>
+<p><span id="eq-jw-trans"><span class="math display">\[
+\Psi^S(x_1,\ldots x_N)=\Psi^A(x_1,\ldots x_N)\prod_{i&lt;j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right],
+\tag{16}\]</span></span></p>
+<p>where <span class="math inline">\(\theta(x)\)</span> is the step function <span class="math display">\[
+\theta(x)=\begin{cases}
+1 &amp; x\geq 0\\
+0 &amp; x&lt;0
+\end{cases}.
+\]</span></p>
+<p>The factor in <a href="#eq-jw-trans" class="quarto-xref">Equation&nbsp;16</a></p>
+<p><span id="eq-jw-fact"><span class="math display">\[
+\prod_{i&lt;j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right]
+\tag{17}\]</span></span></p>
+<p>changes sign every time two particle coordinates are exchanged, which means it turns an antisymmetric fermionic wavefunction into a bosonic one. Why does this work? The interaction in the Hamiltonian <a href="#eq-ll" class="quarto-xref">Equation&nbsp;15</a> is equivalent to a boundary condition that may be obtained by integrating the Schrödinger equation with respect to one of the coordinates through a small interval containing another</p>
+<p><span class="math display">\[
+\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+\]</span></p>
+<p>Thus for <span class="math inline">\(c\to\infty\)</span> the wavefunction must vanish when two coordinates coincide, if the jump in the gradient is to remain finite (giving a finite kinetic energy). This is what <span class="math inline">\(\Psi^A(x_1,\ldots x_N)\)</span> does by construction, and this property is unaltered by the alternating sign factor in <a href="#eq-jw-trans" class="quarto-xref">Equation&nbsp;16</a>. Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
+<p>Combining <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> with <a href="#eq-jw-trans" class="quarto-xref">Equation&nbsp;16</a> gives the explict form of the impenetrable Bose gas ground state <span class="math display">\[
 \Psi_0(x_1,\ldots, x_N) = \prod_{i&lt;j}^{N} \left|\sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right)\right|.
 \]</span></p>
-<p>It’s not hard to see why this works. For a state to have a finite energy, the wavefunction must vanish whenever two coordinates coincide. This is because the interation energy has the expectation value <span class="math display">\[
-\langle{\Psi}\rvert H_\text{int} \lvert \Psi \rangle=cN(N-1)\int dx_1\cdots dx_{N-1}\left|
-\Psi(x_1,x_1,x_2,\ldots,x_N\right|^2
-\]</span> But we already have a complete set of eigenstates that obey this condition, namely the free fermion Slater determinants. It remains to make them symmetric functions by taking the modulus.</p>
-<p>This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions <em>as long</em> as that observable is insensitive to taking the modulus of the wavefunction. Thus the average density <span class="math inline">\(\rho_1(x)\)</span> and pair distribution <span class="math inline">\(\rho_2(x_1,x_2)\)</span> of the previous section can be found in this way, but the single particle density matrix <span class="math inline">\(g(x,y)\)</span> cannot.</p>
+<p>This mapping is quite powerful, and allows us to calculate any observable of the impenetrable Bose gas in terms of free fermions <em>as long</em> as that observable is insensitive to the presence of the factor <a href="#eq-jw-fact" class="quarto-xref">Equation&nbsp;17</a>. Thus the average density <span class="math inline">\(\rho_1(x)\)</span> and pair distribution <span class="math inline">\(\rho_2(x_1,x_2)\)</span> of the previous section can be found in this way, but the single particle density matrix <span class="math inline">\(g(x,y)\)</span> cannot.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -945,7 +945,7 @@ Baym, Gordon. 2018. <em>Lectures on Quantum Mechanics</em>. CRC Press.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
