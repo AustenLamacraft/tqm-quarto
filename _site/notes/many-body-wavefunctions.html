@@ -840,7 +840,7 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 \tag{17}\]</span></span></p>
 <p>changes sign every time two particle coordinates are exchanged, which means it turns an antisymmetric fermionic wavefunction into a bosonic one. Why does this work? The interaction in the Hamiltonian <a href="#eq-ll" class="quarto-xref">Equation&nbsp;15</a> is equivalent to a boundary condition that may be obtained by integrating the Schrödinger equation with respect to one of the coordinates through a small interval containing another</p>
 <p><span class="math display">\[
-\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+\frac{1}{2m}\frac{\partial \Psi}{\partial x_i}\Bigg|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
 \]</span></p>
 <p>Thus for <span class="math inline">\(c\to\infty\)</span> the wavefunction must vanish when two coordinates coincide, if the jump in the gradient is to remain finite (giving a finite kinetic energy). This is what <span class="math inline">\(\Psi^A(x_1,\ldots x_N)\)</span> does by construction, and this property is unaltered by the alternating sign factor in <a href="#eq-jw-trans" class="quarto-xref">Equation&nbsp;16</a>. Just like that, we’ve solved our first interacting many body system (and with infinite coupling, no less)!</p>
 <p>Combining <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a> with <a href="#eq-jw-trans" class="quarto-xref">Equation&nbsp;16</a> gives the explict form of the impenetrable Bose gas ground state <span class="math display">\[

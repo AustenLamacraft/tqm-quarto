@@ -447,7 +447,7 @@ $$ {#eq-jw-fact}
 changes sign every time two particle coordinates are exchanged, which means it turns an antisymmetric fermionic wavefunction into a bosonic one. Why does this work? The interaction in the Hamiltonian @eq-ll is equivalent to a boundary condition that may be obtained by integrating the Schrödinger equation with respect to one of the coordinates through a small interval containing another
 
 $$
-\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+\frac{1}{2m}\frac{\partial \Psi}{\partial x_i}\Bigg|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
 $$
 
 Thus for $c\to\infty$ the wavefunction must vanish when two coordinates coincide, if the jump in the gradient is to remain finite (giving a finite kinetic energy). This is what $\Psi^A(x_1,\ldots x_N)$ does by construction, and this property is unaltered by the alternating sign factor in @eq-jw-trans. Just like that, we've solved our first interacting many body system (and with infinite coupling, no less)!

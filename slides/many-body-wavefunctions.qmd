@@ -585,7 +585,7 @@ $$
 
 - Equivalent to a boundary condition 
 $$
-\frac{1}{2m}\Psi\Big|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
+\frac{1}{2m}\frac{\partial \Psi}{\partial x_i}\Bigg|^{x_i=x_j+}_{x_i=x_j-} = c \Psi(x_i=x_j)
 $$
 
 - For $c\to\infty$ wavefunction must vanish when two coordinates coincide
