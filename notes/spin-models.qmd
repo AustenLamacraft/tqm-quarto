@@ -6,6 +6,22 @@ title: Spin Models
 
 The elastic chain was a model defined in terms of the displacements $u_j$ and momenta $p_j$ of $N$ particles satisfying $[u_j,p_k]=i\delta_{jk}$. In this lecture we are going to consider models where the individual degrees of freedom are quantum mechanical _spins_, defined by a vectors of operators $\mathbf{s} = (s^x, s^y, s^z)$ at each site, obeying the usual spin commutation relations $[s^a,s^b]=i\epsilon_{abc}s^c$. Such _spin models_ are often used as quantum mechanical models of magnetic materials. Despite the obvious differences, we will see that there are a number of similarities between the elementary excitation of the two types of system.
 
+::: {.callout-note }
+
+Remember that instead of the components $(s^x, s^y, s^z)$ it's often useful to work with $s^\pm = s^x\pm i s^y$ with commutation relations
+
+$$
+\begin{aligned}
+\left[s^z,s^+\right] &= s^+\\
+\left[s^z,s^-\right] &= -s^-\\
+\left[s^+,s^-\right] &= 2s^z.
+\end{aligned}
+$$ {#eq-spin-ladder}
+
+$s^\pm$ are spin _raising_ and _lowering_ operators.
+
+:::
+
 Reading: @auerbach2012interacting.
 
 ---
@@ -244,13 +260,32 @@ The representation is
 
 $$
 \begin{aligned}
-s^+ &=\sqrt{2s}\sqrt{1-\frac{\adop\aop}{2s}}\aop \\
-s^- &= \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}} \\
-s^z &= \left(s - \adop \aop\right).
+s^+ &=\sqrt{2s-\adop\aop}\aop \\
+s^- &= \adop\sqrt{2s-\adop\aop} \\
+s^z &= \left(s - \adop \aop\right),
 \end{aligned}
 $$
 
-I'm going to leave it up to you to confirm that $[\aop,\adop]=1$ reproduces the spin commutation relations, and [this problem](../problem-sets/problem-set-1.qmd#from-schwinger-bosons-to-holstein--primakoff) from Problem Set 1 should demystify why this works to some extent. A rough understanding is as follows. $s^{\pm}$ and $\aop$, $\adop$ evidently have something in common in that they shift us up and down a ladder of states. That's why the relation between $s^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.
+where $[\aop,\adop]=1$.
+
+::: {.callout-tip}
+## Check
+
+Confirm that these expressions reproduce the spin commutation relations @eq-spin-ladder. Note that since
+
+$$
+\left[\adop\aop,\adop\right] = \adop,\qquad \left[\adop\aop,\aop\right] = -\aop,
+$$
+
+we have for any function of the _number operator_ $N\equiv \adop\aop$
+
+$$
+f(N)\adop = \adop f(N+1),\qquad f(N)\aop = \aop f(N-1).
+$$
+
+:::
+
+[This problem](../problem-sets/problem-set-1.qmd#from-schwinger-bosons-to-holstein--primakoff) from Problem Set 1 should demystify why this works to some extent. A rough understanding is as follows. $s^{\pm}$ and $\aop$, $\adop$ evidently have something in common in that they shift us up and down a ladder of states. That's why the relation between $s^z$ and the number of quanta in the oscillator is so simple. The oscillator ground state corresponds to $\ket{s,s}$.
 
 The difference is that in the spin case the ladder is finite, while in the oscillator it is (semi-)infinite. Thus we can't just have $s^+\propto \aop$. We must have something that stops us lowering beyond $s^z=-s$, corresponding to $2s$ oscillator quanta. That's the function of the factor in the square root in $s^-$.
 

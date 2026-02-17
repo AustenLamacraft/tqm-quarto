@@ -331,8 +331,8 @@ spin flip terms cause spins to move about. Ground state is more complicated!
 
 $$
 \begin{aligned}
-s^+ &=\sqrt{2s}\sqrt{1-\frac{\adop\aop}{2s}}\aop \\
-s^- &= \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}} \\
+s^+ &=\sqrt{2s-\adop\aop}\aop \\
+s^- &= \adop\sqrt{2s-\adop\aop} \\
 s^z &= \left(s - \adop \aop\right)
 \end{aligned}
 $$
@@ -340,7 +340,27 @@ $$
 ::: {.callout-tip}
 ## Check
 
-Show that $[\aop,\adop]=1$ reproduces the spin commutation relations $[s^a,s^b]=i\epsilon_{abc}s^c$
+Confirm that these expressions reproduce the spin commutation relations 
+
+$$
+\begin{aligned}
+\left[s^z,s^+\right] &= s^+\\
+\left[s^z,s^-\right] &= -s^-\\
+\left[s^+,s^-\right] &= 2s^z
+\end{aligned}
+$$ 
+
+<!-- Note that since
+
+$$
+\left[\adop\aop,\adop\right] = \adop,\qquad \left[\adop\aop,\aop\right] = -\aop,
+$$
+
+we have for any function of the _number operator_ $N\equiv \adop\aop$
+
+$$
+f(N)\adop = \adop f(N+1),\qquad f(N)\aop = \aop f(N-1).
+$$ -->
 
 :::
 
@@ -358,7 +378,7 @@ Relation between $s^z$ and number of quanta $n$ is simple: $s^z = s - n$
 
 - $s^+\propto \aop$, $s^-\propto \adop$ doesn't work. Something needed to stop us lowering beyond $s^z=-s$
 $$
-s^- = \sqrt{2s}\adop\sqrt{1-\frac{\adop\aop}{2s}}
+s^- = \adop\sqrt{2s-\adop\aop}
 $$
 
 

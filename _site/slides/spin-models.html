@@ -464,8 +464,8 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 
 <p><span class="math display">
 \begin{aligned}
-s^+ &amp;=\sqrt{2s}\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}}a^{\vphantom{\dagger}}\\
-s^- &amp;= \sqrt{2s}a^\dagger\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}} \\
+s^+ &amp;=\sqrt{2s-a^\dagger a^{\vphantom{\dagger}}}a^{\vphantom{\dagger}}\\
+s^- &amp;= a^\dagger\sqrt{2s-a^\dagger a^{\vphantom{\dagger}}} \\
 s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right)
 \end{aligned}
 </span></p>
@@ -478,7 +478,25 @@ s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right)
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Show that <span class="math inline">[a^{\vphantom{\dagger}},a^\dagger]=1</span> reproduces the spin commutation relations <span class="math inline">[s^a,s^b]=i\epsilon_{abc}s^c</span></p>
+<p>Confirm that these expressions reproduce the spin commutation relations</p>
+<p><span class="math display">
+\begin{aligned}
+\left[s^z,s^+\right] &amp;= s^+\\
+\left[s^z,s^-\right] &amp;= -s^-\\
+\left[s^+,s^-\right] &amp;= 2s^z
+\end{aligned}
+</span></p>
+<!-- Note that since
+
+$$
+\left[\adop\aop,\adop\right] = \adop,\qquad \left[\adop\aop,\aop\right] = -\aop,
+$$
+
+we have for any function of the _number operator_ $N\equiv \adop\aop$
+
+$$
+f(N)\adop = \adop f(N+1),\qquad f(N)\aop = \aop f(N-1).
+$$ -->
 </div>
 </div>
 </div>
@@ -491,7 +509,7 @@ s^\pm\lvert{s,m}\rangle = \sqrt{s(s+1)-m(m\pm 1)}\lvert{s,m\pm 1}\rangle
 </span> Relation between <span class="math inline">s^z</span> and number of quanta <span class="math inline">n</span> is simple: <span class="math inline">s^z = s - n</span></p></li>
 <li><p>Difference: <span class="math inline">2s+1</span> spin states, but infinite oscillator states</p></li>
 <li><p><span class="math inline">s^+\propto a^{\vphantom{\dagger}}</span>, <span class="math inline">s^-\propto a^\dagger</span> doesn’t work. Something needed to stop us lowering beyond <span class="math inline">s^z=-s</span> <span class="math display">
-s^- = \sqrt{2s}a^\dagger\sqrt{1-\frac{a^\dagger a^{\vphantom{\dagger}}}{2s}}
+s^- = a^\dagger\sqrt{2s-a^\dagger a^{\vphantom{\dagger}}}
 </span></p></li>
 </ul>
 </section>

@@ -235,7 +235,7 @@ $$
 
 Introducing a hole is thus favoured for $t>\frac{\mu-UN}{2d(N+1)}$.
 
-![Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling.](../assets/MottPerturb.png){width=60%}
+![Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling. Figure by William Royce.](../assets/mott-perturb.png){width=60%}
 
 This analysis applies only at small $t/U$. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let $t/U\to\infty$ we have a __Bose condensate__: all the particles can sit in the $\eta=0$ Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a __superfluid__. The boundaries that we have have found can be connected (drawing freehand -- see [Problem Set 2]({{< ref "problem-set-2#mean-field-for-bosehubbard" >}}) for a variational approach) to give the following phase diagram for the ground state of the Bose--Hubbard model.
 

@@ -239,7 +239,7 @@ $$
 
 ---
 
-![](../assets/MottPerturb.png){width=60% fig-align="center"}
+![](../assets/mott-perturb.png){width=60% fig-align="center"}
 
 ---
 

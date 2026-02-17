@@ -27,7 +27,7 @@ The source of these notes is [this GitHub repo](https://github.com/AustenLamacra
 - [ ] I believe there is an inconsistency between the two parts of Q6. The wavefunction given in the second part is problematic dimensionally - |c| doesn't have dimensions of inverse length. This is because the mass of the bosons m is not involved. From my results it follows that the consistent densities are obtained for m=2, i.e. the power of the exponents in psi should be m|c|/4*|x_j-x_k|.
 - [X] There may be an inconsistency in the definition of Anderson spins. North pole should be occupancy by a pair but the u_p, v_p parameterization says otherwise.
 - [ ] Need to update the pictures of domain walls in the BCS theory to reflect this change.
-
+- [ ] Update hand drawn diagrams with William Royce's diagrams in https://www.overleaf.com/project/6846ddc64bba2a49a368ea55
 - [X] Respond to Daniil's question about FDT symmetry for different operators 
 
 - [ ] Add material not lectured to site
