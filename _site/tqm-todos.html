@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>references – Theories of Quantum Matter</title>
+<title>tqm-todos – Theories of Quantum Matter</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -140,7 +121,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2025</span></a>
+ <span class="menu-text">TQM Lectures 2026</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -348,7 +329,25 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  <li><a href="#tqm-todos" id="toc-tqm-todos" class="nav-link active" data-scroll-target="#tqm-todos"><span class="header-section-number">1</span> TQM TODOs</a>
+  <ul class="collapse">
+  <li><a href="#site-migration-bugs-jekyll-quarto-debris" id="toc-site-migration-bugs-jekyll-quarto-debris" class="nav-link" data-scroll-target="#site-migration-bugs-jekyll-quarto-debris"><span class="header-section-number">1.1</span> Site &amp; migration bugs (Jekyll → Quarto debris)</a></li>
+  <li><a href="#physics-math-errors" id="toc-physics-math-errors" class="nav-link" data-scroll-target="#physics-math-errors"><span class="header-section-number">1.2</span> Physics / math errors</a>
+  <ul class="collapse">
+  <li><a href="#many-body-wavefunctions" id="toc-many-body-wavefunctions" class="nav-link" data-scroll-target="#many-body-wavefunctions"><span class="header-section-number">1.2.1</span> Many Body Wavefunctions</a></li>
+  <li><a href="#quantum-hall-effect-appendix" id="toc-quantum-hall-effect-appendix" class="nav-link" data-scroll-target="#quantum-hall-effect-appendix"><span class="header-section-number">1.2.2</span> Quantum Hall Effect (Appendix)</a></li>
+  <li><a href="#elastic-chain" id="toc-elastic-chain" class="nav-link" data-scroll-target="#elastic-chain"><span class="header-section-number">1.2.3</span> Elastic Chain</a></li>
+  <li><a href="#spin-models" id="toc-spin-models" class="nav-link" data-scroll-target="#spin-models"><span class="header-section-number">1.2.4</span> Spin Models</a></li>
+  <li><a href="#lattice-models" id="toc-lattice-models" class="nav-link" data-scroll-target="#lattice-models"><span class="header-section-number">1.2.5</span> Lattice Models</a></li>
+  <li><a href="#bose-gas" id="toc-bose-gas" class="nav-link" data-scroll-target="#bose-gas"><span class="header-section-number">1.2.6</span> Bose Gas</a></li>
+  <li><a href="#fermi-gas" id="toc-fermi-gas" class="nav-link" data-scroll-target="#fermi-gas"><span class="header-section-number">1.2.7</span> Fermi Gas</a></li>
+  <li><a href="#superconductivity" id="toc-superconductivity" class="nav-link" data-scroll-target="#superconductivity"><span class="header-section-number">1.2.8</span> Superconductivity</a></li>
+  <li><a href="#response-and-correlation" id="toc-response-and-correlation" class="nav-link" data-scroll-target="#response-and-correlation"><span class="header-section-number">1.2.9</span> Response and Correlation</a></li>
+  </ul></li>
+  <li><a href="#typos-small-style-fixes-by-chapter" id="toc-typos-small-style-fixes-by-chapter" class="nav-link" data-scroll-target="#typos-small-style-fixes-by-chapter"><span class="header-section-number">1.3</span> Typos &amp; small style fixes (by chapter)</a></li>
+  <li><a href="#content-updates-2016-present" id="toc-content-updates-2016-present" class="nav-link" data-scroll-target="#content-updates-2016-present"><span class="header-section-number">1.4</span> Content updates (2016 → present)</a></li>
+  <li><a href="#exam-bank-ideas-never-examined-territory-qhe-impenetrable-bose-gas-homhbt-hartreefockstoner-sum-rules" id="toc-exam-bank-ideas-never-examined-territory-qhe-impenetrable-bose-gas-homhbt-hartreefockstoner-sum-rules" class="nav-link" data-scroll-target="#exam-bank-ideas-never-examined-territory-qhe-impenetrable-bose-gas-homhbt-hartreefockstoner-sum-rules"><span class="header-section-number">1.5</span> Exam bank ideas (never-examined territory: QHE, impenetrable Bose gas, HOM/HBT, Hartree–Fock/Stoner, sum rules)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -358,13 +357,164 @@ div.csl-indent {
 
 
 
-<section id="references" class="level1 unnumbered">
-<h1 class="unnumbered">References</h1>
-<div id="refs" role="list">
+<section id="tqm-todos" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> TQM TODOs</h1>
+<p>Compiled from a review of the Notes at <a href="https://tqm.tripos.org/">tqm.tripos.org</a> and the past papers (2017–2023, 2025). Organised as: site/migration bugs → physics/math errors → typos by chapter → content updates → exam ideas.</p>
+<section id="site-migration-bugs-jekyll-quarto-debris" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="site-migration-bugs-jekyll-quarto-debris"><span class="header-section-number">1.1</span> Site &amp; migration bugs (Jekyll → Quarto debris)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Unconverted Liquid cite tags render literally: <code>{% cite dirac1926 %}</code> (Many Body Wavefunctions), <code>{% cite Fisher:1989aa %}</code> (Lattice Models)</label></li>
+<li><label><input type="checkbox">Broken <code>{{&lt; ref &gt;}}</code> shortcodes render as raw markup in: Spin Models (Appendix link), A is for Annihilation (two “Lecture 1” links), Lattice Models (Lecture 4, Problem Set 2), Bose Gas (Lecture 2), Superconductivity (“above figure”), Response and Correlation (Lecture 1)</label></li>
+<li><label><input type="checkbox">Dead links to excised chapters: <code>notes/lieb-liniger.qmd</code> (Spin Models “Lecture 15”), <code>notes/jellium.qmd</code> (B is for Bunching “Lecture 11”, Superconductivity “Lecture 12”) — purge or restore; also reword passages that assume Lieb–Liniger was covered</label></li>
+<li><label><input type="checkbox">Un-rendered math: “the phase of the <code>$ _k$</code>” (Elastic Chain §2.6, presumably ρ_k); “<code>$ H_ = - f(t)y, $</code>” (Response §2.6); raw <code>\braket</code> macro in Response Eq. 27; empty inline “<code>$ $</code>” in Superconductivity (“for small $ $”)</label></li>
+<li><label><input type="checkbox"><strong>Empty section</strong>: Superconductivity §2.2 “Discussion: Heisenberg’s Problem” — write it or delete the heading</label></li>
+<li><label><input type="checkbox"><strong>Truncated sentence</strong> in Elastic Chain §2.6: “To find the dependence on Δq” stops mid-thought; text missing before “This leads to the conclusion…”</label></li>
+<li><label><input type="checkbox">Past-papers page: embedded PDFs may not render for all users (page shows bare year headings without them) — consider adding plain download links alongside the embeds</label></li>
+</ul>
+</section>
+<section id="physics-math-errors" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="physics-math-errors"><span class="header-section-number">1.2</span> Physics / math errors</h2>
+<section id="many-body-wavefunctions" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="many-body-wavefunctions"><span class="header-section-number">1.2.1</span> Many Body Wavefunctions</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Integral limits: <code>∫_{k_F}^{k_F}</code> → <code>∫_{−k_F}^{k_F}</code> (density-matrix Check box)</label></li>
+<li><label><input type="checkbox">δ-function cusp condition off by factor 2 (integration over x_i misses the δ contribution from ∂²/∂x_j²): jump in ∂Ψ/∂x_i should be mcΨ</label></li>
+</ul>
+</section>
+<section id="quantum-hall-effect-appendix" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="quantum-hall-effect-appendix"><span class="header-section-number">1.2.2</span> Quantum Hall Effect (Appendix)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Schrödinger equation missing ψ on kinetic term</label></li>
+<li><label><input type="checkbox">Drift missing 1/m: <strong>v</strong> = (∇R + ∇S − qA)/m</label></li>
+<li><label><input type="checkbox">Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; “m” doubles as mass and Laughlin exponent — remark or relabel</label></li>
+</ul>
+</section>
+<section id="elastic-chain" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="elastic-chain"><span class="header-section-number">1.2.3</span> Elastic Chain</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j</label></li>
+<li><label><input type="checkbox">a_n definition: √(ZkL) needs |k_n|; “k” clashes with the spring constant</label></li>
+<li><label><input type="checkbox">[u_i, p_j] = iδ_ij stated in the classical section before quantization</label></li>
+</ul>
+</section>
+<section id="spin-models" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="spin-models"><span class="header-section-number">1.2.4</span> Spin Models</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Sign slip: Δs = −⟨(1/N)Σ a†a⟩ combined with ⟨sᶻ⟩ = (−1)ʲ(s − Δs) gives depletion the wrong sign; also η_n left inside the integral</label></li>
+<li><label><input type="checkbox">Anderson tower: ΔS_A² = −𝒩/2, not −𝒩/8</label></li>
+<li><label><input type="checkbox">“goes to zero as 𝒩 → 0” → 𝒩 → ∞</label></li>
+<li><label><input type="checkbox">Rotor energies: l(l+1), not L(L+1)</label></li>
+<li><label><input type="checkbox">“zero quanta on the odd sites, but 2s quanta on the odd sites” — one should be <em>even</em></label></li>
+<li><label><input type="checkbox">Projector: P_η = (1/N)Σ_n e^{−iηn}Tⁿ (exponent and 1/N)</label></li>
+<li><label><input type="checkbox">“des Cloiseaux” → <strong>des Cloizeaux</strong> (multiple places incl.&nbsp;figure caption; caption L=26 vs text N=26)</label></li>
+<li><label><input type="checkbox">Two-magnon appendix: missing “= 0” in the c₁/c₂ consistency equation; clarify units in “−4 not −8” remark</label></li>
+</ul>
+</section>
+<section id="lattice-models" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="lattice-models"><span class="header-section-number">1.2.5</span> Lattice Models</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Validity condition inverted: N_sites ≳ <strong>(U/t)²</strong>, not (t/U)²</label></li>
+<li><label><input type="checkbox">Fermi–Hubbard: U Σ_j N_{j,↑}N_{j,↓} (site index missing)</label></li>
+<li><label><input type="checkbox">i/j index mismatch in the opening Hamiltonian (recurs in Response: H_pert and T)</label></li>
+<li><label><input type="checkbox">t–J aside: unclosed parenthesis; “constant term in Equation 9” points at the wrong equation</label></li>
+</ul>
+</section>
+<section id="bose-gas" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="bose-gas"><span class="header-section-number">1.2.6</span> Bose Gas</h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>LHY appendix factor of 2</strong>: prefactor should be V/(8π²m); E_reg = (8/15π²)(V/m)(mnU₀)^{5/2}, consistent with the (correct) 128/15√π in the E₀ formula below it</label></li>
+<li><label><input type="checkbox">Vortex energy functional: kinetic pieces should carry n (not n²); “U” → U₀</label></li>
+<li><label><input type="checkbox">“difference between N and N+1” → N and N−1</label></li>
+<li><label><input type="checkbox">“Onsager–Feynmann” → Feynman</label></li>
+</ul>
+</section>
+<section id="fermi-gas" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="fermi-gas"><span class="header-section-number">1.2.7</span> Fermi Gas</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Galilean appendix: δk = <strong>mv</strong>, not v/m</label></li>
+<li><label><input type="checkbox">“f_{↑↑} = f_{↑↑}” → f_{↑↑} = f_{↓↓}</label></li>
+<li><label><input type="checkbox">Missing “+” between the two sums in the f_{↑↓} display</label></li>
+<li><label><input type="checkbox">z formula: U → U₀ for consistency</label></li>
+</ul>
+</section>
+<section id="superconductivity" class="level3" data-number="1.2.8">
+<h3 data-number="1.2.8" class="anchored" data-anchor-id="superconductivity"><span class="header-section-number">1.2.8</span> Superconductivity</h3>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>T_c formula</strong>: k_B T_c = (e^γ/π)Δ_BCS ≈ 0.567Δ with γ the Euler–Mascheroni constant (or redefine γ ≡ e^C); as written it reads as 0.18Δ</label></li>
+<li><label><input type="checkbox">Eq. 15 and two reprises: sum over p, summand indexed p′</label></li>
+<li><label><input type="checkbox">Eq. 14: product over i only with j = P(i); say φ(r) is the FT of v_p/u_p</label></li>
+<li><label><input type="checkbox">Appendix Eq. 20: U / U₀ / Ũ / U₀(p) notation inconsistent</label></li>
+<li><label><input type="checkbox">“|BCS⟩⟩” doubled ket</label></li>
+</ul>
+</section>
+<section id="response-and-correlation" class="level3" data-number="1.2.9">
+<h3 data-number="1.2.9" class="anchored" data-anchor-id="response-and-correlation"><span class="header-section-number">1.2.9</span> Response and Correlation</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Lamb model closed equation missing m’s (or γ = τ/(mc))</label></li>
+<li><label><input type="checkbox">e^{−γ/2mt} → e^{−γt/2m} (twice)</label></li>
+<li><label><input type="checkbox">m used as both mass and level index in the oscillator spectral representation</label></li>
+<li><label><input type="checkbox">β used for both inverse temperature and compressibility in one chapter — use κ</label></li>
+</ul>
+</section>
+</section>
+<section id="typos-small-style-fixes-by-chapter" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="typos-small-style-fixes-by-chapter"><span class="header-section-number">1.3</span> Typos &amp; small style fixes (by chapter)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked=""><strong>Intro</strong>: “decribing”; “at the the Curie temperature”; “the end of story”</label></li>
+<li><label><input type="checkbox" checked=""><strong>Many Body Wavefunctions</strong>: “provide we ignore”; “verions”; “explict”; “single particle state |φ_α⟩ are”</label></li>
+<li><label><input type="checkbox"><strong>QHE</strong>: “obvserved”; “electon”; “antianaltyic”; “the m=1 an m&gt;1”; “distrubution”; “A Laughlin Laughlin state” (caption); unclosed parenthesis after “∂_z̄“;”ρq₀” → qρ₀; “is then be given”; “intepret”</label></li>
+<li><label><input type="checkbox"><strong>Elastic Chain</strong>: “or original Hamiltonian”; “has lead to”; “way to to see”; “For a vector x_j = 1,…N” → f_j, j = 1,…,N; “∫₀^∞ φ(x)V(x−y)φ(y)” limits → [0, L]; backtick quote artifact in “the `size’ of the system”</label></li>
+<li><label><input type="checkbox"><strong>Spin Models</strong>: “we will at each state end up” → stage; “read of the dispersion” → off; “vanishes both η=0 and at”; “eigenergies”; missing full stop after “lower energy”</label></li>
+<li><label><input type="checkbox"><strong>A is for Annihilation</strong>: “movement of of”; “a_a” subscript; “on N−1 particle wavefunctions” → are; undefined shorthand B_{αβ} and Latin/Greek index mixing in the two-particle check; “Here we give simpler derivation”</label></li>
+<li><label><input type="checkbox"><strong>B is for Bunching</strong>: “from with Bose condensates”; “orginating”; “succintly”; “φ_r” → φ_R; bra ⟨N̄_R,N̄_L| has L/R swapped; bold ρ for scalar density; E_K and E_V used but never defined; “is the ground state is”; unclosed parenthesis at “(as we did in Lecture 4”</label></li>
+<li><label><input type="checkbox"><strong>Lattice Models</strong>: “in that in involves”; “neighouring”; “ocurrence”; “antiferromangetic”; missing full stop after “U/t→∞”; “the boundaries that we have have found”</label></li>
+<li><label><input type="checkbox"><strong>Bose Gas</strong>: “trignometric”; “digaonal”; “quantiatively”; “in erms of”; “There is far-reaching analogy”; unclosed parenthesis at Problem Set 2 link</label></li>
+<li><label><input type="checkbox"><strong>Fermi Gas</strong>: “Hamilonian”; “modifed”; “Discontinutity” (caption); “Thus we have Finally”; “In this limit we can take the |k|=|k′|=k_F”; unclosed parenthesis at Problem Set 3 link; stray period inside the 2×2 matrix</label></li>
+<li><label><input type="checkbox"><strong>Superconductivity</strong>: “which are are all”; “their theory become”; “though the BCS-BEC crossover” → through; “accross” (caption); “inhomogenous”; “as the form” → has; “isolated pair” → an isolated pair; lowercase fermi/bose/fermi-dirac scattered throughout; unclosed parenthesis at Lecture-12 reference; n_p vs n^P_p in Eq. 2</label></li>
+<li><label><input type="checkbox"><strong>Response and Correlation</strong>: “the dissipative dissipative part”; “far less significant that”; “corrsponding”; “quentity”; “eignestates”; missing full stop after “up or down in energy by ω”; double-bar rendering in “∂u/∂x‖”</label></li>
+</ul>
+</section>
+<section id="content-updates-2016-present" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="content-updates-2016-present"><span class="header-section-number">1.4</span> Content updates (2016 → present)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Add a lecture on <strong>topological band theory via the SSH model</strong> (Berry phase, winding number, edge states); optional second step: <strong>Kitaev chain</strong> paired with the Superconductivity lecture (already examined in 2019 — lecture material would close the loop)</label></li>
+<li><label><input type="checkbox">Add a short section on <strong>entanglement entropy</strong> (reduced density matrices of many-body states, area laws, why MPS/DMRG works) — hook: the density-matrix Note box in Ch. 1 and the N=26 exact-diagonalization section</label></li>
+<li><label><input type="checkbox"><strong>Refresh experimental anchors</strong>:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Fractional statistics measured 2020 (Bartolomei et al.&nbsp;anyon collider; Nakamura et al.&nbsp;interferometry); fractional QAH in moiré materials (2023)</label></li>
+<li><label><input type="checkbox">Unitary gas: Bertsch parameter ξ = 0.376(4) (experiment) and ≈0.37 (modern QMC), replacing 0.44 ± 0.01</label></li>
+<li><label><input type="checkbox">Cuprates/Hubbard: sharpen “still controversial” — pure 2D Hubbard at relevant doping is stripe-ordered, superconductivity restored by t′ (Simons-collaboration-era numerics)</label></li>
+<li><label><input type="checkbox">Bose/Fermi–Hubbard: quantum gas microscope figure (AF correlations imaged 2017)</label></li>
+</ul></li>
+<li><label><input type="checkbox">Optional closing lecture on <strong>dynamics</strong>: thermalization/ETH, quantum simulation (Rydberg arrays); MBL only with 2020s caveats</label></li>
+<li><label><input type="checkbox">Note box connecting the QHE Monte-Carlo sampling appendix to <strong>neural quantum states / diffusion-model sampling</strong> (Carleo–Troyer 2017)</label></li>
+<li><label><input type="checkbox"><strong>Candidates for removal/compression</strong> to make room:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">Fermi Gas §2.1 second-order f-function computation → state structure, quote F(φ), G(φ), keep effective-mass argument (~1 lecture freed)</label></li>
+<li><label><input type="checkbox">Lattice Models WKB “Physical Motivation” → appendix or cut</label></li>
+<li><label><input type="checkbox">Response damped-oscillator preamble → compress ~1/3 (Langevin detour → problem set)</label></li>
+<li><label><input type="checkbox">Fourier review → handout</label></li>
+<li><label><input type="checkbox">Stoner criterion → Check box</label></li>
+<li><label><input type="checkbox">Keep Anderson tower and two-magnon appendices (already non-examinable)</label></li>
+</ul></li>
+</ul>
+</section>
+<section id="exam-bank-ideas-never-examined-territory-qhe-impenetrable-bose-gas-homhbt-hartreefockstoner-sum-rules" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="exam-bank-ideas-never-examined-territory-qhe-impenetrable-bose-gas-homhbt-hartreefockstoner-sum-rules"><span class="header-section-number">1.5</span> Exam bank ideas (never-examined territory: QHE, impenetrable Bose gas, HOM/HBT, Hartree–Fock/Stoner, sum rules)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>LLL &amp; bosonic Laughlin</strong>: analytic wavefunctions → harmonic potential in LLL → Ψ₂ zero-energy proof for δ interactions → quasihole degeneracy counting / plasma density</label></li>
+<li><label><input type="checkbox"><strong>Beam splitter &amp; N-particle HOM</strong>: SU(2) mode rotation → odd-suppression law for N vs N → HBT connection → fermionic antibunching</label></li>
+<li><label><input type="checkbox"><strong>Girardeau mapping with a twist</strong>: mapping bookwork → n(k) for N=2 → twisted boundary conditions and n_s (boson vs fermion periodicity) → persistent currents</label></li>
+<li><label><input type="checkbox"><strong>Stoner meets Zeeman</strong>: HF bookwork → susceptibility with Stoner enhancement → d=2 first-order transition → discussion</label></li>
+<li><label><input type="checkbox"><strong>Feynman single mode</strong>: f-sum rule → S(q,ω) in Bogoliubov theory → Feynman bound ω(q) ≤ q²/2mS(q) → roton phenomenology</label></li>
+<li><label><input type="checkbox"><strong>Attractive Hubbard dimer as baby BCS</strong>: exact spectrum → Anderson pseudospins → BCS variational vs exact → number fluctuations</label></li>
+<li><label><input type="checkbox"><strong>SSH chain</strong>: two-band spectrum → winding number → explicit edge-state ansatz → Peierls argument (check overlap with 2018 Q3 part (a))</label></li>
+<li><label><input type="checkbox"><strong>Magnons in a field</strong>: FM with field bookwork → AFM doublet splitting ω(η) ± h → spin-flop softening → transverse magnetization (magnon BEC)</label></li>
+<li><label><input type="checkbox">Possible “modern classic” synthesis: Affleck–Lieb twist (2019 Q1) applied to Majumdar–Ghosh (2023 Q1) — twist argument consistent with a gap given two-fold degeneracy (hard)</label></li>
+</ul>
 
-</div>
 
-
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -4,7 +4,7 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 
 ## Site & migration bugs (Jekyll → Quarto debris)
 
-- [ ] Unconverted Liquid cite tags render literally: `{% cite dirac1926 %}` (Many Body Wavefunctions), `{% cite Fisher:1989aa %}` (Lattice Models)
+- [X] Unconverted Liquid cite tags render literally: `{% cite dirac1926 %}` (Many Body Wavefunctions), `{% cite Fisher:1989aa %}` (Lattice Models)
 - [ ] Broken `{{< ref >}}` shortcodes render as raw markup in: Spin Models (Appendix link), A is for Annihilation (two "Lecture 1" links), Lattice Models (Lecture 4, Problem Set 2), Bose Gas (Lecture 2), Superconductivity ("above figure"), Response and Correlation (Lecture 1)
 - [ ] Dead links to excised chapters: `notes/lieb-liniger.qmd` (Spin Models "Lecture 15"), `notes/jellium.qmd` (B is for Bunching "Lecture 11", Superconductivity "Lecture 12") — purge or restore; also reword passages that assume Lieb–Liniger was covered
 - [ ] Un-rendered math: "the phase of the `$ _k$`" (Elastic Chain §2.6, presumably ρ_k); "`$ H_ = - f(t)y, $`" (Response §2.6); raw `\braket` macro in Response Eq. 27; empty inline "`$ $`" in Superconductivity ("for small $ $")
@@ -15,7 +15,7 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 ## Physics / math errors
 
 ### Many Body Wavefunctions
-- [ ] Integral limits: `∫_{k_F}^{k_F}` → `∫_{−k_F}^{k_F}` (density-matrix Check box)
+- [X] Integral limits: `∫_{k_F}^{k_F}` → `∫_{−k_F}^{k_F}` (density-matrix Check box)
 - [ ] δ-function cusp condition off by factor 2 (integration over x_i misses the δ contribution from ∂²/∂x_j²): jump in ∂Ψ/∂x_i should be mcΨ
 
 ### Quantum Hall Effect (Appendix)
@@ -71,8 +71,8 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 
 ## Typos & small style fixes (by chapter)
 
-- [ ] **Intro**: "decribing"; "at the the Curie temperature"; "the end of story"
-- [ ] **Many Body Wavefunctions**: "provide we ignore"; "verions"; "explict"; "single particle state |φ_α⟩ are"
+- [X] **Intro**: "decribing"; "at the the Curie temperature"; "the end of story"
+- [X] **Many Body Wavefunctions**: "provide we ignore"; "verions"; "explict"; "single particle state |φ_α⟩ are"
 - [ ] **QHE**: "obvserved"; "electon"; "antianaltyic"; "the m=1 an m>1"; "distrubution"; "A Laughlin Laughlin state" (caption); unclosed parenthesis after "∂_z̄"; "ρq₀" → qρ₀; "is then be given"; "intepret"
 - [ ] **Elastic Chain**: "or original Hamiltonian"; "has lead to"; "way to to see"; "For a vector x_j = 1,…N" → f_j, j = 1,…,N; "∫₀^∞ φ(x)V(x−y)φ(y)" limits → [0, L]; backtick quote artifact in "the `size' of the system"
 - [ ] **Spin Models**: "we will at each state end up" → stage; "read of the dispersion" → off; "vanishes both η=0 and at"; "eigenergies"; missing full stop after "lower energy"

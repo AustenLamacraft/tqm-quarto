@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Many Body Wavefunctions – Theories of Quantum Matter</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +57,14 @@ div.csl-indent {
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +94,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -147,15 +148,16 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+        <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -167,7 +169,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2025</span></a>
+ <span class="menu-text">TQM Lectures 2026</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -450,7 +452,7 @@ H = \sum_{i=1}^{N} \left[-\frac{\nabla_i^{2}}{2m_i}+V(\mathbf{r_i})\right]
 P_{ij}\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_i,\ldots, \mathbf{r}_j,\ldots \mathbf{r}_N) = \Psi(\mathbf{r}_1,\ldots, \mathbf{r}_j,\ldots, \mathbf{r}_i,\ldots \mathbf{r}_N).
 \]</span></p>
 <p>These operators satisfy <span class="math inline">\(P_{ij}^2=\mathbb{1}\)</span>, so their eigenvalues are <span class="math inline">\(\pm 1\)</span>, corresponding to states that are either symmetric or antisymmetric under exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don’t commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It’s always been this way.</p>
-<p>We classify particles into symmetric <strong>bosons</strong> and antisymmetric <strong>fermions</strong>, named for Bose and Fermi respectively (the whimsical terminology is Dirac’s). The distinction works equally well for composite particles, provide we ignore the internal degrees of freedom and discuss only the center of mass coordinate. <!---
+<p>We classify particles into symmetric <strong>bosons</strong> and antisymmetric <strong>fermions</strong>, named for Bose and Fermi respectively (the whimsical terminology is Dirac’s). The distinction works equally well for composite particles, provided we ignore the internal degrees of freedom and discuss only the center of mass coordinate. <!---
  Easy for us to say. Here's Dirac again: `The solution with antisymmetrical eigenfunctions, though, is probably the correct one for gas molecules, since it is known to be the correct one for electrons in an atom, and one would expect molecules to resemble electrons more closely than light-quanta.'~\citep{dirac1926}}
  --></p>
 <p>All matter in the universe is made up of fermions: electrons, quarks, etc., but you can easily convince yourself that an even number of fermions make a composite boson (e.g.&nbsp;a <span class="math inline">\(^4\)</span>He atom with two electrons, two neutrons and two protons) and an odd number make a composite fermion (<span class="math inline">\(^3\)</span>He has one fewer neutron, which in turn is made up of 3 quarks).</p>
@@ -544,7 +546,7 @@ P_\pi \Psi(\mathbf{r}_1,\mathbf{r}_2,\ldots \mathbf{r}_N) = \Psi(\mathbf{r}_{\pi
 <p><span class="math display">\[
 \lvert{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N}).
 \]</span></p>
-<p>These normalization factors yield normalized wavefunctions <em>if</em> the single particle state <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
+<p>These normalization factors yield normalized wavefunctions <em>if</em> the single particle states <span class="math inline">\(\lvert{\varphi_\alpha}\rangle\)</span> are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each <span class="math inline">\(N_{\alpha}\)</span> is either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span> so the prefactor simplifies. Since the order of the <span class="math inline">\(\alpha\)</span> indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is</p>
 <p><span class="math display">\[
 \label{quantum_statistics_TotalEnergy}
 E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
@@ -563,7 +565,7 @@ E=\sum_{i=1}^{N}E_{\alpha_{i}}=\sum_{\alpha}N_{\alpha} E_{\alpha}
 </div>
 </div>
 <p>A more formal way of putting things is as follows. We first consider the space spanned by states of the form <a href="#eq-distinguishable" class="quarto-xref">Equation&nbsp;3</a>. Then we introduce the operators <span class="math inline">\(\mathcal{S}\)</span> and <span class="math inline">\(\mathcal{A}\)</span>, noting that <span class="math inline">\(\mathcal{S}^{2}=\mathcal{S}\)</span> and <span class="math inline">\(\mathcal{A}^{2}=\mathcal{A}\)</span>. In other words, there’s no point symmetrizing or antisymmetrizing more than once (we say that the operators are <strong>idempotent</strong>). Any eigenvalue of one of these operators is therefore either one or zero. The states with <span class="math inline">\(\mathcal{S}=1\)</span> are the symmetric states, and those with <span class="math inline">\(\mathcal{A}=1\)</span> are antisymmetric. You can easily convince yourself that if a state has one of <span class="math inline">\(\mathcal{S}\)</span> or <span class="math inline">\(\mathcal{A}\)</span> equal to one, the other is zero. This defines symmetric and antisymmetric subspaces, consisting of the admissible boson and fermion wavefunctions.</p>
-<p>Note that the fermion wavefunction takes the form of a <strong>Slater determinant</strong> (though it appears first in {% cite dirac1926 %}).</p>
+<p>Note that the fermion wavefunction takes the form of a <strong>Slater determinant</strong> (though it appears first in <span class="citation" data-cites="dirac1926theory">Dirac (<a href="#ref-dirac1926theory" role="doc-biblioref">1926</a>)</span>).</p>
 <p><span id="eq-slater"><span class="math display">\[
    \lvert{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle=\frac{1}{\sqrt{N!}}\begin{vmatrix}
    \varphi_{\alpha_{1}}(\mathbf{r_{1}}) &amp;   \varphi_{\alpha_{1}}(\mathbf{r_{2}}) &amp; \cdots &amp; \varphi_{\alpha_{1}}(\mathbf{r_{N}}) \\
@@ -739,7 +741,7 @@ g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\l
 </div>
 <div class="callout-body-container callout-body">
 <p>Starting from the Slater determinant <a href="#eq-1d-det" class="quarto-xref">Equation&nbsp;7</a> (i.e.&nbsp;<em>not</em> from the explicit form <a href="#eq-1d-fermi-gs" class="quarto-xref">Equation&nbsp;9</a>), show that <span class="math inline">\(g(x,y)\)</span> for the ground state of the Fermi gas is <span class="math display">\[
-g(x,y) = \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} = \int_{k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
+g(x,y) = \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
 \]</span> where <span class="math inline">\(n \equiv \frac{k_\text{F}}{\pi}\)</span> is the average density.</p>
 </div>
 </div>
@@ -824,7 +826,7 @@ P_\psi = \langle{\psi}\rvert\varrho\lvert{\psi}\rangle.
 H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&lt;k}\delta(x_j-x_k)}^{\equiv H_\text{int}}.
 \tag{15}\]</span></span></p>
 <p>The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it’s 1D and (2) the interaction potential is a <span class="math inline">\(\delta\)</span>-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we’ve discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!</p>
-<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: <span class="math inline">\(c\to \infty\)</span>, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are symmetrized verions of the corresponding fermion eigenstates</em>:</p>
+<p>For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we’ll concern ourselves only with the limit of infinite interaction: <span class="math inline">\(c\to \infty\)</span>, sometimes called the impenetrable limit. In this case, <em>the eigenenergies coincide with those of the free fermion problem, and the eigenstates are symmetrized versions of the corresponding fermion eigenstates</em>:</p>
 <p><span id="eq-jw-trans"><span class="math display">\[
 \Psi^S(x_1,\ldots x_N)=\Psi^A(x_1,\ldots x_N)\prod_{i&lt;j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right],
 \tag{16}\]</span></span></p>
@@ -867,9 +869,12 @@ H = -\frac{1}{2m}\sum_j \frac{\partial^2}{\partial x_j^2} + \overbrace{c\sum_{j&
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-baym2018lectures" class="csl-entry" role="listitem">
 Baym, Gordon. 2018. <em>Lectures on Quantum Mechanics</em>. CRC Press.
+</div>
+<div id="ref-dirac1926theory" class="csl-entry" role="listitem">
+Dirac, Paul Adrien Maurice. 1926. <span>“On the Theory of Quantum Mechanics.”</span> <em>Proceedings of the Royal Society of London. Series A, Containing Papers of a Mathematical and Physical Character</em> 112 (762): 661–77.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -945,7 +950,7 @@ Baym, Gordon. 2018. <em>Lectures on Quantum Mechanics</em>. CRC Press.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Superconductivity – Theories of Quantum Matter</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +57,14 @@ div.csl-indent {
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +94,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -147,15 +148,16 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+        <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -438,7 +440,7 @@ H = -\frac{1}{2m}\left[\nabla_1^2+\nabla_2^2\right] + U_0\delta(\mathbf{r}_1-\ma
 <p>The idea that superfluidity can arise in a system of fermions as a result of pairing was conjectured to explain the phenomenon of <strong>superconductivity</strong> in metals at low temperatures <span class="citation" data-cites="schafroth1954theory">Schafroth (<a href="#ref-schafroth1954theory" role="doc-biblioref">1954</a>)</span>. If electrons could form pairs, then superconductivity could be understood as superfluidity of charge <span class="math inline">\(-2e\)</span> bosons. Job done.</p>
 <p>You may have spotted the problem with this idea: electrons actually <em>repel</em> each other due to the Coulomb interaction. A realistic description of electron pairing must involve a mechanism for attractive interactions. The 1957 realization of Bardeen, Cooper and Schrieffer (BCS) was that such an attraction is provided by the coupling of the electrons to phonons. For states near the Fermi surface, this attraction can actually overcome the Coulomb repulsion (once screening is accounted for, see <a href="../notes/jellium.qmd">Lecture 12</a>. <a href="../problem-sets/problem-set-3.html#a-very-simple-model-for-phonon-mediated-attraction">Problem Set 3</a> describes how this can occur in a simple model.</p>
 <p>This is still not the whole story. The net attraction between electrons is still not strong enough to form a bound state, if we were just to consider isolated pair. BCS showed that in a gas of fermions at finite density, <em>arbitrarily</em> weak attraction is enough to cause pairing: it is a truly many body phenomenon. This was first demonstrated by Leon Cooper using a toy model that accounted for the existence of the Fermi sea in the pairing problem, and for this reason we speak of <strong>Cooper pairs</strong>.</p>
-<p>So BCS got the Nobel prize (which conveniently can be split three ways) and their theory become one of the pillars of condensed matter physics. In this lecture we’ll discuss BCS theory using the model Hamiltonian <a href="#eq-model" class="quarto-xref">Equation&nbsp;1</a> with attractive short-ranged interactions. This is not a particularly realistic model of the combined phonon-mediated attraction and screened Coulomb repulsion, but displays the same physics. It <em>is</em> a good model for pairing of ultracold fermionic atoms, first observed in 2004 <span class="citation" data-cites="regal2004observation">Regal, Greiner, and Jin (<a href="#ref-regal2004observation" role="doc-biblioref">2004</a>)</span>.</p>
+<p>So BCS got the Nobel prize (which conveniently can be split three ways) and their theory become one of the pillars of condensed matter physics. In this lecture we’ll discuss BCS theory using the model Hamiltonian <a href="#eq-model" class="quarto-xref">Equation&nbsp;1</a> with attractive short-ranged interactions. This is not a particularly realistic model of the combined phonon-mediated attraction and screened Coulomb repulsion, but displays the same physics. It <em>is</em> a good model for pairing of ultracold fermionic atoms, first observed in 2004 <span class="citation" data-cites="regal2004observation">Regal et al. (<a href="#ref-regal2004observation" role="doc-biblioref">2004</a>)</span>.</p>
 </section>
 <section id="bcs-theory" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="bcs-theory"><span class="header-section-number">2</span> BCS Theory</h2>
@@ -671,7 +673,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
 \sqrt{\Delta^2+\mu^2},&amp;  \mu&lt;0.
 \end{cases}
 \]</span></p>
-<p>As <span class="math inline">\(\mu\)</span> turns from positive to negative as we pass from BCS to BEC (see the <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;superconductivity&quot; data-raw=&quot;&quot;superconductivity&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;superconductivity&quot; >}}&quot;}/#BCS-BEC">above figure</a>, the density of states of the quasiparticle excitations turns from having a square root singularity <span class="math inline">\(\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}\)</span> to vanishing like a square root <span class="math inline">\(\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}\)</span>.</p>
+<p>As <span class="math inline">\(\mu\)</span> turns from positive to negative as we pass from BCS to BEC (see the <a href="{{< ref &quot;superconductivity&quot; >}}/#BCS-BEC">above figure</a>, the density of states of the quasiparticle excitations turns from having a square root singularity <span class="math inline">\(\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}\)</span> to vanishing like a square root <span class="math inline">\(\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}\)</span>.</p>
 </section>
 </section>
 <section id="appendix" class="level2" data-number="3">
@@ -765,7 +767,7 @@ a^\dagger_{-\mathbf{p}\downarrow}-v^*_\mathbf{p}\right]\prod_{\mathbf{p}'\neq \m
 k_\text{B}T_\text{c}=\frac{\gamma}{\pi}\Delta_{\text{BCS}},
 \]</span></p>
 <p>where <span class="math inline">\(\gamma\)</span> is the <a href="https://en.wikipedia.org/wiki/Euler–Mascheroni_constant">Euler–Mascheroni constant</a>. This relationship between <span class="math inline">\(T_\text{c}\)</span> and <span class="math inline">\(\Delta_\text{BCS}\)</span> is a key numerical prediction of the BCS theory. An important point is that the variation is smooth, suggesting a second order transition to a normal (non-superfluid) state above <span class="math inline">\(T_\text{c}\)</span>.</p>
-<p>There is a small problem. If we continue the calculation through the crossover, the temperature at which a non-zero <span class="math inline">\(\Delta\)</span> develops continues to increase indefinitely on the BEC side <span class="citation" data-cites="de1993crossover">De Melo, Randeria, and Engelbrecht (<a href="#ref-de1993crossover" role="doc-biblioref">1993</a>)</span></p>
+<p>There is a small problem. If we continue the calculation through the crossover, the temperature at which a non-zero <span class="math inline">\(\Delta\)</span> develops continues to increase indefinitely on the BEC side <span class="citation" data-cites="de1993crossover">De Melo et al. (<a href="#ref-de1993crossover" role="doc-biblioref">1993</a>)</span></p>
 <p><span class="math display">\[
 k_\text{B}T_\text{c} \sim E_b/2\left[\log E_b/E_F\right]^{3/2}, 1/k_\text{F} a\gg 0
 \]</span></p>
@@ -773,7 +775,7 @@ k_\text{B}T_\text{c} \sim E_b/2\left[\log E_b/E_F\right]^{3/2}, 1/k_\text{F} a\g
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/EngelbrechtTc.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption><span class="math inline">\(T_c\)</span> in the mean-field theory (solid line), compared with the result of a treatment that smoothly interpolates to <span class="math inline">\(T_{\text{BEC}}\)</span> (dashed). Reproduced from <span class="citation" data-cites="de1993crossover">De Melo, Randeria, and Engelbrecht (<a href="#ref-de1993crossover" role="doc-biblioref">1993</a>)</span>.</figcaption>
+<figcaption><span class="math inline">\(T_c\)</span> in the mean-field theory (solid line), compared with the result of a treatment that smoothly interpolates to <span class="math inline">\(T_{\text{BEC}}\)</span> (dashed). Reproduced from <span class="citation" data-cites="de1993crossover">De Melo et al. (<a href="#ref-de1993crossover" role="doc-biblioref">1993</a>)</span>.</figcaption>
 </figure>
 </div>
 
@@ -782,7 +784,7 @@ k_\text{B}T_\text{c} \sim E_b/2\left[\log E_b/E_F\right]^{3/2}, 1/k_\text{F} a\g
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-de1993crossover" class="csl-entry" role="listitem">
 De Melo, CAR Sá, Mohit Randeria, and Jan R Engelbrecht. 1993. <span>“Crossover from BCS to Bose Superconductivity: Transition Temperature and Time-Dependent Ginzburg-Landau Theory.”</span> <em>Physical Review Letters</em> 71 (19): 3202.
 </div>
@@ -866,7 +868,7 @@ Schafroth, MR. 1954. <span>“Theory of Superconductivity.”</span> <em>Physica
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

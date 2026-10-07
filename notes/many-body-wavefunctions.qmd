@@ -45,7 +45,7 @@ $$
 
 These operators satisfy $P_{ij}^2=\mathbb{1}$, so their eigenvalues are $\pm 1$, corresponding to states that are either symmetric or antisymmetric under exchange. The only simultaneous eigenstates of all particle exchange operations (note that different exchanges don't commute if they involve the same particle) are the totally symmetric and antisymmetric wavefunctions. Thus these properties are preserved by time evolution. It's always been this way.
 
- We classify particles into symmetric __bosons__ and antisymmetric __fermions__, named for Bose and Fermi respectively (the whimsical terminology is Dirac's). The distinction works equally well for composite particles, provide we ignore the internal degrees of freedom and discuss only the center of mass coordinate.
+ We classify particles into symmetric __bosons__ and antisymmetric __fermions__, named for Bose and Fermi respectively (the whimsical terminology is Dirac's). The distinction works equally well for composite particles, provided we ignore the internal degrees of freedom and discuss only the center of mass coordinate.
  <!---
  Easy for us to say. Here's Dirac again: `The solution with antisymmetrical eigenfunctions, though, is probably the correct one for gas molecules, since it is known to be the correct one for electrons in an atom, and one would expect molecules to resemble electrons more closely than light-quanta.'~\citep{dirac1926}}
  -->
@@ -161,7 +161,7 @@ $$
 \ket{\Psi^{S}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}=\sqrt{\frac{1}{N!\prod_{\alpha}N_{\alpha}!}}\sum_\pi\varphi_{\alpha_{\pi(1)}}(\mathbf{r_{1}})\varphi_{\alpha_{\pi(2)}}(\mathbf{r_2})\cdots\varphi_{\alpha_{\pi(N)}}(\mathbf{r_N}).
 $$
 
-These normalization factors yield normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is
+These normalization factors yield normalized wavefunctions _if_ the single particle states $\ket{\varphi_\alpha}$ are orthonormal (as the eigenstates of the single particle Hamiltonian are). In the fermion case each $N_{\alpha}$ is either $0$ or $1$ so the prefactor simplifies. Since the order of the $\alpha$ indices is irrelevant in the boson case, and amounts only to a sign in the fermion case, states based on a given set of single particle states are more efficiently labeled by the occupation numbers. In terms of these numbers the total energy is
 
 $$
  \label{quantum_statistics_TotalEnergy}
@@ -176,7 +176,7 @@ Verify that the normalization factors in @eq-norm are correct.
 
 A more formal way of putting things is as follows. We first consider the space spanned by states of the form @eq-distinguishable. Then we introduce the operators $\mathcal{S}$ and $\mathcal{A}$, noting that $\mathcal{S}^{2}=\mathcal{S}$ and $\mathcal{A}^{2}=\mathcal{A}$. In other words, there's no point symmetrizing or antisymmetrizing more than once (we say that the operators are __idempotent__). Any eigenvalue of one of these operators is therefore either one or zero. The states with $\mathcal{S}=1$ are the symmetric states, and those with $\mathcal{A}=1$ are antisymmetric. You can easily convince yourself that if a state has one of $\mathcal{S}$ or $\mathcal{A}$ equal to one, the other is zero. This defines symmetric and antisymmetric subspaces, consisting of the admissible boson and fermion wavefunctions.
 
-Note that the fermion wavefunction takes the form of a __Slater determinant__ (though it appears first in {% cite dirac1926 %}).
+Note that the fermion wavefunction takes the form of a __Slater determinant__ (though it appears first in @dirac1926theory).
 
 $$
    \ket{\Psi^{A}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}=\frac{1}{\sqrt{N!}}\begin{vmatrix}
@@ -342,7 +342,7 @@ $$ {#eq-nbar}
 
 Starting from the Slater determinant @eq-1d-det (i.e. _not_ from the explicit form @eq-1d-fermi-gs), show that $g(x,y)$ for the ground state of the Fermi gas is
 $$
-g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
+g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
 $$
 where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
 
@@ -424,7 +424,7 @@ $$ {#eq-ll}
 
 The second term represents an interaction between pairs of particles. Of course, this model is rather special, as (1) it's 1D and (2) the interaction potential is a $\delta$-function. Nevertheless, it represents a huge step up in difficulty from the noninteracting examples we've discussed so far. At least, it does for bosons. For fermions, the wavefunctions vanish at coincident points, and so the interaction has no effect at all!
 
-For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are symmetrized verions of the corresponding fermion eigenstates_:
+For bosons, it happens that the Hamiltonian can still be solved exactly. For now, however, we'll concern ourselves only with the limit of infinite interaction: $c\to \infty$, sometimes called the impenetrable limit. In this case, _the eigenenergies coincide with those of the free fermion problem, and the eigenstates are symmetrized versions of the corresponding fermion eigenstates_:
 
 $$
  \Psi^S(x_1,\ldots x_N)=\Psi^A(x_1,\ldots x_N)\prod_{i<j}^{N} \exp\left[i\pi\theta(x_i-x_j)\right],

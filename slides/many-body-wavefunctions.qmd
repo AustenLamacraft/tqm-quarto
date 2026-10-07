@@ -81,7 +81,7 @@ $$
 
 - Lectures are 90 minutes with 5 minute break roughly halfway
 
-- Supervision in w/c 21/10, 4/11, 18/11, and 2/12. Details to follow
+- Supervision in w/c 20/10, 3/11, 17/11, and 1/12. Details to follow
 
 ::: {.callout-tip}
 ## Check
@@ -306,7 +306,7 @@ $$
 ::: {.callout-tip}
 ## Check
 
-Show that these are normalized wavefunctions _if_ the single particle state $\ket{\varphi_\alpha}$ are orthonormal
+Show that these are normalized wavefunctions _if_ the single particle states $\ket{\varphi_\alpha}$ are orthonormal
 
 :::
 

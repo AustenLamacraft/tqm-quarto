@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Lattice Models – Theories of Quantum Matter</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -35,15 +57,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -127,15 +148,16 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+        <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -147,7 +169,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TQM Lectures 2025</span></a>
+ <span class="menu-text">TQM Lectures 2026</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -420,7 +442,7 @@ H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_i^2 +V(x_i)\right] = \int \left[\fr
 <p><span id="eq-tb"><span class="math display">\[
 H_t = -t \sum_{j} \left[a^\dagger_ja^{\vphantom{\dagger}}_{j+1}+a^\dagger_{j+1}a^{\vphantom{\dagger}}_j\right],
 \tag{2}\]</span></span></p>
-<p>which will play the role of kinetic energy in our models. In fact, we’ve already met such a description, when we described a magnon propagating in a spin chain in <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;spin-models&quot; data-raw=&quot;&quot;spin-models&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;spin-models&quot; >}}&quot;}">Lecture 4</a>.</p>
+<p>which will play the role of kinetic energy in our models. In fact, we’ve already met such a description, when we described a magnon propagating in a spin chain in <a href="{{< ref &quot;spin-models&quot; >}}">Lecture 4</a>.</p>
 <section id="physical-motivation" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="physical-motivation"><span class="header-section-number">1.1</span> Physical Motivation</h3>
 <p>This subsection is to shed some light on the origin of <a href="#eq-tb" class="quarto-xref">Equation&nbsp;2</a>. Feel free to jump to the conclusion.</p>
@@ -494,7 +516,7 @@ E(k)-E(0) = 2t\left[1-\cos ka\right],
 H = H_t + H_U = -t \sum_{\langle j\,k\rangle}  \left[a^\dagger_ja^{\vphantom{\dagger}}_{k}+a^\dagger_{k}a^{\vphantom{\dagger}}_j\right] + \frac{U}{2}\sum_j \mathsf{N}^{\vphantom{\dagger}}_j(\mathsf{N}^{\vphantom{\dagger}}_j-1),
 \]</span></p>
 <p>where <span class="math inline">\(\mathsf{N}^{\vphantom{\dagger}}_j=a^\dagger_ja^{\vphantom{\dagger}}_j\)</span> is the number operator for site <span class="math inline">\(j\)</span>, and the sum in the first term is over all nearest neighbour pairs on some lattice (e.g.&nbsp;square or cubic). The on-site interaction term <span class="math inline">\(\mathsf{N}^{\vphantom{\dagger}}_j(\mathsf{N}^{\vphantom{\dagger}}_j-1)\)</span> is just what we have been writing as <span class="math inline">\(a^\dagger_ja^\dagger_ja^{\vphantom{\dagger}}_ja^{\vphantom{\dagger}}_j\)</span> previously. In 1D, you can think of this as the lattice version of the Lieb–Liniger model, in that in involves a kinetic term (sometimes called the <strong>hopping term</strong>) and a short-ranged interaction.</p>
-<p>The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We’ll come to this <strong>Fermi Hubbard model</strong> shortly. In this section we are going to discuss the more straightforward <strong>Bose Hubbard</strong> model introduced in {% cite Fisher:1989aa %}. These authors had in mind applications to liquid He<span class="math inline">\(^{4}\)</span> on a substrate or granular superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.</p>
+<p>The Hubbard model was first introduced to describe electrons in solids. In that case the particles are fermions, and we have to deal with their spin. We’ll come to this <strong>Fermi Hubbard model</strong> shortly. In this section we are going to discuss the more straightforward <strong>Bose Hubbard</strong> model introduced in <span class="citation" data-cites="fisher1989bosons">Fisher et al. (<a href="#ref-fisher1989bosons" role="doc-biblioref">1989</a>)</span>. These authors had in mind applications to liquid He<span class="math inline">\(^{4}\)</span> on a substrate or granular superconductors in which the Cooper pairs (more on those later) approximate interacting bosons. However, ten years after its invention, the model found its natural home in the description of bosonic atoms confined to optical lattices.</p>
 <section id="the-mott-state" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="the-mott-state"><span class="header-section-number">2.1</span> The Mott State</h3>
 <p>In analyzing a new model we always begin by asking what happens when each of the terms in the Hamiltonian dominate the others. This allows us to get the lie of the land, and think about how these different limits may fit together.</p>
@@ -590,7 +612,7 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 <figcaption>Comparing the energies of the Mott states with single particle or hole states. At <span class="math inline">\(t=0\)</span> the red line is the absolute ground state. For nonzero <span class="math inline">\(t\)</span> the dashed blue line corresponds to non-integer filling. Figure by William Royce.</figcaption>
 </figure>
 </div>
-<p>This analysis applies only at small <span class="math inline">\(t/U\)</span>. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let <span class="math inline">\(t/U\to\infty\)</span> we have a <strong>Bose condensate</strong>: all the particles can sit in the <span class="math inline">\(\eta=0\)</span> Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a <strong>superfluid</strong>. The boundaries that we have have found can be connected (drawing freehand – see <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;problem-set-2#mean-field-for-bosehubbard&quot; data-raw=&quot;&quot;problem-set-2#mean-field-for-bosehubbard&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;problem-set-2#mean-field-for-bosehubbard&quot; >}}&quot;}">Problem Set 2</a> for a variational approach) to give the following phase diagram for the ground state of the Bose–Hubbard model.</p>
+<p>This analysis applies only at small <span class="math inline">\(t/U\)</span>. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let <span class="math inline">\(t/U\to\infty\)</span> we have a <strong>Bose condensate</strong>: all the particles can sit in the <span class="math inline">\(\eta=0\)</span> Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a <strong>superfluid</strong>. The boundaries that we have have found can be connected (drawing freehand – see <a href="{{< ref &quot;problem-set-2#mean-field-for-bosehubbard&quot; >}}">Problem Set 2</a> for a variational approach) to give the following phase diagram for the ground state of the Bose–Hubbard model.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../assets/BHPhase.png" class="img-fluid figure-img" style="width:60.0%"></p>
@@ -806,10 +828,15 @@ H_\text{eff} = -t \sum_{\substack{\langle j,k\rangle\\ s=\uparrow,\downarrow}}  
 <p>The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector <span class="math inline">\(\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})\)</span>. The term involving <span class="math inline">\(N_j N_k\)</span> keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it’s just the “constant” term in <a href="#eq-filled-H-eff" class="quarto-xref">Equation&nbsp;9</a>. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators <span class="math inline">\(\mathbf{s}_j\)</span> vanish when they act on an empty or doubly occupied site.</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-fisher1989bosons" class="csl-entry" role="listitem">
+Fisher, Matthew P. A., Peter B. Weichman, G. Grinstein, and Daniel S. Fisher. 1989. <span>“Boson Localization and the Superfluid-Insulator Transition.”</span> <em>Phys. Rev. B</em> 40 (July): 546–70. <a href="https://doi.org/10.1103/PhysRevB.40.546">https://doi.org/10.1103/PhysRevB.40.546</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -883,7 +910,7 @@ H_\text{eff} = -t \sum_{\substack{\langle j,k\rangle\\ s=\uparrow,\downarrow}}  
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

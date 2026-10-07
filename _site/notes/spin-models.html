@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Spin Models – Theories of Quantum Matter</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +57,14 @@ div.csl-indent {
 <link href="../favicon-32x32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +94,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -147,15 +148,16 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      <div class="sidebar-tools-main">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+        <div class="sidebar-tools-main">
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+    </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -634,7 +636,7 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 </section>
 <section id="n-magnon-states" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="n-magnon-states"><span class="header-section-number">2.4</span> <span class="math inline">\(N\)</span>-Magnon States</h3>
-<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="[ref []{.quarto-shortcode__-param data-is-shortcode=&quot;1&quot; data-value=&quot;#two-magnon-states&quot; data-raw=&quot;&quot;#two-magnon-states&quot;&quot;} ]{.quarto-shortcode__ data-is-shortcode=&quot;1&quot; data-raw=&quot;{{< ref &quot;#two-magnon-states&quot; >}}&quot;}">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
+<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="{{< ref &quot;#two-magnon-states&quot; >}}">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
 <p>We started our discussion with the ground state of the ferromagnetic <span class="math inline">\(J&lt;0\)</span> Heisenberg model. What about <span class="math inline">\(J&gt;0\)</span>? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 </section>
 <section id="antiferromagnets-are-different" class="level3" data-number="2.5">
@@ -1060,12 +1062,12 @@ E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-auerbach2012interacting" class="csl-entry" role="listitem">
 Auerbach, Assa. 2012. <em>Interacting Electrons and Quantum Magnetism</em>. Springer Science &amp; Business Media.
 </div>
 <div id="ref-lhuillier2006frustrated" class="csl-entry" role="listitem">
-Lhuillier, Claire. 2006. <span>“Frustrated Quantum Magnets in 2d: From n<span>é</span>el Phases to Spin Liquids.”</span>
+Lhuillier, Claire. 2006. <em>Frustrated Quantum Magnets in 2d: From n<span>é</span>el Phases to Spin Liquids</em>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1141,7 +1143,7 @@ Lhuillier, Claire. 2006. <span>“Frustrated Quantum Magnets in 2d: From n<span>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

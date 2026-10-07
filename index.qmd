@@ -1,10 +1,10 @@
-# TQM Lectures 2025 {.unnumbered}
+# TQM Lectures 2026 {.unnumbered}
 
 <!-- ::: {.callout-warning appearance="minimal"}
 
 Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/form/SV_0diLIYDRbcAZSaq). Closes 1st December at midnight.
 
-::: -->
+::: 
 
 ::: {.callout-warning appearance="minimal"}
 
@@ -18,7 +18,9 @@ PDFs of lecture notes are now available! See "Other Formats" in the right side b
 
 :::
 
-These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2025. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). __Note that the material contained in the Appendices is non-examinable__.
+-->
+
+These are the materials for Theories of Quantum Matter, a Part III Physics course at the University of Cambridge taught in Michaelmas 2026. The materials for previous versions of the course can be found [here](https://austen.uk/courses/). __Note that the material contained in the Appendices is non-examinable__.
 
 The source of these notes is [this GitHub repo](https://github.com/AustenLamacraft/tqm-quarto). If you find a typo, other problem or have any other comment on the material, please [raise an issue](https://github.com/AustenLamacraft/tqm-quarto/issues) there.
 
@@ -54,6 +56,6 @@ Take place in the Small Lecture Theatre at the Cavendish Laboratory from 10.15-1
 
 ## Supervisions {.unnumbered}
 
-There will be four supervisions, taking place in the weeks commencing 21/10, 4/11, 18/11, and 2/12.
+There will be four supervisions, taking place in the weeks commencing 20/10, 3/11, 17/11, and 1/12.
 
 
