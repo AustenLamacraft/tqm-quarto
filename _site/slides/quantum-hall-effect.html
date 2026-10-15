@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.35">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <title>Theories of Quantum Matter – Quantum Hall Effect</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -489,7 +489,7 @@ V(\mathbf{r}_1, \ldots, \mathbf{r}_N)&amp;=-\frac{q^2}{2\pi m}\sum_j \log\left|\
 import laughlin from "../assets/laughlin-complex.js"
 const laughlinSketch = new p5(laughlin, "laughlin")
 Reveal.on( 'slidechanged', event => {
-  if (!!event.currentSlide.querySelector("#hole-state")) {
+  if (event.currentSlide.id === "hole-state") {
     laughlinSketch.loop()
   }
   else {
@@ -498,7 +498,7 @@ Reveal.on( 'slidechanged', event => {
 } );
 </script>
 <figure align="center">
-<div id="laughlin" style="display: inline-block">
+<div id="laughlin">
 
 </div>
 </figure>
@@ -785,7 +785,7 @@ Reveal.on( 'slidechanged', event => {
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

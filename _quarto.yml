@@ -3,6 +3,8 @@ editor:
 
 project:
   type: website
+  resources:
+    - assets/*.js
   preview:
     port: 3000
     browser: false

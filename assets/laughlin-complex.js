@@ -2,8 +2,6 @@
 // All sketches in instance mode, to keep variables out of global scope
 // https://p5js.org/examples/instance-mode-instantiation.html
 
-const width = document.getElementById("laughlin").offsetWidth;
-
 export default function laughlin(p) {
 
     const numParticles = 512;
@@ -21,6 +19,8 @@ export default function laughlin(p) {
 
     p.setup = function() {
         
+        // Container may be hidden (e.g. an off-screen reveal.js slide), giving zero width
+        const width = document.getElementById("laughlin").offsetWidth || 800;
         p.createCanvas(width, 400);
         
         p.noStroke();

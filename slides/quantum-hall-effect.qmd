@@ -335,7 +335,7 @@ $$`
 import laughlin from "../assets/laughlin-complex.js"
 const laughlinSketch = new p5(laughlin, "laughlin")
 Reveal.on( 'slidechanged', event => {
-  if (!!event.currentSlide.querySelector("#hole-state")) {
+  if (event.currentSlide.id === "hole-state") {
     laughlinSketch.loop()
   }
   else {
@@ -345,7 +345,7 @@ Reveal.on( 'slidechanged', event => {
 </script>
 
 <figure align="center">
-<div id="laughlin" style="display: inline-block" ></div>
+<div id="laughlin"></div>
 </figure>
 
 ---
