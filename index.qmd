@@ -6,11 +6,15 @@ Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/for
 
 ::: 
 
+-->
+
 ::: {.callout-warning appearance="minimal"}
 
-Check out these [Summer internships](assets/CMD_Summer_Internship2026.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is 30th November!
+Check out these [Summer internships](assets/CMD_SummerInternships2027.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is __20th November__!
 
 :::
+
+<!--
 
 ::: {.callout-warning appearance="minimal"}
 
