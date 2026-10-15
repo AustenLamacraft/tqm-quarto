@@ -272,15 +272,25 @@ $$
 \Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 \label{many_2hole}
 $$
-The probability distribution $\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions
+The probability distribution $\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2$ corresponds to a Coulomb plasma with two $1/m$ charges at the positions $\mathbf{R}_{1,2}$. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to $-1/m$ of a particle. If we _did_ have a plasma in which these two added charges were repelling each other, as well as being attracted to the background charge, and if these charges were perfectly screened, we would expect the free energy of the overall system to be independent of the distance between $Z_1$ and $Z_2$. Including these extra effects gives the partition function
+
 $$
 \begin{aligned}
-\int \prod_{j=1}^N &d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\\ &\sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\int \prod_{j=1}^N &d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|-\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right)= \text{const}.
 \end{aligned}
 $$
-If we try to intepret this as the probability density of a two particle wavefunction, we arrive at
+
+This means the normalization integral is (proportional to)
 $$
-\Psi_\text{2 hole}(Z_1,Z_2) \sim \left(Z_1-Z_2\right)^{1/m} \exp\left(\frac{1}{4m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\begin{aligned}
+\mathcal{N}=\int \prod_{j=1}^N &d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\\ &\sim\exp\left(-\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\end{aligned}
+$$
+
+In the wavefunction the normalization integral appears as $\mathcal{N}^{-1/2}$, so the two-hole wavefunction $\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)$ has acquired a factor
+
+$$
+\left(Z_1-Z_2\right)^{1/m} \exp\left(-\frac{1}{4m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
 $$
 
 For $m=1$ this is an antisymmetric wavefunction, and may be interpreted as a pair of fermionic holes. For $m>1$ the wavefunction is _multi-valued_, and changes by a phase $\pi/m$ when $Z_1$ and $Z_2$ are exchanged. The quasiholes are __anyons__, particles with fractional statistics intermediate between bosons and fermions.

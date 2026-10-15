@@ -652,12 +652,20 @@ A Monte Carlo simulation of a Laughlin state. You can change the inverse filling
 <p>Consider the two quasihole wavefunction <span class="math display">\[
 \Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2) = \left(\prod_j (Z_1-z_j)(Z_2-z_j)\right)\Psi_m(z_1,\ldots, z_N).
 \label{many_2hole}
-\]</span> The probability distribution <span class="math inline">\(\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\)</span> corresponds to a Coulomb plasma with two <span class="math inline">\(1/m\)</span> charges at the positions <span class="math inline">\(\mathbf{R}_{1,2}\)</span>. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to <span class="math inline">\(-1/m\)</span> of a particle. The normalization integral is then be given by the Boltzmann weight corresponding to the interaction of these two depleted regions <span class="math display">\[
+\]</span> The probability distribution <span class="math inline">\(\vert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\)</span> corresponds to a Coulomb plasma with two <span class="math inline">\(1/m\)</span> charges at the positions <span class="math inline">\(\mathbf{R}_{1,2}\)</span>. There is no interaction term between these two fixed charges, but as we have argued, each is overwhelmingly likely to be surrounded by region of depleted density amounting to <span class="math inline">\(-1/m\)</span> of a particle. If we <em>did</em> have a plasma in which these two added charges were repelling each other, as well as being attracted to the background charge, and if these charges were perfectly screened, we would expect the free energy of the overall system to be independent of the distance between <span class="math inline">\(Z_1\)</span> and <span class="math inline">\(Z_2\)</span>. Including these extra effects gives the partition function</p>
+<p><span class="math display">\[
 \begin{aligned}
-\int \prod_{j=1}^N &amp;d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\\ &amp;\sim\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\int \prod_{j=1}^N &amp;d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\exp\left(\frac{2}{m}\log\left|Z_1-Z_2\right|-\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right)= \text{const}.
 \end{aligned}
-\]</span> If we try to intepret this as the probability density of a two particle wavefunction, we arrive at <span class="math display">\[
-\Psi_\text{2 hole}(Z_1,Z_2) \sim \left(Z_1-Z_2\right)^{1/m} \exp\left(\frac{1}{4m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\]</span></p>
+<p>This means the normalization integral is (proportional to) <span class="math display">\[
+\begin{aligned}
+\mathcal{N}=\int \prod_{j=1}^N &amp;d^2z_j\,\lvert\Psi_\text{2 hole}(z_1,\ldots, z_N\vert Z_1,Z_2)\rvert^2\\ &amp;\sim\exp\left(-\frac{2}{m}\log\left|Z_1-Z_2\right|+\frac{1}{2m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
+\end{aligned}
+\]</span></p>
+<p>In the wavefunction the normalization integral appears as <span class="math inline">\(\mathcal{N}^{-1/2}\)</span>, so the two-hole wavefunction <span class="math inline">\(\Psi_\text{2 hole}(z_1,\ldots, z_N|Z_1,Z_2)\)</span> has acquired a factor</p>
+<p><span class="math display">\[
+\left(Z_1-Z_2\right)^{1/m} \exp\left(-\frac{1}{4m}\left[\left|Z_1\right|^2+\left|Z_2\right|^2\right]\right).
 \]</span></p>
 <p>For <span class="math inline">\(m=1\)</span> this is an antisymmetric wavefunction, and may be interpreted as a pair of fermionic holes. For <span class="math inline">\(m&gt;1\)</span> the wavefunction is <em>multi-valued</em>, and changes by a phase <span class="math inline">\(\pi/m\)</span> when <span class="math inline">\(Z_1\)</span> and <span class="math inline">\(Z_2\)</span> are exchanged. The quasiholes are <strong>anyons</strong>, particles with fractional statistics intermediate between bosons and fermions.</p>
 <hr>
