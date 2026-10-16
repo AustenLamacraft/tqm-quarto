@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -61,10 +61,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -674,13 +674,13 @@ A Monte Carlo simulation of a Laughlin state. You can change the inverse filling
 <h2 data-number="7" class="anchored" data-anchor-id="appendix-sampling-from-a-complex-wavefunction"><span class="header-section-number">7</span> Appendix: Sampling from a complex wavefunction</h2>
 <p>Suppose we have a complex wavefunction <span class="math inline">\(\psi(\mathbf{r},t)\)</span> that solves the Schrödinger equation</p>
 <p><span class="math display">\[
-i\frac{\partial\psi}{\partial t} = -\frac{1}{2m}\left(\nabla -iq\mathbf{A}\right)^2 + V(\mathbf{r})\psi(\mathbf{r},t).
+i\frac{\partial\psi}{\partial t} = -\frac{1}{2m}\left(\nabla -iq\mathbf{A}\right)^2\psi + V(\mathbf{r})\psi(\mathbf{r},t).
 \]</span></p>
 <p>We can write <span class="math inline">\(\psi(\mathbf{r}, t) = \exp(R(\mathbf{r}, t) + iS(\mathbf{r}, t))\)</span>, where <span class="math inline">\(S(\mathbf{r},t)\)</span> is the phase of the wavefunction and the probability density is <span class="math inline">\(\rho=|\psi|^2 = e^{2R}\)</span>. With some massaging, we can arrive at the following equation</p>
 <p><span class="math display">\[
 \frac{\partial \rho}{\partial t} = \frac{1}{2m}\nabla^2\rho - \nabla\cdot\left(\mathbf{v}\rho\right)
 \]</span></p>
-<p>with <span class="math inline">\(\mathbf{v}= \nabla R + \nabla S - q\mathbf{A}\)</span>. This is a <a href="https://en.wikipedia.org/wiki/Fokker%E2%80%93Planck_equation">Fokker–Planck equation</a> describing the evolution of a probability distribution <span class="math inline">\(\rho\)</span> due to diffusion (with diffusion constant <span class="math inline">\(D=\frac{1}{2m}\)</span>) together with a <em>drift velocity</em> <span class="math inline">\(\mathbf{v}\)</span>, which depends on the amplitude, phase, and the vector potential. Although the potential <span class="math inline">\(V(\mathbf{r})\)</span> does not appear in this equation, it determines the functions <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>.</p>
+<p>with <span class="math inline">\(\mathbf{v}= (\nabla R + \nabla S - q\mathbf{A})/m\)</span>. This is a <a href="https://en.wikipedia.org/wiki/Fokker%E2%80%93Planck_equation">Fokker–Planck equation</a> describing the evolution of a probability distribution <span class="math inline">\(\rho\)</span> due to diffusion (with diffusion constant <span class="math inline">\(D=\frac{1}{2m}\)</span>) together with a <em>drift velocity</em> <span class="math inline">\(\mathbf{v}\)</span>, which depends on the amplitude, phase, and the vector potential. Although the potential <span class="math inline">\(V(\mathbf{r})\)</span> does not appear in this equation, it determines the functions <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>.</p>
 <p>We can sample from the probability distribution <span class="math inline">\(\rho\)</span> by simulating the stochastic differential equation for the particle’s position</p>
 <p><span class="math display">\[
 d\mathbf{r}_t = \sqrt{\frac{1}{m}}d\mathbf{B}_t + \mathbf{v}dt,
@@ -692,7 +692,7 @@ d\mathbf{r}_t = \sqrt{\frac{1}{m}}d\mathbf{B}_t + \mathbf{v}dt,
 <p>where <span class="math inline">\(X_t\)</span> and <span class="math inline">\(Y_t\)</span> are sampled from a standard normal distribution of unit variance: <span class="math inline">\(X_t, Y_t \sim \mathcal{N}(0,1)\)</span></p>
 <p>Extended to the many body case and applied to the Laughlin wavefunction <a href="#eq-many-nu" class="quarto-xref">Equation&nbsp;6</a> we arrive at the drift <span class="math inline">\(\mathbf{v}_i\)</span> of particle <span class="math inline">\(i\)</span>, written in terms of the positions <span class="math inline">\(\mathbf{r}_i = (x_i, y_i)\)</span></p>
 <p><span class="math display">\[
-\mathbf{v}_i = -\frac{1}{2}\mathbf{r}_i + \frac{1}{2} \mathbf{r}_i \times \hat{\mathbf{z}} + m \sum_{j\neq 1} \left(\frac{\mathbf{r}_i - \mathbf{r}_j - (\mathbf{r}_i - \mathbf{r}_j)\times \hat{\mathbf{z}}}{|\mathbf{r}_i-\mathbf{r}_j|^2}\right).
+\mathbf{v}_i = -\frac{1}{2}\mathbf{r}_i + \frac{1}{2} \mathbf{r}_i \times \hat{\mathbf{z}} + m \sum_{j\neq i} \left(\frac{\mathbf{r}_i - \mathbf{r}_j - (\mathbf{r}_i - \mathbf{r}_j)\times \hat{\mathbf{z}}}{|\mathbf{r}_i-\mathbf{r}_j|^2}\right).
 \]</span></p>
 <p>This is what I used for the Monte Carlo simulation of the Laughlin state.</p>
 
@@ -784,7 +784,7 @@ Stone, Michael. 1992. <em>Quantum Hall Effect</em>. World Scientific.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

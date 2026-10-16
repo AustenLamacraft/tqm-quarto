@@ -302,7 +302,7 @@ For $m=1$ this is an antisymmetric wavefunction, and may be interpreted as a pai
 Suppose we have a complex wavefunction $\psi(\br,t)$ that solves the Schrödinger equation
 
 $$
-i\frac{\partial\psi}{\partial t} = -\frac{1}{2m}\left(\nabla -iq\mathbf{A}\right)^2 + V(\br)\psi(\br,t).
+i\frac{\partial\psi}{\partial t} = -\frac{1}{2m}\left(\nabla -iq\mathbf{A}\right)^2\psi + V(\br)\psi(\br,t).
 $$
 
 We can write $\psi(\br, t) = \exp(R(\br, t) + iS(\br, t))$, where $S(\br,t)$ is the phase of the wavefunction and the probability density is $\rho=|\psi|^2 = e^{2R}$. With some massaging, we can arrive at the following equation
@@ -311,7 +311,7 @@ $$
 \frac{\partial \rho}{\partial t} = \frac{1}{2m}\nabla^2\rho - \nabla\cdot\left(\bv \rho\right)
 $$
 
-with $\bv = \nabla R + \nabla S - q\mathbf{A}$. This is a [Fokker–Planck equation](https://en.wikipedia.org/wiki/Fokker%E2%80%93Planck_equation) describing the evolution of a probability distribution $\rho$ due to diffusion (with diffusion constant $D=\frac{1}{2m}$) together with a *drift velocity* $\bv$, which depends on the amplitude, phase, and the vector potential. Although the potential $V(\br)$ does not appear in this equation, it determines the functions $R$ and $S$. 
+with $\bv = (\nabla R + \nabla S - q\mathbf{A})/m$. This is a [Fokker–Planck equation](https://en.wikipedia.org/wiki/Fokker%E2%80%93Planck_equation) describing the evolution of a probability distribution $\rho$ due to diffusion (with diffusion constant $D=\frac{1}{2m}$) together with a *drift velocity* $\bv$, which depends on the amplitude, phase, and the vector potential. Although the potential $V(\br)$ does not appear in this equation, it determines the functions $R$ and $S$. 
 
 We can sample from the probability distribution $\rho$ by simulating the stochastic differential equation for the particle's position
 
@@ -330,7 +330,7 @@ where $X_t$ and $Y_t$ are sampled from a standard normal distribution of unit va
 Extended to the many body case and applied to the Laughlin wavefunction @eq-many-nu we arrive at the drift $\mathbf{v}_i$ of particle $i$, written in terms of the positions $\mathbf{r}_i = (x_i, y_i)$
 
 $$
-\mathbf{v}_i = -\frac{1}{2}\mathbf{r}_i + \frac{1}{2} \mathbf{r}_i \times \hat{\mathbf{z}} + m \sum_{j\neq 1} \left(\frac{\mathbf{r}_i - \mathbf{r}_j - (\mathbf{r}_i - \mathbf{r}_j)\times \hat{\mathbf{z}}}{|\mathbf{r}_i-\mathbf{r}_j|^2}\right).
+\mathbf{v}_i = -\frac{1}{2}\mathbf{r}_i + \frac{1}{2} \mathbf{r}_i \times \hat{\mathbf{z}} + m \sum_{j\neq i} \left(\frac{\mathbf{r}_i - \mathbf{r}_j - (\mathbf{r}_i - \mathbf{r}_j)\times \hat{\mathbf{z}}}{|\mathbf{r}_i-\mathbf{r}_j|^2}\right).
 $$
 
 This is what I used for the Monte Carlo simulation of the Laughlin state.

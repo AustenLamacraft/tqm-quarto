@@ -19,9 +19,9 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 - [ ] δ-function cusp condition off by factor 2 (integration over x_i misses the δ contribution from ∂²/∂x_j²): jump in ∂Ψ/∂x_i should be mcΨ
 
 ### Quantum Hall Effect (Appendix)
-- [ ] Schrödinger equation missing ψ on kinetic term
-- [ ] Drift missing 1/m: **v** = (∇R + ∇S − qA)/m
-- [ ] Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; "m" doubles as mass and Laughlin exponent — remark or relabel
+- [X] Schrödinger equation missing ψ on kinetic term
+- [X] Drift missing 1/m: **v** = (∇R + ∇S − qA)/m
+- [X] Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; "m" doubles as mass and Laughlin exponent — remark or relabel
 
 ### Elastic Chain
 - [ ] Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j

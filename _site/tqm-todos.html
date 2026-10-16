@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -40,10 +40,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -384,9 +384,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="quantum-hall-effect-appendix" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="quantum-hall-effect-appendix"><span class="header-section-number">1.2.2</span> Quantum Hall Effect (Appendix)</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Schrödinger equation missing ψ on kinetic term</label></li>
-<li><label><input type="checkbox">Drift missing 1/m: <strong>v</strong> = (∇R + ∇S − qA)/m</label></li>
-<li><label><input type="checkbox">Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; “m” doubles as mass and Laughlin exponent — remark or relabel</label></li>
+<li><label><input type="checkbox" checked="">Schrödinger equation missing ψ on kinetic term</label></li>
+<li><label><input type="checkbox" checked="">Drift missing 1/m: <strong>v</strong> = (∇R + ∇S − qA)/m</label></li>
+<li><label><input type="checkbox" checked="">Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; “m” doubles as mass and Laughlin exponent — remark or relabel</label></li>
 </ul>
 </section>
 <section id="elastic-chain" class="level3" data-number="1.2.3">
@@ -591,7 +591,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
