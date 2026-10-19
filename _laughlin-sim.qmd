@@ -1,0 +1,53 @@
+```{ojs}
+//| echo: false
+import {initParticles, step} from "../assets/laughlin.js"
+
+viewof inverseFilling = Inputs.range([1, 7], {step: 1, value: 3, label: "Inverse filling m"})
+```
+
+```{ojs}
+//| echo: false
+{
+  const w = Math.min(width, 1000);
+  const h = 400;
+  const ctx = DOM.context2d(w, h);
+  const canvas = ctx.canvas;
+
+  // Quasihole follows the pointer. Rescale in case the canvas is CSS-transformed (reveal.js)
+  let hole = [w / 2, h / 2];
+  canvas.onpointermove = e => {
+    const r = canvas.getBoundingClientRect();
+    hole = [(e.clientX - r.left) * w / r.width, (e.clientY - r.top) * h / r.height];
+  };
+
+  // Only simulate while on screen (and on the current slide, in reveal.js)
+  let onScreen = true;
+  const observer = new IntersectionObserver(([entry]) => onScreen = entry.isIntersecting);
+  observer.observe(canvas);
+  invalidation.then(() => observer.disconnect());
+  const visible = () => {
+    const slide = canvas.closest(".reveal .slides section");
+    return onScreen && (!slide || slide.classList.contains("present"));
+  };
+
+  const particles = initParticles(512, w, h);
+  while (true) {
+    if (visible()) {
+      // Read the input's value directly so that changing m doesn't restart the simulation
+      step(particles, viewof inverseFilling.value, hole, w, h);
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+      for (const [x, y] of particles) {
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+      ctx.arc(hole[0], hole[1], 5, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+    yield canvas;
+  }
+}
+```

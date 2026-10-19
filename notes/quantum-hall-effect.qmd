@@ -240,22 +240,8 @@ V(\brN)=&-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{
 $$
 This is interpreted as the introduction of a charge $q/m$ at point $\mathbf{R} = (X, Y)$, where $Z=X+iY$. The charges of the plasma will screen this charge, leaving a 'hole' in the density distribution amounting to charge $-q/m$, corresponding to $-1/m$ real particles. The quasiholes have fractional charge! 
 
-<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
-<script type="module">
-import laughlin from "../assets/laughlin-complex.js"
-const laughlinSketch = new p5(laughlin, "laughlin");
-const observer = new IntersectionObserver(function(entries) {
-	if(entries[0].isIntersecting === true)
-		laughlinSketch.loop()
-    else {
-        laughlinSketch.noLoop()
-    }
-}, { threshold: [0.5] });
-observer.observe(document.querySelector("#laughlin"));
-</script>
+{{< include ../_laughlin-sim.qmd >}}
 
-<figure align="center" id="laughlin">
-</figure>
 <figure align="center">
 <figcaption>A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction $m$. The red dot is a quasihole: in fact for clarity it's 20 quasiholes with an overall charge of $-20/m$.</figcaption>
 </figure>

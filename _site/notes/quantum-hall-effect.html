@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -92,6 +127,8 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -623,21 +660,75 @@ V(\mathbf{r}_1, \ldots, \mathbf{r}_N)=&amp;-\frac{q^2}{2\pi m}\sum_j \log\left|\
 &amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
 \end{aligned}
 \]</span> This is interpreted as the introduction of a charge <span class="math inline">\(q/m\)</span> at point <span class="math inline">\(\mathbf{R} = (X, Y)\)</span>, where <span class="math inline">\(Z=X+iY\)</span>. The charges of the plasma will screen this charge, leaving a ‘hole’ in the density distribution amounting to charge <span class="math inline">\(-q/m\)</span>, corresponding to <span class="math inline">\(-1/m\)</span> real particles. The quasiholes have fractional charge!</p>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
-<script type="module">
-import laughlin from "../assets/laughlin-complex.js"
-const laughlinSketch = new p5(laughlin, "laughlin");
-const observer = new IntersectionObserver(function(entries) {
-    if(entries[0].isIntersecting === true)
-        laughlinSketch.loop()
-    else {
-        laughlinSketch.noLoop()
-    }
-}, { threshold: [0.5] });
-observer.observe(document.querySelector("#laughlin"));
-</script>
-<figure align="center" id="laughlin" class="figure">
-</figure>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {initParticles<span class="op">,</span> step} <span class="im">from</span> <span class="st">"../assets/laughlin.js"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>viewof inverseFilling <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">7</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"Inverse filling m"</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a href="#cb2-0" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> w <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(width<span class="op">,</span> <span class="dv">1000</span>)<span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> h <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ctx <span class="op">=</span> DOM<span class="op">.</span><span class="fu">context2d</span>(w<span class="op">,</span> h)<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> canvas <span class="op">=</span> ctx<span class="op">.</span><span class="at">canvas</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Quasihole follows the pointer. Rescale in case the canvas is CSS-transformed (reveal.js)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> hole <span class="op">=</span> [w <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> h <span class="op">/</span> <span class="dv">2</span>]<span class="op">;</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  canvas<span class="op">.</span><span class="at">onpointermove</span> <span class="op">=</span> e <span class="kw">=&gt;</span> {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> r <span class="op">=</span> canvas<span class="op">.</span><span class="fu">getBoundingClientRect</span>()<span class="op">;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    hole <span class="op">=</span> [(e<span class="op">.</span><span class="at">clientX</span> <span class="op">-</span> r<span class="op">.</span><span class="at">left</span>) <span class="op">*</span> w <span class="op">/</span> r<span class="op">.</span><span class="at">width</span><span class="op">,</span> (e<span class="op">.</span><span class="at">clientY</span> <span class="op">-</span> r<span class="op">.</span><span class="at">top</span>) <span class="op">*</span> h <span class="op">/</span> r<span class="op">.</span><span class="at">height</span>]<span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Only simulate while on screen (and on the current slide, in reveal.js)</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> onScreen <span class="op">=</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> observer <span class="op">=</span> <span class="kw">new</span> <span class="fu">IntersectionObserver</span>(([entry]) <span class="kw">=&gt;</span> onScreen <span class="op">=</span> entry<span class="op">.</span><span class="at">isIntersecting</span>)<span class="op">;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  observer<span class="op">.</span><span class="fu">observe</span>(canvas)<span class="op">;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  invalidation<span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> observer<span class="op">.</span><span class="fu">disconnect</span>())<span class="op">;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> visible <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> slide <span class="op">=</span> canvas<span class="op">.</span><span class="fu">closest</span>(<span class="st">".reveal .slides section"</span>)<span class="op">;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> onScreen <span class="op">&amp;&amp;</span> (<span class="op">!</span>slide <span class="op">||</span> slide<span class="op">.</span><span class="at">classList</span><span class="op">.</span><span class="fu">contains</span>(<span class="st">"present"</span>))<span class="op">;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> particles <span class="op">=</span> <span class="fu">initParticles</span>(<span class="dv">512</span><span class="op">,</span> w<span class="op">,</span> h)<span class="op">;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">visible</span>()) {</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Read the input's value directly so that changing m doesn't restart the simulation</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">step</span>(particles<span class="op">,</span> viewof inverseFilling<span class="op">.</span><span class="at">value</span><span class="op">,</span> hole<span class="op">,</span> w<span class="op">,</span> h)<span class="op">;</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="fu">clearRect</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> w<span class="op">,</span> h)<span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">"rgba(0, 0, 0, 0.5)"</span><span class="op">;</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (<span class="kw">const</span> [x<span class="op">,</span> y] <span class="kw">of</span> particles) {</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        ctx<span class="op">.</span><span class="fu">beginPath</span>()<span class="op">;</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        ctx<span class="op">.</span><span class="fu">arc</span>(x<span class="op">,</span> y<span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        ctx<span class="op">.</span><span class="fu">fill</span>()<span class="op">;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="at">fillStyle</span> <span class="op">=</span> <span class="st">"red"</span><span class="op">;</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="fu">beginPath</span>()<span class="op">;</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="fu">arc</span>(hole[<span class="dv">0</span>]<span class="op">,</span> hole[<span class="dv">1</span>]<span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span>)<span class="op">;</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>      ctx<span class="op">.</span><span class="fu">fill</span>()<span class="op">;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> canvas<span class="op">;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
 <figure align="center" class="figure">
 <figcaption>
 A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction <span class="math inline">\(m\)</span>. The red dot is a quasihole: in fact for clarity it’s 20 quasiholes with an overall charge of <span class="math inline">\(-20/m\)</span>.
@@ -711,6 +802,17 @@ Laughlin, Robert B. 1983. <span>“Anomalous Quantum Hall Effect: An Incompressi
 Stone, Michael. 1992. <em>Quantum Hall Effect</em>. World Scientific.
 </div>
 </div></section></div></main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7aW5pdFBhcnRpY2xlcywgc3RlcH0gZnJvbSBcIi4uL2Fzc2V0cy9sYXVnaGxpbi5qc1wiXG5cbnZpZXdvZiBpbnZlcnNlRmlsbGluZyA9IElucHV0cy5yYW5nZShbMSwgN10sIHtzdGVwOiAxLCB2YWx1ZTogMywgbGFiZWw6IFwiSW52ZXJzZSBmaWxsaW5nIG1cIn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHcgPSBNYXRoLm1pbih3aWR0aCwgMTAwMCk7XG4gIGNvbnN0IGggPSA0MDA7XG4gIGNvbnN0IGN0eCA9IERPTS5jb250ZXh0MmQodywgaCk7XG4gIGNvbnN0IGNhbnZhcyA9IGN0eC5jYW52YXM7XG5cbiAgLy8gUXVhc2lob2xlIGZvbGxvd3MgdGhlIHBvaW50ZXIuIFJlc2NhbGUgaW4gY2FzZSB0aGUgY2FudmFzIGlzIENTUy10cmFuc2Zvcm1lZCAocmV2ZWFsLmpzKVxuICBsZXQgaG9sZSA9IFt3IC8gMiwgaCAvIDJdO1xuICBjYW52YXMub25wb2ludGVybW92ZSA9IGUgPT4ge1xuICAgIGNvbnN0IHIgPSBjYW52YXMuZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7XG4gICAgaG9sZSA9IFsoZS5jbGllbnRYIC0gci5sZWZ0KSAqIHcgLyByLndpZHRoLCAoZS5jbGllbnRZIC0gci50b3ApICogaCAvIHIuaGVpZ2h0XTtcbiAgfTtcblxuICAvLyBPbmx5IHNpbXVsYXRlIHdoaWxlIG9uIHNjcmVlbiAoYW5kIG9uIHRoZSBjdXJyZW50IHNsaWRlLCBpbiByZXZlYWwuanMpXG4gIGxldCBvblNjcmVlbiA9IHRydWU7XG4gIGNvbnN0IG9ic2VydmVyID0gbmV3IEludGVyc2VjdGlvbk9ic2VydmVyKChbZW50cnldKSA9PiBvblNjcmVlbiA9IGVudHJ5LmlzSW50ZXJzZWN0aW5nKTtcbiAgb2JzZXJ2ZXIub2JzZXJ2ZShjYW52YXMpO1xuICBpbnZhbGlkYXRpb24udGhlbigoKSA9PiBvYnNlcnZlci5kaXNjb25uZWN0KCkpO1xuICBjb25zdCB2aXNpYmxlID0gKCkgPT4ge1xuICAgIGNvbnN0IHNsaWRlID0gY2FudmFzLmNsb3Nlc3QoXCIucmV2ZWFsIC5zbGlkZXMgc2VjdGlvblwiKTtcbiAgICByZXR1cm4gb25TY3JlZW4gJiYgKCFzbGlkZSB8fCBzbGlkZS5jbGFzc0xpc3QuY29udGFpbnMoXCJwcmVzZW50XCIpKTtcbiAgfTtcblxuICBjb25zdCBwYXJ0aWNsZXMgPSBpbml0UGFydGljbGVzKDUxMiwgdywgaCk7XG4gIHdoaWxlICh0cnVlKSB7XG4gICAgaWYgKHZpc2libGUoKSkge1xuICAgICAgLy8gUmVhZCB0aGUgaW5wdXQncyB2YWx1ZSBkaXJlY3RseSBzbyB0aGF0IGNoYW5naW5nIG0gZG9lc24ndCByZXN0YXJ0IHRoZSBzaW11bGF0aW9uXG4gICAgICBzdGVwKHBhcnRpY2xlcywgdmlld29mIGludmVyc2VGaWxsaW5nLnZhbHVlLCBob2xlLCB3LCBoKTtcbiAgICAgIGN0eC5jbGVhclJlY3QoMCwgMCwgdywgaCk7XG4gICAgICBjdHguZmlsbFN0eWxlID0gXCJyZ2JhKDAsIDAsIDAsIDAuNSlcIjtcbiAgICAgIGZvciAoY29uc3QgW3gsIHldIG9mIHBhcnRpY2xlcykge1xuICAgICAgICBjdHguYmVnaW5QYXRoKCk7XG4gICAgICAgIGN0eC5hcmMoeCwgeSwgNCwgMCwgMiAqIE1hdGguUEkpO1xuICAgICAgICBjdHguZmlsbCgpO1xuICAgICAgfVxuICAgICAgY3R4LmZpbGxTdHlsZSA9IFwicmVkXCI7XG4gICAgICBjdHguYmVnaW5QYXRoKCk7XG4gICAgICBjdHguYXJjKGhvbGVbMF0sIGhvbGVbMV0sIDUsIDAsIDIgKiBNYXRoLlBJKTtcbiAgICAgIGN0eC5maWxsKCk7XG4gICAgfVxuICAgIHlpZWxkIGNhbnZhcztcbiAgfVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdpbnZlcnNlRmlsbGluZycpIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../notes";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -784,7 +886,7 @@ Stone, Michael. 1992. <em>Quantum Hall Effect</em>. World Scientific.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
