@@ -8,9 +8,15 @@ Please complete the [feedback survey](https://cambridge.eu.qualtrics.com/jfe/for
 
 -->
 
-::: {.callout-warning appearance="minimal"}
+::: {.callout-warning appearance="minimal"} 
 
-Check out these [Summer internships](assets/CMD_SummerInternships2027.pdf) at [MPIPKS, Dresden](https://www.pks.mpg.de/). Deadline for applications is __20th November__!
+## Summer internships
+
+Here are a couple of opportunities for research internships in Europe
+
+- [MPIPKS, Dresden](assets/CMD_SummerInternships2027.pdf) (see [their site](https://www.pks.mpg.de/) to learn more). Deadline for applications is __20th November__!
+
+- [Laboratory of Theoretical Physics](https://lpt.univ-tlse3.fr/en/offre-de-recrutement/lpt-student-internship-program/), Toulouse. Deadline is __15th November__.
 
 :::
 
