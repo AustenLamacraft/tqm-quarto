@@ -342,8 +342,7 @@ Classically, the ground state configuration of our elastic chain corresponds to 
 We want to evaluate
 $$
 \bra{0}\left(u_j-u_k\right)^2\ket{0}.
-\label{coll_gsfluct}
-$$
+$$ {#eq-gs-fluct}
 To do this, we write the displacements in terms of the oscillator variables, and then evaluate the expectation values in the ground state using the oscillator algebra. Recall that
 $$
 u_j = \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} q_n e^{i\eta_n j},
@@ -352,7 +351,7 @@ and
 $$
 q_n = \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right).
 $$
-To evaluate $\eqref{coll_gsfluct}$, we write the two factors $(u_j-u_k)(u_j-u_k)$ in terms of the $\aop_n$ and $\adop_n$. Contributions to the ground state expectation value arise from terms with $\aop_n$ in the left factor and $\adop_n$ in the right for some $n$. All other terms vanish. This gives
+To evaluate @eq-gs-fluct, we write the two factors $(u_j-u_k)(u_j-u_k)$ in terms of the $\aop_n$ and $\adop_n$. Contributions to the ground state expectation value arise from terms with $\aop_n$ in the left factor and $\adop_n$ in the right for some $n$. All other terms vanish. This gives
 $$
 \begin{aligned}
 \bra{0}\left(u_j-u_k\right)^2\ket{0} \\ = \frac{1}{2mN} \sum_{|n| \leq (N-1)/2} \frac{1}{\omega(\eta_n)} \left[e^{i\eta_n j}- e^{i\eta_n k}\right]\left[e^{-i\eta_n j}- e^{-i\eta_n k}\right].
@@ -409,8 +408,7 @@ N & n = 0 \mod N \\
 0 & \text{ otherwise.}
 \end{cases}
 $$
-These peaks at values of $k$ corresponding to multiples of $\frac{2\pi}{a}$ are nothing but the _Bragg peaks_ observed in a diffraction experiment, which translates the real space crystal arrangement into Fourier space. Note that an overall translation of lattice will just change the phase of the $
-\rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured in a diffraction experiment) unchanged.
+These peaks at values of $k$ corresponding to multiples of $\frac{2\pi}{a}$ are nothing but the _Bragg peaks_ observed in a diffraction experiment, which translates the real space crystal arrangement into Fourier space. Note that an overall translation of lattice will just change the phase of the $\rho_k$, leaving $\left|\rho_k\right|^2$ (proportional to the intensity measured in a diffraction experiment) unchanged.
 
 How is this picture altered in the quantum mechanical ground state? Given the above comment, we should evaluate
 $$
