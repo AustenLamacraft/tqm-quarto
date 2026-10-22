@@ -363,13 +363,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="site-migration-bugs-jekyll-quarto-debris" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="site-migration-bugs-jekyll-quarto-debris"><span class="header-section-number">1.1</span> Site &amp; migration bugs (Jekyll → Quarto debris)</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" checked="">Unconverted Liquid cite tags render literally: <code>{% cite dirac1926 %}</code> (Many Body Wavefunctions), <code>{% cite Fisher:1989aa %}</code> (Lattice Models)</label></li>
-<li><label><input type="checkbox">Broken <code>{{&lt; ref &gt;}}</code> shortcodes render as raw markup in: Spin Models (Appendix link), A is for Annihilation (two “Lecture 1” links), Lattice Models (Lecture 4, Problem Set 2), Bose Gas (Lecture 2), Superconductivity (“above figure”), Response and Correlation (Lecture 1)</label></li>
-<li><label><input type="checkbox">Dead links to excised chapters: <code>notes/lieb-liniger.qmd</code> (Spin Models “Lecture 15”), <code>notes/jellium.qmd</code> (B is for Bunching “Lecture 11”, Superconductivity “Lecture 12”) — purge or restore; also reword passages that assume Lieb–Liniger was covered</label></li>
-<li><label><input type="checkbox">Un-rendered math: “the phase of the <code>$ _k$</code>” (Elastic Chain §2.6, presumably ρ_k); “<code>$ H_ = - f(t)y, $</code>” (Response §2.6); raw <code>\braket</code> macro in Response Eq. 27; empty inline “<code>$ $</code>” in Superconductivity (“for small $ $”)</label></li>
-<li><label><input type="checkbox"><strong>Empty section</strong>: Superconductivity §2.2 “Discussion: Heisenberg’s Problem” — write it or delete the heading</label></li>
-<li><label><input type="checkbox"><strong>Truncated sentence</strong> in Elastic Chain §2.6: “To find the dependence on Δq” stops mid-thought; text missing before “This leads to the conclusion…”</label></li>
-<li><label><input type="checkbox">Past-papers page: embedded PDFs may not render for all users (page shows bare year headings without them) — consider adding plain download links alongside the embeds</label></li>
+<li><p><label><input type="checkbox" checked="">Unconverted Liquid cite tags render literally: <code>{% cite dirac1926 %}</code> (Many Body Wavefunctions), <code>{% cite Fisher:1989aa %}</code> (Lattice Models)</label></p></li>
+<li><p><label><input type="checkbox">Broken <code>{{&lt; ref &gt;}}</code> shortcodes render as raw markup in:</label></p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Spin Models (Appendix link)</label></li>
+<li><label><input type="checkbox">A is for Annihilation (two “Lecture 1” links)</label></li>
+<li><label><input type="checkbox">Lattice Models (Lecture 4, Problem Set 2)</label></li>
+<li><label><input type="checkbox">Bose Gas (Lecture 2)</label></li>
+<li><label><input type="checkbox">Superconductivity (“above figure”)</label></li>
+<li><label><input type="checkbox">Response and Correlation (Lecture 1)</label></li>
+</ul></li>
+<li><p><label><input type="checkbox">Dead links to excised chapters: <code>notes/lieb-liniger.qmd</code> (Spin Models “Lecture 15”), <code>notes/jellium.qmd</code> (B is for Bunching “Lecture 11”, Superconductivity “Lecture 12”) — purge or restore; also reword passages that assume Lieb–Liniger was covered</label></p></li>
+<li><p><label><input type="checkbox">Un-rendered math: “the phase of the <code>$ _k$</code>” (Elastic Chain §2.6, presumably ρ_k); “<code>$ H_ = - f(t)y, $</code>” (Response §2.6); raw <code>\braket</code> macro in Response Eq. 27; empty inline “<code>$ $</code>” in Superconductivity (“for small $ $”)</label></p></li>
+<li><p><label><input type="checkbox"><strong>Empty section</strong>: Superconductivity §2.2 “Discussion: Heisenberg’s Problem” — write it or delete the heading</label></p></li>
+<li><p><label><input type="checkbox"><strong>Truncated sentence</strong> in Elastic Chain §2.6: “To find the dependence on Δq” stops mid-thought; text missing before “This leads to the conclusion…”</label></p></li>
+<li><p><label><input type="checkbox">Past-papers page: embedded PDFs may not render for all users (page shows bare year headings without them) — consider adding plain download links alongside the embeds</label></p></li>
 </ul>
 </section>
 <section id="physics-math-errors" class="level2" data-number="1.2">
@@ -392,14 +400,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="elastic-chain" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="elastic-chain"><span class="header-section-number">1.2.3</span> Elastic Chain</h3>
 <ul class="task-list">
-<li><label><input type="checkbox">Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j</label></li>
+<li><label><input type="checkbox" checked="">Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j</label></li>
 <li><label><input type="checkbox">a_n definition: √(ZkL) needs |k_n|; “k” clashes with the spring constant</label></li>
-<li><label><input type="checkbox">[u_i, p_j] = iδ_ij stated in the classical section before quantization</label></li>
 </ul>
 </section>
 <section id="spin-models" class="level3" data-number="1.2.4">
 <h3 data-number="1.2.4" class="anchored" data-anchor-id="spin-models"><span class="header-section-number">1.2.4</span> Spin Models</h3>
 <ul class="task-list">
+<li><label><input type="checkbox">One way to motivate the different approximations for the FM and AFM cases is via the positivity of the Hamiltonian.</label></li>
 <li><label><input type="checkbox">Sign slip: Δs = −⟨(1/N)Σ a†a⟩ combined with ⟨sᶻ⟩ = (−1)ʲ(s − Δs) gives depletion the wrong sign; also η_n left inside the integral</label></li>
 <li><label><input type="checkbox">Anderson tower: ΔS_A² = −𝒩/2, not −𝒩/8</label></li>
 <li><label><input type="checkbox">“goes to zero as 𝒩 → 0” → 𝒩 → ∞</label></li>
@@ -464,7 +472,7 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox" checked=""><strong>Many Body Wavefunctions</strong>: “provide we ignore”; “verions”; “explict”; “single particle state |φ_α⟩ are”</label></li>
 <li><label><input type="checkbox"><strong>QHE</strong>: “obvserved”; “electon”; “antianaltyic”; “the m=1 an m&gt;1”; “distrubution”; “A Laughlin Laughlin state” (caption); unclosed parenthesis after “∂_z̄“;”ρq₀” → qρ₀; “is then be given”; “intepret”</label></li>
 <li><label><input type="checkbox"><strong>Elastic Chain</strong>: “or original Hamiltonian”; “has lead to”; “way to to see”; “For a vector x_j = 1,…N” → f_j, j = 1,…,N; “∫₀^∞ φ(x)V(x−y)φ(y)” limits → [0, L]; backtick quote artifact in “the `size’ of the system”</label></li>
-<li><label><input type="checkbox"><strong>Spin Models</strong>: “we will at each state end up” → stage; “read of the dispersion” → off; “vanishes both η=0 and at”; “eigenergies”; missing full stop after “lower energy”</label></li>
+<li><label><input type="checkbox" checked=""><strong>Spin Models</strong>: “we will at each state end up” → stage; “read of the dispersion” → off; “vanishes both η=0 and at”; “eigenergies”; missing full stop after “lower energy”.</label></li>
 <li><label><input type="checkbox"><strong>A is for Annihilation</strong>: “movement of of”; “a_a” subscript; “on N−1 particle wavefunctions” → are; undefined shorthand B_{αβ} and Latin/Greek index mixing in the two-particle check; “Here we give simpler derivation”</label></li>
 <li><label><input type="checkbox"><strong>B is for Bunching</strong>: “from with Bose condensates”; “orginating”; “succintly”; “φ_r” → φ_R; bra ⟨N̄_R,N̄_L| has L/R swapped; bold ρ for scalar density; E_K and E_V used but never defined; “is the ground state is”; unclosed parenthesis at “(as we did in Lecture 4”</label></li>
 <li><label><input type="checkbox"><strong>Lattice Models</strong>: “in that in involves”; “neighouring”; “ocurrence”; “antiferromangetic”; missing full stop after “U/t→∞”; “the boundaries that we have have found”</label></li>

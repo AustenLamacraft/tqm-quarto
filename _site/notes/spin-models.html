@@ -576,7 +576,7 @@ S^-\lvert{\text{FM}}\rangle = \sum_{j=1}^N s^-_j\lvert{\text{FM}}\rangle = \sum_
 <p>Verify that <span class="math inline">\(S^z = N/2-1\)</span>, but that <span class="math inline">\(\mathbf{S}^2\)</span> and <span class="math inline">\(H\)</span> are unchanged.</p>
 </div>
 </div>
-<p><a href="#eq-spin-lowered" class="quarto-xref">Equation&nbsp;3</a> is a superposition of terms with one spin flipped. If we continue the process to explore the whole multiplet, we will at each state end up with a constant amplitude superposition of all states with two spins flipped (for <span class="math inline">\(S^z=N/2-2\)</span>), three flipped (for <span class="math inline">\(S^z=N/2-3\)</span>) and so on.</p>
+<p><a href="#eq-spin-lowered" class="quarto-xref">Equation&nbsp;3</a> is a superposition of terms with one spin flipped. We can continue the process to explore the whole multiplet. We find for <span class="math inline">\(S^z=N/2-2\)</span> a constant amplitude superposition of all states with two spins flipped. For <span class="math inline">\(S^z=N/2-3\)</span> we find the same with three spins flipped, and so on.</p>
 <p>Are these the ground states for <span class="math inline">\(J&lt;0\)</span>? One way to convince ourselves is to write the Hamiltonian as</p>
 <p><span class="math display">\[
 H = J \sum_{j=1}^N \mathbf{s}_j \cdot\mathbf{s}_{j+1} = J \sum_{j=1}^N \left[(\mathbf{s}_j+\mathbf{s}_{j+1})^2-\mathbf{s}_j^2 - \mathbf{s}_{j+1}^2\right]
@@ -636,7 +636,7 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 </section>
 <section id="n-magnon-states" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="n-magnon-states"><span class="header-section-number">2.4</span> <span class="math inline">\(N\)</span>-Magnon States</h3>
-<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="{{< ref &quot;#two-magnon-states&quot; >}}">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
+<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="#two-magnon-states">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
 <p>We started our discussion with the ground state of the ferromagnetic <span class="math inline">\(J&lt;0\)</span> Heisenberg model. What about <span class="math inline">\(J&gt;0\)</span>? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 </section>
 <section id="antiferromagnets-are-different" class="level3" data-number="2.5">
@@ -729,7 +729,7 @@ p_j(t) &amp;= \frac{1}{\sqrt{N}}\sum_{|n| \leq (N-1)/2} \pi_n(t) e^{-i\eta_n j}.
 <p><span id="eq-h2-fm"><span class="math display">\[
 H^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right].
 \tag{10}\]</span></span></p>
-<p>Comparing with our treatment of the elastic chain, we can read of the dispersion relation</p>
+<p>Comparing with our treatment of the elastic chain, we can read off the dispersion relation</p>
 <p><span class="math display">\[
 \omega_{\text{FM}}(\eta) = 4s\left|J\right|\sin^2(\eta/2)
 \]</span></p>
@@ -757,7 +757,7 @@ H^{(2)} = 2sJ \sum_{|n| \leq (N-1)/2} \left[\sin^2(\eta/2)q_n q_{-n} + \cos^2(\e
 <p><span id="eq-afm-disperion"><span class="math display">\[
 \omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|.
 \tag{13}\]</span></span></p>
-<p>This is rather different to the ferromagnetic case. Note that it vanishes both <span class="math inline">\(\eta=0\)</span> and at the Brillouin zone boundary <span class="math inline">\(\eta=\pi\)</span>, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing <a href="#eq-h2-fm" class="quarto-xref">Equation&nbsp;10</a> and <a href="#eq-h2-afm" class="quarto-xref">Equation&nbsp;12</a>. In the first case both the position and momentum terms vanish at <span class="math inline">\(\eta=0\)</span>, while in the second only the position term vanishes here, with the momentum term vanishing at <span class="math inline">\(\eta=\pi\)</span>.</p>
+<p>This is rather different to the ferromagnetic case. Note that it vanishes at both <span class="math inline">\(\eta=0\)</span> and at the Brillouin zone boundary <span class="math inline">\(\eta=\pi\)</span>, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing <a href="#eq-h2-fm" class="quarto-xref">Equation&nbsp;10</a> and <a href="#eq-h2-afm" class="quarto-xref">Equation&nbsp;12</a>. In the first case both the position and momentum terms vanish at <span class="math inline">\(\eta=0\)</span>, while in the second only the position term vanishes here, with the momentum term vanishing at <span class="math inline">\(\eta=\pi\)</span>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1015,7 +1015,7 @@ E_0 = -J\left(\frac{\mathcal{N}}{4}+1\right),
 <p><span class="math display">\[
 E_S - E_0 = \frac{2J}{\mathcal{N}} S(S+1),
 \]</span></p>
-<p>with degeneracy <span class="math inline">\(2S+1\)</span>. In the second case, reducing <span class="math inline">\(S_A\to \mathcal{N}/4 - 1\)</span> means that <span class="math inline">\(\Delta\mathbf{S}_A^2 = -\frac{\mathcal{N}}{8}\)</span>. From <a href="#eq-hab" class="quarto-xref">Equation&nbsp;20</a> we see that this is going to cause the energy to increase by an amount of order <span class="math inline">\(J\)</span>, while in the first case our excitations were of order <span class="math inline">\(J/\mathcal{N}\)</span>. The two kinds of excitations only have comparable energies when <span class="math inline">\(S\)</span> is <span class="math inline">\(O(\sqrt{N})\)</span>. For smaller values of <span class="math inline">\(S\)</span> the “type 1” states have a lower energy</p>
+<p>with degeneracy <span class="math inline">\(2S+1\)</span>. In the second case, reducing <span class="math inline">\(S_A\to \mathcal{N}/4 - 1\)</span> means that <span class="math inline">\(\Delta\mathbf{S}_A^2 = -\frac{\mathcal{N}}{8}\)</span>. From <a href="#eq-hab" class="quarto-xref">Equation&nbsp;20</a> we see that this is going to cause the energy to increase by an amount of order <span class="math inline">\(J\)</span>, while in the first case our excitations were of order <span class="math inline">\(J/\mathcal{N}\)</span>. The two kinds of excitations only have comparable energies when <span class="math inline">\(S\)</span> is <span class="math inline">\(O(\sqrt{N})\)</span>. For smaller values of <span class="math inline">\(S\)</span> the “type 1” states have a lower energy.</p>
 <p>Let’s describe the type 1 energy states in more detail. The two spins of magnitude <span class="math inline">\(S_A = S_B = \frac{\mathcal{N}}{4}\)</span> can be combined to make a total spin between <span class="math inline">\(\mathcal{N}/2\)</span> and <span class="math inline">\(0\)</span> (assuming <span class="math inline">\(\mathcal{N}\)</span> even). We can thus decompose the Hilbert space of the two spins as</p>
 <p><span class="math display">\[
 \mathcal{H}_A\otimes \mathcal{H}_B = \mathcal{H}^{(0)}\oplus\mathcal{H}^{(1)}\oplus\cdots \mathcal{H}^{(\mathcal{N}/2)},
@@ -1030,7 +1030,7 @@ H_\text{rotor} = \frac{ \mathbf{L}^2}{2MR^2},
 <p><span class="math display">\[
 E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.
 \]</span></p>
-<p>Thus the eigenstates and eigenergies of our model spin Hamiltonian can be identified with those of the rotor up to <span class="math inline">\(l=\mathcal{N}/2\)</span>. What plays the role of the direction of the rotor <span class="math inline">\(\mathbf{r}= R\mathbf{n}\)</span>, where <span class="math inline">\(\mathbf{n}\)</span> is a unit vector? Here are some things we know about <span class="math inline">\(\mathbf{n}\)</span>.</p>
+<p>Thus the eigenstates and eigenenergies of our model spin Hamiltonian can be identified with those of the rotor up to <span class="math inline">\(l=\mathcal{N}/2\)</span>. What plays the role of the direction of the rotor <span class="math inline">\(\mathbf{r}= R\mathbf{n}\)</span>, where <span class="math inline">\(\mathbf{n}\)</span> is a unit vector? Here are some things we know about <span class="math inline">\(\mathbf{n}\)</span>.</p>
 <p><span id="eq-n-idents"><span class="math display">\[
 \begin{aligned}
 \mathbf{L}\cdot \mathbf{n} = 0,\quad \mathbf{n}^2 = 1\\

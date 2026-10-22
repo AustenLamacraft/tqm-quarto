@@ -151,7 +151,7 @@ Verify that $S^z = N/2-1$, but that $\mathbf{S}^2$ and $H$ are unchanged.
 
 :::
 
-@eq-spin-lowered is a superposition of terms with one spin flipped. If we continue the process to explore the whole multiplet, we will at each state end up with a constant amplitude superposition of all states with two spins flipped (for $S^z=N/2-2$), three flipped (for $S^z=N/2-3$) and so on.
+@eq-spin-lowered is a superposition of terms with one spin flipped. We can continue the process to explore the whole multiplet. We find for $S^z=N/2-2$ a constant amplitude superposition of all states with two spins flipped. For $S^z=N/2-3$ we find the same with three spins flipped, and so on.
 
 Are these the ground states for $J<0$? One way to convince ourselves is to write the Hamiltonian as
 
@@ -227,7 +227,7 @@ If we are thinking of the down spin as a particle, then the eigenstates @eq-spin
 
 ### $N$-Magnon States
 
-Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have _many_ magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts -- it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the [Appendix]({{< ref "#two-magnon-states" >}}). It turns out that for the Heisenberg model we are lucky, and we even know the form of a _general_ energy eigenstate with $n$ flipped spin. It's called __Bethe's ansatz__ and we'll meet it in [Lecture 15](lieb-liniger.qmd).
+Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have _many_ magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts -- it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the [Appendix](#two-magnon-states). It turns out that for the Heisenberg model we are lucky, and we even know the form of a _general_ energy eigenstate with $n$ flipped spin. It's called __Bethe's ansatz__ and we'll meet it in [Lecture 15](lieb-liniger.qmd).
 
 We started our discussion with the ground state of the ferromagnetic $J<0$ Heisenberg model. What about $J>0$? Can we guess the ground state in this case (of course, that's equivalent to finding the _highest_ excited state of the ferromagnet). Bethe's ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?
 
@@ -347,7 +347,7 @@ $$
 H^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right].
 $$ {#eq-h2-fm}
 
-Comparing with our treatment of the elastic chain, we can read of the dispersion relation
+Comparing with our treatment of the elastic chain, we can read off the dispersion relation
 
 $$
 \omega_{\text{FM}}(\eta) = 4s\left|J\right|\sin^2(\eta/2)
@@ -390,7 +390,7 @@ $$
 \omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|.
 $$ {#eq-afm-disperion}
 
-This is rather different to the ferromagnetic case. Note that it vanishes both $\eta=0$ and at the Brillouin zone boundary $\eta=\pi$, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing @eq-h2-fm and @eq-h2-afm. In the first case both the position and momentum terms vanish at $\eta=0$, while in the second only the position term vanishes here, with the momentum term vanishing at $\eta=\pi$.
+This is rather different to the ferromagnetic case. Note that it vanishes at both $\eta=0$ and at the Brillouin zone boundary $\eta=\pi$, and is linear in the vicinity of both points, compared with the quadratic behaviour of the ferromagnet. The reason for the difference is clear on comparing @eq-h2-fm and @eq-h2-afm. In the first case both the position and momentum terms vanish at $\eta=0$, while in the second only the position term vanishes here, with the momentum term vanishing at $\eta=\pi$.
 
 ::: {.callout-tip}
 ## Check
@@ -682,7 +682,7 @@ $$
 E_S - E_0 = \frac{2J}{\cN} S(S+1),
 $$
 
-with degeneracy $2S+1$. In the second case, reducing $S_A\to \cN/4 - 1$ means that $\Delta\mathbf{S}_A^2 = -\frac{\cN}{8}$. From @eq-hab we see that this is going to cause the energy to increase by an amount of order $J$, while in the first case our excitations were of order $J/\cN$. The two kinds of excitations only have comparable energies when $S$ is $O(\sqrt{N})$. For smaller values of $S$ the "type 1" states have a lower energy
+with degeneracy $2S+1$. In the second case, reducing $S_A\to \cN/4 - 1$ means that $\Delta\mathbf{S}_A^2 = -\frac{\cN}{8}$. From @eq-hab we see that this is going to cause the energy to increase by an amount of order $J$, while in the first case our excitations were of order $J/\cN$. The two kinds of excitations only have comparable energies when $S$ is $O(\sqrt{N})$. For smaller values of $S$ the "type 1" states have a lower energy.
 
 Let's describe the type 1 energy states in more detail. The two spins of magnitude $S_A = S_B = \frac{\cN}{4}$ can be combined to make a total spin between $\cN/2$ and $0$ (assuming $\cN$ even). We can thus decompose the Hilbert space of the two spins as
 
@@ -705,7 +705,7 @@ $$
 E_{lm} = \frac{L(L+1)}{2MR^2},\qquad m=-l,\ldots, l.
 $$
 
-Thus the eigenstates and eigenergies of our model spin Hamiltonian can be identified with those of the rotor up to $l=\cN/2$. What plays the role of the direction of the rotor $\br= R\mathbf{n}$, where $\mathbf{n}$ is a unit vector? Here are some things we know about $\mathbf{n}$.
+Thus the eigenstates and eigenenergies of our model spin Hamiltonian can be identified with those of the rotor up to $l=\cN/2$. What plays the role of the direction of the rotor $\br= R\mathbf{n}$, where $\mathbf{n}$ is a unit vector? Here are some things we know about $\mathbf{n}$.
 
 $$
 \begin{aligned}

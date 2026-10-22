@@ -5,7 +5,15 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 ## Site & migration bugs (Jekyll → Quarto debris)
 
 - [X] Unconverted Liquid cite tags render literally: `{% cite dirac1926 %}` (Many Body Wavefunctions), `{% cite Fisher:1989aa %}` (Lattice Models)
-- [ ] Broken `{{< ref >}}` shortcodes render as raw markup in: Spin Models (Appendix link), A is for Annihilation (two "Lecture 1" links), Lattice Models (Lecture 4, Problem Set 2), Bose Gas (Lecture 2), Superconductivity ("above figure"), Response and Correlation (Lecture 1)
+- [ ] Broken `{{< ref >}}` shortcodes render as raw markup in: 
+
+  - [X] Spin Models (Appendix link)
+  - [ ] A is for Annihilation (two "Lecture 1" links)
+  - [ ] Lattice Models (Lecture 4, Problem Set 2)
+  - [ ] Bose Gas (Lecture 2)
+  - [ ] Superconductivity ("above figure")
+  - [ ] Response and Correlation (Lecture 1)
+
 - [ ] Dead links to excised chapters: `notes/lieb-liniger.qmd` (Spin Models "Lecture 15"), `notes/jellium.qmd` (B is for Bunching "Lecture 11", Superconductivity "Lecture 12") — purge or restore; also reword passages that assume Lieb–Liniger was covered
 - [ ] Un-rendered math: "the phase of the `$ _k$`" (Elastic Chain §2.6, presumably ρ_k); "`$ H_ = - f(t)y, $`" (Response §2.6); raw `\braket` macro in Response Eq. 27; empty inline "`$ $`" in Superconductivity ("for small $ $")
 - [ ] **Empty section**: Superconductivity §2.2 "Discussion: Heisenberg's Problem" — write it or delete the heading
@@ -24,11 +32,12 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 - [X] Many-body drift: sum over j ≠ i (not j ≠ 1); X_i/Y_i vs X_t/Y_t subscripts; "m" doubles as mass and Laughlin exponent — remark or relabel
 
 ### Elastic Chain
-- [ ] Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j
+- [X] Appendix 3.2: sum should be n = 0 … j−1 (starts at 1/(1/2)), not n = 1 … j
 - [ ] a_n definition: √(ZkL) needs |k_n|; "k" clashes with the spring constant
-- [ ] [u_i, p_j] = iδ_ij stated in the classical section before quantization
 
 ### Spin Models
+
+- [ ] One way to motivate the different approximations for the FM and AFM cases is via the positivity of the Hamiltonian. 
 - [ ] Sign slip: Δs = −⟨(1/N)Σ a†a⟩ combined with ⟨sᶻ⟩ = (−1)ʲ(s − Δs) gives depletion the wrong sign; also η_n left inside the integral
 - [ ] Anderson tower: ΔS_A² = −𝒩/2, not −𝒩/8
 - [ ] "goes to zero as 𝒩 → 0" → 𝒩 → ∞
@@ -75,7 +84,7 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 - [X] **Many Body Wavefunctions**: "provide we ignore"; "verions"; "explict"; "single particle state |φ_α⟩ are"
 - [ ] **QHE**: "obvserved"; "electon"; "antianaltyic"; "the m=1 an m>1"; "distrubution"; "A Laughlin Laughlin state" (caption); unclosed parenthesis after "∂_z̄"; "ρq₀" → qρ₀; "is then be given"; "intepret"
 - [ ] **Elastic Chain**: "or original Hamiltonian"; "has lead to"; "way to to see"; "For a vector x_j = 1,…N" → f_j, j = 1,…,N; "∫₀^∞ φ(x)V(x−y)φ(y)" limits → [0, L]; backtick quote artifact in "the `size' of the system"
-- [ ] **Spin Models**: "we will at each state end up" → stage; "read of the dispersion" → off; "vanishes both η=0 and at"; "eigenergies"; missing full stop after "lower energy"
+- [X] **Spin Models**: "we will at each state end up" → stage; "read of the dispersion" → off; "vanishes both η=0 and at"; "eigenergies"; missing full stop after "lower energy".
 - [ ] **A is for Annihilation**: "movement of of"; "a_a" subscript; "on N−1 particle wavefunctions" → are; undefined shorthand B_{αβ} and Latin/Greek index mixing in the two-particle check; "Here we give simpler derivation"
 - [ ] **B is for Bunching**: "from with Bose condensates"; "orginating"; "succintly"; "φ_r" → φ_R; bra ⟨N̄_R,N̄_L| has L/R swapped; bold ρ for scalar density; E_K and E_V used but never defined; "is the ground state is"; unclosed parenthesis at "(as we did in Lecture 4"
 - [ ] **Lattice Models**: "in that in involves"; "neighouring"; "ocurrence"; "antiferromangetic"; missing full stop after "U/t→∞"; "the boundaries that we have have found"
