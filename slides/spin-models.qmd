@@ -152,7 +152,7 @@ $$
 \mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right)
 $$
 
-where $s^\pm = s^x\pm i s^y$
+where  $s^z=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ and $s^\pm = s^x\pm i s^y$
 $$
 s^+ = \begin{pmatrix}
 0 & 1 \\
@@ -349,6 +349,8 @@ $$
 \left[s^+,s^-\right] &= 2s^z
 \end{aligned}
 $$ 
+
+Hint: write the first as $s^z s^+ = s^+(s^z + 1)$ and substitute.
 
 <!-- Note that since
 

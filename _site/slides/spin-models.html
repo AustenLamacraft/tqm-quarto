@@ -293,7 +293,7 @@ H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
 <p><span class="math display">
 \mathbf{s}_j \cdot \mathbf{s}_{j+1} = s^z_js^z_{j+1} + \frac{1}{2}\left(s^+_js^-_{j+1} +s^-_js^+_{j+1}\right)
 </span></p>
-<p>where <span class="math inline">s^\pm = s^x\pm i s^y</span> <span class="math display">
+<p>where <span class="math inline">s^z=\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix}</span> and <span class="math inline">s^\pm = s^x\pm i s^y</span> <span class="math display">
 s^+ = \begin{pmatrix}
 0 &amp; 1 \\
 0 &amp; 0
@@ -489,6 +489,7 @@ s^z &amp;= \left(s - a^\dagger a^{\vphantom{\dagger}}\right)
 \left[s^+,s^-\right] &amp;= 2s^z
 \end{aligned}
 </span></p>
+<p>Hint: write the first as <span class="math inline">s^z s^+ = s^+(s^z + 1)</span> and substitute.</p>
 <!-- Note that since
 
 $$
@@ -1046,7 +1047,7 @@ s^z_j = (-1)^j(s-a^\dagger_ja^{\vphantom{\dagger}}_j)
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

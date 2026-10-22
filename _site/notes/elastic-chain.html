@@ -377,6 +377,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#fourier-review" id="toc-fourier-review" class="nav-link" data-scroll-target="#fourier-review"><span class="header-section-number">3.1</span> Fourier review</a></li>
   <li><a href="#sec-u-var" id="toc-sec-u-var" class="nav-link" data-scroll-target="#sec-u-var"><span class="header-section-number">3.2</span> Evaluating Equation&nbsp;13</a></li>
+  <li><a href="#density-fluctuations-in-real-space" id="toc-density-fluctuations-in-real-space" class="nav-link" data-scroll-target="#density-fluctuations-in-real-space"><span class="header-section-number">3.3</span> Density fluctuations in real space</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="elastic-chain.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -415,8 +416,18 @@ Can't get these to work with tex output at the moment because they end up after 
 <hr>
 <section id="the-classical-system" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="the-classical-system"><span class="header-section-number">1</span> The Classical System</h2>
-<p>We study a chain of equal masses connected by springs, moving only in one dimension, along the chain. The Hamiltonian is</p>
-<p><img src="../assets/ElasticChain.png" class="img-fluid"></p>
+<p>We study a chain of equal masses connected by springs, moving only in one dimension, along the chain.</p>
+<div id="fig-elastic-chain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elastic-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="elastic-chain_files/mediabag/9592d57991465f1cb7418f85725f45fa69a69612.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elastic-chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The elastic chain
+</figcaption>
+</figure>
+</div>
+<p>The Hamiltonian is</p>
 <p><span id="eq-H-chain"><span class="math display">\[
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
 \tag{1}\]</span></span></p>
@@ -668,10 +679,14 @@ q_n = \sqrt{\frac{1}{2m\omega(\eta_n)}}\left(a_n + a_{-n}^\dagger\right).
 \langle{0}\rvert\left(u_j-u_k\right)^2\lvert{0}\rangle = \frac{1}{mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\\ = \frac{1}{m}\int_{-\pi}^\pi \frac{d\eta}{2\pi} \frac{1-\cos\left(\eta[j-k]\right)}{\omega(\eta)}.
 \end{aligned}
 \tag{13}\]</span></span> The dispersion relation <a href="#eq-dispersion" class="quarto-xref">Equation&nbsp;2</a> makes this integral a little difficult.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/disp_fluct.png" class="img-fluid figure-img"></p>
-<figcaption>The integrand in <a href="#eq-u-var" class="quarto-xref">Equation&nbsp;13</a> for <span class="math inline">\(j-k=20\)</span>. What form does it take for <span class="math inline">\(\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi\)</span>?.</figcaption>
+<div id="fig-integrand" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-integrand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/disp_fluct.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-integrand-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The integrand in <a href="#eq-u-var" class="quarto-xref">Equation&nbsp;13</a> for <span class="math inline">\(j-k=20\)</span>. What form does it take for <span class="math inline">\(\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi\)</span>?.
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -773,10 +788,25 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
 &amp;\times\exp\left(-\frac{q^2}{2mN}\sum_{|n| \leq (N-1)/2} \frac{1-\cos\left(\eta_n[j-k]\right)}{\omega(\eta_n)}\right).
 \end{split}
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/struct_fact.png" class="img-fluid figure-img"></p>
-<figcaption>Numerical evaluation of <span class="math inline">\(\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle\)</span> for <span class="math inline">\(\ell_\text{osc}/a=0.2\)</span>, <span class="math inline">\(N=51\)</span>. Note that the second Bragg peak is hardly visible.</figcaption>
+<p>Comparing with <a href="#eq-log-fluct" class="quarto-xref">Equation&nbsp;14</a> gives</p>
+<p><span id="eq-momentum-gaussian"><span class="math display">\[
+\begin{split}
+\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle = \sum_{j,k=1}^N &amp;\exp(iqa[j-k])
+\exp\left(-\frac{q^2\sigma_{|j-k|}^2}{2}\right),
+\end{split}
+\tag{16}\]</span></span></p>
+<p>where</p>
+<p><span class="math display">\[
+\sigma_{|i-j|}^2\equiv \langle{0}\rvert\left(u_i-u_j\right)^2\lvert{0}\rangle
+\]</span></p>
+<div id="fig-density-fluct" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-density-fluct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/struct_fact.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-density-fluct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Numerical evaluation of <span class="math inline">\(\langle{0}\rvert \rho_q \rho_{-q} \lvert{0}\rangle\)</span> for <span class="math inline">\(\ell_\text{osc}/a=0.2\)</span>, <span class="math inline">\(N=51\)</span>. Note that the second Bragg peak is hardly visible.
+</figcaption>
 </figure>
 </div>
 <p>The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in <a href="#eq-u-var" class="quarto-xref">Equation&nbsp;13</a>. Taking the <span class="math inline">\(N\to\infty\)</span> limit with <span class="math inline">\(\left\|j-k\right\|\gg 1\)</span> as before, we find that in the vicinity of the first Bragg peak at <span class="math inline">\(q=2\pi/a\)</span> the summand has the form <span class="math display">\[
@@ -810,12 +840,12 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
 <h4 data-number="3.1.1" class="anchored" data-anchor-id="discrete-fourier-transform"><span class="header-section-number">3.1.1</span> Discrete Fourier Transform</h4>
 <p>For a vector <span class="math inline">\(x_j = 1,\ldots N\)</span> (<span class="math inline">\(N\)</span> taken to be odd), we define the DFT by <span id="eq-dft"><span class="math display">\[
 F_n = \sum_{j=1}^N f_j e^{-i\eta_n j},
-\tag{16}\]</span></span> where <span class="math inline">\(\eta_n\equiv \frac{2\pi n}{N}\)</span>, and <span class="math inline">\(n = -(N-1)/2,\ldots, (N-1)/2\)</span>. The key to inverting <a href="#eq-dft" class="quarto-xref">Equation&nbsp;16</a> is the observation <span id="eq-dft-ident"><span class="math display">\[
+\tag{17}\]</span></span> where <span class="math inline">\(\eta_n\equiv \frac{2\pi n}{N}\)</span>, and <span class="math inline">\(n = -(N-1)/2,\ldots, (N-1)/2\)</span>. The key to inverting <a href="#eq-dft" class="quarto-xref">Equation&nbsp;17</a> is the observation <span id="eq-dft-ident"><span class="math display">\[
 \sum_{n=-(N-1)/2}^{(N-1)/2} e^{i\eta_n j} = \begin{cases}
 0 &amp; j\neq 0 \mod N\\
 N &amp; j = 0 \mod N.
 \end{cases}
-\tag{17}\]</span></span></p>
+\tag{18}\]</span></span></p>
 <blockquote class="blockquote">
 <p>Perhaps the slickest way to to see this is to observe that <span class="math display">\[
 z^N-1 = (z-1)(1 + z + z^2 +\cdots z^{N-1})
@@ -823,11 +853,11 @@ z^N-1 = (z-1)(1 + z + z^2 +\cdots z^{N-1})
 </blockquote>
 <p>This gives <span id="eq-idft"><span class="math display">\[
 f_j = \frac{1}{N}\sum_{n=-(N-1)/2}^{(N-1)/2}  F_n e^{i\eta_n j}.
-\tag{18}\]</span></span> A more democratic definition would have <span class="math inline">\(1/\sqrt{N}\)</span> in both definitions <a href="#eq-dft" class="quarto-xref">Equation&nbsp;16</a> and <a href="#eq-idft" class="quarto-xref">Equation&nbsp;18</a>. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors <span class="math inline">\(e^{(n)}_j = \frac{e^{i\eta_n j}}{\sqrt{N}}\)</span>, and both the DFT and its inverse would be unitary transformations.</p>
+\tag{19}\]</span></span> A more democratic definition would have <span class="math inline">\(1/\sqrt{N}\)</span> in both definitions <a href="#eq-dft" class="quarto-xref">Equation&nbsp;17</a> and <a href="#eq-idft" class="quarto-xref">Equation&nbsp;19</a>. This would allow us to regard the DFT as a basis change to an orthonormal basis of vectors <span class="math inline">\(e^{(n)}_j = \frac{e^{i\eta_n j}}{\sqrt{N}}\)</span>, and both the DFT and its inverse would be unitary transformations.</p>
 </section>
 <section id="ntoinfty-limit" class="level4" data-number="3.1.2">
 <h4 data-number="3.1.2" class="anchored" data-anchor-id="ntoinfty-limit"><span class="header-section-number">3.1.2</span> <span class="math inline">\(N\to\infty\)</span> limit</h4>
-<p>In this limit the <span class="math inline">\(\eta_n\)</span> values become dense in the range <span class="math inline">\((-\pi,\pi]\)</span>, with separation <span class="math inline">\(\Delta \eta = 2\pi/N\)</span>, and we replace the sum in the inverse DFT <a href="#eq-idft" class="quarto-xref">Equation&nbsp;18</a> by an integral according to the prescription <span class="math display">\[
+<p>In this limit the <span class="math inline">\(\eta_n\)</span> values become dense in the range <span class="math inline">\((-\pi,\pi]\)</span>, with separation <span class="math inline">\(\Delta \eta = 2\pi/N\)</span>, and we replace the sum in the inverse DFT <a href="#eq-idft" class="quarto-xref">Equation&nbsp;19</a> by an integral according to the prescription <span class="math display">\[
 \sum_{|n| \leq (N-1)/2} \left(\cdots\right) \xrightarrow{N\to\infty} N \int_{-\pi}^\pi \frac{d\eta}{2\pi}\left(\cdots\right),
 \]</span> giving <span class="math display">\[
 f_j = \int_{-\pi}^\pi \frac{d\eta}{2\pi}\,F(\eta) e^{i\eta j}.
@@ -842,15 +872,15 @@ f_j = \int_{-\pi}^\pi \frac{d\eta}{2\pi}\,F(\eta) e^{i\eta j}.
 \hat f_k &amp;= \int_0^L f(x) e^{-ik_n x}\,dx\nonumber\\
 f(x) &amp;= \frac{1}{L}\sum_k \hat f_k e^{ik_n x}
 \end{aligned}
-\tag{19}\]</span></span> This is the conventional form of the Fourier series for a function with period <span class="math inline">\(L\)</span>.</p>
+\tag{20}\]</span></span> This is the conventional form of the Fourier series for a function with period <span class="math inline">\(L\)</span>.</p>
 <p>With this definition <span class="math inline">\(\hat f_k\)</span> has an extra dimension of distance (on account of the integral), which gets removed by the <span class="math inline">\(1/L\)</span> in the inverse transform.</p>
-<p>The analog of the identity <a href="#eq-dft-ident" class="quarto-xref">Equation&nbsp;17</a> is <span class="math display">\[
+<p>The analog of the identity <a href="#eq-dft-ident" class="quarto-xref">Equation&nbsp;18</a> is <span class="math display">\[
 \frac{1}{L}\sum_k e^{ik x} = \delta_L(x),
 \]</span> where <span class="math inline">\(\delta_L(x)\)</span> is an <span class="math inline">\(L\)</span>-periodic version of the <span class="math inline">\(\delta\)</span>-function.</p>
 </section>
 <section id="ltoinfty" class="level4" data-number="3.1.4">
 <h4 data-number="3.1.4" class="anchored" data-anchor-id="ltoinfty"><span class="header-section-number">3.1.4</span> <span class="math inline">\(L\to\infty\)</span></h4>
-<p>Finally we arrive at the Fourier transform, where we take <span class="math inline">\(L\to\infty\)</span>, so that the inverse transform in <a href="#eq-ft-series" class="quarto-xref">Equation&nbsp;19</a> becomes an integral too <span class="math display">\[
+<p>Finally we arrive at the Fourier transform, where we take <span class="math inline">\(L\to\infty\)</span>, so that the inverse transform in <a href="#eq-ft-series" class="quarto-xref">Equation&nbsp;20</a> becomes an integral too <span class="math display">\[
 \begin{aligned}
 \hat{f}(k) &amp; = \int_{-\infty}^\infty f(x) e^{-ik_n x}\,dx\nonumber\\
 f(x) &amp;= \int_{-\infty}^\infty \hat f(k) e^{ik_n x}\,\frac{dk}{2\pi}.
@@ -886,7 +916,7 @@ f(x)g(x) \stackrel{\text{FT}}{\longleftrightarrow} \frac{1}{L}\sum_k  f_k  g_{q-
 \int_{0}^L f(x)g(x)h(x)\,dx &amp;=  \frac{1}{L^2}\sum_{\substack{k_1,k_2,k_3 \\ k_1+k_2+k_3=0}}  f_{k_1} g_{k_2} h_{k_3}\nonumber\\
 \int_0^\infty  \phi(x)V(x-y)\phi(y)\,dx \,dy &amp;= \frac{1}{L}\sum_{q}  \phi_{-q} V_q \phi_q
 \end{aligned}
-\tag{20}\]</span></span> Note that you can be guided to the right number of factors of <span class="math inline">\(1/L\)</span> by dimensional considerations, or from the number of ‘free’ sums over wavevectors.</p>
+\tag{21}\]</span></span> Note that you can be guided to the right number of factors of <span class="math inline">\(1/L\)</span> by dimensional considerations, or from the number of ‘free’ sums over wavevectors.</p>
 <p>Finally, we often encounter the situation where we have two (or more) arguments, but there is only dependence on the difference, for example <span class="math display">\[
 F(x,x') = f(x-x').
 \]</span> In this case <span class="math display">\[
@@ -895,7 +925,7 @@ F_{k,k'} = f_k\delta_{k,-k'}.
 \hat F(k,k') = \hat f(k) (2\pi)\delta(k+k').
 \]</span> <span class="math inline">\((2\pi)\delta(k+k')\)</span> is the <span class="math inline">\(L\to\infty\)</span> limit of <span class="math inline">\(L\delta_{k,-k'}\)</span> as <span class="math display">\[
 \frac{1}{L}\sum_k L\delta_k \xrightarrow{L\to\infty} \int_{-\infty}^\infty \frac{dk}{2\pi} 2\pi \delta(k)
-\]</span> With practice, you will find you are able to write down the right hand sides of expressions like <a href="#eq-ft-examples" class="quarto-xref">Equation&nbsp;20</a> without too much difficulty.</p>
+\]</span> With practice, you will find you are able to write down the right hand sides of expressions like <a href="#eq-ft-examples" class="quarto-xref">Equation&nbsp;21</a> without too much difficulty.</p>
 </section>
 <section id="higher-dimensions" class="level4" data-number="3.1.7">
 <h4 data-number="3.1.7" class="anchored" data-anchor-id="higher-dimensions"><span class="header-section-number">3.1.7</span> Higher dimensions</h4>
@@ -912,7 +942,7 @@ F_{k,k'} = f_k\delta_{k,-k'}.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Practice writing out <a href="#eq-ft-examples" class="quarto-xref">Equation&nbsp;20</a> in <span class="math inline">\(d\)</span> dimensions.</p>
+<p>Practice writing out <a href="#eq-ft-examples" class="quarto-xref">Equation&nbsp;21</a> in <span class="math inline">\(d\)</span> dimensions.</p>
 </div>
 </div>
 </section>
@@ -920,14 +950,26 @@ F_{k,k'} = f_k\delta_{k,-k'}.
 <section id="sec-u-var" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="sec-u-var"><span class="header-section-number">3.2</span> Evaluating <a href="#eq-u-var" class="quarto-xref">Equation&nbsp;13</a></h3>
 <p>We want to evaluate <span class="math display">\[
-I(j)\equiv\int_{-\pi}^\pi \frac{1-\cos\left(\eta j\right)}{\sin(\eta/2)}d\eta
+I(j)\equiv\int_{-\pi}^\pi \frac{1-\cos\left(\eta j\right)}{|\sin(\eta/2)|}d\eta
 \]</span> for integer <span class="math inline">\(j\)</span>. We can write this as <span class="math display">\[
 I(j)=\int_{0}^{2\pi} \frac{1-e^{i\eta j}}{\sin(\eta/2)}d\eta= -2i\int_{0}^{2\pi} e^{i\eta/2}\frac{1-e^{i\eta j}}{1-e^{i\eta}}d\eta
 \]</span> because the imaginary part of the integrand vanishes on integration. Now notice that the integrand involves the geometric series <span class="math display">\[
 \frac{1-e^{i\eta j}}{1-e^{i\eta}} = 1 + e^{i\eta} + \cdots e^{i\eta(j-1)},
 \]</span> so we can do the integrals term by term to give <span class="math display">\[
-I(j) = 4\sum_{n=1}^j \frac{1}{n+1/2}\sim 4\log j.
-\]</span> When all factors are replaced, this yields <a href="#eq-log-fluct" class="quarto-xref">Equation&nbsp;14</a>.</p>
+I(j) = 4\sum_{n=0}^{j-1} \frac{1}{n+1/2}=4\left[\psi(j+1/2) - \psi(1/2)\right]
+\]</span></p>
+<p>where <span class="math inline">\(\psi(z)\)</span> is the <a href="http://en.wikipedia.org/wiki/Digamma_function">Digamma function</a>. At large values of <span class="math inline">\(j\)</span> we have</p>
+<p><span class="math display">\[
+I(j)\sim 4\log j.
+\]</span></p>
+<p>When all factors are replaced, this yields <a href="#eq-log-fluct" class="quarto-xref">Equation&nbsp;14</a>.</p>
+</section>
+<section id="density-fluctuations-in-real-space" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="density-fluctuations-in-real-space"><span class="header-section-number">3.3</span> Density fluctuations in real space</h3>
+<p>From <a href="#eq-momentum-gaussian" class="quarto-xref">Equation&nbsp;16</a> we can Fourier transform back to position space and find the density correlations. Due to the periodic boundary conditions we have <span class="math inline">\(N\)</span> identical contributions at each separation</p>
+<p><span class="math display">\[
+\langle \rho(0) rho(x) \rangle = N\left[\delta(x) + \sum_n\right]
+\]</span></p>
 
 
 </section>

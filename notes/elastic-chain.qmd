@@ -1,6 +1,9 @@
 ---
 title: The Elastic Chain
+filters:
+    - diagram
 ---
+
 
 
 {{< include ../_macros.qmd >}}
@@ -12,9 +15,38 @@ In this lecture we discuss a very simple many body system in which particles are
 
 ## The Classical System
 
-We study a chain of equal masses connected by springs, moving only in one dimension, along the chain. The Hamiltonian is
+We study a chain of equal masses connected by springs, moving only in one dimension, along the chain.
 
-![](../assets/ElasticChain.png)
+::: {#fig-elastic-chain}
+
+```{.tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing}
+\begin{tikzpicture}[very thick, line cap=round,
+  mass/.style={line width=0.6,draw=red!30!black,top color=red!60!black!30,bottom color=red!60!black!10,shading angle=30},
+  spring/.style={line width=0.8,blue!7!black!80,decorate,decoration={coil,amplitude=5,segment length=5},line cap=round},
+  mydashed/.style={blue!70!black,dashed,line width=0.25,dash pattern=on 2.2pt off 2.2pt},
+  dx/.style={-{Latex[length=3.3,width=2.2]},blue!40!black,line width=0.3},
+  axis/.style={->,very thick}]
+  \def\x{2.0} \def\r{0.25} \def\y{1.6} \def\h{0.45*\y} \def\dx{0.8}
+  \foreach \i in {1,...,4} {
+    \coordinate (u\i) at ({(\i-1)*\x},0);
+    \draw[mass] (u\i) circle (\r);
+    \draw[mydashed] ({(\i-1)*\x},-\y/2) -- ({(\i-1)*\x},\y/2);
+    \draw[dx] ({(\i-1)*\x},\h) --++ (\dx,0) node[pos=0.45,fill=white,inner sep=0] {$u_\i$};
+  }
+  \foreach \i in {0,1,2}
+    \draw[spring] ({\i*\x+\r},0) -- ({(\i+1)*\x-\r},0);
+  \draw[axis] (-0.5*\x,-\h) -- (3.5*\x,-\h) node[right] {$x$};
+  \node[right] at (3*\x+\r,0) {$m$};
+  \node[above] at ($(u3)!0.5!(u4)+(0,0.5*\r)$) {$k$};
+\end{tikzpicture}
+```
+
+The elastic chain
+
+:::
+
+The Hamiltonian is
 
 $$
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
@@ -365,7 +397,13 @@ $$
 $$ {#eq-u-var}
 The dispersion relation @eq-dispersion makes this integral a little difficult.
 
-![The integrand in @eq-u-var for $j-k=20$. What form does it take for $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$?.](../assets/disp_fluct.png)
+::: {#fig-integrand}
+
+![](../assets/disp_fluct.png)
+
+The integrand in @eq-u-var for $j-k=20$. What form does it take for $\left|j-k\right|^{-1}\lesssim\eta\lesssim \pi$?.
+
+:::
 
 ::: {.callout-tip}
 ## Check
@@ -467,7 +505,28 @@ $$
 \end{split}
 $$
 
-![Numerical evaluation of $\bra{0} \rho_q \rho_{-q} \ket{0}$ for $\ell_\text{osc}/a=0.2$, $N=51$. Note that the second Bragg peak is hardly visible.](../assets/struct_fact.png)
+Comparing with @eq-log-fluct gives
+
+$$
+\begin{split}
+\bra{0} \rho_q \rho_{-q} \ket{0} = \sum_{j,k=1}^N &\exp(iqa[j-k])
+\exp\left(-\frac{q^2\sigma_{|j-k|}^2}{2}\right),
+\end{split}
+$${#eq-momentum-gaussian}
+
+where
+
+$$
+\sigma_{|i-j|}^2\equiv \bra{0}\left(u_i-u_j\right)^2\ket{0} 
+$$
+
+::: {#fig-density-fluct}
+
+![](../assets/struct_fact.png)
+
+Numerical evaluation of $\bra{0} \rho_q \rho_{-q} \ket{0}$ for $\ell_\text{osc}/a=0.2$, $N=51$. Note that the second Bragg peak is hardly visible.
+
+:::
 
 The second exponent modifies the classical prediction of Bragg peaks. We have encountered the expression in exponent before in @eq-u-var. Taking the $N\to\infty$ limit with $\left\|j-k\right\|\gg 1$ as before, we find that in the vicinity of the first Bragg peak at $q=2\pi/a$ the summand has the form
 $$
@@ -644,7 +703,7 @@ Practice writing out @eq-ft-examples in $d$ dimensions.
 
 We want to evaluate
 $$
-I(j)\equiv\int_{-\pi}^\pi \frac{1-\cos\left(\eta j\right)}{\sin(\eta/2)}d\eta
+I(j)\equiv\int_{-\pi}^\pi \frac{1-\cos\left(\eta j\right)}{|\sin(\eta/2)|}d\eta
 $$
 for integer $j$. We can write this as
 $$
@@ -656,7 +715,21 @@ $$
 $$
 so we can do the integrals term by term to give
 $$
-I(j) = 4\sum_{n=1}^j \frac{1}{n+1/2}\sim 4\log j.
+I(j) = 4\sum_{n=0}^{j-1} \frac{1}{n+1/2}=4\left[\psi(j+1/2) - \psi(1/2)\right]
 $$
+
+where $\psi(z)$ is the [Digamma function](http://en.wikipedia.org/wiki/Digamma_function). At large values of $j$ we have
+ 
+$$
+I(j)\sim 4\log j.
+$$
+
 When all factors are replaced, this yields @eq-log-fluct.
 
+### Density fluctuations in real space
+
+From @eq-momentum-gaussian we can Fourier transform back to position space and find the density correlations. Due to the periodic boundary conditions we have $N$ identical contributions at each separation 
+
+$$
+\langle \rho(0) rho(x) \rangle = N\left[\delta(x) + \sum_n\right]
+$$
