@@ -62,7 +62,9 @@ $$
 
 - Use __simple models__ that we can analyse in $N\to\infty$ limit
 
-![](../assets/ElasticChain.png){width=50% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_elastic-chain.qmd >}}
+:::
 
 $$
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right]
@@ -197,7 +199,9 @@ What state do we end up in?
 
 For bosons ($+$ sign) the different terms may be represented
 
-![](../assets/HOM.png){width=70% fig-align="center"}
+::: {.tikz-figure style="width: 70%;"}
+{{< include ../figures/_hom.qmd >}}
+:::
 
 ---
 

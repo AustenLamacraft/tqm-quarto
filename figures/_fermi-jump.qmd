@@ -1,0 +1,21 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{8}
+    \def\Ly{3}
+    \def\kF{0.55*\Lx}
+    \def\y{0.7*\Ly}
+    \def\ang{50}
+
+    \draw[->] (0,0) -- (\Lx,0) node[right] {$\abs{\vb{k}}$};
+    \draw[->] (0,0) -- (0,\Ly) node[right] {$N(\vb{k})$};
+
+    \draw[mydashed] (\kF,0) node[below] {$k_\text{F}$} -- (\kF,\Ly);
+    \draw[mydashed] (\kF,0.6*\y) -- (0,0.6*\y) node[left] {$z_{k_\text{F}}$};
+
+    \fill[mygrey, opacity=0.3] (0,\y) -- (0.7*\kF,\y) to[out=0, in=180-\ang] (\kF,0.6*\y) -- (\kF,0.35*\y) to[out=-\ang,in=180] (1.3*\kF,0) -- (0,0) -- cycle;
+    \draw (0,\y) -- (0.7*\kF,\y) to[out=0, in=180-\ang] (\kF,0.6*\y) -- (\kF,0.35*\y) to[out=-\ang,in=180] (1.3*\kF,0);
+
+    \draw[<-] (\kF,0.6*\y) --++ (45:0.1*\Lx) node[right, align=left] {\footnotesize Discontinuity \\ \footnotesize in $N(\vb{k})$ at $T=0$};
+
+\end{tikzpicture}
+```

@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-43c786d1c8ecd919271c820feae20d09.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -811,10 +811,8 @@ g(\mathbf{r},\mathbf{r}')= \langle{\Psi}\rvert \psi^\dagger(\mathbf{r})\psi^{\vp
 </section>
 <section class="slide level2 center">
 
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/FermiDensityMatrixCut.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="second-quantization_files/mediabag/52d7d42755bc74605ac329d749bc3b77c9be8896.svg">
 </div>
 </section>
 <section id="two-particle-operators" class="slide level2 center">
@@ -1217,7 +1215,7 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

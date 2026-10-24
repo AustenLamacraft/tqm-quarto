@@ -1,0 +1,33 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{8}
+    \def\Ly{3}
+    \def\kF{0.55*\Lx}
+    \def\y{0.7*\Ly}
+    \def\ang{50}
+    \def\n{15}
+
+    \fill[mylightblue2] (0,0) rectangle (\kF,\y);
+    \fill[mylightred] (\kF,0) -- (\kF,0.5*\y) to[out=-\ang,in=180] (1.5*\kF,0) -- cycle;
+
+    \foreach \j [evaluate={\x=\kF*(1-(1-\j/\n)^4);}] in {1,...,\n}{
+        \draw[white] (\x,0) -- (\x,\y);
+    }
+
+    \foreach \j [evaluate={\x=\kF + (\Lx-\kF)*((1-\j/\n)^4);}] in {1,...,\n}{
+        \draw[mylightblue2] (\x,0) -- (\x,\y);
+    }
+    \draw[mydarkblue] (0,0) rectangle (\kF,\y);
+
+    \draw[mydarkred] (\kF,0) -- (\kF,0.5*\y) to[out=-\ang,in=180] (1.5*\kF,0) -- cycle;
+    \draw[mydarkred, fill=mylightred] (\kF,0) -- (\kF,-0.5*\y) to[out=180-\ang,in=0] (0.5*\kF,0) -- cycle;
+
+    \node[left] at (0,\y) {$1$};
+    \node[below right, mydarkred] at (\kF,0) {$n_{\vb{k}}$};
+    \node[above, text=mydarkblue] at (\kF/2,\y) {$\Theta(k_{\text{F}} - \abs{\vb{k}})$};
+
+    \draw[->] (0,0) -- (\Lx,0) node[right] {$\abs{\vb{k}}$};
+    \draw[->] (0,0) -- (0,\Ly) node[right] {$N(\vb{k})$};
+
+\end{tikzpicture}
+```

@@ -117,7 +117,9 @@ $$
 
 - $n_\bk$ is _mean_ deviation from Fermi sphere in continuum limit: 
 
-![](../assets/FermiN.png){width=50% fig-align="center"}
+::: {.tikz-figure style="width: 50%;"}
+{{< include ../figures/_fermi-n.qmd >}}
+:::
 
 ---
 
@@ -204,7 +206,9 @@ $$
 
 - Notation $\mathbf{K} = \frac{1}{2}\left(\bk_2+\bk_3\right),\quad \bq = \frac{1}{2}\left(\bk_2-\bk_3\right)$
 
-![](../assets/FermiGeometry.png){width=50% fig-align="center"}
+::: {.tikz-figure style="width: 50%;"}
+{{< include ../figures/_fermi-geometry.qmd >}}
+:::
 
 ---
 
@@ -356,7 +360,9 @@ N_s(\bk-\delta\bk) &=\theta(k_F-\abs{\bk-\delta\bk}) + n_{s}(\bk-\delta\bk)+\cdo
 \end{align*}
 $$
 
-![](../assets/FermiShift.png){width=40% fig-align="center"}
+::: {.tikz-figure style="width: 40%;"}
+{{< include ../figures/_fermi-shift.qmd >}}
+:::
 
 ---
 
@@ -439,7 +445,9 @@ $$
 
 - Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.
 
-![](../assets/2ph.png){width=50% fig-align="center"}
+::: {.tikz-figure style="width: 50%;"}
+{{< include ../figures/_particle-hole-pairs.qmd >}}
+:::
 
 ---
 
@@ -453,7 +461,9 @@ two kinds of states can contribute
 
     2. Create a single particle-hole pair and move particle at $\bk$
 
-![](../assets/phscatter.png){width=30% fig-align="center"}
+::: {.tikz-figure style="width: 30%;"}
+{{< include ../figures/_particle-scatter.qmd >}}
+:::
 
 ---
 
@@ -505,6 +515,8 @@ $$
 
 - Even with interactions, finite step in distribution function at $k_\text{F}$
 
-![](../assets/FermiJump.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_fermi-jump.qmd >}}
+:::
 
 

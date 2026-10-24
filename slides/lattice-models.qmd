@@ -106,7 +106,9 @@ $$
 
 ---
 
-![](../assets/steps.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_filling-steps.qmd >}}
+:::
 
 - Think about varying $\mu$: values between $UN$ and $U(N-1)$ correspond to integer filling $\nu=N$
 
@@ -239,7 +241,9 @@ $$
 
 ---
 
-![](../assets/mott-perturb.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_mott-perturb.qmd >}}
+:::
 
 ---
 
@@ -254,7 +258,9 @@ $$
 
 ---
 
-![](../assets/BHPhase.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_bh-phase.qmd >}}
+:::
 
 - Note diminishing size of Mott lobes: consequence of enhanced hopping in the effective tight binding models
 

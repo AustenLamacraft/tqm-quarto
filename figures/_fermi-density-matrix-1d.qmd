@@ -1,0 +1,16 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{6}
+    \def\Ly{4}
+    \def\a{2}
+    \def\h{0.75*\Ly}
+
+    \draw[mydarkblue,samples=100,variable=\x,domain=0.3:\a*\Lx]
+        plot(\x/\a,{\h*(sin(deg(\x))/(\x))});
+    \draw[mydarkblue] (0,\h) node[text=black, left] {$1$} -- (0.3/\a,0.985*\h);
+
+    \draw[->] (0,0) -- (\Lx,0) node[right] {$k_{\text{F}} x$};
+    \draw[->] (0,-0.125*\Ly/2) -- (0,0.875*\Ly);
+    \node[mydarkblue] at (0.3*\Lx,0.5*\Ly) {$g(x,0)/n$};
+\end{tikzpicture}
+```

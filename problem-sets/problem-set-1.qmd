@@ -96,11 +96,23 @@ Investigate the behaviour of $\bra{0} u_j^2\ket{0}$ in a chain of length $N$. Wh
 
 Solve the 2D harmonic solid, defined by
 
-![2D harmonic solid.](../assets/2dSolid.png){width=50%}
+::: {#fig-harmonic-solid-2d}
+
+{{< include ../figures/_harmonic-solid-2d.qmd >}}
+
+2D harmonic solid.
+
+:::
 
 __NOTE__: You will need to assume that the equilibrium length of the springs is zero. If not, your solid will not be 'solid', in that even infinitely stiff bars connecting the atoms will not give a rigid structure because they are free to shear layer by layer:
 
-![Isostatic solid.](../assets/isostatic.png)
+::: {#fig-isostatic}
+
+{{< include ../figures/_isostatic.qmd >}}
+
+Isostatic solid.
+
+:::
 
 ## Thermal Displacement in 2D
 

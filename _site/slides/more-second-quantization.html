@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-43c786d1c8ecd919271c820feae20d09.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -716,10 +716,8 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
 <p><span class="math display">
 \hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} \tilde U(\mathbf{k}_1-\mathbf{k}_4) a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}
 </span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/Vertex.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="more-second-quantization_files/mediabag/62d4b14888e24e67d836553e3608429b615ff551.svg">
 </div>
 </section>
 <section class="slide level2 center">
@@ -727,10 +725,8 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
 <p><span class="math display">
 \langle{\mathbf{N}}\rvert \hat H_\text{int.} \lvert \mathbf{N} \rangle = \frac{1}{2V}\tilde U(0) \sum_{\mathbf{k}_1,\mathbf{k}_2} N_{\mathbf{k}_1}N_{\mathbf{k}_2} - \frac{1}{2V} \sum_{\mathbf{k}_1,\mathbf{k}_2} \tilde U(\mathbf{k}_1-\mathbf{k}_2) N_{\mathbf{k}_1}N_{\mathbf{k}_2}
 </span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/HFDiag.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="more-second-quantization_files/mediabag/3a5c6c50e135eba145763e552a041d87ce4a3ebc.svg">
 </div>
 </section>
 <section class="slide level2 center">
@@ -1015,7 +1011,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -471,17 +471,25 @@ H = \sum_{j=1}^N \frac{p_j^2}{2m} + \sum_{j&lt;k} V(x_j-x_k).
 <section id="the-2d-elastic-solid" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="the-2d-elastic-solid"><span class="header-section-number">7</span> The 2D Elastic Solid</h2>
 <p>Solve the 2D harmonic solid, defined by</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/2dSolid.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>2D harmonic solid.</figcaption>
+<div id="fig-harmonic-solid-2d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-harmonic-solid-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="problem-set-1_files/mediabag/f0c17970db7bcd0b4500b62df3e634b301a1a396.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-harmonic-solid-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: 2D harmonic solid.
+</figcaption>
 </figure>
 </div>
 <p><strong>NOTE</strong>: You will need to assume that the equilibrium length of the springs is zero. If not, your solid will not be ‘solid’, in that even infinitely stiff bars connecting the atoms will not give a rigid structure because they are free to shear layer by layer:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/isostatic.png" class="img-fluid figure-img"></p>
-<figcaption>Isostatic solid.</figcaption>
+<div id="fig-isostatic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-isostatic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="problem-set-1_files/mediabag/7432670fc36996ecd1be42660f045026a9e823e8.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isostatic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Isostatic solid.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -611,7 +619,7 @@ H = \sum_j\left[J_\parallel s^z_j s^z_{j+1} + \frac{J_\perp}{2}\left(s^+_js^-_{j
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

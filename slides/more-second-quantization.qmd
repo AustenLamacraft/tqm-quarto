@@ -564,7 +564,9 @@ $$
 \hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\bk_1+\bk_2=\bk_3+\bk_4} \tilde U(\bk_1-\bk_4) \adop_{\bk_1}\adop_{\bk_2}\aop_{\bk_3}\aop_{\bk_4}
 $$
 
-![](../assets/Vertex.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_vertex.qmd >}}
+:::
 
 ---
 
@@ -572,7 +574,9 @@ $$
 \braket{\mathbf{N}}{\hat H_\text{int.}}{\mathbf{N}} = \frac{1}{2V}\tilde U(0) \sum_{\bk_1,\bk_2} N_{\bk_1}N_{\bk_2} - \frac{1}{2V} \sum_{\bk_1,\bk_2} \tilde U(\bk_1-\bk_2) N_{\bk_1}N_{\bk_2}
 $$
 
-![](../assets/HFDiag.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_hartree-fock.qmd >}}
+:::
 
 ---
 

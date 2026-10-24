@@ -623,7 +623,9 @@ Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$
 
 ---
 
-![](../assets/FermiDensityMatrixCut.png){width=60% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_fermi-density-matrix-cut.qmd >}}
+:::
 
 ---
 

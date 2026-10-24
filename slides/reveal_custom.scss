@@ -3,3 +3,16 @@
 $font-family-sans-serif: "Lato", sans-serif;
 $presentation-heading-font-weight: 300;
 $presentation-font-size-root: 30px;
+/*-- scss:rules --*/
+
+// TikZ figures (figures/_*.qmd) are wrapped in a .tikz-figure div whose width
+// sets the figure size; centre the div and scale the SVG to fill it.
+.reveal .tikz-figure {
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    width: 100%;
+    margin: 0;
+  }
+}

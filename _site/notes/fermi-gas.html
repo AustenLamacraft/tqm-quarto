@@ -478,10 +478,14 @@ E^{(2)}(\mathbf{N}) = \left(\frac{U_0}{V}\right)^2 \sum_{\mathbf{k}_1+\mathbf{k}
 N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
 \]</span></p>
 <p>This might seem a bit odd given that <span class="math inline">\(N_{s}(\mathbf{k})=\pm 1\)</span>. You should think of this expansion in terms of the continuum limit, where the <span class="math inline">\(\mathbf{k}\)</span> values become finely spaced. In this limit <span class="math inline">\(n_\mathbf{k}\)</span> represents the <em>mean</em> deviation from the Fermi sphere in that region of <span class="math inline">\(\mathbf{k}\)</span>-space.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/FermiN.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption><span class="math inline">\(n_\mathbf{k}\)</span> as a smoothed deviation from the Fermi step.</figcaption>
+<div id="fig-fermi-n" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/224ec9ec55885e39d90a2c6f57c5de49ae089571.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-n-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <span class="math inline">\(n_\mathbf{k}\)</span> as a smoothed deviation from the Fermi step.
+</figcaption>
 </figure>
 </div>
 <p>The excitation energy above the ground state of an eigenstate labelled by occupancies <span class="math inline">\(N_\mathbf{k}\)</span> can then be expanded in <span class="math inline">\(n_\mathbf{k}\)</span></p>
@@ -539,10 +543,14 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_
 <p><span class="math display">\[
 \mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right),
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/FermiGeometry.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Geometry of the integral for <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span>.</figcaption>
+<div id="fig-fermi-geometry" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-geometry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/3d0323a05b2affa503b02238f538002ed1d9b8cf.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-geometry-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Geometry of the integral for <span class="math inline">\(f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}')\)</span>.
+</figcaption>
 </figure>
 </div>
 <p>the denominator becomes</p>
@@ -618,10 +626,14 @@ G(\phi)=\frac{\nu(E_\text{F})U_0}{2}\left[\left(1+ \frac{\nu(E_\text{F})U_0}{2}\
 m_* = \frac{k_\text{F}}{v_\text{F}}.
 \tag{9}\]</span></span></p>
 <p>Fortunately, we can get at this quantity using the results we already have, thanks to the following sneaky trick (due to Landau). If we increment the momentum of each quasiparticle by a small amount <span class="math inline">\(\delta\mathbf{k}\)</span>, we can compute the new energy using our energy functional <a href="#eq-fdef" class="quarto-xref">Equation&nbsp;3</a>, along with a new distribution function</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/FermiShift.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Shifting the Fermi sea to increase the momentum.</figcaption>
+<div id="fig-fermi-shift" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/1f3828ba400ae8cef1a80492ae87d09f42821dbf.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Shifting the Fermi sea to increase the momentum.
+</figcaption>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -671,10 +683,14 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathb
 \lvert{\mathbf{N}^{(1)}}\rangle = \sum_{\mathbf{N}'\neq \mathbf N}\frac{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}{E^{(0)}(\mathbf{N})-E^{(0)}(\mathbf{N}')}\lvert{\mathbf{N}'}\rangle.
 \]</span></p>
 <p>Let’s consider the Fermi sea ground state <span class="math inline">\(\lvert{\text{FS}}\rangle\)</span>. What states can appear in the above sum in this case? The only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/2ph.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Two particle-hole pairs created out of the Fermi sea.</figcaption>
+<div id="fig-particle-hole-pairs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-particle-hole-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/9a952f7dd3fe77e421625ebf4e5fdc202eed7351.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-particle-hole-pairs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Two particle-hole pairs created out of the Fermi sea.
+</figcaption>
 </figure>
 </div>
 <p><span class="math display">\[
@@ -689,10 +705,14 @@ a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle,
 <li>States with a pair of particle-hole pairs, as before, but with the extra particle at <span class="math inline">\(\mathbf{k}\)</span>. The coefficients of these states are <em>the same</em> as for the corresponding states in the correction for <span class="math inline">\(\lvert{0}\rangle\)</span>, as you should check.</li>
 <li>States with a single particle-hole pair and with the extra particle moved from <span class="math inline">\(\mathbf{k}\)</span>​ to another momentum.</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/phscatter.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Particle scatters, creating a particle-hole pair.</figcaption>
+<div id="fig-particle-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-particle-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/33a475ca437bb96419bc3803b21b9237fcd7f50e.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-particle-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Particle scatters, creating a particle-hole pair.
+</figcaption>
 </figure>
 </div>
 <p>Let’s compare <span class="math inline">\(\lvert{\mathbf{k},s}\rangle\)</span> with <span class="math inline">\(a^\dagger_{\mathbf{k},s}\lvert{0}\rangle\)</span>, the state obtained by creating a particle in the <em>exact</em> ground state of the problem. In first order perturbation theory, <span class="math inline">\(\lvert{0}\rangle\)</span> includes the first kind of state above (2 particle-hole pair states). The states only differ because of the contribution of the second kind. To first order, the single quasiparticle state is therefore</p>
@@ -717,10 +737,14 @@ z_\mathbf{k}= \frac{\lvert{\langle{\mathbf{k},s}\rvert a^\dagger_{\mathbf{k},s} 
 z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\left[\log 2 + \frac{1}{3}\right]
 \]</span></p>
 <p>This is also the occupation number of the original fermions <span class="math inline">\(\langle{0}\rvert a^\dagger_{\mathbf{k},s}a^{\vphantom{\dagger}}_{\mathbf{k},s} \lvert 0 \rangle\)</span> (not the quasiparticles!) just below the Fermi surface in the ground state (see <a href="../problem-sets/problem-set-3.html#nmathbfk-in-the-ground-state">Problem Set 3</a>. There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/FermiJump.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Discontinutity in the ground state occupation number.</figcaption>
+<div id="fig-fermi-jump" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-jump-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/38f275828f4dc6154bf0add99cd071b71a67608b.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-jump-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Discontinutity in the ground state occupation number.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -731,10 +755,14 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
 \Gamma_{\mathbf{N}\to\mathbf{N'}} = 2\pi \lvert{\langle{\mathbf{N'}}\rvert H_\text{int} \lvert \mathbf{N} \rangle}\rvert^2 \delta(E(\mathbf{N})-E(\mathbf{N}'))
 \]</span></p>
 <p>By considering the volume of phase space available for the scattering of a quasiparticle of energy <span class="math inline">\(\Delta\)</span> above the Fermi surface, you should be able to argue that the <em>total</em> rate, obtained by integrating over all possible final states, varies like <span class="math inline">\(\Delta^2\)</span>. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/Collision.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Vanishing phase space volume at low energies.</figcaption>
+<div id="fig-collision" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-collision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fermi-gas_files/mediabag/9797a1fce1432aeba85095d7784a248bf009bfd2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-collision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Vanishing phase space volume at low energies.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -911,7 +939,7 @@ Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii Mikhailovich Lifs
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

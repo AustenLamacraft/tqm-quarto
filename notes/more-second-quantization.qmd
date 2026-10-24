@@ -115,7 +115,13 @@ $$ {#eq-rho2-compact}
 
 which, in the case of the ground state of the Fermi gas, reproduces @eq-rho2-eval-fermi. We see that the correlation function vanishes as the separation $x-y\to 0$, because $g(x,x)=\langle\mathop{\rho(y)}\rangle$. This is, of course, another manifestation of the exclusion principle: it is not possible for two fermions to sit on top of each other. The scale of the 'hole' in the correlation function is of course set by the mean interparticle separation, or Fermi wavelength. Note also the decaying oscillations, indicating liquid-like correlations in the positions of the particles. These are sometimes known as __Friedel oscillations__.
 
-![Correlation function $\rho_2(x,0)$ for the Fermi gas.](../assets/1DFermiGasCorrelation.png){width=50%}
+::: {#fig-fermi-gas-correlation}
+
+![](../assets/1DFermiGasCorrelation.png){width=60%}
+
+Correlation function $\rho_2(x,0)$ for the Fermi gas.
+
+:::
 
 For bosons the situation is very different. If $g(x,y)\to 0$ as $\abs{x-y}\to\infty$, the value of the correlation function as $\abs{x-y}\to 0$ is _twice_ the value at $\abs{x-y}\to\infty$. This characteristic behavior is often termed __bunching__: a pair of bosons is more likely to be found at two nearby points than at two distant points.
 
@@ -250,7 +256,13 @@ $$ {#eq-dens-corr}
 
 We see that the second and third terms contain interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at $\br'$ if there is one at $\br$. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.
 
-![Fringes observed by interfering two Bose condensates (Source: @andrews1997observation)](../assets/AndrewsFringes.png){width=50%}
+::: {#fig-andrews-fringes}
+
+![](../assets/AndrewsFringes.png){width=50%}
+
+Fringes observed by interfering two Bose condensates (Source: @andrews1997observation).
+
+:::
 
 The rather surprising implication is that predictions for measured quantities for a system in a Fock state are the same as in a relative phase state, but with a subsequent averaging over the phase.
 
@@ -456,6 +468,14 @@ Minimize the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ to show
 
 :::
 
+::: {#fig-stoner-polarisation}
+
+{{< include ../figures/_stoner-polarisation.qmd >}}
+
+The value of $E_\text{V}/E_\text{K}$ at which the ground state has polarization $P$. The ground state is partially polarized for $10/9<E_\text{V}/E_\text{K}<\frac{5}{6}2^{2/3}$.
+
+:::
+
 One shouldn't take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.
 
 ### Excited State Energies
@@ -485,11 +505,23 @@ $$ {#eq-vertex}
 
 When written in this way, interaction Hamiltonians are sometimes associated with the graphical representation below, one of the ingredients of the __Feynman diagram__ technique for performing perturbation theory calculations in field theories. The incoming lines (arrows in) represent particles being removed (in momentum states $\bk_3$ and $\bk_4$) and the outgoing lines represent particles added (momenta $\bk_1$ and $\bk_2$). The wiggly line represents $\tilde V(\bq)$. The conservation of momentum at the vertices is a consequence of the translational invariance of the problem: the two integrations over $\br$ and $\br'$ give rise to two $\delta$-functions that perform this function.  
 
-![Graphical representation of the interaction @eq-vertex.](../assets/Vertex.png){width=50%}
+::: {#fig-vertex}
+
+{{< include ../figures/_vertex.qmd >}}
+
+Graphical representation of the interaction @eq-vertex.
+
+:::
 
 As we've already discussed, the expectation value of @eq-vertex in a product state of momentum eigenstates gives two terms, with different 'pairings' of creation operators with annihilation operators. We can represent these two terms graphically as shown below.
 
-![Graphical representation of the Hartree and Fock terms.](../assets/HFDiag.png)
+::: {#fig-hartree-fock}
+
+{{< include ../figures/_hartree-fock.qmd >}}
+
+Graphical representation of the Hartree and Fock terms.
+
+:::
 
 Evaluating the two contributions in terms of the occupation numbers gives
 

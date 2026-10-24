@@ -500,10 +500,14 @@ P_{ij}\Psi(\mathbf{r}_1,\ldots, \mathbf{r}_i,\ldots, \mathbf{r}_j,\ldots \mathbf
 \]</span> What state do we end up in?</p>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/HOM.png" class="img-fluid figure-img"></p>
-<figcaption>Four possible outcomes after the passage of two bosons through a beam splitter.</figcaption>
+<div id="fig-hom" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="many-body-wavefunctions_files/mediabag/1d8d555214394f68d72dda0fb7b06543297ee1fc.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Four possible outcomes after the passage of two bosons through a beam splitter.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -617,6 +621,16 @@ z_{i}=\exp(2 \pi i x_{i}/L),
 \end{aligned}
 \tag{8}\]</span></span></p>
 <p>The vanishing of the wavefunction when <span class="math inline">\(x_{i}=x_{j}\)</span> is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.</p>
+<div id="fig-nodal-surfaces" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-nodal-surfaces-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="many-body-wavefunctions_files/mediabag/6698745f050402343d977d95befb874e139e43c2.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-nodal-surfaces-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Nodal surfaces <span class="math inline">\(x_i = x_j\)</span> for three fermions. Because of the periodic boundary conditions, the three dimensional space of particle coordinates is divided into two regions, corresponding to the even (<span class="math inline">\(123, 231, 312\)</span>) and odd (<span class="math inline">\(132, 321, 213\)</span>) permutations.
+</figcaption>
+</figure>
+</div>
 <p><a href="#eq-3-particle" class="quarto-xref">Equation&nbsp;8</a> generalizes for any (odd) <span class="math inline">\(N\)</span> so that the ground state Slater determinant <a href="#eq-1d-det" class="quarto-xref">Equation&nbsp;7</a> is proportional to</p>
 <p><span id="eq-1d-fermi-gs"><span class="math display">\[
 \Psi^A_0(x_1,\ldots, x_N)\propto\prod_{i&lt;j}^{N} \sin\left(\frac{\pi[x_{i}-x_{j}]}{L}\right).
@@ -682,7 +696,7 @@ z_{1}^{N-1} &amp;  z_{2}^{N-1} &amp; \cdots &amp; z_{N}^{N-1}
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1d-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Distribution of particle positions for noninteracting fermion and boson ground states.
+Figure&nbsp;3: Distribution of particle positions for noninteracting fermion and boson ground states.
 </figcaption>
 </figure>
 </div>
@@ -744,6 +758,16 @@ g(x,y) \equiv N\int dx_2\ldots dx_N \,\Psi^{}(x,x_2,\ldots,x_N)\Psi^{*}(y,x_2,\l
 g(x,y) = \frac{1}{L}\sum_{|k|&lt;k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
 \]</span> where <span class="math inline">\(n \equiv \frac{k_\text{F}}{\pi}\)</span> is the average density.</p>
 </div>
+</div>
+<div id="fig-fermi-density-matrix-1d" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-density-matrix-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="many-body-wavefunctions_files/mediabag/5671ff8343f1e39f0d7e98fc106f244dbe9c67f1.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-density-matrix-1d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Single particle density matrix for the 1D Fermi gas.
+</figcaption>
+</figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -950,7 +974,7 @@ Dirac, Paul Adrien Maurice. 1926. <span>â€œOn the Theory of Quantum Mechanics.â€
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

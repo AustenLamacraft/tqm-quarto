@@ -1,3 +1,9 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# diagram filter build output
+notes/diagram-*.pdf
+notes/*_files/mediabag/
+slides/*_files/mediabag/
+problem-sets/*_files/mediabag/

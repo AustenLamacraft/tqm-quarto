@@ -6,6 +6,7 @@ format:
     theme: [default, reveal_custom.scss]
     slide-number: true
     hash: true
+    history: false
     center: true
     auto-stretch: false
     html-math-method: katex
@@ -32,7 +33,9 @@ format:
 
 ## Hamiltonian
 
-![](../assets/ElasticChain.png){width=50% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_elastic-chain.qmd >}}
+:::
 
 $$
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].

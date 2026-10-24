@@ -1,0 +1,27 @@
+```{.tikz}
+\begin{tikzpicture}[fermion/.style={
+  postaction={decorate, decoration={markings, mark=at position 0.6 with {\arrow[scale=1.5]{Stealth[]}}}}},
+  photon/.style={
+decorate,
+decoration={snake, amplitude=3pt, segment length=8pt}}, very thick]
+    \def\R{2}
+    \def\r{0.1}
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (\R,0);
+
+    % Left fermion loop
+    \draw[fermion] (A) -- ($(A)+(-135:\R)$) node[midway, above left] {$\vb{k}_1$};
+    \draw[fermion] ($(A)+(135:\R)$) -- (A) node[midway, above right] {$\vb{k}_4$};
+
+    % Right fermion loop
+    \draw[fermion] (B) -- ($(B)+(-45:\R)$) node[midway, above right] {$\vb{k}_2$};
+    \draw[fermion] ($(B)+(45:\R)$) -- (B) node[midway, above left] {$\vb{k}_3$};
+
+    % Wiggly photon connecting the two loops
+    \draw[photon] (B) -- (A) node[midway, above, yshift=2pt] {$\vb{k}_1-\vb{k}_4$};
+
+    \draw[fill=white] (A) circle (\r);
+    \draw[fill=white] (B) circle (\r);
+
+\end{tikzpicture}
+```

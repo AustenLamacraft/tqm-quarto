@@ -1,0 +1,62 @@
+```{.tikz}
+\begin{tabular}{c}
+\begin{tikzpicture}[fermion/.style={
+      postaction={
+        decorate,
+        decoration={
+          markings,
+          mark=at position 0.275 with {\arrow[scale=1.5]{Stealth[]}},
+          mark=at position 0.775 with {\arrow[scale=1.5]{Stealth[]}}
+        }
+      }
+    },
+        photon/.style={decorate, decoration={snake, amplitude=3pt, segment length=8pt}},
+        very thick
+    ]
+        \def\R{1}
+        \def\r{0.1}
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,0);
+        % Left fermion loop
+        \draw[fermion] ($(A)+(-\R,0)$) circle (\R);
+        % Right fermion loop
+        \draw[fermion] ($(B)+(\R,0)$) circle (\R);
+        % Wiggly photon connecting the two loops
+        \draw[photon] (A) -- (B) node[midway, above, yshift=2pt] {\footnotesize Hartree};
+
+        \draw[fill=white] (A) circle (\r);
+        \draw[fill=white] (B) circle (\r);
+
+    \end{tikzpicture}
+\\[1em]
+\begin{tikzpicture}[fermion/.style={
+      postaction={
+        decorate,
+        decoration={
+          markings,
+          mark=at position 0.265 with {\arrow[scale=1.5]{Stealth[]}},
+          mark=at position 0.765 with {\arrow[scale=1.5]{Stealth[]}}
+        }
+      }
+    },
+        photon/.style={decorate, decoration={snake, amplitude=3pt, segment length=8pt}}, very thick
+    ]
+        \def\R{1.5}
+        \def\r{0.1}
+        % Single fermion loop
+        \draw[fermion] (0,0) circle (\R);
+
+        % Two attachment points on loop
+        \coordinate (A) at (\R, 0);
+        \coordinate (B) at (-\R, 0);
+
+        % Photon wiggly between A and B
+        \draw[photon] (A) -- (B) node[midway, below, yshift=-2pt] {\footnotesize Fock};
+
+        % Fermion arrowheads at A and B (to show direction locally)
+        \draw[fill=white] (A) circle (\r);
+        \draw[fill=white] (B) circle (\r);
+
+    \end{tikzpicture}
+\end{tabular}
+```

@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-43c786d1c8ecd919271c820feae20d09.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -175,10 +175,8 @@ Can't get these to work with tex output at the moment because they end up after 
 </section>
 <section id="hamiltonian" class="slide level2 center">
 <h2>Hamiltonian</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/ElasticChain.png" class="quarto-figure quarto-figure-center" style="width:50.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="elastic-chain_files/mediabag/d90bc127973adecf68a7df29136b39814bad2603.svg">
 </div>
 <p><span class="math display">
 H = \sum_{j=1}^N \left[\frac{p_j^2}{2m} + \frac{k}{2} (u_j-u_{j+1})^2 \right].
@@ -800,7 +798,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: true,
+        history: false,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
@@ -995,7 +993,7 @@ e^{A}B e^{-A} &amp;= B + \left[A,B\right] + \frac{1}{2!}\left[A,\left[A,B\right]
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

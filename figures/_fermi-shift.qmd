@@ -1,0 +1,14 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    \def\R{2}
+    \def\dk{0.7}
+
+    \fill[mygrey,opacity=0.3] (0,0) circle (\R);
+    \fill[mygrey,opacity=0.3] (\dk,0) circle (\R);
+    \draw[black!45] (0,0) circle (\R);
+    \draw[black!45] (\dk,0) circle (\R);
+
+    \draw[->] (0,0) -- (\dk,0) node[midway,above] {$\delta \vb{k}$};
+
+\end{tikzpicture}
+```

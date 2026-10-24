@@ -32,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-43c786d1c8ecd919271c820feae20d09.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
@@ -241,10 +241,8 @@ E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1)
 </section>
 <section class="slide level2 center">
 
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/steps.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="lattice-models_files/mediabag/935950885211ddd9e619efe94255d3fb316a6796.svg">
 </div>
 <ul>
 <li><p>Think about varying <span class="math inline">\mu</span>: values between <span class="math inline">UN</span> and <span class="math inline">U(N-1)</span> correspond to integer filling <span class="math inline">\nu=N</span></p></li>
@@ -385,10 +383,8 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 </section>
 <section class="slide level2 center">
 
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/mott-perturb.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="lattice-models_files/mediabag/c343e9c11cb1fbbcd40138efd3c24426a3bf319a.svg">
 </div>
 </section>
 <section class="slide level2 center">
@@ -402,10 +398,8 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 </section>
 <section class="slide level2 center">
 
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/BHPhase.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="lattice-models_files/mediabag/4f46c943d61a341a17c2e15a96142d7db6afa479.svg">
 </div>
 <ul>
 <li>Note diminishing size of Mott lobes: consequence of enhanced hopping in the effective tight binding models</li>
@@ -902,7 +896,7 @@ H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}} 
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

@@ -82,7 +82,13 @@ $$
 
 This might seem a bit odd given that $N_{s}(\bk)=\pm 1$. You should think of this expansion in terms of the continuum limit, where the $\bk$ values become finely spaced. In this limit $n_\bk$ represents the _mean_ deviation from the Fermi sphere in that region of $\bk$-space.
 
-![$n_\bk$ as a smoothed deviation from the Fermi step.](../assets/FermiN.png){width=70%}
+::: {#fig-fermi-n}
+
+{{< include ../figures/_fermi-n.qmd >}}
+
+$n_\bk$ as a smoothed deviation from the Fermi step.
+
+:::
 
 The excitation energy above the ground state of an eigenstate labelled by occupancies $N_\bk$ can then be expanded in $n_\bk$
 
@@ -160,7 +166,13 @@ $$
 \mathbf{K} = \frac{1}{2}\left(\bk_2+\bk_3\right),\quad \bq = \frac{1}{2}\left(\bk_2-\bk_3\right),
 $$
 
-![Geometry of the integral for $f_{\uparrow\uparrow}(\bk,\bk')$.](../assets/FermiGeometry.png){width=60%}
+::: {#fig-fermi-geometry}
+
+{{< include ../figures/_fermi-geometry.qmd >}}
+
+Geometry of the integral for $f_{\uparrow\uparrow}(\bk,\bk')$.
+
+:::
 
 the denominator becomes
 
@@ -253,7 +265,13 @@ $$ {#eq-mdef}
 
 Fortunately, we can get at this quantity using the results we already have, thanks to the following sneaky trick (due to Landau). If we increment the momentum of each quasiparticle by a small amount $\delta\bk$, we can compute the new energy using our energy functional @eq-fdef, along with a new distribution function
 
-![Shifting the Fermi sea to increase the momentum.](../assets/FermiShift.png){width=50%}
+::: {#fig-fermi-shift}
+
+{{< include ../figures/_fermi-shift.qmd >}}
+
+Shifting the Fermi sea to increase the momentum.
+
+:::
 
 $$
 \begin{aligned}
@@ -319,7 +337,13 @@ $$
 
 Let's consider the Fermi sea ground state $\ket{\text{FS}}$. What states can appear in the above sum in this case? The only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.
 
-![Two particle-hole pairs created out of the Fermi sea.](../assets/2ph.png){width=50%}
+::: {#fig-particle-hole-pairs}
+
+{{< include ../figures/_particle-hole-pairs.qmd >}}
+
+Two particle-hole pairs created out of the Fermi sea.
+
+:::
 
 $$
 \ket{0}=\ket{\text{FS}}+\text{two particle-hole pair states}+\cdots
@@ -337,7 +361,13 @@ having momentum $\bk$ and spin $s$. When the interactions are switched on, this 
 1. States with a pair of particle-hole pairs, as before, but with the extra particle at $\bk$. The coefficients of these states are _the same_ as for the corresponding states in the correction for $\ket{0}$, as you should check.
 2. States with a single particle-hole pair and with the extra particle moved from $\bk$​ to another momentum.
 
-![Particle scatters, creating a particle-hole pair.](../assets/phscatter.png){width=50%}
+::: {#fig-particle-scatter}
+
+{{< include ../figures/_particle-scatter.qmd >}}
+
+Particle scatters, creating a particle-hole pair.
+
+:::
 
 Let’s compare $\ket{\bk,s}$ with $\adop_{\bk,s}\ket{0}$, the state obtained by creating a particle in the _exact_ ground state of the problem. In first order perturbation theory, $\ket{0}$ includes the first kind of state above (2 particle-hole pair states). The states only differ because of the contribution of the second kind. To first order, the single quasiparticle state is therefore
 
@@ -372,7 +402,13 @@ $$
 
 This is also the occupation number of the original fermions $\braket{0}{\adop_{\bk,s}\aop_{\bk,s}}{0}$ (not the quasiparticles!) just below the Fermi surface in the ground state (see [Problem Set 3](../problem-sets/problem-set-3.qmd#nmathbfk-in-the-ground-state). There is a corresponding result just above. Even with interactions, there is a finite step in the distribution function at the Fermi surface.
 
-![Discontinutity in the ground state occupation number.](../assets/FermiJump.png){width=70%}
+::: {#fig-fermi-jump}
+
+{{< include ../figures/_fermi-jump.qmd >}}
+
+Discontinutity in the ground state occupation number.
+
+:::
 
 ## Collisions
 
@@ -384,7 +420,13 @@ $$
 
 By considering the volume of phase space available for the scattering of a quasiparticle of energy $\Delta$ above the Fermi surface, you should be able to argue that the _total_ rate, obtained by integrating over all possible final states, varies like $\Delta^2$. This means that at low energy (or temperature) such scattering is ineffective and the Landau picture holds.
 
-![Vanishing phase space volume at low energies.](../assets/Collision.png){width=60%}
+::: {#fig-collision}
+
+{{< include ../figures/_collision.qmd >}}
+
+Vanishing phase space volume at low energies.
+
+:::
 
 Appendix 
 --------

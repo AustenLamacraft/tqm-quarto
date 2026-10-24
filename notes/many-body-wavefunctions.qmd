@@ -105,7 +105,13 @@ What state do we end up in?
 
 :::
 
-![Four possible outcomes after the passage of two bosons through a beam splitter.](../assets/HOM.png)
+::: {#fig-hom}
+
+{{< include ../figures/_hom.qmd >}}
+
+Four possible outcomes after the passage of two bosons through a beam splitter.
+
+:::
 
 ### Product States
 
@@ -242,6 +248,14 @@ $$ {#eq-3-particle}
 
 The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.
 
+::: {#fig-nodal-surfaces}
+
+{{< include ../figures/_nodal-surfaces.qmd >}}
+
+Nodal surfaces $x_i = x_j$ for three fermions. Because of the periodic boundary conditions, the three dimensional space of particle coordinates is divided into two regions, corresponding to the even ($123, 231, 312$) and odd ($132, 321, 213$) permutations.
+
+:::
+
 @eq-3-particle generalizes for any (odd) $N$ so that the ground state Slater determinant @eq-1d-det is proportional to
 
 $$
@@ -345,6 +359,14 @@ $$
 g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
 $$
 where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
+
+:::
+
+::: {#fig-fermi-density-matrix-1d}
+
+{{< include ../figures/_fermi-density-matrix-1d.qmd >}}
+
+Single particle density matrix for the 1D Fermi gas.
 
 :::
 

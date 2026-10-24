@@ -1,0 +1,41 @@
+```{.tikz}
+\begin{tikzpicture}[thick, line cap = round]
+    \def\L{1}
+    \def\w{0.05}
+
+    \draw[mydarkblue,fill=mylightblue] (-5*\L,-\w) rectangle (-4*\L,\w);
+    \draw[mydarkblue,fill=mylightblue] (-2*\L,-\w) rectangle (-\L,\w);
+    \draw[mydarkblue,fill=mylightblue] (\L,-\w) rectangle (2*\L,\w);
+    \draw[mydarkblue,fill=mylightblue] (4*\L,-\w) rectangle (5*\L,\w);
+
+    \node at (0,0) {$-$};
+    \node at (3*\L,0) {$-$};
+    \node at (-3*\L,0) {$+$};
+
+    \node at (-4.5*\L,\L) {$1$};
+    \node at (-1.5*\L,\L) {$2$};
+    \node at (1.5*\L,\L) {$3$};
+    \node at (4.5*\L,\L) {$4$};
+
+    \draw[mylightblue] (-4.5*\L,\w) --++ (135:\L);
+    \draw[mylightblue,->] (-4.5*\L,\w) --++ (45:\L);
+    \draw[mylightblue] (-4.5*\L,-\w) --++ (-135:\L);
+    \draw[mylightblue,->] (-4.5*\L,-\w) --++ (45:\L);
+
+    \draw[mylightblue] (-1.5*\L,\w) --++ (135:\L);
+    \draw[mylightblue,->] (-1.5*\L,\w) --++ (-45:\L);
+    \draw[mylightblue] (-1.5*\L,-\w) --++ (-135:\L);
+    \draw[mylightblue,->] (-1.5*\L,-\w) --++ (45:\L);
+
+    \draw[mylightblue] (1.5*\L,\w) --++ (135:\L);
+    \draw[mylightblue,->] (1.5*\L,\w) --++ (45:\L);
+    \draw[mylightblue] (1.5*\L,-\w) --++ (-135:\L);
+    \draw[mylightblue,->] (1.5*\L,-\w) --++ (-45:\L);
+
+    \draw[mylightblue] (4.5*\L,\w) --++ (135:\L);
+    \draw[mylightblue,->] (4.5*\L,\w) --++ (-45:\L);
+    \draw[mylightblue] (4.5*\L,-\w) --++ (-135:\L);
+    \draw[mylightblue,->] (4.5*\L,-\w) --++ (-45:\L);
+
+\end{tikzpicture}
+```

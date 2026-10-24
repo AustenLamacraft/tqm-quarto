@@ -584,10 +584,14 @@ H_{\text{int}} = g\sum_{j&lt;k}\delta(\mathbf{r}_j-\mathbf{r}_k),\qquad g&gt;0
 \tag{7}\]</span></span> The Laughlin state <a href="#eq-many-nu" class="quarto-xref">Equation&nbsp;6</a> with <span class="math inline">\(m=2\)</span> has zero interaction energy. In fact, any state with zero interaction energy must have <span class="math inline">\(\Psi_2(z_1,\ldots, z_N)\)</span> as a factor. But if a wavefunction has a higher degree, then in the presence of the potential <a href="#eq-harmonic-project" class="quarto-xref">Equation&nbsp;3</a> it will have a higher energy than <span class="math inline">\(\Psi_2(z_1,\ldots, z_N)\)</span>. Thus <span class="math inline">\(\Psi_2(z_1,\ldots, z_N)\)</span> is the ground state.</p>
 <p>Laughlin argued that for electrons with Coulomb interaction <span class="math inline">\(\Psi_{m}(z_1,\ldots, z_N)\)</span> with <span class="math inline">\(m\)</span> odd is a good variational wavefunction. The fact that <span class="math inline">\((z_j-z_k)\)</span> appears in a power higher than one means that the particles tend to stay away from each other more than in the <span class="math inline">\(m=1\)</span> state, thus lowering their interaction.</p>
 <p>To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution <span class="math inline">\(\lvert\Psi_m(z_1,\ldots, z_N)\rvert^2\)</span> of the particles, and the Boltzmann distribution of particles in a classical 2D plasma. Before doing that, it’s useful to actually ‘look’ at a typical configuration of particles.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/LaughlinMonteCarlo.png" class="img-fluid figure-img"></p>
-<figcaption>Comparison of Monte Carlo samples from an uncorrelated (uniform) distrubution of points (left) vs.&nbsp;the Laughlin probability distribution <span class="math inline">\(\lvert\Psi_3(z_1,\ldots z_N)\rvert^2\)</span> (right).</figcaption>
+<div id="fig-laughlin-mc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-laughlin-mc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/LaughlinMonteCarlo.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-laughlin-mc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Comparison of Monte Carlo samples from an uncorrelated (uniform) distrubution of points (left) vs.&nbsp;the Laughlin probability distribution <span class="math inline">\(\lvert\Psi_3(z_1,\ldots z_N)\rvert^2\)</span> (right).
+</figcaption>
 </figure>
 </div>
 <p>The striking feature of the right hand picture is the <em>uniformity</em> of the particle distribution, in contrast with the sample of uncorrelated particles on the left. The plasma analogy helps us to understand this, and a lot more.</p>
@@ -641,10 +645,14 @@ V(\mathbf{r}_1,\ldots,\mathbf{r}_N) = -\frac{q^2}{2\pi} \sum_{j&lt;k}\log\left|\
 <p>One odd thing about the above calculation is that if the charge density is uniform, how does the droplet know where to sit? The location of the origin is obviously dictated by the minimum of the quadratic term in the energy, but we could have located that anywhere in the plane and still had a uniform charge density. Cast your mind back to the old problem of a mass undergoing simple harmonic motion through a hole in the earth…</p>
 </div>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/laughlin-state.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>A Laughlin Laughlin state</figcaption>
+<div id="fig-laughlin" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-laughlin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/laughlin-state.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-laughlin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: A Laughlin Laughlin state
+</figcaption>
 </figure>
 </div>
 </section>
@@ -660,6 +668,9 @@ V(\mathbf{r}_1, \ldots, \mathbf{r}_N)=&amp;-\frac{q^2}{2\pi m}\sum_j \log\left|\
 &amp;+ \frac{\rho q_0}{4}\sum_j \left|\mathbf{r}_j\right|^2.
 \end{aligned}
 \]</span> This is interpreted as the introduction of a charge <span class="math inline">\(q/m\)</span> at point <span class="math inline">\(\mathbf{R} = (X, Y)\)</span>, where <span class="math inline">\(Z=X+iY\)</span>. The charges of the plasma will screen this charge, leaving a ‘hole’ in the density distribution amounting to charge <span class="math inline">\(-q/m\)</span>, corresponding to <span class="math inline">\(-1/m\)</span> real particles. The quasiholes have fractional charge!</p>
+<div id="fig-laughlin-sim" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-laughlin-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {initParticles<span class="op">,</span> step} <span class="im">from</span> <span class="st">"../assets/laughlin.js"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -729,11 +740,12 @@ V(\mathbf{r}_1, \ldots, \mathbf{r}_N)=&amp;-\frac{q^2}{2\pi m}\sum_j \log\left|\
 </div>
 </div>
 </div>
-<figure align="center" class="figure">
-<figcaption>
-A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction <span class="math inline">\(m\)</span>. The red dot is a quasihole: in fact for clarity it’s 20 quasiholes with an overall charge of <span class="math inline">\(-20/m\)</span>.
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-laughlin-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction <span class="math inline">\(m\)</span>. The red dot is a quasihole: in fact for clarity it’s 20 quasiholes with an overall charge of <span class="math inline">\(-20/m\)</span>.
 </figcaption>
 </figure>
+</div>
 <p>This means that the normalization integral is approximated by the Boltzmann weight corresponding to the interaction of this fractional charge with the background charge density <span class="math display">\[
 \int \prod_{j=1}^N d^2z_j\,\left|\Psi_\text{hole}(z_1,\ldots, z_N|Z)\right|^2 \sim\exp\left(\frac{1}{2m}\left|Z\right|^2\right),
 \]</span></p>
@@ -886,7 +898,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
