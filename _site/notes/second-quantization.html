@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.35">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -61,10 +61,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -390,10 +390,10 @@ window.Quarto = {
   <li><a href="#one-particle-operators" id="toc-one-particle-operators" class="nav-link" data-scroll-target="#one-particle-operators"><span class="header-section-number">3.1</span> One Particle Operators</a></li>
   <li><a href="#two-particle-operators" id="toc-two-particle-operators" class="nav-link" data-scroll-target="#two-particle-operators"><span class="header-section-number">3.2</span> Two Particle Operators</a></li>
   </ul></li>
-  <li><a href="#appendix-alternative-derivation-of-one--and-two-particle-operators" id="toc-appendix-alternative-derivation-of-one--and-two-particle-operators" class="nav-link" data-scroll-target="#appendix-alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4</span> Appendix: Alternative Derivation of One- and Two-particle Operators</a>
+  <li><a href="#appendices" id="toc-appendices" class="nav-link" data-scroll-target="#appendices"><span class="header-section-number">4</span> Appendices</a>
   <ul class="collapse">
-  <li><a href="#one-particle-operators-1" id="toc-one-particle-operators-1" class="nav-link" data-scroll-target="#one-particle-operators-1"><span class="header-section-number">4.1</span> One particle operators</a></li>
-  <li><a href="#two-particle-operators-1" id="toc-two-particle-operators-1" class="nav-link" data-scroll-target="#two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</a></li>
+  <li><a href="#alternative-derivation-of-the-commutation-and-anticommutation-relations" id="toc-alternative-derivation-of-the-commutation-and-anticommutation-relations" class="nav-link" data-scroll-target="#alternative-derivation-of-the-commutation-and-anticommutation-relations"><span class="header-section-number">4.1</span> Alternative derivation of the commutation and anticommutation relations</a></li>
+  <li><a href="#alternative-derivation-of-one--and-two-particle-operators" id="toc-alternative-derivation-of-one--and-two-particle-operators" class="nav-link" data-scroll-target="#alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4.2</span> Alternative Derivation of One- and Two-particle Operators</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="second-quantization.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -1028,11 +1028,71 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 <p>We’ve succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn’t feel too smug. As I said earlier, this is a change of <em>language</em>, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb–Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we <em>can’t</em> solve exactly, like the Bose gas in higher dimensions that we’ll discuss in <a href="../notes/bose-gas.html">Lecture 8</a>, the second quantized framework is often a good starting point.</p>
 </section>
 </section>
-<section id="appendix-alternative-derivation-of-one--and-two-particle-operators" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="appendix-alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4</span> Appendix: Alternative Derivation of One- and Two-particle Operators</h2>
+<section id="appendices" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="appendices"><span class="header-section-number">4</span> Appendices</h2>
+<section id="alternative-derivation-of-the-commutation-and-anticommutation-relations" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="alternative-derivation-of-the-commutation-and-anticommutation-relations"><span class="header-section-number">4.1</span> Alternative derivation of the commutation and anticommutation relations</h3>
+<p>We can regard a <span class="math inline">\(N\)</span> particle state as a rank N tensor <span class="math inline">\(\Psi_{a_1 a_2 \cdots a_N}\)</span>. We use abstract labels <span class="math inline">\(a_i\)</span> which could index components in any basis e.g.&nbsp;the position basis in which we would normally write the <span class="math inline">\(N\)</span>-body wavefunction as <span class="math inline">\(\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N)\)</span>. The tensor <span class="math inline">\(\Psi\)</span> is either symmetric or antisymmetric in the labels <span class="math inline">\(a_i\)</span></p>
+<p><span class="math display">\[
+\begin{align}
+\Psi^{\text{S}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{S}}_{(a_1 a_2 \cdots a_N)}\\
+\Psi^{\text{A}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{A}}_{[a_1 a_2 \cdots a_N]},
+\end{align}
+\]</span></p>
+<p>where round and square brackets denote respectively symmetrization and antisymmetrization. Bosonic and fermionic <a href="https://en.wikipedia.org/wiki/Fock_space">Fock space</a> consists of states of the form</p>
+<p><span id="eq-fock-space-state"><span class="math display">\[
+\lvert{\Psi}\rangle=(\Psi^{\text{S/A}}, \Psi^{\text{S/A}}_{a_1}, \Psi^{\text{S/A}}_{a_1 a_2}, \Psi^{\text{S/A}}_{a_1 a_2 a_3},\ldots).
+\tag{28}\]</span></span></p>
+<p>That is, each state is a combination of 0-, 1-, 2-, etc, particle states. You might find the idea of a Hilbert space of “no particles” a bit strange. This is just a bookkeeping device: it is a one-dimensional space that we call the “vacuum”. Mathematically, we say that states of the form <a href="#eq-fock-space-state" class="quarto-xref">Equation&nbsp;28</a> lie in the direct sum of the symmetric or antisymmetric subspaces of the tensor product states for <span class="math inline">\(N\)</span>-particles for <span class="math inline">\(N=0,1,2,\ldots\)</span>. If you don’t like that terminology, forget it!</p>
+<p>The inner product between two Fock space vectors is given by</p>
+<p><span id="eq-fock-inner"><span class="math display">\[
+\langle{\Psi}\rvert \Phi \rangle = \overline{\Psi}\Psi + \sum_{a_1} \overline{\Psi}_{a_1} \Phi_{a_1}+\sum_{a_1,a_2} \overline{\Psi}_{a_1 a_2} \Phi_{a_1 a_2} + \cdots
+\tag{29}\]</span></span></p>
+<section id="bosonic-case" class="level4" data-number="4.1.1">
+<h4 data-number="4.1.1" class="anchored" data-anchor-id="bosonic-case"><span class="header-section-number">4.1.1</span> Bosonic case</h4>
+<p>There are some natural basis independent operations we can perform with symmetric tensors. Given two tensors <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> of rank <span class="math inline">\(M\)</span> and <span class="math inline">\(N\)</span> respectively, we can form the symmetric product to give a symmetric tensor of rank <span class="math inline">\(M+N\)</span></p>
+<p><span class="math display">\[
+(\Psi \odot \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{\left(a_1 a_2 \cdots a_{M}\right.} \Phi_{\left. a_{M+1} a_{M+2} \cdots a_{M + N}\right).}
+\]</span></p>
+<p>We can also contract indices to form a lower rank tensor. Thus if <span class="math inline">\(M&lt;N\)</span></p>
+<p><span class="math display">\[
+(\bar{\Psi} \cdot \Phi)_{a_1 a_2 \cdots a_{N-M}} = \bar{\Psi}_{a_{N-M + 1}\cdots a_{N}}\Phi_{a_1 a_2 \cdots a_N}.
+\]</span></p>
+<p>Notice that contraction preserves the symmetry of the tensors. The <em>annhilation operator</em> <span class="math inline">\(a(\psi)\)</span> is defined as the operator that acts by contracting a tensor with the one-particle state <span class="math inline">\(\psi\)</span>:</p>
+<p><span id="eq-a-def"><span class="math display">\[
+(a^{\vphantom{\dagger}}(\psi)\Phi)_{a_1\cdots a_{N-1}} = \sqrt{N}\overline{\psi}_{a_N} \Phi_{a_1\cdots a_{N}}.
+\tag{30}\]</span></span></p>
+<p>This action is extended to a general Fock space state <a href="#eq-fock-space-state" class="quarto-xref">Equation&nbsp;28</a> by linearity. The reason for the <span class="math inline">\(\sqrt{N}\)</span> will become clear shortly. We think of the annihilation operator as “removing a particle from state <span class="math inline">\(\psi\)</span>”.</p>
+<p>The Fock space inner product <a href="#eq-fock-inner" class="quarto-xref">Equation&nbsp;29</a> fixes the Hermitian adjoint operator <span class="math inline">\(a^\dagger(\psi)\)</span>. It corresponds to the symmetric product with the one particle state <span class="math inline">\(\psi\)</span></p>
+<p><span id="eq-a-dagger-def"><span class="math display">\[
+(a^\dagger(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\psi_{\left(a_{1}\right.} \Phi_{\left.a_2\cdots a_{N+1}\right)}.
+\tag{31}\]</span></span></p>
+<p>We will now show that the definitions <a href="#eq-a-def" class="quarto-xref">Equation&nbsp;30</a> and <a href="#eq-a-dagger-def" class="quarto-xref">Equation&nbsp;31</a> fix the form of the commutation relations. First note that <span class="math inline">\(a^{\vphantom{\dagger}}(\psi)\)</span> and <span class="math inline">\(a^{\vphantom{\dagger}}(\phi)\)</span> commute, as well as <span class="math inline">\(a^\dagger(\psi)\)</span> and <span class="math inline">\(a^\dagger(\phi)\)</span>. For the commutator of <span class="math inline">\(a^{\vphantom{\dagger}}(\psi)\)</span> and <span class="math inline">\(a^\dagger(\phi)\)</span> we compute the effect of acting with both on an <span class="math inline">\(N\)</span>-particle tensor <span class="math inline">\(A_{a_1\cdots a_N}\)</span>. We find</p>
+<p><span class="math display">\[
+\begin{align}
+(a^{\vphantom{\dagger}}(\psi)a^\dagger(\phi)A)_{a_1\cdots a_N} &amp;= (N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)}\\
+(a^\dagger(\phi)a^{\vphantom{\dagger}}(\psi)A)_{a_1\cdots a_N} &amp;= N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)}.
+\end{align}
+\]</span></p>
+<p>Note that in the first expression we symmetrize on <span class="math inline">\(N+1\)</span> indices <span class="math inline">\(b a_1 \cdots a_N\)</span> while in the second we symmetrize on <span class="math inline">\(a_1\cdots a_N\)</span>. The first expression can be written as</p>
+<p><span class="math display">\[
+(N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} +  N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)},
+\]</span></p>
+<p>which gives the commutation relation</p>
+<p><span class="math display">\[
+\left[a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right] = \overline{\psi}_b \phi_b = \langle{\psi}\rvert \phi \rangle.
+\]</span></p>
+</section>
+<section id="fermionic-case" class="level4" data-number="4.1.2">
+<h4 data-number="4.1.2" class="anchored" data-anchor-id="fermionic-case"><span class="header-section-number">4.1.2</span> Fermionic case</h4>
+<p>The fermionic case proceeds similarly, except that we have to be a bit cautious about signs. The product of two antisymmetric tensors can be defined using the antisymmetric product</p>
+</section>
+</section>
+<section id="alternative-derivation-of-one--and-two-particle-operators" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="alternative-derivation-of-one--and-two-particle-operators"><span class="header-section-number">4.2</span> Alternative Derivation of One- and Two-particle Operators</h3>
 <p>Here we give simpler derivation of the general form of one- and two- particle operators using the form <a href="#eq-freeze" class="quarto-xref">Equation&nbsp;15</a> for the action of the field operator <span class="math inline">\(\psi(x)\)</span>, which applies in both the bosonic and fermionic cases</p>
-<section id="one-particle-operators-1" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="one-particle-operators-1"><span class="header-section-number">4.1</span> One particle operators</h3>
+<section id="one-particle-operators-1" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="one-particle-operators-1"><span class="header-section-number">4.2.1</span> One particle operators</h4>
 <p>We show that the one-particle operator <span class="math inline">\(\hat A\)</span> in <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> has the representation</p>
 <p><span class="math display">\[
 \hat A = \int \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}({x_1})]\, d{x_1}
@@ -1047,8 +1107,8 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 \]</span></p>
 <p>The last line is just the matrix element of <a href="#eq-one-particle" class="quarto-xref">Equation&nbsp;17</a> in the first quantized representation. Note that all terms in the sum over <span class="math inline">\(j\)</span> are identical because we can permute the arguments of <span class="math inline">\(\Psi\)</span> and <span class="math inline">\(\Phi\)</span> to bring the argument <span class="math inline">\(x_j\)</span> to the first position. Any sign in the fermionic case is squared and therefore has no effect.</p>
 </section>
-<section id="two-particle-operators-1" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="two-particle-operators-1"><span class="header-section-number">4.2</span> Two particle operators</h3>
+<section id="two-particle-operators-1" class="level4" data-number="4.2.2">
+<h4 data-number="4.2.2" class="anchored" data-anchor-id="two-particle-operators-1"><span class="header-section-number">4.2.2</span> Two particle operators</h4>
 <p>We show that the general two particle operator <a href="#eq-two-particle" class="quarto-xref">Equation&nbsp;24</a> has representation</p>
 <p><span class="math display">\[
 \hat B =\frac{1}{2} \int \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)]\, dx_1 dx_2,
@@ -1065,6 +1125,7 @@ H = \int dx \left[\frac{1}{2}\partial_x\psi^\dagger(x)\partial_x\psi^{\vphantom{
 
 
 
+</section>
 </section>
 </section>
 
@@ -1149,7 +1210,7 @@ Nazarov, Yuli V, and Jeroen Danon. 2013. <em>Advanced Quantum Mechanics: A Pract
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -687,12 +687,94 @@ where $\pop(x)$, $\pdop(x)$ satisfy the canonical bosonic commutation relations 
 
 We've succeeded in translating an interacting many body Hamiltonian into a quantum field theory. But we shouldn't feel too smug. As I said earlier, this is a change of _language_, and its usefulness is not guaranteed. The same warning applies to alternative formulations of the same problem: as a functional integral, for example. In the case of the Lieb--Liniger model, the exact solution was best presented in the first quantized, many body wavefunction framework. Ditto for the Laughlin states of the fractional quantum Hall effect. However, in approximate treatments of many body problems that we _can't_ solve exactly, like the Bose gas in higher dimensions that we'll discuss in [Lecture 8](bose-gas.qmd), the second quantized framework is often a good starting point.
 
-Appendix: Alternative Derivation of One- and Two-particle Operators
+Appendices 
 --------
+
+### Alternative derivation of the commutation and anticommutation relations
+
+We can regard a $N$ particle state as a rank N tensor $\Psi_{a_1 a_2 \cdots a_N}$. We use abstract labels $a_i$ which could index components in any basis e.g. the position basis in which we would normally write the $N$-body wavefunction as $\Psi(\br_1,\ldots \br_N)$. The tensor $\Psi$ is either symmetric or antisymmetric in the labels $a_i$
+
+$$
+\begin{align}
+\Psi^{\text{S}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{S}}_{(a_1 a_2 \cdots a_N)}\\ 
+\Psi^{\text{A}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{A}}_{[a_1 a_2 \cdots a_N]},
+\end{align}
+$$
+
+where round and square brackets denote respectively symmetrization and antisymmetrization. Bosonic and fermionic [Fock space](https://en.wikipedia.org/wiki/Fock_space) consists of states of the form
+
+$$
+\ket{\Psi}=(\Psi^{\text{S/A}}, \Psi^{\text{S/A}}_{a_1}, \Psi^{\text{S/A}}_{a_1 a_2}, \Psi^{\text{S/A}}_{a_1 a_2 a_3},\ldots).
+$${#eq-fock-space-state}
+
+That is, each state is a combination of 0-, 1-, 2-, etc, particle states. You might find the idea of a Hilbert space of "no particles" a bit strange. This is just a bookkeeping device: it is a one-dimensional space that we call the "vacuum". Mathematically, we say that states of the form @eq-fock-space-state lie in the direct sum of the symmetric or antisymmetric subspaces of the tensor product states for $N$-particles for $N=0,1,2,\ldots$. If you don't like that terminology, forget it!
+
+The inner product between two Fock space vectors is given by
+
+$$
+\inner{\Psi}{\Phi} = \overline{\Psi}\Psi + \sum_{a_1} \overline{\Psi}_{a_1} \Phi_{a_1}+\sum_{a_1,a_2} \overline{\Psi}_{a_1 a_2} \Phi_{a_1 a_2} + \cdots
+$${#eq-fock-inner}
+
+#### Bosonic case
+
+There are some natural basis independent operations we can perform with symmetric tensors. Given two tensors $\Psi$ and $\Phi$ of rank $M$ and $N$ respectively, we can form the symmetric product to give a symmetric tensor of rank $M+N$
+
+$$
+(\Psi \odot \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{\left(a_1 a_2 \cdots a_{M}\right.} \Phi_{\left. a_{M+1} a_{M+2} \cdots a_{M + N}\right).}
+$$
+
+We can also contract indices to form a lower rank tensor. Thus if $M<N$ 
+
+$$
+(\bar{\Psi} \cdot \Phi)_{a_1 a_2 \cdots a_{N-M}} = \bar{\Psi}_{a_{N-M + 1}\cdots a_{N}}\Phi_{a_1 a_2 \cdots a_N}.
+$$
+
+Notice that contraction preserves the symmetry of the tensors. The _annhilation operator_ $a(\psi)$ is defined as the operator that acts by contracting a tensor with the one-particle state $\psi$: 
+
+$$
+(\aop(\psi)\Phi)_{a_1\cdots a_{N-1}} = \sqrt{N}\overline{\psi}_{a_N} \Phi_{a_1\cdots a_{N}}. 
+$${#eq-a-def}
+
+This action is extended to a general Fock space state @eq-fock-space-state by linearity. The reason for the $\sqrt{N}$ will become clear shortly. We think of the annihilation operator as "removing a particle from state $\psi$".
+
+The Fock space inner product @eq-fock-inner fixes the Hermitian adjoint operator $\adop(\psi)$. It corresponds to the symmetric product with the one particle state $\psi$
+
+$$
+(\adop(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\psi_{\left(a_{1}\right.} \Phi_{\left.a_2\cdots a_{N+1}\right)}. 
+$${#eq-a-dagger-def}
+
+We will now show that the definitions @eq-a-def and @eq-a-dagger-def fix the form of the commutation relations. First note that $\aop(\psi)$ and $\aop(\phi)$ commute, as well as $\adop(\psi)$ and $\adop(\phi)$. For the commutator of $\aop(\psi)$ and $\adop(\phi)$ we compute the effect of acting with both on an $N$-particle tensor $A_{a_1\cdots a_N}$. We find
+
+$$
+\begin{align}
+(\aop(\psi)\adop(\phi)A)_{a_1\cdots a_N} &= (N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)}\\
+(\adop(\phi)\aop(\psi)A)_{a_1\cdots a_N} &= N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)}. 
+\end{align}
+$$
+
+Note that in the first expression we symmetrize on $N+1$ indices $b a_1 \cdots a_N$ while in the second we symmetrize on $a_1\cdots a_N$. The first expression can be written as
+
+$$
+(N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} +  N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)}, 
+$$
+
+which gives the commutation relation
+
+$$
+\left[\aop(\psi),\adop(\phi)\right] = \overline{\psi}_b \phi_b = \inner{\psi}{\phi}.
+$$
+
+#### Fermionic case
+
+The fermionic case proceeds similarly, except that we have to be a bit cautious about signs. The product of two antisymmetric tensors can be defined using the antisymmetric product
+
+
+
+### Alternative Derivation of One- and Two-particle Operators
 
 Here we give simpler derivation of the general form of one- and two- particle operators using the form @eq-freeze for the action of the field operator $\psi(x)$, which applies in both the bosonic and fermionic cases
 
-### One particle operators
+#### One particle operators
 
 We show that the one-particle operator $\hat A$ in @eq-one-particle has the representation
 
@@ -712,7 +794,7 @@ $$
 
 The last line is just the matrix element of @eq-one-particle in the first quantized representation. Note that all terms in the sum over $j$ are identical because we can permute the arguments of $\Psi$ and $\Phi$ to bring the argument $x_j$ to the first position. Any sign in the fermionic case is squared and therefore has no effect.
 
-### Two particle operators
+#### Two particle operators
 
 We show that the general two particle operator @eq-two-particle has representation
 
