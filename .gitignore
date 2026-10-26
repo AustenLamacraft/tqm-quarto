@@ -4,6 +4,8 @@
 
 # diagram filter build output
 notes/diagram-*.pdf
-notes/*_files/mediabag/
+notes/*_files/
+# kept by keep-tex in notes/_metadata.yml
+notes/*.tex
 slides/*_files/mediabag/
 problem-sets/*_files/mediabag/

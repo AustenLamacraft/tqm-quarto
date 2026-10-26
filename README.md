@@ -32,7 +32,7 @@ Diagrams are drawn in TikZ, taken from William Royce's LaTeX version of the note
 
 **The extension is modified locally.** In `pdf2svg` in `_extensions/pandoc-ext/diagram/diagram.lua`, Inkscape is called with `--pdf-poppler`. Its default PDF importer drops TeX's large delimiters (`\qty[...]`, `\left(`, `\bigl[`, whose glyph codes are control characters) and writes those codes into `aria-label` attributes, making the SVG invalid XML so that the browser shows nothing. Reapply this change if the extension is updated (`quarto update`/`quarto add`).
 
-**Known issue:** rendering a notes page to HTML and PDF in one go (e.g. `quarto render notes/fermi-gas.qmd`, since `notes/_metadata.yml` lists both formats) leaves the HTML pointing at SVGs that no longer exist. Render the formats separately (`--to html`, then `--to pdf`) until this is fixed.
+**`keep-tex: true` in `notes/_metadata.yml` is required.** Notes pages render to both HTML and PDF. Quarto runs Pandoc for both formats and then LaTeX, and the LaTeX cleanup deletes `notes/<page>_files/`, which also holds the HTML's TikZ SVGs (`<page>_files/mediabag/`), before they are copied to `_site`. The site then links to SVGs that don't exist. Keeping the intermediate files avoids this; the leftover `notes/*.tex` files are git-ignored. With it in place, a plain `quarto render` or `quarto publish netlify` builds both formats correctly.
 
 ## TODOs
 

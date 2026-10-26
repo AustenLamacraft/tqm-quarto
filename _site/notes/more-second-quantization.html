@@ -508,10 +508,14 @@ Can't get these to work with tex output at the moment because they end up after 
 \rho_2(x,y) = \rho_1(x)\rho_1(y) \pm g(x,y)g(y,x),
 \tag{6}\]</span></span></p>
 <p>which, in the case of the ground state of the Fermi gas, reproduces <a href="#eq-rho2-eval-fermi" class="quarto-xref">Equation&nbsp;3</a>. We see that the correlation function vanishes as the separation <span class="math inline">\(x-y\to 0\)</span>, because <span class="math inline">\(g(x,x)=\langle\mathop{\rho(y)}\rangle\)</span>. This is, of course, another manifestation of the exclusion principle: it is not possible for two fermions to sit on top of each other. The scale of the ‘hole’ in the correlation function is of course set by the mean interparticle separation, or Fermi wavelength. Note also the decaying oscillations, indicating liquid-like correlations in the positions of the particles. These are sometimes known as <strong>Friedel oscillations</strong>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/1DFermiGasCorrelation.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Correlation function <span class="math inline">\(\rho_2(x,0)\)</span> for the Fermi gas.</figcaption>
+<div id="fig-fermi-gas-correlation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fermi-gas-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/1DFermiGasCorrelation.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fermi-gas-correlation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Correlation function <span class="math inline">\(\rho_2(x,0)\)</span> for the Fermi gas.
+</figcaption>
 </figure>
 </div>
 <p>For bosons the situation is very different. If <span class="math inline">\(g(x,y)\to 0\)</span> as <span class="math inline">\(\lvert{x-y}\rvert\to\infty\)</span>, the value of the correlation function as <span class="math inline">\(\lvert{x-y}\rvert\to 0\)</span> is <em>twice</em> the value at <span class="math inline">\(\lvert{x-y}\rvert\to\infty\)</span>. This characteristic behavior is often termed <strong>bunching</strong>: a pair of bosons is more likely to be found at two nearby points than at two distant points.</p>
@@ -615,10 +619,14 @@ i\frac{\partial \psi^{\vphantom{\dagger}}(\mathbf{r},t)}{\partial t} = -\frac{1}
 \end{aligned}
 \tag{9}\]</span></span></p>
 <p>We see that the second and third terms contain interference fringes, with the same spacing as before. The correlation function gives the relative probability of finding an atom at <span class="math inline">\(\mathbf{r}'\)</span> if there is one at <span class="math inline">\(\mathbf{r}\)</span>. We conclude that in each measurement of the density, fringes are present but with a phase that varies between measurements, even if the samples are identically prepared.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/AndrewsFringes.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Fringes observed by interfering two Bose condensates (Source: <span class="citation" data-cites="andrews1997observation">Andrews et al. (<a href="#ref-andrews1997observation" role="doc-biblioref">1997</a>)</span>)</figcaption>
+<div id="fig-andrews-fringes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-andrews-fringes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/AndrewsFringes.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-andrews-fringes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Fringes observed by interfering two Bose condensates (Source: <span class="citation" data-cites="andrews1997observation">Andrews et al. (<a href="#ref-andrews1997observation" role="doc-biblioref">1997</a>)</span>).
+</figcaption>
 </figure>
 </div>
 <p>The rather surprising implication is that predictions for measured quantities for a system in a Fock state are the same as in a relative phase state, but with a subsequent averaging over the phase.</p>
@@ -811,7 +819,7 @@ E_\text{HF}(P) = \frac{E_V}{2}(1-P^2).
 <img src="more-second-quantization_files/mediabag/a61b1e9381c1750ee2abed00f7c9e7675cec4525.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stoner-polarisation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The value of <span class="math inline">\(E_\text{V}/E_\text{K}\)</span> at which the ground state has polarization <span class="math inline">\(P\)</span>. The ground state is partially polarized for <span class="math inline">\(10/9&lt;E_\text{V}/E_\text{K}&lt;\frac{5}{6}2^{2/3}\)</span>.
+Figure&nbsp;3: The value of <span class="math inline">\(E_\text{V}/E_\text{K}\)</span> at which the ground state has polarization <span class="math inline">\(P\)</span>. The ground state is partially polarized for <span class="math inline">\(10/9&lt;E_\text{V}/E_\text{K}&lt;\frac{5}{6}2^{2/3}\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -842,7 +850,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
 <img src="more-second-quantization_files/mediabag/62d4b14888e24e67d836553e3608429b615ff551.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vertex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Graphical representation of the interaction <a href="#eq-vertex" class="quarto-xref">Equation&nbsp;12</a>.
+Figure&nbsp;4: Graphical representation of the interaction <a href="#eq-vertex" class="quarto-xref">Equation&nbsp;12</a>.
 </figcaption>
 </figure>
 </div>
@@ -853,7 +861,7 @@ Figure&nbsp;2: Graphical representation of the interaction <a href="#eq-vertex" 
 <img src="more-second-quantization_files/mediabag/3a5c6c50e135eba145763e552a041d87ce4a3ebc.svg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hartree-fock-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Graphical representation of the Hartree and Fock terms.
+Figure&nbsp;5: Graphical representation of the Hartree and Fock terms.
 </figcaption>
 </figure>
 </div>
