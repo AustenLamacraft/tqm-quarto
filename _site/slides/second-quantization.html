@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.35">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <title>Theories of Quantum Matter – A is for Annihilation</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -190,16 +190,16 @@ Can't get these to work with tex output at the moment because they end up after 
 <li>Unnormalized symmetric product state using <span class="math inline">\psi_n(\mathbf{r})</span>, not necessarily orthonormal</li>
 </ul>
 <p><span class="math display">
-\Psi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N})
+\Psi_\text{prod}^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\psi_1(\mathbf{r}_{P_1})\psi_{2}(\mathbf{r}_{P_2})\cdots\psi_{N}(\mathbf{r}_{P_N})
 </span></p>
 <ul>
 <li>Inner product with another symmetric state formed from <span class="math inline">\phi_n(\mathbf{r})</span></li>
 </ul>
 <p><span class="math display">
-\Phi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\phi_1(\mathbf{r}_{P_1})\phi_{2}(\mathbf{r}_{P_2})\cdots\phi_{N}(\mathbf{r}_{P_N})
+\Phi_\text{prod}^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) = \frac{1}{\sqrt{N!}}\sum_P\phi_1(\mathbf{r}_{P_1})\phi_{2}(\mathbf{r}_{P_2})\cdots\phi_{N}(\mathbf{r}_{P_N})
 </span></p>
 <p><span class="math display">
-\langle{\Psi}\rvert\Phi\rangle = \sum_P \prod_{n=1}^N\langle{\psi_n}\rvert\phi_{P_n}\rangle = \operatorname{perm} \langle{\psi_m}\rvert\phi_{n}\rangle
+\langle{\Psi_\text{prod}}\rvert\Phi_\text{prod}\rangle = \sum_P \prod_{n=1}^N\langle{\psi_n}\rvert\phi_{P_n}\rangle = \operatorname{perm} \langle{\psi_m}\rvert\phi_{n}\rangle
 </span></p>
 <ul>
 <li>This is the <a href="https://en.wikipedia.org/wiki/Permanent">permanent</a> of the matrix <span class="math inline">\langle{\psi_m}\rvert\phi_{n}\rangle</span></li>
@@ -224,68 +224,113 @@ Can't get these to work with tex output at the moment because they end up after 
 <section id="creation-annihilation-operators" class="slide level2 center">
 <h2>Creation &amp; Annihilation Operators</h2>
 <ul>
-<li><p>We consider states with different numbers of particles</p></li>
-<li><p><span class="math inline">\lvert{\text{VAC}}\rangle</span> denotes state with no particles (<strong>the vacuum state</strong>)</p></li>
-<li><p><span class="math inline">a^\dagger(\psi)</span> creates particle in single particle state <span class="math inline">\psi(\mathbf{r})</span></p></li>
+<li><p>Regard <span class="math inline">N</span>-particle state as rank <span class="math inline">N</span> tensor <span class="math inline">\Psi_{a_1 a_2 \cdots a_N}</span> e.g.&nbsp;in position basis the <span class="math inline">N</span>-body wavefunction is <span class="math inline">\Psi(\mathbf{r}_1,\ldots \mathbf{r}_N)</span></p></li>
+<li><p><span class="math inline">\Psi</span> is either symmetric or antisymmetric in the labels <span class="math inline">a_i</span></p></li>
 </ul>
 <p><span class="math display">
-\psi(\mathbf{r})\longleftrightarrow a^\dagger(\psi)\lvert{\text{VAC}}\rangle
+\begin{aligned}
+\Psi^{\text{S}}_{a_1 a_2 \cdots a_N} &amp;= \Psi^{\text{S}}_{(a_1 a_2 \cdots a_N)}\\
+\Psi^{\text{A}}_{a_1 a_2 \cdots a_N} &amp;= \Psi^{\text{A}}_{[a_1 a_2 \cdots a_N]},
+\end{aligned}
 </span></p>
 <ul>
-<li>Evidently, <span class="math inline">a^\dagger(\psi)</span> must be linear in <span class="math inline">\psi</span></li>
+<li>Round / square brackets denote symmetrization / antisymmetrization,</li>
 </ul>
 <p><span class="math display">
-a^\dagger\left(c_1\psi_1+c_2\psi_2\right) = c_1a^\dagger(\psi_1)+c_2a^\dagger(\psi_2)
+T_{(a_1 \cdots a_N)} = \frac{1}{N!}\sum_P T_{a_{P_1}\cdots a_{P_N}},\qquad T_{[a_1 \cdots a_N]} = \frac{1}{N!}\sum_P (-1)^P T_{a_{P_1}\cdots a_{P_N}}
+</span></p>
+</section>
+<section id="fock-space" class="slide level2 center">
+<h2>Fock space</h2>
+<ul>
+<li>Bosonic / fermionic <a href="https://en.wikipedia.org/wiki/Fock_space">Fock space</a> consists of states of form</li>
+</ul>
+<p><span class="math display">
+\lvert{\Psi}\rangle=(\Psi^{\text{S/A}}, \Psi^{\text{S/A}}_{a_1}, \Psi^{\text{S/A}}_{a_1 a_2}, \Psi^{\text{S/A}}_{a_1 a_2 a_3},\ldots).
+</span></p>
+<ul>
+<li><p>Each state a combination of 0-, 1-, 2-, etc, particle states</p></li>
+<li><p>1d space of “no particles” is “vacuum”, denoted <span class="math inline">\lvert{\text{VAC}}\rangle</span></p></li>
+</ul>
+<p><span class="math display">
+\langle{\text{VAC}}\rvert \text{VAC} \rangle = 1
+</span></p>
+<ul>
+<li>Inner product</li>
+</ul>
+<p><span class="math display">
+\langle{\Psi}\rvert \Phi \rangle = \overline{\Psi}\Phi + \sum_{a_1} \overline{\Psi}_{a_1} \Phi_{a_1}+\sum_{a_1,a_2} \overline{\Psi}_{a_1 a_2} \Phi_{a_1 a_2} + \cdots
+</span></p>
+</section>
+<section id="symmetric-tensor-operations" class="slide level2 center">
+<h2>Symmetric tensor operations</h2>
+<ul>
+<li>Can form symmetric product of two tensors</li>
+</ul>
+<p><span class="math display">
+(\Psi \odot \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{\left(a_1 a_2 \cdots a_{M}\right.} \Phi_{\left. a_{M+1} a_{M+2} \cdots a_{M + N}\right).}
+</span></p>
+<ul>
+<li>Also contract indices to form a lower rank tensor. If <span class="math inline">M\leq N</span>:</li>
+</ul>
+<p><span class="math display">
+(\bar{\Psi} \cdot \Phi)_{a_{M+1} \cdots a_{N}} = \bar{\Psi}_{a_1\cdots a_{M}}\Phi_{a_1 a_2 \cdots a_N},
+</span></p>
+<ul>
+<li>Contraction preserves the symmetry of the tensors</li>
+</ul>
+</section>
+<section id="annihilation-operator" class="slide level2 center">
+<h2>Annihilation operator</h2>
+<ul>
+<li>Defined by</li>
+</ul>
+<p><span class="math display">
+(a^{\vphantom{\dagger}}(\psi)\Phi)_{a_2\cdots a_{N}} = \sqrt{N}\overline{\psi}_{a_1} \Phi_{a_1\cdots a_{N}}.
+</span></p>
+<ul>
+<li><p>Extended to general Fock space state by linearity</p></li>
+<li><p>Think of the <span class="math inline">a^{\vphantom{\dagger}}(\psi)</span> as “removing a particle from state <span class="math inline">\psi</span>”</p></li>
+<li><p>Inner product fixes adjoint operator <span class="math inline">a^\dagger(\psi)</span></p></li>
+</ul>
+<p><span class="math display">
+(a^\dagger(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\psi_{\left(a_{1}\right.} \Phi_{\left.a_2\cdots a_{N+1}\right)}.
+</span></p>
+</section>
+<section id="commutation-relations" class="slide level2 center">
+<h2>Commutation relations</h2>
+<ul>
+<li>First note that <span class="math inline">a^{\vphantom{\dagger}}(\psi)</span> and <span class="math inline">a^{\vphantom{\dagger}}(\phi)</span> commute, as well as <span class="math inline">a^\dagger(\psi)</span> and <span class="math inline">a^\dagger(\phi)</span></li>
+</ul>
+<p><span class="math display">
+\begin{aligned}
+\left[a^\dagger(\psi),a^\dagger(\phi)\right]&amp;=0\\
+\left[a^{\vphantom{\dagger}}(\psi),a^{\vphantom{\dagger}}(\phi)\right]&amp;=0.
+\end{aligned}
+</span></p>
+<p>For commutator of <span class="math inline">a^{\vphantom{\dagger}}(\psi)</span> and <span class="math inline">a^\dagger(\phi)</span> compute</p>
+<p><span class="math display">
+\begin{aligned}
+(a^{\vphantom{\dagger}}(\psi)a^\dagger(\phi)A)_{a_1\cdots a_N} &amp;= (N+1)\overline{\psi}_b \phi_{(b}A_{a_1 \cdots a_N)}\\
+(a^\dagger(\phi)a^{\vphantom{\dagger}}(\psi)A)_{a_1\cdots a_N} &amp;= N\overline{\psi}_b\phi_{(a_1} A_{|b| a_2 \cdots a_N)}.
+\end{aligned}
+</span></p>
+<ul>
+<li><p>Indices enclosed in vertical bars are excluded</p></li>
+<li><p>First expression can be written as</p></li>
+</ul>
+<p><span class="math display">
+(N+1)\overline{\psi}_b \phi_{(b}A_{a_1 \cdots a_N)} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} +  N\overline{\psi}_b\phi_{(a_1} A_{|b| a_2 \cdots a_N)}
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <ul>
-<li><p>If <span class="math inline">\lvert{\Psi}\rangle</span> has <span class="math inline">N</span> particle state, <span class="math inline">a^\dagger(\psi)\lvert{\Psi}\rangle</span> has <span class="math inline">N+1</span> particles</p></li>
-<li><p>Since this is orthogonal to the vacuum state</p></li>
+<li>This gives the commutation relation</li>
 </ul>
 <p><span class="math display">
-\langle{\text{VAC}}\rvert a^\dagger(\psi)\lvert{\Psi}\rangle=0
-</span> for any state <span class="math inline">\lvert{\Psi}\rangle</span></p>
-<ul>
-<li>Taking the adjoint, this means</li>
-</ul>
-<p><span class="math display">
-a^{\vphantom{\dagger}}(\psi)\lvert{\text{VAC}}\rangle=0
+\left[a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right] = \overline{\psi}_b \phi_b = \langle{\psi}\rvert \phi \rangle
 </span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li><span class="math inline">N</span> particle product state</li>
-</ul>
-<p><span class="math display">
-\Psi^{\text{S}}(\mathbf{r}_1,\ldots,\mathbf{r}_N) \longleftrightarrow a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle
-</span></p>
-<ul>
-<li>To be <em>symmetric</em> wavefunction, we must have</li>
-</ul>
-<p><span class="math display">
-\left[a^\dagger(\psi),a^\dagger(\phi)\right]=0
-</span> for any states <span class="math inline">\psi(\mathbf{r})</span> and <span class="math inline">\phi(\mathbf{r})</span>. Taking the adjoint gives</p>
-<p><span class="math display">
-\left[a^{\vphantom{\dagger}}(\psi),a^{\vphantom{\dagger}}(\phi)\right]=0
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>Inner product between two one particle states</li>
-</ul>
-<p><span class="math display">
-\langle{\psi}\rvert\phi\rangle = \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}(\psi)a^\dagger(\phi) \lvert \text{VAC} \rangle
-</span></p>
-<ul>
-<li>We impose</li>
-</ul>
-<p><span class="math display">
-\left[a^{\vphantom{\dagger}}(\psi),a^\dagger(\phi)\right] = \langle{\psi}\rvert \phi \rangle
-</span> together with <span class="math inline">a^{\vphantom{\dagger}}(\psi)\lvert{\text{VAC}}\rangle=0</span> this gives correct inner product</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -295,7 +340,11 @@ a^{\vphantom{\dagger}}(\psi)\lvert{\text{VAC}}\rangle=0
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Show that this also reproduces the inner product for <span class="math inline">N</span>-particle product states</p>
+<p>The <span class="math inline">N</span> particle symmetric product state <span class="math inline">\lvert{\Psi_\text{prod}^{\text{S}}}\rangle</span> is represented in terms of creation operators as acting on the vacuum state <span class="math inline">\lvert{\text{VAC}}\rangle</span> as</p>
+<p><span class="math display">
+\lvert{\Psi_\text{prod}^{\text{S}}}\rangle = a^\dagger(\psi_1)\cdots a^\dagger(\psi_N)\lvert{\text{VAC}}\rangle
+</span></p>
+<p>Show that the commutation relations reproduce the correct inner product.</p>
 </div>
 </div>
 </div>
@@ -410,19 +459,16 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 <section class="slide level2 center">
 
 <ul>
-<li>Often use eigenstates of the free particle Hamiltonian <span class="math inline">H=\frac{\mathbf{p}^{2}}{2m}</span></li>
-</ul>
-<p><span class="math display">
+<li><p>Often use eigenstates of the free particle Hamiltonian <span class="math inline">H=\frac{\mathbf{p}^{2}}{2m}</span> <span class="math display">
 \begin{aligned}
-    \lvert{\mathbf{k}}\rangle=\frac{\exp(i\mathbf{k}\cdot \mathbf{r})}{\sqrt{V}}, \quad \mathbf{k}=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
+  \lvert{\mathbf{k}}\rangle=\frac{\exp(i\mathbf{k}\cdot \mathbf{r})}{\sqrt{V}}, \quad \mathbf{k}=2\pi\left(\frac{n_{x}}{L_{x}},\frac{n_{y}}{L_{y}},\frac{n_{z}}{L_{z}}\right),\quad n_{x,y,z}\text{ integer},
 \end{aligned}
-</span> with <span class="math inline">V=L_{x}L_{y}L_{z}</span> (periodic b.c.)</p>
-<ul>
-<li>Matrix elements of transformation between to position basis <span class="math inline">\{\lvert{\mathbf{r}}\rangle\}</span> are <span class="math inline">\langle{\mathbf{k}}\rvert\mathbf{r}\rangle=\exp(-i\mathbf{k}\cdot \mathbf{r})/\sqrt{V}</span> <span class="math display">
+</span> with <span class="math inline">V=L_{x}L_{y}L_{z}</span> (periodic b.c.)</p></li>
+<li><p>Matrix elements of transformation between to position basis <span class="math inline">\{\lvert{\mathbf{r}}\rangle\}</span> are <span class="math inline">\langle{\mathbf{k}}\rvert\mathbf{r}\rangle=\exp(-i\mathbf{k}\cdot \mathbf{r})/\sqrt{V}</span> <span class="math display">
 \psi^\dagger(\mathbf{r})\equiv\frac{1}{\sqrt{V}}\sum_{\mathbf{k}} \exp(-i\mathbf{k}\cdot\mathbf{r})a^\dagger_{\mathbf{k}}
 </span> and similarly <span class="math display">
   \psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\frac{1}{\sqrt{V}}\sum_{\mathbf{k}} \exp(i\mathbf{k}\cdot\mathbf{r})a^{\vphantom{\dagger}}_{\mathbf{k}}
-</span></li>
+</span></p></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -539,57 +585,38 @@ a^\dagger(\varphi_\alpha)\equiv a^\dagger_\alpha,\quad a^{\vphantom{\dagger}}(\v
 <section class="slide level2 center">
 
 <ul>
-<li>Action of <span class="math inline">A</span> on states <span class="math inline">\lvert{\varphi_\alpha}\rangle</span> written</li>
+<li>We show that the one-particle operator <span class="math inline">\hat A</span> has representation</li>
 </ul>
 <p><span class="math display">
-A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langle{\varphi_\beta}\rvert A \lvert \varphi_\alpha \rangle = \sum_\beta A_{\beta\alpha}\lvert{\varphi_\beta}\rangle
+\hat A = \int \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}({x_1})]\, d{x_1}
 </span></p>
 <ul>
-<li>Action of <span class="math inline">\hat A</span> on product state <span class="math inline">\lvert{\Psi^{\text{S/A}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle</span> is</li>
-</ul>
-<p><span class="math display">
-\hat A \lvert{\Psi^{\text{S/A}}_{\alpha_{1}\alpha_{2}\cdots\alpha_{N}}}\rangle = \sum_\beta \left[A_{\beta\alpha_1}\lvert{\Psi^{\text{S/A}}_{\beta\alpha_{2}\cdots\alpha_{N}}}\rangle +A_{\beta\alpha_2}\lvert{\Psi^{\text{S/A}}_{\alpha_1\beta\cdots\alpha_{N}}}\rangle+\cdots A_{\beta\alpha_N}\lvert{\Psi^{\text{S/A}}_{\alpha_1\alpha_{2}\cdots\beta}}\rangle\right]
-</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>We’ll see same job is done by</li>
-</ul>
-<p><span class="math display">
-\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
-</span> acting on state <span class="math inline">\lvert{\mathbf{N}}\rangle \equiv \prod_\alpha \frac{\left(a^\dagger_\alpha\right)^{N_\alpha}}{\sqrt{N_\alpha!}}\lvert{\text{VAC}}\rangle</span></p>
-</section>
-<section class="slide level2 center">
-
-<ul>
-<li>We have</li>
-</ul>
-<p><span class="math display">
-\left[a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta,a^\dagger_\gamma\right]=a^\dagger_\alpha\delta_{\beta\gamma}
-</span> for bosons <em>and fermions</em></p>
-<ul>
-<li>Commute <span class="math inline">a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta</span> though each of creation operators in <span class="math inline">\lvert{\mathbf{N}}\rangle</span>, e.g.</li>
+<li>Evaluate matrix element <span class="math inline">\lvert{\Psi}\rangle</span> and <span class="math inline">\lvert{\Phi}\rangle</span></li>
 </ul>
 <p><span class="math display">
 \begin{aligned}
-    \mathop{\hat A}a^\dagger_{\beta}\lvert{\text{VAC}}\rangle&amp;=\left(\left[\mathop{\hat A},a^\dagger_{\beta}\right]+a^\dagger_{\beta}\mathop{\hat A}\right)\lvert{\text{VAC}}\rangle\nonumber\\
-                            &amp;=\sum_{\alpha} A_{\alpha \beta} a^\dagger_{\alpha}\lvert{\text{VAC}}\rangle
+\langle{\Psi}\rvert \hat A \lvert \Phi \rangle &amp;=  \int \langle{\Psi}\rvert \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 \\
+&amp;= N \int \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_1} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
+&amp;=\sum_{j=1}^N  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[A_{x_j} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
 \end{aligned}
 </span></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Try it for a two particle state!</p>
-</div>
-</div>
-</div>
+<ul>
+<li>Any sign in the fermionic case is squared and therefore has no effect.</li>
+</ul>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+\hat A = \int \psi^\dagger(x_1) [A_{x_1} \psi^{\vphantom{\dagger}}({x_1})]\, d{x_1}
+</span></p>
+<ul>
+<li><p>Substitute <span class="math inline">\psi^{\vphantom{\dagger}}(\mathbf{r})\equiv\frac{1}{\sqrt{V}}\sum_{\mathbf{k}} \exp(i\mathbf{k}\cdot\mathbf{r})a^{\vphantom{\dagger}}_{\mathbf{k}}</span> <span class="math display">
+\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
+</span> where <span class="math inline">A_{\alpha\beta}=\langle{\varphi_\alpha}\rvert A \lvert \varphi_\beta \rangle</span> are matrix elements</p></li>
+<li><p>Like <em>expectation value</em> of <span class="math inline">\mathop{A}</span> in single particle state <span class="math inline">\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle</span></p></li>
+<li><p>But <span class="math inline">a_\alpha</span> are <em>operators</em> not <em>numbers</em>. This is the origin of the name <strong>second quantization</strong></p></li>
+<li><p>Resemblance makes it easy to write down second quantized form</p></li>
+</ul>
 </section>
 <section class="slide level2 center">
 
@@ -597,11 +624,11 @@ A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langl
 \hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
 </span></p>
 <ul>
-<li><p>Find matrix element <span class="math inline">\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle</span> between product states made of orthonormal single particle states</p></li>
-<li><p>Vanishes unless <span class="math inline">N_\beta = N'_\beta-1</span> and <span class="math inline">N_\alpha = N'_\alpha+1</span> we have</p></li>
+<li><p>Matrix element <span class="math inline">\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle</span> vanishes unless <span class="math inline">\mathbf{N}</span> and <span class="math inline">\mathbf{N'}</span> differ by the movement of of one particle</p></li>
+<li><p>If <span class="math inline">N_\beta = N'_\beta-1</span> and <span class="math inline">N_\alpha = N'_\alpha+1</span> we have</p></li>
 </ul>
 <p><span class="math display">
-\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}
+\langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}.
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -616,20 +643,6 @@ A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langl
 </div>
 </div>
 </div>
-<ul>
-<li>Same for bosons and fermions</li>
-</ul>
-</section>
-<section class="slide level2 center">
-
-<p><span class="math display">
-\hat A = \sum_{\alpha\beta}A_{\alpha\beta}a^\dagger_\alpha a^{\vphantom{\dagger}}_\beta
-</span></p>
-<ul>
-<li><p>Like <em>expectation value</em> of <span class="math inline">\mathop{A}</span> in single particle state <span class="math inline">\sum_{\alpha}a_{\alpha}\lvert{\varphi_{\alpha}}\rangle</span></p></li>
-<li><p>But <span class="math inline">a_\alpha</span> are <em>operators</em> not <em>numbers</em>. This is the origin of the name <strong>second quantization</strong></p></li>
-<li><p>Resemblance makes it easy to write down second quantized form</p></li>
-</ul>
 </section>
 <section class="slide level2 center">
 
@@ -708,7 +721,7 @@ A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langl
 <li>Expectation value of density in product state <span class="math inline">\lvert{N_{0},N_{1}\ldots}\rangle</span></li>
 </ul>
 <p><span class="math display">
-    \langle{N_{0},N_{1}\ldots}\rvert  \hat\rho(\mathbf{r}) \lvert N_{0},N_{1}\ldots \rangle = \sum_{\alpha} N_{\alpha}\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}.
+    \langle{N_{0},N_{1}\ldots}\rvert  \hat\rho(\mathbf{r}) \lvert N_{0},N_{1}\ldots \rangle = \sum_{\alpha} N_{\alpha}\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}
 </span></p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -724,7 +737,8 @@ A\lvert{\varphi_\alpha}\rangle = \sum_{\beta} \lvert{\varphi_\beta}\rangle\langl
 </div>
 </div>
 <ul>
-<li>Interpretation: <span class="math inline">\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}</span> is probability to find a particle in state <span class="math inline">\alpha</span> at position <span class="math inline">\mathbf{r}</span>. Density is weighted by occupation</li>
+<li><p>Interpretation: <span class="math inline">\left|\varphi_{\alpha}(\mathbf{r})\right|^{2}</span> is probability to find a particle in state <span class="math inline">\alpha</span> at position <span class="math inline">\mathbf{r}</span></p></li>
+<li><p>Density is weighted by occupation</p></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -826,36 +840,27 @@ g(\mathbf{r},\mathbf{r}')= \langle{\Psi}\rvert \psi^\dagger(\mathbf{r})\psi^{\vp
 \hat B = \sum_{j&lt;k} B_{jk}.
 </span></p>
 <ul>
-<li>Action of <span class="math inline">\hat B</span> on product state <span class="math inline">\lvert{\varphi_{\alpha}}\rangle_1\lvert{\varphi_{\beta}}\rangle_2</span> in terms of matrix elements</li>
+<li>Has representation</li>
 </ul>
 <p><span class="math display">
-\begin{aligned}
-B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert_1\langle{\varphi_\beta}\rvert_2 B_{12} \lvert{\varphi_\gamma}\rangle_1\lvert{\varphi_\delta}\rangle_2\\
-\hat B &amp;= \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma,\qquad B_{\alpha\beta,\gamma\delta} = B_{\beta\alpha,\delta\gamma}
-\end{aligned}
-</span> (Note order, which is important for fermions!)</p>
+\hat B =\frac{1}{2} \int \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)]\, dx_1 dx_2,
+</span> where <span class="math inline">B_{x_1,x_2}</span> is an operator that acts on a pair of wavefunctions</p>
 </section>
 <section class="slide level2 center">
 
+<ul>
+<li>Taking matrix elements yields</li>
+</ul>
 <p><span class="math display">
 \begin{aligned}
-B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert_1\langle{\varphi_\beta}\rvert_2 B_{12} \lvert{\varphi_\gamma}\rangle_1\lvert{\varphi_\delta}\rangle_2\\
-\hat B &amp;= \frac{1}{2}\sum_{\alpha\beta\gamma\delta} B_{\alpha\beta,\gamma\delta}a^\dagger_\alpha a^\dagger_\beta a^{\vphantom{\dagger}}_\delta a^{\vphantom{\dagger}}_\gamma.
+\langle{\Psi}\rvert \hat B \lvert \Phi \rangle &amp;= \frac{1}{2} \int \langle{\Psi}\rvert \psi^\dagger(x_1)\psi^\dagger(x_2) [B_{x_1,x_2} \psi^{\vphantom{\dagger}}(x_2)\psi^{\vphantom{\dagger}}(x_1)] \lvert \Phi \rangle\, dx_1 dx_2\\
+&amp;= \frac{1}{2}N(N-1) \int \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_1,x_2} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}\\
+&amp;=\sum_{j&lt;k}  \int  \Psi^*(x_1,x_2,\ldots x_{N})\left[B_{x_j,x_k} \Phi(x_1,x_2,\dots x_{N})\right]dx_1 dx_2\ldots dx_{N}.
 \end{aligned}
 </span></p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Check this works on product states (<span class="math inline">N=2</span> first)</p>
-</div>
-</div>
-</div>
+<ul>
+<li>All terms in sum over pairs are identical by (anti-)symmetry of the wavefunctions</li>
+</ul>
 </section>
 <section class="slide level2 center">
 

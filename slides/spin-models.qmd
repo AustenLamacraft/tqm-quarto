@@ -282,6 +282,15 @@ $$
 
 ---
 
+- Write general $n$-magnon state in terms of amplitudes $\Psi(i,j,\ldots k)$
+$$
+\sum_{i<j<\ldots k} \Psi(i,j,\ldots k) s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}\ket{\text{FM}}.
+$$
+
+- Symmetry of $s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}$ restricts us to totally symmetric $\Psi(i,j,\ldots k)$ i.e. the magnons are _bosons_
+
+---
+
 ## Antiferromagnets Are Different!
 
 - Let's try and _guess_ the ground state for $J>0$
@@ -483,7 +492,19 @@ $$
 
 - Classically, small amplitude nonlinear oscillations treated as linear
 
-- What about AFM case? Make it _look_ like FM
+- What about AFM case? Now $\ket{\text{FM}}$ is _highest_ energy state $E_\text{max}\equiv JN/4$
+
+$$
+H^{(2)} = -2sJ \sum_{|n| \leq (N-1)/2} \sin^2(\eta_n/2)\left[q_n q_{-n} + \pi_n\pi_{-n}\right]
+$$
+
+- Spectrum of $H^{(2)}$ is negative
+
+---
+
+- For low energy states must start from different state
+
+- Make AFM _look_ like FM
 
 - Rotate every other spin through $\pi$ about the $y$ axis, so that
 
@@ -506,7 +527,7 @@ $$
 $$
 H^{(2)} = 2sJ \sum_{|n| \leq (N-1)/2} \left[\sin^2(\eta/2)q_n q_{-n} + \cos^2(\eta/2)\pi_n\pi_{-n}\right],
 $$
-corresponding to a dispersion relation
+which is _positive_, with dispersion relation
 
 $$
 \omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|

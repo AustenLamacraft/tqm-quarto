@@ -227,7 +227,15 @@ If we are thinking of the down spin as a particle, then the eigenstates @eq-spin
 
 ### $N$-Magnon States
 
-Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have _many_ magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts -- it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the [Appendix](#two-magnon-states). It turns out that for the Heisenberg model we are lucky, and we even know the form of a _general_ energy eigenstate with $n$ flipped spin. It's called __Bethe's ansatz__ and we'll meet it in [Lecture 15](lieb-liniger.qmd).
+Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by $J$, such a system will presumably have _many_ magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which $H$ acts -- it has dimension $\binom{N}{n}$ for $n$ flipped spins i.e. $S^z = N/2-n$. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the [Appendix](#two-magnon-states). It turns out that for the Heisenberg model we are lucky, and we even know the form of a _general_ energy eigenstate with $n$ flipped spin. It's called the [Bethe ansatz](https://en.wikipedia.org/wiki/Bethe_ansatz).
+
+A general $n$-magnon state can be written in terms of a set of amplitudes $\Psi(i,j,\ldots k)$ that are indexed by the positions of the $n$ flipped spins
+
+$$
+\sum_{i<j<\ldots k} \Psi(i,j,\ldots k) s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}\ket{\text{FM}}.
+$$
+
+Note the restriction $i<j<\ldots k$: we don't need to include the other possible orderings in the sum because $s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}$ is unchanged under permutation of the indices. If we did want to regard $\Psi(i,j,\ldots k)$ as an $n$-magnon wavefunction, however, in which the coordinates $i,j,\ldots k$ can take any values, the symmetry of $s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}$ would restrict us to totally symmetric $\Psi(i,j,\ldots k)$ i.e. the magnons are _bosons_.
 
 We started our discussion with the ground state of the ferromagnetic $J<0$ Heisenberg model. What about $J>0$? Can we guess the ground state in this case (of course, that's equivalent to finding the _highest_ excited state of the ferromagnet). Bethe's ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?
 
@@ -546,7 +554,7 @@ $$
 c_{j,j-1} - \frac{1}{2}\left(c_{j+1,j-1}+c_{j,j-2}\right) &= \epsilon c_{j,j-1}
 \end{aligned}
 $$ {#eq-2-part}
-
+ 
 We can think of this as a lattice analog of the two particle Schrödinger equation. The modification when $j=k+1$ occurs because
 
 1. There are only two bonds where the spin changes, instead of 4 when $j>k+1$. Thus the 'on-site' term is -4 not -8. This plays the role of a nearest neighbour attractive interaction between magnons.

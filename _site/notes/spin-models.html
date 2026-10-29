@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.35">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -61,10 +61,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -636,7 +636,12 @@ H\lvert{j}\rangle = (1-N/4) \lvert{j}\rangle - \frac{1}{2}\left(\lvert{j-1}\rang
 </section>
 <section id="n-magnon-states" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="n-magnon-states"><span class="header-section-number">2.4</span> <span class="math inline">\(N\)</span>-Magnon States</h3>
-<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="#two-magnon-states">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called <strong>Bethe’s ansatz</strong> and we’ll meet it in <a href="lieb-liniger.qmd">Lecture 15</a>.</p>
+<p>Any system at finite temperature has a finite energy density, or a total energy proportional to the system size. Since a magnon has a microscopic energy set by <span class="math inline">\(J\)</span>, such a system will presumably have <em>many</em> magnons (many flipped spins). As we increase the number of flipped spins, we increase the size of the subspace in which <span class="math inline">\(H\)</span> acts – it has dimension <span class="math inline">\(\binom{N}{n}\)</span> for <span class="math inline">\(n\)</span> flipped spins i.e.&nbsp;<span class="math inline">\(S^z = N/2-n\)</span>. Things are obviously going to get difficult quickly! The case of two magnons is discussed in the <a href="#two-magnon-states">Appendix</a>. It turns out that for the Heisenberg model we are lucky, and we even know the form of a <em>general</em> energy eigenstate with <span class="math inline">\(n\)</span> flipped spin. It’s called the <a href="https://en.wikipedia.org/wiki/Bethe_ansatz">Bethe ansatz</a>.</p>
+<p>A general <span class="math inline">\(n\)</span>-magnon state can be written in terms of a set of amplitudes <span class="math inline">\(\Psi(i,j,\ldots k)\)</span> that are indexed by the positions of the <span class="math inline">\(n\)</span> flipped spins</p>
+<p><span class="math display">\[
+\sum_{i&lt;j&lt;\ldots k} \Psi(i,j,\ldots k) s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}\lvert{\text{FM}}\rangle.
+\]</span></p>
+<p>Note the restriction <span class="math inline">\(i&lt;j&lt;\ldots k\)</span>: we don’t need to include the other possible orderings in the sum because <span class="math inline">\(s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}\)</span> is unchanged under permutation of the indices. If we did want to regard <span class="math inline">\(\Psi(i,j,\ldots k)\)</span> as an <span class="math inline">\(n\)</span>-magnon wavefunction, however, in which the coordinates <span class="math inline">\(i,j,\ldots k\)</span> can take any values, the symmetry of <span class="math inline">\(s^{-}_{i} s^{-}_{j}\cdots s^{-}_{k}\)</span> would restrict us to totally symmetric <span class="math inline">\(\Psi(i,j,\ldots k)\)</span> i.e.&nbsp;the magnons are <em>bosons</em>.</p>
 <p>We started our discussion with the ground state of the ferromagnetic <span class="math inline">\(J&lt;0\)</span> Heisenberg model. What about <span class="math inline">\(J&gt;0\)</span>? Can we guess the ground state in this case (of course, that’s equivalent to finding the <em>highest</em> excited state of the ferromagnet). Bethe’s ansatz tells us that it must be some complicated gas of magnons, all scattering off each other. Why are things so complicated?</p>
 </section>
 <section id="antiferromagnets-are-different" class="level3" data-number="2.5">
@@ -1143,7 +1148,7 @@ Lhuillier, Claire. 2006. <em>Frustrated Quantum Magnets in 2d: From n<span>é</s
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

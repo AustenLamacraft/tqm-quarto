@@ -52,73 +52,115 @@ Satisfy yourself that @eq-perm agrees with @eq-ortho-prod in the case of orthono
 
 :::
 
+### General states: Fock space
 
-### Creation and Annihilation Operators
-
-Our starting point is the __vacuum state__, which we'll denote by $\ket{\text{VAC}}$ to distinguish it from the ground state. The vacuum state corresponds to the state with no particles. Up to now, we have worked with many body wavefunctions having just as many arguments as we have particles, but since we are now considering a formalism in which there are states with different numbers of particles, we have to allow for that number to be zero.
-
-The creation operator $\adop(\psi)$ creates a particle in the single particle state $\psi(\br)$ (the reason for introducing the adjoint operator as the creation operator will become clear: for the moment let's just take it that it's the adjoint of _something_.). This means we identify
+We can regard a general $N$-particle state as a rank $N$ tensor $\Psi_{a_1 a_2 \cdots a_N}$. We use abstract labels $a_i$ which could index components in any basis e.g. the position basis in which we would normally write the $N$-body wavefunction as $\Psi(\br_1,\ldots \br_N)$. The tensor $\Psi$ is either symmetric or antisymmetric in the labels $a_i$
 
 $$
-\psi(\br)\longleftrightarrow \adop(\psi)\ket{\text{VAC}}.
-$$ {#eq-1-part}
-
-More generally, if $\ket{\Psi}$ is an $N$ particle state, $\adop(\psi)\ket{\Psi}$ is an $N+1$ particle state. Since this is orthogonal to the vacuum state
-
-$$
-\bra{\text{VAC}} \adop(\psi)\ket{\Psi}=0,
+\begin{aligned}
+\Psi^{\text{S}}_{a_1 a_2 \cdots a_N} &= \Psi^{\text{S}}_{(a_1 a_2 \cdots a_N)}\\
+\Psi^{\text{A}}_{a_1 a_2 \cdots a_N} &= \Psi^{\text{A}}_{[a_1 a_2 \cdots a_N]},
+\end{aligned}
 $$
 
-for any state $\ket{\Psi}$. This means, taking the adjoint
+where round and square brackets denote respectively symmetrization and antisymmetrization, normalized so that they leave an already (anti)symmetric tensor unchanged
 
 $$
-\aop(\psi)\ket{\text{VAC}}=0.
+T_{(a_1 \cdots a_N)} = \frac{1}{N!}\sum_P T_{a_{P_1}\cdots a_{P_N}},\qquad T_{[a_1 \cdots a_N]} = \frac{1}{N!}\sum_P (-1)^P T_{a_{P_1}\cdots a_{P_N}}.
 $$
 
-Evidently, $\adop(\psi)$ must be linear in $\psi$
+Bosonic and fermionic [Fock space](https://en.wikipedia.org/wiki/Fock_space) consists of states of the form
 
 $$
-\adop\left(c_1\psi_1+c_2\psi_2\right) = c_1\adop(\psi_1)+c_2\adop(\psi_2).
+\ket{\Psi}=(\Psi^{\text{S/A}}, \Psi^{\text{S/A}}_{a_1}, \Psi^{\text{S/A}}_{a_1 a_2}, \Psi^{\text{S/A}}_{a_1 a_2 a_3},\ldots).
+$${#eq-fock-space-state}
+
+That is, each state is a combination of 0-, 1-, 2-, etc, particle states. You might find the idea of a Hilbert space of "no particles" a bit strange. This is just a bookkeeping device: it is a one-dimensional space that we call the "vacuum". We denote the only linearly independent vector in this space by $\ket{\text{VAC}}$, and fix the normalization 
+
+$$
+\inner{\text{VAC}}{\text{VAC}} = 1
 $$
 
-Generalizing @eq-1-part, we represent an $N$ particle product state @eq-N-prod as
+Mathematically, we say that states of the form @eq-fock-space-state lie in the direct sum of the symmetric or antisymmetric subspaces of the tensor product states for $N$-particles for $N=0,1,2,\ldots$. If you don't like that terminology, forget it!
+
+The inner product between two Fock space vectors is given by
+
+$$
+\inner{\Psi}{\Phi} = \overline{\Psi}\Phi + \sum_{a_1} \overline{\Psi}_{a_1} \Phi_{a_1}+\sum_{a_1,a_2} \overline{\Psi}_{a_1 a_2} \Phi_{a_1 a_2} + \cdots
+$${#eq-fock-inner}
+
+### Creation and Annihilation Operators: bosonic case
+
+There are some natural basis independent operations we can perform with symmetric tensors. Given two tensors $\Psi$ and $\Phi$ of rank $M$ and $N$ respectively, we can form the symmetric product to give a symmetric tensor of rank $M+N$
+
+$$
+(\Psi \odot \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{\left(a_1 a_2 \cdots a_{M}\right.} \Phi_{\left. a_{M+1} a_{M+2} \cdots a_{M + N}\right).}
+$$
+
+We can also contract indices to form a lower rank tensor. Thus if $M\leq N$ then contraction
+
+$$
+(\bar{\Psi} \cdot \Phi)_{a_{M+1} \cdots a_{N}} = \bar{\Psi}_{a_1\cdots a_{M}}\Phi_{a_1 a_2 \cdots a_N},
+$$
+
+yields a rank $N-M$ tensor (repeated indices are summed over.) Notice that contraction preserves the symmetry of the tensors. The __annihilation operator__ $\aop(\psi)$ is defined as the operator that acts by contracting a tensor with the one-particle state $\psi$: 
+
+$$
+(\aop(\psi)\Phi)_{a_2\cdots a_{N}} = \sqrt{N}\overline{\psi}_{a_1} \Phi_{a_1\cdots a_{N}}. 
+$${#eq-a-def}
+
+This action is extended to a general Fock space state @eq-fock-space-state by linearity. The reason for the $\sqrt{N}$ will become clear shortly. We think of the annihilation operator as "removing a particle from state $\psi$".
+
+The Fock space inner product @eq-fock-inner fixes the Hermitian adjoint operator $\adop(\psi)$. It corresponds to the symmetric product with the one particle state $\psi$
+
+$$
+(\adop(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\psi_{\left(a_{1}\right.} \Phi_{\left.a_2\cdots a_{N+1}\right)}. 
+$${#eq-a-dagger-def}
+
+We will now show that the definitions @eq-a-def and @eq-a-dagger-def fix the form of the commutation relations. First note that $\aop(\psi)$ and $\aop(\phi)$ commute, as well as $\adop(\psi)$ and $\adop(\phi)$. 
+
+$$
+\begin{aligned}
+\left[\adop(\psi),\adop(\phi)\right]&=0\\
+\left[\aop(\psi),\aop(\phi)\right]&=0.
+\end{aligned}
+$$ {#eq-ad-commute}
+
+For the commutator of $\aop(\psi)$ and $\adop(\phi)$ we compute the effect of acting with both on an $N$-particle tensor $A_{a_1\cdots a_N}$. We find
+
+$$
+\begin{aligned}
+(\aop(\psi)\adop(\phi)A)_{a_1\cdots a_N} &= (N+1)\overline{\psi}_b \phi_{(b}A_{a_1 \cdots a_N)}\\
+(\adop(\phi)\aop(\psi)A)_{a_1\cdots a_N} &= N\overline{\psi}_b\phi_{(a_1} A_{|b| a_2 \cdots a_N)}.
+\end{aligned}
+$$
+
+Indices enclosed in vertical bars are excluded, so that $\phi_{(a_1}A_{|b|a_2\cdots a_N)}$ means symmetrization over $a_1\cdots a_N$ only. Note that in the first expression we symmetrize on $N+1$ indices $b a_1 \cdots a_N$ while in the second we symmetrize on $a_1\cdots a_N$. Since $A$ is already symmetric, the symmetrization over $b a_1\cdots a_N$ only has to choose which index sits on $\phi$: $b$ in one of the $N+1$ cases, and one of the $a_j$ in the other $N$. The first expression can be written as
+
+$$
+(N+1)\overline{\psi}_b \phi_{(b}A_{a_1 \cdots a_N)} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} +  N\overline{\psi}_b\phi_{(a_1} A_{|b| a_2 \cdots a_N)},
+$$
+
+This gives the commutation relation
+
+$$
+\left[\aop(\psi),\adop(\phi)\right] = \overline{\psi}_b \phi_b = \inner{\psi}{\phi}.
+$${#eq-ada-commute}
+
+@eq-ad-commute and @eq-ada-commute constitute the bosonic __canonical commutation relations__. Via @eq-ada-commute, this representation inherits the properties of the single particle Hilbert space.
+
+::: {.callout-tip}
+## Check
+
+An $N$ particle product state @eq-N-prod is represented in terms of creation operators as acting on the vacuum state $\ket{\text{VAC}}$ as
 
 $$
 \Psi^{\text{S}}(\br_1,\ldots,\br_N) \longleftrightarrow \adop(\psi_1)\cdots \adop(\psi_N)\ket{\text{VAC}}.
 $$ {#eq-N-part}
 
-For this to be a symmetric wavefunction, it's clear that we must have
-
-$$
-\left[\adop(\psi),\adop(\phi)\right]=0
-$$ {#eq-ad-commute}
-
-for any states $\psi(\br)$ and $\phi(\br)$. Taking the adjoint gives
-
-$$
-\left[\aop(\psi),\aop(\phi)\right]=0
-$$ {#eq-a-commute}
-
-This isn't the only requirement however: we need to make sure that the inner product comes out right. Evaluating the inner product between two one particle states on both sides of the correspondence @eq-1-part gives
-
-$$
-\bra{\psi}\phi\rangle = \braket{\text{VAC}}{\aop(\psi)\adop(\phi)}{\text{VAC}}.
-$$
-
-To be nonzero $\aop(\psi)\adop(\phi)\ket{\text{VAC}}$ must be proportional to the vacuum state, which means $\aop(\psi)$ removes a particle from the system: it is an annihilation operator. To get the right value for the inner product, we impose
-
-$$
-\left[\aop(\psi),\adop(\phi)\right] = \inner{\psi}{\phi}.
-$$ {#eq-ada-commute}
-
-::: {.callout-tip}
-## Check
-
-Show that this also reproduces @eq-perm.
+Show that the commutation relations reproduce the correct inner product @eq-perm.
 
 :::
-
-@eq-ad-commute, @eq-a-commute,  and @eq-ada-commute constitute the bosonic __canonical commutation relations__. Via @eq-ada-commute, this representation inherits the properties of the single particle Hilbert space.
 
 ### Choosing a Basis
 
@@ -190,7 +232,7 @@ and involves the wavefunctions $\varphi_{\beta}(\br)$, rather than their conjuga
 
 $$
 \begin{gathered}
-	\left[\pop(\br_1),\pdop(\br_2)\right]=\delta(\br_1-\br_2)\nonumber\\
+	\left[\pop(\br_1),\pdop(\br_2)\right]=\delta(\br_1-\br_2)\\
 	\left[\pop(\br_1),\pop(\br_2)\right]=\left[\pdop(\br_1),\pdop(\br_2)\right]=0.
 \end{gathered} 
 $$ {#eq-position-relations}
@@ -321,11 +363,10 @@ Introducing field operators in the position basis as before leads to a system of
 
 $$
 \begin{gathered}
-	\left\{\pop(\br_1),\pdop(\br_2)\right\}=\delta(\br_1-\br_2)\nonumber\\
+	\left\{\pop(\br_1),\pdop(\br_2)\right\}=\delta(\br_1-\br_2)\\
 	\left\{\pop(\br_1),\pop(\br_2)\right\}=\left\{\pdop(\br_1),\pdop(\br_2)\right\}=0.
-	\label{2nd_quant_PositionRelationsAnti}
 \end{gathered}
-$$
+$$ {#eq-position-relations-anti}
 
 
 ::: {.callout-tip}
@@ -690,84 +731,64 @@ We've succeeded in translating an interacting many body Hamiltonian into a quant
 Appendices 
 --------
 
-### Alternative derivation of the commutation and anticommutation relations
+### Derivation of the anticommutation relations for fermions
 
-We can regard a $N$ particle state as a rank N tensor $\Psi_{a_1 a_2 \cdots a_N}$. We use abstract labels $a_i$ which could index components in any basis e.g. the position basis in which we would normally write the $N$-body wavefunction as $\Psi(\br_1,\ldots \br_N)$. The tensor $\Psi$ is either symmetric or antisymmetric in the labels $a_i$
-
-$$
-\begin{align}
-\Psi^{\text{S}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{S}}_{(a_1 a_2 \cdots a_N)}\\ 
-\Psi^{\text{A}}_{a_1 a_2 \cdots a_N} = \Psi^{\text{A}}_{[a_1 a_2 \cdots a_N]},
-\end{align}
-$$
-
-where round and square brackets denote respectively symmetrization and antisymmetrization. Bosonic and fermionic [Fock space](https://en.wikipedia.org/wiki/Fock_space) consists of states of the form
+The fermionic case proceeds similarly, except that we have to be a bit cautious about signs. Two antisymmetric tensors of rank $M$ and $N$ are combined into an antisymmetric tensor of rank $M+N$ using the antisymmetric (or _wedge_) product
 
 $$
-\ket{\Psi}=(\Psi^{\text{S/A}}, \Psi^{\text{S/A}}_{a_1}, \Psi^{\text{S/A}}_{a_1 a_2}, \Psi^{\text{S/A}}_{a_1 a_2 a_3},\ldots).
-$${#eq-fock-space-state}
-
-That is, each state is a combination of 0-, 1-, 2-, etc, particle states. You might find the idea of a Hilbert space of "no particles" a bit strange. This is just a bookkeeping device: it is a one-dimensional space that we call the "vacuum". Mathematically, we say that states of the form @eq-fock-space-state lie in the direct sum of the symmetric or antisymmetric subspaces of the tensor product states for $N$-particles for $N=0,1,2,\ldots$. If you don't like that terminology, forget it!
-
-The inner product between two Fock space vectors is given by
-
-$$
-\inner{\Psi}{\Phi} = \overline{\Psi}\Psi + \sum_{a_1} \overline{\Psi}_{a_1} \Phi_{a_1}+\sum_{a_1,a_2} \overline{\Psi}_{a_1 a_2} \Phi_{a_1 a_2} + \cdots
-$${#eq-fock-inner}
-
-#### Bosonic case
-
-There are some natural basis independent operations we can perform with symmetric tensors. Given two tensors $\Psi$ and $\Phi$ of rank $M$ and $N$ respectively, we can form the symmetric product to give a symmetric tensor of rank $M+N$
-
-$$
-(\Psi \odot \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{\left(a_1 a_2 \cdots a_{M}\right.} \Phi_{\left. a_{M+1} a_{M+2} \cdots a_{M + N}\right).}
+(\Psi \wedge \Phi)_{a_1 a_2 \cdots a_{M + N}} = \Psi_{[a_1 a_2 \cdots a_{M}} \Phi_{a_{M+1} a_{M+2} \cdots a_{M + N}]}.
 $$
 
-We can also contract indices to form a lower rank tensor. Thus if $M<N$ 
+Unlike the symmetric product, the order now matters: $\Psi \wedge \Phi = (-1)^{MN}\,\Phi \wedge \Psi$. Contraction also preserves antisymmetry, but which index we contract affects the sign, since moving an index from the last position to the first costs a factor $(-1)^{N-1}$. We define the creation operator to place the new particle in the _first_ slot
 
 $$
-(\bar{\Psi} \cdot \Phi)_{a_1 a_2 \cdots a_{N-M}} = \bar{\Psi}_{a_{N-M + 1}\cdots a_{N}}\Phi_{a_1 a_2 \cdots a_N}.
-$$
+(\adop(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\,\psi_{[a_1} \Phi_{a_2\cdots a_{N+1}]},
+$$ {#eq-c-dagger-def}
 
-Notice that contraction preserves the symmetry of the tensors. The _annhilation operator_ $a(\psi)$ is defined as the operator that acts by contracting a tensor with the one-particle state $\psi$: 
-
-$$
-(\aop(\psi)\Phi)_{a_1\cdots a_{N-1}} = \sqrt{N}\overline{\psi}_{a_N} \Phi_{a_1\cdots a_{N}}. 
-$${#eq-a-def}
-
-This action is extended to a general Fock space state @eq-fock-space-state by linearity. The reason for the $\sqrt{N}$ will become clear shortly. We think of the annihilation operator as "removing a particle from state $\psi$".
-
-The Fock space inner product @eq-fock-inner fixes the Hermitian adjoint operator $\adop(\psi)$. It corresponds to the symmetric product with the one particle state $\psi$
+so that $\adop(\psi_1)\adop(\psi_2)\cdots\adop(\psi_N)\ket{\text{VAC}}$ is the antisymmetrized product state @eq-anti, with $\psi_1$ in the first position and the factors of $\sqrt{N}$ combining with the $1/N!$ in the antisymmetrizer to give the normalization $1/\sqrt{N!}$. The annihilation operator must then contract the _first_ index
 
 $$
-(\adop(\psi)\Phi)_{a_1\cdots a_{N+1}} = \sqrt{N + 1}\psi_{\left(a_{1}\right.} \Phi_{\left.a_2\cdots a_{N+1}\right)}. 
-$${#eq-a-dagger-def}
+(\aop(\psi)\Phi)_{a_2\cdots a_{N}} = \sqrt{N}\,\overline{\psi}_{b} \Phi_{b a_2\cdots a_{N}}.
+$$ {#eq-c-def}
 
-We will now show that the definitions @eq-a-def and @eq-a-dagger-def fix the form of the commutation relations. First note that $\aop(\psi)$ and $\aop(\phi)$ commute, as well as $\adop(\psi)$ and $\adop(\phi)$. For the commutator of $\aop(\psi)$ and $\adop(\phi)$ we compute the effect of acting with both on an $N$-particle tensor $A_{a_1\cdots a_N}$. We find
-
-$$
-\begin{align}
-(\aop(\psi)\adop(\phi)A)_{a_1\cdots a_N} &= (N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)}\\
-(\adop(\phi)\aop(\psi)A)_{a_1\cdots a_N} &= N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)}. 
-\end{align}
-$$
-
-Note that in the first expression we symmetrize on $N+1$ indices $b a_1 \cdots a_N$ while in the second we symmetrize on $a_1\cdots a_N$. The first expression can be written as
+These are Hermitian conjugates with respect to the inner product @eq-fock-inner. For an $(N-1)$-particle state $X$ we have
 
 $$
-(N+1)\overline{\psi}_b \phi_{\left(b\right.}A_{\left. a_1 \cdots a_N\right)} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} +  N\phi_{\left(a_1\right)} \overline{\psi}_b  A_{ b \left(a_2 \cdots a_N\right)}, 
+\inner{\adop(\psi)X}{\Phi} = \sqrt{N}\,\overline{\psi}_{[b}\overline{X}_{a_2\cdots a_N]}\Phi_{b a_2\cdots a_N} = \sqrt{N}\,\overline{X}_{a_2\cdots a_N}\overline{\psi}_{b}\Phi_{b a_2\cdots a_N} = \inner{X}{\aop(\psi)\Phi},
 $$
 
-which gives the commutation relation
+because the antisymmetrizer can be moved onto $\Phi$, which it leaves unchanged. Had we contracted the last index in @eq-c-def, this would only hold up to the sign $(-1)^{N-1}$.
+
+Applying two annihilation operators gives
 
 $$
-\left[\aop(\psi),\adop(\phi)\right] = \overline{\psi}_b \phi_b = \inner{\psi}{\phi}.
+(\aop(\psi)\aop(\phi)\Phi)_{a_3\cdots a_{N}} = \sqrt{N(N-1)}\,\overline{\psi}_{c}\overline{\phi}_{b} \Phi_{b c a_3\cdots a_{N}}.
 $$
 
-#### Fermionic case
+Exchanging $\psi$ and $\phi$ is equivalent to exchanging the indices $b$ and $c$ on $\Phi$, which changes the sign, so $\left\{\aop(\psi),\aop(\phi)\right\}=0$. Taking the Hermitian conjugate gives $\left\{\adop(\psi),\adop(\phi)\right\}=0$. In particular $\adop(\psi)^2=0$: we can't put two fermions in the same state.
 
-The fermionic case proceeds similarly, except that we have to be a bit cautious about signs. The product of two antisymmetric tensors can be defined using the antisymmetric product
+For the anticommutator of $\aop(\psi)$ and $\adop(\phi)$ we again act on an $N$-particle tensor $A_{a_1\cdots a_N}$, which is now antisymmetric
 
+$$
+\begin{aligned}
+(\aop(\psi)\adop(\phi)A)_{a_1\cdots a_N} &= (N+1)\overline{\psi}_b \phi_{[b}A_{a_1 \cdots a_N]}\\
+(\adop(\phi)\aop(\psi)A)_{a_1\cdots a_N} &= N\overline{\psi}_b\phi_{[a_1} A_{|b| a_2 \cdots a_N]}.
+\end{aligned}
+$$
+
+As in the bosonic case, we split the $N+1$ terms in the first antisymmetrization according to which index sits on $\phi$. The term with $b$ there gives $\phi_b A_{a_1\cdots a_N}$. Placing $a_j$ there instead requires the transposition $b \leftrightarrow a_j$, which carries a minus sign, and leaves $b$ in the $j$th slot of $A$. Moving $b$ to the front of $A$ costs a further $(-1)^{j-1}$, which is exactly the sign that $a_j$ carries in the antisymmetrization over $a_1\cdots a_N$ in the second line. Hence
+
+$$
+(N+1)\overline{\psi}_b \phi_{[b}A_{a_1 \cdots a_N]} =  \overline{\psi}_b \phi_b A_{a_1\cdots a_N} -  N\overline{\psi}_b\phi_{[a_1} A_{|b| a_2 \cdots a_N]}.
+$$
+
+The relative minus sign is the only difference from the bosonic case, and it turns the commutator into an anticommutator
+
+$$
+\left\{\aop(\psi),\adop(\phi)\right\} = \overline{\psi}_b \phi_b = \inner{\psi}{\phi}.
+$$
+
+Taking $\psi$ and $\phi$ to be position eigenstates gives the fermionic field operator relations @eq-position-relations-anti.
 
 
 ### Alternative Derivation of One- and Two-particle Operators
