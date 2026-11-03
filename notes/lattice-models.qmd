@@ -250,7 +250,7 @@ Note the diminishing size of the Mott lobes, a consequence of the enhanced hoppi
 Now we turn to the case of fermions, the context in which the Hubbard model was originally introduced. Allowing for spin, the model is usually written.
 
 $$
-H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,
+H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_{j,\uparrow} N_{j,\downarrow},
 $$
 
 We could of course add spin to the Bose Hubbard model, but it's still interesting without it. By contrast, we need spin here to have an interacting model. It's hard to overstate the importance of this model in condensed matter physics because of the role that it has played in attempts to understand the high-temperature superconducting materials known as __cuprates__. The 2D model has long been argued to capture the physics of strong correlations in the CuO$_2$ layers that form the backbone of these materials. 'Capture the physics' would ideally mean that the ground state of the model is superconducting. This is still a controversial issue: some believe that the Hubbard model suffices, if only we could learn enough about its behaviour; others that it is missing some ingredient -- other bands, coupling between layers, phonons -- that is vital to superconductivity.

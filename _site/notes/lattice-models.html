@@ -632,7 +632,7 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 <h2 data-number="3" class="anchored" data-anchor-id="fermi-hubbard-model"><span class="header-section-number">3</span> Fermi Hubbard Model</h2>
 <p>Now we turn to the case of fermions, the context in which the Hubbard model was originally introduced. Allowing for spin, the model is usually written.</p>
 <p><span class="math display">\[
-H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,
+H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dagger_{j,s}a^{\vphantom{\dagger}}_{k,s}+a^\dagger_{k,s}a^{\vphantom{\dagger}}_{j,s}\right] + U\sum_j N_{j,\uparrow} N_{j,\downarrow},
 \]</span></p>
 <p>We could of course add spin to the Bose Hubbard model, but it’s still interesting without it. By contrast, we need spin here to have an interacting model. It’s hard to overstate the importance of this model in condensed matter physics because of the role that it has played in attempts to understand the high-temperature superconducting materials known as <strong>cuprates</strong>. The 2D model has long been argued to capture the physics of strong correlations in the CuO<span class="math inline">\(_2\)</span> layers that form the backbone of these materials. ‘Capture the physics’ would ideally mean that the ground state of the model is superconducting. This is still a controversial issue: some believe that the Hubbard model suffices, if only we could learn enough about its behaviour; others that it is missing some ingredient – other bands, coupling between layers, phonons – that is vital to superconductivity.</p>
 <p>Relatively little is known <em>for sure</em> about the Hubbard model, except in 1D, where it can be solved exactly using the Bethe ansatz. You may be wondering why it’s so much harder than the Bose case. Let’s find out…</p>
@@ -910,7 +910,7 @@ Fisher, Matthew P. A., Peter B. Weichman, G. Grinstein, and Daniel S. Fisher. 19
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

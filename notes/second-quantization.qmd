@@ -793,7 +793,7 @@ Taking $\psi$ and $\phi$ to be position eigenstates gives the fermionic field op
 
 ### Alternative Derivation of One- and Two-particle Operators
 
-Here we give simpler derivation of the general form of one- and two- particle operators using the form @eq-freeze for the action of the field operator $\psi(x)$, which applies in both the bosonic and fermionic cases
+Here we give a simpler derivation of the general form of one- and two- particle operators using the form @eq-freeze for the action of the field operator $\psi(x)$, which applies in both the bosonic and fermionic cases
 
 #### One particle operators
 

@@ -273,7 +273,7 @@ $$
 - Have to introduce _spin_ to get something interesting (__why?__)
 
 $$
-H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_\uparrow N_\downarrow,
+H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + U\sum_j N_{j,\uparrow} N_{j,\downarrow},
 $$
 
 - Application __cuprates__: high temperature superconductors

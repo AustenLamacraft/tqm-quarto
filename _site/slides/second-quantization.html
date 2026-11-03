@@ -871,13 +871,15 @@ g(\mathbf{r},\mathbf{r}')= \langle{\Psi}\rvert \psi^\dagger(\mathbf{r})\psi^{\vp
 \langle{\mathbf{N}}\rvert \hat A \lvert \mathbf{N'} \rangle = A_{\alpha\beta} \sqrt{N_\alpha N'_\beta}
 </span></p>
 <ul>
-<li>For two particle operators</li>
-</ul>
-<p><span class="math display">
+<li><p>For two particle operators <span class="math display">
 \langle{\mathbf{N}}\rvert \hat B \lvert \mathbf{N'} \rangle =  \left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right] \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}
-</span> with <span class="math inline">N_{\gamma,\delta} = N'_{\gamma,\delta}-1</span> and <span class="math inline">N_{\alpha,\beta} = N'_{\alpha,\beta}+1</span></p>
-<ul>
-<li>For fermions the overall sign depends on convention: best to write states explicitly rather than matrix elements</li>
+</span> with <span class="math inline">N_{\gamma,\delta} = N'_{\gamma,\delta}-1</span> and <span class="math inline">N_{\alpha,\beta} = N'_{\alpha,\beta}+1</span> <span class="math display">
+\begin{aligned}
+B_{\alpha\beta,\gamma\delta} &amp;= \langle{\varphi_\alpha}\rvert\langle{\varphi_\beta}\rvert B_{12} \lvert{\varphi_\gamma}\rangle\lvert{\varphi_\delta}\rangle\nonumber\\
+&amp;=\int d\mathbf{r}d\mathbf{r}' \varphi_\alpha^*(\mathbf{r})\varphi_\beta^*(\mathbf{r}')B_{12}\varphi_\gamma(\mathbf{r})\varphi_\delta(\mathbf{r}')
+\end{aligned}
+</span></p></li>
+<li><p>For fermions the overall sign depends on convention: best to write states explicitly rather than matrix elements</p></li>
 </ul>
 </section>
 <section class="slide level2 center">

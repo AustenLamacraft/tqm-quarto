@@ -483,10 +483,6 @@ This formula is not so easy to work out in the first quantized representation. T
 
 :::
 
-
-
-
-
 ---
 
 ### Example 1: noninteracting Hamiltonian
@@ -696,11 +692,16 @@ $$
 $$
 
 - For two particle operators 
-
 $$
 \braket{\mathbf{N}}{\hat B}{\mathbf{N'}} =  \left[B_{\alpha\beta,\gamma\delta}\pm B_{\alpha\beta,\delta\gamma}\right] \sqrt{N_\alpha N_\beta N'_\gamma N'_\delta}
 $$
 with $N_{\gamma,\delta} = N'_{\gamma,\delta}-1$ and $N_{\alpha,\beta} = N'_{\alpha,\beta}+1$
+$$
+\begin{aligned}
+B_{\alpha\beta,\gamma\delta} &= \bra{\varphi_\alpha}\bra{\varphi_\beta} B_{12} \ket{\varphi_\gamma}\ket{\varphi_\delta}\nonumber\\
+&=\int d\br d\br' \varphi_\alpha^*(\br)\varphi_\beta^*(\br')B_{12}\varphi_\gamma(\br)\varphi_\delta(\br')
+\end{aligned}
+$$
 
 - For fermions the overall sign depends on convention: best to write states explicitly rather than matrix elements
 
