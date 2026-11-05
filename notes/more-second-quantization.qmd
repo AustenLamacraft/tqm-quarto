@@ -468,14 +468,6 @@ Minimize the total energy $E(P) = E_\text{kin}(P) + E_\text{HF}(P)$ to show
 
 :::
 
-::: {#fig-stoner-polarisation}
-
-{{< include ../figures/_stoner-polarisation.qmd >}}
-
-The value of $E_\text{V}/E_\text{K}$ at which the ground state has polarization $P$. The ground state is partially polarized for $10/9<E_\text{V}/E_\text{K}<\frac{5}{6}2^{2/3}$.
-
-:::
-
 One shouldn't take these numerical values too seriously given the simplicity of the model, but they illustrate the physical principles at work behind the appearance of ferromagnetism in metals.
 
 ### Excited State Energies

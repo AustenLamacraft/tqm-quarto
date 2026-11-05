@@ -248,14 +248,6 @@ $$ {#eq-3-particle}
 
 The vanishing of the wavefunction when $x_{i}=x_{j}$ is consistent with the Pauli principle. You should check that additionally it is periodic and totally antisymmetric.
 
-::: {#fig-nodal-surfaces}
-
-{{< include ../figures/_nodal-surfaces.qmd >}}
-
-Nodal surfaces $x_i = x_j$ for three fermions. Because of the periodic boundary conditions, the three dimensional space of particle coordinates is divided into two regions, corresponding to the even ($123, 231, 312$) and odd ($132, 321, 213$) permutations.
-
-:::
-
 @eq-3-particle generalizes for any (odd) $N$ so that the ground state Slater determinant @eq-1d-det is proportional to
 
 $$
