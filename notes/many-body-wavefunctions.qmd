@@ -105,7 +105,13 @@ What state do we end up in?
 
 :::
 
-![Four possible outcomes after the passage of two bosons through a beam splitter.](../assets/HOM.png)
+::: {#fig-hom}
+
+{{< include ../figures/_hom.qmd >}}
+
+Four possible outcomes after the passage of two bosons through a beam splitter.
+
+:::
 
 ### Product States
 
@@ -345,6 +351,14 @@ $$
 g(x,y) = \frac{1}{L}\sum_{|k|<k_\text{F}} e^{ik(x-y)} = \int_{-k_\text{F}}^{k_\text{F}} \frac{dk}{2\pi} e^{ik(x-y)} = n \frac{\sin \left[k_\text{F}(x-y)\right]}{k_\text{F}(x-y)}
 $$
 where $n \equiv \frac{k_\text{F}}{\pi}$ is the average density.
+
+:::
+
+::: {#fig-fermi-density-matrix-1d}
+
+{{< include ../figures/_fermi-density-matrix-1d.qmd >}}
+
+Single particle density matrix for the 1D Fermi gas.
 
 :::
 

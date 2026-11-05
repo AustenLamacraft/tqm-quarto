@@ -1,0 +1,29 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    \def\R{2}
+    \def\dk{0.7}
+    \def\Le{1}
+    \def\r{0.05*\R}
+
+    \coordinate (k') at (50:\R);
+    \coordinate (k) at (120:\R);
+    \coordinate (k3) at (140:0.5*\R);
+    \coordinate (K) at (165:\R);
+    \coordinate (k2) at ($2*(K)-(k3)$);
+
+    \fill[black!5] (0,0) circle (\R);
+    \draw[black!45] (0,0) circle (\R);
+
+    \draw[->] (0,0) -- (k) node[above left] {$\vb{k}$};
+    \draw[->] (0,0) -- (k') node[above right] {$\vb{k}'$};
+    \draw[decoration={markings, mark=at position 0.55 with {\arrow{>}}}, postaction={decorate}] (k') -- (k) node[midway, below] {$2\vb{q}$};
+
+    \draw[mydarkred ,decoration={markings, mark=at position 0.75 with {\arrow{>}}}, postaction={decorate}] (k3) -- (k2);
+    \draw[->] (0,0) -- (k3) node[above left] {$\vb{k}_3$};
+    \draw[->] (0,0) -- (k2) node[left] {$\vb{k}_2$};
+    \draw[mydarkblue, ->] (0,0) -- (K) node[above] {$\vb{K}$};
+
+    \node[above, text=mydarkred] at ($(K)!0.5!(k2)$) {$2\vb{q}$};
+
+\end{tikzpicture}
+```

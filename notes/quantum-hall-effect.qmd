@@ -160,7 +160,13 @@ Laughlin argued that for electrons with Coulomb interaction $\Psi_{m}(z_1,\ldots
 
 To get more precise information about the behaviour of wavefunctions, Laughlin introduced a powerful analogy between the probability distribution $\lvert\Psi_m(z_1,\ldots, z_N)\rvert^2$ of the particles, and the Boltzmann distribution of particles in a classical 2D plasma. Before doing that, it's useful to actually 'look' at a typical configuration of particles.
 
-![Comparison of Monte Carlo samples from an uncorrelated (uniform) distrubution of points (left) vs. the Laughlin probability distribution $\lvert\Psi_3(z_1,\ldots z_N)\rvert^2$ (right).](../assets/LaughlinMonteCarlo.png)
+:::{#fig-laughlin-mc}
+
+![](../assets/LaughlinMonteCarlo.png)
+
+Comparison of Monte Carlo samples from an uncorrelated (uniform) distrubution of points (left) vs. the Laughlin probability distribution $\lvert\Psi_3(z_1,\ldots z_N)\rvert^2$ (right).
+
+:::
 
 The striking feature of the right hand picture is the _uniformity_ of the particle distribution, in contrast with the sample of uncorrelated particles on the left. The plasma analogy helps us to understand this, and a lot more.
 
@@ -219,7 +225,13 @@ One odd thing about the above calculation is that if the charge density is unifo
 
 :::
 
-![A Laughlin Laughlin state](../assets/laughlin-state.png){width=50%}
+::: {#fig-laughlin}
+
+![](../assets/laughlin-state.png){width=50%}
+
+A Laughlin Laughlin state
+
+:::
 
 ## Fractional Charge
 
@@ -240,11 +252,13 @@ V(\brN)=&-\frac{q^2}{2\pi m}\sum_j \log\left|\br_j-\mathbf{R}\right|-\frac{q^2}{
 $$
 This is interpreted as the introduction of a charge $q/m$ at point $\mathbf{R} = (X, Y)$, where $Z=X+iY$. The charges of the plasma will screen this charge, leaving a 'hole' in the density distribution amounting to charge $-q/m$, corresponding to $-1/m$ real particles. The quasiholes have fractional charge! 
 
+::: {#fig-laughlin-sim}
+
 {{< include ../_laughlin-sim.qmd >}}
 
-<figure align="center">
-<figcaption>A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction $m$. The red dot is a quasihole: in fact for clarity it's 20 quasiholes with an overall charge of $-20/m$.</figcaption>
-</figure>
+A Monte Carlo simulation of a Laughlin state. You can change the inverse filling fraction $m$. The red dot is a quasihole: in fact for clarity it's 20 quasiholes with an overall charge of $-20/m$.
+
+:::
 
 This means that the normalization integral is approximated by the Boltzmann weight corresponding to the interaction of this fractional charge with the background charge density
 $$

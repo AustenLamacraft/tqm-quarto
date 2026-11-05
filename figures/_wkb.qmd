@@ -1,0 +1,36 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    % Coordinates of the turning points
+    \def\xmax{9}
+    \def\xa{0.45*\xmax}  % left turning point
+    \def\xb{0.65*\xmax}  % right turning point
+    \def\ymax{3.5}
+    \def\w{0.5}
+
+    % 1) Draw the black barrier V(x)
+    \draw[samples=50,variable=\x,domain=0:\xmax]
+        plot(\x,{0.5*\ymax*sin(deg(0.08*\xmax*(\x-3)))});
+
+    % 2) Fill the WKB wavefunction envelope in translucent blue
+    \filldraw[draw=none, fill=cyan!60, fill opacity=0.3, samples=50,variable=\x,domain=0:\xmax]
+        plot(\x,{0.5*\ymax*sin(deg(0.08*\xmax*(\x+1.7)))}) --++ (0,\w) -- plot({(\xmax-\x)},{\w+0.5*\ymax*sin(deg(0.08*\xmax*((\xmax-\x)+1.7)))}) -- cycle;
+
+    % 3) Dashed vertical turning‐point lines
+    \draw[dashed, mygrey] (\xa,-\ymax/2) --++ (0,\ymax);
+    \draw[dashed, mygrey] (\xb,-\ymax/2) --++ (0,\ymax);
+
+    % 4) Annotate the asymptotic WKB forms
+    \node[align=center] at (\xa/2-0.05*\xmax,-0.65*\ymax)
+        {\footnotesize $\displaystyle\frac{\alpha}{\sqrt{\kappa(x)}}\,\exp \qty[-\int^x\kappa(x') \dd{x'}]$ \\ \footnotesize dominates};
+    \node[align=center] at ({(\xb+\xmax)/2+0.05*\xmax},-0.65*\ymax)
+        {\footnotesize $\displaystyle\frac{\beta}{\sqrt{\kappa(x)}}\,\exp \qty[+\int^x\kappa(x') \dd{x'}]$ \\ \footnotesize dominates};
+
+    % 5) Labels for V(x) and |Psi(x)|
+    \node[above, font=\small] at (0.75*\xmax,0.4*\ymax) {$V(x)$};
+    \node[above, font=\small] at (0.95*\xmax,0.3*\ymax) {$\abs{\Psi(x)}$};
+
+    % 6) Label the abrupt phase change zone
+    \node[align = center] at ({(\xa+\xb)/2},0.1*\ymax) {\footnotesize Phase \\ \footnotesize changes \\ \footnotesize abruptly};
+
+\end{tikzpicture}
+```

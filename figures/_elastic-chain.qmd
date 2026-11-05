@@ -1,0 +1,21 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round,
+  mass/.style={line width=0.6,draw=red!30!black,top color=red!60!black!30,bottom color=red!60!black!10,shading angle=30},
+  spring/.style={line width=0.8,blue!7!black!80,decorate,decoration={coil,amplitude=5,segment length=5},line cap=round},
+  mydashed/.style={blue!70!black,dashed,line width=0.25,dash pattern=on 2.2pt off 2.2pt},
+  dx/.style={-{Latex[length=3.3,width=2.2]},blue!40!black,line width=0.3},
+  axis/.style={->,very thick}]
+  \def\x{2.0} \def\r{0.25} \def\y{1.6} \def\h{0.45*\y} \def\dx{0.8}
+  \foreach \i in {1,...,4} {
+    \coordinate (u\i) at ({(\i-1)*\x},0);
+    \draw[mass] (u\i) circle (\r);
+    \draw[mydashed] ({(\i-1)*\x},-\y/2) -- ({(\i-1)*\x},\y/2);
+    \draw[dx] ({(\i-1)*\x},\h) --++ (\dx,0) node[pos=0.45,fill=white,inner sep=0] {$u_\i$};
+  }
+  \foreach \i in {0,1,2}
+    \draw[spring] ({\i*\x+\r},0) -- ({(\i+1)*\x-\r},0);
+  \draw[axis] (-0.5*\x,-\h) -- (3.5*\x,-\h) node[right] {$x$};
+  \node[right] at (3*\x+\r,0) {$m$};
+  \node[above] at ($(u3)!0.5!(u4)+(0,0.5*\r)$) {$k$};
+\end{tikzpicture}
+```

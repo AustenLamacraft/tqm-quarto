@@ -1,0 +1,25 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    \def\R{2}
+    \def\dk{0.7}
+    \def\Le{1}
+    \def\r{0.05*\R}
+
+    \coordinate (hR) at (25:0.85*\R);
+    \coordinate (hL) at (160:0.8*\R);
+    \coordinate (eR) at ($(25:0.8*\R)+(-25:\Le)$);
+    \coordinate (eL) at ($(160:0.8*\R)+(145:\Le)$);
+
+    \fill[mygrey,opacity=0.3] (0,0) circle (\R);
+    \draw[black!45] (0,0) circle (\R);
+
+    \draw[black!45, fill=white] (hL) circle (\r);
+    \draw[black!45, fill=white] (hR) circle (\r);
+    \fill (eL) circle (\r);
+    \fill (eR) circle (\r);
+
+    \draw[->] ($(hL)!0.1!(eL)$) -- ($(hL)!0.9!(eL)$);
+    \draw[->] ($(hR)!0.1!(eR)$) -- ($(hR)!0.9!(eR)$);
+
+\end{tikzpicture}
+```

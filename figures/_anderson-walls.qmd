@@ -1,0 +1,36 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{8}
+    \def\Ly{3}
+    \def\kF{0.55*\Lx}
+    \def\y{0.7*\Ly}
+    \def\ang{60}
+    \def\h{1.25*\Ly}
+    \def\n{4}
+    \def\l{0.5}
+
+    \fill[mygrey, opacity=0.3] (0,\h) rectangle (\kF,\h+\y);
+    \draw (0,\h) rectangle (\kF,\h+\y);
+
+    \fill[mygrey, opacity=0.3] (0,\y) -- (0.5*\kF,\y) to[out=0, in=180-\ang] (\kF,0.5*\y) -- (\kF,0.5*\y) to[out=-\ang,in=180] (1.5*\kF,0) -- (0,0) -- cycle;
+    \draw (0,\y) -- (0.5*\kF,\y) to[out=0, in=180-\ang] (\kF,0.5*\y) -- (\kF,0.5*\y) to[out=-\ang,in=180] (1.5*\kF,0);
+
+    \draw[->] (0,\h) -- (\Lx,\h) node[right] {$\abs{\vb{p}}$};
+    \draw[->] (0,\h) -- (0,\Ly+\h) node[right] {$\langle n^\text{P}_{\vb{p}} \rangle$};
+
+    \draw[->] (0,0) -- (\Lx,0) node[right] {$\abs{\vb{p}}$};
+    \draw[->] (0,0) -- (0,\Ly) node[right] {$\langle n^\text{P}_{\vb{p}} \rangle$};
+
+    \draw[mydashed] (\kF,\h) node[below] {$\epsilon(\vb{p})=\mu$} -- (\kF,\Ly+\h);
+    \draw[mydashed] (\kF,0) node[below] {$\epsilon(\vb{p})=\mu$} -- (\kF,\Ly);
+
+    \foreach \i [evaluate={\x=(\Lx-\kF)*(\i+0.5)/(\n+1.5);\t=90*(\n-\i)/\n;}] in {0,...,\n}{
+        \draw[->] (\kF+\x,0.3*\l) --++ (\t:\l);
+        \draw[->] (\kF-\x,0.3*\l) --++ (180-\t:\l);
+
+        \draw[->] (\kF+\x,0.3*\l+\h) --++ (0:\l);
+        \draw[->] (\kF-\x,0.3*\l+\h) --++ (180:\l);
+    }
+
+\end{tikzpicture}
+```

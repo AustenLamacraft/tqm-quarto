@@ -64,7 +64,13 @@ j = \frac{1}{m}\text{Im}\, \alpha^*\beta^{}.
 $$ {#eq-jwkb}
 
 
-![The Bloch states in the WKB picture.](../assets/WKB.png){width=60%}
+::: {#fig-wkb}
+
+{{< include ../figures/_wkb.qmd >}}
+
+The Bloch states in the WKB picture.
+
+:::
 
 $\alpha$ is the amplitude of the wavefunction in the well on the left, and $\beta$ is the amplitude on the right. By periodicity of the Bloch state, it is only their phase that differs. Call this phase change $\theta$. In terms of the Bloch states @eq-bloch $\theta=ka$. Then @eq-jwkb says
 
@@ -143,7 +149,13 @@ $$
 \mu = e(\lceil \nu\rceil) -e(\lfloor \nu\rfloor)=U\lfloor \nu\rfloor,
 $$
 
-![Energy and chemical potential vs. filling $\nu$.](../assets/steps.png){width=60%}
+::: {#fig-filling-steps}
+
+{{< include ../figures/_filling-steps.qmd >}}
+
+Energy and chemical potential vs. filling $\nu$.
+
+:::
 
 If we think about varying the chemical potential instead, all values between $UN$ and $U(N-1)$ correspond to integer filling $\nu=N$. The states of integer filling are named __Mott states__, after [Nevill Mott](https://en.wikipedia.org/wiki/Nevill_Francis_Mott). Mott's realization was that when interactions dominate the hopping, the formation of such states can cause insulating behaviour, even when band theory implies a system should be a metal.
 
@@ -235,15 +247,33 @@ $$
 
 Introducing a hole is thus favoured for $t>\frac{\mu-UN}{2d(N+1)}$.
 
-![Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling. Figure by William Royce.](../assets/mott-perturb.png){width=60%}
+::: {#fig-mott-perturb}
+
+{{< include ../figures/_mott-perturb.qmd >}}
+
+Comparing the energies of the Mott states with single particle or hole states. At $t=0$ the red line is the absolute ground state. For nonzero $t$ the dashed blue line corresponds to non-integer filling. Figure by William Royce.
+
+:::
 
 This analysis applies only at small $t/U$. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let $t/U\to\infty$ we have a __Bose condensate__: all the particles can sit in the $\eta=0$ Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a __superfluid__. The boundaries that we have have found can be connected (drawing freehand -- see [Problem Set 2]({{< ref "problem-set-2#mean-field-for-bosehubbard" >}}) for a variational approach) to give the following phase diagram for the ground state of the Bose--Hubbard model.
 
-![Ground state phase diagram of the Bose--Hubbard model.](../assets/BHPhase.png){width=60%}
+::: {#fig-bh-phase}
+
+{{< include ../figures/_bh-phase.qmd >}}
+
+Ground state phase diagram of the Bose--Hubbard model.
+
+:::
 
 Note the diminishing size of the Mott lobes, a consequence of the enhanced hopping in the effective tight binding models @eq-tbp and @eq-tbh as we go to higher filling.
 
-![With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive 'wedding cake' structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago.](../assets/mott_state_cake.jpg)
+::: {#fig-trapped-mott}
+
+![](../assets/mott_state_cake.jpg)
+
+With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive 'wedding cake' structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago.
+
+:::
 
 ## Fermi Hubbard Model
 
@@ -453,7 +483,13 @@ Note that there is something slightly sly about this derivation. We assumed that
 
 Antiferromagnetism and the Mott phenomenon are seen to go hand in hand in fermion systems. This explains the common ocurrence of antiferromagnetism in transition metal compounds, especially oxides. The cuprate superconductors mentioned earlier are a famous example.
 
-![Schematic temperature vs. doping diagram for the cuprate materials [[Source]](https://en.wikipedia.org/wiki/High-temperature_superconductivity#Cuprates).](../assets/Cuphasediag.png){width=70%}
+::: {#fig-high-tc}
+
+![](../assets/Cuphasediag.png){width=70%}
+
+Schematic temperature vs. doping diagram for the cuprate materials [[Source]](https://en.wikipedia.org/wiki/High-temperature_superconductivity#Cuprates).
+
+:::
 
 At half filling, the cuprates are antiferromangetic Mott insulators. Superconductivity emerges when the materials are doped by changing their stoichiometry. This introduces electrons or holes into the CuO$_2$ planes that are modeled by the Hubbard Hamiltonian. Antiferromagnetic order is believed to be destroyed by freely moving holes -- think how the Néel ordering is disrupted -- and indeed superconductivity appears where antiferromagnetism dies. The precise relationship between the two phenomena is -- like much of the physics of the cuprates -- not clear.
 

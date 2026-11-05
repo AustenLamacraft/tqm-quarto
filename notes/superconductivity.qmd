@@ -204,7 +204,13 @@ the increase in kinetic energy that comes from smearing the step, see @eq-ke. Cl
 angles $\varphi_\bp$, describing the angle in the x-y plane, should be equal. Taking  the extremum of
 @eq-spin-en with respect to the angles $\theta_{\bp}$ gives the condition
 
-![Anderson spin configurations and the associated distribution functions for the free fermi gas (top) and the BCS state (bottom).](../assets/wall.png){width=70%}
+::: {#fig-anderson-walls}
+
+{{< include ../figures/_anderson-walls.qmd >}}
+
+Anderson spin configurations and the associated distribution functions for the free fermi gas (top) and the BCS state (bottom).
+
+:::
 
 $$
 \xi_{\bp}\sin\theta_\bp+|\Delta|\cos\theta_\bp=0,
@@ -317,7 +323,13 @@ $$
 
 where $\mu$ and $\Delta_0$ are measured in units of $E_F=p_F^2/2m$, and the unit of length is $k_\text{F}^{-1}$. In these units the total density of particles of both types is $1/3\pi^2$.
 
-![Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction).](../assets/BCS-BEC.png){width=70%}
+::: {#fig-bcs-bec}
+
+![](../assets/BCS-BEC.png){width=70%}
+
+Variation of gap and chemical potential accross the BCS (left, weak attraction) to BEC (right, strong attraction).
+
+:::
 
 The point $1/k_\text{F}a=0$, where the scattering length diverges, corresponds to the formation of a bound state. This is an interesting part of the phase diagram, because here (if the temperature is zero) there is only one energy scale (the Fermi energy) and only one length scale (the fermi wavelength). All quantities such as $\Delta$ and $\mu$ are simply some universal fraction of the Fermi energy. In particular the equation of state of the system is
 
@@ -380,7 +392,7 @@ $$
 \end{cases}
 $$
 
-As $\mu$ turns from positive to negative as we pass from BCS to BEC (see the [above figure]({{< ref "superconductivity" >}}/#BCS-BEC), the density of states of the quasiparticle excitations turns from having a square root singularity $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}$ to vanishing like a square root $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}$.
+As $\mu$ turns from positive to negative as we pass from BCS to BEC (see @fig-bcs-bec), the density of states of the quasiparticle excitations turns from having a square root singularity $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{-1/2}$ to vanishing like a square root $\nu(\epsilon)\sim \left(\epsilon-\Delta_s\right)^{1/2}$.
 
 
 
@@ -522,5 +534,10 @@ $$
 where $E_b=1/ma^2$ is the binding energy of a pair. This temperature should be thought of as a dissociation temperature below which pairs can form (the logarithmic factor is entropic in origin). The temperature at which these pairs condense will however be lower, tending to the ideal bose $T_{\mathrm{BEC}}$ in the $1/k_\text{F}a\to \infty$ limit. A more sophisticated treatment is required to find a
 smooth interpolating $T_\text{c}(1/k_\text{F}a)$.
 
-![$T_c$ in the mean-field theory (solid line), compared with the result of a treatment that smoothly interpolates to $T_{\text{BEC}}$ (dashed). Reproduced from @de1993crossover.](../assets/EngelbrechtTc.png){width=70%}
+::: {#fig-tc}
 
+![](../assets/EngelbrechtTc.png){width=70%}
+
+$T_c$ in the mean-field theory (solid line), compared with the result of a treatment that smoothly interpolates to $T_{\text{BEC}}$ (dashed). Reproduced from @de1993crossover.
+
+:::

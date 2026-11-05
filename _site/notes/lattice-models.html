@@ -463,10 +463,14 @@ j = \frac{\rho\partial_x\theta}{m}.
 <p><span id="eq-jwkb"><span class="math display">\[
 j = \frac{1}{m}\text{Im}\, \alpha^*\beta^{}.
 \tag{4}\]</span></span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/WKB.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>The Bloch states in the WKB picture.</figcaption>
+<div id="fig-wkb" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wkb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lattice-models_files/mediabag/4ed21ac4c75608e3acc885477957c2bbfcea6bfd.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wkb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The Bloch states in the WKB picture.
+</figcaption>
 </figure>
 </div>
 <p><span class="math inline">\(\alpha\)</span> is the amplitude of the wavefunction in the well on the left, and <span class="math inline">\(\beta\)</span> is the amplitude on the right. By periodicity of the Bloch state, it is only their phase that differs. Call this phase change <span class="math inline">\(\theta\)</span>. In terms of the Bloch states <a href="#eq-bloch" class="quarto-xref">Equation&nbsp;1</a> <span class="math inline">\(\theta=ka\)</span>. Then <a href="#eq-jwkb" class="quarto-xref">Equation&nbsp;4</a> says</p>
@@ -532,10 +536,14 @@ E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1).
 <p><span class="math display">\[
 \mu = e(\lceil \nu\rceil) -e(\lfloor \nu\rfloor)=U\lfloor \nu\rfloor,
 \]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/steps.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Energy and chemical potential vs.&nbsp;filling <span class="math inline">\(\nu\)</span>.</figcaption>
+<div id="fig-filling-steps" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-filling-steps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lattice-models_files/mediabag/935950885211ddd9e619efe94255d3fb316a6796.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-filling-steps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Energy and chemical potential vs.&nbsp;filling <span class="math inline">\(\nu\)</span>.
+</figcaption>
 </figure>
 </div>
 <p>If we think about varying the chemical potential instead, all values between <span class="math inline">\(UN\)</span> and <span class="math inline">\(U(N-1)\)</span> correspond to integer filling <span class="math inline">\(\nu=N\)</span>. The states of integer filling are named <strong>Mott states</strong>, after <a href="https://en.wikipedia.org/wiki/Nevill_Francis_Mott">Nevill Mott</a>. Mott’s realization was that when interactions dominate the hopping, the formation of such states can cause insulating behaviour, even when band theory implies a system should be a metal.</p>
@@ -606,24 +614,36 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 \mathcal{E}^{(N+1)}_\mu - UN + \mu -2dt(N+1).
 \]</span></p>
 <p>Introducing a hole is thus favoured for <span class="math inline">\(t&gt;\frac{\mu-UN}{2d(N+1)}\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/mott-perturb.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Comparing the energies of the Mott states with single particle or hole states. At <span class="math inline">\(t=0\)</span> the red line is the absolute ground state. For nonzero <span class="math inline">\(t\)</span> the dashed blue line corresponds to non-integer filling. Figure by William Royce.</figcaption>
+<div id="fig-mott-perturb" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mott-perturb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lattice-models_files/mediabag/c343e9c11cb1fbbcd40138efd3c24426a3bf319a.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mott-perturb-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Comparing the energies of the Mott states with single particle or hole states. At <span class="math inline">\(t=0\)</span> the red line is the absolute ground state. For nonzero <span class="math inline">\(t\)</span> the dashed blue line corresponds to non-integer filling. Figure by William Royce.
+</figcaption>
 </figure>
 </div>
 <p>This analysis applies only at small <span class="math inline">\(t/U\)</span>. What happens in the regions where the Mott states are not the ground states, and there are excess bosonic particles or holes that are free to move? If we let <span class="math inline">\(t/U\to\infty\)</span> we have a <strong>Bose condensate</strong>: all the particles can sit in the <span class="math inline">\(\eta=0\)</span> Bloch state. When interactions are finite but small, we will see in the next lecture that the result is a <strong>superfluid</strong>. The boundaries that we have have found can be connected (drawing freehand – see <a href="{{< ref &quot;problem-set-2#mean-field-for-bosehubbard&quot; >}}">Problem Set 2</a> for a variational approach) to give the following phase diagram for the ground state of the Bose–Hubbard model.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/BHPhase.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>Ground state phase diagram of the Bose–Hubbard model.</figcaption>
+<div id="fig-bh-phase" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bh-phase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lattice-models_files/mediabag/4f46c943d61a341a17c2e15a96142d7db6afa479.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bh-phase-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Ground state phase diagram of the Bose–Hubbard model.
+</figcaption>
 </figure>
 </div>
 <p>Note the diminishing size of the Mott lobes, a consequence of the enhanced hopping in the effective tight binding models <a href="#eq-tbp" class="quarto-xref">Equation&nbsp;6</a> and <a href="#eq-tbh" class="quarto-xref">Equation&nbsp;8</a> as we go to higher filling.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/mott_state_cake.jpg" class="img-fluid figure-img"></p>
-<figcaption>With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive ‘wedding cake’ structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago.</figcaption>
+<div id="fig-trapped-mott" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trapped-mott-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/mott_state_cake.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trapped-mott-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: With a trap potential as well as a lattice, moving radially outwards corresponds to moving down a vertical slice through the phase diagram, producing this distinctive ‘wedding cake’ structure. Successive Mott states are separated by superfluid regions. Source: Cheng Chin, University of Chicago.
+</figcaption>
 </figure>
 </div>
 </section>
@@ -814,10 +834,14 @@ H_\text{eff} = -\frac{dN_\text{sites}t^2}{U}+J\sum_{\langle j\,k\rangle} \mathbf
 <section id="doping" class="level3" data-number="3.3">
 <h3 data-number="3.3" class="anchored" data-anchor-id="doping"><span class="header-section-number">3.3</span> Doping</h3>
 <p>Antiferromagnetism and the Mott phenomenon are seen to go hand in hand in fermion systems. This explains the common ocurrence of antiferromagnetism in transition metal compounds, especially oxides. The cuprate superconductors mentioned earlier are a famous example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/Cuphasediag.png" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>Schematic temperature vs.&nbsp;doping diagram for the cuprate materials <a href="https://en.wikipedia.org/wiki/High-temperature_superconductivity#Cuprates">[Source]</a>.</figcaption>
+<div id="fig-high-tc" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-high-tc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/Cuphasediag.png" class="img-fluid figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-high-tc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Schematic temperature vs.&nbsp;doping diagram for the cuprate materials <a href="https://en.wikipedia.org/wiki/High-temperature_superconductivity#Cuprates">[Source]</a>.
+</figcaption>
 </figure>
 </div>
 <p>At half filling, the cuprates are antiferromangetic Mott insulators. Superconductivity emerges when the materials are doped by changing their stoichiometry. This introduces electrons or holes into the CuO<span class="math inline">\(_2\)</span> planes that are modeled by the Hubbard Hamiltonian. Antiferromagnetic order is believed to be destroyed by freely moving holes – think how the Néel ordering is disrupted – and indeed superconductivity appears where antiferromagnetism dies. The precise relationship between the two phenomena is – like much of the physics of the cuprates – not clear.</p>

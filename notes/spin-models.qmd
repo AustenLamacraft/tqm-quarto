@@ -216,6 +216,14 @@ $$ {#eq-dispersion}
 
 Note that the dispersion relation is periodic, as in the case of the elastic chain, but is now quadratic, rather than linear, at small $\eta$. $\eta=0$ corresponds to the state @eq-spin-lowered, and indeed the energy $\omega(0)=0$ in that case.
 
+::: {#fig-magnon-dispersion}
+
+{{< include ../figures/_magnon-dispersion.qmd >}}
+
+$\omega(\eta)$ for the magnon dispersion relation over the Brillouin zone $\eta \in [-\pi,\pi]$. Note tha the dispersion is quadratic at small $\eta$ (dashed line).
+
+:::
+
 ::: {.callout-warning appearance="minimal"}
 
 There is a general principle at work here: excitations that correspond at long wavelengths to symmetry operations have to have __gapless__ dispersion relations. In field theory this follows from a general result called __Goldstone's theorem__.
@@ -524,7 +532,14 @@ This reduces the matrix dimension by a factor $N$ if $N$ is prime, otherwise the
 
 The result of finding the ground state energy in each sector is shown below, relative to the lowest energy, which is at $\eta=\pi$. The agreement with the des Cloiseaux--Pearson dispersion (obtained in the $N\to\infty$ limit) is quite good.
 
-![The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux--Pearson dispersion @eq-dcp.](../assets/Heisenberg_model_dispersion.png)
+::: {#fig-gs-energy}
+
+
+![](../assets/Heisenberg_model_dispersion.png)
+
+The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux--Pearson dispersion @eq-dcp.
+
+:::
 
 Appendix
 --------

@@ -1,0 +1,40 @@
+```{.tikz}
+\begin{tikzpicture}
+    \begin{axis}[
+        domain=0:5,
+        samples=500,
+        xmin=0, xmax=5, ymin=0, ymax=4.5,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style={line cap=round, very thick},
+        tick style={line cap=round, very thick},
+        every axis plot post/.append style={very thick, line cap=round},
+        xlabel={$\nu$}, ylabel={},
+        ylabel style={rotate=0, anchor=east},
+        legend cell align=left,
+        legend pos=north west,
+        legend style={draw=black, fill=white, rounded corners}
+    ]
+        \draw[lightgray, dashed] (axis cs:1,0) -- (axis cs:1,4.5);
+        \draw[lightgray, dashed] (axis cs:2,0) -- (axis cs:2,4.5);
+        \draw[lightgray, dashed] (axis cs:3,0) -- (axis cs:3,4.5);
+        \draw[lightgray, dashed] (axis cs:4,0) -- (axis cs:4,4.5);
+
+        % 1) Chemical potential mu
+        \addplot[myred] { floor(x) };
+        \addlegendentry{$\mu(\nu)/U$}
+
+        % 2) Ground‐state energy E0 piecewise quadratic
+        \addplot[mygreen] { 0.5*(x-floor(x))*(ceil(x)*(ceil(x)-1))
+            + 0.5*(ceil(x)-x)*(floor(x)*(floor(x)-1)) };
+        \addlegendentry{$E_0/UN_{\text{sites}}$}
+
+        % \draw[myred] (0,0) -- (1,0);
+        % \draw[myred] (1,1) -- (2,1);
+        % \draw[myred] (2,2) -- (3,2);
+        % \draw[myred] (3,3) -- (4,3);
+        % \draw[myred] (4,4) -- (5,4);
+
+    \end{axis}
+\end{tikzpicture}
+```

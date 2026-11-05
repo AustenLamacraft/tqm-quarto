@@ -1,0 +1,27 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    \def\a{2}
+    \def\r{0.25}
+
+    \draw[mygrey] (-0.5*\a,0) -- (1.5*\a,0);
+    \draw[mygrey] (-0.5*\a,\a) -- (1.5*\a,\a);
+    \draw[mygrey] (0,-0.5*\a) -- (0,1.5*\a);
+    \draw[mygrey] (\a,-0.5*\a) -- (\a,1.5*\a);
+
+    \coordinate (BL) at (0.2*\a,0.2*\a);
+    \coordinate (BR) at (1.2*\a,0.15*\a);
+    \coordinate (TL) at (-0.2*\a,0.85*\a);
+    \coordinate (TR) at (0.85*\a,1.2*\a);
+
+    \draw[bound] (BL) -- (BR) -- (TR) -- (TL) -- (BL);
+
+    \fill[atom] (BL) circle (\r);
+    \fill[atom] (BR) circle (\r);
+    \fill[atom] (TL) circle (\r);
+    \fill[atom] (TR) circle (\r);
+
+    \draw[->,red] node[left] {site $(j,k)$} (0,0) -- (BL);
+
+    \node at (0,-0.5*\a) {$\vb{u}_{j,k} = \qty(u^x_{j,k}, \, u^y_{j,k})$};
+\end{tikzpicture}
+```

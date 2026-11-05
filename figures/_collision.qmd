@@ -1,0 +1,30 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{6}
+    \def\Ly{0.8}
+    \def\r{0.1}
+
+    \draw[white,top color=white,bottom color=mygrey,shading angle=90] (0,-\Ly) rectangle (0.5*\Lx,\Ly);
+    \draw (0.5*\Lx,\Ly) -- (0.5*\Lx,-\Ly) node[below] {$E_{\text{F}}$};
+    \draw[->] (0,0) -- (\Lx,0) node[right] {$E$};
+
+    \coordinate (h) at (0.4*\Lx,0.3*\Ly);
+    \coordinate (e) at (0.57*\Lx,0.3*\Ly);
+    \coordinate (e2) at (0.8*\Lx,0);
+
+    \draw[mydashed] (e2) --++ (0,\Ly);
+
+    \draw[black!45, fill=white] (h) circle (\r);
+    \fill (e) circle (\r);
+    \fill (e2) circle (\r);
+
+    \draw[white, line width=1.9pt] ($(h)!0.57!(e)$) -- ($(h)!0.85!(e)$);
+    \draw[->] ($(h)!0.1!(e)$) -- ($(h)!0.93!(e)$);
+
+    \draw[->] ($(e2)+(0,-2*\r)$) to[bend left] ($(e2)+(-0.17*\Lx,-\r)$);
+    \node[below] at ($(e2)+(-0.085*\Lx,-2*\r)$) {$\delta$};
+
+    \draw[<->] (0.5*\Lx,\Ly) -- (0.8*\Lx,\Ly) node[pos=0.5,fill=white,inner sep=0] {$\Delta$};
+
+\end{tikzpicture}
+```

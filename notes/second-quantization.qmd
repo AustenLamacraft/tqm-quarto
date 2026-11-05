@@ -624,7 +624,13 @@ Note that $g(\br,\br)=\frac{k_{F}^{3}}{6\pi^{2}}=n$, as it should. Also, $g(\br,
 
 Contrast this calculation with the wavefunction version.
 
-![](../assets/FermiDensityMatrixCut.png){width=50%}
+::: {#fig-fermi-density-matrix-cut}
+
+{{< include ../figures/_fermi-density-matrix-cut.qmd >}}
+
+Single particle density matrix for the Fermi gas.
+
+:::
 
 ### Two Particle Operators
 

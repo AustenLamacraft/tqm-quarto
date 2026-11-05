@@ -1,0 +1,17 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap = round]
+    \def\Lx{2*pi}
+    \def\Ly{4}
+    \def\h{0.75*\Ly}
+
+    \draw[dashed,samples=10,variable=\x,domain=0:{2/0.75}]
+        plot(\x,{\h*\x/2});
+    \draw[mydarkblue,samples=100,variable=\x,domain=-\Lx/2:\Lx/2]
+        plot(\x,{\h*(abs(sin(deg(\x/2))))});
+    \draw (0.01*\Lx,\h) -- (-0.01*\Lx,\h) node[left] at (0,\h) {$\sqrt{4k/m}$};
+
+    \draw[->] (-\Lx/2,0) -- (\Lx/2,0) node[right] {$\eta$};
+    \draw[->] (0,0) -- (0,\Ly) node[right] {$\omega(\eta)$};
+    \node[mydarkblue] at (0.3*\Lx,0.2*\Ly) {$\sqrt{ \frac{4k}{m}}\abs{\sin\eta/2}$};
+\end{tikzpicture}
+```

@@ -60,6 +60,66 @@ website:
       - past-papers.qmd
 
 bibliography: references.bib
+
+filters:
+  - diagram
+
+diagram:
+  engine:
+    tikz:
+      # Preamble shared by all TikZ figures, taken from the Overleaf notes
+      # (project.sty and the \colorlet / \tikzstyle blocks at the top of
+      # chapter1.tex, chapter3.tex, chapter7.tex and problems.tex)
+      header-includes: |
+        ```{=latex}
+        \usepackage{amsmath,amssymb,physics,bm}
+        \usepackage[dvipsnames]{xcolor}
+        \usepackage{tikz-3dplot}
+        \usetikzlibrary{angles, quotes, decorations.markings, shadings, shapes, decorations.pathmorphing, calc, arrows.meta, intersections, patterns, bending, hobby, snakes}
+        \usepackage{pgfplots}
+        \pgfplotsset{compat=1.18,
+          every axis plot post/.append style={very thick, line cap=round},
+          axis line style={very thick, line cap=round},
+          tick style={very thick}}
+        \usepackage[outline]{contour}
+        \tikzset{>=latex}
+        \tikzstyle{bend>}=[-{Latex[flex'=1,length=3,width=2.5]}]
+        \tikzstyle{bend<}=[{Latex[flex'=1,length=3,width=2.5]}-]
+        \colorlet{myred}{red!65!black}
+        \colorlet{mydarkred}{red!55!black}
+        \colorlet{mylightred}{red!85!black!12}
+        \colorlet{myfieldred}{mydarkred!5}
+        \colorlet{myredhighlight}{myred!20}
+        \colorlet{myblue}{blue!80!black}
+        \colorlet{mydarkblue}{blue!50!black}
+        \colorlet{mylightblue}{blue!50!black!30}
+        \colorlet{mylightblue2}{myblue!10}
+        \colorlet{mygreen}{green!80!black}
+        \colorlet{mypurple}{blue!40!red!80!black}
+        \colorlet{mydarkgreen}{green!50!black}
+        \colorlet{mydarkpurple}{blue!40!red!50!black}
+        \colorlet{myorange}{orange!40!yellow!95!black}
+        \colorlet{mydarkorange}{orange!40!yellow!85!black}
+        \colorlet{mybrown}{brown!20!orange!90!black}
+        \colorlet{mydarkbrown}{brown!20!orange!55!black}
+        \colorlet{mygrey}{black!15}
+        \colorlet{xcol}{blue!70!black}
+        \colorlet{darkblue}{blue!40!black}
+        \tikzstyle{mydashed}=[xcol,dashed,line width=0.25,dash pattern=on 2.2pt off 2.2pt]
+        \tikzstyle{axis}=[->,very thick]
+        \tikzstyle{ell}=[{Latex[length=3.3,width=2.2]}-{Latex[length=3.3,width=2.2]},line width=0.3]
+        \tikzstyle{dx}=[-{Latex[length=3.3,width=2.2]},darkblue,line width=0.3]
+        \tikzstyle{ground}=[preaction={fill,top color=black!10,bottom color=black!5,shading angle=20},
+                            fill,pattern=north east lines,draw=none,minimum width=0.3,minimum height=0.6]
+        \tikzstyle{mass}=[line width=0.6,draw=red!30!black,
+                          top color=mydarkred!30,bottom color=mydarkred!10,shading angle=30]
+        \tikzstyle{spring}=[line width=0.8,blue!7!black!80,snake=coil,segment amplitude=5,segment length=5,line cap=round]
+        \tikzstyle{force}=[->,myred,very thick,line cap=round]
+        \tikzstyle{atom}=[ball color=blue!50!black]
+        \tikzstyle{bound}=[thick,black!80,decorate,decoration={coil,amplitude=3pt,segment length=4pt}]
+        \tikzset{declare function={normcdf(\x,\m,\s)=1/(1 + exp(-0.07056*((\x-\m)/\s)^3 - 1.5976*(\x-\m)/\s));}}
+        ```
+
 number-sections: true
 
 format:

@@ -1,0 +1,37 @@
+```{.tikz}
+\begin{tikzpicture}[very thick, line cap=round]
+    % Parameters
+    \def\Lx{8}
+    \def\Ly{4.5}
+    \def\Eone{0.25*\Ly}     % intercept E^(N)_m at mu=0
+    \def\Etwo{0.7*\Ly}     % intercept E^(N+1)_m at mu=0
+    \def\muI{0.5*\Lx}      % crossing point
+    \def\muA{0.35*\Lx}
+    \def\muB{0.6*\Lx}
+
+    % Dashed vertical guide at mu=UN (i.e. muI)
+    \draw[lightgray,dashed] (\muI,{\Eone-0.5*\muI}) -- (\muI,0.75*\Ly) node[above,black] {\footnotesize $UN$};
+    \draw[lightgray,dashed] (\muA,-0.5*\Ly) -- (\muA,0.5*\Ly) node[above,black] {\footnotesize $UN-2dt (N+1)$};
+    \draw[lightgray,dashed] (\muB,-0.5*\Ly) -- (\muB,0.3*\Ly) node[above,black] {\footnotesize $UN+2dt (N+1)$};
+
+    % Axes
+    \draw[->] (0,0) -- (\Lx,0) node[below right] {$\mu$};
+    \draw[->] (0,-0.75*\Ly) -- (0,\Ly) node[right] {$\mathcal{E}_\mu$};
+
+    % Mott lines
+    \draw (0,\Eone) node[above right,gray] {$\mathcal{E}^{(N)}_\mu$} -- (0.8*\Lx,{\Eone-0.5*0.8*\Lx});
+    \draw (0,\Etwo) node[above right,gray] {$\mathcal{E}^{(N+1)}_\mu$} -- (0.8*\Lx,{\Etwo-0.8*\Lx});
+
+    % Red envelope: piecewise
+    \draw[red]  (0,\Eone) -- (\muI,{\Eone-0.5*\muI});
+    \draw[red] (\muI,{\Etwo-\muI}) -- (0.8*\Lx,{\Etwo-0.8*\Lx});
+
+    % Blue rounded “smoothed” envelope
+    \draw[myblue, dashed] (\muA,{\Eone-0.5*\muA}) -- (\muB,{\Etwo-\muB});
+
+    % Optional labels on red segments
+    \node[below left, align=center] at (\muA,{\Eone-0.5*\muA}) {\footnotesize First particle \\ \footnotesize introduced};
+    \node[below left, align=center] at (\muB,{\Etwo-\muB}) {\footnotesize Last hole \\ \footnotesize removed};
+
+\end{tikzpicture}
+```

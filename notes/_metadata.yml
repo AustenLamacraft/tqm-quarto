@@ -7,3 +7,7 @@ format:
     papersize: a4
     # output-file: theories-of-quantum-matter.pdf
     from: markdown-latex_macros
+    # Keep the PDF build's intermediate files. Without this, rendering both
+    # formats deletes notes/<page>_files/ after LaTeX runs, taking the HTML's
+    # TikZ SVGs (in <page>_files/mediabag/) with it before they reach _site.
+    keep-tex: true

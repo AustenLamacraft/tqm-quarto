@@ -455,6 +455,11 @@ local pdf2svg = function (imgdata)
   local pdf_file = 'diagram-' .. pandoc.utils.sha1(imgdata) .. '.pdf'
   write_file(pdf_file, imgdata)
   local args = {
+    -- Local change: import via poppler, which draws glyphs as paths. The
+    -- default importer drops TeX delimiters such as \left[ (cmex glyphs with
+    -- control-character codes) and writes those codes into aria-labels,
+    -- making the SVG invalid XML so that the browser shows nothing.
+    '--pdf-poppler',
     '--export-type=svg',
     '--export-plain-svg',
     '--export-filename=-',

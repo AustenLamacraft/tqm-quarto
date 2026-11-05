@@ -582,10 +582,14 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 </tbody>
 </table>
 <p>Vortices with <span class="math inline">\(\lvert{\ell}\rvert&gt;1\)</span> are generally unstable, and will break into multiple vortices of winding <span class="math inline">\(\ell=\pm 1\)</span>. Like vortices repel each other, and can form spectacular <strong>vortex lattices</strong>, akin to crystals.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../assets/3dLattices.jpg" class="img-fluid figure-img"></p>
-<figcaption>Vortex lattice in a Bose–Einstein condensate of Sodium atoms. Source: <a href="https://ketterle-group.mit.edu/">Ketterle group, MIT</a></figcaption>
+<div id="fig-vortex-lattice" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vortex-lattice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/3dLattices.jpg" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vortex-lattice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Vortex lattice in a Bose–Einstein condensate of Sodium atoms. Source: <a href="https://ketterle-group.mit.edu/">Ketterle group, MIT</a>.
+</figcaption>
 </figure>
 </div>
 <p>Vortices are one manifestation of the phenomenon of <strong>superfluidity</strong>: persistent flow without resistance. The true ground state of the system does not have such flows, of course, so these flows are only <em>metastable</em> (as long as rotational symmetry is broken, so that angular momentum is not conserved). In the case of the vortex, it can only decay by its core leaving the system. An even simpler example is provided by currents flowing in a ring, a situation studied in <a href="../problem-sets/problem-set-2.html#persistent-currents-without-rotational-symmetry">Problem Set 2</a>, which illustrates the important role played by repulsive interactions.</p>
@@ -973,7 +977,7 @@ a_0=(m/4\pi)U_0,\qquad a_1=-(m/4\pi)\frac{U_0^2}{V}\sum_\mathbf{p}\frac{1}{2\til
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
