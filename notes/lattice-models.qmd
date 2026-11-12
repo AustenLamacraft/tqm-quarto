@@ -291,12 +291,12 @@ Relatively little is known _for sure_ about the Hubbard model, except in 1D, whe
 
 As in the Bose case, we start by thinking about $U/t\to\infty$. In the limit we get Mott states: only three this time, corresponding to 0, 1, or 2 particles per site. Two particles on a site are described by $\adop_{j,s}\adop_{j,s'}\ket{\text{VAC}}$, which is antisymmetric in the spin indices due to anticommutation of the creation operators, and therefore describes a spin singlet $\frac{1}{\sqrt{2}}\left[\ket{\uparrow}\ket{\downarrow}-\ket{\downarrow}\ket{\uparrow}\right]$. When we have only 1 per site (We call this __half filling__), we can have either spin. Thus the $\nu=1$ Mott state is _massively_ degenerate, with a ground state multiplet consisting of $2^{N_\text{sites}}$ possible spin configurations. $U/t\to\infty$ is therefore a rather singular limit, and to understand the true ground state at large $U$ we'll need to work bit harder.
 
-Start by thinking about two sites and two particles. There are 6 states altogether in the Hilbert space.
+Start by thinking about two sites (A and B) and two particles. Let's call the operators creating fermions on these sites $\adop_s$ and $\bdop_s$. There are 6 states altogether in the Hilbert space.
 
 $$
 \begin{aligned}
-\adop_{1,\uparrow}\adop_{1,\downarrow} \ket{\text{VAC}},\quad\adop_{2,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
-\adop_{1,s}\adop_{2,s'} \ket{\text{VAC}},\quad s,s'=\uparrow,\downarrow.
+\adop_{\uparrow}\adop_{\downarrow} \ket{\text{VAC}},\quad\bdop_{\uparrow}\bdop_{\downarrow} \ket{\text{VAC}}\\
+\adop_{s}\bdop_{s'} \ket{\text{VAC}},\quad s,s'=\uparrow,\downarrow.
 \end{aligned}
 $$
 
@@ -311,33 +311,33 @@ How does the degeneracy of these states get lifted at finite $t$? Try writing do
 
 ### Solution
 
-The first thing to note is that the Hamiltonian $H_t$ has no effect on the states $\adop_{1,\uparrow}\adop_{2,\uparrow} \ket{\text{VAC}}$ and $\adop_{1,\downarrow}\adop_{2,\downarrow} \ket{\text{VAC}}$, because it is not possible to move two fermions with the same spin to the same site. Thus we need to consider only the four states
+The first thing to note is that the Hamiltonian $H_t$ has no effect on the states $\adop_{\uparrow}\bdop_{\uparrow} \ket{\text{VAC}}$ and $\adop_{\downarrow}\bdop_{\downarrow} \ket{\text{VAC}}$, because it is not possible to move two fermions with the same spin to the same site. Thus we need to consider only the four states
 
 $$
 \begin{aligned}
-\ket{1}&=\adop_{1,\uparrow}\adop_{1,\downarrow} \ket{\text{VAC}}\\
-\ket{2}&=\adop_{2,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
-\ket{3}&=\adop_{1,\uparrow}\adop_{2,\downarrow} \ket{\text{VAC}}\\
-\ket{4}&=\adop_{1,\downarrow}\adop_{2,\uparrow} \ket{\text{VAC}}\\
+\ket{1}&=\adop_{\uparrow}\adop_{\downarrow} \ket{\text{VAC}}\\
+\ket{2}&=\bdop_{\uparrow}\bdop_{\downarrow} \ket{\text{VAC}}\\
+\ket{3}&=\adop_{\uparrow}\bdop_{\downarrow} \ket{\text{VAC}}\\
+\ket{4}&=\bdop_{\uparrow}\adop_{\downarrow} \ket{\text{VAC}}.
 \end{aligned}
 $$
 
-$H_t$ connects $\ket{1}$ and $\ket{2}$ with $\ket{3}$ and $\ket{4}$. We compute the matrix elements
+Note that in defining these states -- and in particular the order of the operators -- we have made an explicit choice of sign. $H_t$ connects $\ket{1}$ and $\ket{2}$ with $\ket{3}$ and $\ket{4}$. We compute the matrix elements
 
 $$
 \begin{aligned}
-\braket{1}{H_t}{3} &= \braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
-&=-t\braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\downarrow}\aop_{2,\downarrow} \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
-&=t\\
-\braket{2}{H_t}{3} &= \braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
-&=-t\braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\uparrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\adop_{2,\downarrow}}{\text{VAC}}\\
+\braket{1}{H_t}{3} &= \braket{\text{VAC}}{\aop_{\downarrow}\aop_{\uparrow} H_t \adop_{\uparrow}\bdop_{\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{\downarrow}\aop_{\uparrow} \adop_{\downarrow}\bop_{\downarrow} \adop_{\uparrow}\bdop_{\downarrow}}{\text{VAC}}\\
 &=-t\\
-\braket{1}{H_t}{4} &= \braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
-&=-t\braket{\text{VAC}}{\aop_{1,\downarrow}\aop_{1,\uparrow} \adop_{1,\uparrow}\aop_{2,\uparrow} \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
-&=t\\
-\braket{2}{H_t}{4} &= \braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} H_t \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
-&=-t\braket{\text{VAC}}{\aop_{2,\downarrow}\aop_{2,\uparrow} \adop_{2,\downarrow}\aop_{1,\downarrow} \adop_{1,\downarrow}\adop_{2,\uparrow}}{\text{VAC}}\\
-&=t
+\braket{2}{H_t}{3} &= \braket{\text{VAC}}{\bop_{\downarrow}\bop_{\uparrow} H_t \adop_{\uparrow}\bdop_{\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\bop_{\downarrow}\bop_{\uparrow} \bdop_{\uparrow}\aop_{\uparrow} \adop_{\uparrow}\bdop_{\downarrow}}{\text{VAC}}\\
+&=-t\\
+\braket{1}{H_t}{4} &= \braket{\text{VAC}}{\aop_{\downarrow}\aop_{\uparrow} H_t \bdop_{\uparrow}\adop_{\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\aop_{\downarrow}\aop_{\uparrow} \adop_{\uparrow}\bop_{\uparrow} \bdop_{\uparrow}\adop_{\downarrow}}{\text{VAC}}\\
+&=-t\\
+\braket{2}{H_t}{4} &= \braket{\text{VAC}}{\bop_{\downarrow}\bop_{\uparrow} H_t \bdop_{\uparrow}\adop_{\downarrow}}{\text{VAC}}\\
+&=-t\braket{\text{VAC}}{\bop_{\downarrow}\bop_{\uparrow} \bdop_{\downarrow}\aop_{\downarrow} \bdop_{\uparrow}\adop_{\downarrow}}{\text{VAC}}\\
+&=-t
 \end{aligned}
 $$
 
@@ -346,9 +346,9 @@ This gives the Hamiltonian
 $$
 \braket{j}{H}{k} = 
 \begin{pmatrix}
-U & 0 & t & -t \\
-0 & U & t & -t \\
-t & t & 0 & 0 \\
+U & 0 & -t & -t \\
+0 & U & -t & -t \\
+-t & -t & 0 & 0 \\
 -t & -t & 0 & 0
 \end{pmatrix}
 $$
@@ -357,25 +357,50 @@ Note that the off-diagonal block
 
 $$
 \begin{pmatrix}
-t & -t \\
-t & -t
+-t & -t \\
+-t & -t
 \end{pmatrix}
 $$
 
-only connects the states $\frac{1}{\sqrt{2}}\left(\ket{1}+\ket{2}\right)$ and $\frac{1}{\sqrt{2}}\left(\ket{3}-\ket{4}\right)$, and we arrive at the $2\times 2$ matrix
+only connects the states $\frac{1}{\sqrt{2}}\left(\ket{1}+\ket{2}\right)$ and $\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$, and we arrive at the $2\times 2$ matrix
 
 $$
 \begin{pmatrix}
-U & 2t \\
-2t & 0
+U & -2t \\
+-2t & 0
 \end{pmatrix}
 $$
 
 with eigenvalues $U/2 \pm \sqrt{U^2/4+4t^2}$. Expanding for small $t/U$ gives $U + \frac{4t^2}{U}$ and $-4t^2/U$.
 
-Note that the state $\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$ is a spin-triplet, which is why its energy is unaffected, like the states $\adop_{1,\uparrow}\adop_{2,\uparrow} \ket{\text{VAC}}$ and $\adop_{1,\downarrow}\adop_{2,\downarrow} \ket{\text{VAC}}$ that we discarded initially. The effect of finite $t$ is therefore to lower the energy of the singlet state by $4t^2/U$ relative to the triplet state.
+The state $\ket{S}\equiv\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$ is a spin singlet (i.e. spin 0) while $\ket{T,0}\equiv\frac{1}{\sqrt{2}}\left(\ket{3}-\ket{4}\right)$ is a spin triplet (it has total spin 1 and $z$-component 0), see the next problem. Because the hopping does not change the total spin, only $\ket{S}$ couples to states where both fermions are on the same site, which are also spin singlets. The state $\ket{T,0}$ is unaffected by hopping, like the states $\ket{T,1}\equiv\adop_{\uparrow}\bdop_{\uparrow} \ket{\text{VAC}}$ and $\ket{T,-1}\equiv\adop_{\downarrow}\bdop_{\downarrow} \ket{\text{VAC}}$ that we discarded initially. The effect of finite $t$ is therefore to lower the energy of the singlet state by $4t^2/U$ relative to the triplet states.
 
 :::
+
+:::
+
+::: {.callout-tip}
+## Check
+
+As usual, it's a useful exercise to relate the relate wavefunctions in the first and second quantized pictures. Consider two of the states from the previous exercise
+
+\begin{aligned}
+\ket{3}&=\adop_{\uparrow}\bdop_{\downarrow} \ket{\text{VAC}}\\
+\ket{4}&=\bdop_{\uparrow}\adop_{\downarrow} \ket{\text{VAC}}.
+\end{aligned}
+
+The single particle states for this problem are four component wavefunctions of the form
+
+$$
+\ket{\psi}=\begin{pmatrix}
+\alpha_\uparrow\\
+\alpha_\downarrow\\
+\beta_\uparrow\\ 
+\beta_\downarrow
+\end{pmatrix},
+$$
+
+where the first two components correspond to the A site and the last two to the B site. Write $\ket{3}$ and $\ket{4}$ as two particle wavefunctions and verify that $\ket{S}\equiv\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$ is a spin singlet with a symmetric spatial wavefunction while $\ket{T,0}\equiv\frac{1}{\sqrt{2}}\left(\ket{3}-\ket{4}\right)$ is a spin triplet with an antisymmetric spatial wavefunction.
 
 :::
 

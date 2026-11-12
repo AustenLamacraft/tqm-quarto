@@ -659,11 +659,11 @@ H=-t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}}  \left[a^\dag
 <section id="two-sites-two-fermions" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="two-sites-two-fermions"><span class="header-section-number">3.1</span> Two Sites, Two Fermions</h3>
 <p>As in the Bose case, we start by thinking about <span class="math inline">\(U/t\to\infty\)</span>. In the limit we get Mott states: only three this time, corresponding to 0, 1, or 2 particles per site. Two particles on a site are described by <span class="math inline">\(a^\dagger_{j,s}a^\dagger_{j,s'}\lvert{\text{VAC}}\rangle\)</span>, which is antisymmetric in the spin indices due to anticommutation of the creation operators, and therefore describes a spin singlet <span class="math inline">\(\frac{1}{\sqrt{2}}\left[\lvert{\uparrow}\rangle\lvert{\downarrow}\rangle-\lvert{\downarrow}\rangle\lvert{\uparrow}\rangle\right]\)</span>. When we have only 1 per site (We call this <strong>half filling</strong>), we can have either spin. Thus the <span class="math inline">\(\nu=1\)</span> Mott state is <em>massively</em> degenerate, with a ground state multiplet consisting of <span class="math inline">\(2^{N_\text{sites}}\)</span> possible spin configurations. <span class="math inline">\(U/t\to\infty\)</span> is therefore a rather singular limit, and to understand the true ground state at large <span class="math inline">\(U\)</span> we’ll need to work bit harder.</p>
-<p>Start by thinking about two sites and two particles. There are 6 states altogether in the Hilbert space.</p>
+<p>Start by thinking about two sites (A and B) and two particles. Let’s call the operators creating fermions on these sites <span class="math inline">\(a^\dagger_s\)</span> and <span class="math inline">\(b^\dagger_s\)</span>. There are 6 states altogether in the Hilbert space.</p>
 <p><span class="math display">\[
 \begin{aligned}
-a^\dagger_{1,\uparrow}a^\dagger_{1,\downarrow} \lvert{\text{VAC}}\rangle,\quad a^\dagger_{2,\uparrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\\
-a^\dagger_{1,s}a^\dagger_{2,s'} \lvert{\text{VAC}}\rangle,\quad s,s'=\uparrow,\downarrow.
+a^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle,\quad b^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\\
+a^\dagger_{s}b^\dagger_{s'} \lvert{\text{VAC}}\rangle,\quad s,s'=\uparrow,\downarrow.
 \end{aligned}
 \]</span></p>
 <p>The top two states have energy <span class="math inline">\(U\)</span> when <span class="math inline">\(t=0\)</span>; the bottom 4 have energy 0.</p>
@@ -690,61 +690,88 @@ a^\dagger_{1,s}a^\dagger_{2,s'} \lvert{\text{VAC}}\rangle,\quad s,s'=\uparrow,\d
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The first thing to note is that the Hamiltonian <span class="math inline">\(H_t\)</span> has no effect on the states <span class="math inline">\(a^\dagger_{1,\uparrow}a^\dagger_{2,\uparrow} \lvert{\text{VAC}}\rangle\)</span> and <span class="math inline">\(a^\dagger_{1,\downarrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\)</span>, because it is not possible to move two fermions with the same spin to the same site. Thus we need to consider only the four states</p>
+<p>The first thing to note is that the Hamiltonian <span class="math inline">\(H_t\)</span> has no effect on the states <span class="math inline">\(a^\dagger_{\uparrow}b^\dagger_{\uparrow} \lvert{\text{VAC}}\rangle\)</span> and <span class="math inline">\(a^\dagger_{\downarrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\)</span>, because it is not possible to move two fermions with the same spin to the same site. Thus we need to consider only the four states</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lvert{1}\rangle&amp;=a^\dagger_{1,\uparrow}a^\dagger_{1,\downarrow} \lvert{\text{VAC}}\rangle\\
-\lvert{2}\rangle&amp;=a^\dagger_{2,\uparrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\\
-\lvert{3}\rangle&amp;=a^\dagger_{1,\uparrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\\
-\lvert{4}\rangle&amp;=a^\dagger_{1,\downarrow}a^\dagger_{2,\uparrow} \lvert{\text{VAC}}\rangle\\
+\lvert{1}\rangle&amp;=a^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\\
+\lvert{2}\rangle&amp;=b^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\\
+\lvert{3}\rangle&amp;=a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\\
+\lvert{4}\rangle&amp;=b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle.
 \end{aligned}
 \]</span></p>
-<p><span class="math inline">\(H_t\)</span> connects <span class="math inline">\(\lvert{1}\rangle\)</span> and <span class="math inline">\(\lvert{2}\rangle\)</span> with <span class="math inline">\(\lvert{3}\rangle\)</span> and <span class="math inline">\(\lvert{4}\rangle\)</span>. We compute the matrix elements</p>
+<p>Note that in defining these states – and in particular the order of the operators – we have made an explicit choice of sign. <span class="math inline">\(H_t\)</span> connects <span class="math inline">\(\lvert{1}\rangle\)</span> and <span class="math inline">\(\lvert{2}\rangle\)</span> with <span class="math inline">\(\lvert{3}\rangle\)</span> and <span class="math inline">\(\lvert{4}\rangle\)</span>. We compute the matrix elements</p>
 <p><span class="math display">\[
 \begin{aligned}
-\langle{1}\rvert H_t \lvert 3 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{1,\downarrow}a^{\vphantom{\dagger}}_{1,\uparrow} H_t a^\dagger_{1,\uparrow}a^\dagger_{2,\downarrow} \lvert \text{VAC} \rangle\\
-&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{1,\downarrow}a^{\vphantom{\dagger}}_{1,\uparrow} a^\dagger_{1,\downarrow}a^{\vphantom{\dagger}}_{2,\downarrow} a^\dagger_{1,\uparrow}a^\dagger_{2,\downarrow} \lvert \text{VAC} \rangle\\
-&amp;=t\\
-\langle{2}\rvert H_t \lvert 3 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{2,\downarrow}a^{\vphantom{\dagger}}_{2,\uparrow} H_t a^\dagger_{1,\uparrow}a^\dagger_{2,\downarrow} \lvert \text{VAC} \rangle\\
-&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{2,\downarrow}a^{\vphantom{\dagger}}_{2,\uparrow} a^\dagger_{2,\uparrow}a^{\vphantom{\dagger}}_{1,\uparrow} a^\dagger_{1,\uparrow}a^\dagger_{2,\downarrow} \lvert \text{VAC} \rangle\\
+\langle{1}\rvert H_t \lvert 3 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{\downarrow}a^{\vphantom{\dagger}}_{\uparrow} H_t a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{\downarrow}a^{\vphantom{\dagger}}_{\uparrow} a^\dagger_{\downarrow}b^{\vphantom{\dagger}}_{\downarrow} a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
 &amp;=-t\\
-\langle{1}\rvert H_t \lvert 4 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{1,\downarrow}a^{\vphantom{\dagger}}_{1,\uparrow} H_t a^\dagger_{1,\downarrow}a^\dagger_{2,\uparrow} \lvert \text{VAC} \rangle\\
-&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{1,\downarrow}a^{\vphantom{\dagger}}_{1,\uparrow} a^\dagger_{1,\uparrow}a^{\vphantom{\dagger}}_{2,\uparrow} a^\dagger_{1,\downarrow}a^\dagger_{2,\uparrow} \lvert \text{VAC} \rangle\\
-&amp;=t\\
-\langle{2}\rvert H_t \lvert 4 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{2,\downarrow}a^{\vphantom{\dagger}}_{2,\uparrow} H_t a^\dagger_{1,\downarrow}a^\dagger_{2,\uparrow} \lvert \text{VAC} \rangle\\
-&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{2,\downarrow}a^{\vphantom{\dagger}}_{2,\uparrow} a^\dagger_{2,\downarrow}a^{\vphantom{\dagger}}_{1,\downarrow} a^\dagger_{1,\downarrow}a^\dagger_{2,\uparrow} \lvert \text{VAC} \rangle\\
-&amp;=t
+\langle{2}\rvert H_t \lvert 3 \rangle &amp;= \langle{\text{VAC}}\rvert b^{\vphantom{\dagger}}_{\downarrow}b^{\vphantom{\dagger}}_{\uparrow} H_t a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\langle{\text{VAC}}\rvert b^{\vphantom{\dagger}}_{\downarrow}b^{\vphantom{\dagger}}_{\uparrow} b^\dagger_{\uparrow}a^{\vphantom{\dagger}}_{\uparrow} a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\\
+\langle{1}\rvert H_t \lvert 4 \rangle &amp;= \langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{\downarrow}a^{\vphantom{\dagger}}_{\uparrow} H_t b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\langle{\text{VAC}}\rvert a^{\vphantom{\dagger}}_{\downarrow}a^{\vphantom{\dagger}}_{\uparrow} a^\dagger_{\uparrow}b^{\vphantom{\dagger}}_{\uparrow} b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\\
+\langle{2}\rvert H_t \lvert 4 \rangle &amp;= \langle{\text{VAC}}\rvert b^{\vphantom{\dagger}}_{\downarrow}b^{\vphantom{\dagger}}_{\uparrow} H_t b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t\langle{\text{VAC}}\rvert b^{\vphantom{\dagger}}_{\downarrow}b^{\vphantom{\dagger}}_{\uparrow} b^\dagger_{\downarrow}a^{\vphantom{\dagger}}_{\downarrow} b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert \text{VAC} \rangle\\
+&amp;=-t
 \end{aligned}
 \]</span></p>
 <p>This gives the Hamiltonian</p>
 <p><span class="math display">\[
 \langle{j}\rvert H \lvert k \rangle =
 \begin{pmatrix}
-U &amp; 0 &amp; t &amp; -t \\
-0 &amp; U &amp; t &amp; -t \\
-t &amp; t &amp; 0 &amp; 0 \\
+U &amp; 0 &amp; -t &amp; -t \\
+0 &amp; U &amp; -t &amp; -t \\
+-t &amp; -t &amp; 0 &amp; 0 \\
 -t &amp; -t &amp; 0 &amp; 0
 \end{pmatrix}
 \]</span></p>
 <p>Note that the off-diagonal block</p>
 <p><span class="math display">\[
 \begin{pmatrix}
-t &amp; -t \\
-t &amp; -t
+-t &amp; -t \\
+-t &amp; -t
 \end{pmatrix}
 \]</span></p>
-<p>only connects the states <span class="math inline">\(\frac{1}{\sqrt{2}}\left(\lvert{1}\rangle+\lvert{2}\rangle\right)\)</span> and <span class="math inline">\(\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle-\lvert{4}\rangle\right)\)</span>, and we arrive at the <span class="math inline">\(2\times 2\)</span> matrix</p>
+<p>only connects the states <span class="math inline">\(\frac{1}{\sqrt{2}}\left(\lvert{1}\rangle+\lvert{2}\rangle\right)\)</span> and <span class="math inline">\(\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle+\lvert{4}\rangle\right)\)</span>, and we arrive at the <span class="math inline">\(2\times 2\)</span> matrix</p>
 <p><span class="math display">\[
 \begin{pmatrix}
-U &amp; 2t \\
-2t &amp; 0
+U &amp; -2t \\
+-2t &amp; 0
 \end{pmatrix}
 \]</span></p>
 <p>with eigenvalues <span class="math inline">\(U/2 \pm \sqrt{U^2/4+4t^2}\)</span>. Expanding for small <span class="math inline">\(t/U\)</span> gives <span class="math inline">\(U + \frac{4t^2}{U}\)</span> and <span class="math inline">\(-4t^2/U\)</span>.</p>
-<p>Note that the state <span class="math inline">\(\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle+\lvert{4}\rangle\right)\)</span> is a spin-triplet, which is why its energy is unaffected, like the states <span class="math inline">\(a^\dagger_{1,\uparrow}a^\dagger_{2,\uparrow} \lvert{\text{VAC}}\rangle\)</span> and <span class="math inline">\(a^\dagger_{1,\downarrow}a^\dagger_{2,\downarrow} \lvert{\text{VAC}}\rangle\)</span> that we discarded initially. The effect of finite <span class="math inline">\(t\)</span> is therefore to lower the energy of the singlet state by <span class="math inline">\(4t^2/U\)</span> relative to the triplet state.</p>
+<p>The state <span class="math inline">\(\lvert{S}\rangle\equiv\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle+\lvert{4}\rangle\right)\)</span> is a spin singlet (i.e.&nbsp;spin 0) while <span class="math inline">\(\lvert{T,0}\rangle\equiv\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle-\lvert{4}\rangle\right)\)</span> is a spin triplet (it has total spin 1 and <span class="math inline">\(z\)</span>-component 0), see the next problem. Because the hopping does not change the total spin, only <span class="math inline">\(\lvert{S}\rangle\)</span> couples to states where both fermions are on the same site, which are also spin singlets. The state <span class="math inline">\(\lvert{T,0}\rangle\)</span> is unaffected by hopping, like the states <span class="math inline">\(\lvert{T,1}\rangle\equiv a^\dagger_{\uparrow}b^\dagger_{\uparrow} \lvert{\text{VAC}}\rangle\)</span> and <span class="math inline">\(\lvert{T,-1}\rangle\equiv a^\dagger_{\downarrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\)</span> that we discarded initially. The effect of finite <span class="math inline">\(t\)</span> is therefore to lower the energy of the singlet state by <span class="math inline">\(4t^2/U\)</span> relative to the triplet states.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As usual, it’s a useful exercise to relate the relate wavefunctions in the first and second quantized pictures. Consider two of the states from the previous exercise</p>
+<span class="math display">\[\begin{aligned}
+\lvert{3}\rangle&amp;=a^\dagger_{\uparrow}b^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle\\
+\lvert{4}\rangle&amp;=b^\dagger_{\uparrow}a^\dagger_{\downarrow} \lvert{\text{VAC}}\rangle.
+\end{aligned}\]</span>
+<p>The single particle states for this problem are four component wavefunctions of the form</p>
+<p><span class="math display">\[
+\lvert{\psi}\rangle=\begin{pmatrix}
+\alpha_\uparrow\\
+\alpha_\downarrow\\
+\beta_\uparrow\\
+\beta_\downarrow
+\end{pmatrix},
+\]</span></p>
+<p>where the first two components correspond to the A site and the last two to the B site. Write <span class="math inline">\(\lvert{3}\rangle\)</span> and <span class="math inline">\(\lvert{4}\rangle\)</span> as two particle wavefunctions and verify that <span class="math inline">\(\lvert{S}\rangle\equiv\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle+\lvert{4}\rangle\right)\)</span> is a spin singlet with a symmetric spatial wavefunction while <span class="math inline">\(\lvert{T,0}\rangle\equiv\frac{1}{\sqrt{2}}\left(\lvert{3}\rangle-\lvert{4}\rangle\right)\)</span> is a spin triplet with an antisymmetric spatial wavefunction.</p>
 </div>
 </div>
 </section>

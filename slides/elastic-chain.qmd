@@ -6,7 +6,6 @@ format:
     theme: [default, reveal_custom.scss]
     slide-number: true
     hash: true
-    history: false
     center: true
     auto-stretch: false
     html-math-method: katex

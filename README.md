@@ -47,6 +47,7 @@ Diagrams are drawn in TikZ, taken from William Royce's LaTeX version of the note
 - [X] FQHE animation not working
 - [X] Fix cot / tan disagreement between spin models lectures and slides
 - [X] Fix statement about impenetrable Bose gas. Modulus form only works for ground state
+- [ ] Present Bogoliubov theory using Bose Hubbard model to avoid UV divergences.
 - [ ] Switch to `\Braket` in KaTeX for matrix elements / expectation values in slides
 - [ ] I believe there is an inconsistency between the two parts of Q6. The wavefunction given in the second part is problematic dimensionally - |c| doesn't have dimensions of inverse length. This is because the mass of the bosons m is not involved. From my results it follows that the consistent densities are obtained for m=2, i.e. the power of the exponents in psi should be m|c|/4*|x_j-x_k|.
 - [X] There may be an inconsistency in the definition of Anderson spins. North pole should be occupancy by a pair but the u_p, v_p parameterization says otherwise.

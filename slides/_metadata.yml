@@ -1,0 +1,5 @@
+format:
+  revealjs:
+    # Don't push each slide onto the browser history, so the Back button
+    # returns to the page the deck was opened from rather than the previous slide.
+    history: false
