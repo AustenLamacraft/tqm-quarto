@@ -290,7 +290,9 @@ $$
 $$
 so this corresponds to sharp Fermi step. 
 
-![](../assets/sharp-step.png){width=70% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_anderson-walls-free.qmd >}}
+:::
 
 ---
 
@@ -300,7 +302,9 @@ so this corresponds to sharp Fermi step.
 
 - All angles $\varphi_\bp$, describing angle in x-y plane, should be equal
 
-![](../assets/bcs-step.png){width=70% fig-align="center"}
+::: {.tikz-figure style="width: 60%;"}
+{{< include ../figures/_anderson-walls-bcs.qmd >}}
+:::
 
 
 ---

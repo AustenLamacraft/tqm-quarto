@@ -14,7 +14,7 @@ Models defined on discrete sites — so-called __tight binding models__ — prov
 A typical many body Hamiltonian consists of kinetic energy and interaction terms. We haven't yet had much to say about the situation where the particles additionally feel a potential that could arise from the crystal lattice, or impurity atoms, or both. In this lecture we will be concerned with systems in periodic potentials, so that the noninteracting part of the Hamiltonian is (taking the 1D case for simplicity)
 
 $$
-H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_i^2 +V(x_i)\right] = \int \left[\frac{1}{2m}\partial_x\pdop\partial_x\pop + V(x)\pdop\pop\right] dx,
+H = \sum_{j=1}^N \left[-\frac{1}{2m}\partial_j^2 +V(x_j)\right] = \int \left[\frac{1}{2m}\partial_x\pdop\partial_x\pop + V(x)\pdop\pop\right] dx,
 $$
 
 with $V(x+a)=V(x)$. As you know, [Bloch's theorem](https://en.wikipedia.org/wiki/Bloch_wave) tells us that the eigenstates are labelled by a continuous index $k$ (__crystal momentum__) and discrete index $n$ (__band index__) and have the form
@@ -384,10 +384,12 @@ The state $\ket{S}\equiv\frac{1}{\sqrt{2}}\left(\ket{3}+\ket{4}\right)$ is a spi
 
 As usual, it's a useful exercise to relate the relate wavefunctions in the first and second quantized pictures. Consider two of the states from the previous exercise
 
+$$
 \begin{aligned}
 \ket{3}&=\adop_{\uparrow}\bdop_{\downarrow} \ket{\text{VAC}}\\
 \ket{4}&=\bdop_{\uparrow}\adop_{\downarrow} \ket{\text{VAC}}.
 \end{aligned}
+$$
 
 The single particle states for this problem are four component wavefunctions of the form
 
@@ -486,8 +488,7 @@ Finally, in $d$ dimensions ($d=1$, chain; $d=2$ square lattice; $d=3$ cubic latt
 
 $$
 H_\text{eff} = -\frac{dN_\text{sites}t^2}{U}+J\sum_{\langle j\,k\rangle} \mathbf{s}_j\cdot \mathbf{s}_k
-\label{FilledHeff}
-$$
+$$ {#eq-filled-H-eff}
 
 with $J=\frac{4t^2}{U}$ and
 
@@ -500,7 +501,7 @@ The effective Hamiltonian is nothing but the spin-1/2 antiferromagnetic Heisenbe
 ::: {.callout-tip}
 ## Check
 
-Note that there is something slightly sly about this derivation. We assumed that the energy scale $U$ was the largest scale in the problem, in order to arrive at the effective Hamiltonian. However, typical excited state energies of the Heisenberg Hamiltonian are $\frac{N_\text{sites}t^2}{U}$. Thus for $N_\text{sites}\gtrsim \left(\frac{t}{U}\right)^2$ there isn't actually a separation between these two energies. Not a very useful condition! Physically, it's enough to have a small <strong>density </strong> $n$ of doublons and holes, with overall energy $\sim nU$, when $t/U$ is small.
+Note that there is something slightly sly about this derivation. We assumed that the energy scale $U$ was the largest scale in the problem, in order to arrive at the effective Hamiltonian. However, typical excited state energies of the Heisenberg Hamiltonian are $\frac{N_\text{sites}t^2}{U}$. Thus for $N_\text{sites}\gtrsim \left(\frac{U}{t}\right)^2$ there isn't actually a separation between these two energies. Not a very useful condition! Physically, it's enough to have a small <strong>density </strong> $n$ of doublons and holes, with overall energy $\sim nU$, when $t/U$ is small.
 
 :::
 
@@ -522,7 +523,7 @@ An effective Hamiltonian that describes the doped Mott insulator is the [t-J mod
 
 $$
 H_\text{eff} = -t \sum_{\substack{\langle j,k\rangle\\ s=\uparrow,\downarrow}}  \left[\adop_{j,s}\aop_{k,s}+\adop_{k,s}\aop_{j,s}\right] + J\sum_{\langle j,k\rangle}\left[\mathbf{s}_j\cdot \mathbf{s}_k - \frac{N_j N_k}{4}\right].
-$$ {#eq-filled-H-eff}
+$$
 
-The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector $\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})$. The term involving $N_j N_k$ keeps track of the need for both sites to be occupied in the derivation of the effective coupling (c.f. it's just the "constant" term in @eq-filled-H-eff. The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators $\mathbf{s}_j$ vanish when they act on an empty or doubly occupied site.
+The model is defined by supplementing the Hamiltonian with the constraint that there are no doubly occupied sites. That is, we ignore such states in the Hilbert space. This could be achieved by applying the projector $\prod_{j} (1-N_{j,\uparrow}N_{j,\downarrow})$. The term involving $N_j N_k$ keeps track of the need for both sites to be occupied in the derivation of the effective coupling (it's just the "constant" term in @eq-filled-H-eff). The hopping term means that holes or doubly occupied sites can move through the lattice, with the Heisenberg exchange term only acting between sites with one particle, since the operators $\mathbf{s}_j$ vanish when they act on an empty or doubly occupied site.
 

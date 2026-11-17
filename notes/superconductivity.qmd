@@ -206,7 +206,9 @@ angles $\varphi_\bp$, describing the angle in the x-y plane, should be equal. Ta
 
 ::: {#fig-anderson-walls}
 
-{{< include ../figures/_anderson-walls.qmd >}}
+{{< include ../figures/_anderson-walls-free.qmd >}}
+
+{{< include ../figures/_anderson-walls-bcs.qmd >}}
 
 Anderson spin configurations and the associated distribution functions for the free fermi gas (top) and the BCS state (bottom).
 

@@ -517,7 +517,7 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <p><span class="math display">\[
 \oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z},
 \]</span></p>
-<p>which is known as the <strong>Onsager–Feynmann quantization condition</strong>. A localized configuration with finite circulation is called a <strong>vortex</strong> in fluid dynamics, but in a normal fluid there is no reason for the circulation to be quantized. Restoring Planck’s constant just this once</p>
+<p>which is known as the <strong>Onsager–Feynman quantization condition</strong>. A localized configuration with finite circulation is called a <strong>vortex</strong> in fluid dynamics, but in a normal fluid there is no reason for the circulation to be quantized. Restoring Planck’s constant just this once</p>
 <p><span class="math display">\[
 \oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{h\ell}{m},\quad \ell\in\mathbb{Z},
 \]</span></p>
@@ -548,7 +548,7 @@ U(\mathbf{r}-\mathbf{r}') = U_0\delta(\mathbf{r}-\mathbf{r}')
 <p>The region of suppressed density, of characteristic size <span class="math inline">\(\xi\)</span>, is called the <strong>vortex core</strong>. In three dimensions, the vortex core is a line.</p>
 <p>We can find the energy of the vortex state by substituting the solution back into the energy functional <a href="#eq-energy" class="quarto-xref">Equation&nbsp;2</a> to find the energy excess relative to a uniform state of density <span class="math inline">\(n\)</span></p>
 <p><span class="math display">\[
-\Delta E = \int d\mathbf{r}\left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n^2}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2.
+\Delta E = \int d\mathbf{r}\left[\frac{n}{2m\xi^2}(f')^2+\frac{U_0}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2.
 \]</span></p>
 <p>The first integral is finite, and arises purely from the departure of the density away from its bulk value. The second represents the contribution to the kinetic energy arising from the winding of the vortex’s phase. Since we have</p>
 <p><span class="math display">\[
@@ -977,7 +977,7 @@ a_0=(m/4\pi)U_0,\qquad a_1=-(m/4\pi)\frac{U_0^2}{V}\sum_\mathbf{p}\frac{1}{2\til
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

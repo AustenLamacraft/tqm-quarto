@@ -367,7 +367,7 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <ul>
 <li>Phase can <em>increase</em> by a multiple of <span class="math inline">2\pi</span> around a closed loop, so <span class="math display">
 \oint \mathbf{v}_s\cdot d\mathbf{l}=\frac{2\pi \ell}{m},\quad \ell\in\mathbb{Z}
-</span> This is the <strong>Onsager–Feynmann quantization condition</strong></li>
+</span> This is the <strong>Onsager–Feynman quantization condition</strong></li>
 </ul>
 </section>
 <section class="slide level2 center">
@@ -425,13 +425,13 @@ H_\text{int.} &amp;= \sum_{j&lt;k} U(\mathbf{r}_j-\mathbf{r}_k) \\
 <li>Excess energy (relative to uniform state of density <span class="math inline">n</span>)</li>
 </ul>
 <p><span class="math display">
-\Delta E = \int d\mathbf{r}\left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n^2}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
+\Delta E = \int d\mathbf{r}\left[\frac{n}{2m\xi^2}(f')^2+\frac{U_0}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
 </span></p>
 </section>
 <section class="slide level2 center">
 
 <p><span class="math display">
-\Delta E = \int d\mathbf{r}\left[\frac{n^2}{2m\xi^2}(f')^2+\frac{U}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n^2}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
+\Delta E = \int d\mathbf{r}\left[\frac{n}{2m\xi^2}(f')^2+\frac{U_0}{2}n^2 \left(f^2-1\right)^2\right] + \frac{n}{2m}\int d\mathbf{r}\, f^2(\nabla\chi)^2
 </span></p>
 <ul>
 <li><p>First integral is finite: due to density <span class="math inline">\neq</span> bulk value</p></li>
@@ -981,7 +981,7 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}}
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: true,
+        history: false,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
@@ -1176,7 +1176,7 @@ e^{-\kappa_\mathbf{q}} = \sqrt{\frac{\epsilon(\mathbf{q})}{\omega(\mathbf{q})}}
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

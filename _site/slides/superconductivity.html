@@ -436,10 +436,8 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 \langle n^P_{\mathbf{p}}\rangle=v_\mathbf{p}^2=\left[1+\cos\theta_\mathbf{p}\right]/2,
 </span> so this corresponds to sharp Fermi step.</p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/sharp-step.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="superconductivity_files/mediabag/235a13118674eefcf5c2b7872c5d033144250956.svg">
 </div>
 </section>
 <section class="slide level2 center">
@@ -449,10 +447,8 @@ S_\mathbf{p}^+ \equiv b^\dagger_\mathbf{p},\quad S_\mathbf{p}^- \equiv b^{\vphan
 <li><p>Lowering of interaction energy more than compensates increase in kinetic energy that comes from smearing the step</p></li>
 <li><p>All angles <span class="math inline">\varphi_\mathbf{p}</span>, describing angle in x-y plane, should be equal</p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../assets/bcs-step.png" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
-</figure>
+<div class="tikz-figure" style="width: 60%;">
+<img data-src="superconductivity_files/mediabag/b4b7ecae37f2e8bd1ebda73912ce7314970a909b.svg">
 </div>
 </section>
 <section class="slide level2 center">
@@ -636,7 +632,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
         respondToHashChanges: true,
 
         // Push each slide change to the browser history
-        history: true,
+        history: false,
 
         // Enable keyboard shortcuts for navigation
         keyboard: true,
@@ -831,7 +827,7 @@ E_{s}(\mathbf{p})=\xi_{\mathbf{p}}[\overbrace{\left(1-\langle n^P_\mathbf{p}\ran
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

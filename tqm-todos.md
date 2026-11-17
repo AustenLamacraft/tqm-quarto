@@ -48,16 +48,15 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 - [ ] Two-magnon appendix: missing "= 0" in the c₁/c₂ consistency equation; clarify units in "−4 not −8" remark
 
 ### Lattice Models
-- [ ] Validity condition inverted: N_sites ≳ **(U/t)²**, not (t/U)²
-- [ ] Fermi–Hubbard: U Σ_j N_{j,↑}N_{j,↓} (site index missing)
+- [X] Validity condition inverted: N_sites ≳ **(U/t)²**, not (t/U)²
+- [X] Fermi–Hubbard: U Σ_j N_{j,↑}N_{j,↓} (site index missing)
 - [ ] i/j index mismatch in the opening Hamiltonian (recurs in Response: H_pert and T)
-- [ ] t–J aside: unclosed parenthesis; "constant term in Equation 9" points at the wrong equation
+- [X] t–J aside: unclosed parenthesis; "constant term in Equation 9" points at the wrong equation
 
 ### Bose Gas
 - [ ] **LHY appendix factor of 2**: prefactor should be V/(8π²m); E_reg = (8/15π²)(V/m)(mnU₀)^{5/2}, consistent with the (correct) 128/15√π in the E₀ formula below it
-- [ ] Vortex energy functional: kinetic pieces should carry n (not n²); "U" → U₀
-- [ ] "difference between N and N+1" → N and N−1
-- [ ] "Onsager–Feynmann" → Feynman
+- [X] Vortex energy functional: kinetic pieces should carry n (not n²); "U" → U₀
+- [X] "Onsager–Feynmann" → Feynman
 
 ### Fermi Gas
 - [ ] Galilean appendix: δk = **mv**, not v/m
