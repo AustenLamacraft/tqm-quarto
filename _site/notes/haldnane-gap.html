@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.35">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,10 +42,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-eaf1b1b3b917fc54f8695dfb7c29f238.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -337,8 +366,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#another-example-majumdarghosh-model" id="toc-another-example-majumdarghosh-model" class="nav-link active" data-scroll-target="#another-example-majumdarghosh-model"><span class="header-section-number">1</span> Another example: Majumdar–Ghosh model</a></li>
   <li><a href="#liebschultzmattis-theorem" id="toc-liebschultzmattis-theorem" class="nav-link" data-scroll-target="#liebschultzmattis-theorem"><span class="header-section-number">2</span> Lieb–Schultz–Mattis theorem</a></li>
-  <li><a href="#aklt" id="toc-aklt" class="nav-link" data-scroll-target="#aklt"><span class="header-section-number">3</span> AKLT</a></li>
-  <li><a href="#openais-proof" id="toc-openais-proof" class="nav-link" data-scroll-target="#openais-proof"><span class="header-section-number">4</span> OpenAI’s proof</a></li>
+  <li><a href="#haldane-conjecture" id="toc-haldane-conjecture" class="nav-link" data-scroll-target="#haldane-conjecture"><span class="header-section-number">3</span> Haldane conjecture</a></li>
+  <li><a href="#aklt" id="toc-aklt" class="nav-link" data-scroll-target="#aklt"><span class="header-section-number">4</span> AKLT</a>
+  <ul class="collapse">
+  <li><a href="#string-order" id="toc-string-order" class="nav-link" data-scroll-target="#string-order"><span class="header-section-number">4.1</span> String order</a></li>
+  </ul></li>
+  <li><a href="#openais-proof" id="toc-openais-proof" class="nav-link" data-scroll-target="#openais-proof"><span class="header-section-number">5</span> OpenAI’s proof</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="haldnane-gap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -382,23 +415,36 @@ Can't get these to work with tex output at the moment because they end up after 
 <li>AKLT</li>
 <li>What about the spin-1 chain?</li>
 </ol>
+<p><span class="math display">\[
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
+\]</span></p>
 <section id="another-example-majumdarghosh-model" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="another-example-majumdarghosh-model"><span class="header-section-number">1</span> Another example: Majumdar–Ghosh model</h2>
-<p>How do we handle finite size</p>
+<p><span class="math display">\[
+H_\text{MG} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
+\]</span></p>
+<p>How do we handle finite size?</p>
 </section>
 <section id="liebschultzmattis-theorem" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="liebschultzmattis-theorem"><span class="header-section-number">2</span> Lieb–Schultz–Mattis theorem</h2>
 <p>Based on exam question</p>
 </section>
-<section id="aklt" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="aklt"><span class="header-section-number">3</span> AKLT</h2>
+<section id="haldane-conjecture" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="haldane-conjecture"><span class="header-section-number">3</span> Haldane conjecture</h2>
+<p>Try to state sharply. Why did he think this?</p>
+</section>
+<section id="aklt" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="aklt"><span class="header-section-number">4</span> AKLT</h2>
 <p>Simple approach based on symmetry of wavefunction. Generalizations to higher dimensions</p>
+<p>Include figure</p>
 <p>Matrix product form?</p>
 <p>Use Feynman-Bijl to estimate</p>
-<p>String order</p>
+<section id="string-order" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="string-order"><span class="header-section-number">4.1</span> String order</h3>
 </section>
-<section id="openais-proof" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="openais-proof"><span class="header-section-number">4</span> OpenAI’s proof</h2>
+</section>
+<section id="openais-proof" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="openais-proof"><span class="header-section-number">5</span> OpenAI’s proof</h2>
 
 
 </section>

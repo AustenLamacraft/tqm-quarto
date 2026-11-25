@@ -415,7 +415,7 @@ Can you figure out why?
 
 :::
 
-Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum $\eta$ (__des Cloiseaux--Pearson__ dispersion)
+Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum $\eta$ (__des Cloizeaux--Pearson__ dispersion)
 
 $$
 \omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|,
@@ -530,14 +530,14 @@ This reduces the matrix dimension by a factor $N$ if $N$ is prime, otherwise the
 
 :::
 
-The result of finding the ground state energy in each sector is shown below, relative to the lowest energy, which is at $\eta=\pi$. The agreement with the des Cloiseaux--Pearson dispersion (obtained in the $N\to\infty$ limit) is quite good.
+The result of finding the ground state energy in each sector is shown below, relative to the lowest energy, which is at $\eta=\pi$. The agreement with the des Cloizeaux--Pearson dispersion (obtained in the $N\to\infty$ limit) is quite good.
 
 ::: {#fig-gs-energy}
 
 
 ![](../assets/Heisenberg_model_dispersion.png)
 
-The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloiseaux--Pearson dispersion @eq-dcp.
+The ground state energy of the Heisenberg chain for $L=26$ as a function of $\eta$, compared with the des Cloizeaux--Pearson dispersion @eq-dcp.
 
 :::
 

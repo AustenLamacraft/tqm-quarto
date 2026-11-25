@@ -44,7 +44,7 @@ Compiled from a review of the Notes at [tqm.tripos.org](https://tqm.tripos.org/)
 - [ ] Rotor energies: l(l+1), not L(L+1)
 - [ ] "zero quanta on the odd sites, but 2s quanta on the odd sites" — one should be *even*
 - [ ] Projector: P_η = (1/N)Σ_n e^{−iηn}Tⁿ (exponent and 1/N)
-- [ ] "des Cloiseaux" → **des Cloizeaux** (multiple places incl. figure caption; caption L=26 vs text N=26)
+- [X] "des Cloiseaux" → **des Cloizeaux** (multiple places incl. figure caption; caption L=26 vs text N=26)
 - [ ] Two-magnon appendix: missing "= 0" in the c₁/c₂ consistency equation; clarify units in "−4 not −8" remark
 
 ### Lattice Models

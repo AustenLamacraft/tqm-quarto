@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>The Haldane Gap – Theories of Quantum Matter</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../slides/many-body-wavefunctions.html" rel="next">
+<link href="../notes/response-and-correlation.html" rel="prev">
+<link href="../favicon-32x32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/haldane-gap.html">The Haldane Gap</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Theories of Quantum Matter</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TQM Lectures 2026</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many Body Wavefunctions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/elastic-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Elastic Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A is for Annihilation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">B is for Bunching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/fermi-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/superconductivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Superconductivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/response-and-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Response and Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/haldane-gap.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">The Haldane Gap</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Slides</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/many-body-wavefunctions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Many Body Wavefunctions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/quantum-hall-effect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantum Hall Effect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/elastic-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elastic Chain</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/spin-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spin Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A is for Annihilation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/more-second-quantization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">B is for Bunching</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/lattice-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lattice Models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/bose-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bose Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/fermi-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fermi Gas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/superconductivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Superconductivity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/response-and-correlation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Response and Correlation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Problem Sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problem-sets/problem-set-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../past-papers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Past Papers</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#proof-outline" id="toc-proof-outline" class="nav-link" data-scroll-target="#proof-outline"><span class="header-section-number">2</span> Proof outline</a>
+  <ul class="collapse">
+  <li><a href="#another-example-majumdarghosh-model" id="toc-another-example-majumdarghosh-model" class="nav-link" data-scroll-target="#another-example-majumdarghosh-model"><span class="header-section-number">2.1</span> Another example: Majumdar–Ghosh model</a></li>
+  <li><a href="#liebschultzmattis-theorem" id="toc-liebschultzmattis-theorem" class="nav-link" data-scroll-target="#liebschultzmattis-theorem"><span class="header-section-number">2.2</span> Lieb–Schultz–Mattis theorem</a></li>
+  <li><a href="#haldane-conjecture" id="toc-haldane-conjecture" class="nav-link" data-scroll-target="#haldane-conjecture"><span class="header-section-number">2.3</span> Haldane conjecture</a></li>
+  <li><a href="#the-aklt-model" id="toc-the-aklt-model" class="nav-link" data-scroll-target="#the-aklt-model"><span class="header-section-number">2.4</span> The AKLT model</a>
+  <ul class="collapse">
+  <li><a href="#matrix-product-state" id="toc-matrix-product-state" class="nav-link" data-scroll-target="#matrix-product-state"><span class="header-section-number">2.4.1</span> Matrix product state</a></li>
+  <li><a href="#spin-correlations" id="toc-spin-correlations" class="nav-link" data-scroll-target="#spin-correlations"><span class="header-section-number">2.4.2</span> Spin correlations</a></li>
+  <li><a href="#energy-gap" id="toc-energy-gap" class="nav-link" data-scroll-target="#energy-gap"><span class="header-section-number">2.4.3</span> Energy Gap</a></li>
+  <li><a href="#knabes-proof" id="toc-knabes-proof" class="nav-link" data-scroll-target="#knabes-proof"><span class="header-section-number">2.4.4</span> Knabe’s proof</a></li>
+  <li><a href="#string-order" id="toc-string-order" class="nav-link" data-scroll-target="#string-order"><span class="header-section-number">2.4.5</span> String order</a></li>
+  </ul></li>
+  <li><a href="#openais-proof" id="toc-openais-proof" class="nav-link" data-scroll-target="#openais-proof"><span class="header-section-number">2.5</span> OpenAI’s proof</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="haldane-gap.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/intro.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/haldane-gap.html">The Haldane Gap</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">The Haldane Gap</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<!-- See https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+<!-- 
+Can't get these to work with tex output at the moment because they end up after \begin{document}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\E}{\mathbb{E}} 
+-->
+</div>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>On 6th October 2026 OpenAI released 719 preprints containing mathematical results obtained by frontier AI model across a broad range of mathematics. Among the mathematical physics results was a <a href="https://github.com/openai/math/blob/main/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf">proof of the Haldane conjecture</a>, an important result in many-body physics dating from 1981<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. This conjecture states that the antiferromagnetic (<span class="math inline">\(J&gt;0\)</span>) Heisenberg chain is gapless for half integer spin and gapped for integer spin. The OpenAI result concerns the spin-1 case: see the introduction to their paper for a review of rigorous results obtained over the years.</p>
+<p>Some commentaries have now appeared on the Haldane gap work. See <a href="https://haltasaki.github.io/writings/AI/OpenAI_Haldane.html">Hal Tasaki</a> (recommended), <a href="https://www.overleaf.com/project/6ac5c7972379cb285bc961c3">Meng Cheng</a>. See also <a href="https://www.facebook.com/groups/288854938128878">this Facebook group</a>. Note that Tasaki also provides a discrete time version of the transfer matrix that sidesteps the tricky functional analysis of the original version. This might be a better target for formalization.</p>
+</section>
+<section id="proof-outline" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Proof outline</h1>
+<p>The purpose of this section is to outline the strategy of the OpenAI proof, identifying the required mathematical structures in order to survey the territory. The model under consideration is the spin-1 Heisenberg ferromagnet with periodic boundary conditions, described by the Hamiltonian</p>
+<p><span class="math display">\[
+H_L = \sum_{j=0}^{L-1} \sum_{\alpha=x,y,z} S^\alpha_j S^\alpha_{j+1}, \qquad S^\alpha_L = S^\alpha_0,
+\]</span></p>
+<p>where <span class="math inline">\(S^\alpha_j\)</span> is the <span class="math inline">\(\alpha\)</span> component of a spin 1 acting on site <span class="math inline">\(j\)</span>. The energy gap <span class="math inline">\(\gamma_L\)</span> is defined as</p>
+<p><span class="math display">\[
+\gamma_L = E_1(L) - E_0(L)
+\]</span></p>
+<p>where <span class="math inline">\(E_0(L)\)</span> is ground state energy of a chain of length <span class="math inline">\(L\)</span> and <span class="math inline">\(E_1(L)\)</span> is the next distinct energy. The energy gap in the thermodynamic limit is defined as</p>
+<p><span class="math display">\[
+\Delta_1 = \liminf_{\substack{L \to \infty \\ L \text{ even}}} \gamma_L
+\]</span></p>
+<p>Thus the goal is to prove <span class="math inline">\(\Delta_1 &gt; 0\)</span>, which is achieved by proving some <span class="math inline">\(L\)</span> independent lower bounds on <span class="math inline">\(\gamma_L\)</span> for <span class="math inline">\(L \geq 60\)</span>.</p>
+<p>OpenAI</p>
+<p>References: Tasaki book</p>
+<p>Outline</p>
+<ol type="1">
+<li>Reminder: the idea of a gap</li>
+<li>The Majumdar–Ghosh model</li>
+<li>Haldane conjecture: integer and half integer are different!</li>
+<li>AKLT</li>
+<li>What about the spin-1 chain?</li>
+</ol>
+<p><span class="math display">\[
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
+\]</span></p>
+<p>Dispersion relation</p>
+<p>Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum <span class="math inline">\(\eta\)</span> (<strong>des Cloizeaux–Pearson</strong> dispersion)</p>
+<p><span id="eq-dcp"><span class="math display">\[
+\omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|,
+\tag{1}\]</span></span></p>
+<div id="fig-gs-energy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-gs-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/Heisenberg_model_dispersion.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gs-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The ground state energy of the Heisenberg chain for <span class="math inline">\(L=26\)</span> as a function of <span class="math inline">\(\eta\)</span>, compared with the des Cloiseaux–Pearson dispersion <a href="#eq-dcp" class="quarto-xref">Equation&nbsp;1</a>.
+</figcaption>
+</figure>
+</div>
+<section id="another-example-majumdarghosh-model" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="another-example-majumdarghosh-model"><span class="header-section-number">2.1</span> Another example: Majumdar–Ghosh model</h2>
+<p>What else can happen in a spin-1/2 chain? There is another possibility: the ground state can be degenerate. The <a href="https://en.wikipedia.org/wiki/Majumdar%E2%80%93Ghosh_model">Majumdar–Ghosh model</a> has an exact ground state that nicely illustrates this possibility. Its Hamiltonian adds next nearest neighbour couplings to the Heisenberg chain <span class="math display">\[
+H_\text{MG} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{2} \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+2}.
+\]</span></p>
+<p>The strength of these new couplings has been chosen carefully so that the model can be written (up to an overall constant)</p>
+<p><span class="math display">\[
+H_\text{MG} = \frac{J}{4} \sum_{j=1}^N \left[\mathbf{s}_{j-1} + \mathbf{s}_{j} + \mathbf{s}_{j+1}\right]^2.
+\]</span></p>
+<p>Each term in the Hamiltonian involves the sum of three spins. By the usual angular momentum addition rules, the spin quantum number for such a sum can be 3/2, 1, or 1/2. Thus the lowest energy occurs when any three consecutive spins add to make <span class="math inline">\(S=1/2\)</span>. Since the <span class="math inline">\(S=1/2\)</span> space is of dimension <span class="math inline">\(2S+1=2\)</span>, there are two linearly independent ways to do this. This leads to the following two degenerate ground states</p>
+<p><img src="../assets/Majumdar-ghosh_gs.png" class="img-fluid"></p>
+<p>How do we handle finite size?</p>
+</section>
+<section id="liebschultzmattis-theorem" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="liebschultzmattis-theorem"><span class="header-section-number">2.2</span> Lieb–Schultz–Mattis theorem</h2>
+<p>The Majumdar–Ghosh model shows that a spin-1/2 chain can have a degenerate ground state. The Heisenberg chain shows that it can be gapless. The Lieb–Schultz–Mattis (LSM) theorem <span class="citation" data-cites="lieb1961two">Lieb et al. (<a href="#ref-lieb1961two" role="doc-biblioref">1961</a>)</span> says that, for half-integer spin, these are the only options: <em>a translationally invariant half-integer spin chain cannot have a unique ground state with a gap</em>. We follow the version of the argument given by <span class="citation" data-cites="affleck1986proof">Affleck and Lieb (<a href="#ref-affleck1986proof" role="doc-biblioref">1986</a>)</span>, applied to the Heisenberg chain of <span class="math inline">\(N\)</span> (even) spins with periodic boundary conditions,</p>
+<p><span class="math display">\[
+H = J\sum_{j=1}^N \mathbf{s}_j\cdot\mathbf{s}_{j+1},\qquad \mathbf{s}_{j+N} = \mathbf{s}_j.
+\]</span></p>
+<p>The argument only uses translation invariance, short-range interactions, and conservation of <span class="math inline">\(S^z = \sum_j s^z_j\)</span>, so it applies much more widely. Suppose the ground state <span class="math inline">\(\lvert{0}\rangle\)</span> is unique. It is then a singlet, so <span class="math inline">\(S^z\lvert{0}\rangle=0\)</span>, and it is an eigenstate of the translation operator <span class="math inline">\(T\)</span>, with <span class="math inline">\(T\mathbf{s}_jT^{-1} = \mathbf{s}_{j+1}\)</span>.</p>
+<p><strong>The twist.</strong> Consider the unitary</p>
+<p><span class="math display">\[
+U = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_j\right),
+\]</span></p>
+<p>which rotates the spin on site <span class="math inline">\(j\)</span> about the <span class="math inline">\(z\)</span>-axis by an angle <span class="math inline">\(2\pi j/N\)</span>. The twist through <span class="math inline">\(2\pi\)</span> is spread over the whole chain, so neighbouring spins are rotated by only <span class="math inline">\(2\pi/N\)</span> relative to each other.</p>
+<p>To see how operators transform under this unitary rotation, recall the <strong>Hadamard lemma</strong></p>
+<p><span class="math display">\[
+e^{A}Be^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \frac{1}{3!}[A,[A,[A,B]]] + \cdots
+\]</span></p>
+<p>Applying the lemma with <span class="math inline">\([s^z_j, s^\pm_j] = \pm s^\pm_j\)</span> gives <span class="math inline">\(U s^\pm_j U^\dagger = e^{\pm 2\pi i j/N}s^\pm_j\)</span>, while <span class="math inline">\(s^z_j\)</span> is unchanged. The transformed Hamiltonian is then</p>
+<p><span class="math display">\[
+H' = UHU^\dagger = J\sum_{j=1}^N\left[\frac{1}{2}\left(e^{-2\pi i/N}s^+_js^-_{j+1} + e^{2\pi i/N}s^-_js^+_{j+1}\right) + s^z_js^z_{j+1}\right].
+\]</span></p>
+<p>The boundary bond from site <span class="math inline">\(N\)</span> to site <span class="math inline">\(1\)</span> gets the same phase, because <span class="math inline">\(e^{2\pi i N/N}=1\)</span>: this is why the twist must total exactly <span class="math inline">\(2\pi\)</span>.</p>
+<p><strong>Orthogonality.</strong> Next we show that <span class="math inline">\(U^\dagger\lvert{0}\rangle\)</span> is orthogonal to <span class="math inline">\(\lvert{0}\rangle\)</span>. Translating the twist gives</p>
+<p><span class="math display">\[
+TUT^{-1} = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_{j+1}\right) = U\, e^{-2\pi i S^z/N}\, e^{2\pi i s^z_1}.
+\]</span></p>
+<p>Here <span class="math inline">\(e^{2\pi i s^z_1}\)</span>, a <span class="math inline">\(2\pi\)</span> rotation of a single spin, is <span class="math inline">\((-1)^{2s}\)</span> times the identity. Since <span class="math inline">\(\lvert{0}\rangle\)</span> is translationally invariant and has <span class="math inline">\(S^z=0\)</span>,</p>
+<p><span class="math display">\[
+\langle{0}\rvert U \lvert 0 \rangle = \langle{0}\rvert TUT^{-1} \lvert 0 \rangle = (-1)^{2s}\langle{0}\rvert U \lvert 0 \rangle.
+\]</span></p>
+<p>For half-integer <span class="math inline">\(s\)</span>, it follows that <span class="math inline">\(\langle{0}\rvert U \lvert 0 \rangle=0\)</span>. Equivalently, <span class="math inline">\(U\lvert{0}\rangle\)</span> has momentum shifted by <span class="math inline">\(\pi\)</span> relative to <span class="math inline">\(\lvert{0}\rangle\)</span>.</p>
+<p><strong>Variational bound.</strong> <span class="math inline">\(U^\dagger\lvert{0}\rangle\)</span> is orthogonal to the ground state, so its energy is an upper bound on <span class="math inline">\(E_1\)</span>:</p>
+<p><span class="math display">\[
+E_1 - E_0 \leq \langle{0}\rvert H' \lvert 0 \rangle - \langle{0}\rvert H \lvert 0 \rangle = \frac{J}{2}\sum_{j=1}^N\left\langle\left(e^{-2\pi i/N}-1\right)s^+_js^-_{j+1} + \left(e^{2\pi i/N}-1\right)s^-_js^+_{j+1}\right\rangle.
+\]</span></p>
+<p>Reflection symmetry <span class="math inline">\(j\to -j\)</span> gives <span class="math inline">\(\langle s^+_js^-_{j+1}\rangle = \langle s^-_js^+_{j+1}\rangle\)</span>. Using that, and then translation and spin-rotation invariance,</p>
+<p><span class="math display">\[
+E_1 - E_0 \leq J\left(1-\cos\frac{2\pi}{N}\right)\cdot\frac{2N}{3}\lvert{\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle}\rvert \simeq \frac{4\pi^2 J}{3N}\lvert{\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle}\rvert \to 0.
+\]</span></p>
+<p>The intuition is that the twist costs energy <span class="math inline">\(\sim(2\pi/N)^2\)</span> on each of <span class="math inline">\(N\)</span> bonds. So either the ground state is degenerate (as in Majumdar–Ghosh), or there are excitations with energy <span class="math inline">\(O(1/N)\)</span> (as in Heisenberg).</p>
+<p>The argument fails at exactly one step for integer spin: <span class="math inline">\((-1)^{2s}=+1\)</span>, and <span class="math inline">\(U^\dagger\lvert{0}\rangle\)</span> need not be orthogonal to <span class="math inline">\(\lvert{0}\rangle\)</span>. This leaves room for a unique gapped ground state. The AKLT model shows that this really happens.</p>
+</section>
+<section id="haldane-conjecture" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="haldane-conjecture"><span class="header-section-number">2.3</span> Haldane conjecture</h2>
+<p>Try to state sharply. Why did he think this?</p>
+</section>
+<section id="the-aklt-model" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="the-aklt-model"><span class="header-section-number">2.4</span> The AKLT model</h2>
+<p>The Affleck–Kennedy–Lieb–Tasaki (AKLT) model <span class="citation" data-cites="affleck1988valence">Affleck et al. (<a href="#ref-affleck1988valence" role="doc-biblioref">1988</a>)</span> is a spin-1 chain that, like the Majumdar–Ghosh model, has an exact ground state. Again, its Hamiltonian is a special modifcation of the Heisenberg spin chain <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[
+H_\text{AKLT} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{3} \sum_{j=1}^N \left(\mathbf{s}_j \cdot \mathbf{s}_{j+1}\right)^2.
+\]</span></p>
+<p>Again, the relative magnitude of the two terms has been carefully chosen, in this case so that the Hamiltonian may be put in the form (up to a constant)</p>
+<p><span id="eq-aklt-proj"><span class="math display">\[
+H_\text{AKLT} = 2J \sum_{j=1}^N P^{(2)}_{j,j+1},
+\tag{2}\]</span></span></p>
+<p>where <span class="math inline">\(P^{(2)}_{j,j+1}\)</span> projects two neighbouring spins on to the subspace of total spin-2.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Show this. The key is to consider the sum of the two neighbouring spins <span class="math inline">\(\mathbf{s}_j + \mathbf{s}_{j+1}\)</span>, which may have <span class="math inline">\(S=2,1\)</span>, or <span class="math inline">\(0\)</span>, so that</p>
+<p><span class="math display">\[
+\left(\mathbf{s}_j + \mathbf{s}_{j+1}\right)^2 = S(S+1) = 6, 2, 0.
+\]</span></p>
+<p>This means that the combination <span class="math inline">\(\left(\mathbf{s}_j + \mathbf{s}_{j+1}\right)^4 - 2\left(\mathbf{s}_j + \mathbf{s}_{j+1}\right)^2\)</span> gives zero on the spin-0 and spin-1 subspaces, projecting onto spin-2.</p>
+</div>
+</div>
+<p>Frustration freeness… definition</p>
+<p>To understand the ground state of the AKLT chain, it’s useful to imagine that the spin-1 <span class="math inline">\(\mathbf{s}_j\)</span> on each site is comprised of two spin-1/2: <span class="math inline">\(s_{j,L/R}\)</span>. The ground state is then constructed in two steps. First, we create singlets between neighbouring sites: that is, between <span class="math inline">\(\mathbf{s}_{j,R}\)</span> and <span class="math inline">\(\mathbf{s}_{j+1,L}\)</span>, and between <span class="math inline">\(\mathbf{s}_{j,L}\)</span> and <span class="math inline">\(\mathbf{s}_{j-1,R}\)</span>. Note that this is just the same as one of the Majumdar–Ghosh ground states. Next, we project each pair <span class="math inline">\(\mathbf{s}_{j,L/R}\)</span> onto spin-1.</p>
+<div id="fig-aklt-state" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aklt-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../assets/AKLT_GroundState.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aklt-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Schematic construction of the AKLT ground state in terms of a pair of spin-1/2 at each site. Source: <a href="https://en.wikipedia.org/wiki/AKLT_model">Wikipedia</a>.
+</figcaption>
+</figure>
+</div>
+<p>Why does this yield the (unique) ground state of the model? Recall that the Hamiltonian <a href="#eq-aklt-proj" class="quarto-xref">Equation&nbsp;2</a> is written in terms of spin-2 projectors for neighbouring sites. We will show that the above construction has no component in the spin-2 subspace for each pair of neighbouring spins, and so vanishes when the projection operator is applied.</p>
+<p>The two spin-1s correspond two four spin-1/2s in the above picture. The wavefunction of four spin-1/2s in the usual basis is <span class="math inline">\(\Psi_{l_1 r_1 l_2 r_2}\)</span> where each of the indices can be <span class="math inline">\(\uparrow\)</span> or <span class="math inline">\(\downarrow\)</span>. There are <span class="math inline">\(2^4=16\)</span> components, as expected.</p>
+<p>A spin-2 state is a <em>totally symmetric</em> wavefunction: the easiest way to see this is to note that <span class="math inline">\(l_1=r_1=l_2=r_2=\uparrow\)</span> corresponds to <span class="math inline">\(S^z_\text{tot}=s^z_{l_1}+s^z_{r_1}+s^z_{l_2}+s^z_{r_2}=2\)</span>. This must be a <span class="math inline">\(S_\text{tot}=2\)</span> state (four spin-1/2 can make at most <span class="math inline">\(S=2\)</span>). The remaining 4 states in the multiplet may be found by applying <span class="math inline">\(S^-_\text{tot}\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The symmetric states <span class="math inline">\(\Psi_{s_1\cdots s_N}=\Psi_{(s_1\cdots s_N)}\)</span> of <span class="math inline">\(N\)</span> spin-1/2s are the <span class="math inline">\(S_\text{tot}=N/2\)</span> states. There span a subspace of dimension <span class="math inline">\(N+1=2S_\text{tot}+1\)</span>, as they should.</p>
+</div>
+</div>
+<p>Now it’s easy to see why the AKLT construction works. The full wavefunction of the chain <span class="math inline">\(\Psi_{\cdots l_j r_j l_{j+1} r_{j+1}\dots}\)</span> must be antisymmetric in the <span class="math inline">\(r_j\)</span>, <span class="math inline">\(l_{j+1}\)</span> indices and symmetric in the <span class="math inline">\(l_j\)</span>, <span class="math inline">\(r_j\)</span> indices</p>
+<p><span class="math display">\[
+\Psi_{\cdots l_j r_j l_{j+1} r_{j+1}\cdots} = \Psi_{\cdots l_j [r_j l_{j+1}] r_{j+1}\cdots}=\Psi_{\cdots (l_j r_j) l_{j+1} r_{j+1}\cdots} = \Psi_{\cdots l_j r_j (l_{j+1} r_{j+1})\cdots}.
+\]</span></p>
+<p><span class="math inline">\(P^{(2)}_{j,j+1}\)</span> acts by symmetrizing over <span class="math inline">\(l_j\)</span>, <span class="math inline">\(r_j\)</span>, <span class="math inline">\(l_{j+1}\)</span>, and <span class="math inline">\(r_{j+1}\)</span>, and this must give zero.</p>
+<p>Generalizations to higher dimensions??</p>
+<section id="matrix-product-state" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="matrix-product-state"><span class="header-section-number">2.4.1</span> Matrix product state</h3>
+<p>The two-step construction translates directly into a compact formula for the wavefunction. Write the projection of <span class="math inline">\((l_j, r_j)\)</span> onto the spin-1 state <span class="math inline">\(m_j\in\{+,0,-\}\)</span> as a <span class="math inline">\(2\times 2\)</span> matrix <span class="math inline">\(C^{m}_{l r}\)</span>:</p>
+<p><span class="math display">\[
+C^+ = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix},\qquad
+C^0 = \frac{1}{\sqrt{2}}\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix},\qquad
+C^- = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix},
+\]</span></p>
+<p>and the singlet between <span class="math inline">\(r_j\)</span> and <span class="math inline">\(l_{j+1}\)</span> as <span class="math inline">\(\epsilon_{r l}\)</span>, with <span class="math inline">\(\epsilon = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\)</span> (up to normalization). Summing over all the spin-1/2 indices then turns the chain of contractions into a product of matrices. For periodic boundary conditions this gives</p>
+<p><span id="eq-aklt-mps"><span class="math display">\[
+\Psi_{m_1 m_2\cdots m_N} = \operatorname{Tr}\left[A^{m_1}A^{m_2}\cdots A^{m_N}\right],\qquad A^m \propto C^m\epsilon,
+\tag{3}\]</span></span></p>
+<p>and explicitly</p>
+<p><span class="math display">\[
+A^+ = \sqrt{\tfrac{2}{3}}\,\sigma^+,\qquad A^0 = -\frac{1}{\sqrt{3}}\,\sigma^z,\qquad A^- = -\sqrt{\tfrac{2}{3}}\,\sigma^-,
+\]</span></p>
+<p>where the factors are chosen so that <span class="math inline">\(\sum_m A^m A^{m\dagger} = \mathbb{1}\)</span>. A state of this form is called a <em>matrix product state</em> (MPS). The internal <span class="math inline">\(2\times 2\)</span> index, the <em>bond dimension</em>, is the spin-1/2 that is shared out in a singlet between neighbouring sites. Even though the Hilbert space has dimension <span class="math inline">\(3^N\)</span>, the whole state is fixed by just three <span class="math inline">\(2\times 2\)</span> matrices. With open boundary conditions the trace is replaced by boundary vectors <span class="math inline">\(u^\dagger A^{m_1}\cdots A^{m_N} v\)</span>. The free choice of <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> gives a four-fold degenerate ground state, corresponding to the unpaired spin-1/2 left at each end of the chain.</p>
+</section>
+<section id="spin-correlations" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="spin-correlations"><span class="header-section-number">2.4.2</span> Spin correlations</h3>
+<p>The MPS form makes expectation values easy to compute. Since the <span class="math inline">\(A^m\)</span> are real, the norm of the state is</p>
+<p><span class="math display">\[
+\langle{\Psi}\rvert \Psi \rangle = \sum_{m_1\cdots m_N} \operatorname{Tr}\left[A^{m_1}\cdots A^{m_N}\right]\operatorname{Tr}\left[A^{m_1}\cdots A^{m_N}\right] = \operatorname{Tr}\left[\mathcal{E}^N\right],
+\]</span></p>
+<p>where the <span class="math inline">\(4\times 4\)</span> <em>transfer matrix</em> is</p>
+<p><span class="math display">\[
+\mathcal{E}= \sum_m A^m \otimes A^m.
+\]</span></p>
+<p>The sum over each physical index <span class="math inline">\(m_j\)</span> is done once, leaving a product of transfer matrices acting on the two bond indices (one from the ket, one from the bra). We can just as well regard <span class="math inline">\(\mathcal{E}\)</span> as a linear map on <span class="math inline">\(2\times 2\)</span> matrices <span class="math inline">\(X\)</span>, <span class="math inline">\(\mathcal{E}(X) = \sum_m A^m X A^{m\dagger}\)</span>. Using <span class="math inline">\(\sigma^+ X\sigma^- + \sigma^- X \sigma^+ = \frac{1}{2}\left(\sigma^x X \sigma^x + \sigma^y X\sigma^y\right)\)</span>, this is</p>
+<p><span class="math display">\[
+\mathcal{E}(X) = \frac{1}{3}\sum_{a=x,y,z} \sigma^a X \sigma^a.
+\]</span></p>
+<p>The eigenvalues follow immediately from <span class="math inline">\(\sum_a \sigma^a\sigma^b\sigma^a = -\sigma^b\)</span>:</p>
+<p><span class="math display">\[
+\mathcal{E}(\mathbb{1}) = \mathbb{1},\qquad \mathcal{E}(\sigma^b) = -\frac{1}{3}\sigma^b.
+\]</span></p>
+<p>So <span class="math inline">\(\mathcal{E}\)</span> has a unique largest eigenvalue <span class="math inline">\(1\)</span> and a three-fold degenerate eigenvalue <span class="math inline">\(-1/3\)</span>. These correspond to the singlet and triplet in the decomposition <span class="math inline">\(\frac{1}{2}\otimes\frac{1}{2} = 0\oplus 1\)</span> of the two bond indices. In particular, <span class="math inline">\(\langle{\Psi}\rvert \Psi \rangle = 1 + 3(-1/3)^N \to 1\)</span> as <span class="math inline">\(N\to\infty\)</span>.</p>
+<p>To include an operator <span class="math inline">\(O\)</span> at site <span class="math inline">\(j\)</span>, we replace the transfer matrix there by <span class="math inline">\(\mathcal{E}_O(X) = \sum_{m,m'} O_{mm'} A^{m'} X A^{m\dagger}\)</span>. For <span class="math inline">\(S^z\)</span> (eigenvalues <span class="math inline">\(m=\pm1, 0\)</span>),</p>
+<p><span class="math display">\[
+\mathcal{E}_{S^z}(X) = \frac{2}{3}\left(\sigma^+ X\sigma^- - \sigma^- X\sigma^+\right),\qquad \mathcal{E}_{S^z}(\mathbb{1}) = \frac{2}{3}\sigma^z,\quad \mathcal{E}_{S^z}(\sigma^z) = -\frac{2}{3}\mathbb{1}.
+\]</span></p>
+<p>In the limit <span class="math inline">\(N\to\infty\)</span> the remaining <span class="math inline">\(\mathcal{E}^{N-r-1}\)</span> projects onto the leading eigenvector <span class="math inline">\(\mathbb{1}\)</span>, with the trace <span class="math inline">\(\frac{1}{2}\operatorname{Tr}[\cdots]\)</span> closing the chain. Then for <span class="math inline">\(r\geq 1\)</span></p>
+<p><span id="eq-aklt-corr"><span class="math display">\[
+\langle S^z_0 S^z_r\rangle = \frac{1}{2}\operatorname{Tr}\left[\mathcal{E}_{S^z}\left(\mathcal{E}^{r-1}\left(\mathcal{E}_{S^z}(\mathbb{1})\right)\right)\right] = \frac{1}{2}\operatorname{Tr}\left[\mathcal{E}_{S^z}\left(\frac{2}{3}\left(-\frac{1}{3}\right)^{r-1}\sigma^z\right)\right] = \frac{4}{3}\left(-\frac{1}{3}\right)^r.
+\tag{4}\]</span></span></p>
+<p>By <span class="math inline">\(SU(2)\)</span> symmetry the same holds for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> components. The correlations are antiferromagnetic but decay exponentially, <span class="math inline">\(\lvert{\langle S^z_0 S^z_r\rangle}\rvert\propto e^{-r/\xi}\)</span>, with correlation length</p>
+<p><span class="math display">\[
+\xi = \frac{1}{\log 3} \approx 0.91.
+\]</span></p>
+<p>The correlation length is set by the ratio of the second largest eigenvalue of the transfer matrix to the largest. This is a general feature of MPS with a unique leading eigenvalue: correlations always decay exponentially. Compare this with the spin-1/2 Heisenberg chain, where correlations decay as a power law. That is what we expect for a gapless system. Exponential decay is consistent with a gapped ground state, but it doesn’t prove the gap. We still have to show this separately.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Show that <a href="#eq-aklt-corr" class="quarto-xref">Equation&nbsp;4</a> gives the energy per bond: <span class="math inline">\(\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle = -4/3\)</span>. Use the transfer matrix to find <span class="math inline">\(\langle (\mathbf{s}_j\cdot\mathbf{s}_{j+1})^2\rangle\)</span> and check that <span class="math inline">\(\langle H_\text{AKLT}\rangle\)</span> agrees with the ground state energy <span class="math inline">\(-2J/3\)</span> per bond. This is the value for which <span class="math inline">\(P^{(2)}_{j,j+1}\)</span> has zero expectation.</p>
+</div>
+</div>
+</section>
+<section id="energy-gap" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="energy-gap"><span class="header-section-number">2.4.3</span> Energy Gap</h3>
+<p>The AKLT ground state is exact, but its excitations are not. We can still get an upper bound on the dispersion relation, following Feynman and Bijl’s treatment of excitations in superfluid helium. We take as a variational state for an excitation of momentum <span class="math inline">\(k\)</span></p>
+<p><span class="math display">\[
+\lvert{k}\rangle = S^z_k\lvert{\Psi}\rangle,\qquad S^z_k = \sum_j e^{ikj} S^z_j.
+\]</span></p>
+<p>For <span class="math inline">\(k\neq 0\)</span> this is orthogonal to the ground state, since it has a different momentum. It is also a spin-1 state, because <span class="math inline">\(\lvert{\Psi}\rangle\)</span> is a singlet. So its energy gives an upper bound on the lowest triplet excitation at momentum <span class="math inline">\(k\)</span>:</p>
+<p><span id="eq-feynman-bijl"><span class="math display">\[
+\epsilon(k) \leq \frac{\langle{\Psi}\rvert S^z_{-k}\left(H - E_0\right)S^z_k \lvert \Psi \rangle}{\langle{\Psi}\rvert S^z_{-k}S^z_k \lvert \Psi \rangle} \equiv \frac{f(k)}{s(k)}.
+\tag{5}\]</span></span></p>
+<p>The denominator is the <em>static structure factor</em>. Per site, it is the Fourier transform of the correlation function we just found:</p>
+<p><span class="math display">\[
+s(k) = \frac{1}{N}\langle{\Psi}\rvert S^z_{-k}S^z_k \lvert \Psi \rangle = \sum_r e^{ikr}\langle S^z_0 S^z_r\rangle.
+\]</span></p>
+<p>Using <a href="#eq-aklt-corr" class="quarto-xref">Equation&nbsp;4</a> for <span class="math inline">\(r\neq 0\)</span>, together with <span class="math inline">\(\langle (S^z_0)^2\rangle = 2/3\)</span>, the sum is geometric:</p>
+<p><span class="math display">\[
+s(k) = \frac{2}{3} + \frac{8}{3}\sum_{r=1}^\infty \left(-\frac{1}{3}\right)^r\cos kr = \frac{2(1-\cos k)}{5+3\cos k}.
+\]</span></p>
+<p>This vanishes at <span class="math inline">\(k=0\)</span>, where <span class="math inline">\(S^z_0\)</span> is the conserved total spin, which annihilates the singlet. It peaks at <span class="math inline">\(k=\pi\)</span>, reflecting the short-range antiferromagnetic order.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>The f-sum rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The numerator can be written as a double commutator. Since <span class="math inline">\((H-E_0)\lvert{\Psi}\rangle=0\)</span>,</p>
+<p><span class="math display">\[
+\langle{\Psi}\rvert S^z_{-k}\left(H - E_0\right)S^z_k \lvert \Psi \rangle = \langle{\Psi}\rvert S^z_{-k}\left[H, S^z_k\right] \lvert \Psi \rangle.
+\]</span></p>
+<p>Using inversion symmetry (<span class="math inline">\(k\to -k\)</span>) to symmetrize,</p>
+<p><span class="math display">\[
+f(k) = \frac{1}{2N}\langle{\Psi}\rvert \left[S^z_{-k},\left[H, S^z_k\right]\right] \lvert \Psi \rangle.
+\]</span></p>
+<p>Inserting a complete set of eigenstates <span class="math inline">\(\lvert{n}\rangle\)</span> shows that this is the first frequency moment of the dynamical structure factor <span class="math inline">\(S(k,\omega)\)</span>:</p>
+<p><span class="math display">\[
+f(k) = \frac{1}{N}\sum_n (E_n-E_0)\lvert{\langle{n}\rvert S^z_k \lvert \Psi \rangle}\rvert^2 = \int_0^\infty \omega\, S(k,\omega)\,d\omega.
+\]</span></p>
+<p>The double commutator only involves the bonds that don’t commute with <span class="math inline">\(S^z_k\)</span>. For a Hamiltonian with nearest-neighbour terms, it is therefore a sum of local ground state expectation values, which we can evaluate with the transfer matrix. For <span class="math inline">\(H_\text{AKLT}\)</span> one finds</p>
+<p><span class="math display">\[
+f(k) = \frac{20}{27}J\left(1-\cos k\right).
+\]</span></p>
+<p>For the pure Heisenberg chain the corresponding result is <span class="math inline">\(f(k) = -\frac{2}{3}J(1-\cos k)\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle\)</span>.</p>
+</div>
+</div>
+<p><a href="#eq-feynman-bijl" class="quarto-xref">Equation&nbsp;5</a> then gives the <em>single mode approximation</em> of <span class="citation" data-cites="arovas1988extended">Arovas et al. (<a href="#ref-arovas1988extended" role="doc-biblioref">1988</a>)</span>:</p>
+<p><span class="math display">\[
+\epsilon(k) \leq \frac{10J}{27}\left(5 + 3\cos k\right).
+\]</span></p>
+<p>The minimum is at <span class="math inline">\(k=\pi\)</span>, with <span class="math inline">\(\epsilon(\pi)\leq 20J/27 \approx 0.74J\)</span>. Numerics give a gap of <span class="math inline">\(\approx 0.70J\)</span>, so the bound is remarkably close. The factor of <span class="math inline">\(1-\cos k\)</span> in the numerator cancels the one in <span class="math inline">\(s(k)\)</span>. The bound stays nonzero at <span class="math inline">\(k=\pi\)</span> because the structure factor is finite there, which in turn is because the correlation length is finite. In the Heisenberg spin-1/2 chain, <span class="math inline">\(s(k)\)</span> diverges at <span class="math inline">\(k=\pi\)</span>, and the same argument gives a vanishing upper bound, consistent with that chain being gapless.</p>
+<p>This is only an <em>upper</em> bound. It shows that there is a triplet mode with <span class="math inline">\(\epsilon(\pi)\lesssim 0.74J\)</span>. It does not show that the gap is nonzero, which requires a <em>lower</em> bound on <span class="math inline">\(E_1 - E_0\)</span>. For the AKLT model that lower bound was proved in <span class="citation" data-cites="affleck1988valence">Affleck et al. (<a href="#ref-affleck1988valence" role="doc-biblioref">1988</a>)</span>, by a different argument.</p>
+</section>
+<section id="knabes-proof" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="knabes-proof"><span class="header-section-number">2.4.4</span> Knabe’s proof</h3>
+<p>A particularly simple proof of the gap is due to <span class="citation" data-cites="knabe1988energy">Knabe (<a href="#ref-knabe1988energy" role="doc-biblioref">1988</a>)</span>. It uses only two properties of the model. The first is that <span class="math inline">\(H_\text{AKLT}\)</span> is a sum of projectors. The second is that it is <em>frustration free</em>: the ground state minimizes every term separately. Set <span class="math inline">\(2J=1\)</span> and write</p>
+<p><span class="math display">\[
+H = \sum_{i=1}^N P_i,\qquad P_i \equiv P^{(2)}_{i,i+1},\qquad P_i^2 = P_i,\qquad H\lvert{\Psi}\rangle=0.
+\]</span></p>
+<p>The strategy is to prove an <em>operator</em> inequality of the form</p>
+<p><span class="math display">\[
+H^2 \geq \delta H, \qquad \delta&gt;0.
+\]</span></p>
+<p>Applied to an eigenstate with energy <span class="math inline">\(E\)</span>, this gives <span class="math inline">\(E^2\geq \delta E\)</span>, so either <span class="math inline">\(E=0\)</span> or <span class="math inline">\(E\geq\delta\)</span>. Since <span class="math inline">\(H\geq 0\)</span> with ground state energy zero, <span class="math inline">\(\delta\)</span> is then a lower bound on the gap. The point is that <span class="math inline">\(H^2\)</span> can be bounded using only <em>local</em> information.</p>
+<p>Squaring <span class="math inline">\(H\)</span>,</p>
+<p><span class="math display">\[
+H^2 = H + \sum_{d\geq 1} R_d,\qquad R_d = \sum_i \left\{P_i, P_{i+d}\right\}.
+\]</span></p>
+<p>Projectors on bonds that don’t share a site commute, so for <span class="math inline">\(d\geq 2\)</span> each <span class="math inline">\(P_iP_{i+d}\)</span> is itself a projector, and <span class="math inline">\(R_d\geq 0\)</span>. The only troublesome term is <span class="math inline">\(R_1\)</span>, the anticommutators of neighbouring bonds, which need not be positive. Knabe’s idea is to control them using a <em>finite</em> open chain. Let</p>
+<p><span class="math display">\[
+h_j = \sum_{i=j}^{j+m-1} P_i
+\]</span></p>
+<p>be the Hamiltonian of the <span class="math inline">\(m\)</span> bonds (<span class="math inline">\(m+1\)</span> sites) starting at site <span class="math inline">\(j\)</span>. Let <span class="math inline">\(\delta_m\)</span> be its gap, meaning its smallest nonzero eigenvalue. The lowest eigenvalue is zero by frustration freeness. Since <span class="math inline">\(h_j\geq 0\)</span> with spectrum in <span class="math inline">\(\{0\}\cup[\delta_m,\infty)\)</span>, we have <span class="math inline">\(h_j^2\geq \delta_m h_j\)</span>. Summing over all <span class="math inline">\(N\)</span> windows, <span class="math inline">\(\sum_j h_j = mH\)</span>, so</p>
+<p><span class="math display">\[
+\sum_j h_j^2 \geq m\,\delta_m H.
+\]</span></p>
+<p>On the other hand, expand each <span class="math inline">\(h_j^2\)</span> and count how often each term appears. Each <span class="math inline">\(P_i\)</span> lies in <span class="math inline">\(m\)</span> windows, and each pair at distance <span class="math inline">\(d\)</span> in <span class="math inline">\(m-d\)</span> windows. Since <span class="math inline">\(m-d\leq m-1\)</span> and <span class="math inline">\(R_d\geq 0\)</span> for <span class="math inline">\(d\geq 2\)</span>,</p>
+<p><span class="math display">\[
+\sum_j h_j^2 = mH + (m-1)R_1 + \sum_{d=2}^{m-1}(m-d)R_d \leq mH + (m-1)\sum_{d\geq 1}R_d = mH + (m-1)\left(H^2 - H\right).
+\]</span></p>
+<p>Combining the two inequalities gives an operator inequality for the full chain:</p>
+<p><span class="math display">\[
+H^2 \geq \frac{m\delta_m - 1}{m-1}\, H.
+\]</span></p>
+<p>Applied to any eigenstate with <span class="math inline">\(E&gt;0\)</span>, this gives Knabe’s bound (valid for <span class="math inline">\(N\)</span> large compared with <span class="math inline">\(m\)</span>):</p>
+<p><span id="eq-knabe"><span class="math display">\[
+\gamma_N \geq \frac{m}{m-1}\left(\delta_m - \frac{1}{m}\right).
+\tag{6}\]</span></span></p>
+<p>Thus <em>a gap of the infinite chain follows from a gap on a finite chain</em>. All we need is <span class="math inline">\(\delta_m &gt; 1/m\)</span> for some <span class="math inline">\(m\)</span>. This is a finite computation. Exact diagonalization of open chains gives</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">sites <span class="math inline">\(m+1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\delta_m\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(1/m\)</span></th>
+<th style="text-align: center;">bound <a href="#eq-knabe" class="quarto-xref">Equation&nbsp;6</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0.500</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.449</td>
+<td style="text-align: center;">0.333</td>
+<td style="text-align: center;">0.173</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.398</td>
+<td style="text-align: center;">0.200</td>
+<td style="text-align: center;">0.248</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">0.367</td>
+<td style="text-align: center;">0.100</td>
+<td style="text-align: center;">0.296</td>
+</tr>
+</tbody>
+</table>
+<p>So four sites already suffice. The gap of the AKLT chain is at least <span class="math inline">\(0.173\)</span> in units of <span class="math inline">\(2J\)</span>, i.e.&nbsp;<span class="math inline">\(\gamma \geq 0.35J\)</span>. The bound improves with <span class="math inline">\(m\)</span> towards the true value <span class="math inline">\(\approx 0.350\)</span> (<span class="math inline">\(\approx 0.70J\)</span>), which is sandwiched with the Feynman–Bijl upper bound <span class="math inline">\(20J/27\)</span>.</p>
+<p>Note the contrast with the Heisenberg chain. The argument works because <span class="math inline">\(H_\text{AKLT}\)</span> is frustration free: the ground state of each <span class="math inline">\(h_j\)</span> also has energy zero. That is not true of the spin-1 Heisenberg chain, which is why the Haldane conjecture needed a very different approach.</p>
+</section>
+<section id="string-order" class="level3" data-number="2.4.5">
+<h3 data-number="2.4.5" class="anchored" data-anchor-id="string-order"><span class="header-section-number">2.4.5</span> String order</h3>
+</section>
+</section>
+<section id="openais-proof" class="level2" data-number="2.5">
+
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">2.5 OpenAI’s proof</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-affleck1988valence" class="csl-entry" role="listitem">
+Affleck, Ian, Tom Kennedy, Elliott H Lieb, and Hal Tasaki. 1988. <span>“Valence Bond Ground States in Isotropic Quantum Antiferromagnets.”</span> <em>Communications in Mathematical Physics</em> 115 (3): 477–528.
+</div>
+<div id="ref-affleck1986proof" class="csl-entry" role="listitem">
+Affleck, Ian, and Elliott H Lieb. 1986. <span>“A Proof of Part of <span>H</span>aldane’s Conjecture on Spin Chains.”</span> <em>Letters in Mathematical Physics</em> 12 (1): 57–69.
+</div>
+<div id="ref-arovas1988extended" class="csl-entry" role="listitem">
+Arovas, Daniel P, Assa Auerbach, and F D M Haldane. 1988. <span>“Extended <span>H</span>eisenberg Models of Antiferromagnetism: Analogies to the Fractional Quantum <span>H</span>all Effect.”</span> <em>Physical Review Letters</em> 60 (6): 531.
+</div>
+<div id="ref-haldane2017nobel" class="csl-entry" role="listitem">
+Haldane, F Duncan M. 2017. <span>“Nobel Lecture: Topological Quantum Matter.”</span> <em>Rev. Mod. Phys</em> 89 (4): 040502.
+</div>
+<div id="ref-haldane2016ground" class="csl-entry" role="listitem">
+Haldane, FDM. 2016. <span>“Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the o (3) Non-Linear Sigma Model.”</span> <em>arXiv Preprint arXiv:1612.00076</em>.
+</div>
+<div id="ref-knabe1988energy" class="csl-entry" role="listitem">
+Knabe, Stefan. 1988. <span>“Energy Gaps and Elementary Excitations for Certain <span>VBS</span>-Quantum Antiferromagnets.”</span> <em>Journal of Statistical Physics</em> 52 (3): 627–38.
+</div>
+<div id="ref-lieb1961two" class="csl-entry" role="listitem">
+Lieb, Elliott, Theodore Schultz, and Daniel Mattis. 1961. <span>“Two Soluble Models of an Antiferromagnetic Chain.”</span> <em>Annals of Physics</em> 16 (3): 407–66.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Haldane’s 1981 preprint <span class="citation" data-cites="haldane2016ground">(<a href="#ref-haldane2016ground" role="doc-biblioref">Haldane 2016</a>)</span> was apparently rejected for publication and then lost for many years, see his Nobel lecture from 2016 <span class="citation" data-cites="haldane2017nobel">(<a href="#ref-haldane2017nobel" role="doc-biblioref">Haldane 2017</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Note that the biquadratic piece (the second term) doesn’t bring anything new for spin-1/2, as it can be expressed in terms of the original Hamiltonian.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/response-and-correlation.html" class="pagination-link" aria-label="Response and Correlation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Response and Correlation</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../slides/many-body-wavefunctions.html" class="pagination-link" aria-label="Many Body Wavefunctions">
+        <span class="nav-page-text">Many Body Wavefunctions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
