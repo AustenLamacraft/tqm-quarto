@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.35">
 
   <title>Theories of Quantum Matter – B is for Bunching</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
@@ -717,7 +783,31 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
 \hat H_\text{int.}  = \frac{1}{2L^3} \sum_{\mathbf{k}_1+\mathbf{k}_2=\mathbf{k}_3+\mathbf{k}_4} \tilde U(\mathbf{k}_1-\mathbf{k}_4) a^\dagger_{\mathbf{k}_1}a^\dagger_{\mathbf{k}_2}a^{\vphantom{\dagger}}_{\mathbf{k}_3}a^{\vphantom{\dagger}}_{\mathbf{k}_4}
 </span></p>
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="more-second-quantization_files/mediabag/62d4b14888e24e67d836553e3608429b615ff551.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[fermion/.style={</span>
+<span id="cb1-2"><a></a>  postaction={decorate, decoration={markings, mark=at position 0.6 with {<span class="fu">\arrow</span>[scale=1.5]{Stealth[]}}}}},</span>
+<span id="cb1-3"><a></a>  photon/.style={</span>
+<span id="cb1-4"><a></a>decorate,</span>
+<span id="cb1-5"><a></a>decoration={snake, amplitude=3pt, segment length=8pt}}, very thick]</span>
+<span id="cb1-6"><a></a>    <span class="fu">\def\R</span>{2}</span>
+<span id="cb1-7"><a></a>    <span class="fu">\def\r</span>{0.1}</span>
+<span id="cb1-8"><a></a>    <span class="fu">\coordinate</span> (A) at (0,0);</span>
+<span id="cb1-9"><a></a>    <span class="fu">\coordinate</span> (B) at (<span class="fu">\R</span>,0);</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a>    <span class="co">% Left fermion loop</span></span>
+<span id="cb1-12"><a></a>    <span class="fu">\draw</span>[fermion] (A) -- (<span class="ss">$(A)+(-135:</span><span class="sc">\R</span><span class="ss">)$</span>) node[midway, above left] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_1$</span>};</span>
+<span id="cb1-13"><a></a>    <span class="fu">\draw</span>[fermion] (<span class="ss">$(A)+(135:</span><span class="sc">\R</span><span class="ss">)$</span>) -- (A) node[midway, above right] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_4$</span>};</span>
+<span id="cb1-14"><a></a></span>
+<span id="cb1-15"><a></a>    <span class="co">% Right fermion loop</span></span>
+<span id="cb1-16"><a></a>    <span class="fu">\draw</span>[fermion] (B) -- (<span class="ss">$(B)+(-45:</span><span class="sc">\R</span><span class="ss">)$</span>) node[midway, above right] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_2$</span>};</span>
+<span id="cb1-17"><a></a>    <span class="fu">\draw</span>[fermion] (<span class="ss">$(B)+(45:</span><span class="sc">\R</span><span class="ss">)$</span>) -- (B) node[midway, above left] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_3$</span>};</span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a>    <span class="co">% Wiggly photon connecting the two loops</span></span>
+<span id="cb1-20"><a></a>    <span class="fu">\draw</span>[photon] (B) -- (A) node[midway, above, yshift=2pt] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_1-</span><span class="sc">\vb</span><span class="ss">{k}_4$</span>};</span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a>    <span class="fu">\draw</span>[fill=white] (A) circle (<span class="fu">\r</span>);</span>
+<span id="cb1-23"><a></a>    <span class="fu">\draw</span>[fill=white] (B) circle (<span class="fu">\r</span>);</span>
+<span id="cb1-24"><a></a></span>
+<span id="cb1-25"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -726,7 +816,66 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
 \langle{\mathbf{N}}\rvert \hat H_\text{int.} \lvert \mathbf{N} \rangle = \frac{1}{2V}\tilde U(0) \sum_{\mathbf{k}_1,\mathbf{k}_2} N_{\mathbf{k}_1}N_{\mathbf{k}_2} - \frac{1}{2V} \sum_{\mathbf{k}_1,\mathbf{k}_2} \tilde U(\mathbf{k}_1-\mathbf{k}_2) N_{\mathbf{k}_1}N_{\mathbf{k}_2}
 </span></p>
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="more-second-quantization_files/mediabag/3a5c6c50e135eba145763e552a041d87ce4a3ebc.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a></a><span class="kw">\begin</span>{<span class="ex">tabular</span>}{c}</span>
+<span id="cb2-2"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[fermion/.style={</span>
+<span id="cb2-3"><a></a>      postaction={</span>
+<span id="cb2-4"><a></a>        decorate,</span>
+<span id="cb2-5"><a></a>        decoration={</span>
+<span id="cb2-6"><a></a>          markings,</span>
+<span id="cb2-7"><a></a>          mark=at position 0.275 with {<span class="fu">\arrow</span>[scale=1.5]{Stealth[]}},</span>
+<span id="cb2-8"><a></a>          mark=at position 0.775 with {<span class="fu">\arrow</span>[scale=1.5]{Stealth[]}}</span>
+<span id="cb2-9"><a></a>        }</span>
+<span id="cb2-10"><a></a>      }</span>
+<span id="cb2-11"><a></a>    },</span>
+<span id="cb2-12"><a></a>        photon/.style={decorate, decoration={snake, amplitude=3pt, segment length=8pt}},</span>
+<span id="cb2-13"><a></a>        very thick</span>
+<span id="cb2-14"><a></a>    ]</span>
+<span id="cb2-15"><a></a>        <span class="fu">\def\R</span>{1}</span>
+<span id="cb2-16"><a></a>        <span class="fu">\def\r</span>{0.1}</span>
+<span id="cb2-17"><a></a>        <span class="fu">\coordinate</span> (A) at (0,0);</span>
+<span id="cb2-18"><a></a>        <span class="fu">\coordinate</span> (B) at (2,0);</span>
+<span id="cb2-19"><a></a>        <span class="co">% Left fermion loop</span></span>
+<span id="cb2-20"><a></a>        <span class="fu">\draw</span>[fermion] (<span class="ss">$(A)+(-</span><span class="sc">\R</span><span class="ss">,0)$</span>) circle (<span class="fu">\R</span>);</span>
+<span id="cb2-21"><a></a>        <span class="co">% Right fermion loop</span></span>
+<span id="cb2-22"><a></a>        <span class="fu">\draw</span>[fermion] (<span class="ss">$(B)+(</span><span class="sc">\R</span><span class="ss">,0)$</span>) circle (<span class="fu">\R</span>);</span>
+<span id="cb2-23"><a></a>        <span class="co">% Wiggly photon connecting the two loops</span></span>
+<span id="cb2-24"><a></a>        <span class="fu">\draw</span>[photon] (A) -- (B) node[midway, above, yshift=2pt] {<span class="fu">\footnotesize</span> Hartree};</span>
+<span id="cb2-25"><a></a></span>
+<span id="cb2-26"><a></a>        <span class="fu">\draw</span>[fill=white] (A) circle (<span class="fu">\r</span>);</span>
+<span id="cb2-27"><a></a>        <span class="fu">\draw</span>[fill=white] (B) circle (<span class="fu">\r</span>);</span>
+<span id="cb2-28"><a></a></span>
+<span id="cb2-29"><a></a>    <span class="kw">\end</span>{tikzpicture}</span>
+<span id="cb2-30"><a></a><span class="fu">\\</span>[1em]</span>
+<span id="cb2-31"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[fermion/.style={</span>
+<span id="cb2-32"><a></a>      postaction={</span>
+<span id="cb2-33"><a></a>        decorate,</span>
+<span id="cb2-34"><a></a>        decoration={</span>
+<span id="cb2-35"><a></a>          markings,</span>
+<span id="cb2-36"><a></a>          mark=at position 0.265 with {<span class="fu">\arrow</span>[scale=1.5]{Stealth[]}},</span>
+<span id="cb2-37"><a></a>          mark=at position 0.765 with {<span class="fu">\arrow</span>[scale=1.5]{Stealth[]}}</span>
+<span id="cb2-38"><a></a>        }</span>
+<span id="cb2-39"><a></a>      }</span>
+<span id="cb2-40"><a></a>    },</span>
+<span id="cb2-41"><a></a>        photon/.style={decorate, decoration={snake, amplitude=3pt, segment length=8pt}}, very thick</span>
+<span id="cb2-42"><a></a>    ]</span>
+<span id="cb2-43"><a></a>        <span class="fu">\def\R</span>{1.5}</span>
+<span id="cb2-44"><a></a>        <span class="fu">\def\r</span>{0.1}</span>
+<span id="cb2-45"><a></a>        <span class="co">% Single fermion loop</span></span>
+<span id="cb2-46"><a></a>        <span class="fu">\draw</span>[fermion] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb2-47"><a></a></span>
+<span id="cb2-48"><a></a>        <span class="co">% Two attachment points on loop</span></span>
+<span id="cb2-49"><a></a>        <span class="fu">\coordinate</span> (A) at (<span class="fu">\R</span>, 0);</span>
+<span id="cb2-50"><a></a>        <span class="fu">\coordinate</span> (B) at (-<span class="fu">\R</span>, 0);</span>
+<span id="cb2-51"><a></a></span>
+<span id="cb2-52"><a></a>        <span class="co">% Photon wiggly between A and B</span></span>
+<span id="cb2-53"><a></a>        <span class="fu">\draw</span>[photon] (A) -- (B) node[midway, below, yshift=-2pt] {<span class="fu">\footnotesize</span> Fock};</span>
+<span id="cb2-54"><a></a></span>
+<span id="cb2-55"><a></a>        <span class="co">% Fermion arrowheads at A and B (to show direction locally)</span></span>
+<span id="cb2-56"><a></a>        <span class="fu">\draw</span>[fill=white] (A) circle (<span class="fu">\r</span>);</span>
+<span id="cb2-57"><a></a>        <span class="fu">\draw</span>[fill=white] (B) circle (<span class="fu">\r</span>);</span>
+<span id="cb2-58"><a></a></span>
+<span id="cb2-59"><a></a>    <span class="kw">\end</span>{tikzpicture}</span>
+<span id="cb2-60"><a></a><span class="kw">\end</span>{<span class="ex">tabular</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -1011,7 +1160,7 @@ U(\mathbf{r}-\mathbf{r}') = \frac{1}{L^3}\sum_\mathbf{q}\tilde U(\mathbf{q}) \ex
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

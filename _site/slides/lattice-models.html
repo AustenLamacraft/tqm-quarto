@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.35">
 
   <title>Theories of Quantum Matter – Lattice Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-e14d536645689ab9617f25d4e3d0cc9e.css">
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
@@ -242,7 +308,44 @@ E(\mathbf{N}) = \frac{U}{2} \sum_j N_j(N_j-1)
 <section class="slide level2 center">
 
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="lattice-models_files/mediabag/935950885211ddd9e619efe94255d3fb316a6796.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
+<span id="cb1-2"><a></a>    <span class="kw">\begin</span>{<span class="ex">axis</span>}[</span>
+<span id="cb1-3"><a></a>        domain=0:5,</span>
+<span id="cb1-4"><a></a>        samples=500,</span>
+<span id="cb1-5"><a></a>        xmin=0, xmax=5, ymin=0, ymax=4.5,</span>
+<span id="cb1-6"><a></a>        axis x line=middle,</span>
+<span id="cb1-7"><a></a>        axis y line=middle,</span>
+<span id="cb1-8"><a></a>        axis line style={line cap=round, very thick},</span>
+<span id="cb1-9"><a></a>        tick style={line cap=round, very thick},</span>
+<span id="cb1-10"><a></a>        every axis plot post/.append style={very thick, line cap=round},</span>
+<span id="cb1-11"><a></a>        xlabel={<span class="ss">$</span><span class="sc">\nu</span><span class="ss">$</span>}, ylabel={},</span>
+<span id="cb1-12"><a></a>        ylabel style={rotate=0, anchor=east},</span>
+<span id="cb1-13"><a></a>        legend cell align=left,</span>
+<span id="cb1-14"><a></a>        legend pos=north west,</span>
+<span id="cb1-15"><a></a>        legend style={draw=black, fill=white, rounded corners}</span>
+<span id="cb1-16"><a></a>    ]</span>
+<span id="cb1-17"><a></a>        <span class="fu">\draw</span>[lightgray, dashed] (axis cs:1,0) -- (axis cs:1,4.5);</span>
+<span id="cb1-18"><a></a>        <span class="fu">\draw</span>[lightgray, dashed] (axis cs:2,0) -- (axis cs:2,4.5);</span>
+<span id="cb1-19"><a></a>        <span class="fu">\draw</span>[lightgray, dashed] (axis cs:3,0) -- (axis cs:3,4.5);</span>
+<span id="cb1-20"><a></a>        <span class="fu">\draw</span>[lightgray, dashed] (axis cs:4,0) -- (axis cs:4,4.5);</span>
+<span id="cb1-21"><a></a></span>
+<span id="cb1-22"><a></a>        <span class="co">% 1) Chemical potential mu</span></span>
+<span id="cb1-23"><a></a>        <span class="fu">\addplot</span>[myred] { floor(x) };</span>
+<span id="cb1-24"><a></a>        <span class="fu">\addlegendentry</span>{<span class="ss">$</span><span class="sc">\mu</span><span class="ss">(</span><span class="sc">\nu</span><span class="ss">)/U$</span>}</span>
+<span id="cb1-25"><a></a></span>
+<span id="cb1-26"><a></a>        <span class="co">% 2) Ground‐state energy E0 piecewise quadratic</span></span>
+<span id="cb1-27"><a></a>        <span class="fu">\addplot</span>[mygreen] { 0.5*(x-floor(x))*(ceil(x)*(ceil(x)-1))</span>
+<span id="cb1-28"><a></a>            + 0.5*(ceil(x)-x)*(floor(x)*(floor(x)-1)) };</span>
+<span id="cb1-29"><a></a>        <span class="fu">\addlegendentry</span>{<span class="ss">$E_0/UN_{</span><span class="sc">\text</span>{sites}<span class="ss">}$</span>}</span>
+<span id="cb1-30"><a></a></span>
+<span id="cb1-31"><a></a>        <span class="co">% \draw[myred] (0,0) -- (1,0);</span></span>
+<span id="cb1-32"><a></a>        <span class="co">% \draw[myred] (1,1) -- (2,1);</span></span>
+<span id="cb1-33"><a></a>        <span class="co">% \draw[myred] (2,2) -- (3,2);</span></span>
+<span id="cb1-34"><a></a>        <span class="co">% \draw[myred] (3,3) -- (4,3);</span></span>
+<span id="cb1-35"><a></a>        <span class="co">% \draw[myred] (4,4) -- (5,4);</span></span>
+<span id="cb1-36"><a></a></span>
+<span id="cb1-37"><a></a>    <span class="kw">\end</span>{<span class="ex">axis</span>}</span>
+<span id="cb1-38"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><p>Think about varying <span class="math inline">\mu</span>: values between <span class="math inline">UN</span> and <span class="math inline">U(N-1)</span> correspond to integer filling <span class="math inline">\nu=N</span></p></li>
@@ -384,7 +487,41 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 <section class="slide level2 center">
 
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="lattice-models_files/mediabag/c343e9c11cb1fbbcd40138efd3c24426a3bf319a.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap=round]</span>
+<span id="cb2-2"><a></a>    <span class="co">% Parameters</span></span>
+<span id="cb2-3"><a></a>    <span class="fu">\def\Lx</span>{8}</span>
+<span id="cb2-4"><a></a>    <span class="fu">\def\Ly</span>{4.5}</span>
+<span id="cb2-5"><a></a>    <span class="fu">\def\Eone</span>{0.25*<span class="fu">\Ly</span>}     <span class="co">% intercept E^(N)_m at mu=0</span></span>
+<span id="cb2-6"><a></a>    <span class="fu">\def\Etwo</span>{0.7*<span class="fu">\Ly</span>}     <span class="co">% intercept E^(N+1)_m at mu=0</span></span>
+<span id="cb2-7"><a></a>    <span class="fu">\def\muI</span>{0.5*<span class="fu">\Lx</span>}      <span class="co">% crossing point</span></span>
+<span id="cb2-8"><a></a>    <span class="fu">\def\muA</span>{0.35*<span class="fu">\Lx</span>}</span>
+<span id="cb2-9"><a></a>    <span class="fu">\def\muB</span>{0.6*<span class="fu">\Lx</span>}</span>
+<span id="cb2-10"><a></a></span>
+<span id="cb2-11"><a></a>    <span class="co">% Dashed vertical guide at mu=UN (i.e. muI)</span></span>
+<span id="cb2-12"><a></a>    <span class="fu">\draw</span>[lightgray,dashed] (<span class="fu">\muI</span>,{<span class="fu">\Eone</span>-0.5*<span class="fu">\muI</span>}) -- (<span class="fu">\muI</span>,0.75*<span class="fu">\Ly</span>) node[above,black] {<span class="fu">\footnotesize</span> <span class="ss">$UN$</span>};</span>
+<span id="cb2-13"><a></a>    <span class="fu">\draw</span>[lightgray,dashed] (<span class="fu">\muA</span>,-0.5*<span class="fu">\Ly</span>) -- (<span class="fu">\muA</span>,0.5*<span class="fu">\Ly</span>) node[above,black] {<span class="fu">\footnotesize</span> <span class="ss">$UN-2dt (N+1)$</span>};</span>
+<span id="cb2-14"><a></a>    <span class="fu">\draw</span>[lightgray,dashed] (<span class="fu">\muB</span>,-0.5*<span class="fu">\Ly</span>) -- (<span class="fu">\muB</span>,0.3*<span class="fu">\Ly</span>) node[above,black] {<span class="fu">\footnotesize</span> <span class="ss">$UN+2dt (N+1)$</span>};</span>
+<span id="cb2-15"><a></a></span>
+<span id="cb2-16"><a></a>    <span class="co">% Axes</span></span>
+<span id="cb2-17"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (<span class="fu">\Lx</span>,0) node[below right] {<span class="ss">$</span><span class="sc">\mu</span><span class="ss">$</span>};</span>
+<span id="cb2-18"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,-0.75*<span class="fu">\Ly</span>) -- (0,<span class="fu">\Ly</span>) node[right] {<span class="ss">$</span><span class="sc">\mathcal</span><span class="ss">{E}_</span><span class="sc">\mu</span><span class="ss">$</span>};</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a>    <span class="co">% Mott lines</span></span>
+<span id="cb2-21"><a></a>    <span class="fu">\draw</span> (0,<span class="fu">\Eone</span>) node[above right,gray] {<span class="ss">$</span><span class="sc">\mathcal</span><span class="ss">{E}^{(N)}_</span><span class="sc">\mu</span><span class="ss">$</span>} -- (0.8*<span class="fu">\Lx</span>,{<span class="fu">\Eone</span>-0.5*0.8*<span class="fu">\Lx</span>});</span>
+<span id="cb2-22"><a></a>    <span class="fu">\draw</span> (0,<span class="fu">\Etwo</span>) node[above right,gray] {<span class="ss">$</span><span class="sc">\mathcal</span><span class="ss">{E}^{(N+1)}_</span><span class="sc">\mu</span><span class="ss">$</span>} -- (0.8*<span class="fu">\Lx</span>,{<span class="fu">\Etwo</span>-0.8*<span class="fu">\Lx</span>});</span>
+<span id="cb2-23"><a></a></span>
+<span id="cb2-24"><a></a>    <span class="co">% Red envelope: piecewise</span></span>
+<span id="cb2-25"><a></a>    <span class="fu">\draw</span>[red]  (0,<span class="fu">\Eone</span>) -- (<span class="fu">\muI</span>,{<span class="fu">\Eone</span>-0.5*<span class="fu">\muI</span>});</span>
+<span id="cb2-26"><a></a>    <span class="fu">\draw</span>[red] (<span class="fu">\muI</span>,{<span class="fu">\Etwo</span>-<span class="fu">\muI</span>}) -- (0.8*<span class="fu">\Lx</span>,{<span class="fu">\Etwo</span>-0.8*<span class="fu">\Lx</span>});</span>
+<span id="cb2-27"><a></a></span>
+<span id="cb2-28"><a></a>    <span class="co">% Blue rounded “smoothed” envelope</span></span>
+<span id="cb2-29"><a></a>    <span class="fu">\draw</span>[myblue, dashed] (<span class="fu">\muA</span>,{<span class="fu">\Eone</span>-0.5*<span class="fu">\muA</span>}) -- (<span class="fu">\muB</span>,{<span class="fu">\Etwo</span>-<span class="fu">\muB</span>});</span>
+<span id="cb2-30"><a></a></span>
+<span id="cb2-31"><a></a>    <span class="co">% Optional labels on red segments</span></span>
+<span id="cb2-32"><a></a>    <span class="fu">\node</span>[below left, align=center] at (<span class="fu">\muA</span>,{<span class="fu">\Eone</span>-0.5*<span class="fu">\muA</span>}) {<span class="fu">\footnotesize</span> First particle <span class="fu">\\</span> <span class="fu">\footnotesize</span> introduced};</span>
+<span id="cb2-33"><a></a>    <span class="fu">\node</span>[below left, align=center] at (<span class="fu">\muB</span>,{<span class="fu">\Etwo</span>-<span class="fu">\muB</span>}) {<span class="fu">\footnotesize</span> Last hole <span class="fu">\\</span> <span class="fu">\footnotesize</span> removed};</span>
+<span id="cb2-34"><a></a></span>
+<span id="cb2-35"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -399,7 +536,31 @@ H_t\rvert_{-}=-tN \sum_{\langle j\,k\rangle} \left[\lvert{j,-}\rangle\langle{k,-
 <section class="slide level2 center">
 
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="lattice-models_files/mediabag/4f46c943d61a341a17c2e15a96142d7db6afa479.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap = round]</span>
+<span id="cb3-2"><a></a>    <span class="fu">\def\Lx</span>{5}</span>
+<span id="cb3-3"><a></a>    <span class="fu">\def\Ly</span>{6}</span>
+<span id="cb3-4"><a></a>    <span class="fu">\def\h</span>{3*<span class="fu">\Ly</span>/10}</span>
+<span id="cb3-5"><a></a>    <span class="fu">\def\a</span>{<span class="fu">\Lx*</span>4}</span>
+<span id="cb3-6"><a></a>    <span class="fu">\def\t</span>{0.2}</span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a>    <span class="fu">\fill</span>[mydarkred!5] (0,0) rectangle (<span class="fu">\Lx</span>,<span class="fu">\Ly</span>);</span>
+<span id="cb3-9"><a></a></span>
+<span id="cb3-10"><a></a>    <span class="fu">\draw</span>[myblue, fill=mylightblue2, samples=20,variable=<span class="fu">\y</span>, domain=0.05:0.95] (0,0) -- plot({<span class="fu">\a</span>/(1/<span class="fu">\y</span> + 2/(1-<span class="fu">\y</span>))},{<span class="fu">\y*\h</span>}) -- (0,<span class="fu">\h</span>) -- cycle;</span>
+<span id="cb3-11"><a></a>    <span class="fu">\draw</span>[myblue, fill=mylightblue2, samples=20,variable=<span class="fu">\y</span>, domain=1.05:1.95] (0,<span class="fu">\h</span>) -- plot({<span class="fu">\a</span>/(2/(<span class="fu">\y</span>-1) + 3/(2-<span class="fu">\y</span>))},{<span class="fu">\y*\h</span>}) -- (0,2*<span class="fu">\h</span>) -- cycle;</span>
+<span id="cb3-12"><a></a>    <span class="fu">\draw</span>[myblue, fill=mylightblue2, samples=20,variable=<span class="fu">\y</span>, domain=2.05:2.95] (0,2*<span class="fu">\h</span>) -- plot({<span class="fu">\a</span>/(3/(<span class="fu">\y</span>-2) + 4/(3-<span class="fu">\y</span>))},{<span class="fu">\y*\h</span>}) -- (0,3*<span class="fu">\h</span>) -- cycle;</span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (<span class="fu">\Lx</span>,0) node[right] {<span class="ss">$t/U$</span>};</span>
+<span id="cb3-15"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (0,<span class="fu">\Ly</span>) node[right] {<span class="ss">$</span><span class="sc">\mu</span><span class="ss">/U$</span>};</span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a>    <span class="fu">\draw</span> (<span class="fu">\t</span>/2,<span class="fu">\h</span>) --++ (-<span class="fu">\t</span>,0) node[left] {<span class="ss">$1$</span>};</span>
+<span id="cb3-18"><a></a>    <span class="fu">\draw</span> (<span class="fu">\t</span>/2,2*<span class="fu">\h</span>) --++ (-<span class="fu">\t</span>,0) node[left] {<span class="ss">$2$</span>};</span>
+<span id="cb3-19"><a></a>    <span class="fu">\draw</span> (<span class="fu">\t</span>/2,3*<span class="fu">\h</span>) --++ (-<span class="fu">\t</span>,0) node[left] {<span class="ss">$3$</span>};</span>
+<span id="cb3-20"><a></a></span>
+<span id="cb3-21"><a></a>    <span class="fu">\node</span>[mydarkblue] at (0.35*<span class="fu">\Lx</span>,0.45*<span class="fu">\h</span>) {MI (<span class="ss">$1$</span>)};</span>
+<span id="cb3-22"><a></a>    <span class="fu">\node</span>[mydarkblue] at (0.2*<span class="fu">\Lx</span>,1.45*<span class="fu">\h</span>) {MI (<span class="ss">$2$</span>)};</span>
+<span id="cb3-23"><a></a>    <span class="fu">\node</span>[mydarkblue] at (0.14*<span class="fu">\Lx</span>,2.5*<span class="fu">\h</span>) {MI (<span class="ss">$3$</span>)};</span>
+<span id="cb3-24"><a></a>    <span class="fu">\node</span>[mydarkred] at (0.6*<span class="fu">\Lx</span>,2*<span class="fu">\h</span>) {Superfluid};</span>
+<span id="cb3-25"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Note diminishing size of Mott lobes: consequence of enhanced hopping in the effective tight binding models</li>
@@ -896,7 +1057,7 @@ H_\text{eff} = -t \sum_{\substack{\langle j\,k\rangle\\ s=\uparrow,\downarrow}} 
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

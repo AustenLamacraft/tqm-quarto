@@ -34,6 +34,7 @@ website:
           - notes/fermi-gas.qmd
           - notes/superconductivity.qmd
           - notes/response-and-correlation.qmd
+          - notes/haldnane-gap.qmd
           
 
       - section: "Slides"

@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.35">
 
   <title>Theories of Quantum Matter – Fermi Gas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,6 +31,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -276,7 +342,37 @@ N_{s}(\mathbf{k}) = \theta(k_F-\lvert{\mathbf{k}}\rvert) + n_{s}(\mathbf{k})
 <li><span class="math inline">n_\mathbf{k}</span> is <em>mean</em> deviation from Fermi sphere in continuum limit:</li>
 </ul>
 <div class="tikz-figure" style="width: 50%;">
-<img data-src="fermi-gas_files/mediabag/224ec9ec55885e39d90a2c6f57c5de49ae089571.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap = round]</span>
+<span id="cb1-2"><a></a>    <span class="fu">\def\Lx</span>{8}</span>
+<span id="cb1-3"><a></a>    <span class="fu">\def\Ly</span>{3}</span>
+<span id="cb1-4"><a></a>    <span class="fu">\def\kF</span>{0.55*<span class="fu">\Lx</span>}</span>
+<span id="cb1-5"><a></a>    <span class="fu">\def\y</span>{0.7*<span class="fu">\Ly</span>}</span>
+<span id="cb1-6"><a></a>    <span class="fu">\def\ang</span>{50}</span>
+<span id="cb1-7"><a></a>    <span class="fu">\def\n</span>{15}</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a>    <span class="fu">\fill</span>[mylightblue2] (0,0) rectangle (<span class="fu">\kF</span>,<span class="fu">\y</span>);</span>
+<span id="cb1-10"><a></a>    <span class="fu">\fill</span>[mylightred] (<span class="fu">\kF</span>,0) -- (<span class="fu">\kF</span>,0.5*<span class="fu">\y</span>) to[out=-<span class="fu">\ang</span>,in=180] (1.5*<span class="fu">\kF</span>,0) -- cycle;</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a>    <span class="fu">\foreach</span> <span class="fu">\j</span> [evaluate={<span class="fu">\x</span>=<span class="fu">\kF*</span>(1-(1-<span class="fu">\j</span>/<span class="fu">\n</span>)^4);}] in {1,...,<span class="fu">\n</span>}{</span>
+<span id="cb1-13"><a></a>        <span class="fu">\draw</span>[white] (<span class="fu">\x</span>,0) -- (<span class="fu">\x</span>,<span class="fu">\y</span>);</span>
+<span id="cb1-14"><a></a>    }</span>
+<span id="cb1-15"><a></a></span>
+<span id="cb1-16"><a></a>    <span class="fu">\foreach</span> <span class="fu">\j</span> [evaluate={<span class="fu">\x</span>=<span class="fu">\kF</span> + (<span class="fu">\Lx</span>-<span class="fu">\kF</span>)*((1-<span class="fu">\j</span>/<span class="fu">\n</span>)^4);}] in {1,...,<span class="fu">\n</span>}{</span>
+<span id="cb1-17"><a></a>        <span class="fu">\draw</span>[mylightblue2] (<span class="fu">\x</span>,0) -- (<span class="fu">\x</span>,<span class="fu">\y</span>);</span>
+<span id="cb1-18"><a></a>    }</span>
+<span id="cb1-19"><a></a>    <span class="fu">\draw</span>[mydarkblue] (0,0) rectangle (<span class="fu">\kF</span>,<span class="fu">\y</span>);</span>
+<span id="cb1-20"><a></a></span>
+<span id="cb1-21"><a></a>    <span class="fu">\draw</span>[mydarkred] (<span class="fu">\kF</span>,0) -- (<span class="fu">\kF</span>,0.5*<span class="fu">\y</span>) to[out=-<span class="fu">\ang</span>,in=180] (1.5*<span class="fu">\kF</span>,0) -- cycle;</span>
+<span id="cb1-22"><a></a>    <span class="fu">\draw</span>[mydarkred, fill=mylightred] (<span class="fu">\kF</span>,0) -- (<span class="fu">\kF</span>,-0.5*<span class="fu">\y</span>) to[out=180-<span class="fu">\ang</span>,in=0] (0.5*<span class="fu">\kF</span>,0) -- cycle;</span>
+<span id="cb1-23"><a></a></span>
+<span id="cb1-24"><a></a>    <span class="fu">\node</span>[left] at (0,<span class="fu">\y</span>) {<span class="ss">$1$</span>};</span>
+<span id="cb1-25"><a></a>    <span class="fu">\node</span>[below right, mydarkred] at (<span class="fu">\kF</span>,0) {<span class="ss">$n_{</span><span class="sc">\vb</span><span class="ss">{k}}$</span>};</span>
+<span id="cb1-26"><a></a>    <span class="fu">\node</span>[above, text=mydarkblue] at (<span class="fu">\kF</span>/2,<span class="fu">\y</span>) {<span class="ss">$</span><span class="sc">\Theta</span><span class="ss">(k_{</span><span class="sc">\text</span>{F}<span class="ss">} - </span><span class="sc">\abs</span><span class="ss">{</span><span class="sc">\vb</span><span class="ss">{k}})$</span>};</span>
+<span id="cb1-27"><a></a></span>
+<span id="cb1-28"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (<span class="fu">\Lx</span>,0) node[right] {<span class="ss">$</span><span class="sc">\abs</span><span class="ss">{</span><span class="sc">\vb</span><span class="ss">{k}}$</span>};</span>
+<span id="cb1-29"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (0,<span class="fu">\Ly</span>) node[right] {<span class="ss">$N(</span><span class="sc">\vb</span><span class="ss">{k})$</span>};</span>
+<span id="cb1-30"><a></a></span>
+<span id="cb1-31"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -362,7 +458,33 @@ f_{\uparrow\uparrow}(\mathbf{k},\mathbf{k}') = \frac{U_0^2}{(2\pi)^3}\left[\int_
 <li><p>Notation <span class="math inline">\mathbf{K} = \frac{1}{2}\left(\mathbf{k}_2+\mathbf{k}_3\right),\quad \mathbf{q}= \frac{1}{2}\left(\mathbf{k}_2-\mathbf{k}_3\right)</span></p></li>
 </ul>
 <div class="tikz-figure" style="width: 50%;">
-<img data-src="fermi-gas_files/mediabag/3d0323a05b2affa503b02238f538002ed1d9b8cf.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb2-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap=round]</span>
+<span id="cb2-2"><a></a>    <span class="fu">\def\R</span>{2}</span>
+<span id="cb2-3"><a></a>    <span class="fu">\def\dk</span>{0.7}</span>
+<span id="cb2-4"><a></a>    <span class="fu">\def\Le</span>{1}</span>
+<span id="cb2-5"><a></a>    <span class="fu">\def\r</span>{0.05*<span class="fu">\R</span>}</span>
+<span id="cb2-6"><a></a></span>
+<span id="cb2-7"><a></a>    <span class="fu">\coordinate</span> (k') at (50:<span class="fu">\R</span>);</span>
+<span id="cb2-8"><a></a>    <span class="fu">\coordinate</span> (k) at (120:<span class="fu">\R</span>);</span>
+<span id="cb2-9"><a></a>    <span class="fu">\coordinate</span> (k3) at (140:0.5*<span class="fu">\R</span>);</span>
+<span id="cb2-10"><a></a>    <span class="fu">\coordinate</span> (K) at (165:<span class="fu">\R</span>);</span>
+<span id="cb2-11"><a></a>    <span class="fu">\coordinate</span> (k2) at (<span class="ss">$2*(K)-(k3)$</span>);</span>
+<span id="cb2-12"><a></a></span>
+<span id="cb2-13"><a></a>    <span class="fu">\fill</span>[black!5] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb2-14"><a></a>    <span class="fu">\draw</span>[black!45] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb2-15"><a></a></span>
+<span id="cb2-16"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (k) node[above left] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}$</span>};</span>
+<span id="cb2-17"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (k') node[above right] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}'$</span>};</span>
+<span id="cb2-18"><a></a>    <span class="fu">\draw</span>[decoration={markings, mark=at position 0.55 with {<span class="fu">\arrow</span>{&gt;}}}, postaction={decorate}] (k') -- (k) node[midway, below] {<span class="ss">$2</span><span class="sc">\vb</span><span class="ss">{q}$</span>};</span>
+<span id="cb2-19"><a></a></span>
+<span id="cb2-20"><a></a>    <span class="fu">\draw</span>[mydarkred ,decoration={markings, mark=at position 0.75 with {<span class="fu">\arrow</span>{&gt;}}}, postaction={decorate}] (k3) -- (k2);</span>
+<span id="cb2-21"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (k3) node[above left] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_3$</span>};</span>
+<span id="cb2-22"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (k2) node[left] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{k}_2$</span>};</span>
+<span id="cb2-23"><a></a>    <span class="fu">\draw</span>[mydarkblue, -&gt;] (0,0) -- (K) node[above] {<span class="ss">$</span><span class="sc">\vb</span><span class="ss">{K}$</span>};</span>
+<span id="cb2-24"><a></a></span>
+<span id="cb2-25"><a></a>    <span class="fu">\node</span>[above, text=mydarkred] at (<span class="ss">$(K)!0.5!(k2)$</span>) {<span class="ss">$2</span><span class="sc">\vb</span><span class="ss">{q}$</span>};</span>
+<span id="cb2-26"><a></a></span>
+<span id="cb2-27"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -508,7 +630,18 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}-\delta\mathb
 \end{align*}
 </span></p>
 <div class="tikz-figure" style="width: 40%;">
-<img data-src="fermi-gas_files/mediabag/1f3828ba400ae8cef1a80492ae87d09f42821dbf.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb3-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap=round]</span>
+<span id="cb3-2"><a></a>    <span class="fu">\def\R</span>{2}</span>
+<span id="cb3-3"><a></a>    <span class="fu">\def\dk</span>{0.7}</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a>    <span class="fu">\fill</span>[mygrey,opacity=0.3] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb3-6"><a></a>    <span class="fu">\fill</span>[mygrey,opacity=0.3] (<span class="fu">\dk</span>,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb3-7"><a></a>    <span class="fu">\draw</span>[black!45] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb3-8"><a></a>    <span class="fu">\draw</span>[black!45] (<span class="fu">\dk</span>,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb3-9"><a></a></span>
+<span id="cb3-10"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (<span class="fu">\dk</span>,0) node[midway,above] {<span class="ss">$</span><span class="sc">\delta</span><span class="ss"> </span><span class="sc">\vb</span><span class="ss">{k}$</span>};</span>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -590,7 +723,29 @@ N_s(\mathbf{k}-\delta\mathbf{k}) &amp;=\theta(k_F-\lvert{\mathbf{k}}\rvert) + n_
 <li><p>Only possibility is that the interaction creates two particle-hole pairs out of the Fermi sea, with total momentum zero.</p></li>
 </ul>
 <div class="tikz-figure" style="width: 50%;">
-<img data-src="fermi-gas_files/mediabag/9a952f7dd3fe77e421625ebf4e5fdc202eed7351.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb4-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap=round]</span>
+<span id="cb4-2"><a></a>    <span class="fu">\def\R</span>{2}</span>
+<span id="cb4-3"><a></a>    <span class="fu">\def\dk</span>{0.7}</span>
+<span id="cb4-4"><a></a>    <span class="fu">\def\Le</span>{1}</span>
+<span id="cb4-5"><a></a>    <span class="fu">\def\r</span>{0.05*<span class="fu">\R</span>}</span>
+<span id="cb4-6"><a></a></span>
+<span id="cb4-7"><a></a>    <span class="fu">\coordinate</span> (hR) at (25:0.85*<span class="fu">\R</span>);</span>
+<span id="cb4-8"><a></a>    <span class="fu">\coordinate</span> (hL) at (160:0.8*<span class="fu">\R</span>);</span>
+<span id="cb4-9"><a></a>    <span class="fu">\coordinate</span> (eR) at (<span class="ss">$(25:0.8*</span><span class="sc">\R</span><span class="ss">)+(-25:</span><span class="sc">\Le</span><span class="ss">)$</span>);</span>
+<span id="cb4-10"><a></a>    <span class="fu">\coordinate</span> (eL) at (<span class="ss">$(160:0.8*</span><span class="sc">\R</span><span class="ss">)+(145:</span><span class="sc">\Le</span><span class="ss">)$</span>);</span>
+<span id="cb4-11"><a></a></span>
+<span id="cb4-12"><a></a>    <span class="fu">\fill</span>[mygrey,opacity=0.3] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb4-13"><a></a>    <span class="fu">\draw</span>[black!45] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a>    <span class="fu">\draw</span>[black!45, fill=white] (hL) circle (<span class="fu">\r</span>);</span>
+<span id="cb4-16"><a></a>    <span class="fu">\draw</span>[black!45, fill=white] (hR) circle (<span class="fu">\r</span>);</span>
+<span id="cb4-17"><a></a>    <span class="fu">\fill</span> (eL) circle (<span class="fu">\r</span>);</span>
+<span id="cb4-18"><a></a>    <span class="fu">\fill</span> (eR) circle (<span class="fu">\r</span>);</span>
+<span id="cb4-19"><a></a></span>
+<span id="cb4-20"><a></a>    <span class="fu">\draw</span>[-&gt;] (<span class="ss">$(hL)!0.1!(eL)$</span>) -- (<span class="ss">$(hL)!0.9!(eL)$</span>);</span>
+<span id="cb4-21"><a></a>    <span class="fu">\draw</span>[-&gt;] (<span class="ss">$(hR)!0.1!(eR)$</span>) -- (<span class="ss">$(hR)!0.9!(eR)$</span>);</span>
+<span id="cb4-22"><a></a></span>
+<span id="cb4-23"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -605,7 +760,28 @@ a^\dagger_{\mathbf{k},s}\lvert{\text{FS}}\rangle
 </ol></li>
 </ul>
 <div class="tikz-figure" style="width: 30%;">
-<img data-src="fermi-gas_files/mediabag/33a475ca437bb96419bc3803b21b9237fcd7f50e.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap=round]</span>
+<span id="cb5-2"><a></a>    <span class="fu">\def\R</span>{2}</span>
+<span id="cb5-3"><a></a>    <span class="fu">\def\dk</span>{0.7}</span>
+<span id="cb5-4"><a></a>    <span class="fu">\def\Le</span>{1}</span>
+<span id="cb5-5"><a></a>    <span class="fu">\def\r</span>{0.05*<span class="fu">\R</span>}</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a>    <span class="fu">\coordinate</span> (hR) at (80:1.3*<span class="fu">\R</span>);</span>
+<span id="cb5-8"><a></a>    <span class="fu">\coordinate</span> (hL) at (160:0.8*<span class="fu">\R</span>);</span>
+<span id="cb5-9"><a></a>    <span class="fu">\coordinate</span> (eR) at (<span class="ss">$(80:1.3*</span><span class="sc">\R</span><span class="ss">)+(-35:</span><span class="sc">\Le</span><span class="ss">)$</span>);</span>
+<span id="cb5-10"><a></a>    <span class="fu">\coordinate</span> (eL) at (<span class="ss">$(160:0.8*</span><span class="sc">\R</span><span class="ss">)+(145:</span><span class="sc">\Le</span><span class="ss">)$</span>);</span>
+<span id="cb5-11"><a></a></span>
+<span id="cb5-12"><a></a>    <span class="fu">\fill</span>[mygrey,opacity=0.3] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb5-13"><a></a>    <span class="fu">\draw</span>[black!45] (0,0) circle (<span class="fu">\R</span>);</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a>    <span class="fu">\fill</span> (hR) circle (<span class="fu">\r</span>);</span>
+<span id="cb5-16"><a></a>    <span class="fu">\draw</span>[black!45, fill=white] (hL) circle (<span class="fu">\r</span>);</span>
+<span id="cb5-17"><a></a>    <span class="fu">\fill</span> (eL) circle (<span class="fu">\r</span>);</span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a>    <span class="fu">\draw</span>[-&gt;] (<span class="ss">$(hL)!0.1!(eL)$</span>) node[right] {<span class="ss">$</span><span class="sc">\,</span><span class="ss"> </span><span class="sc">\ket</span><span class="ss">{</span><span class="sc">\vb</span><span class="ss">{k}_3, s'}$</span>} -- (<span class="ss">$(hL)!0.9!(eL)$</span>);</span>
+<span id="cb5-20"><a></a>    <span class="fu">\draw</span>[-&gt;] (hR) node[left] {<span class="ss">$</span><span class="sc">\ket</span><span class="ss">{</span><span class="sc">\vb</span><span class="ss">{k},s}$</span>} -- (eR);</span>
+<span id="cb5-21"><a></a></span>
+<span id="cb5-22"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2 center">
@@ -654,7 +830,25 @@ z_{\lvert{\mathbf{k}}\rvert=k_\text{F}} = 1 - \frac{(mUk_\text{F})^2}{8\pi^4}\le
 <li><p>Even with interactions, finite step in distribution function at <span class="math inline">k_\text{F}</span></p></li>
 </ul>
 <div class="tikz-figure" style="width: 60%;">
-<img data-src="fermi-gas_files/mediabag/38f275828f4dc6154bf0add99cd071b71a67608b.svg">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource tikz number-lines code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}[very thick, line cap = round]</span>
+<span id="cb6-2"><a></a>    <span class="fu">\def\Lx</span>{8}</span>
+<span id="cb6-3"><a></a>    <span class="fu">\def\Ly</span>{3}</span>
+<span id="cb6-4"><a></a>    <span class="fu">\def\kF</span>{0.55*<span class="fu">\Lx</span>}</span>
+<span id="cb6-5"><a></a>    <span class="fu">\def\y</span>{0.7*<span class="fu">\Ly</span>}</span>
+<span id="cb6-6"><a></a>    <span class="fu">\def\ang</span>{50}</span>
+<span id="cb6-7"><a></a></span>
+<span id="cb6-8"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (<span class="fu">\Lx</span>,0) node[right] {<span class="ss">$</span><span class="sc">\abs</span><span class="ss">{</span><span class="sc">\vb</span><span class="ss">{k}}$</span>};</span>
+<span id="cb6-9"><a></a>    <span class="fu">\draw</span>[-&gt;] (0,0) -- (0,<span class="fu">\Ly</span>) node[right] {<span class="ss">$N(</span><span class="sc">\vb</span><span class="ss">{k})$</span>};</span>
+<span id="cb6-10"><a></a></span>
+<span id="cb6-11"><a></a>    <span class="fu">\draw</span>[mydashed] (<span class="fu">\kF</span>,0) node[below] {<span class="ss">$k_</span><span class="sc">\text</span><span class="ss">{F}$</span>} -- (<span class="fu">\kF</span>,<span class="fu">\Ly</span>);</span>
+<span id="cb6-12"><a></a>    <span class="fu">\draw</span>[mydashed] (<span class="fu">\kF</span>,0.6*<span class="fu">\y</span>) -- (0,0.6*<span class="fu">\y</span>) node[left] {<span class="ss">$z_{k_</span><span class="sc">\text</span><span class="ss">{F}}$</span>};</span>
+<span id="cb6-13"><a></a></span>
+<span id="cb6-14"><a></a>    <span class="fu">\fill</span>[mygrey, opacity=0.3] (0,<span class="fu">\y</span>) -- (0.7*<span class="fu">\kF</span>,<span class="fu">\y</span>) to[out=0, in=180-<span class="fu">\ang</span>] (<span class="fu">\kF</span>,0.6*<span class="fu">\y</span>) -- (<span class="fu">\kF</span>,0.35*<span class="fu">\y</span>) to[out=-<span class="fu">\ang</span>,in=180] (1.3*<span class="fu">\kF</span>,0) -- (0,0) -- cycle;</span>
+<span id="cb6-15"><a></a>    <span class="fu">\draw</span> (0,<span class="fu">\y</span>) -- (0.7*<span class="fu">\kF</span>,<span class="fu">\y</span>) to[out=0, in=180-<span class="fu">\ang</span>] (<span class="fu">\kF</span>,0.6*<span class="fu">\y</span>) -- (<span class="fu">\kF</span>,0.35*<span class="fu">\y</span>) to[out=-<span class="fu">\ang</span>,in=180] (1.3*<span class="fu">\kF</span>,0);</span>
+<span id="cb6-16"><a></a></span>
+<span id="cb6-17"><a></a>    <span class="fu">\draw</span>[&lt;-] (<span class="fu">\kF</span>,0.6*<span class="fu">\y</span>) --++ (45:0.1*<span class="fu">\Lx</span>) node[right, align=left] {<span class="fu">\footnotesize</span> Discontinuity <span class="fu">\\</span> <span class="fu">\footnotesize</span> in <span class="ss">$N(</span><span class="sc">\vb</span><span class="ss">{k})$</span> at <span class="ss">$T=0$</span>};</span>
+<span id="cb6-18"><a></a></span>
+<span id="cb6-19"><a></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -930,7 +1124,7 @@ Landau, Lev Davidovich, Evgenii Mikhailovich Lifshitz, Evgenii Mikhailovich Lifs
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
+            var filterRegex = new RegExp('/' + window.location.host + '/');
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
