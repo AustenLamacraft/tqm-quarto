@@ -26,7 +26,9 @@ How do we handle finite size
 
 Based on exam question
 
+## Haldane conjecture
 
+Try to state sharply. Why did he think this?
 
 ## AKLT
 
@@ -36,6 +38,6 @@ Matrix product form?
 
 Use Feynman-Bijl to estimate 
 
-String order
+### String order
 
 ## OpenAI's proof
