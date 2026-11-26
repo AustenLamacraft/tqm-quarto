@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46f66b053e56abd73bb6e954d61a315b.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.35">
 
   <title>Theories of Quantum Matter – The Haldane Gap</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,131 +166,190 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">The Haldane Gap</h1>
+  <p class="subtitle">(non examinable)</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
-<p>On 6th October 2026 OpenAI released 719 preprints containing mathematical results obtained by frontier AI model across a broad range of mathematics. Among the mathematical physics results was a <a href="https://github.com/openai/math/blob/main/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf">proof of the Haldane conjecture</a>, an important result in many-body physics dating from 1981<sup>1</sup>. This conjecture states that the antiferromagnetic (<span class="math inline">J&gt;0</span>) Heisenberg chain is gapless for half integer spin and gapped for integer spin. The OpenAI result concerns the spin-1 case: see the introduction to their paper for a review of rigorous results obtained over the years.</p>
-<p>Some commentaries have now appeared on the Haldane gap work. See <a href="https://haltasaki.github.io/writings/AI/OpenAI_Haldane.html">Hal Tasaki</a> (recommended), <a href="https://www.overleaf.com/project/6ac5c7972379cb285bc961c3">Meng Cheng</a>. See also <a href="https://www.facebook.com/groups/288854938128878">this Facebook group</a>. Note that Tasaki also provides a discrete time version of the transfer matrix that sidesteps the tricky functional analysis of the original version. This might be a better target for formalization.</p>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Haldane’s 1981 preprint <span class="citation" data-cites="haldane2016ground">(<a href="#/openais-proof" role="doc-biblioref" onclick="">Haldane 2016</a>)</span> was apparently rejected for publication and then lost for many years, see his Nobel lecture from 2016 <span class="citation" data-cites="haldane2017nobel">(<a href="#/openais-proof" role="doc-biblioref" onclick="">Haldane 2017</a>)</span>.</p></li></ol></aside></section>
-
-<section>
-<section id="proof-outline" class="title-slide slide level1 center">
-<h1>Proof outline</h1>
-<p>The purpose of this section is to outline the strategy of the OpenAI proof, identifying the required mathematical structures in order to survey the territory. The model under consideration is the spin-1 Heisenberg ferromagnet with periodic boundary conditions, described by the Hamiltonian</p>
-<p><span class="math display">
-H_L = \sum_{j=0}^{L-1} \sum_{\alpha=x,y,z} S^\alpha_j S^\alpha_{j+1}, \qquad S^\alpha_L = S^\alpha_0,
-</span></p>
-<p>where <span class="math inline">S^\alpha_j</span> is the <span class="math inline">\alpha</span> component of a spin 1 acting on site <span class="math inline">j</span>. The energy gap <span class="math inline">\gamma_L</span> is defined as</p>
-<p><span class="math display">
+<section id="the-openai-dump" class="slide level2 center">
+<h2>The OpenAI dump</h2>
+<ul>
+<li><p>6th October 2026: OpenAI released 719 mathematical preprints</p></li>
+<li><p>Included a <a href="https://github.com/openai/math/blob/main/preprints/The-periodic-spin-one-Haldane-gap-September-24-2026/paper.pdf">proof of the Haldane conjecture</a>:</p></li>
+</ul>
+<blockquote>
+<p>Antiferromagnetic (<span class="math inline">J&gt;0</span>) Heisenberg chain is <em>gapless</em> for half integer spin and gapped for integer spin</p>
+</blockquote>
+<ul>
+<li><p>OpenAI result concerns the spin-1 case. It was already established that the half integer spin chains are gapless</p></li>
+<li><p>This lecture: background and significance of the problem, and why it is hard</p></li>
+<li><p>This is <em>mathematical physics</em>, meaning that we are talking about rigour</p></li>
+<li><p>I won’t have much to say about the proof itself: see <a href="https://haltasaki.github.io/writings/AI/OpenAI_Haldane.html">Hal Tasaki’s commentary</a></p></li>
+</ul>
+</section>
+<section id="the-model" class="slide level2 center">
+<h2>The model</h2>
+<ul>
+<li><p>Recall from <a href="../notes/spin-models.html">spin models</a> <span class="math display">
+H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1}
+</span></p></li>
+<li><p>Define the <em>energy gap</em> <span class="math display">
 \gamma_L = E_1(L) - E_0(L)
-</span></p>
-<p>where <span class="math inline">E_0(L)</span> is ground state energy of a chain of length <span class="math inline">L</span> and <span class="math inline">E_1(L)</span> is the next distinct energy. The energy gap in the thermodynamic limit is defined as</p>
+</span></p></li>
+<li><p><span class="math inline">E_0(L)</span> is gs energy of chain of length <span class="math inline">L</span> and <span class="math inline">E_1(L)</span> is next distinct energy</p></li>
+</ul>
 <p><span class="math display">
 \Delta_1 = \liminf_{\substack{L \to \infty \\ L \text{ even}}} \gamma_L
 </span></p>
-<p>Thus the goal is to prove <span class="math inline">\Delta_1 &gt; 0</span>, which is achieved by proving some <span class="math inline">L</span> independent lower bounds on <span class="math inline">\gamma_L</span> for <span class="math inline">L \geq 60</span>.</p>
-<p>OpenAI</p>
-<p>References: Tasaki book</p>
-<p>Outline</p>
-<ol type="1">
-<li>Reminder: the idea of a gap</li>
-<li>The Majumdar–Ghosh model</li>
-<li>Haldane conjecture: integer and half integer are different!</li>
-<li>AKLT</li>
-<li>What about the spin-1 chain?</li>
-</ol>
+<ul>
+<li>If <span class="math inline">\Delta_1 &gt; 0</span> system is <em>gapped</em>; otherwise <em>gapless</em></li>
+</ul>
+</section>
+<section id="reminder-spin-12-chain" class="slide level2 center">
+<h2>Reminder: spin-1/2 chain</h2>
+<ul>
+<li>Holstein–Primakoff treatment gave dispersion relation for <span class="math inline">J&gt;0</span></li>
+</ul>
 <p><span class="math display">
-H = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1},
+\omega_{\text{AFM}}(\eta) = 2sJ\left|\sin(\eta)\right|
 </span></p>
-<p>Dispersion relation</p>
-<p>Incidentally, the Bethe ansatz solution of the spin-1/2 Heisenberg chain yields dispersion relation for the lowest excited state of momentum <span class="math inline">\eta</span> (<strong>des Cloizeaux–Pearson</strong> dispersion)</p>
-<p><span id="eq-dcp"><span class="math display">
-\omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|,
-\tag{1}</span></span></p>
-<div id="fig-gs-energy" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-gs-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="../assets/Heisenberg_model_dispersion.png">
+<ul>
+<li>Compare with exact result</li>
+</ul>
+<p><span class="math display">
+\omega_{\text{dCP}}(\eta) = \frac{\pi J}{2}\left|\sin(\eta)\right|
+</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/Heisenberg_model_dispersion.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gs-energy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: The ground state energy of the Heisenberg chain for <span class="math inline">L=26</span> as a function of <span class="math inline">\eta</span>, compared with the des Cloiseaux–Pearson dispersion <a href="#/eq-dcp" class="quarto-xref">Equation&nbsp;1</a>.
+</section>
+<section id="majumdarghosh-model" class="slide level2 center">
+<h2>Majumdar–Ghosh model</h2>
+<ul>
+<li><p>Another possibility: ground state can be degenerate</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Majumdar%E2%80%93Ghosh_model">Majumdar–Ghosh model</a></p></li>
+</ul>
+<p><span class="math display">
+H_\text{MG} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{2} \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+2}
+</span></p>
+<ul>
+<li>Couplings chosen carefully so that (up to an overall constant)</li>
+</ul>
+<p><span class="math display">
+H_\text{MG} = \frac{J}{4} \sum_{j=1}^N \left[\mathbf{s}_{j-1} + \mathbf{s}_{j} + \mathbf{s}_{j+1}\right]^2
+</span></p>
+</section>
+<section class="slide level2 center">
+
+<p><span class="math display">
+H_\text{MG} = \frac{J}{4} \sum_{j=1}^N \left[\mathbf{s}_{j-1} + \mathbf{s}_{j} + \mathbf{s}_{j+1}\right]^2
+</span></p>
+<ul>
+<li><p>Each term involves sum of three spins</p></li>
+<li><p>By the usual AM addition rules, the spin quantum number is 3/2 or 1/2</p></li>
+<li><p>Lowest when any three consecutive spins add to make <span class="math inline">S=1/2</span></p></li>
+<li><p>Put two spins in a singlet: two linearly independent ways to do this</p></li>
+</ul>
+<div id="fig-mg-state" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-mg-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="../assets/Majumdar-ghosh_gs.png">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-mg-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="another-example-majumdarghosh-model" class="slide level2 center">
-<h2>Another example: Majumdar–Ghosh model</h2>
-<p>What else can happen in a spin-1/2 chain? There is another possibility: the ground state can be degenerate. The <a href="https://en.wikipedia.org/wiki/Majumdar%E2%80%93Ghosh_model">Majumdar–Ghosh model</a> has an exact ground state that nicely illustrates this possibility. Its Hamiltonian adds next nearest neighbour couplings to the Heisenberg chain <span class="math display">
-H_\text{MG} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{2} \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+2}.
-</span></p>
-<p>The strength of these new couplings has been chosen carefully so that the model can be written (up to an overall constant)</p>
-<p><span class="math display">
-H_\text{MG} = \frac{J}{4} \sum_{j=1}^N \left[\mathbf{s}_{j-1} + \mathbf{s}_{j} + \mathbf{s}_{j+1}\right]^2.
-</span></p>
-<p>Each term in the Hamiltonian involves the sum of three spins. By the usual angular momentum addition rules, the spin quantum number for such a sum can be 3/2, 1, or 1/2. Thus the lowest energy occurs when any three consecutive spins add to make <span class="math inline">S=1/2</span>. Since the <span class="math inline">S=1/2</span> space is of dimension <span class="math inline">2S+1=2</span>, there are two linearly independent ways to do this. This leads to the following two degenerate ground states</p>
-<p><img data-src="../assets/Majumdar-ghosh_gs.png"></p>
-<p>How do we handle finite size?</p>
+<section id="liebschultzmattis-lsm-theorem" class="slide level2 center">
+<h2>Lieb–Schultz–Mattis (LSM) theorem</h2>
+<blockquote>
+<p>For half-integer spin: <em>a translationally invariant half-integer spin chain cannot have a unique ground state with a gap</em></p>
+</blockquote>
+<ul>
+<li><p>Either have a gap and a degenerate ground state (MG model) or a unique ground state and no gap (Heisenberg)</p></li>
+<li><p>Version due to <span class="citation" data-cites="affleck1986proof">Affleck and Lieb (<a href="#/references" role="doc-biblioref" onclick="">1986</a>)</span> (see 2019 TQM paper)</p></li>
+<li><p>Consider Heisenberg chain of <span class="math inline">N</span> (even) spins and PBC</p></li>
+<li><p>Argument only uses translation invariance, short-range interactions, and conservation of <span class="math inline">S^z_\text{tot} = \sum_j s^z_j</span>, so is more general</p></li>
+<li><p>Suppose the ground state <span class="math inline">\ket{0}</span> is unique. It is then a singlet, so <span class="math inline">S^z\ket{0}=0</span></p></li>
+<li><p><span class="math inline">\ket{0}</span> is eigenstate of the translation operator <span class="math inline">T</span>, with <span class="math inline">T\mathbf{s}_jT^{-1} = \mathbf{s}_{j+1}</span></p></li>
+</ul>
 </section>
-<section id="liebschultzmattis-theorem" class="slide level2 center">
-<h2>Lieb–Schultz–Mattis theorem</h2>
-<p>The Majumdar–Ghosh model shows that a spin-1/2 chain can have a degenerate ground state. The Heisenberg chain shows that it can be gapless. The Lieb–Schultz–Mattis (LSM) theorem <span class="citation" data-cites="lieb1961two">Lieb et al. (<a href="#/openais-proof" role="doc-biblioref" onclick="">1961</a>)</span> says that, for half-integer spin, these are the only options: <em>a translationally invariant half-integer spin chain cannot have a unique ground state with a gap</em>. We follow the version of the argument given by <span class="citation" data-cites="affleck1986proof">Affleck and Lieb (<a href="#/openais-proof" role="doc-biblioref" onclick="">1986</a>)</span>, applied to the Heisenberg chain of <span class="math inline">N</span> (even) spins with periodic boundary conditions,</p>
+<section id="the-twist" class="slide level2 center">
+<h2>The twist</h2>
 <p><span class="math display">
-H = J\sum_{j=1}^N \mathbf{s}_j\cdot\mathbf{s}_{j+1},\qquad \mathbf{s}_{j+N} = \mathbf{s}_j.
+U = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_j\right)
 </span></p>
-<p>The argument only uses translation invariance, short-range interactions, and conservation of <span class="math inline">S^z = \sum_j s^z_j</span>, so it applies much more widely. Suppose the ground state <span class="math inline">\ket{0}</span> is unique. It is then a singlet, so <span class="math inline">S^z\ket{0}=0</span>, and it is an eigenstate of the translation operator <span class="math inline">T</span>, with <span class="math inline">T\mathbf{s}_jT^{-1} = \mathbf{s}_{j+1}</span>.</p>
-<p><strong>The twist.</strong> Consider the unitary</p>
+<ul>
+<li><p>Rotates spin on site <span class="math inline">j</span> about the <span class="math inline">z</span>-axis by an angle <span class="math inline">2\pi j/N</span></p></li>
+<li><p>Neighbouring spins are rotated by <span class="math inline">2\pi/N</span> relative to each other</p></li>
+</ul>
 <p><span class="math display">
-U = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_j\right),
-</span></p>
-<p>which rotates the spin on site <span class="math inline">j</span> about the <span class="math inline">z</span>-axis by an angle <span class="math inline">2\pi j/N</span>. The twist through <span class="math inline">2\pi</span> is spread over the whole chain, so neighbouring spins are rotated by only <span class="math inline">2\pi/N</span> relative to each other.</p>
-<p>To see how operators transform under this unitary rotation, recall the <strong>Hadamard lemma</strong></p>
+U s^\pm_j U^\dagger = e^{\pm 2\pi i j/N}s^\pm_j
+</span> (e.g.&nbsp;by Hadamard lemma)</p>
 <p><span class="math display">
-e^{A}Be^{-A} = B + [A,B] + \frac{1}{2!}[A,[A,B]] + \frac{1}{3!}[A,[A,[A,B]]] + \cdots
+H' = UHU^\dagger = J\sum_{j=1}^N\left[\frac{1}{2}\left(e^{-2\pi i/N}s^+_js^-_{j+1} + e^{2\pi i/N}s^-_js^+_{j+1}\right) + s^z_js^z_{j+1}\right]
 </span></p>
-<p>Applying the lemma with <span class="math inline">[s^z_j, s^\pm_j] = \pm s^\pm_j</span> gives <span class="math inline">U s^\pm_j U^\dagger = e^{\pm 2\pi i j/N}s^\pm_j</span>, while <span class="math inline">s^z_j</span> is unchanged. The transformed Hamiltonian is then</p>
-<p><span class="math display">
-H' = UHU^\dagger = J\sum_{j=1}^N\left[\frac{1}{2}\left(e^{-2\pi i/N}s^+_js^-_{j+1} + e^{2\pi i/N}s^-_js^+_{j+1}\right) + s^z_js^z_{j+1}\right].
-</span></p>
-<p>The boundary bond from site <span class="math inline">N</span> to site <span class="math inline">1</span> gets the same phase, because <span class="math inline">e^{2\pi i N/N}=1</span>: this is why the twist must total exactly <span class="math inline">2\pi</span>.</p>
-<p><strong>Orthogonality.</strong> Next we show that <span class="math inline">U^\dagger\ket{0}</span> is orthogonal to <span class="math inline">\ket{0}</span>. Translating the twist gives</p>
-<p><span class="math display">
-TUT^{-1} = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_{j+1}\right) = U\, e^{-2\pi i S^z/N}\, e^{2\pi i s^z_1}.
-</span></p>
-<p>Here <span class="math inline">e^{2\pi i s^z_1}</span>, a <span class="math inline">2\pi</span> rotation of a single spin, is <span class="math inline">(-1)^{2s}</span> times the identity. Since <span class="math inline">\ket{0}</span> is translationally invariant and has <span class="math inline">S^z=0</span>,</p>
-<p><span class="math display">
-\braket{0}{U}{0} = \braket{0}{TUT^{-1}}{0} = (-1)^{2s}\braket{0}{U}{0}.
-</span></p>
-<p>For half-integer <span class="math inline">s</span>, it follows that <span class="math inline">\braket{0}{U}{0}=0</span>. Equivalently, <span class="math inline">U\ket{0}</span> has momentum shifted by <span class="math inline">\pi</span> relative to <span class="math inline">\ket{0}</span>.</p>
-<p><strong>Variational bound.</strong> <span class="math inline">U^\dagger\ket{0}</span> is orthogonal to the ground state, so its energy is an upper bound on <span class="math inline">E_1</span>:</p>
-<p><span class="math display">
-E_1 - E_0 \leq \braket{0}{H'}{0} - \braket{0}{H}{0} = \frac{J}{2}\sum_{j=1}^N\left\langle\left(e^{-2\pi i/N}-1\right)s^+_js^-_{j+1} + \left(e^{2\pi i/N}-1\right)s^-_js^+_{j+1}\right\rangle.
-</span></p>
-<p>Reflection symmetry <span class="math inline">j\to -j</span> gives <span class="math inline">\langle s^+_js^-_{j+1}\rangle = \langle s^-_js^+_{j+1}\rangle</span>. Using that, and then translation and spin-rotation invariance,</p>
-<p><span class="math display">
-E_1 - E_0 \leq J\left(1-\cos\frac{2\pi}{N}\right)\cdot\frac{2N}{3}\abs{\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle} \simeq \frac{4\pi^2 J}{3N}\abs{\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle} \to 0.
-</span></p>
-<p>The intuition is that the twist costs energy <span class="math inline">\sim(2\pi/N)^2</span> on each of <span class="math inline">N</span> bonds. So either the ground state is degenerate (as in Majumdar–Ghosh), or there are excitations with energy <span class="math inline">O(1/N)</span> (as in Heisenberg).</p>
-<p>The argument fails at exactly one step for integer spin: <span class="math inline">(-1)^{2s}=+1</span>, and <span class="math inline">U^\dagger\ket{0}</span> need not be orthogonal to <span class="math inline">\ket{0}</span>. This leaves room for a unique gapped ground state. The AKLT model shows that this really happens.</p>
 </section>
-<section id="haldane-conjecture" class="slide level2 center">
-<h2>Haldane conjecture</h2>
-<p>Try to state sharply. Why did he think this?</p>
-</section>
-<section id="the-aklt-model" class="slide level2 center">
-<h2>The AKLT model</h2>
-<p>The Affleck–Kennedy–Lieb–Tasaki (AKLT) model <span class="citation" data-cites="affleck1988valence">Affleck et al. (<a href="#/openais-proof" role="doc-biblioref" onclick="">1988</a>)</span> is a spin-1 chain that, like the Majumdar–Ghosh model, has an exact ground state. Again, its Hamiltonian is a special modifcation of the Heisenberg spin chain <sup>1</sup></p>
+<section id="orthogonality" class="slide level2 center">
+<h2>Orthogonality</h2>
+<ul>
+<li>Next show that <span class="math inline">U^\dagger\ket{0}</span> is orthogonal to <span class="math inline">\ket{0}</span>. Translating twist gives</li>
+</ul>
 <p><span class="math display">
-H_\text{AKLT} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{3} \sum_{j=1}^N \left(\mathbf{s}_j \cdot \mathbf{s}_{j+1}\right)^2.
+TUT^{-1} = \exp\left(\frac{2\pi i}{N}\sum_{j=1}^N j\, s^z_{j+1}\right) = U\, e^{-2\pi i S^z/N}\, e^{2\pi i s^z_1}
 </span></p>
-<p>Again, the relative magnitude of the two terms has been carefully chosen, in this case so that the Hamiltonian may be put in the form (up to a constant)</p>
-<p><span id="eq-aklt-proj"><span class="math display">
-H_\text{AKLT} = 2J \sum_{j=1}^N P^{(2)}_{j,j+1},
-\tag{2}</span></span></p>
-<p>where <span class="math inline">P^{(2)}_{j,j+1}</span> projects two neighbouring spins on to the subspace of total spin-2.</p>
+<ul>
+<li><p>Here <span class="math inline">e^{2\pi i s^z_1}</span>, a <span class="math inline">2\pi</span> rotation of a single spin, is <span class="math inline">(-1)^{2s}</span> times the identity</p></li>
+<li><p>Since <span class="math inline">\ket{0}</span> is translationally invariant and has <span class="math inline">S^z=0</span></p></li>
+</ul>
+<p><span class="math display">
+\braket{0|U|0} = \braket{0|TUT^{-1}|0} = (-1)^{2s}\braket{0|U|0}
+</span></p>
+<ul>
+<li><p>For half-integer <span class="math inline">s</span>, it follows that <span class="math inline">\braket{0|U|0}=0</span></p></li>
+<li><p>Equivalently, <span class="math inline">U\ket{0}</span> has momentum shifted by <span class="math inline">\pi</span> relative to <span class="math inline">\ket{0}</span></p></li>
+</ul>
+</section>
+<section id="variational-bound" class="slide level2 center">
+<h2>Variational bound</h2>
+<ul>
+<li><span class="math inline">U^\dagger\ket{0}</span> is orthogonal to ground state, so its energy is an upper bound on <span class="math inline">E_1</span></li>
+</ul>
+<p><span class="math display">
+E_1 - E_0 \leq \braket{0|H'|0} - \braket{0|H|0}
+</span></p>
+<p><span class="math display">
+\braket{0|H'|0} - \braket{0|H|0} = \frac{J}{2}\sum_{j=1}^N\left\langle\left(e^{-2\pi i/N}-1\right)s^+_js^-_{j+1} + \text{h.c.}\right\rangle
+</span></p>
+<ul>
+<li><p>Reflection symmetry <span class="math inline">j\to -j</span> gives <span class="math inline">\langle s^+_js^-_{j+1}\rangle = \langle s^-_js^+_{j+1}\rangle</span></p></li>
+<li><p>Using translation and spin-rotation invariance</p></li>
+</ul>
+<p><span class="math display">
+E_1 - E_0 \leq J\left(1-\cos\frac{2\pi}{N}\right)\cdot\frac{2N}{3}|\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle| \simeq \frac{4\pi^2 J}{3N}|\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle| \to 0
+</span></p>
+<ul>
+<li>Argument fails for integer spin: <span class="math inline">(-1)^{2s}=+1</span></li>
+</ul>
+</section>
+<section id="affleckkennedyliebtasaki-aklt-model" class="slide level2 center">
+<h2>Affleck–Kennedy–Lieb–Tasaki (AKLT) model</h2>
+<ul>
+<li><p>LSM leaves room for a unique gapped ground state in spin-1 case <span class="math display">
+H_\text{AKLT} = J \sum_{j=1}^N \mathbf{s}_j \cdot \mathbf{s}_{j+1} + \frac{J}{3} \sum_{j=1}^N \left(\mathbf{s}_j \cdot \mathbf{s}_{j+1}\right)^2
+</span></p></li>
+<li><p>Up to a constant <span class="math display">
+H_\text{AKLT} = 2J \sum_{j=1}^N P^{(2)}_{j,j+1}
+</span></p></li>
+<li><p><span class="math inline">P^{(2)}_{j,j+1}</span> projects two neighbouring spins on to the subspace of total spin-2</p></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -300,7 +359,7 @@ H_\text{AKLT} = 2J \sum_{j=1}^N P^{(2)}_{j,j+1},
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>Show this. The key is to consider the sum of the two neighbouring spins <span class="math inline">\mathbf{s}_j + \mathbf{s}_{j+1}</span>, which may have <span class="math inline">S=2,1</span>, or <span class="math inline">0</span>, so that</p>
+<p>Show this. The key is to consider the sum of the two neighbouring spins <span class="math inline">\mathbf{s}_j + \mathbf{s}_{j+1}</span>, which may have <span class="math inline">S=2</span>, <span class="math inline">1</span>, or <span class="math inline">0</span>, so that</p>
 <p><span class="math display">
 \left(\mathbf{s}_j + \mathbf{s}_{j+1}\right)^2 = S(S+1) = 6, 2, 0.
 </span></p>
@@ -308,21 +367,25 @@ H_\text{AKLT} = 2J \sum_{j=1}^N P^{(2)}_{j,j+1},
 </div>
 </div>
 </div>
-<p>Frustration freeness… definition</p>
-<p>To understand the ground state of the AKLT chain, it’s useful to imagine that the spin-1 <span class="math inline">\mathbf{s}_j</span> on each site is comprised of two spin-1/2: <span class="math inline">s_{j,L/R}</span>. The ground state is then constructed in two steps. First, we create singlets between neighbouring sites: that is, between <span class="math inline">\mathbf{s}_{j,R}</span> and <span class="math inline">\mathbf{s}_{j+1,L}</span>, and between <span class="math inline">\mathbf{s}_{j,L}</span> and <span class="math inline">\mathbf{s}_{j-1,R}</span>. Note that this is just the same as one of the Majumdar–Ghosh ground states. Next, we project each pair <span class="math inline">\mathbf{s}_{j,L/R}</span> onto spin-1.</p>
-<div id="fig-aklt-state" class="quarto-float quarto-figure quarto-figure-center">
-<figure class="quarto-float quarto-float-fig">
-<div aria-describedby="fig-aklt-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img data-src="../assets/AKLT_GroundState.png">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aklt-state-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Schematic construction of the AKLT ground state in terms of a pair of spin-1/2 at each site. Source: <a href="https://en.wikipedia.org/wiki/AKLT_model">Wikipedia</a>.
-</figcaption>
+</section>
+<section id="aklt-state" class="slide level2 center">
+<h2>AKLT state</h2>
+<ul>
+<li><p>Make spin-1 <span class="math inline">\mathbf{s}_j</span> on each site from two spin-1/2: <span class="math inline">s_{j,L/R}</span></p></li>
+<li><p>Ground state is constructed in two steps</p>
+<ol type="1">
+<li>Create singlets between neighbouring sites: between <span class="math inline">\mathbf{s}_{j,R}</span> and <span class="math inline">\mathbf{s}_{j+1,L}</span>, and between <span class="math inline">\mathbf{s}_{j,L}</span> and <span class="math inline">\mathbf{s}_{j-1,R}</span></li>
+<li>Next, project each pair <span class="math inline">\mathbf{s}_{j,L/R}</span> onto spin-1.</li>
+</ol></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/AKLT_GroundState.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-<p>Why does this yield the (unique) ground state of the model? Recall that the Hamiltonian <a href="#/eq-aklt-proj" class="quarto-xref">Equation&nbsp;2</a> is written in terms of spin-2 projectors for neighbouring sites. We will show that the above construction has no component in the spin-2 subspace for each pair of neighbouring spins, and so vanishes when the projection operator is applied.</p>
-<p>The two spin-1s correspond two four spin-1/2s in the above picture. The wavefunction of four spin-1/2s in the usual basis is <span class="math inline">\Psi_{l_1 r_1 l_2 r_2}</span> where each of the indices can be <span class="math inline">\uparrow</span> or <span class="math inline">\downarrow</span>. There are <span class="math inline">2^4=16</span> components, as expected.</p>
-<p>A spin-2 state is a <em>totally symmetric</em> wavefunction: the easiest way to see this is to note that <span class="math inline">l_1=r_1=l_2=r_2=\uparrow</span> corresponds to <span class="math inline">S^z_\text{tot}=s^z_{l_1}+s^z_{r_1}+s^z_{l_2}+s^z_{r_2}=2</span>. This must be a <span class="math inline">S_\text{tot}=2</span> state (four spin-1/2 can make at most <span class="math inline">S=2</span>). The remaining 4 states in the multiplet may be found by applying <span class="math inline">S^-_\text{tot}</span>.</p>
+</section>
+<section class="slide level2 center">
+
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -332,171 +395,97 @@ Figure&nbsp;2: Schematic construction of the AKLT ground state in terms of a pai
 <p><strong>Check</strong></p>
 </div>
 <div class="callout-content">
-<p>The symmetric states <span class="math inline">\Psi_{s_1\cdots s_N}=\Psi_{(s_1\cdots s_N)}</span> of <span class="math inline">N</span> spin-1/2s are the <span class="math inline">S_\text{tot}=N/2</span> states. There span a subspace of dimension <span class="math inline">N+1=2S_\text{tot}+1</span>, as they should.</p>
+<ul>
+<li>Why is this ground state?</li>
+</ul>
 </div>
 </div>
 </div>
-<p>Now it’s easy to see why the AKLT construction works. The full wavefunction of the chain <span class="math inline">\Psi_{\cdots l_j r_j l_{j+1} r_{j+1}\dots}</span> must be antisymmetric in the <span class="math inline">r_j</span>, <span class="math inline">l_{j+1}</span> indices and symmetric in the <span class="math inline">l_j</span>, <span class="math inline">r_j</span> indices</p>
+</section>
+<section id="is-it-gapped" class="slide level2 center">
+<h2>Is it gapped?</h2>
+<ul>
+<li><p>Simple proof of the gap is due to <span class="citation" data-cites="knabe1988energy">Knabe (<a href="#/references" role="doc-biblioref" onclick="">1988</a>)</span>, using</p>
+<ol type="1">
+<li><span class="math inline">H_\text{AKLT}</span> is sum of projectors</li>
+<li>It is <em>frustration free</em>: the ground state minimizes every term separately</li>
+</ol></li>
+</ul>
 <p><span class="math display">
-\Psi_{\cdots l_j r_j l_{j+1} r_{j+1}\cdots} = \Psi_{\cdots l_j [r_j l_{j+1}] r_{j+1}\cdots}=\Psi_{\cdots (l_j r_j) l_{j+1} r_{j+1}\cdots} = \Psi_{\cdots l_j r_j (l_{j+1} r_{j+1})\cdots}.
+H = \sum_{i=1}^N P_i,\qquad P_i \equiv P^{(2)}_{i,i+1},\qquad P_i^2 = P_i,\qquad H\ket{\Psi}=0
 </span></p>
-<p><span class="math inline">P^{(2)}_{j,j+1}</span> acts by symmetrizing over <span class="math inline">l_j</span>, <span class="math inline">r_j</span>, <span class="math inline">l_{j+1}</span>, and <span class="math inline">r_{j+1}</span>, and this must give zero.</p>
-<p>Generalizations to higher dimensions??</p>
-<h3 id="matrix-product-state">Matrix product state</h3>
-<p>The two-step construction translates directly into a compact formula for the wavefunction. Write the projection of <span class="math inline">(l_j, r_j)</span> onto the spin-1 state <span class="math inline">m_j\in\{+,0,-\}</span> as a <span class="math inline">2\times 2</span> matrix <span class="math inline">C^{m}_{l r}</span>:</p>
+<ul>
+<li>Strategy is to prove an <em>operator</em> inequality of the form</li>
+</ul>
 <p><span class="math display">
-C^+ = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 0 \end{pmatrix},\qquad
-C^0 = \frac{1}{\sqrt{2}}\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix},\qquad
-C^- = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; 1 \end{pmatrix},
+H^2 \geq \delta H, \qquad \delta&gt;0
 </span></p>
-<p>and the singlet between <span class="math inline">r_j</span> and <span class="math inline">l_{j+1}</span> as <span class="math inline">\epsilon_{r l}</span>, with <span class="math inline">\epsilon = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}</span> (up to normalization). Summing over all the spin-1/2 indices then turns the chain of contractions into a product of matrices. For periodic boundary conditions this gives</p>
-<p><span id="eq-aklt-mps"><span class="math display">
-\Psi_{m_1 m_2\cdots m_N} = \operatorname{Tr}\left[A^{m_1}A^{m_2}\cdots A^{m_N}\right],\qquad A^m \propto C^m\epsilon,
-\tag{3}</span></span></p>
-<p>and explicitly</p>
+<ul>
+<li>Applied to eigenstate with energy <span class="math inline">E</span>: <span class="math inline">E^2\geq \delta E</span>, so either <span class="math inline">E=0</span> or <span class="math inline">E\geq\delta</span></li>
+</ul>
+</section>
+<section class="slide level2 center">
+
 <p><span class="math display">
-A^+ = \sqrt{\tfrac{2}{3}}\,\sigma^+,\qquad A^0 = -\frac{1}{\sqrt{3}}\,\sigma^z,\qquad A^- = -\sqrt{\tfrac{2}{3}}\,\sigma^-,
+H^2 = H + \sum_{d\geq 1} R_d,\qquad R_d = \sum_i \left\{P_i, P_{i+d}\right\}
 </span></p>
-<p>where the factors are chosen so that <span class="math inline">\sum_m A^m A^{m\dagger} = \mathbb{1}</span>. A state of this form is called a <em>matrix product state</em> (MPS). The internal <span class="math inline">2\times 2</span> index, the <em>bond dimension</em>, is the spin-1/2 that is shared out in a singlet between neighbouring sites. Even though the Hilbert space has dimension <span class="math inline">3^N</span>, the whole state is fixed by just three <span class="math inline">2\times 2</span> matrices. With open boundary conditions the trace is replaced by boundary vectors <span class="math inline">u^\dagger A^{m_1}\cdots A^{m_N} v</span>. The free choice of <span class="math inline">u</span> and <span class="math inline">v</span> gives a four-fold degenerate ground state, corresponding to the unpaired spin-1/2 left at each end of the chain.</p>
-<h3 id="spin-correlations">Spin correlations</h3>
-<p>The MPS form makes expectation values easy to compute. Since the <span class="math inline">A^m</span> are real, the norm of the state is</p>
-<p><span class="math display">
-\inner{\Psi}{\Psi} = \sum_{m_1\cdots m_N} \operatorname{Tr}\left[A^{m_1}\cdots A^{m_N}\right]\operatorname{Tr}\left[A^{m_1}\cdots A^{m_N}\right] = \operatorname{Tr}\left[\cE^N\right],
-</span></p>
-<p>where the <span class="math inline">4\times 4</span> <em>transfer matrix</em> is</p>
-<p><span class="math display">
-\cE = \sum_m A^m \otimes A^m.
-</span></p>
-<p>The sum over each physical index <span class="math inline">m_j</span> is done once, leaving a product of transfer matrices acting on the two bond indices (one from the ket, one from the bra). We can just as well regard <span class="math inline">\cE</span> as a linear map on <span class="math inline">2\times 2</span> matrices <span class="math inline">X</span>, <span class="math inline">\cE(X) = \sum_m A^m X A^{m\dagger}</span>. Using <span class="math inline">\sigma^+ X\sigma^- + \sigma^- X \sigma^+ = \frac{1}{2}\left(\sigma^x X \sigma^x + \sigma^y X\sigma^y\right)</span>, this is</p>
-<p><span class="math display">
-\cE(X) = \frac{1}{3}\sum_{a=x,y,z} \sigma^a X \sigma^a.
-</span></p>
-<p>The eigenvalues follow immediately from <span class="math inline">\sum_a \sigma^a\sigma^b\sigma^a = -\sigma^b</span>:</p>
-<p><span class="math display">
-\cE(\mathbb{1}) = \mathbb{1},\qquad \cE(\sigma^b) = -\frac{1}{3}\sigma^b.
-</span></p>
-<p>So <span class="math inline">\cE</span> has a unique largest eigenvalue <span class="math inline">1</span> and a three-fold degenerate eigenvalue <span class="math inline">-1/3</span>. These correspond to the singlet and triplet in the decomposition <span class="math inline">\frac{1}{2}\otimes\frac{1}{2} = 0\oplus 1</span> of the two bond indices. In particular, <span class="math inline">\inner{\Psi}{\Psi} = 1 + 3(-1/3)^N \to 1</span> as <span class="math inline">N\to\infty</span>.</p>
-<p>To include an operator <span class="math inline">O</span> at site <span class="math inline">j</span>, we replace the transfer matrix there by <span class="math inline">\cE_O(X) = \sum_{m,m'} O_{mm'} A^{m'} X A^{m\dagger}</span>. For <span class="math inline">S^z</span> (eigenvalues <span class="math inline">m=\pm1, 0</span>),</p>
-<p><span class="math display">
-\cE_{S^z}(X) = \frac{2}{3}\left(\sigma^+ X\sigma^- - \sigma^- X\sigma^+\right),\qquad \cE_{S^z}(\mathbb{1}) = \frac{2}{3}\sigma^z,\quad \cE_{S^z}(\sigma^z) = -\frac{2}{3}\mathbb{1}.
-</span></p>
-<p>In the limit <span class="math inline">N\to\infty</span> the remaining <span class="math inline">\cE^{N-r-1}</span> projects onto the leading eigenvector <span class="math inline">\mathbb{1}</span>, with the trace <span class="math inline">\frac{1}{2}\operatorname{Tr}[\cdots]</span> closing the chain. Then for <span class="math inline">r\geq 1</span></p>
-<p><span id="eq-aklt-corr"><span class="math display">
-\langle S^z_0 S^z_r\rangle = \frac{1}{2}\operatorname{Tr}\left[\cE_{S^z}\left(\cE^{r-1}\left(\cE_{S^z}(\mathbb{1})\right)\right)\right] = \frac{1}{2}\operatorname{Tr}\left[\cE_{S^z}\left(\frac{2}{3}\left(-\frac{1}{3}\right)^{r-1}\sigma^z\right)\right] = \frac{4}{3}\left(-\frac{1}{3}\right)^r.
-\tag{4}</span></span></p>
-<p>By <span class="math inline">SU(2)</span> symmetry the same holds for the <span class="math inline">x</span> and <span class="math inline">y</span> components. The correlations are antiferromagnetic but decay exponentially, <span class="math inline">\abs{\langle S^z_0 S^z_r\rangle}\propto e^{-r/\xi}</span>, with correlation length</p>
-<p><span class="math display">
-\xi = \frac{1}{\log 3} \approx 0.91.
-</span></p>
-<p>The correlation length is set by the ratio of the second largest eigenvalue of the transfer matrix to the largest. This is a general feature of MPS with a unique leading eigenvalue: correlations always decay exponentially. Compare this with the spin-1/2 Heisenberg chain, where correlations decay as a power law. That is what we expect for a gapless system. Exponential decay is consistent with a gapped ground state, but it doesn’t prove the gap. We still have to show this separately.</p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Check</strong></p>
-</div>
-<div class="callout-content">
-<p>Show that <a href="#/eq-aklt-corr" class="quarto-xref">Equation&nbsp;4</a> gives the energy per bond: <span class="math inline">\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle = -4/3</span>. Use the transfer matrix to find <span class="math inline">\langle (\mathbf{s}_j\cdot\mathbf{s}_{j+1})^2\rangle</span> and check that <span class="math inline">\langle H_\text{AKLT}\rangle</span> agrees with the ground state energy <span class="math inline">-2J/3</span> per bond. This is the value for which <span class="math inline">P^{(2)}_{j,j+1}</span> has zero expectation.</p>
-</div>
-</div>
-</div>
-<h3 id="energy-gap">Energy Gap</h3>
-<p>The AKLT ground state is exact, but its excitations are not. We can still get an upper bound on the dispersion relation, following Feynman and Bijl’s treatment of excitations in superfluid helium. We take as a variational state for an excitation of momentum <span class="math inline">k</span></p>
-<p><span class="math display">
-\ket{k} = S^z_k\ket{\Psi},\qquad S^z_k = \sum_j e^{ikj} S^z_j.
-</span></p>
-<p>For <span class="math inline">k\neq 0</span> this is orthogonal to the ground state, since it has a different momentum. It is also a spin-1 state, because <span class="math inline">\ket{\Psi}</span> is a singlet. So its energy gives an upper bound on the lowest triplet excitation at momentum <span class="math inline">k</span>:</p>
-<p><span id="eq-feynman-bijl"><span class="math display">
-\epsilon(k) \leq \frac{\braket{\Psi}{S^z_{-k}\left(H - E_0\right)S^z_k}{\Psi}}{\braket{\Psi}{S^z_{-k}S^z_k}{\Psi}} \equiv \frac{f(k)}{s(k)}.
-\tag{5}</span></span></p>
-<p>The denominator is the <em>static structure factor</em>. Per site, it is the Fourier transform of the correlation function we just found:</p>
-<p><span class="math display">
-s(k) = \frac{1}{N}\braket{\Psi}{S^z_{-k}S^z_k}{\Psi} = \sum_r e^{ikr}\langle S^z_0 S^z_r\rangle.
-</span></p>
-<p>Using <a href="#/eq-aklt-corr" class="quarto-xref">Equation&nbsp;4</a> for <span class="math inline">r\neq 0</span>, together with <span class="math inline">\langle (S^z_0)^2\rangle = 2/3</span>, the sum is geometric:</p>
-<p><span class="math display">
-s(k) = \frac{2}{3} + \frac{8}{3}\sum_{r=1}^\infty \left(-\frac{1}{3}\right)^r\cos kr = \frac{2(1-\cos k)}{5+3\cos k}.
-</span></p>
-<p>This vanishes at <span class="math inline">k=0</span>, where <span class="math inline">S^z_0</span> is the conserved total spin, which annihilates the singlet. It peaks at <span class="math inline">k=\pi</span>, reflecting the short-range antiferromagnetic order.</p>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>The f-sum rule</strong></p>
-</div>
-<div class="callout-content">
-<p>The numerator can be written as a double commutator. Since <span class="math inline">(H-E_0)\ket{\Psi}=0</span>,</p>
-<p><span class="math display">
-\braket{\Psi}{S^z_{-k}\left(H - E_0\right)S^z_k}{\Psi} = \braket{\Psi}{S^z_{-k}\left[H, S^z_k\right]}{\Psi}.
-</span></p>
-<p>Using inversion symmetry (<span class="math inline">k\to -k</span>) to symmetrize,</p>
-<p><span class="math display">
-f(k) = \frac{1}{2N}\braket{\Psi}{\left[S^z_{-k},\left[H, S^z_k\right]\right]}{\Psi}.
-</span></p>
-<p>Inserting a complete set of eigenstates <span class="math inline">\ket{n}</span> shows that this is the first frequency moment of the dynamical structure factor <span class="math inline">S(k,\omega)</span>:</p>
-<p><span class="math display">
-f(k) = \frac{1}{N}\sum_n (E_n-E_0)\abs{\braket{n}{S^z_k}{\Psi}}^2 = \int_0^\infty \omega\, S(k,\omega)\,d\omega.
-</span></p>
-<p>The double commutator only involves the bonds that don’t commute with <span class="math inline">S^z_k</span>. For a Hamiltonian with nearest-neighbour terms, it is therefore a sum of local ground state expectation values, which we can evaluate with the transfer matrix. For <span class="math inline">H_\text{AKLT}</span> one finds</p>
-<p><span class="math display">
-f(k) = \frac{20}{27}J\left(1-\cos k\right).
-</span></p>
-<p>For the pure Heisenberg chain the corresponding result is <span class="math inline">f(k) = -\frac{2}{3}J(1-\cos k)\langle \mathbf{s}_j\cdot\mathbf{s}_{j+1}\rangle</span>.</p>
-</div>
-</div>
-</div>
-<p><a href="#/eq-feynman-bijl" class="quarto-xref">Equation&nbsp;5</a> then gives the <em>single mode approximation</em> of <span class="citation" data-cites="arovas1988extended">Arovas et al. (<a href="#/openais-proof" role="doc-biblioref" onclick="">1988</a>)</span>:</p>
-<p><span class="math display">
-\epsilon(k) \leq \frac{10J}{27}\left(5 + 3\cos k\right).
-</span></p>
-<p>The minimum is at <span class="math inline">k=\pi</span>, with <span class="math inline">\epsilon(\pi)\leq 20J/27 \approx 0.74J</span>. Numerics give a gap of <span class="math inline">\approx 0.70J</span>, so the bound is remarkably close. The factor of <span class="math inline">1-\cos k</span> in the numerator cancels the one in <span class="math inline">s(k)</span>. The bound stays nonzero at <span class="math inline">k=\pi</span> because the structure factor is finite there, which in turn is because the correlation length is finite. In the Heisenberg spin-1/2 chain, <span class="math inline">s(k)</span> diverges at <span class="math inline">k=\pi</span>, and the same argument gives a vanishing upper bound, consistent with that chain being gapless.</p>
-<p>This is only an <em>upper</em> bound. It shows that there is a triplet mode with <span class="math inline">\epsilon(\pi)\lesssim 0.74J</span>. It does not show that the gap is nonzero, which requires a <em>lower</em> bound on <span class="math inline">E_1 - E_0</span>. For the AKLT model that lower bound was proved in <span class="citation" data-cites="affleck1988valence">Affleck et al. (<a href="#/openais-proof" role="doc-biblioref" onclick="">1988</a>)</span>, by a different argument.</p>
-<h3 id="knabes-proof">Knabe’s proof</h3>
-<p>A particularly simple proof of the gap is due to <span class="citation" data-cites="knabe1988energy">Knabe (<a href="#/openais-proof" role="doc-biblioref" onclick="">1988</a>)</span>. It uses only two properties of the model. The first is that <span class="math inline">H_\text{AKLT}</span> is a sum of projectors. The second is that it is <em>frustration free</em>: the ground state minimizes every term separately. Set <span class="math inline">2J=1</span> and write</p>
-<p><span class="math display">
-H = \sum_{i=1}^N P_i,\qquad P_i \equiv P^{(2)}_{i,i+1},\qquad P_i^2 = P_i,\qquad H\ket{\Psi}=0.
-</span></p>
-<p>The strategy is to prove an <em>operator</em> inequality of the form</p>
-<p><span class="math display">
-H^2 \geq \delta H, \qquad \delta&gt;0.
-</span></p>
-<p>Applied to an eigenstate with energy <span class="math inline">E</span>, this gives <span class="math inline">E^2\geq \delta E</span>, so either <span class="math inline">E=0</span> or <span class="math inline">E\geq\delta</span>. Since <span class="math inline">H\geq 0</span> with ground state energy zero, <span class="math inline">\delta</span> is then a lower bound on the gap. The point is that <span class="math inline">H^2</span> can be bounded using only <em>local</em> information.</p>
-<p>Squaring <span class="math inline">H</span>,</p>
-<p><span class="math display">
-H^2 = H + \sum_{d\geq 1} R_d,\qquad R_d = \sum_i \left\{P_i, P_{i+d}\right\}.
-</span></p>
-<p>Projectors on bonds that don’t share a site commute, so for <span class="math inline">d\geq 2</span> each <span class="math inline">P_iP_{i+d}</span> is itself a projector, and <span class="math inline">R_d\geq 0</span>. The only troublesome term is <span class="math inline">R_1</span>, the anticommutators of neighbouring bonds, which need not be positive. Knabe’s idea is to control them using a <em>finite</em> open chain. Let</p>
+<ul>
+<li><p>For <span class="math inline">d\geq 2</span> each <span class="math inline">P_iP_{i+d}</span> is itself a projector, and <span class="math inline">R_d\geq 0</span></p></li>
+<li><p>Problem is <span class="math inline">R_1</span>: need not be positive</p></li>
+<li><p>Knabe’s idea: control them using a <em>finite</em> open chain</p></li>
+</ul>
 <p><span class="math display">
 h_j = \sum_{i=j}^{j+m-1} P_i
 </span></p>
-<p>be the Hamiltonian of the <span class="math inline">m</span> bonds (<span class="math inline">m+1</span> sites) starting at site <span class="math inline">j</span>. Let <span class="math inline">\delta_m</span> be its gap, meaning its smallest nonzero eigenvalue. The lowest eigenvalue is zero by frustration freeness. Since <span class="math inline">h_j\geq 0</span> with spectrum in <span class="math inline">\{0\}\cup[\delta_m,\infty)</span>, we have <span class="math inline">h_j^2\geq \delta_m h_j</span>. Summing over all <span class="math inline">N</span> windows, <span class="math inline">\sum_j h_j = mH</span>, so</p>
+<ul>
+<li><p>Let <span class="math inline">\delta_m</span> be gap of <span class="math inline">h_j</span>. Lowest eigenvalue is zero by frustration freeness</p></li>
+<li><p>We have <span class="math inline">h_j^2\geq \delta_m h_j</span>. Summing over all <span class="math inline">N</span> windows, <span class="math inline">\sum_j h_j = mH</span>, so</p></li>
+</ul>
 <p><span class="math display">
-\sum_j h_j^2 \geq m\,\delta_m H.
+\sum_j h_j^2 \geq m\,\delta_m H
 </span></p>
-<p>On the other hand, expand each <span class="math inline">h_j^2</span> and count how often each term appears. Each <span class="math inline">P_i</span> lies in <span class="math inline">m</span> windows, and each pair at distance <span class="math inline">d</span> in <span class="math inline">m-d</span> windows. Since <span class="math inline">m-d\leq m-1</span> and <span class="math inline">R_d\geq 0</span> for <span class="math inline">d\geq 2</span>,</p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li><p>Expand each <span class="math inline">h_j^2</span> and count how often each term appears</p></li>
+<li><p>Each <span class="math inline">P_i</span> lies in <span class="math inline">m</span> windows; each pair at distance <span class="math inline">d</span> in <span class="math inline">m-d</span> windows. Since <span class="math inline">m-d\leq m-1</span> and <span class="math inline">R_d\geq 0</span> for <span class="math inline">d\geq 2</span></p></li>
+</ul>
 <p><span class="math display">
-\sum_j h_j^2 = mH + (m-1)R_1 + \sum_{d=2}^{m-1}(m-d)R_d \leq mH + (m-1)\sum_{d\geq 1}R_d = mH + (m-1)\left(H^2 - H\right).
+\begin{align*}
+\sum_j h_j^2 &amp;= mH + (m-1)R_1 + \sum_{d=2}^{m-1}(m-d)R_d \\
+&amp;\leq mH + (m-1)\sum_{d\geq 1}R_d = mH + (m-1)\left(H^2 - H\right)
+\end{align*}
 </span></p>
-<p>Combining the two inequalities gives an operator inequality for the full chain:</p>
+<ul>
+<li>Combining two inequalities gives an operator inequality for the full chain:</li>
+</ul>
 <p><span class="math display">
-H^2 \geq \frac{m\delta_m - 1}{m-1}\, H.
+H^2 \geq \frac{m\delta_m - 1}{m-1}\, H
 </span></p>
-<p>Applied to any eigenstate with <span class="math inline">E&gt;0</span>, this gives Knabe’s bound (valid for <span class="math inline">N</span> large compared with <span class="math inline">m</span>):</p>
-<p><span id="eq-knabe"><span class="math display">
-\gamma_N \geq \frac{m}{m-1}\left(\delta_m - \frac{1}{m}\right).
-\tag{6}</span></span></p>
-<p>Thus <em>a gap of the infinite chain follows from a gap on a finite chain</em>. All we need is <span class="math inline">\delta_m &gt; 1/m</span> for some <span class="math inline">m</span>. This is a finite computation. Exact diagonalization of open chains gives</p>
+</section>
+<section class="slide level2 center">
+
+<ul>
+<li>Applied to any eigenstate with <span class="math inline">E&gt;0</span>, this gives</li>
+</ul>
+<p><span class="math display">
+\gamma_N \geq \frac{m}{m-1}\left(\delta_m - \frac{1}{m}\right)
+</span></p>
+<ul>
+<li><p><em>A gap of the infinite chain follows from a gap on a finite chain</em></p></li>
+<li><p>All we need is <span class="math inline">\delta_m &gt; 1/m</span> for some <span class="math inline">m</span></p></li>
+</ul>
+</section>
+<section id="exact-diagonalization-of-finite-open-chains" class="slide level2 center">
+<h2>Exact diagonalization of finite open chains</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: center;">sites <span class="math inline">m+1</span></th>
 <th style="text-align: center;"><span class="math inline">\delta_m</span></th>
 <th style="text-align: center;"><span class="math inline">1/m</span></th>
-<th style="text-align: center;">bound <a href="#/eq-knabe" class="quarto-xref">Equation&nbsp;6</a></th>
+<th style="text-align: center;">Knabe’s bound</th>
 </tr>
 </thead>
 <tbody>
@@ -526,39 +515,26 @@ H^2 \geq \frac{m\delta_m - 1}{m-1}\, H.
 </tr>
 </tbody>
 </table>
-<p>So four sites already suffice. The gap of the AKLT chain is at least <span class="math inline">0.173</span> in units of <span class="math inline">2J</span>, i.e.&nbsp;<span class="math inline">\gamma \geq 0.35J</span>. The bound improves with <span class="math inline">m</span> towards the true value <span class="math inline">\approx 0.350</span> (<span class="math inline">\approx 0.70J</span>), which is sandwiched with the Feynman–Bijl upper bound <span class="math inline">20J/27</span>.</p>
-<p>Note the contrast with the Heisenberg chain. The argument works because <span class="math inline">H_\text{AKLT}</span> is frustration free: the ground state of each <span class="math inline">h_j</span> also has energy zero. That is not true of the spin-1 Heisenberg chain, which is why the Haldane conjecture needed a very different approach.</p>
-<h3 id="string-order">String order</h3>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>Note that the biquadratic piece (the second term) doesn’t bring anything new for spin-1/2, as it can be expressed in terms of the original Hamiltonian.</p></li></ol></aside></section>
-<section id="openais-proof" class="slide level2 smaller scrollable">
-<h2>OpenAI’s proof</h2>
+<ul>
+<li><p>Gap of the AKLT chain is at least <span class="math inline">0.173</span> in units of <span class="math inline">2J</span>, i.e.&nbsp;<span class="math inline">\gamma \geq 0.35J</span></p></li>
+<li><p>Bound improves with <span class="math inline">m</span> towards the true value <span class="math inline">\approx 0.350</span> (<span class="math inline">\approx 0.70J</span>)</p></li>
+<li><p>Argument works because <span class="math inline">H_\text{AKLT}</span> is frustration free</p></li>
+<li><p>Not true of spin-1 Heisenberg chain, which is why Haldane conjecture needed a very different approach</p></li>
+</ul>
+</section>
+<section class="slide level2 smaller scrollable" id="references">
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-affleck1988valence" class="csl-entry" role="listitem">
-Affleck, Ian, Tom Kennedy, Elliott H Lieb, and Hal Tasaki. 1988. <span>“Valence Bond Ground States in Isotropic Quantum Antiferromagnets.”</span> <em>Communications in Mathematical Physics</em> 115 (3): 477–528.
-</div>
 <div id="ref-affleck1986proof" class="csl-entry" role="listitem">
 Affleck, Ian, and Elliott H Lieb. 1986. <span>“A Proof of Part of <span>H</span>aldane’s Conjecture on Spin Chains.”</span> <em>Letters in Mathematical Physics</em> 12 (1): 57–69.
-</div>
-<div id="ref-arovas1988extended" class="csl-entry" role="listitem">
-Arovas, Daniel P, Assa Auerbach, and F D M Haldane. 1988. <span>“Extended <span>H</span>eisenberg Models of Antiferromagnetism: Analogies to the Fractional Quantum <span>H</span>all Effect.”</span> <em>Physical Review Letters</em> 60 (6): 531.
-</div>
-<div id="ref-haldane2017nobel" class="csl-entry" role="listitem">
-Haldane, F Duncan M. 2017. <span>“Nobel Lecture: Topological Quantum Matter.”</span> <em>Rev. Mod. Phys</em> 89 (4): 040502.
-</div>
-<div id="ref-haldane2016ground" class="csl-entry" role="listitem">
-Haldane, FDM. 2016. <span>“Ground State Properties of Antiferromagnetic Chains with Unrestricted Spin: Integer Spin Chains as Realisations of the o (3) Non-Linear Sigma Model.”</span> <em>arXiv Preprint arXiv:1612.00076</em>.
 </div>
 <div id="ref-knabe1988energy" class="csl-entry" role="listitem">
 Knabe, Stefan. 1988. <span>“Energy Gaps and Elementary Excitations for Certain <span>VBS</span>-Quantum Antiferromagnets.”</span> <em>Journal of Statistical Physics</em> 52 (3): 627–38.
 </div>
-<div id="ref-lieb1961two" class="csl-entry" role="listitem">
-Lieb, Elliott, Theodore Schultz, and Daniel Mattis. 1961. <span>“Two Soluble Models of an Antiferromagnetic Chain.”</span> <em>Annals of Physics</em> 16 (3): 407–66.
 </div>
-</div>
-</section></section>
-
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

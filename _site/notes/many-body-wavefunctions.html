@@ -288,12 +288,6 @@ window.Quarto = {
  <span class="menu-text">Response and Correlation</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes/haldnane-gap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The Haldane Gap</span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -369,6 +363,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../slides/response-and-correlation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Response and Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../slides/haldane-gap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Haldane Gap</span></a>
   </div>
 </li>
       </ul>
@@ -1056,7 +1056,7 @@ Dirac, Paul Adrien Maurice. 1926. <span>â€œOn the Theory of Quantum Mechanics.â€
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/tqm\.tripos\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
