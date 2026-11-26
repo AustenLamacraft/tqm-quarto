@@ -50,6 +50,7 @@ website:
           - slides/fermi-gas.qmd
           - slides/superconductivity.qmd
           - slides/response-and-correlation.qmd
+          - slides/haldane-gap.qmd
           
 
       - section: "Problem Sets"
